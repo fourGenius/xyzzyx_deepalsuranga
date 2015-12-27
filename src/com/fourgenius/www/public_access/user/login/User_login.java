@@ -9,7 +9,7 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import com.fourgenius.www.qrGenerator.QR_Code_Gen;
-
+import com.fourgenius.www.private_access.admin.method.move_text;
 /**
  *
  * @author deepal_suranga
@@ -19,13 +19,20 @@ public class User_login extends javax.swing.JFrame {
     /**
      * Creates new form user_login
      */
+    move_text setLableValuesNullAndAdd=new move_text();
     public User_login() {
         initComponents();
         
         QR_Code_Gen code_Gen=new QR_Code_Gen();
         code_Gen.load_qr(_lb_user_login_qrCode);
         
-        
+        setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_userName);
+        setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_password);
+        setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_pin);
+        setLableValuesNullAndAdd._md_setTextFieldValues(_tf_user_loging_userName, "User Name");
+        setLableValuesNullAndAdd._md_setPasswordFieldvalues(_pf_user_login_password, "Password");
+         _pf_user_login_password.setEchoChar((char)0);
+        setLableValuesNullAndAdd._md_setTextFieldValues(_tf_user_login_pin, "Enter PIN Code");
         
         
     }
@@ -146,12 +153,42 @@ public class User_login extends javax.swing.JFrame {
         _lb_user_login_userName.setText("User Name");
 
         _tf_user_loging_userName.setPreferredSize(new java.awt.Dimension(300, 40));
+        _tf_user_loging_userName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tf_user_loging_userNameMouseClicked(evt);
+            }
+        });
+        _tf_user_loging_userName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_user_loging_userNameActionPerformed(evt);
+            }
+        });
+        _tf_user_loging_userName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_user_loging_userNameKeyTyped(evt);
+            }
+        });
 
         _lb_user_login_password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_user_login_password.setForeground(new java.awt.Color(240, 240, 240));
         _lb_user_login_password.setText("Password");
 
         _pf_user_login_password.setPreferredSize(new java.awt.Dimension(300, 40));
+        _pf_user_login_password.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _pf_user_login_passwordMouseClicked(evt);
+            }
+        });
+        _pf_user_login_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _pf_user_login_passwordActionPerformed(evt);
+            }
+        });
+        _pf_user_login_password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _pf_user_login_passwordKeyTyped(evt);
+            }
+        });
 
         _lb_user_login_qrCode.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         _lb_user_login_qrCode.setPreferredSize(new java.awt.Dimension(125, 125));
@@ -174,6 +211,16 @@ public class User_login extends javax.swing.JFrame {
 
         _tf_user_login_pin.setMinimumSize(new java.awt.Dimension(6, 40));
         _tf_user_login_pin.setPreferredSize(new java.awt.Dimension(59, 40));
+        _tf_user_login_pin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tf_user_login_pinMouseClicked(evt);
+            }
+        });
+        _tf_user_login_pin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_user_login_pinKeyTyped(evt);
+            }
+        });
 
         _lb_user_login_login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_user_login_login.setForeground(new java.awt.Color(255, 255, 255));
@@ -401,6 +448,83 @@ public class User_login extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event__lb_user_login_loginMouseClicked
+
+    private void _tf_user_loging_userNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameMouseClicked
+        
+     setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName,"User Name");
+        
+    }//GEN-LAST:event__tf_user_loging_userNameMouseClicked
+
+    int i=0;
+    private void _tf_user_loging_userNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameKeyTyped
+        
+        if (i<1) {
+            if (!(_tf_user_loging_userName.getText().isEmpty())) {
+                setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName, "User Name");
+                i++;
+            }
+        }
+        
+    }//GEN-LAST:event__tf_user_loging_userNameKeyTyped
+
+    private void _tf_user_loging_userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameActionPerformed
+       
+        _pf_user_login_password.grabFocus();
+        
+    }//GEN-LAST:event__tf_user_loging_userNameActionPerformed
+
+    private void _pf_user_login_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__pf_user_login_passwordMouseClicked
+        
+        setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password,_lb_user_login_password,"Password");
+        _pf_user_login_password.setEchoChar('*');
+        
+    }//GEN-LAST:event__pf_user_login_passwordMouseClicked
+      int x=0;
+    private void _pf_user_login_passwordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__pf_user_login_passwordKeyTyped
+       
+        
+        
+        if (x<1) {
+           
+            if (!(_pf_user_login_password.getText().isEmpty())) {
+               
+                setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password, _lb_user_login_password,"Password");
+                 _pf_user_login_password.setEchoChar('*');
+                x++;
+            }
+            
+ 
+        }
+    }//GEN-LAST:event__pf_user_login_passwordKeyTyped
+
+    private void _tf_user_login_pinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_user_login_pinMouseClicked
+        
+        setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_login_pin, _lb_user_login_pin,"Enter PIN Code");
+        
+    }//GEN-LAST:event__tf_user_login_pinMouseClicked
+
+    int y=0;
+    private void _tf_user_login_pinKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_user_login_pinKeyTyped
+        
+       char c=evt.getKeyChar();
+        if (_tf_user_login_pin.getText().length()==4 || Character.isLetter(c)) {
+            System.out.println("awa");
+            evt.consume();
+        }
+        if (y<1) {
+            if (!(_tf_user_login_pin.getText().isEmpty())) {
+                setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_login_pin, _lb_user_login_pin,"Enter PIN Code");
+                y++;
+            }
+        }
+        
+    }//GEN-LAST:event__tf_user_login_pinKeyTyped
+
+    private void _pf_user_login_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__pf_user_login_passwordActionPerformed
+        
+        _tf_user_login_pin.grabFocus();
+        
+    }//GEN-LAST:event__pf_user_login_passwordActionPerformed
 
     /**
      * @param args the command line arguments
