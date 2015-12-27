@@ -12,22 +12,15 @@ package com.fourgenius.www.qrGenerator;
 import java.util.Random;
 
 /**
- * Generate 10 random integers in the range 0..99.
+ * Generate random integers
  */
 public class Random_Integer_Genarate {
 
-    int randomInt;
-
-    public int getRandomInt() {
-        return randomInt;
-    }
-
-    
+    private int randomInt;
 
     public String RandomCodePIN() {
         log("========================================");
 
-        
         Random randomGenerator = new Random();
         for (int idx = 1; idx <= 1; ++idx) {
             randomInt = randomGenerator.nextInt(10000);
@@ -40,6 +33,10 @@ public class Random_Integer_Genarate {
 
     private static void log(String aMessage) {
         System.out.println(aMessage);
+    }
+
+    public int getRandomInt() {
+        return randomInt;
     }
 
 //    public void dd(){
