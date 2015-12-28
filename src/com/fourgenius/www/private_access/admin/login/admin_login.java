@@ -11,7 +11,7 @@ package com.fourgenius.www.private_access.admin.login;
  */
 public class admin_login extends javax.swing.JFrame {
 
-    /**
+    /*
      * Creates new form admin_login
      */
     public admin_login() {
@@ -149,7 +149,7 @@ public class admin_login extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
