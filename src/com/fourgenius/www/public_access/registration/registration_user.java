@@ -44,15 +44,16 @@ public class registration_user extends javax.swing.JPanel {
         _tf_registration_user_personal_contact_land = new javax.swing.JTextField();
         _lb_registration_user_personal_contact_email = new javax.swing.JLabel();
         _tf_registration_user_personal_contact_email = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(21, 21, 21));
         setMinimumSize(new java.awt.Dimension(1366, 718));
         setPreferredSize(new java.awt.Dimension(1366, 718));
 
-        _pl_registration_user_personal.setBackground(new java.awt.Color(0, 204, 204));
+        _pl_registration_user_personal.setBackground(new java.awt.Color(52, 152, 219));
         _pl_registration_user_personal.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Personal", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        _pl_registration_user_personal_name.setBackground(new java.awt.Color(0, 204, 204));
+        _pl_registration_user_personal_name.setBackground(new java.awt.Color(52, 152, 219));
         _pl_registration_user_personal_name.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
         _lb_registration_user_personal_name_firstName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -93,7 +94,7 @@ public class registration_user extends javax.swing.JPanel {
                             .addComponent(_lb_registration_user_personal_name_firstName)
                             .addComponent(_lb_registration_user_personal_name_secondName)
                             .addComponent(_lb_registration_user_personal_name_lastName))
-                        .addGap(0, 161, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(_tf_registration_user_personal_name_firstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_tf_registration_user_personal_name_secondName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_tf_registration_user_personal_name_lastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -121,7 +122,7 @@ public class registration_user extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        _pl_registration_user_personal_contact.setBackground(new java.awt.Color(0, 204, 204));
+        _pl_registration_user_personal_contact.setBackground(new java.awt.Color(52, 152, 219));
         _pl_registration_user_personal_contact.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contact", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
         _lb_registration_user_personal_contact_mobile.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -198,6 +199,22 @@ public class registration_user extends javax.swing.JPanel {
                 .addGap(136, 136, 136))
         );
 
+        jPanel1.setBackground(new java.awt.Color(117, 117, 117));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Preview", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255)))); // NOI18N
+        jPanel1.setMinimumSize(new java.awt.Dimension(525, 685));
+        jPanel1.setPreferredSize(new java.awt.Dimension(525, 685));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 513, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 659, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -205,13 +222,19 @@ public class registration_user extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(_pl_registration_user_personal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(782, 782, 782))
+                .addGap(405, 405, 405)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(_pl_registration_user_personal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(_pl_registration_user_personal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -235,5 +258,6 @@ public class registration_user extends javax.swing.JPanel {
     private javax.swing.JTextField _tf_registration_user_personal_name_lastName;
     private javax.swing.JTextField _tf_registration_user_personal_name_secondName;
     private javax.swing.JTextField _tf_registration_user_personal_name_sirName;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
