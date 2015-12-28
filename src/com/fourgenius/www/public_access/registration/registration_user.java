@@ -45,7 +45,9 @@ public class registration_user extends javax.swing.JPanel {
         _lb_registration_user_personal_contact_email = new javax.swing.JLabel();
         _tf_registration_user_personal_contact_email = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(0, 204, 204));
+        setBackground(new java.awt.Color(21, 21, 21));
+        setMinimumSize(new java.awt.Dimension(1366, 718));
+        setPreferredSize(new java.awt.Dimension(1366, 718));
 
         _pl_registration_user_personal.setBackground(new java.awt.Color(0, 204, 204));
         _pl_registration_user_personal.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Personal", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
