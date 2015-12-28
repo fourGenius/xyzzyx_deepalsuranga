@@ -10,6 +10,7 @@ import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import com.fourgenius.www.qrGenerator.QR_Code_Gen;
 import com.fourgenius.www.private_access.admin.method.move_text;
+import xyzzyx_project.main_frame;
 /**
  *
  * @author deepal_suranga
@@ -461,10 +462,9 @@ public class User_login extends javax.swing.JFrame {
 
     private void _lb_user_login_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_loginMouseClicked
         
-        if (rootPaneCheckingEnabled) {
-            
-        }
-        
+        main_frame mainF=new main_frame();
+        mainF.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event__lb_user_login_loginMouseClicked
 
     private void _tf_user_loging_userNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameMouseClicked

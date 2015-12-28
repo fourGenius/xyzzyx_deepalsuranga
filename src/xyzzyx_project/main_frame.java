@@ -5,9 +5,11 @@
  */
 package xyzzyx_project;
 
+import com.fourgenius.www.public_access.registration.registration_student;
+
 /**
  *
- * @author thilina
+ * @author thilina_deepal
  */
 public class main_frame extends javax.swing.JFrame {
 
@@ -28,8 +30,9 @@ public class main_frame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        main_panel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,36 +44,38 @@ public class main_frame extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(66, 66, 66));
-        jPanel2.setMinimumSize(new java.awt.Dimension(1366, 718));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1366, 718));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2210, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 718, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 53, 2210, 668));
+        main_panel.setBackground(new java.awt.Color(66, 66, 66));
+        main_panel.setMinimumSize(new java.awt.Dimension(1366, 718));
+        main_panel.setPreferredSize(new java.awt.Dimension(1366, 718));
+        main_panel.setLayout(new java.awt.CardLayout());
+        jPanel1.add(main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 53, 2210, 668));
 
         jPanel3.setBackground(new java.awt.Color(0, 150, 136));
         jPanel3.setMinimumSize(new java.awt.Dimension(1366, 50));
         jPanel3.setPreferredSize(new java.awt.Dimension(1366, 50));
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(876, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(417, 417, 417))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -98,6 +103,19 @@ public class main_frame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        registration_student stu = new registration_student();
+
+        main_panel.removeAll();
+        System.out.println("ok!");
+        main_panel.repaint();
+        main_panel.revalidate();
+        main_panel.add(stu);
+        main_panel.repaint();
+        main_panel.revalidate();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -109,7 +127,7 @@ public class main_frame extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -134,9 +152,10 @@ public class main_frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel main_panel;
     // End of variables declaration//GEN-END:variables
 }
