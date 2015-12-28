@@ -11,7 +11,7 @@ package com.fourgenius.www.public_access.registration;
  */
 public class registration_user extends javax.swing.JPanel {
 
-    /**
+    /*
      * Creates new form registration_user
      */
     public registration_user() {
@@ -181,19 +181,19 @@ public class registration_user extends javax.swing.JPanel {
         _pl_registration_user_personalLayout.setHorizontalGroup(
             _pl_registration_user_personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_user_personalLayout.createSequentialGroup()
-                .addGroup(_pl_registration_user_personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(_pl_registration_user_personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(_pl_registration_user_personal_contact, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_pl_registration_user_personal_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addGap(287, 287, 287))
         );
         _pl_registration_user_personalLayout.setVerticalGroup(
             _pl_registration_user_personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_user_personalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(_pl_registration_user_personal_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_pl_registration_user_personal_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_pl_registration_user_personal_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addComponent(_pl_registration_user_personal_contact, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(136, 136, 136))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -202,8 +202,8 @@ public class registration_user extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(_pl_registration_user_personal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(782, Short.MAX_VALUE))
+                .addComponent(_pl_registration_user_personal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(782, 782, 782))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

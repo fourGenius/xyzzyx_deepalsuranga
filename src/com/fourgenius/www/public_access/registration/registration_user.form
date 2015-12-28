@@ -22,9 +22,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="_pl_registration_user_personal" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="782" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="_pl_registration_user_personal" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="782" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -58,22 +58,22 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="_pl_registration_user_personal_contact" max="32767" attributes="0"/>
                       <Component id="_pl_registration_user_personal_name" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="287" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="_pl_registration_user_personal_name" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="_pl_registration_user_personal_contact" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="136" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="_pl_registration_user_personal_name" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="_pl_registration_user_personal_contact" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
