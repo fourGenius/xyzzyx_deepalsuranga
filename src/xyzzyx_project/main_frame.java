@@ -6,6 +6,7 @@
 package xyzzyx_project;
 
 import com.fourgenius.www.public_access.registration.registration_student;
+import javax.swing.UIManager;
 
 /**
  *
@@ -18,6 +19,8 @@ public class main_frame extends javax.swing.JFrame {
      */
     public main_frame() {
         initComponents();
+        
+        //UIManager.setLookAndFeel(new javax.swing.LookAndFeel);
     }
 
     /**

@@ -24,33 +24,8 @@
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
   </AuxValues>
 
-  <Layout>
-    <DimensionLayout dim="0">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="_pl_registration_user_personal" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="405" max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-      </Group>
-    </DimensionLayout>
-    <DimensionLayout dim="1">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="_pl_registration_user_personal" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-      </Group>
-    </DimensionLayout>
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+    <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="_pl_registration_user_personal">
@@ -67,27 +42,32 @@
           </Border>
         </Property>
       </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="10" y="11" width="-1" height="696"/>
+        </Constraint>
+      </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="_pl_registration_user_personal_contact" max="32767" attributes="0"/>
                       <Component id="_pl_registration_user_personal_name" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
+                  <EmptySpace pref="488" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="_pl_registration_user_personal_name" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="_pl_registration_user_personal_contact" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="_pl_registration_user_personal_name" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="_pl_registration_user_personal_contact" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -111,31 +91,19 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="_tf_registration_user_personal_name_sirName" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="_lb_registration_user_personal_name_sirName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="_lb_registration_user_personal_name_firstName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="_lb_registration_user_personal_name_secondName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="_lb_registration_user_personal_name_lastName" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="_tf_registration_user_personal_name_firstName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="_tf_registration_user_personal_name_secondName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="_tf_registration_user_personal_name_lastName" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="_tf_registration_user_personal_name_lastName" max="32767" attributes="0"/>
+                  <Component id="_tf_registration_user_personal_name_secondName" alignment="0" max="32767" attributes="0"/>
+                  <Component id="_tf_registration_user_personal_name_firstName" alignment="0" max="32767" attributes="0"/>
+                  <Component id="_tf_registration_user_personal_name_sirName" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
+                  <Component id="_lb_registration_user_personal_name_sirName" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_lb_registration_user_personal_name_firstName" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_lb_registration_user_personal_name_secondName" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_lb_registration_user_personal_name_lastName" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_name_sirName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_tf_registration_user_personal_name_sirName" min="-2" max="-2" attributes="0"/>
@@ -151,7 +119,6 @@
                       <Component id="_lb_registration_user_personal_name_lastName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_tf_registration_user_personal_name_lastName" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -249,29 +216,17 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="_tf_registration_user_personal_contact_mobile" max="32767" attributes="0"/>
-                          <Component id="_tf_registration_user_personal_contact_land" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="_lb_registration_user_personal_contact_mobile" min="-2" max="-2" attributes="0"/>
-                                  <Component id="_lb_registration_user_personal_contact_land" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="_lb_registration_user_personal_contact_email" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="_tf_registration_user_personal_contact_email" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="_tf_registration_user_personal_contact_email" alignment="1" max="32767" attributes="0"/>
+                  <Component id="_tf_registration_user_personal_contact_land" alignment="0" max="32767" attributes="0"/>
+                  <Component id="_lb_registration_user_personal_contact_mobile" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_lb_registration_user_personal_contact_land" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_lb_registration_user_personal_contact_email" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_tf_registration_user_personal_contact_mobile" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_contact_mobile" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_tf_registration_user_personal_contact_mobile" min="-2" max="-2" attributes="0"/>
@@ -283,7 +238,6 @@
                       <Component id="_lb_registration_user_personal_contact_email" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_tf_registration_user_personal_contact_email" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -347,7 +301,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="_pl_registration_user_preview">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="75" green="75" red="75" type="rgb"/>
@@ -364,6 +318,7 @@
             </TitledBorder>
           </Border>
         </Property>
+        <Property name="focusable" type="boolean" value="false"/>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[525, 685]"/>
         </Property>
@@ -371,6 +326,11 @@
           <Dimension value="[525, 685]"/>
         </Property>
       </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="830" y="10" width="-1" height="696"/>
+        </Constraint>
+      </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -380,7 +340,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="659" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="670" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
