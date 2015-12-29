@@ -54,37 +54,43 @@
                           <Component id="_lb_user_login_seperator" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="_lb_user_login_qrCode" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="_tf_user_login_pin" max="32767" attributes="0"/>
-                                              <Component id="_lb_user_login_pin" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="_pf_user_login_password" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="_lb_user_login_showPassword" min="-2" pref="30" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="_lb_user_login_forgotPassword" alignment="0" max="32767" attributes="0"/>
                                   <Component id="_lb_user_login_cancel" alignment="0" max="32767" attributes="0"/>
                                   <Component id="_lb_user_login_login" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="_lb_user_login_password" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_user_login_userName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_user_loging_userName" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="_lb_user_login_qrCode" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="_tf_user_login_pin" max="32767" attributes="0"/>
+                                                      <Component id="_lb_user_login_pin" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Component id="_pf_user_login_password" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="_lb_user_login_showPassword" min="-2" pref="30" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="_lb_user_login_password" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="_lb_user_login_userName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="_tf_user_loging_userName" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="_lb_user_login_showPassword1" min="-2" pref="30" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="_lb_user_login_showPassword1" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" pref="212" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="233" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jPanel1" max="32767" attributes="0"/>
                   </Group>
@@ -101,30 +107,35 @@
                           <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="_lb_user_login_userName" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="_tf_user_loging_userName" min="-2" max="-2" attributes="0"/>
-                                      <Component id="_lb_user_login_showPassword1" min="-2" pref="40" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="_lb_user_login_password" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="_pf_user_login_password" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="_lb_user_login_showPassword" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
+                                          <Component id="_lb_user_login_userName" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="_lb_user_login_qrCode" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="_lb_user_login_pin" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="_tf_user_loging_userName" min="-2" max="-2" attributes="0"/>
+                                              <Component id="_lb_user_login_showPassword1" min="-2" pref="40" max="-2" attributes="0"/>
+                                          </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="_tf_user_login_pin" min="-2" max="-2" attributes="0"/>
+                                          <Component id="_lb_user_login_password" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="_pf_user_login_password" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="_lb_user_login_showPassword" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="_lb_user_login_qrCode" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                                  <Component id="_lb_user_login_pin" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="_tf_user_login_pin" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
+                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="_lb_user_login_login" min="-2" max="-2" attributes="0"/>
@@ -463,6 +474,14 @@
             </DimensionLayout>
           </Layout>
         </Container>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images/account_circle_white_192x192.png"/>
+            </Property>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
