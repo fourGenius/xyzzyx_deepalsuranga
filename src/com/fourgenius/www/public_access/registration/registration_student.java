@@ -55,7 +55,7 @@ public class registration_student extends javax.swing.JPanel {
         _lb_registration_user_personalInformations_idInformations_age = new javax.swing.JLabel();
         _tf_registration_user_personalInformations_idInformations_age = new javax.swing.JTextField();
         _lb_registration_user_personalInformations_idInformations_dateOfBirth = new javax.swing.JLabel();
-        _dc_registration_user_personalInformations_idInformations_dateOfBirth = new datechooser.beans.DateChooserCombo();
+        _dc_registration_user_personalInformations_idInformations_dateOfBirth = new com.toedter.calendar.JDateChooser();
         _tf_registration_user_personalInformations_registerStudent = new javax.swing.JButton();
         _tf_registration_user_personalInformations_clear = new javax.swing.JButton();
         _pl_registration_user_personalInformations_images = new javax.swing.JPanel();
@@ -298,6 +298,8 @@ public class registration_student extends javax.swing.JPanel {
         _lb_registration_user_personalInformations_idInformations_dateOfBirth.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_user_personalInformations_idInformations_dateOfBirth.setText("Date Of Birth");
 
+        _dc_registration_user_personalInformations_idInformations_dateOfBirth.setPreferredSize(new java.awt.Dimension(91, 40));
+
         javax.swing.GroupLayout _pl_registration_user_personalInformations_idInformationsLayout = new javax.swing.GroupLayout(_pl_registration_user_personalInformations_idInformations);
         _pl_registration_user_personalInformations_idInformations.setLayout(_pl_registration_user_personalInformations_idInformationsLayout);
         _pl_registration_user_personalInformations_idInformationsLayout.setHorizontalGroup(
@@ -323,8 +325,8 @@ public class registration_student extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_user_personalInformations_idInformations_dateOfBirth)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_dc_registration_user_personalInformations_idInformations_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_dc_registration_user_personalInformations_idInformations_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(_lb_registration_user_personalInformations_idInformations_age)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_registration_user_personalInformations_idInformations_age, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -426,7 +428,7 @@ public class registration_student extends javax.swing.JPanel {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 659, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -498,7 +500,7 @@ public class registration_student extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton _bt_registration_user_personalInformations_images_brosweFile;
-    private datechooser.beans.DateChooserCombo _dc_registration_user_personalInformations_idInformations_dateOfBirth;
+    private com.toedter.calendar.JDateChooser _dc_registration_user_personalInformations_idInformations_dateOfBirth;
     private javax.swing.JLabel _lb_registration_user_personalInformations_address_1stLine;
     private javax.swing.JLabel _lb_registration_user_personalInformations_address_2ndLine;
     private javax.swing.JLabel _lb_registration_user_personalInformations_address_city;
