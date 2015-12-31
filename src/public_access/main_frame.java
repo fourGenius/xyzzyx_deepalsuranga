@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xyzzyx_project;
+package public_access;
 
 import com.fourgenius.www.public_access.registration.registration_student;
 import javax.swing.UIManager;
@@ -20,7 +20,6 @@ public class main_frame extends javax.swing.JFrame {
     public main_frame() {
         initComponents();
         
-        //UIManager.setLookAndFeel(new javax.swing.LookAndFeel);
     }
 
     /**
@@ -57,7 +56,7 @@ public class main_frame extends javax.swing.JFrame {
         jPanel3.setMinimumSize(new java.awt.Dimension(1366, 50));
         jPanel3.setPreferredSize(new java.awt.Dimension(1366, 50));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Student Registration");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -69,16 +68,13 @@ public class main_frame extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(876, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(417, 417, 417))
+                .addContainerGap(800, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(418, 418, 418))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(16, Short.MAX_VALUE))
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -102,7 +98,7 @@ public class main_frame extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
-        pack();
+        setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -150,6 +146,7 @@ public class main_frame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new main_frame().setVisible(true);
+
             }
         });
     }

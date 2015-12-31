@@ -10,7 +10,7 @@ import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import com.fourgenius.www.qrGenerator.QR_Code_Gen;
 import com.fourgenius.www.private_access.admin.method.move_text;
-import xyzzyx_project.main_frame;
+import public_access.main_frame;
 /**
  *
  * @author deepal_suranga
