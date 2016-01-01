@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 
-package com.fourgenius.www.private_access.admin.penel;
+package com.fourgenius.www.private_access.admin_menu;
 
 /**
  *
  * @author Dineth Jayasekera
  */
-public class NewJPanel extends javax.swing.JPanel {
+public class Jp_admin_mainManu extends javax.swing.JPanel {
 
     /**
      * Creates new form NewJPanel
      */
-    public NewJPanel() {
+    public Jp_admin_mainManu() {
         initComponents();
     }
 

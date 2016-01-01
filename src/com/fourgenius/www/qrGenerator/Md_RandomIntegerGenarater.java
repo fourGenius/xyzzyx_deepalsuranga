@@ -14,7 +14,7 @@ import java.util.Random;
 /**
  * Generate random integers
  */
-public class Random_Integer_Genarate {
+public class Md_RandomIntegerGenarater {
 
     private int randomInt;
 

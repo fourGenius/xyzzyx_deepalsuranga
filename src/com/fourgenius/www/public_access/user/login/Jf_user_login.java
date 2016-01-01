@@ -5,37 +5,46 @@
  */
 package com.fourgenius.www.public_access.user.login;
 
+import com.fourgenius.www.admin_BackEnd.Jf_admin_backend;
+import com.fourgenius.www.private_access.admin.login.Jf_admin_login;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
-import com.fourgenius.www.qrGenerator.QR_Code_Gen;
-import com.fourgenius.www.private_access.admin.method.move_text;
-import public_access.main_frame;
+import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
+import com.fourgenius.www.private_access.admin.method.Md_move_text;
+import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author deepal_suranga
  */
-public class User_login extends javax.swing.JFrame {
+public class Jf_user_login extends javax.swing.JFrame {
 
     /**
      * Creates new form user_login
      */
-    move_text setLableValuesNullAndAdd=new move_text();
-    public User_login() {
+    Md_move_text setLableValuesNullAndAdd = new Md_move_text();
+
+    public Jf_user_login() {
         initComponents();
-        
-        QR_Code_Gen code_Gen=new QR_Code_Gen();
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+        }
+
+        Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
         code_Gen.load_qr(_lb_user_login_qrCode);
-        
+
         setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_userName);
         setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_password);
         setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_pin);
         setLableValuesNullAndAdd._md_setTextFieldValues(_tf_user_loging_userName, "User Name");
         setLableValuesNullAndAdd._md_setPasswordFieldvalues(_pf_user_login_password, "Password");
-         _pf_user_login_password.setEchoChar((char)0);
+        _pf_user_login_password.setEchoChar((char) 0);
         setLableValuesNullAndAdd._md_setTextFieldValues(_tf_user_login_pin, "Enter PIN Code");
-        
-        
+
     }
 
     /**
@@ -194,7 +203,7 @@ public class User_login extends javax.swing.JFrame {
         _lb_user_login_qrCode.setPreferredSize(new java.awt.Dimension(125, 125));
 
         _lb_user_login_showPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        _lb_user_login_showPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/ic_remove_red_eye_white_18dp_1x.png"))); // NOI18N
+        _lb_user_login_showPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_ShowPassword.png"))); // NOI18N
         _lb_user_login_showPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _lb_user_login_showPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -226,7 +235,7 @@ public class User_login extends javax.swing.JFrame {
         _lb_user_login_login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_user_login_login.setForeground(new java.awt.Color(255, 255, 255));
         _lb_user_login_login.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        _lb_user_login_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/buton.png"))); // NOI18N
+        _lb_user_login_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_BlueButton.png"))); // NOI18N
         _lb_user_login_login.setText("Login");
         _lb_user_login_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _lb_user_login_login.setFocusable(false);
@@ -240,7 +249,7 @@ public class User_login extends javax.swing.JFrame {
         _lb_user_login_cancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_user_login_cancel.setForeground(new java.awt.Color(255, 255, 255));
         _lb_user_login_cancel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        _lb_user_login_cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/buton.png"))); // NOI18N
+        _lb_user_login_cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_BlueButton.png"))); // NOI18N
         _lb_user_login_cancel.setText("Cancel");
         _lb_user_login_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _lb_user_login_cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -250,10 +259,16 @@ public class User_login extends javax.swing.JFrame {
             }
         });
 
-        _lb_user_login_seperator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/Saperate_Bar.png"))); // NOI18N
+        _lb_user_login_seperator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_SaperateBar.png"))); // NOI18N
 
-        _lb_user_login_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/Ramani Accademy 600 x 200.png"))); // NOI18N
+        _lb_user_login_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_RamaniAccademyLogo600x200.png"))); // NOI18N
+        _lb_user_login_logo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _lb_user_login_logo.setPreferredSize(new java.awt.Dimension(200, 100));
+        _lb_user_login_logo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _lb_user_login_logoMouseClicked(evt);
+            }
+        });
 
         _lb_user_login_forgotPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_user_login_forgotPassword.setForeground(new java.awt.Color(255, 255, 255));
@@ -271,7 +286,7 @@ public class User_login extends javax.swing.JFrame {
         });
 
         _lb_user_login_showPassword1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        _lb_user_login_showPassword1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/ic_info_outline_white_18dp_1x.png"))); // NOI18N
+        _lb_user_login_showPassword1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_UsernameInformation.png"))); // NOI18N
         _lb_user_login_showPassword1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _lb_user_login_showPassword1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -296,7 +311,7 @@ public class User_login extends javax.swing.JFrame {
         );
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/account_circle_white_192x192.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_AccountCircleWhite192x192.png"))); // NOI18N
 
         javax.swing.GroupLayout MiddleLayout = new javax.swing.GroupLayout(Middle);
         Middle.setLayout(MiddleLayout);
@@ -396,71 +411,70 @@ public class User_login extends javax.swing.JFrame {
     private void _lb_user_login_closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseClicked
 
         System.exit(0);
-        
+
     }//GEN-LAST:event__lb_user_login_closeMouseClicked
-        Border boder=BorderFactory.createLineBorder(Color.WHITE,1);
+    Border boder = BorderFactory.createLineBorder(Color.WHITE, 1);
     private void _lb_user_login_closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseEntered
 
-        
         _lb_user_login_close.setBorder(boder);
         _lb_user_login_close.setBackground(Color.red);
-        
+
         _lb_user_login_minimize.setToolTipText("Close");
-        
+
     }//GEN-LAST:event__lb_user_login_closeMouseEntered
 
     private void _lb_user_login_closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseExited
         _lb_user_login_close.setBorder(null);
-        _lb_user_login_close.setBackground(new Color(0,150,136));
+        _lb_user_login_close.setBackground(new Color(0, 150, 136));
     }//GEN-LAST:event__lb_user_login_closeMouseExited
 
     private void _lb_user_login_minimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_minimizeMouseEntered
 
         _lb_user_login_minimize.setToolTipText("Minimize");
         _lb_user_login_minimize.setBorder(boder);
-        
+
     }//GEN-LAST:event__lb_user_login_minimizeMouseEntered
 
     private void _lb_user_login_minimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_minimizeMouseExited
 
         _lb_user_login_minimize.setBorder(null);
-        
+
     }//GEN-LAST:event__lb_user_login_minimizeMouseExited
 
     private void _lb_user_login_minimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_minimizeMouseClicked
 
-        this.setState(User_login.ICONIFIED);
-        
+        this.setState(Jf_user_login.ICONIFIED);
+
     }//GEN-LAST:event__lb_user_login_minimizeMouseClicked
 
     private void _lb_user_login_showPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_showPasswordMousePressed
-        
-        _pf_user_login_password.setEchoChar((char)0);
-        
+
+        _pf_user_login_password.setEchoChar((char) 0);
+
     }//GEN-LAST:event__lb_user_login_showPasswordMousePressed
 
     private void _lb_user_login_showPasswordMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_showPasswordMouseReleased
-        
+
         _pf_user_login_password.setEchoChar('*');
-        
+
     }//GEN-LAST:event__lb_user_login_showPasswordMouseReleased
 
     private void _lb_user_login_cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_cancelMouseClicked
-        
+
         System.exit(0);
-        
+
     }//GEN-LAST:event__lb_user_login_cancelMouseClicked
 
     private void _lb_user_login_forgotPasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_forgotPasswordMouseEntered
-       
-       _lb_user_login_forgotPassword.setText("<html><u>"+_lb_user_login_forgotPassword.getText()+"</u></html>");
-       
+
+        _lb_user_login_forgotPassword.setText("<html><u>" + _lb_user_login_forgotPassword.getText() + "</u></html>");
+
     }//GEN-LAST:event__lb_user_login_forgotPasswordMouseEntered
 
     private void _lb_user_login_forgotPasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_forgotPasswordMouseExited
 
         _lb_user_login_forgotPassword.setText("Forgot Password?");
-        
+
     }//GEN-LAST:event__lb_user_login_forgotPasswordMouseExited
 
     private void _lb_user_login_showPassword1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_showPassword1MousePressed
@@ -468,104 +482,108 @@ public class User_login extends javax.swing.JFrame {
     }//GEN-LAST:event__lb_user_login_showPassword1MousePressed
 
     private void _lb_user_login_showPassword1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_showPassword1MouseReleased
-        
+
     }//GEN-LAST:event__lb_user_login_showPassword1MouseReleased
 
     private void _lb_user_login_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_loginMouseClicked
-        
-        main_frame mainF=new main_frame();
+
+        Jf_UserMain mainF = new Jf_UserMain();
         mainF.setVisible(true);
         this.dispose();
     }//GEN-LAST:event__lb_user_login_loginMouseClicked
 
     private void _tf_user_loging_userNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameMouseClicked
-       
-     setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName,"User Name");
-        
+
+        setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName, "User Name");
+
     }//GEN-LAST:event__tf_user_loging_userNameMouseClicked
 
-    int i=0;
+    int i = 0;
     private void _tf_user_loging_userNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameKeyTyped
-        
-        if (i<1) {
+
+        if (i < 1) {
             if (!(_tf_user_loging_userName.getText().isEmpty())) {
                 setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName, "User Name");
                 i++;
             }
         }
-        
+
     }//GEN-LAST:event__tf_user_loging_userNameKeyTyped
 
     private void _tf_user_loging_userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameActionPerformed
-       
+
         _pf_user_login_password.grabFocus();
-        
+
     }//GEN-LAST:event__tf_user_loging_userNameActionPerformed
 
     private void _pf_user_login_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__pf_user_login_passwordMouseClicked
-        
-        setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password,_lb_user_login_password,"Password");
+
+        setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password, _lb_user_login_password, "Password");
         _pf_user_login_password.setEchoChar('*');
-        
+
     }//GEN-LAST:event__pf_user_login_passwordMouseClicked
-      int x=0;
+    int x = 0;
     private void _pf_user_login_passwordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__pf_user_login_passwordKeyTyped
-       
-        
-        
-        if (x<1) {
-           
+
+        if (x < 1) {
+
             if (!(_pf_user_login_password.getText().isEmpty())) {
-               
-                setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password, _lb_user_login_password,"Password");
-                 _pf_user_login_password.setEchoChar('*');
+
+                setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password, _lb_user_login_password, "Password");
+                _pf_user_login_password.setEchoChar('*');
                 x++;
             }
-            
- 
+
         }
     }//GEN-LAST:event__pf_user_login_passwordKeyTyped
 
     private void _tf_user_login_pinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_user_login_pinMouseClicked
-        
-        setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_login_pin, _lb_user_login_pin,"Enter PIN Code");
-        
+
+        setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_login_pin, _lb_user_login_pin, "Enter PIN Code");
+
     }//GEN-LAST:event__tf_user_login_pinMouseClicked
 
-    int y=0;
+    int y = 0;
     private void _tf_user_login_pinKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_user_login_pinKeyTyped
-        
-       char c=evt.getKeyChar();
-        if (_tf_user_login_pin.getText().length()==4 || Character.isLetter(c)) {
+
+        char c = evt.getKeyChar();
+        if (_tf_user_login_pin.getText().length() == 4 || Character.isLetter(c)) {
             System.out.println("awa");
             evt.consume();
         }
-        if (y<1) {
+        if (y < 1) {
             if (!(_tf_user_login_pin.getText().isEmpty())) {
-                setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_login_pin, _lb_user_login_pin,"Enter PIN Code");
+                setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_login_pin, _lb_user_login_pin, "Enter PIN Code");
                 y++;
             }
         }
-        
+
     }//GEN-LAST:event__tf_user_login_pinKeyTyped
 
     private void _pf_user_login_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__pf_user_login_passwordActionPerformed
-        
+
         _tf_user_login_pin.grabFocus();
-        
+
     }//GEN-LAST:event__pf_user_login_passwordActionPerformed
 
     private void _lb_user_login_closeMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseMoved
+
         
-        
-        
+
     }//GEN-LAST:event__lb_user_login_closeMouseMoved
 
     private void _lb_user_login_minimizeMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_minimizeMouseMoved
-        
-        
-        
+
+
     }//GEN-LAST:event__lb_user_login_minimizeMouseMoved
+
+    private void _lb_user_login_logoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_logoMouseClicked
+
+        Jf_admin_login jf_admin_login=new Jf_admin_login();
+        jf_admin_login.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event__lb_user_login_logoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -578,20 +596,24 @@ public class User_login extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(User_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_user_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(User_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_user_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(User_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_user_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(User_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_user_login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -600,7 +622,7 @@ public class User_login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new User_login().setVisible(true);
+                new Jf_user_login().setVisible(true);
             }
         });
     }

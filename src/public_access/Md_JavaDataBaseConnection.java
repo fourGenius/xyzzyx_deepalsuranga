@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /*
  @author : deepal_suranga
  */
-public class JavaDataBaseConnection {
+public class Md_JavaDataBaseConnection {
 
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3307/g4_2015_java_se_management_ramanifernando";

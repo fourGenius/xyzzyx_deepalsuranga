@@ -26,7 +26,7 @@ import net.glxn.qrgen.image.ImageType;
  *
  * @author Deepal_Suranga
  */
-public class QR_Code_Gen {
+public class Md_QrCodeGenarater {
 
     private String set_qr_label;
     private String path = "C:\\FourGenius\\FourGenius.PNG";
@@ -41,7 +41,7 @@ public class QR_Code_Gen {
         }
 
         ///// code make
-        Random_Integer_Genarate random_Integer_Genarate = new Random_Integer_Genarate();
+        Md_RandomIntegerGenarater random_Integer_Genarate = new Md_RandomIntegerGenarater();
         String random_pin = random_Integer_Genarate.RandomCodePIN();
 
         //String name=random_pin.g

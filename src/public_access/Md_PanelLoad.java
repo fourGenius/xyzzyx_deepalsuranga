@@ -11,9 +11,9 @@ import javax.swing.JPanel;
  *
  * @author deepalsuranga
  */
-public class Panel_loading {
+public class Md_PanelLoad {
 
-    public Panel_loading(JPanel removePanel, JPanel addPanel) {
+    public Md_PanelLoad(JPanel removePanel, JPanel addPanel) {
         removePanel.removeAll();
         removePanel.repaint();
         removePanel.revalidate();

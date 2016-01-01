@@ -9,7 +9,7 @@ package public_access;
  *
  * @author thilina
  */
-public class Xyzzyx_project {
+public class Main {
 
     /**
      * @param args the command line arguments
