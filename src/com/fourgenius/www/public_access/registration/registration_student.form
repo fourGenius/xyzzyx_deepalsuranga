@@ -9,10 +9,10 @@
       <Color blue="42" green="42" red="42" type="rgb"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1366, 718]"/>
+      <Dimension value="[1360, 718]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1366, 718]"/>
+      <Dimension value="[1360, 718]"/>
     </Property>
   </Properties>
   <AuxValues>

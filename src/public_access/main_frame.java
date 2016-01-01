@@ -19,7 +19,13 @@ public class main_frame extends javax.swing.JFrame {
      */
     public main_frame() {
         initComponents();
-        
+        try {
+            initComponents();
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (Exception ex) {
+
+        }
+
     }
 
     /**
@@ -35,26 +41,26 @@ public class main_frame extends javax.swing.JFrame {
         main_panel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(66, 66, 66));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1366, 768));
         jPanel1.setOpaque(false);
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         main_panel.setBackground(new java.awt.Color(66, 66, 66));
-        main_panel.setMinimumSize(new java.awt.Dimension(1366, 718));
-        main_panel.setPreferredSize(new java.awt.Dimension(1366, 718));
+        main_panel.setMinimumSize(new java.awt.Dimension(1368, 718));
+        main_panel.setPreferredSize(new java.awt.Dimension(1368, 718));
         main_panel.setLayout(new java.awt.CardLayout());
-        jPanel1.add(main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 53, 2210, 668));
+        jPanel1.add(main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 2200, 720));
 
         jPanel3.setBackground(new java.awt.Color(0, 150, 136));
-        jPanel3.setMinimumSize(new java.awt.Dimension(1366, 50));
-        jPanel3.setPreferredSize(new java.awt.Dimension(1366, 50));
+        jPanel3.setMinimumSize(new java.awt.Dimension(1368, 50));
+        jPanel3.setPreferredSize(new java.awt.Dimension(1368, 50));
 
         jButton1.setText("Student Registration");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +74,7 @@ public class main_frame extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(800, Short.MAX_VALUE)
+                .addContainerGap(802, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(418, 418, 418))
         );
@@ -79,23 +85,6 @@ public class main_frame extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(21, 21, 21));
-        jPanel4.setMinimumSize(new java.awt.Dimension(1366, 50));
-        jPanel4.setPreferredSize(new java.awt.Dimension(1366, 50));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, -1, -1));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 768));
 
         setSize(new java.awt.Dimension(1366, 768));
@@ -103,15 +92,14 @@ public class main_frame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        registration_student stu = new registration_student();
-
+        registration_student add_student = new registration_student();
         main_panel.removeAll();
-        System.out.println("ok!");
         main_panel.repaint();
         main_panel.revalidate();
-        main_panel.add(stu);
+        main_panel.add(add_student);
         main_panel.repaint();
         main_panel.revalidate();
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -155,7 +143,6 @@ public class main_frame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel main_panel;
     // End of variables declaration//GEN-END:variables
 }

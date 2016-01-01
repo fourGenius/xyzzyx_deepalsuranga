@@ -20,6 +20,7 @@ public class Panel_loading {
         removePanel.add(addPanel);
         removePanel.repaint();
         removePanel.revalidate();
+        addPanel.setBounds(0, 0, addPanel.getWidth(), addPanel.getHeight());
     }
 
 }

@@ -5,6 +5,8 @@
  */
 package com.fourgenius.www.public_access.registration;
 
+import javax.swing.UIManager;
+
 /**
  *
  * @author thilina
@@ -15,7 +17,9 @@ public class registration_student extends javax.swing.JPanel {
      * Creates new form registration_student
      */
     public registration_student() {
-        initComponents();
+        
+            initComponents();
+          
     }
 
     /**
@@ -66,8 +70,8 @@ public class registration_student extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(66, 66, 66));
         setForeground(new java.awt.Color(66, 66, 66));
-        setMinimumSize(new java.awt.Dimension(1366, 718));
-        setPreferredSize(new java.awt.Dimension(1366, 718));
+        setMinimumSize(new java.awt.Dimension(1360, 718));
+        setPreferredSize(new java.awt.Dimension(1360, 718));
 
         _pl_registration_user_personalInformations.setBackground(new java.awt.Color(0, 200, 83));
         _pl_registration_user_personalInformations.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Personal Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
