@@ -18,6 +18,6 @@ public class Main {
         
        //Name: employee_academic_user_info
          private String employee_academic_user_id,employee_academic_user_email,employee_academic_user_password,employee_academic_user_info_status;
-    
+    //Hello Java
     
 }
