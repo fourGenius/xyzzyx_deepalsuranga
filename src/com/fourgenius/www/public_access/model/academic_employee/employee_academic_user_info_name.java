@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.model.employee;
+package com.fourgenius.www.public_access.model.academic_employee;
 
 /**
  *
