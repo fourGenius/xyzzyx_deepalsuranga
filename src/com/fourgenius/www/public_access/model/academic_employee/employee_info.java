@@ -5,6 +5,10 @@
  */
 package com.fourgenius.www.public_access.model.academic_employee;
 
+import java.sql.Connection;
+import java.sql.Statement;
+import public_access.Md_JavaDataBaseConnection;
+
 /**
  *
  * @author Dineth Jayasekera
@@ -33,6 +37,14 @@ public class employee_info {
         this.employee_academic_user_email = employee_academic_user_email;
         this.employee_academic_user_password = employee_academic_user_password;
         this.employee_academic_user_info_status = employee_academic_user_info_status;
+        
+        try {
+            Connection UseConnection=Md_JavaDataBaseConnection.myConnection();
+            Statement UseStatement=UseConnection.createStatement();
+            UseStatement.execute("insert into employee_academic_user_info values('"+employee_academic_user_id+"')");
+        } catch (Exception e) {
+        }
+        
     }
 
     
