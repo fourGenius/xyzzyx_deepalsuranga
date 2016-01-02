@@ -527,7 +527,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         if (x < 1) {
 
-            if (!(_pf_user_login_password.getText().isEmpty())) {
+            if (!(_pf_user_login_password.getPassword().equals(""))) {
 
                 setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password, _lb_user_login_password, "Password");
                 _pf_user_login_password.setEchoChar('*');
@@ -568,7 +568,6 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     private void _lb_user_login_closeMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseMoved
 
-        
 
     }//GEN-LAST:event__lb_user_login_closeMouseMoved
 
@@ -579,7 +578,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     private void _lb_user_login_logoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_logoMouseClicked
 
-        Jf_admin_login jf_admin_login=new Jf_admin_login();
+        Jf_admin_login jf_admin_login = new Jf_admin_login();
         jf_admin_login.setVisible(true);
         this.dispose();
 
