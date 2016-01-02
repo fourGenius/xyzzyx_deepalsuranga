@@ -13,7 +13,7 @@ import javax.swing.JTextField;
  *
  * @author Dineth Jayasekera
  */
-public class move_text {
+public class Md_move_text {
 
     public void _md_textFiledToLabel(JTextField textField, JLabel lableName, String textFieldText) {
 
