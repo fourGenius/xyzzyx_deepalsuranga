@@ -5,6 +5,8 @@
  */
 package public_access;
 
+import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
+
 /**
  *
  * @author thilina
@@ -67,4 +69,11 @@ public class Main {
 //    ==Name:stu_user_status 
             private String stu_user_status_code,stu_user_status_name;
     
+            public static void main(String[] args) {
+                try {
+                    employee_academic_user_info c=new employee_academic_user_info("Dineth", "Dinethwa@gmail.com", "19971119", "Active");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+    }
 }

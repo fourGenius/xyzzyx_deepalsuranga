@@ -17,7 +17,7 @@ import public_access.Md_JavaDataBaseConnection;
  *
  * @author Dineth Jayasekera
  */
-public class employee_info {
+public class employee_academic_user_info {
     /*
      Table Names :
      employee_academic_user_info
@@ -45,7 +45,7 @@ public class employee_info {
 //            JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
 //        }
 //    }
-    public employee_info(String employee_academic_user_id, String employee_academic_user_email, String employee_academic_user_password, String employee_academic_user_info_status) {
+    public employee_academic_user_info(String employee_academic_user_id, String employee_academic_user_email, String employee_academic_user_password, String employee_academic_user_info_status) {
 
         this.employee_academic_user_id = employee_academic_user_id;
         this.employee_academic_user_email = employee_academic_user_email;
@@ -55,8 +55,9 @@ public class employee_info {
         try {
             Connection connection = Md_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeQuery("insert into employee_info values '" + employee_academic_user_id + "','" + employee_academic_user_email + "','" + employee_academic_user_password + "','" + employee_academic_user_info_status + "'");
+            statement.executeUpdate("insert into employee_academic_user_info(employee_academic_user_id,employee_academic_user_email,employee_academic_user_password,employee_academic_user_info_status) values ('" + employee_academic_user_id + "','" + employee_academic_user_email + "','" + employee_academic_user_password + "','" + employee_academic_user_info_status + "')");
         } catch (SQLException ex) {
+
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
         }
 
@@ -72,7 +73,7 @@ public class employee_info {
         try {
             Connection connection = Md_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeQuery("insert into employee_info values '" + employee_academic_user_id + "'");
+            statement.executeQuery("insert into employee_info(employee_academic_user_id) values '" + employee_academic_user_id + "'");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
         }
@@ -87,7 +88,7 @@ public class employee_info {
         try {
             Connection connection = Md_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeQuery("insert into employee_info values '" + employee_academic_user_email + "'");
+            statement.executeQuery("insert into employee_info(employee_academic_user_email) values '" + employee_academic_user_email + "'");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
         }
@@ -102,7 +103,7 @@ public class employee_info {
         try {
             Connection connection = Md_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeQuery("insert into employee_info values '" + employee_academic_user_id + "'");
+            statement.executeQuery("insert into employee_info(employee_academic_user_id) values '" + employee_academic_user_id + "'");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
         }
@@ -117,7 +118,7 @@ public class employee_info {
         try {
             Connection connection = Md_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeQuery("insert into employee_info values '" + employee_academic_user_info_status + "'");
+            statement.executeQuery("insert into employee_info(employee_academic_user_info_status) values '" + employee_academic_user_info_status + "'");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
         }

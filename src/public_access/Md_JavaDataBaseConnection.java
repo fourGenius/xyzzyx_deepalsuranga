@@ -14,7 +14,7 @@ public class Md_JavaDataBaseConnection {
 
     //  Database credentials
     static final String USER = "root";
-    static final String PASS = "WelComeDB1129";
+    static final String PASS = "";
 
     // public static void main(String[] args) {
     public static Connection myConnection() {
