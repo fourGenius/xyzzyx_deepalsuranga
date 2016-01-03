@@ -45,7 +45,6 @@ public class employee_info {
 //            JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
 //        }
 //    }
-
     public employee_info(String employee_academic_user_id, String employee_academic_user_email, String employee_academic_user_password, String employee_academic_user_info_status) {
 
         this.employee_academic_user_id = employee_academic_user_id;
@@ -85,7 +84,7 @@ public class employee_info {
 
     public void setEmployee_academic_user_email(String employee_academic_user_email) {
         this.employee_academic_user_email = employee_academic_user_email;
-         try {
+        try {
             Connection connection = Md_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info values '" + employee_academic_user_email + "'");
@@ -100,7 +99,7 @@ public class employee_info {
 
     public void setEmployee_academic_user_password(String employee_academic_user_password) {
         this.employee_academic_user_password = employee_academic_user_password;
-         try {
+        try {
             Connection connection = Md_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info values '" + employee_academic_user_id + "'");
@@ -115,6 +114,13 @@ public class employee_info {
 
     public void setEmployee_academic_user_info_status(String employee_academic_user_info_status) {
         this.employee_academic_user_info_status = employee_academic_user_info_status;
+        try {
+            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            statement.executeQuery("insert into employee_info values '" + employee_academic_user_info_status + "'");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
+        }
     }
 
 }
