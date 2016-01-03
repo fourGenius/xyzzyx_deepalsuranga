@@ -6,11 +6,11 @@
 package com.fourgenius.www.public_access.model.academic_employee;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.Spring.max;
 import public_access.Md_JavaDataBaseConnection;
 
 /**
@@ -35,7 +35,7 @@ public class employee_academic_user_info {
 
     //Name: employee_academic_user_info
     private String employee_academic_user_id, employee_academic_user_email, employee_academic_user_password, employee_academic_user_info_status;
-
+    public int max;
 //    void all_sql() {
 //        try {
 //            Connection connection = Md_JavaDataBaseConnection.myConnection();
@@ -45,6 +45,10 @@ public class employee_academic_user_info {
 //            JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
 //        }
 //    }
+
+    public employee_academic_user_info() {
+    }
+
     public employee_academic_user_info(String employee_academic_user_id, String employee_academic_user_email, String employee_academic_user_password, String employee_academic_user_info_status) {
 
         this.employee_academic_user_id = employee_academic_user_id;
@@ -63,9 +67,24 @@ public class employee_academic_user_info {
 
     }
 
-    public String getEmployee_academic_user_id() {
-        return employee_academic_user_id;
+    public String getEmployee_academic_user_id_s(String id) {
 
+        try {
+            Connection c = Md_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            try (ResultSet rs = s.executeQuery("SELECT * FROM employee_academic_user_info where employee_academic_user_id LIKE '%" + id + "%'")) {
+                while (rs.next()) {
+                    employee_academic_user_id = rs.getString("employee_academic_user_id");
+                    System.out.println(rs.getString("employee_academic_user_id"));
+                    max = rs.getInt("idemployee_academic_user");
+                    System.out.println("Max: " + max);
+
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return employee_academic_user_id;
     }
 
     public void setEmployee_academic_user_id(String employee_academic_user_id) {
