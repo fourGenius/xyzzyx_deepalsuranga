@@ -54,7 +54,6 @@ public class Jp_registration_user extends javax.swing.JPanel {
         _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
         _tf_registration_lecture_personalInformation_browsePhoto_browseFile1 = new javax.swing.JTextField();
         _bt_registration_lecture_personalInformation_browsePhoto_browser1 = new javax.swing.JButton();
-        _bt_registration_lecture_personalInformation_browsePhoto_openCamera1 = new javax.swing.JButton();
         _bt_registration_lecture_personalInformation_clear1 = new javax.swing.JButton();
         _bt_registration_lecture_personalInformation_registerLecture1 = new javax.swing.JButton();
         _pl_registration_user_preview = new javax.swing.JPanel();
@@ -183,18 +182,23 @@ public class Jp_registration_user extends javax.swing.JPanel {
 
         _tf_registration_lecture_personalInformation_browsePhoto_browseFile1.setText("Broswe File");
 
+        _bt_registration_lecture_personalInformation_browsePhoto_browser1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registration_lecture_personalInformation_browsePhoto_browser1.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registration_lecture_personalInformation_browsePhoto_browser1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"))); // NOI18N
         _bt_registration_lecture_personalInformation_browsePhoto_browser1.setText("Browse");
+        _bt_registration_lecture_personalInformation_browsePhoto_browser1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        _bt_registration_lecture_personalInformation_browsePhoto_openCamera1.setText("Open Camera");
-        _bt_registration_lecture_personalInformation_browsePhoto_openCamera1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_registration_lecture_personalInformation_browsePhoto_openCamera1ActionPerformed(evt);
-            }
-        });
-
+        _bt_registration_lecture_personalInformation_clear1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registration_lecture_personalInformation_clear1.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registration_lecture_personalInformation_clear1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"))); // NOI18N
         _bt_registration_lecture_personalInformation_clear1.setText("Clear");
+        _bt_registration_lecture_personalInformation_clear1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        _bt_registration_lecture_personalInformation_registerLecture1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registration_lecture_personalInformation_registerLecture1.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registration_lecture_personalInformation_registerLecture1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"))); // NOI18N
         _bt_registration_lecture_personalInformation_registerLecture1.setText("Register Lecture");
+        _bt_registration_lecture_personalInformation_registerLecture1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         _bt_registration_lecture_personalInformation_registerLecture1.setPreferredSize(new java.awt.Dimension(300, 50));
 
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_browsePhoto1Layout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_browsePhoto1);
@@ -203,12 +207,10 @@ public class Jp_registration_user extends javax.swing.JPanel {
             _pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(_bt_registration_lecture_personalInformation_browsePhoto_browser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(_bt_registration_lecture_personalInformation_browsePhoto_browser1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(_tf_registration_lecture_personalInformation_browsePhoto_browseFile1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_bt_registration_lecture_personalInformation_browsePhoto_openCamera1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(_bt_registration_lecture_personalInformation_registerLecture1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(_bt_registration_lecture_personalInformation_clear1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -219,19 +221,15 @@ public class Jp_registration_user extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, _pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
                         .addComponent(_tf_registration_lecture_personalInformation_browsePhoto_browseFile1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(_bt_registration_lecture_personalInformation_browsePhoto_browser1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, _pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
-                        .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(_bt_registration_lecture_personalInformation_browsePhoto_openCamera1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, _pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
-                                .addComponent(_bt_registration_lecture_personalInformation_registerLecture1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(_bt_registration_lecture_personalInformation_clear1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(_bt_registration_lecture_personalInformation_registerLecture1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(_bt_registration_lecture_personalInformation_clear1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout _pl_registration_user_personalLayout = new javax.swing.GroupLayout(_pl_registration_user_personal);
@@ -241,21 +239,21 @@ public class Jp_registration_user extends javax.swing.JPanel {
             .addGroup(_pl_registration_user_personalLayout.createSequentialGroup()
                 .addGroup(_pl_registration_user_personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(_pl_registration_user_personalLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(_pl_registration_user_personal_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(_pl_registration_user_personal_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                        .addComponent(_pl_registration_user_personal_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(_pl_registration_lecture_personalInformation_browsePhoto1, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE))
                 .addContainerGap())
         );
         _pl_registration_user_personalLayout.setVerticalGroup(
             _pl_registration_user_personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_user_personalLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addGroup(_pl_registration_user_personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(_pl_registration_user_personal_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(_pl_registration_user_personal_contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
                 .addComponent(_pl_registration_lecture_personalInformation_browsePhoto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -272,24 +270,19 @@ public class Jp_registration_user extends javax.swing.JPanel {
         _pl_registration_user_preview.setLayout(_pl_registration_user_previewLayout);
         _pl_registration_user_previewLayout.setHorizontalGroup(
             _pl_registration_user_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 513, Short.MAX_VALUE)
+            .addGap(0, 514, Short.MAX_VALUE)
         );
         _pl_registration_user_previewLayout.setVerticalGroup(
             _pl_registration_user_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 669, Short.MAX_VALUE)
         );
 
-        add(_pl_registration_user_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, -1, 695));
+        add(_pl_registration_user_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 526, 695));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void _bt_registration_lecture_personalInformation_browsePhoto_openCamera1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_browsePhoto_openCamera1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_browsePhoto_openCamera1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton _bt_registration_lecture_personalInformation_browsePhoto_browser1;
-    private javax.swing.JButton _bt_registration_lecture_personalInformation_browsePhoto_openCamera1;
     private javax.swing.JButton _bt_registration_lecture_personalInformation_clear1;
     private javax.swing.JButton _bt_registration_lecture_personalInformation_registerLecture1;
     private javax.swing.JLabel _lb_registration_user_personal_contact_email;
