@@ -375,6 +375,7 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
         _bt_registration_lecture_personalInformation_browsePhoto_browser.setForeground(new java.awt.Color(255, 255, 255));
         _bt_registration_lecture_personalInformation_browsePhoto_browser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
         _bt_registration_lecture_personalInformation_browsePhoto_browser.setText("Browse");
+        _bt_registration_lecture_personalInformation_browsePhoto_browser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_registration_lecture_personalInformation_browsePhoto_browser.setFocusPainted(false);
         _bt_registration_lecture_personalInformation_browsePhoto_browser.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         _bt_registration_lecture_personalInformation_browsePhoto_browser.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -396,6 +397,7 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
         _bt_registration_lecture_personalInformation_clear.setForeground(new java.awt.Color(255, 255, 255));
         _bt_registration_lecture_personalInformation_clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
         _bt_registration_lecture_personalInformation_clear.setText("Clear");
+        _bt_registration_lecture_personalInformation_clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_registration_lecture_personalInformation_clear.setFocusPainted(false);
         _bt_registration_lecture_personalInformation_clear.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         _bt_registration_lecture_personalInformation_clear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -417,6 +419,7 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
         _bt_registration_lecture_personalInformation_registerLecture.setForeground(new java.awt.Color(255, 255, 255));
         _bt_registration_lecture_personalInformation_registerLecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
         _bt_registration_lecture_personalInformation_registerLecture.setText("Register Lecture");
+        _bt_registration_lecture_personalInformation_registerLecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_registration_lecture_personalInformation_registerLecture.setFocusPainted(false);
         _bt_registration_lecture_personalInformation_registerLecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         _bt_registration_lecture_personalInformation_registerLecture.setPreferredSize(new java.awt.Dimension(300, 50));

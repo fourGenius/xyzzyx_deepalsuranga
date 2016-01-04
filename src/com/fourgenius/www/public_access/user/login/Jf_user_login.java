@@ -235,7 +235,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         _lb_user_login_seperator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_SaperateBar.png"))); // NOI18N
 
-        _lb_user_login_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_RamaniAccademyLogo600x200.png"))); // NOI18N
+        _lb_user_login_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_RamaniAccademyLogo600x200_1.png"))); // NOI18N
         _lb_user_login_logo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _lb_user_login_logo.setPreferredSize(new java.awt.Dimension(200, 100));
         _lb_user_login_logo.addMouseListener(new java.awt.event.MouseAdapter() {

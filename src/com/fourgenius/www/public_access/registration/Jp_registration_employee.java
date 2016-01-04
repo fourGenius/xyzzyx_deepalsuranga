@@ -69,9 +69,9 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
         _tf_registration_lecture_personalInformation_browsePhoto_browseFile1 = new javax.swing.JTextField();
-        _bt_registration_lecture_personalInformation_browsePhoto_browser = new javax.swing.JButton();
-        _bt_registration_lecture_personalInformation_clear = new javax.swing.JButton();
-        _bt_registration_lecture_personalInformation_registerLecture = new javax.swing.JButton();
+        _bt_registration_employee_personalInformation_browsePhoto_browser = new javax.swing.JButton();
+        _bt_registration_employee_personalInformation_clear = new javax.swing.JButton();
+        _bt_registration_employee_personalInformation_registerLecture = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(66, 66, 66));
@@ -300,67 +300,70 @@ public class Jp_registration_employee extends javax.swing.JPanel {
 
         _tf_registration_lecture_personalInformation_browsePhoto_browseFile1.setText("Broswe File");
 
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setText("Browse");
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setFocusPainted(false);
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setText("Browse");
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setFocusPainted(false);
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registration_employee_personalInformation_browsePhoto_browser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_browsePhoto_browserMouseEntered(evt);
+                _bt_registration_employee_personalInformation_browsePhoto_browserMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_browsePhoto_browserMouseExited(evt);
+                _bt_registration_employee_personalInformation_browsePhoto_browserMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_browsePhoto_browserMousePressed(evt);
+                _bt_registration_employee_personalInformation_browsePhoto_browserMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_browsePhoto_browserMouseReleased(evt);
+                _bt_registration_employee_personalInformation_browsePhoto_browserMouseReleased(evt);
             }
         });
 
-        _bt_registration_lecture_personalInformation_clear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registration_lecture_personalInformation_clear.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registration_lecture_personalInformation_clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        _bt_registration_lecture_personalInformation_clear.setText("Clear");
-        _bt_registration_lecture_personalInformation_clear.setFocusPainted(false);
-        _bt_registration_lecture_personalInformation_clear.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registration_lecture_personalInformation_clear.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_registration_employee_personalInformation_clear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registration_employee_personalInformation_clear.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registration_employee_personalInformation_clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_registration_employee_personalInformation_clear.setText("Clear");
+        _bt_registration_employee_personalInformation_clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registration_employee_personalInformation_clear.setFocusPainted(false);
+        _bt_registration_employee_personalInformation_clear.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registration_employee_personalInformation_clear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_clearMouseEntered(evt);
+                _bt_registration_employee_personalInformation_clearMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_clearMouseExited(evt);
+                _bt_registration_employee_personalInformation_clearMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_clearMousePressed(evt);
+                _bt_registration_employee_personalInformation_clearMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_clearMouseReleased(evt);
+                _bt_registration_employee_personalInformation_clearMouseReleased(evt);
             }
         });
 
-        _bt_registration_lecture_personalInformation_registerLecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registration_lecture_personalInformation_registerLecture.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registration_lecture_personalInformation_registerLecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        _bt_registration_lecture_personalInformation_registerLecture.setText("Register Lecture");
-        _bt_registration_lecture_personalInformation_registerLecture.setFocusPainted(false);
-        _bt_registration_lecture_personalInformation_registerLecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registration_lecture_personalInformation_registerLecture.setPreferredSize(new java.awt.Dimension(300, 50));
-        _bt_registration_lecture_personalInformation_registerLecture.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_registration_employee_personalInformation_registerLecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registration_employee_personalInformation_registerLecture.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registration_employee_personalInformation_registerLecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_registration_employee_personalInformation_registerLecture.setText("Register Lecture");
+        _bt_registration_employee_personalInformation_registerLecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registration_employee_personalInformation_registerLecture.setFocusPainted(false);
+        _bt_registration_employee_personalInformation_registerLecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registration_employee_personalInformation_registerLecture.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_registration_employee_personalInformation_registerLecture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureMouseEntered(evt);
+                _bt_registration_employee_personalInformation_registerLectureMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureMouseExited(evt);
+                _bt_registration_employee_personalInformation_registerLectureMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureMousePressed(evt);
+                _bt_registration_employee_personalInformation_registerLectureMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureMouseReleased(evt);
+                _bt_registration_employee_personalInformation_registerLectureMouseReleased(evt);
             }
         });
 
@@ -371,12 +374,12 @@ public class Jp_registration_employee extends javax.swing.JPanel {
             .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_bt_registration_lecture_personalInformation_browsePhoto_browser, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_registration_employee_personalInformation_browsePhoto_browser, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(_tf_registration_lecture_personalInformation_browsePhoto_browseFile1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_bt_registration_lecture_personalInformation_registerLecture, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_lecture_personalInformation_clear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_bt_registration_employee_personalInformation_registerLecture, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_registration_employee_personalInformation_clear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_browsePhoto1Layout.setVerticalGroup(
@@ -385,11 +388,11 @@ public class Jp_registration_employee extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(_tf_registration_lecture_personalInformation_browsePhoto_browseFile1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_lecture_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_bt_registration_employee_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_bt_registration_lecture_personalInformation_browsePhoto_browser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_lecture_personalInformation_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_bt_registration_employee_personalInformation_browsePhoto_browser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_registration_employee_personalInformation_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -439,59 +442,59 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 526, 695));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void _bt_registration_lecture_personalInformation_browsePhoto_browserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_browsePhoto_browserMouseEntered
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_browsePhoto_browserMouseEntered
+    private void _bt_registration_employee_personalInformation_browsePhoto_browserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_browsePhoto_browserMouseEntered
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setBorder(border);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_browsePhoto_browserMouseEntered
 
-    private void _bt_registration_lecture_personalInformation_browsePhoto_browserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_browsePhoto_browserMouseExited
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_browsePhoto_browserMouseExited
+    private void _bt_registration_employee_personalInformation_browsePhoto_browserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_browsePhoto_browserMouseExited
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setBorder(null);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_browsePhoto_browserMouseExited
 
-    private void _bt_registration_lecture_personalInformation_browsePhoto_browserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_browsePhoto_browserMousePressed
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_browsePhoto_browserMousePressed
+    private void _bt_registration_employee_personalInformation_browsePhoto_browserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_browsePhoto_browserMousePressed
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setBorder(null);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_browsePhoto_browserMousePressed
 
-    private void _bt_registration_lecture_personalInformation_browsePhoto_browserMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_browsePhoto_browserMouseReleased
-        _bt_registration_lecture_personalInformation_browsePhoto_browser.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_browsePhoto_browserMouseReleased
+    private void _bt_registration_employee_personalInformation_browsePhoto_browserMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_browsePhoto_browserMouseReleased
+        _bt_registration_employee_personalInformation_browsePhoto_browser.setBorder(border);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_browsePhoto_browserMouseReleased
 
-    private void _bt_registration_lecture_personalInformation_registerLectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureMouseEntered
-        _bt_registration_lecture_personalInformation_registerLecture.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureMouseEntered
+    private void _bt_registration_employee_personalInformation_registerLectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureMouseEntered
+        _bt_registration_employee_personalInformation_registerLecture.setBorder(border);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureMouseEntered
 
-    private void _bt_registration_lecture_personalInformation_registerLectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureMouseExited
-        _bt_registration_lecture_personalInformation_registerLecture.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureMouseExited
+    private void _bt_registration_employee_personalInformation_registerLectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureMouseExited
+        _bt_registration_employee_personalInformation_registerLecture.setBorder(null);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureMouseExited
 
-    private void _bt_registration_lecture_personalInformation_registerLectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureMousePressed
-        _bt_registration_lecture_personalInformation_registerLecture.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureMousePressed
+    private void _bt_registration_employee_personalInformation_registerLectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureMousePressed
+        _bt_registration_employee_personalInformation_registerLecture.setBorder(null);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureMousePressed
 
-    private void _bt_registration_lecture_personalInformation_registerLectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureMouseReleased
-        _bt_registration_lecture_personalInformation_registerLecture.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureMouseReleased
+    private void _bt_registration_employee_personalInformation_registerLectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureMouseReleased
+        _bt_registration_employee_personalInformation_registerLecture.setBorder(border);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureMouseReleased
 
-    private void _bt_registration_lecture_personalInformation_clearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_clearMouseEntered
-        _bt_registration_lecture_personalInformation_clear.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_clearMouseEntered
+    private void _bt_registration_employee_personalInformation_clearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_clearMouseEntered
+        _bt_registration_employee_personalInformation_clear.setBorder(border);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_clearMouseEntered
 
-    private void _bt_registration_lecture_personalInformation_clearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_clearMouseExited
-        _bt_registration_lecture_personalInformation_clear.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_clearMouseExited
+    private void _bt_registration_employee_personalInformation_clearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_clearMouseExited
+        _bt_registration_employee_personalInformation_clear.setBorder(null);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_clearMouseExited
 
-    private void _bt_registration_lecture_personalInformation_clearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_clearMousePressed
-        _bt_registration_lecture_personalInformation_clear.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_clearMousePressed
+    private void _bt_registration_employee_personalInformation_clearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_clearMousePressed
+        _bt_registration_employee_personalInformation_clear.setBorder(null);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_clearMousePressed
 
-    private void _bt_registration_lecture_personalInformation_clearMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_clearMouseReleased
-        _bt_registration_lecture_personalInformation_clear.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_clearMouseReleased
+    private void _bt_registration_employee_personalInformation_clearMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_clearMouseReleased
+        _bt_registration_employee_personalInformation_clear.setBorder(border);
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_clearMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton _bt_registration_lecture_personalInformation_browsePhoto_browser;
-    private javax.swing.JButton _bt_registration_lecture_personalInformation_clear;
-    private javax.swing.JButton _bt_registration_lecture_personalInformation_registerLecture;
+    private javax.swing.JButton _bt_registration_employee_personalInformation_browsePhoto_browser;
+    private javax.swing.JButton _bt_registration_employee_personalInformation_clear;
+    private javax.swing.JButton _bt_registration_employee_personalInformation_registerLecture;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_browsePhoto1;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_browsePhoto_browseFile1;
     private javax.swing.JLabel jLabel1;

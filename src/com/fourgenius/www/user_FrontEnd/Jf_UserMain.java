@@ -10,7 +10,11 @@ import com.fourgenius.www.public_access.registration.Jp_registration_lecture;
 import com.fourgenius.www.public_access.registration.Jp_registration_student;
 import com.fourgenius.www.public_access.registration.Jp_registration_user;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javax.swing.border.Border;
 
 /**
  *
@@ -18,6 +22,7 @@ import javax.swing.UIManager;
  */
 public class Jf_UserMain extends javax.swing.JFrame {
 
+    Border border=BorderFactory.createLineBorder(Color.white, 1);
     /**
      * Creates new form main_frame
      */
@@ -43,10 +48,10 @@ public class Jf_UserMain extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        _bt_UserMain_StudentRegistration = new javax.swing.JButton();
+        _bt_UserMain_LectureRegistration = new javax.swing.JButton();
+        _bt_UserMain_EmployeeRegistration = new javax.swing.JButton();
+        _bt_UserMain_payments = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         main_panel = new javax.swing.JPanel();
 
@@ -64,46 +69,124 @@ public class Jf_UserMain extends javax.swing.JFrame {
         jPanel3.setMinimumSize(new java.awt.Dimension(1368, 50));
         jPanel3.setPreferredSize(new java.awt.Dimension(1368, 50));
 
-        jButton1.setText("Student Registration");
-        jButton1.setAutoscrolls(true);
-        jButton1.setMaximumSize(new java.awt.Dimension(200, 50));
-        jButton1.setMinimumSize(new java.awt.Dimension(200, 50));
-        jButton1.setPreferredSize(new java.awt.Dimension(200, 50));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        _bt_UserMain_StudentRegistration.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_UserMain_StudentRegistration.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_UserMain_StudentRegistration.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightBlue_200x50.png"))); // NOI18N
+        _bt_UserMain_StudentRegistration.setText("Student Registration");
+        _bt_UserMain_StudentRegistration.setAutoscrolls(true);
+        _bt_UserMain_StudentRegistration.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_UserMain_StudentRegistration.setFocusPainted(false);
+        _bt_UserMain_StudentRegistration.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_UserMain_StudentRegistration.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_StudentRegistration.setMinimumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_StudentRegistration.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_StudentRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_StudentRegistrationMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_StudentRegistrationMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_StudentRegistrationMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_StudentRegistrationMouseReleased(evt);
+            }
+        });
+        _bt_UserMain_StudentRegistration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                _bt_UserMain_StudentRegistrationActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Lecture Registration");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setMaximumSize(new java.awt.Dimension(200, 50));
-        jButton2.setMinimumSize(new java.awt.Dimension(200, 50));
-        jButton2.setPreferredSize(new java.awt.Dimension(200, 50));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        _bt_UserMain_LectureRegistration.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_UserMain_LectureRegistration.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_UserMain_LectureRegistration.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightBlue_200x50.png"))); // NOI18N
+        _bt_UserMain_LectureRegistration.setText("Lecture Registration");
+        _bt_UserMain_LectureRegistration.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_UserMain_LectureRegistration.setFocusPainted(false);
+        _bt_UserMain_LectureRegistration.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_UserMain_LectureRegistration.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_LectureRegistration.setMinimumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_LectureRegistration.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_LectureRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_LectureRegistrationMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_LectureRegistrationMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_LectureRegistrationMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_LectureRegistrationMouseReleased(evt);
+            }
+        });
+        _bt_UserMain_LectureRegistration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                _bt_UserMain_LectureRegistrationActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Employee Registration");
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setMaximumSize(new java.awt.Dimension(200, 50));
-        jButton3.setMinimumSize(new java.awt.Dimension(200, 50));
-        jButton3.setPreferredSize(new java.awt.Dimension(200, 50));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        _bt_UserMain_EmployeeRegistration.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_UserMain_EmployeeRegistration.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_UserMain_EmployeeRegistration.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightBlue_200x50.png"))); // NOI18N
+        _bt_UserMain_EmployeeRegistration.setText("Employee Registration");
+        _bt_UserMain_EmployeeRegistration.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_UserMain_EmployeeRegistration.setFocusPainted(false);
+        _bt_UserMain_EmployeeRegistration.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_UserMain_EmployeeRegistration.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_EmployeeRegistration.setMinimumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_EmployeeRegistration.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_EmployeeRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_EmployeeRegistrationMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_EmployeeRegistrationMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_EmployeeRegistrationMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_EmployeeRegistrationMouseReleased(evt);
+            }
+        });
+        _bt_UserMain_EmployeeRegistration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                _bt_UserMain_EmployeeRegistrationActionPerformed(evt);
             }
         });
 
-        jButton4.setText("User Registration");
-        jButton4.setMaximumSize(new java.awt.Dimension(200, 50));
-        jButton4.setMinimumSize(new java.awt.Dimension(200, 50));
-        jButton4.setPreferredSize(new java.awt.Dimension(200, 50));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        _bt_UserMain_payments.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_UserMain_payments.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_UserMain_payments.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightBlue_200x50.png"))); // NOI18N
+        _bt_UserMain_payments.setText("Payments");
+        _bt_UserMain_payments.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_UserMain_payments.setFocusPainted(false);
+        _bt_UserMain_payments.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_UserMain_payments.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_payments.setMinimumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_payments.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_payments.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_paymentsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_paymentsMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_paymentsMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_paymentsMouseReleased(evt);
+            }
+        });
+        _bt_UserMain_payments.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                _bt_UserMain_paymentsActionPerformed(evt);
             }
         });
 
@@ -120,13 +203,13 @@ public class Jf_UserMain extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_UserMain_StudentRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_UserMain_LectureRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 471, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addContainerGap())
@@ -134,10 +217,10 @@ public class Jf_UserMain extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_UserMain_LectureRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_UserMain_StudentRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -158,7 +241,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     Jp_registration_student add_student = new Jp_registration_student();
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void _bt_UserMain_StudentRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_StudentRegistrationActionPerformed
 
         if (add_student == null) {
             add_student = new Jp_registration_student();
@@ -178,10 +261,10 @@ public class Jf_UserMain extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event__bt_UserMain_StudentRegistrationActionPerformed
 
     Jp_registration_lecture add_lecture = new Jp_registration_lecture();
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void _bt_UserMain_LectureRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_LectureRegistrationActionPerformed
 
         if (add_lecture == null) {
             add_lecture = new Jp_registration_lecture();
@@ -200,10 +283,10 @@ public class Jf_UserMain extends javax.swing.JFrame {
             main_panel.revalidate();
         }
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event__bt_UserMain_LectureRegistrationActionPerformed
 
     Jp_registration_employee add_employee = new Jp_registration_employee();
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void _bt_UserMain_EmployeeRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_EmployeeRegistrationActionPerformed
 
         if (add_employee == null) {
             add_employee = new Jp_registration_employee();
@@ -222,12 +305,13 @@ public class Jf_UserMain extends javax.swing.JFrame {
             main_panel.revalidate();
         }
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event__bt_UserMain_EmployeeRegistrationActionPerformed
 
     Jp_registration_user add_user = new Jp_registration_user();
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void _bt_UserMain_paymentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsActionPerformed
 
-        if (add_user == null) {
+        
+        /*if (add_user == null) {
             add_user = new Jp_registration_user();
             main_panel.removeAll();
             main_panel.repaint();
@@ -242,9 +326,9 @@ public class Jf_UserMain extends javax.swing.JFrame {
             main_panel.add(add_user);
             main_panel.repaint();
             main_panel.revalidate();
-        }
+        }*/
 
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event__bt_UserMain_paymentsActionPerformed
 
     Jf_user_login jf_user_login = new Jf_user_login();
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -259,6 +343,70 @@ public class Jf_UserMain extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void _bt_UserMain_StudentRegistrationMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_StudentRegistrationMouseEntered
+        _bt_UserMain_StudentRegistration.setBorder(border);
+    }//GEN-LAST:event__bt_UserMain_StudentRegistrationMouseEntered
+
+    private void _bt_UserMain_StudentRegistrationMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_StudentRegistrationMouseExited
+        _bt_UserMain_StudentRegistration.setBorder(null);
+    }//GEN-LAST:event__bt_UserMain_StudentRegistrationMouseExited
+
+    private void _bt_UserMain_StudentRegistrationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_StudentRegistrationMousePressed
+        _bt_UserMain_StudentRegistration.setBorder(null);
+    }//GEN-LAST:event__bt_UserMain_StudentRegistrationMousePressed
+
+    private void _bt_UserMain_StudentRegistrationMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_StudentRegistrationMouseReleased
+        _bt_UserMain_StudentRegistration.setBorder(border);
+    }//GEN-LAST:event__bt_UserMain_StudentRegistrationMouseReleased
+
+    private void _bt_UserMain_LectureRegistrationMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_LectureRegistrationMouseEntered
+        _bt_UserMain_LectureRegistration.setBorder(border);
+    }//GEN-LAST:event__bt_UserMain_LectureRegistrationMouseEntered
+
+    private void _bt_UserMain_LectureRegistrationMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_LectureRegistrationMouseExited
+        _bt_UserMain_LectureRegistration.setBorder(null);
+    }//GEN-LAST:event__bt_UserMain_LectureRegistrationMouseExited
+
+    private void _bt_UserMain_LectureRegistrationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_LectureRegistrationMousePressed
+        _bt_UserMain_LectureRegistration.setBorder(null);
+    }//GEN-LAST:event__bt_UserMain_LectureRegistrationMousePressed
+
+    private void _bt_UserMain_LectureRegistrationMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_LectureRegistrationMouseReleased
+        _bt_UserMain_LectureRegistration.setBorder(border);
+    }//GEN-LAST:event__bt_UserMain_LectureRegistrationMouseReleased
+
+    private void _bt_UserMain_EmployeeRegistrationMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_EmployeeRegistrationMouseEntered
+        _bt_UserMain_EmployeeRegistration.setBorder(border);
+    }//GEN-LAST:event__bt_UserMain_EmployeeRegistrationMouseEntered
+
+    private void _bt_UserMain_EmployeeRegistrationMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_EmployeeRegistrationMouseExited
+        _bt_UserMain_EmployeeRegistration.setBorder(null);
+    }//GEN-LAST:event__bt_UserMain_EmployeeRegistrationMouseExited
+
+    private void _bt_UserMain_EmployeeRegistrationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_EmployeeRegistrationMousePressed
+        _bt_UserMain_EmployeeRegistration.setBorder(null);
+    }//GEN-LAST:event__bt_UserMain_EmployeeRegistrationMousePressed
+
+    private void _bt_UserMain_EmployeeRegistrationMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_EmployeeRegistrationMouseReleased
+        _bt_UserMain_EmployeeRegistration.setBorder(border);
+    }//GEN-LAST:event__bt_UserMain_EmployeeRegistrationMouseReleased
+
+    private void _bt_UserMain_paymentsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsMouseEntered
+        _bt_UserMain_payments.setBorder(border);
+    }//GEN-LAST:event__bt_UserMain_paymentsMouseEntered
+
+    private void _bt_UserMain_paymentsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsMouseExited
+        _bt_UserMain_payments.setBorder(null);
+    }//GEN-LAST:event__bt_UserMain_paymentsMouseExited
+
+    private void _bt_UserMain_paymentsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsMousePressed
+        _bt_UserMain_payments.setBorder(null);
+    }//GEN-LAST:event__bt_UserMain_paymentsMousePressed
+
+    private void _bt_UserMain_paymentsMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsMouseReleased
+        _bt_UserMain_payments.setBorder(border);
+    }//GEN-LAST:event__bt_UserMain_paymentsMouseReleased
 
     /**
      * @param args the command line arguments
@@ -298,10 +446,10 @@ public class Jf_UserMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton _bt_UserMain_EmployeeRegistration;
+    private javax.swing.JButton _bt_UserMain_LectureRegistration;
+    private javax.swing.JButton _bt_UserMain_StudentRegistration;
+    private javax.swing.JButton _bt_UserMain_payments;
     private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
