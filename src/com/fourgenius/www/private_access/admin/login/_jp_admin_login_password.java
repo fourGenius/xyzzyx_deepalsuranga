@@ -43,7 +43,6 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         _lb_admin_login_close = new javax.swing.JLabel();
-        _lb_admin_login_minimize = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -71,6 +70,11 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         jButton2.setText("Cancel");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -170,29 +174,6 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
             }
         });
 
-        _lb_admin_login_minimize.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        _lb_admin_login_minimize.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_admin_login_minimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        _lb_admin_login_minimize.setText("-");
-        _lb_admin_login_minimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _lb_admin_login_minimize.setPreferredSize(new java.awt.Dimension(25, 25));
-        _lb_admin_login_minimize.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                _lb_admin_login_minimizeMouseMoved(evt);
-            }
-        });
-        _lb_admin_login_minimize.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _lb_admin_login_minimizeMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _lb_admin_login_minimizeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                _lb_admin_login_minimizeMouseExited(evt);
-            }
-        });
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_RamaniAccademyLogo600x200_1.png"))); // NOI18N
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/img_poweredBy_4G.png"))); // NOI18N
@@ -204,9 +185,7 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
             .addGroup(adminLogin_emaiLayout.createSequentialGroup()
                 .addGap(114, 114, 114)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(_lb_admin_login_minimize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminLogin_emaiLayout.createSequentialGroup()
@@ -223,9 +202,7 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
             adminLogin_emaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminLogin_emaiLayout.createSequentialGroup()
                 .addGroup(adminLogin_emaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(adminLogin_emaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(_lb_admin_login_minimize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -271,33 +248,13 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         _lb_admin_login_close.setBorder(border);
         _lb_admin_login_close.setBackground(Color.RED);
 
-        _lb_admin_login_minimize.setToolTipText("Close");
+       
     }//GEN-LAST:event__lb_admin_login_closeMouseEntered
 
     private void _lb_admin_login_closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_closeMouseExited
         _lb_admin_login_close.setBorder(null);
         _lb_admin_login_close.setBackground(new Color(61,61,61));
     }//GEN-LAST:event__lb_admin_login_closeMouseExited
-
-    private void _lb_admin_login_minimizeMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_minimizeMouseMoved
-
-    }//GEN-LAST:event__lb_admin_login_minimizeMouseMoved
-
-    private void _lb_admin_login_minimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_minimizeMouseClicked
-
-       
-    }//GEN-LAST:event__lb_admin_login_minimizeMouseClicked
-
-    private void _lb_admin_login_minimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_minimizeMouseEntered
-
-        _lb_admin_login_minimize.setToolTipText("Minimize");
-        _lb_admin_login_minimize.setBorder(border);
-    }//GEN-LAST:event__lb_admin_login_minimizeMouseEntered
-
-    private void _lb_admin_login_minimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_minimizeMouseExited
-
-        _lb_admin_login_minimize.setBorder(null);
-    }//GEN-LAST:event__lb_admin_login_minimizeMouseExited
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         
@@ -322,11 +279,16 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jLabel7MouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        System.exit(0);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel _lb_admi_login_email;
     private javax.swing.JLabel _lb_admin_login_close;
-    private javax.swing.JLabel _lb_admin_login_minimize;
     private javax.swing.JPanel adminLogin_emai;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
