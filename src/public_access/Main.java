@@ -6,7 +6,7 @@
 package public_access;
 
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
-//hayyo salli
+
 /**
  *
  * @author thilina
