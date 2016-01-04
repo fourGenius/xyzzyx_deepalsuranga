@@ -12,7 +12,6 @@ import com.fourgenius.www.public_access.model.academic_employee.employee_academi
  * @author thilina
  */
 public class Main {
-//what the fuck
     /**
      * @param args the command line arguments
      */
