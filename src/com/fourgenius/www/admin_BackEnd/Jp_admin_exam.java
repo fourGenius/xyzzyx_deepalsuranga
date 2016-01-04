@@ -56,6 +56,7 @@ public class Jp_admin_exam extends javax.swing.JPanel {
 
         tbl_admin_Exams.setBackground(new java.awt.Color(102, 102, 102));
         tbl_admin_Exams.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_Exams.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tbl_admin_Exams.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -76,13 +77,6 @@ public class Jp_admin_exam extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(tbl_admin_Exams);
-        if (tbl_admin_Exams.getColumnModel().getColumnCount() > 0) {
-            tbl_admin_Exams.getColumnModel().getColumn(0).setHeaderValue("Exam ID");
-            tbl_admin_Exams.getColumnModel().getColumn(1).setHeaderValue("Exam Title");
-            tbl_admin_Exams.getColumnModel().getColumn(2).setHeaderValue("Exam Type 1");
-            tbl_admin_Exams.getColumnModel().getColumn(3).setHeaderValue("Exam Type 2");
-            tbl_admin_Exams.getColumnModel().getColumn(4).setHeaderValue("Mark");
-        }
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField1.setText("Serach Here");
