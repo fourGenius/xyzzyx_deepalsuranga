@@ -296,10 +296,10 @@ public class Jp_registration_student extends javax.swing.JPanel {
                     .addComponent(_tf_registration_user_personalInformations_contactDetails_eMail)
                     .addComponent(_lb_registration_user_personalInformations_address_2ndLine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_user_personalInformations_address_city, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_user_personalInformations_address_1stLine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
                     .addComponent(_tf_registration_user_personalInformations_address_2ndLine)
-                    .addComponent(_tf_registration_user_personalInformations_address_city))
+                    .addComponent(_tf_registration_user_personalInformations_address_city)
+                    .addComponent(_lb_registration_user_personalInformations_address_1stLine, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         _pl_registration_user_personalInformations_contactDetailsLayout.setVerticalGroup(
