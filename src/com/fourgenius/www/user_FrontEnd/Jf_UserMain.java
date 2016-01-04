@@ -60,7 +60,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(0, 150, 136));
+        jPanel3.setBackground(new java.awt.Color(18, 75, 163));
         jPanel3.setMinimumSize(new java.awt.Dimension(1368, 50));
         jPanel3.setPreferredSize(new java.awt.Dimension(1368, 50));
 

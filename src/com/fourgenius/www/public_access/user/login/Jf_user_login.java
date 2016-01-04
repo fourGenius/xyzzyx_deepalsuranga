@@ -22,6 +22,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class Jf_user_login extends javax.swing.JFrame {
 
+    Border border=BorderFactory.createLineBorder(Color.white, 1);
     /**
      * Creates new form user_login
      */
@@ -31,7 +32,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         initComponents();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
         }
 
         Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
@@ -68,26 +69,26 @@ public class Jf_user_login extends javax.swing.JFrame {
         _lb_user_login_showPassword = new javax.swing.JLabel();
         _lb_user_login_pin = new javax.swing.JLabel();
         _tf_user_login_pin = new javax.swing.JTextField();
-        _lb_user_login_login = new javax.swing.JLabel();
-        _lb_user_login_cancel = new javax.swing.JLabel();
         _lb_user_login_seperator = new javax.swing.JLabel();
         _lb_user_login_logo = new javax.swing.JLabel();
         _lb_user_login_forgotPassword = new javax.swing.JLabel();
         _lb_user_login_showPassword1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        _bt_Jf_user_login_Login = new javax.swing.JButton();
+        _bt_Jf_user_login_Cancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Middle.setBackground(new java.awt.Color(0, 204, 204));
+        Middle.setBackground(new java.awt.Color(2, 119, 189));
         Middle.setPreferredSize(new java.awt.Dimension(1370, 770));
 
-        Top.setBackground(new java.awt.Color(0, 150, 136));
+        Top.setBackground(new java.awt.Color(18, 75, 163));
         Top.setPreferredSize(new java.awt.Dimension(1366, 60));
 
-        _lb_user_login_close.setBackground(new java.awt.Color(0, 150, 136));
+        _lb_user_login_close.setBackground(new java.awt.Color(18, 75, 163));
         _lb_user_login_close.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         _lb_user_login_close.setForeground(new java.awt.Color(255, 255, 255));
         _lb_user_login_close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -232,33 +233,6 @@ public class Jf_user_login extends javax.swing.JFrame {
             }
         });
 
-        _lb_user_login_login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _lb_user_login_login.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_user_login_login.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        _lb_user_login_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_BlueButton.png"))); // NOI18N
-        _lb_user_login_login.setText("Login");
-        _lb_user_login_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _lb_user_login_login.setFocusable(false);
-        _lb_user_login_login.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _lb_user_login_login.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _lb_user_login_loginMouseClicked(evt);
-            }
-        });
-
-        _lb_user_login_cancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _lb_user_login_cancel.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_user_login_cancel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        _lb_user_login_cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_BlueButton.png"))); // NOI18N
-        _lb_user_login_cancel.setText("Cancel");
-        _lb_user_login_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _lb_user_login_cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _lb_user_login_cancel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _lb_user_login_cancelMouseClicked(evt);
-            }
-        });
-
         _lb_user_login_seperator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_SaperateBar.png"))); // NOI18N
 
         _lb_user_login_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_RamaniAccademyLogo600x200.png"))); // NOI18N
@@ -297,7 +271,7 @@ public class Jf_user_login extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(0, 150, 136));
+        jPanel1.setBackground(new java.awt.Color(18, 75, 163));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -313,6 +287,56 @@ public class Jf_user_login extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_AccountCircleWhite192x192.png"))); // NOI18N
 
+        _bt_Jf_user_login_Login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_Jf_user_login_Login.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_Jf_user_login_Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_Jf_user_login_Login.setText("Login");
+        _bt_Jf_user_login_Login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_Jf_user_login_Login.setFocusPainted(false);
+        _bt_Jf_user_login_Login.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_Jf_user_login_Login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_LoginMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_LoginMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_LoginMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_LoginMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_LoginMouseReleased(evt);
+            }
+        });
+
+        _bt_Jf_user_login_Cancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_Jf_user_login_Cancel.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_Jf_user_login_Cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_Jf_user_login_Cancel.setText("Cancel");
+        _bt_Jf_user_login_Cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_Jf_user_login_Cancel.setFocusPainted(false);
+        _bt_Jf_user_login_Cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_Jf_user_login_Cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_CancelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_CancelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_CancelMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_CancelMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_Jf_user_login_CancelMouseReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout MiddleLayout = new javax.swing.GroupLayout(Middle);
         Middle.setLayout(MiddleLayout);
         MiddleLayout.setHorizontalGroup(
@@ -327,10 +351,7 @@ public class Jf_user_login extends javax.swing.JFrame {
                         .addComponent(_lb_user_login_seperator)
                         .addGap(18, 18, 18)
                         .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(_lb_user_login_forgotPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(_lb_user_login_cancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(_lb_user_login_login, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(_lb_user_login_forgotPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(MiddleLayout.createSequentialGroup()
                                 .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(MiddleLayout.createSequentialGroup()
@@ -352,7 +373,10 @@ public class Jf_user_login extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(_lb_user_login_showPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(_bt_Jf_user_login_Cancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(_bt_Jf_user_login_Login, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 15, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -364,7 +388,7 @@ public class Jf_user_login extends javax.swing.JFrame {
                 .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MiddleLayout.createSequentialGroup()
                         .addGap(156, 156, 156)
-                        .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MiddleLayout.createSequentialGroup()
                                 .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(MiddleLayout.createSequentialGroup()
@@ -389,17 +413,17 @@ public class Jf_user_login extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(_tf_user_login_pin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addComponent(jLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(_lb_user_login_login)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(_lb_user_login_cancel))
-                            .addComponent(_lb_user_login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(_bt_Jf_user_login_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(_bt_Jf_user_login_Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(_lb_user_login_forgotPassword))
+                            .addComponent(_lb_user_login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(MiddleLayout.createSequentialGroup()
                         .addGap(223, 223, 223)
                         .addComponent(_lb_user_login_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_user_login_forgotPassword)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -425,7 +449,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     private void _lb_user_login_closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseExited
         _lb_user_login_close.setBorder(null);
-        _lb_user_login_close.setBackground(new Color(0, 150, 136));
+        _lb_user_login_close.setBackground(new Color(18,75,163));
     }//GEN-LAST:event__lb_user_login_closeMouseExited
 
     private void _lb_user_login_minimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_minimizeMouseEntered
@@ -459,12 +483,6 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     }//GEN-LAST:event__lb_user_login_showPasswordMouseReleased
 
-    private void _lb_user_login_cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_cancelMouseClicked
-
-        System.exit(0);
-
-    }//GEN-LAST:event__lb_user_login_cancelMouseClicked
-
     private void _lb_user_login_forgotPasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_forgotPasswordMouseEntered
 
         _lb_user_login_forgotPassword.setText("<html><u>" + _lb_user_login_forgotPassword.getText() + "</u></html>");
@@ -484,13 +502,6 @@ public class Jf_user_login extends javax.swing.JFrame {
     private void _lb_user_login_showPassword1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_showPassword1MouseReleased
 
     }//GEN-LAST:event__lb_user_login_showPassword1MouseReleased
-
-    private void _lb_user_login_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_loginMouseClicked
-
-        Jf_UserMain mainF = new Jf_UserMain();
-        mainF.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event__lb_user_login_loginMouseClicked
 
     private void _tf_user_loging_userNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameMouseClicked
 
@@ -584,6 +595,48 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     }//GEN-LAST:event__lb_user_login_logoMouseClicked
 
+    private void _bt_Jf_user_login_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginMouseClicked
+        Jf_UserMain mainF = new Jf_UserMain();
+        mainF.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event__bt_Jf_user_login_LoginMouseClicked
+
+    private void _bt_Jf_user_login_LoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginMouseEntered
+        _bt_Jf_user_login_Login.setBorder(border);
+    }//GEN-LAST:event__bt_Jf_user_login_LoginMouseEntered
+
+    private void _bt_Jf_user_login_LoginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginMouseExited
+        _bt_Jf_user_login_Login.setBorder(null);
+    }//GEN-LAST:event__bt_Jf_user_login_LoginMouseExited
+
+    private void _bt_Jf_user_login_LoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginMousePressed
+        _bt_Jf_user_login_Login.setBorder(null);
+    }//GEN-LAST:event__bt_Jf_user_login_LoginMousePressed
+
+    private void _bt_Jf_user_login_LoginMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginMouseReleased
+        _bt_Jf_user_login_Login.setBorder(border);
+    }//GEN-LAST:event__bt_Jf_user_login_LoginMouseReleased
+
+    private void _bt_Jf_user_login_CancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_CancelMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event__bt_Jf_user_login_CancelMouseClicked
+
+    private void _bt_Jf_user_login_CancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_CancelMouseEntered
+        _bt_Jf_user_login_Cancel.setBorder(border);
+    }//GEN-LAST:event__bt_Jf_user_login_CancelMouseEntered
+
+    private void _bt_Jf_user_login_CancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_CancelMouseExited
+        _bt_Jf_user_login_Cancel.setBorder(null);
+    }//GEN-LAST:event__bt_Jf_user_login_CancelMouseExited
+
+    private void _bt_Jf_user_login_CancelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_CancelMousePressed
+        _bt_Jf_user_login_Cancel.setBorder(null);
+    }//GEN-LAST:event__bt_Jf_user_login_CancelMousePressed
+
+    private void _bt_Jf_user_login_CancelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_CancelMouseReleased
+        _bt_Jf_user_login_Cancel.setBorder(border);
+    }//GEN-LAST:event__bt_Jf_user_login_CancelMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -629,10 +682,10 @@ public class Jf_user_login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Middle;
     private javax.swing.JPanel Top;
-    private javax.swing.JLabel _lb_user_login_cancel;
+    private javax.swing.JButton _bt_Jf_user_login_Cancel;
+    private javax.swing.JButton _bt_Jf_user_login_Login;
     private javax.swing.JLabel _lb_user_login_close;
     private javax.swing.JLabel _lb_user_login_forgotPassword;
-    private javax.swing.JLabel _lb_user_login_login;
     private javax.swing.JLabel _lb_user_login_logo;
     private javax.swing.JLabel _lb_user_login_minimize;
     private javax.swing.JLabel _lb_user_login_password;

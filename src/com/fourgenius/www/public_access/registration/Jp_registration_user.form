@@ -3,7 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="15" green="15" red="15" type="rgb"/>
+      <Color blue="42" green="42" red="42" type="rgb"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1366, 718]"/>
@@ -35,12 +35,11 @@
     <Container class="javax.swing.JPanel" name="_pl_registration_user_personal">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="db" green="98" red="34" type="rgb"/>
+          <Color blue="bd" green="77" red="2" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder justification="2" title="Personal">
-              <Font PropertyName="font" name="Tahoma" size="14" style="0"/>
+            <TitledBorder title="Personal">
               <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
             </TitledBorder>
           </Border>
@@ -51,22 +50,22 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="11" width="-1" height="695"/>
+          <AbsoluteConstraints x="10" y="11" width="810" height="695"/>
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="_pl_registration_lecture_personalInformation_browsePhoto1" pref="778" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Component id="_pl_registration_user_personal_name" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="156" max="32767" attributes="0"/>
+                          <EmptySpace pref="48" max="32767" attributes="0"/>
                           <Component id="_pl_registration_user_personal_contact" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="_pl_registration_lecture_personalInformation_browsePhoto1" pref="788" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -77,10 +76,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="_pl_registration_user_personal_name" min="-2" max="-2" attributes="0"/>
-                      <Component id="_pl_registration_user_personal_contact" min="-2" max="-2" attributes="0"/>
+                      <Component id="_pl_registration_user_personal_name" max="32767" attributes="0"/>
+                      <Component id="_pl_registration_user_personal_contact" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="239" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="_pl_registration_lecture_personalInformation_browsePhoto1" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -90,11 +89,11 @@
         <Container class="javax.swing.JPanel" name="_pl_registration_user_personal_name">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="db" green="98" red="34" type="rgb"/>
+              <Color blue="bd" green="77" red="2" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Name">
+                <TitledBorder title="User Details">
                   <Font PropertyName="font" name="Tahoma" size="14" style="0"/>
                   <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
                 </TitledBorder>
@@ -105,19 +104,34 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="_tf_registration_user_personal_name_lastName" max="32767" attributes="0"/>
-                  <Component id="_tf_registration_user_personal_name_secondName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="_tf_registration_user_personal_name_firstName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="_tf_registration_user_personal_name_sirName" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
-                  <Component id="_lb_registration_user_personal_name_sirName" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="_lb_registration_user_personal_name_firstName" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="_lb_registration_user_personal_name_secondName" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="_lb_registration_user_personal_name_lastName" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="_tf_registration_user_personal_name_sirName" min="-2" pref="333" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="_tf_registration_user_personal_name_firstName" max="32767" attributes="0"/>
+                          <Component id="_tf_registration_user_personal_name_secondName" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="_lb_registration_user_personal_name_sirName" min="-2" max="-2" attributes="0"/>
+                                  <Component id="_lb_registration_user_personal_name_firstName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="_lb_registration_user_personal_name_secondName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="_lb_registration_user_personal_name_lastName" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="_tf_registration_user_personal_name_lastName" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_name_sirName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_tf_registration_user_personal_name_sirName" min="-2" max="-2" attributes="0"/>
@@ -133,6 +147,7 @@
                       <Component id="_lb_registration_user_personal_name_lastName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_tf_registration_user_personal_name_lastName" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="220" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -215,11 +230,11 @@
         <Container class="javax.swing.JPanel" name="_pl_registration_user_personal_contact">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="db" green="98" red="34" type="rgb"/>
+              <Color blue="bd" green="77" red="2" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Contact">
+                <TitledBorder title="Contact Details">
                   <Font PropertyName="font" name="Tahoma" size="14" style="0"/>
                   <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
                 </TitledBorder>
@@ -230,17 +245,32 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="_tf_registration_user_personal_contact_email" alignment="1" max="32767" attributes="0"/>
-                  <Component id="_tf_registration_user_personal_contact_land" alignment="0" max="32767" attributes="0"/>
-                  <Component id="_lb_registration_user_personal_contact_mobile" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="_lb_registration_user_personal_contact_land" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="_lb_registration_user_personal_contact_email" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="_tf_registration_user_personal_contact_mobile" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="_tf_registration_user_personal_contact_mobile" min="-2" pref="333" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="_tf_registration_user_personal_contact_land" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="_lb_registration_user_personal_contact_mobile" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="_lb_registration_user_personal_contact_land" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="_lb_registration_user_personal_contact_email" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="_tf_registration_user_personal_contact_email" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_contact_mobile" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_tf_registration_user_personal_contact_mobile" min="-2" max="-2" attributes="0"/>
@@ -266,7 +296,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Mobile"/>
+                <Property name="text" type="java.lang.String" value="Mobile Number"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="_tf_registration_user_personal_contact_mobile">
@@ -284,7 +314,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Land"/>
+                <Property name="text" type="java.lang.String" value="Home Number"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="_tf_registration_user_personal_contact_land">
@@ -317,7 +347,7 @@
         <Container class="javax.swing.JPanel" name="_pl_registration_lecture_personalInformation_browsePhoto1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="53" green="c8" red="0" type="rgb"/>
+              <Color blue="bd" green="77" red="2" type="rgb"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[766, 123]"/>
@@ -330,15 +360,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="_bt_registration_lecture_personalInformation_browsePhoto_browser1" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="_bt_registration_lecture_personalInformation_browsePhoto_browser" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="_tf_registration_lecture_personalInformation_browsePhoto_browseFile1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="_bt_registration_lecture_personalInformation_registerLecture1" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="_bt_registration_lecture_personalInformation_clear1" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="_bt_registration_lecture_personalInformation_registerLecture" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="_bt_registration_lecture_personalInformation_clear" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -346,17 +376,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="_tf_registration_lecture_personalInformation_browsePhoto_browseFile1" min="-2" pref="50" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="_bt_registration_lecture_personalInformation_browsePhoto_browser1" min="-2" pref="50" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="_bt_registration_lecture_personalInformation_registerLecture1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="_bt_registration_lecture_personalInformation_clear1" min="-2" pref="50" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="_tf_registration_lecture_personalInformation_browsePhoto_browseFile1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="_bt_registration_lecture_personalInformation_registerLecture" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="_bt_registration_lecture_personalInformation_browsePhoto_browser" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="_bt_registration_lecture_personalInformation_clear" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -369,7 +396,7 @@
                 <Property name="text" type="java.lang.String" value="Broswe File"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_browsePhoto_browser1">
+            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_browsePhoto_browser">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -378,13 +405,20 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"/>
+                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Browse"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_browsePhoto_browserMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_browsePhoto_browserMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_browsePhoto_browserMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_browsePhoto_browserMouseReleased"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_clear1">
+            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_clear">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -393,13 +427,20 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"/>
+                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Clear"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_clearMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_clearMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_clearMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_clearMouseReleased"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_registerLecture1">
+            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_registerLecture">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -408,14 +449,21 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"/>
+                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Register Lecture"/>
+                <Property name="focusPainted" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[300, 50]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_registerLectureMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_registerLectureMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_registerLectureMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_registerLectureMouseReleased"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
