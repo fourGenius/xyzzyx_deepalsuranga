@@ -5,37 +5,23 @@
  */
 package com.fourgenius.www.admin_BackEnd;
 
-import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
-import java.util.Vector;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author deepalsuranga
  */
-public class Jp_admin_employee extends javax.swing.JPanel {
+public class Jp_admin_admins extends javax.swing.JPanel {
 
-    /**
-     * Creates new form _jp_admin_employee
+    /*
+     * Creates new form _jp_admin_admins
      */
-    public Jp_admin_employee() {
+    public Jp_admin_admins() {
         initComponents();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
         }
-        ///////////////////////////////////////////////////////////////////////
-        DefaultTableModel defaultTableModel = (DefaultTableModel) aca_emp.getModel();
-        defaultTableModel.setRowCount(0);
-        employee_academic_user_info in = new employee_academic_user_info();
-        int mass = in.max;
-        Vector v = new Vector();
-        v.add(in.getEmployee_academic_user_id_s("0"));
-
-        defaultTableModel.addRow(v);
-        ////////////////////////////////////////////////////////////////////////
     }
 
     /**
@@ -49,16 +35,16 @@ public class Jp_admin_employee extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        aca_emp = new javax.swing.JTable();
+        tbl_admin_Administrators = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(237, 231, 246));
         setMinimumSize(new java.awt.Dimension(1360, 668));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Employee");
+        jLabel1.setText("Administrators");
 
-        aca_emp.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_admin_Administrators.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -69,7 +55,14 @@ public class Jp_admin_employee extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(aca_emp);
+        jScrollPane1.setViewportView(tbl_admin_Administrators);
+
+        jButton1.setText("Add Admin");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -78,28 +71,42 @@ public class Jp_admin_employee extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(337, 337, 337)
+                        .addGap(344, 344, 344)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(381, 381, 381)
+                        .addGap(56, 56, 56)
+                        .addComponent(jButton1)
+                        .addGap(251, 251, 251)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(491, Short.MAX_VALUE))
+                .addContainerGap(484, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(jButton1)))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        //INSERT INTO `g4_2015_java_se_management_ramanifernando`.`admin` (`idadmin`, `admin_email`, `admin_password`, `admin_status`) VALUES ('3', 'a', 'a', '1');
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable aca_emp;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tbl_admin_Administrators;
     // End of variables declaration//GEN-END:variables
 }

@@ -215,7 +215,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_bt_admin_backEnd_examsActionPerformed
-    Jp_admin_employee employeePanel = new Jp_admin_employee();
+    Jp_admin_employee_ac employeePanel = new Jp_admin_employee_ac();
     private void bt_admin_backEnd_employeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_backEnd_employeesActionPerformed
         if (!(employeePanel == null)) {
 
@@ -228,7 +228,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
 
         } else if (employeePanel == null) {
 
-            employeePanel = new Jp_admin_employee();
+            employeePanel = new Jp_admin_employee_ac();
             admin_mainPanel.removeAll();
             admin_mainPanel.repaint();
             admin_mainPanel.revalidate();
