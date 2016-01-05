@@ -5,14 +5,17 @@
  */
 package com.fourgenius.www.user_FrontEnd;
 
+import static com.fourgenius.www.private_access.admin.login.Jf_admin_login.main_panel;
 import com.fourgenius.www.public_access.registration.Jp_registration_employee;
 import com.fourgenius.www.public_access.registration.Jp_registration_lecture;
 import com.fourgenius.www.public_access.registration.Jp_registration_student;
 import com.fourgenius.www.public_access.registration.Jp_registration_user;
+import com.fourgenius.www.public_access.registration.Jp_student_payment;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
@@ -34,6 +37,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
         } catch (Exception ex) {
 
         }
+        loadFrame();
 
     }
 
@@ -53,6 +57,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
         _bt_UserMain_EmployeeRegistration = new javax.swing.JButton();
         _bt_UserMain_payments = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         main_panel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -190,10 +195,19 @@ public class Jf_UserMain extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Logout");
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/power off.png"))); // NOI18N
+        jButton5.setContentAreaFilled(false);
+        jButton5.setFocusPainted(false);
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
             }
         });
 
@@ -210,18 +224,23 @@ public class Jf_UserMain extends javax.swing.JFrame {
                 .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 471, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 390, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(_bt_UserMain_LectureRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(_bt_UserMain_StudentRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(_bt_UserMain_LectureRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_UserMain_StudentRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, -1));
@@ -408,6 +427,14 @@ public class Jf_UserMain extends javax.swing.JFrame {
         _bt_UserMain_payments.setBorder(border);
     }//GEN-LAST:event__bt_UserMain_paymentsMouseReleased
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        payment();
+        
+        Jp_student_payment._tf_student_payment_paymentDatails_studentName.setText(Jp_registration_student._lb_registration_student_preview_name.getText());
+        Jp_student_payment._tf_student_payment_paymentDatails_course.setText(Jp_registration_student._lb_registration_student_preview_course.getText());
+        Jp_student_payment._tf_student_payment_paymentDatails_courseFee.setText("70000");
+    }//GEN-LAST:event_jLabel1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -451,8 +478,54 @@ public class Jf_UserMain extends javax.swing.JFrame {
     private javax.swing.JButton _bt_UserMain_StudentRegistration;
     private javax.swing.JButton _bt_UserMain_payments;
     private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel main_panel;
     // End of variables declaration//GEN-END:variables
+
+    public void payment() {
+        
+        
+        Jp_student_payment student_payment = new Jp_student_payment();
+        if (student_payment == null) {
+            student_payment = new Jp_student_payment();
+            main_panel.removeAll();
+            main_panel.repaint();
+            main_panel.revalidate();
+            main_panel.add(student_payment);
+            main_panel.repaint();
+            main_panel.revalidate();
+        } else {
+            main_panel.removeAll();
+            main_panel.repaint();
+            main_panel.revalidate();
+            main_panel.add(student_payment);
+            main_panel.repaint();
+            main_panel.revalidate();
+        }
+        
+    }
+
+    private void loadFrame() {
+        
+        Jp_registration_student add_student = new Jp_registration_student();
+        
+        if (add_student == null) {
+            add_student = new Jp_registration_student();
+            main_panel.removeAll();
+            main_panel.repaint();
+            main_panel.revalidate();
+            main_panel.add(add_student);
+            main_panel.repaint();
+            main_panel.revalidate();
+        } else {
+            main_panel.removeAll();
+            main_panel.repaint();
+            main_panel.revalidate();
+            main_panel.add(add_student);
+            main_panel.repaint();
+            main_panel.revalidate();
+        }
+    }
 }

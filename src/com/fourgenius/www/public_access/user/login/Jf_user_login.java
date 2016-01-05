@@ -311,6 +311,11 @@ public class Jf_user_login extends javax.swing.JFrame {
                 _bt_Jf_user_login_LoginMouseReleased(evt);
             }
         });
+        _bt_Jf_user_login_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_Jf_user_login_LoginActionPerformed(evt);
+            }
+        });
 
         _bt_Jf_user_login_Cancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_Jf_user_login_Cancel.setForeground(new java.awt.Color(255, 255, 255));
@@ -596,9 +601,7 @@ public class Jf_user_login extends javax.swing.JFrame {
     }//GEN-LAST:event__lb_user_login_logoMouseClicked
 
     private void _bt_Jf_user_login_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginMouseClicked
-        Jf_UserMain mainF = new Jf_UserMain();
-        mainF.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event__bt_Jf_user_login_LoginMouseClicked
 
     private void _bt_Jf_user_login_LoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginMouseEntered
@@ -636,6 +639,12 @@ public class Jf_user_login extends javax.swing.JFrame {
     private void _bt_Jf_user_login_CancelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_CancelMouseReleased
         _bt_Jf_user_login_Cancel.setBorder(border);
     }//GEN-LAST:event__bt_Jf_user_login_CancelMouseReleased
+
+    private void _bt_Jf_user_login_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginActionPerformed
+        Jf_UserMain mainF = new Jf_UserMain();
+        mainF.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event__bt_Jf_user_login_LoginActionPerformed
 
     /**
      * @param args the command line arguments

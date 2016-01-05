@@ -467,6 +467,7 @@
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_Jf_user_login_LoginMouseExited"/>
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_Jf_user_login_LoginMousePressed"/>
             <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_Jf_user_login_LoginMouseReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_Jf_user_login_LoginActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="_bt_Jf_user_login_Cancel">

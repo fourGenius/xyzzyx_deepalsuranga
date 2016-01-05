@@ -25,8 +25,7 @@ import javax.swing.border.Border;
 public class Jp_registration_employee extends javax.swing.JPanel {
 
     Border border=BorderFactory.createLineBorder(Color.white, 1);
-    String path;
-    String newpath;
+    String path, newpath;
     /**
      * Creates new form registration_employee
      */

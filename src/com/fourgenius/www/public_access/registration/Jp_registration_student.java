@@ -5,6 +5,8 @@
  */
 package com.fourgenius.www.public_access.registration;
 
+import static com.fourgenius.www.private_access.admin.login.Jf_admin_login.main_panel;
+import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
@@ -12,10 +14,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
 
 /**
@@ -25,8 +27,7 @@ import javax.swing.border.Border;
 public class Jp_registration_student extends javax.swing.JPanel {
 
     Border border = BorderFactory.createLineBorder(Color.white, 1);
-    String path;
-    String newpath;
+    String path, newpath;
 
     /**
      * Creates new form registration_student
@@ -503,6 +504,11 @@ public class Jp_registration_student extends javax.swing.JPanel {
         );
 
         _bt_registration_student_personalInformations_payments.setText("Payments");
+        _bt_registration_student_personalInformations_payments.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_registration_student_personalInformations_paymentsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout _pl_registration_user_personalInformationsLayout = new javax.swing.GroupLayout(_pl_registration_user_personalInformations);
         _pl_registration_user_personalInformations.setLayout(_pl_registration_user_personalInformationsLayout);
@@ -866,6 +872,15 @@ public class Jp_registration_student extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event__bt_registration_student_personalInformation_browsePhoto_browserActionPerformed
+    
+    
+    private void _bt_registration_student_personalInformations_paymentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformations_paymentsActionPerformed
+        
+        
+        
+        
+        
+    }//GEN-LAST:event__bt_registration_student_personalInformations_paymentsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -876,13 +891,13 @@ public class Jp_registration_student extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser _dc_registration_student_personalInformations_studentDetails_dateOfBirth;
     private javax.swing.JLabel _lb_registration_student_preview_address;
     private javax.swing.JLabel _lb_registration_student_preview_age;
-    private javax.swing.JLabel _lb_registration_student_preview_course;
+    public static javax.swing.JLabel _lb_registration_student_preview_course;
     private javax.swing.JLabel _lb_registration_student_preview_dateOfBirth;
     private javax.swing.JLabel _lb_registration_student_preview_eMail;
     private javax.swing.JLabel _lb_registration_student_preview_homeNumber;
     private javax.swing.JLabel _lb_registration_student_preview_image;
     private javax.swing.JLabel _lb_registration_student_preview_mobileNumber;
-    private javax.swing.JLabel _lb_registration_student_preview_name;
+    public static javax.swing.JLabel _lb_registration_student_preview_name;
     private javax.swing.JLabel _lb_registration_student_preview_nic;
     private javax.swing.JLabel _lb_registration_student_preview_studentID;
     private javax.swing.JLabel _lb_registration_user_personalInformations_address_1stLine;
