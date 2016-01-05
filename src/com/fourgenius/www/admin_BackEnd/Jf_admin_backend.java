@@ -46,6 +46,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
         bt_admin_backEnd_payments = new javax.swing.JButton();
         bt_admin_backEnd_practicals = new javax.swing.JButton();
         bt_admin_backEnd_logout = new javax.swing.JButton();
+        bt_admin_backEnd_practicals1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 768));
@@ -117,6 +118,14 @@ public class Jf_admin_backend extends javax.swing.JFrame {
             }
         });
 
+        bt_admin_backEnd_practicals1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_admin_backEnd_practicals1.setText("Administrator");
+        bt_admin_backEnd_practicals1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_admin_backEnd_practicals1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
@@ -134,6 +143,8 @@ public class Jf_admin_backend extends javax.swing.JFrame {
                 .addComponent(bt_admin_backEnd_payments, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bt_admin_backEnd_practicals, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bt_admin_backEnd_practicals1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bt_admin_backEnd_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -144,13 +155,14 @@ public class Jf_admin_backend extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(bt_admin_backEnd_logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_admin_backEnd_practicals, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bt_admin_backEnd_payments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(bt_admin_backEnd_employees, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(bt_admin_backEnd_students, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(bt_admin_backEnd_users, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_admin_backEnd_exams, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bt_admin_backEnd_exams, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt_admin_backEnd_practicals, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt_admin_backEnd_practicals1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -355,6 +367,32 @@ public class Jf_admin_backend extends javax.swing.JFrame {
 
     }//GEN-LAST:event_bt_admin_backEnd_practicalsActionPerformed
 
+    Jp_admin_admins jp_admin_admins=new Jp_admin_admins();
+    private void bt_admin_backEnd_practicals1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_backEnd_practicals1ActionPerformed
+       
+         if (!(practicalPanel == null)) {
+            admin_mainPanel.removeAll();
+            admin_mainPanel.repaint();
+            admin_mainPanel.revalidate();
+            admin_mainPanel.add(jp_admin_admins);
+            admin_mainPanel.repaint();
+            admin_mainPanel.revalidate();
+
+        } else if (jp_admin_admins == null) {
+
+            studentPanel = new Jp_admin_student();
+            admin_mainPanel.removeAll();
+            admin_mainPanel.repaint();
+            admin_mainPanel.revalidate();
+            admin_mainPanel.add(jp_admin_admins);
+            admin_mainPanel.repaint();
+            admin_mainPanel.revalidate();
+
+        }
+
+        
+    }//GEN-LAST:event_bt_admin_backEnd_practicals1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -395,6 +433,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
     private javax.swing.JButton bt_admin_backEnd_logout;
     private javax.swing.JButton bt_admin_backEnd_payments;
     private javax.swing.JButton bt_admin_backEnd_practicals;
+    private javax.swing.JButton bt_admin_backEnd_practicals1;
     private javax.swing.JButton bt_admin_backEnd_students;
     private javax.swing.JButton bt_admin_backEnd_users;
     private javax.swing.JPanel menuPanel;

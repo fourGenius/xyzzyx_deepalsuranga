@@ -15,10 +15,12 @@ import javax.swing.border.Border;
  * @author Dineth Jayasekera
  */
 public class _jp_admin_login_email extends javax.swing.JPanel {
-Border border=BorderFactory.createLineBorder(Color.white, 1);
+
+    Border border = BorderFactory.createLineBorder(Color.white, 1);
     /*
      * Creates new form _jp_admin_login_email
      */
+
     public _jp_admin_login_email() {
         initComponents();
     }
@@ -36,7 +38,7 @@ Border border=BorderFactory.createLineBorder(Color.white, 1);
         jPanel1 = new javax.swing.JPanel();
         bt_next = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -76,7 +78,7 @@ Border border=BorderFactory.createLineBorder(Color.white, 1);
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        username.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +105,7 @@ Border border=BorderFactory.createLineBorder(Color.white, 1);
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(username, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 299, Short.MAX_VALUE)
                                 .addComponent(bt_next, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -124,7 +126,7 @@ Border border=BorderFactory.createLineBorder(Color.white, 1);
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bt_next, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -228,7 +230,10 @@ Border border=BorderFactory.createLineBorder(Color.white, 1);
 
     private void bt_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_nextActionPerformed
 
-        _jp_admin_login_password adminLoginPassword=new _jp_admin_login_password();
+        String ss = username.getText();
+
+        _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
+        adminLoginPassword._lb_admi_login_email.setText(ss);
 
         if (adminLoginPassword == null) {
             adminLoginPassword = new _jp_admin_login_password();
@@ -244,8 +249,10 @@ Border border=BorderFactory.createLineBorder(Color.white, 1);
             Jf_admin_login.main_panel.revalidate();
             Jf_admin_login.main_panel.add(adminLoginPassword);
             Jf_admin_login.main_panel.repaint();
-           Jf_admin_login.main_panel.revalidate();
+            Jf_admin_login.main_panel.revalidate();
         }
+
+
     }//GEN-LAST:event_bt_nextActionPerformed
 
     private void _lb_admin_login_closeMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_closeMouseMoved
@@ -262,18 +269,18 @@ Border border=BorderFactory.createLineBorder(Color.white, 1);
         _lb_admin_login_close.setBorder(border);
         _lb_admin_login_close.setBackground(Color.RED);
 
-        
+
     }//GEN-LAST:event__lb_admin_login_closeMouseEntered
 
     private void _lb_admin_login_closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_closeMouseExited
         _lb_admin_login_close.setBorder(null);
-        _lb_admin_login_close.setBackground(new Color(61,61,61));
+        _lb_admin_login_close.setBackground(new Color(61, 61, 61));
     }//GEN-LAST:event__lb_admin_login_closeMouseExited
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
+
         System.exit(0);
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
@@ -290,6 +297,6 @@ Border border=BorderFactory.createLineBorder(Color.white, 1);
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

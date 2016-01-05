@@ -55,7 +55,7 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Ac-Employee");
+        jLabel1.setText("Academic Employee");
 
         aca_emp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
