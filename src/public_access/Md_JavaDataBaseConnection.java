@@ -9,12 +9,63 @@ import java.sql.SQLException;
  */
 public class Md_JavaDataBaseConnection {
 
+    
+    static private String HOST="166.62.27.145"; 
+    static private String DATABASE="g4_2015_java_se_management_ramanifernando";
+    static private String USER = "deepalsuranga";
+    static private String PASS = "WelComeDB1129";
+    static private String PORT="3306";
+    
+    ///////////////////////////////////////////////////////////////////////////
+    
+    public static String getHOST() {
+        return HOST;
+    }
+
+    public static void setHOST(String HOST) {
+        Md_JavaDataBaseConnection.HOST = HOST;
+    }
+
+    public static String getDATABASE() {
+        return DATABASE;
+    }
+
+    public static void setDATABASE(String DATABASE) {
+        Md_JavaDataBaseConnection.DATABASE = DATABASE;
+    }
+
+    public static String getUSER() {
+        return USER;
+    }
+
+    public static void setUSER(String USER) {
+        Md_JavaDataBaseConnection.USER = USER;
+    }
+
+    public static String getPASS() {
+        return PASS;
+    }
+
+    public static void setPASS(String PASS) {
+        Md_JavaDataBaseConnection.PASS = PASS;
+    }
+
+    public static String getPORT() {
+        return PORT;
+    }
+
+    public static void setPORT(String PORT) {
+        Md_JavaDataBaseConnection.PORT = PORT;
+    }
+    
+    
+    //////////////////////////////////////////////////////////////////////////
+    
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/g4_2015_java_se_management_ramanifernando";
+    static final String DB_URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DATABASE;
 
     //  Database credentials
-    static final String USER = "root";
-    static final String PASS = "";
+    
 
     // public static void main(String[] args) {
     public static Connection myConnection() {
@@ -50,9 +101,5 @@ public class Md_JavaDataBaseConnection {
         return connection;
     }
     
-    //public static void main(String[] args) {
-       // DB.myConnection();
-       // Connection c=c.createStatement();
-        
-   // }
+   
 }
