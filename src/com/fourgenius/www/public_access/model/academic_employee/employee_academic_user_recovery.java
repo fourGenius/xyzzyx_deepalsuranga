@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import public_access.Md_JavaDataBaseConnection;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -23,7 +23,7 @@ public class employee_academic_user_recovery {
         this.employee_academic_user_recovery_question_no = employee_academic_user_recovery_question_no;
         this.employee_academic_user_recovery_answer = employee_academic_user_recovery_answer;
         try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_academic_user_status values '" + employee_academic_user_recovery_question_no + "','" + employee_academic_user_recovery_answer + "'");
         } catch (SQLException ex) {
@@ -38,7 +38,7 @@ public class employee_academic_user_recovery {
     public void setEmployee_academic_user_recovery_question_no(String employee_academic_user_recovery_question_no) {
         this.employee_academic_user_recovery_question_no = employee_academic_user_recovery_question_no;
         try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_academic_user_status values '" + employee_academic_user_recovery_question_no + "'");
         } catch (SQLException ex) {
@@ -53,7 +53,7 @@ public class employee_academic_user_recovery {
     public void setEmployee_academic_user_recovery_answer(String employee_academic_user_recovery_answer) {
         this.employee_academic_user_recovery_answer = employee_academic_user_recovery_answer;
         try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_academic_user_status values '" + employee_academic_user_recovery_answer + "'");
         } catch (SQLException ex) {

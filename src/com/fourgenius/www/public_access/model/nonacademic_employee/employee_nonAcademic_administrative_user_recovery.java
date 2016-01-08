@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import public_access.Md_JavaDataBaseConnection;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -23,7 +23,7 @@ public class employee_nonAcademic_administrative_user_recovery {
         this.employee_nonAcademic_administrative_user_recovery_question_no = employee_nonAcademic_administrative_user_recovery_question_no;
         this.employee_nonAcademic_administrative_user_recoveryanswer = employee_nonAcademic_administrative_user_recoveryanswer;
      try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_nonAcademic_administrative_user_recovery (employee_nonAcademic_administrative_user_recovery_question_no,employee_nonAcademic_administrative_user_recoveryanswer) values ('" + employee_nonAcademic_administrative_user_recovery_question_no + "','" + employee_nonAcademic_administrative_user_recoveryanswer+ "')");
         } catch (SQLException ex) {
@@ -38,7 +38,7 @@ public class employee_nonAcademic_administrative_user_recovery {
     public void setEmployee_nonAcademic_administrative_user_recovery_question_no(String employee_nonAcademic_administrative_user_recovery_question_no) {
         this.employee_nonAcademic_administrative_user_recovery_question_no = employee_nonAcademic_administrative_user_recovery_question_no;
      try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_nonAcademic_administrative_user_recovery (employee_nonAcademic_administrative_user_recovery_question_no) values ('" +employee_nonAcademic_administrative_user_recovery_question_no+ "')");
         } catch (SQLException ex) {
@@ -53,7 +53,7 @@ public class employee_nonAcademic_administrative_user_recovery {
     public void setEmployee_nonAcademic_administrative_user_recoveryanswer(String employee_nonAcademic_administrative_user_recoveryanswer) {
         this.employee_nonAcademic_administrative_user_recoveryanswer = employee_nonAcademic_administrative_user_recoveryanswer;
     try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_nonAcademic_administrative_user_recovery (employee_nonAcademic_administrative_user_recoveryanswer) values ('" +employee_nonAcademic_administrative_user_recoveryanswer+ "')");
         } catch (SQLException ex) {

@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import static javax.swing.Spring.max;
-import public_access.Md_JavaDataBaseConnection;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -57,7 +57,7 @@ public class employee_academic_user_info {
         this.employee_academic_user_info_status = employee_academic_user_info_status;
 
         try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeUpdate("insert into employee_academic_user_info(employee_academic_user_id,employee_academic_user_email,employee_academic_user_password,employee_academic_user_info_status) values ('" + employee_academic_user_id + "','" + employee_academic_user_email + "','" + employee_academic_user_password + "','" + employee_academic_user_info_status + "')");
         } catch (SQLException ex) {
@@ -70,7 +70,7 @@ public class employee_academic_user_info {
     public String getEmployee_academic_user_id_s(String id) {
 
         try {
-            Connection c = Md_JavaDataBaseConnection.myConnection();
+            Connection c = MC_JavaDataBaseConnection.myConnection();
             Statement s = c.createStatement();
             try (ResultSet rs = s.executeQuery("SELECT * FROM employee_academic_user_info where employee_academic_user_id LIKE '%" + id + "%'")) {
                 while (rs.next()) {
@@ -90,7 +90,7 @@ public class employee_academic_user_info {
     public void setEmployee_academic_user_id(String employee_academic_user_id) {
         this.employee_academic_user_id = employee_academic_user_id;
         try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info(employee_academic_user_id) values '" + employee_academic_user_id + "'");
         } catch (SQLException ex) {
@@ -105,7 +105,7 @@ public class employee_academic_user_info {
     public void setEmployee_academic_user_email(String employee_academic_user_email) {
         this.employee_academic_user_email = employee_academic_user_email;
         try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info(employee_academic_user_email) values '" + employee_academic_user_email + "'");
         } catch (SQLException ex) {
@@ -120,7 +120,7 @@ public class employee_academic_user_info {
     public void setEmployee_academic_user_password(String employee_academic_user_password) {
         this.employee_academic_user_password = employee_academic_user_password;
         try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info(employee_academic_user_id) values '" + employee_academic_user_id + "'");
         } catch (SQLException ex) {
@@ -135,7 +135,7 @@ public class employee_academic_user_info {
     public void setEmployee_academic_user_info_status(String employee_academic_user_info_status) {
         this.employee_academic_user_info_status = employee_academic_user_info_status;
         try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info(employee_academic_user_info_status) values '" + employee_academic_user_info_status + "'");
         } catch (SQLException ex) {

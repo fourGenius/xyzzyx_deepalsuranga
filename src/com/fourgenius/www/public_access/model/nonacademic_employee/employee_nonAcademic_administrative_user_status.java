@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import public_access.Md_JavaDataBaseConnection;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -23,7 +23,7 @@ public class employee_nonAcademic_administrative_user_status {
         this.employee_nonAcademic_administrative_user_status_code = employee_nonAcademic_administrative_user_status_code;
         this.employee_nonAcademic_administrative_user_status_name = employee_nonAcademic_administrative_user_status_name;
     try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_nonAcademic_administrative_user_status(employee_nonAcademic_administrative_user_status_code,employee_nonAcademic_administrative_user_status_name) values '" + employee_nonAcademic_administrative_user_status_code + "','" +employee_nonAcademic_administrative_user_status_name+ "'");
         } catch (SQLException ex) {
@@ -38,7 +38,7 @@ public class employee_nonAcademic_administrative_user_status {
     public void setEmployee_nonAcademic_administrative_user_status_code(String employee_nonAcademic_administrative_user_status_code) {
         this.employee_nonAcademic_administrative_user_status_code = employee_nonAcademic_administrative_user_status_code;
     try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_nonAcademic_administrative_user_status(employee_nonAcademic_administrative_user_status_code) values '" + employee_nonAcademic_administrative_user_status_code + "'");
         } catch (SQLException ex) {
@@ -53,7 +53,7 @@ public class employee_nonAcademic_administrative_user_status {
     public void setEmployee_nonAcademic_administrative_user_status_name(String employee_nonAcademic_administrative_user_status_name) {
         this.employee_nonAcademic_administrative_user_status_name = employee_nonAcademic_administrative_user_status_name;
     try {
-            Connection connection = Md_JavaDataBaseConnection.myConnection();
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_nonAcademic_administrative_user_status(employee_nonAcademic_administrative_user_status_name) values '" + employee_nonAcademic_administrative_user_status_name + "'");
         } catch (SQLException ex) {

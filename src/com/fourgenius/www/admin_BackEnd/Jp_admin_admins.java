@@ -28,7 +28,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         }
         //Border border=BorderFactory.createLineBorder(Color.white, 1);
         //admin_main_panel.add("Label Set", (Component) border);
-        
+
         changeBtnsss.setVisible(false);
     }
 
@@ -544,16 +544,16 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
         changeBtnsss.setVisible(true);
         changeBtnsss.setText("Add Administrator");
-        
+
         //INSERT INTO `g4_2015_java_se_management_ramanifernando`.`admin` (`idadmin`, `admin_email`, `admin_password`, `admin_status`) VALUES ('3', 'a', 'a', '1');
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+
         changeBtnsss.setVisible(true);
         changeBtnsss.setText("Update Administrator");
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void _tf_registration_lecture_personalInformation_lectureName_sirNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_personalInformation_lectureName_sirNameActionPerformed
@@ -581,14 +581,16 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     }//GEN-LAST:event__tf_registration_lecture_personalInformation_idInformation_dateOfBirth1ActionPerformed
 
     private void changeBtnsssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeBtnsssActionPerformed
-        // TODO add your handling code here:
+
+        //employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_administrative_user_info_email,employee_nonAcademic_administrative_user_info_password,employee_nonAcademic_administrative_user_info_status
+
     }//GEN-LAST:event_changeBtnsssActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         changeBtnsss.setVisible(true);
         changeBtnsss.setText("Disable Administrator");
-        
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
