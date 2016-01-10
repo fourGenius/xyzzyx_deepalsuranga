@@ -100,9 +100,9 @@
                       </Group>
                       <Component id="_pl_registration_user_personalInformations_studentName" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="_pl_registration_lecture_personalInformation_browsePhoto" min="-2" pref="128" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

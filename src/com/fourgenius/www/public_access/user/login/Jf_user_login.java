@@ -13,8 +13,10 @@ import javax.swing.border.Border;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
 import com.fourgenius.www.private_access.admin.method.Md_move_text;
 import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
+import java.sql.ResultSet;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -27,7 +29,7 @@ public class Jf_user_login extends javax.swing.JFrame {
      * Creates new form user_login
      */
     Md_move_text setLableValuesNullAndAdd = new Md_move_text();
-
+Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
     public Jf_user_login() {
         initComponents();
         try {
@@ -35,7 +37,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         } catch (Exception ex) {
         }
 
-        Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
+        
         code_Gen.load_qr(_lb_user_login_qrCode);
 
         setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_userName);
@@ -528,8 +530,12 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     private void _tf_user_loging_userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameActionPerformed
 
-        _pf_user_login_password.grabFocus();
-
+        try {
+            _pf_user_login_password.grabFocus();
+        ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='"+_tf_user_loging_userName.getText()+"'");
+        
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event__tf_user_loging_userNameActionPerformed
 
     private void _pf_user_login_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__pf_user_login_passwordMouseClicked
@@ -641,9 +647,20 @@ public class Jf_user_login extends javax.swing.JFrame {
     }//GEN-LAST:event__bt_Jf_user_login_CancelMouseReleased
 
     private void _bt_Jf_user_login_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginActionPerformed
-        Jf_UserMain mainF = new Jf_UserMain();
-        mainF.setVisible(true);
-        this.dispose();
+        String pass=new String(_pf_user_login_password.getPassword());
+        try {
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM `user` WHERE `user_email`='"+_tf_user_loging_userName.getText()+"' AND `user_password`='"+pass+"'");
+            if (rs.next()) {
+                if (_tf_user_login_pin.equals(code_Gen.getRandom_pin())) {
+                    Jf_UserMain user_menu=new Jf_UserMain();
+                    user_menu.setVisible(true);
+                    this.dispose();
+                    System.gc();
+                }
+            }
+            rs.close();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event__bt_Jf_user_login_LoginActionPerformed
 
     /**

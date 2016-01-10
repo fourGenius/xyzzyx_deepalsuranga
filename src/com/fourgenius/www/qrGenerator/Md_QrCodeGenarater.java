@@ -30,6 +30,7 @@ public class Md_QrCodeGenarater {
 
     private String set_qr_label;
     private String path = "C:\\FourGenius\\FourGenius.PNG";
+    private String random_pin;
 
     public void load_qr(JLabel qr_set_lable) {
 
@@ -42,7 +43,7 @@ public class Md_QrCodeGenarater {
 
         ///// code make
         Md_RandomIntegerGenarater random_Integer_Genarate = new Md_RandomIntegerGenarater();
-        String random_pin = random_Integer_Genarate.RandomCodePIN();
+       random_pin = random_Integer_Genarate.RandomCodePIN();
 
         //String name=random_pin.g
         //qr make
@@ -80,5 +81,10 @@ public class Md_QrCodeGenarater {
             e.printStackTrace();
         }
     }
+
+    public String getRandom_pin() {
+        return random_pin;
+    }
+    
 
 }
