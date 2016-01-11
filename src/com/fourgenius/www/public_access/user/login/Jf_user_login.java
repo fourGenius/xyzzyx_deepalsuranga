@@ -24,12 +24,13 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class Jf_user_login extends javax.swing.JFrame {
 
-    Border border=BorderFactory.createLineBorder(Color.white, 1);
+    Border border = BorderFactory.createLineBorder(Color.white, 1);
     /**
      * Creates new form user_login
      */
     Md_move_text setLableValuesNullAndAdd = new Md_move_text();
-Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
+    Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
+
     public Jf_user_login() {
         initComponents();
         try {
@@ -37,7 +38,6 @@ Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
         } catch (Exception ex) {
         }
 
-        
         code_Gen.load_qr(_lb_user_login_qrCode);
 
         setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_userName);
@@ -456,7 +456,7 @@ Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
 
     private void _lb_user_login_closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseExited
         _lb_user_login_close.setBorder(null);
-        _lb_user_login_close.setBackground(new Color(18,75,163));
+        _lb_user_login_close.setBackground(new Color(18, 75, 163));
     }//GEN-LAST:event__lb_user_login_closeMouseExited
 
     private void _lb_user_login_minimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_minimizeMouseEntered
@@ -532,8 +532,8 @@ Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
 
         try {
             _pf_user_login_password.grabFocus();
-        ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='"+_tf_user_loging_userName.getText()+"'");
-        
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "'");
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event__tf_user_loging_userNameActionPerformed
@@ -607,7 +607,7 @@ Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
     }//GEN-LAST:event__lb_user_login_logoMouseClicked
 
     private void _bt_Jf_user_login_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginMouseClicked
-        
+
     }//GEN-LAST:event__bt_Jf_user_login_LoginMouseClicked
 
     private void _bt_Jf_user_login_LoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginMouseEntered
@@ -647,19 +647,22 @@ Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
     }//GEN-LAST:event__bt_Jf_user_login_CancelMouseReleased
 
     private void _bt_Jf_user_login_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginActionPerformed
-        String pass=new String(_pf_user_login_password.getPassword());
+        String pass = new String(_pf_user_login_password.getPassword());
         try {
-            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM `user` WHERE `user_email`='"+_tf_user_loging_userName.getText()+"' AND `user_password`='"+pass+"'");
+            ResultSet rs;
+            rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM user WHERE user_email='" + _tf_user_loging_userName.getText() + "' AND user_password='" + pass + "'");
             if (rs.next()) {
+                System.out.println("ok!");
                 if (_tf_user_login_pin.equals(code_Gen.getRandom_pin())) {
-                    Jf_UserMain user_menu=new Jf_UserMain();
+                    Jf_UserMain user_menu = new Jf_UserMain();
                     user_menu.setVisible(true);
-                    this.dispose();
-                    System.gc();
+                    //this.dispose();
+                    //System.gc();
                 }
             }
             rs.close();
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event__bt_Jf_user_login_LoginActionPerformed
 
