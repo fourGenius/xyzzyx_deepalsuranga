@@ -432,9 +432,9 @@ public class Jf_UserMain extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         payment();
         
-        Jp_student_payment._tf_student_payment_paymentDatails_studentName.setText(Jp_registration_student._lb_registration_student_preview_name.getText());
-        Jp_student_payment._tf_student_payment_paymentDatails_course.setText(Jp_registration_student._lb_registration_student_preview_course.getText());
-        Jp_student_payment._tf_student_payment_paymentDatails_courseFee.setText("70000");
+//        Jp_student_payment._tf_student_payment_paymentDatails_studentName.setText(Jp_registration_student._lb_registration_student_preview_name.getText());
+//        Jp_student_payment._tf_student_payment_paymentDatails_course.setText(Jp_registration_student._lb_registration_student_preview_course.getText());
+//        Jp_student_payment._tf_student_payment_paymentDatails_courseFee.setText("70000");
     }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
