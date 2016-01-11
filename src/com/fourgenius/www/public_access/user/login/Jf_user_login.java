@@ -451,6 +451,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         _lb_user_login_close.setBackground(Color.red);
 
         _lb_user_login_minimize.setToolTipText("Close");
+        
 
     }//GEN-LAST:event__lb_user_login_closeMouseEntered
 
@@ -651,14 +652,18 @@ public class Jf_user_login extends javax.swing.JFrame {
         try {
             ResultSet rs;
             rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM user WHERE user_email='" + _tf_user_loging_userName.getText() + "' AND user_password='" + pass + "'");
+            if (rs.isFirst()) {
+                System.out.println("OOOOk!");
+            }
             if (rs.next()) {
                 System.out.println("ok!");
-                if (_tf_user_login_pin.equals(code_Gen.getRandom_pin())) {
+                //if (_tf_user_login_pin.equals(code_Gen.getRandom_pin())) {
+                    System.out.println("Okyda?");
                     Jf_UserMain user_menu = new Jf_UserMain();
                     user_menu.setVisible(true);
-                    //this.dispose();
+                    this.dispose();
                     //System.gc();
-                }
+                //}
             }
             rs.close();
         } catch (Exception e) {

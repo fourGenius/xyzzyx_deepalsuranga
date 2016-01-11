@@ -5,13 +5,8 @@
  */
 package com.fourgenius.www.private_access.admin.login;
 
-import com.fourgenius.www.admin_BackEnd.Jf_admin_backend;
-import com.fourgenius.www.public_access.registration.Jp_registration_student;
-import java.awt.Color;
-import javax.swing.BorderFactory;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.border.Border;
 
 /**
  *
