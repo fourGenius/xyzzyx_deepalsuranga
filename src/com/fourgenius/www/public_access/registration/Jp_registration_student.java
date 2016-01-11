@@ -22,7 +22,6 @@ import javax.swing.JFileChooser;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
-
 /**
  *
  * @author thilina
@@ -66,10 +65,10 @@ public class Jp_registration_student extends javax.swing.JPanel {
         _tf_registration_student_personalInformations_studentDetails_nicNumber = new javax.swing.JTextField();
         _lb_registration_user_personalInformations_idInformations_dateOfBirth = new javax.swing.JLabel();
         _dc_registration_student_personalInformations_studentDetails_dateOfBirth = new com.toedter.calendar.JDateChooser();
-        _lb_registration_user_personalInformations_idInformations_age = new javax.swing.JLabel();
-        _tf_registration_student_personalInformations_studentDetails_age = new javax.swing.JTextField();
         _lb_registration_user_personalInformations_studentName_sirName1 = new javax.swing.JLabel();
         _tf_registration_student_personalInformations_studentDetails_course = new javax.swing.JTextField();
+        _lb_registration_user_personalInformations_idInformations_dateOfBirth1 = new javax.swing.JLabel();
+        _tf_registration_student_personalInformation_browsePhoto_browseFile = new javax.swing.JTextField();
         _pl_registration_user_personalInformations_contactDetails = new javax.swing.JPanel();
         _tf_registration_student_personalInformations_contactDetails_mobileNumber = new javax.swing.JTextField();
         _lb_registration_user_personalInformations_contactDetails_mobileNumber = new javax.swing.JLabel();
@@ -84,12 +83,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
         _lb_registration_user_personalInformations_address_city = new javax.swing.JLabel();
         _tf_registration_student_personalInformations_contactDetails_city = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        _pl_registration_lecture_personalInformation_browsePhoto = new javax.swing.JPanel();
-        _tf_registration_student_personalInformation_browsePhoto_browseFile = new javax.swing.JTextField();
-        _bt_registration_student_personalInformation_browsePhoto_browser = new javax.swing.JButton();
-        _bt_registration_student_personalInformation_clear = new javax.swing.JButton();
         _bt_registration_student_personalInformation_registerLecture = new javax.swing.JButton();
-        _bt_registration_student_personalInformations_payments = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -112,7 +106,12 @@ public class Jp_registration_student extends javax.swing.JPanel {
         _lb_registration_student_preview_homeNumber = new javax.swing.JLabel();
         _lb_registration_student_preview_eMail = new javax.swing.JLabel();
         _lb_registration_student_preview_address = new javax.swing.JLabel();
-        _bt_registration_student_personalInformations_printReport = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        add_Student = new javax.swing.JButton();
+        add_Student1 = new javax.swing.JButton();
+        add_Student2 = new javax.swing.JButton();
+        add_Student3 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setForeground(new java.awt.Color(66, 66, 66));
@@ -184,17 +183,6 @@ public class Jp_registration_student extends javax.swing.JPanel {
             }
         });
 
-        _lb_registration_user_personalInformations_idInformations_age.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _lb_registration_user_personalInformations_idInformations_age.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_registration_user_personalInformations_idInformations_age.setText("Age");
-
-        _tf_registration_student_personalInformations_studentDetails_age.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_student_personalInformations_studentDetails_age.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_student_personalInformations_studentDetails_ageActionPerformed(evt);
-            }
-        });
-
         _lb_registration_user_personalInformations_studentName_sirName1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_user_personalInformations_studentName_sirName1.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_user_personalInformations_studentName_sirName1.setText("Course");
@@ -203,6 +191,22 @@ public class Jp_registration_student extends javax.swing.JPanel {
         _tf_registration_student_personalInformations_studentDetails_course.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_student_personalInformations_studentDetails_courseActionPerformed(evt);
+            }
+        });
+
+        _lb_registration_user_personalInformations_idInformations_dateOfBirth1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_user_personalInformations_idInformations_dateOfBirth1.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_user_personalInformations_idInformations_dateOfBirth1.setText("Browse");
+
+        _tf_registration_student_personalInformation_browsePhoto_browseFile.setText("Broswe File");
+        _tf_registration_student_personalInformation_browsePhoto_browseFile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tf_registration_student_personalInformation_browsePhoto_browseFileMouseClicked(evt);
+            }
+        });
+        _tf_registration_student_personalInformation_browsePhoto_browseFile.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_student_personalInformation_browsePhoto_browseFileKeyReleased(evt);
             }
         });
 
@@ -224,12 +228,12 @@ public class Jp_registration_student extends javax.swing.JPanel {
                             .addComponent(_tf_registration_student_personalInformations_studentDetails_lastName)
                             .addComponent(_lb_registration_user_personalInformations_idInformations_nicNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_user_personalInformations_idInformations_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_user_personalInformations_idInformations_age, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(_tf_registration_student_personalInformations_studentDetails_nicNumber)
-                            .addComponent(_dc_registration_student_personalInformations_studentDetails_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_tf_registration_student_personalInformations_studentDetails_age, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(_dc_registration_student_personalInformations_studentDetails_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)))
                     .addComponent(_lb_registration_user_personalInformations_studentName_sirName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_student_personalInformations_studentDetails_course))
+                    .addComponent(_tf_registration_student_personalInformations_studentDetails_course)
+                    .addComponent(_lb_registration_user_personalInformations_idInformations_dateOfBirth1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(_tf_registration_student_personalInformation_browsePhoto_browseFile))
                 .addContainerGap())
         );
         _pl_registration_user_personalInformations_studentNameLayout.setVerticalGroup(
@@ -260,9 +264,9 @@ public class Jp_registration_student extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_dc_registration_student_personalInformations_studentDetails_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_registration_user_personalInformations_idInformations_age)
-                .addGap(11, 11, 11)
-                .addComponent(_tf_registration_student_personalInformations_studentDetails_age, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(_lb_registration_user_personalInformations_idInformations_dateOfBirth1)
+                .addGap(1, 1, 1)
+                .addComponent(_tf_registration_student_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         _pl_registration_user_personalInformations_contactDetails.setBackground(new java.awt.Color(2, 119, 189));
@@ -391,65 +395,6 @@ public class Jp_registration_student extends javax.swing.JPanel {
                 .addComponent(_tf_registration_student_personalInformations_contactDetails_city, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        _pl_registration_lecture_personalInformation_browsePhoto.setBackground(new java.awt.Color(2, 119, 189));
-        _pl_registration_lecture_personalInformation_browsePhoto.setPreferredSize(new java.awt.Dimension(766, 123));
-
-        _tf_registration_student_personalInformation_browsePhoto_browseFile.setText("Broswe File");
-
-        _bt_registration_student_personalInformation_browsePhoto_browser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registration_student_personalInformation_browsePhoto_browser.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registration_student_personalInformation_browsePhoto_browser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        _bt_registration_student_personalInformation_browsePhoto_browser.setText("Browse");
-        _bt_registration_student_personalInformation_browsePhoto_browser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_registration_student_personalInformation_browsePhoto_browser.setFocusPainted(false);
-        _bt_registration_student_personalInformation_browsePhoto_browser.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registration_student_personalInformation_browsePhoto_browser.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_registration_student_personalInformation_browsePhoto_browserMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_registration_student_personalInformation_browsePhoto_browserMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_registration_student_personalInformation_browsePhoto_browserMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_registration_student_personalInformation_browsePhoto_browserMouseReleased(evt);
-            }
-        });
-        _bt_registration_student_personalInformation_browsePhoto_browser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_registration_student_personalInformation_browsePhoto_browserActionPerformed(evt);
-            }
-        });
-
-        _bt_registration_student_personalInformation_clear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registration_student_personalInformation_clear.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registration_student_personalInformation_clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        _bt_registration_student_personalInformation_clear.setText("Clear");
-        _bt_registration_student_personalInformation_clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_registration_student_personalInformation_clear.setFocusPainted(false);
-        _bt_registration_student_personalInformation_clear.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registration_student_personalInformation_clear.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_registration_student_personalInformation_clearMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_registration_student_personalInformation_clearMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_registration_student_personalInformation_clearMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_registration_student_personalInformation_clearMouseReleased(evt);
-            }
-        });
-        _bt_registration_student_personalInformation_clear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_registration_student_personalInformation_clearActionPerformed(evt);
-            }
-        });
-
         _bt_registration_student_personalInformation_registerLecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registration_student_personalInformation_registerLecture.setForeground(new java.awt.Color(255, 255, 255));
         _bt_registration_student_personalInformation_registerLecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
@@ -478,62 +423,18 @@ public class Jp_registration_student extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout _pl_registration_lecture_personalInformation_browsePhotoLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_browsePhoto);
-        _pl_registration_lecture_personalInformation_browsePhoto.setLayout(_pl_registration_lecture_personalInformation_browsePhotoLayout);
-        _pl_registration_lecture_personalInformation_browsePhotoLayout.setHorizontalGroup(
-            _pl_registration_lecture_personalInformation_browsePhotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(_pl_registration_lecture_personalInformation_browsePhotoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(_pl_registration_lecture_personalInformation_browsePhotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_bt_registration_student_personalInformation_browsePhoto_browser, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_tf_registration_student_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(_pl_registration_lecture_personalInformation_browsePhotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_bt_registration_student_personalInformation_registerLecture, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_student_personalInformation_clear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        _pl_registration_lecture_personalInformation_browsePhotoLayout.setVerticalGroup(
-            _pl_registration_lecture_personalInformation_browsePhotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_browsePhotoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(_pl_registration_lecture_personalInformation_browsePhotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_tf_registration_student_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_student_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(_pl_registration_lecture_personalInformation_browsePhotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_bt_registration_student_personalInformation_browsePhoto_browser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_student_personalInformation_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        _bt_registration_student_personalInformations_payments.setText("Payments");
-        _bt_registration_student_personalInformations_payments.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_registration_student_personalInformations_paymentsActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout _pl_registration_user_personalInformationsLayout = new javax.swing.GroupLayout(_pl_registration_user_personalInformations);
         _pl_registration_user_personalInformations.setLayout(_pl_registration_user_personalInformationsLayout);
         _pl_registration_user_personalInformationsLayout.setHorizontalGroup(
             _pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(_pl_registration_user_personalInformations_studentName, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(_pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
-                        .addComponent(_pl_registration_lecture_personalInformation_browsePhoto, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
-                        .addComponent(_pl_registration_user_personalInformations_studentName, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addGroup(_pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_user_personalInformationsLayout.createSequentialGroup()
-                                .addComponent(_bt_registration_student_personalInformations_payments)
-                                .addGap(21, 21, 21))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_user_personalInformationsLayout.createSequentialGroup()
-                                .addComponent(_pl_registration_user_personalInformations_contactDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
+                    .addComponent(_pl_registration_user_personalInformations_contactDetails, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_registration_student_personalInformation_registerLecture, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         _pl_registration_user_personalInformationsLayout.setVerticalGroup(
             _pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -543,14 +444,12 @@ public class Jp_registration_student extends javax.swing.JPanel {
                     .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
                         .addComponent(_pl_registration_user_personalInformations_contactDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(_bt_registration_student_personalInformations_payments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(_pl_registration_user_personalInformations_studentName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(_pl_registration_lecture_personalInformation_browsePhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7))
+                        .addComponent(_bt_registration_student_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_pl_registration_user_personalInformations_studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
-        add(_pl_registration_user_personalInformations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 810, -1));
+        add(_pl_registration_user_personalInformations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 810, 580));
 
         jPanel6.setBackground(new java.awt.Color(117, 117, 117));
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Preview", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -621,22 +520,6 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
         _lb_registration_student_preview_address.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        _bt_registration_student_personalInformations_printReport.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registration_student_personalInformations_printReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightBlue_200x50.png"))); // NOI18N
-        _bt_registration_student_personalInformations_printReport.setText("Print Report");
-        _bt_registration_student_personalInformations_printReport.setContentAreaFilled(false);
-        _bt_registration_student_personalInformations_printReport.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_registration_student_personalInformations_printReport.setFocusPainted(false);
-        _bt_registration_student_personalInformations_printReport.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registration_student_personalInformations_printReport.setMaximumSize(new java.awt.Dimension(200, 50));
-        _bt_registration_student_personalInformations_printReport.setMinimumSize(new java.awt.Dimension(200, 50));
-        _bt_registration_student_personalInformations_printReport.setPreferredSize(new java.awt.Dimension(200, 50));
-        _bt_registration_student_personalInformations_printReport.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_registration_student_personalInformations_printReportActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -644,6 +527,9 @@ public class Jp_registration_student extends javax.swing.JPanel {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -658,7 +544,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_lb_registration_student_preview_studentID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_registration_student_preview_studentID, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
                             .addComponent(_lb_registration_student_preview_course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_student_preview_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_student_preview_nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -667,71 +553,215 @@ public class Jp_registration_student extends javax.swing.JPanel {
                             .addComponent(_lb_registration_student_preview_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_student_preview_homeNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_student_preview_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_student_preview_address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 301, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(_bt_registration_student_personalInformations_printReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(_lb_registration_student_preview_address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_student_preview_studentID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_student_preview_studentID, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_student_preview_course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_student_preview_course, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_student_preview_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_student_preview_name, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_student_preview_nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_student_preview_nic, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_student_preview_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_student_preview_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_student_preview_age, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_student_preview_age, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_student_preview_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_student_preview_mobileNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_student_preview_homeNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_student_preview_homeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_student_preview_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_student_preview_eMail, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(_lb_registration_student_preview_address, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(_bt_registration_student_personalInformations_printReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, -1, -1));
-    }// </editor-fold>//GEN-END:initComponents
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, -1, 580));
 
-    private void _tf_registration_student_personalInformations_studentDetails_ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_studentDetails_ageActionPerformed
-        _tf_registration_student_personalInformations_contactDetails_mobileNumber.grabFocus();
-    }//GEN-LAST:event__tf_registration_student_personalInformations_studentDetails_ageActionPerformed
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+
+        add_Student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        add_Student.setForeground(new java.awt.Color(255, 255, 255));
+        add_Student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        add_Student.setText("Add Student");
+        add_Student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_Student.setFocusPainted(false);
+        add_Student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add_Student.setPreferredSize(new java.awt.Dimension(300, 50));
+        add_Student.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_StudentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_StudentMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                add_StudentMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                add_StudentMouseReleased(evt);
+            }
+        });
+        add_Student.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_StudentActionPerformed(evt);
+            }
+        });
+
+        add_Student1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        add_Student1.setForeground(new java.awt.Color(255, 255, 255));
+        add_Student1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        add_Student1.setText("Update Student");
+        add_Student1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_Student1.setFocusPainted(false);
+        add_Student1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add_Student1.setPreferredSize(new java.awt.Dimension(300, 50));
+        add_Student1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_Student1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_Student1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                add_Student1MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                add_Student1MouseReleased(evt);
+            }
+        });
+        add_Student1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_Student1ActionPerformed(evt);
+            }
+        });
+
+        add_Student2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        add_Student2.setForeground(new java.awt.Color(255, 255, 255));
+        add_Student2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        add_Student2.setText("Remove Student");
+        add_Student2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_Student2.setFocusPainted(false);
+        add_Student2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add_Student2.setPreferredSize(new java.awt.Dimension(300, 50));
+        add_Student2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_Student2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_Student2MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                add_Student2MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                add_Student2MouseReleased(evt);
+            }
+        });
+        add_Student2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_Student2ActionPerformed(evt);
+            }
+        });
+
+        add_Student3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        add_Student3.setForeground(new java.awt.Color(255, 255, 255));
+        add_Student3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        add_Student3.setText("Print Report");
+        add_Student3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_Student3.setFocusPainted(false);
+        add_Student3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add_Student3.setPreferredSize(new java.awt.Dimension(300, 50));
+        add_Student3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_Student3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_Student3MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                add_Student3MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                add_Student3MouseReleased(evt);
+            }
+        });
+        add_Student3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_Student3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 638, 1340, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1370, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 600));
+    }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_student_personalInformations_studentDetails_nicNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_studentDetails_nicNumberActionPerformed
         _dc_registration_student_personalInformations_studentDetails_dateOfBirth.grabFocus();
@@ -777,22 +807,6 @@ public class Jp_registration_student extends javax.swing.JPanel {
         _tf_registration_student_personalInformations_studentDetails_surName.grabFocus();
     }//GEN-LAST:event__tf_registration_student_personalInformations_studentDetails_courseActionPerformed
 
-    private void _bt_registration_student_personalInformation_browsePhoto_browserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_browsePhoto_browserMouseEntered
-        _bt_registration_student_personalInformation_browsePhoto_browser.setBorder(border);
-    }//GEN-LAST:event__bt_registration_student_personalInformation_browsePhoto_browserMouseEntered
-
-    private void _bt_registration_student_personalInformation_browsePhoto_browserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_browsePhoto_browserMouseExited
-        _bt_registration_student_personalInformation_browsePhoto_browser.setBorder(null);
-    }//GEN-LAST:event__bt_registration_student_personalInformation_browsePhoto_browserMouseExited
-
-    private void _bt_registration_student_personalInformation_browsePhoto_browserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_browsePhoto_browserMousePressed
-        _bt_registration_student_personalInformation_browsePhoto_browser.setBorder(null);
-    }//GEN-LAST:event__bt_registration_student_personalInformation_browsePhoto_browserMousePressed
-
-    private void _bt_registration_student_personalInformation_browsePhoto_browserMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_browsePhoto_browserMouseReleased
-        _bt_registration_student_personalInformation_browsePhoto_browser.setBorder(border);
-    }//GEN-LAST:event__bt_registration_student_personalInformation_browsePhoto_browserMouseReleased
-
     private void _bt_registration_student_personalInformation_registerLectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_registerLectureMouseEntered
         _bt_registration_student_personalInformation_registerLecture.setBorder(border);
     }//GEN-LAST:event__bt_registration_student_personalInformation_registerLectureMouseEntered
@@ -808,22 +822,6 @@ public class Jp_registration_student extends javax.swing.JPanel {
     private void _bt_registration_student_personalInformation_registerLectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_registerLectureMouseReleased
         _bt_registration_student_personalInformation_registerLecture.setBorder(border);
     }//GEN-LAST:event__bt_registration_student_personalInformation_registerLectureMouseReleased
-
-    private void _bt_registration_student_personalInformation_clearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_clearMouseEntered
-        _bt_registration_student_personalInformation_clear.setBorder(border);
-    }//GEN-LAST:event__bt_registration_student_personalInformation_clearMouseEntered
-
-    private void _bt_registration_student_personalInformation_clearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_clearMouseExited
-        _bt_registration_student_personalInformation_clear.setBorder(null);
-    }//GEN-LAST:event__bt_registration_student_personalInformation_clearMouseExited
-
-    private void _bt_registration_student_personalInformation_clearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_clearMousePressed
-        _bt_registration_student_personalInformation_clear.setBorder(null);
-    }//GEN-LAST:event__bt_registration_student_personalInformation_clearMousePressed
-
-    private void _bt_registration_student_personalInformation_clearMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_clearMouseReleased
-        _bt_registration_student_personalInformation_clear.setBorder(border);
-    }//GEN-LAST:event__bt_registration_student_personalInformation_clearMouseReleased
     int i = 0;
     private void _bt_registration_student_personalInformation_registerLectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_registerLectureActionPerformed
         Date d = _dc_registration_student_personalInformations_studentDetails_dateOfBirth.getDate();
@@ -831,7 +829,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
         String date = sdf.format(d);
         _lb_registration_student_preview_course.setText(_tf_registration_student_personalInformations_studentDetails_course.getText());
         _lb_registration_student_preview_address.setText(_tf_registration_student_personalInformations_contactDetails_1stLine.getText() + "," + _tf_registration_student_personalInformations_contactDetails_2ndLine.getText() + "," + _tf_registration_student_personalInformations_contactDetails_city.getText());
-        _lb_registration_student_preview_age.setText(_tf_registration_student_personalInformations_studentDetails_age.getText());
+
         _lb_registration_student_preview_dateOfBirth.setText(date);
         _lb_registration_student_preview_eMail.setText(_tf_registration_student_personalInformations_contactDetails_eMail.getText());
         _lb_registration_student_preview_homeNumber.setText(_tf_registration_student_personalInformations_contactDetails_homeNumber.getText());
@@ -852,15 +850,182 @@ public class Jp_registration_student extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_registration_student_personalInformation_registerLectureActionPerformed
 
     private void _dc_registration_student_personalInformations_studentDetails_dateOfBirthMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__dc_registration_student_personalInformations_studentDetails_dateOfBirthMouseClicked
-        _tf_registration_student_personalInformations_studentDetails_age.grabFocus();
+
     }//GEN-LAST:event__dc_registration_student_personalInformations_studentDetails_dateOfBirthMouseClicked
 
-    private void _bt_registration_student_personalInformation_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_clearActionPerformed
+
+    private void _tf_registration_student_personalInformation_browsePhoto_browseFileKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformation_browsePhoto_browseFileKeyReleased
+
+        
+
+    }//GEN-LAST:event__tf_registration_student_personalInformation_browsePhoto_browseFileKeyReleased
+
+    private void add_StudentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_StudentMouseEntered
+
+    private void add_StudentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_StudentMouseExited
+
+    private void add_StudentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_StudentMousePressed
+
+    private void add_StudentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_StudentMouseReleased
+
+    private void add_StudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_StudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_StudentActionPerformed
+
+    private void add_Student1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student1MouseEntered
+
+    private void add_Student1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student1MouseExited
+
+    private void add_Student1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student1MousePressed
+
+    private void add_Student1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student1MouseReleased
+
+    private void add_Student1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student1ActionPerformed
+
+    private void add_Student2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student2MouseEntered
+
+    private void add_Student2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student2MouseExited
+
+    private void add_Student2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student2MousePressed
+
+    private void add_Student2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student2MouseReleased
+
+    private void add_Student2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student2ActionPerformed
+
+    private void add_Student3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student3MouseEntered
+
+    private void add_Student3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student3MouseExited
+
+    private void add_Student3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student3MousePressed
+
+    private void add_Student3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student3MouseReleased
+
+    private void add_Student3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_Student3ActionPerformed
+
+    private void _tf_registration_student_personalInformation_browsePhoto_browseFileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformation_browsePhoto_browseFileMouseClicked
+        
+        try {
+            JFileChooser jf = new JFileChooser();
+            jf.showDialog(this, "Browse");
+            File selectedpath = jf.getSelectedFile();
+            if (selectedpath != null) {
+                path = selectedpath.getAbsolutePath();
+                _tf_registration_student_personalInformation_browsePhoto_browseFile.setText(path);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event__tf_registration_student_personalInformation_browsePhoto_browseFileMouseClicked
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton _bt_registration_student_personalInformation_registerLecture;
+    private com.toedter.calendar.JDateChooser _dc_registration_student_personalInformations_studentDetails_dateOfBirth;
+    private javax.swing.JLabel _lb_registration_student_preview_address;
+    private javax.swing.JLabel _lb_registration_student_preview_age;
+    public static javax.swing.JLabel _lb_registration_student_preview_course;
+    private javax.swing.JLabel _lb_registration_student_preview_dateOfBirth;
+    private javax.swing.JLabel _lb_registration_student_preview_eMail;
+    private javax.swing.JLabel _lb_registration_student_preview_homeNumber;
+    private javax.swing.JLabel _lb_registration_student_preview_image;
+    private javax.swing.JLabel _lb_registration_student_preview_mobileNumber;
+    public static javax.swing.JLabel _lb_registration_student_preview_name;
+    private javax.swing.JLabel _lb_registration_student_preview_nic;
+    private javax.swing.JLabel _lb_registration_student_preview_studentID;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_address_1stLine;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_address_2ndLine;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_address_city;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_contactDetails_eMail;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_contactDetails_landNumber;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_contactDetails_mobileNumber;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_idInformations_dateOfBirth;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_idInformations_dateOfBirth1;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_idInformations_nicNumber;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_studentName_firstName;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_studentName_lastName;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_studentName_sirName;
+    private javax.swing.JLabel _lb_registration_user_personalInformations_studentName_sirName1;
+    private javax.swing.JPanel _pl_registration_user_personalInformations;
+    private javax.swing.JPanel _pl_registration_user_personalInformations_contactDetails;
+    private javax.swing.JPanel _pl_registration_user_personalInformations_studentName;
+    private javax.swing.JTextField _tf_registration_student_personalInformation_browsePhoto_browseFile;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_1stLine;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_2ndLine;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_city;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_eMail;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_homeNumber;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_mobileNumber;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_course;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_firstName;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_lastName;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_nicNumber;
+    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_surName;
+    private javax.swing.JButton add_Student;
+    private javax.swing.JButton add_Student1;
+    private javax.swing.JButton add_Student2;
+    private javax.swing.JButton add_Student3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel6;
+    // End of variables declaration//GEN-END:variables
+
+    public void clear_Text() {
         _tf_registration_student_personalInformations_studentDetails_course.setText(null);
         _tf_registration_student_personalInformations_contactDetails_1stLine.setText(null);
         _tf_registration_student_personalInformations_contactDetails_2ndLine.setText(null);
         _tf_registration_student_personalInformations_contactDetails_city.setText(null);
-        _tf_registration_student_personalInformations_studentDetails_age.setText(null);
+
         _dc_registration_student_personalInformations_studentDetails_dateOfBirth.setDate(null);
         _tf_registration_student_personalInformations_contactDetails_eMail.setText(null);
         _tf_registration_student_personalInformations_contactDetails_homeNumber.setText(null);
@@ -879,36 +1044,11 @@ public class Jp_registration_student extends javax.swing.JPanel {
         _lb_registration_student_preview_mobileNumber.setText(null);
         _lb_registration_student_preview_name.setText(null);
         _lb_registration_student_preview_nic.setText(null);
-    }//GEN-LAST:event__bt_registration_student_personalInformation_clearActionPerformed
+    }
 
-    private void _bt_registration_student_personalInformation_browsePhoto_browserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_browsePhoto_browserActionPerformed
+    public void printReport() {
 
-        try {
-            JFileChooser jf = new JFileChooser();
-            jf.showDialog(this, "Browse");
-            File selectedpath = jf.getSelectedFile();
-            if (selectedpath != null) {
-                path = selectedpath.getAbsolutePath();
-                _tf_registration_student_personalInformation_browsePhoto_browseFile.setText(path);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }//GEN-LAST:event__bt_registration_student_personalInformation_browsePhoto_browserActionPerformed
-    
-    
-    private void _bt_registration_student_personalInformations_paymentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformations_paymentsActionPerformed
-        
-        
-        
-        
-        
-    }//GEN-LAST:event__bt_registration_student_personalInformations_paymentsActionPerformed
-
-    private void _bt_registration_student_personalInformations_printReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformations_printReportActionPerformed
-//        
+        //        
 //                   try {
 //            String report_path = "src/reports/student_reg.jrxml";
 //                       System.out.println("oooo");
@@ -934,69 +1074,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-//        
-    }//GEN-LAST:event__bt_registration_student_personalInformations_printReportActionPerformed
+//  
+    }
 
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton _bt_registration_student_personalInformation_browsePhoto_browser;
-    private javax.swing.JButton _bt_registration_student_personalInformation_clear;
-    private javax.swing.JButton _bt_registration_student_personalInformation_registerLecture;
-    private javax.swing.JButton _bt_registration_student_personalInformations_payments;
-    private javax.swing.JButton _bt_registration_student_personalInformations_printReport;
-    private com.toedter.calendar.JDateChooser _dc_registration_student_personalInformations_studentDetails_dateOfBirth;
-    private javax.swing.JLabel _lb_registration_student_preview_address;
-    private javax.swing.JLabel _lb_registration_student_preview_age;
-    public static javax.swing.JLabel _lb_registration_student_preview_course;
-    private javax.swing.JLabel _lb_registration_student_preview_dateOfBirth;
-    private javax.swing.JLabel _lb_registration_student_preview_eMail;
-    private javax.swing.JLabel _lb_registration_student_preview_homeNumber;
-    private javax.swing.JLabel _lb_registration_student_preview_image;
-    private javax.swing.JLabel _lb_registration_student_preview_mobileNumber;
-    public static javax.swing.JLabel _lb_registration_student_preview_name;
-    private javax.swing.JLabel _lb_registration_student_preview_nic;
-    private javax.swing.JLabel _lb_registration_student_preview_studentID;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_address_1stLine;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_address_2ndLine;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_address_city;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_contactDetails_eMail;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_contactDetails_landNumber;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_contactDetails_mobileNumber;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_idInformations_age;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_idInformations_dateOfBirth;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_idInformations_nicNumber;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_studentName_firstName;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_studentName_lastName;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_studentName_sirName;
-    private javax.swing.JLabel _lb_registration_user_personalInformations_studentName_sirName1;
-    private javax.swing.JPanel _pl_registration_lecture_personalInformation_browsePhoto;
-    private javax.swing.JPanel _pl_registration_user_personalInformations;
-    private javax.swing.JPanel _pl_registration_user_personalInformations_contactDetails;
-    private javax.swing.JPanel _pl_registration_user_personalInformations_studentName;
-    private javax.swing.JTextField _tf_registration_student_personalInformation_browsePhoto_browseFile;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_1stLine;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_2ndLine;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_city;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_eMail;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_homeNumber;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_contactDetails_mobileNumber;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_age;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_course;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_firstName;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_lastName;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_nicNumber;
-    private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_surName;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel6;
-    // End of variables declaration//GEN-END:variables
 }
