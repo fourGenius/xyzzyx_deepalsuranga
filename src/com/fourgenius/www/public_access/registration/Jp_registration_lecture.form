@@ -6,6 +6,8 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="_bg_registration_lecture_personalInformations_employeeDetails_gender">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="_bg_registration_lecture_personalInformation_employeeDetails_branch">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -116,7 +118,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="_dc_registration_lecture_personalInformations_lectureDetails_dateOfBirth" alignment="0" max="32767" attributes="0"/>
@@ -140,10 +142,17 @@
                                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                                       <Component id="_rb_registration_lecture_personalInformations_lectureDetails_gender_female" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_colombo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="_rb_registration_lecture_personalInformations_lectureDetails_academy_nonAcadamic" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_kandy" min="-2" max="-2" attributes="0"/>
+                                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_academy_nonAcadamic" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -189,6 +198,13 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="_rb_registration_lecture_personalInformations_lectureDetails_academy_nonAcadamic" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_colombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_kandy" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -368,7 +384,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Acadamic"/>
               </Properties>
               <Events>
@@ -406,6 +421,55 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_dc_registration_lecture_personalInformations_lectureDetails_dateOfBirthMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Branch"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_colombo">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="bd" green="77" red="2" type="rgb"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="_bg_registration_lecture_personalInformation_employeeDetails_branch"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Colombo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_kandy">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="bd" green="77" red="2" type="rgb"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="_bg_registration_lecture_personalInformation_employeeDetails_branch"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Kandy"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_kandyActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -799,8 +863,9 @@
                           <Component id="_lb_registration_lecture_preview_image" min="-2" pref="192" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="302" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel25" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel24" max="32767" attributes="0"/>
                               <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel20" alignment="0" max="32767" attributes="0"/>
@@ -824,6 +889,7 @@
                               <Component id="_lb_registration_lecture_preview_eMail" alignment="0" max="32767" attributes="0"/>
                               <Component id="_lb_registration_lecture_preview_address" alignment="0" max="32767" attributes="0"/>
                               <Component id="_lb_registration_lecture_preview_mobileNumber" max="32767" attributes="0"/>
+                              <Component id="_lb_registration_lecture_preview_branch" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -867,6 +933,11 @@
                       <Component id="_lb_registration_lecture_preview_academy" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_preview_branch" min="-2" pref="17" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel24" alignment="0" max="32767" attributes="0"/>
                       <Component id="_lb_registration_lecture_preview_mobileNumber" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
@@ -886,7 +957,7 @@
                       <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="_lb_registration_lecture_preview_address" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="94" max="32767" attributes="0"/>
+                  <EmptySpace pref="59" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1077,6 +1148,24 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="_lb_registration_lecture_preview_mobileNumber">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel25">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Branch"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="_lb_registration_lecture_preview_branch">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
