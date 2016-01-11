@@ -6,6 +6,7 @@
 package com.fourgenius.www.private_access.admin.login;
 
 import com.fourgenius.www.admin_BackEnd.Jf_admin_backend;
+import com.fourgenius.www.private_access.admin.method.Md_move_text;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
 import java.awt.Color;
 import javax.swing.BorderFactory;
@@ -22,11 +23,13 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
      * Creates new form _jp_admin_login_password
      */
 
+    Md_move_text setLableValuesNullAndAdd = new Md_move_text();
     Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
+
     public _jp_admin_login_password() {
         initComponents();
         code_Gen.load_qr(_lb_user_login_qrCode);
-        System.out.println("QR Code is"+code_Gen.getRandom_pin());
+        System.out.println("QR Code is" + code_Gen.getRandom_pin());
     }
 
     /**
@@ -49,6 +52,8 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         _lb_user_login_qrCode = new javax.swing.JLabel();
+        _lb_user_login_pin = new javax.swing.JLabel();
+        _tf_user_login_pin = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         _lb_admin_login_close = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -114,6 +119,24 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         _lb_user_login_qrCode.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         _lb_user_login_qrCode.setPreferredSize(new java.awt.Dimension(125, 125));
 
+        _lb_user_login_pin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_user_login_pin.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_user_login_pin.setText("Enter PIN Code");
+
+        _tf_user_login_pin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        _tf_user_login_pin.setMinimumSize(new java.awt.Dimension(6, 40));
+        _tf_user_login_pin.setPreferredSize(new java.awt.Dimension(59, 40));
+        _tf_user_login_pin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tf_user_login_pinMouseClicked(evt);
+            }
+        });
+        _tf_user_login_pin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_user_login_pinKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -122,22 +145,25 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(28, 28, 28)
-                            .addComponent(jLabel4))
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(_lb_user_login_qrCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(_tf_user_login_pin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(_lb_user_login_pin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 299, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel4))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(97, 97, 97)
-                    .addComponent(_lb_user_login_qrCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(98, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,8 +172,14 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_lb_user_login_qrCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(_lb_user_login_pin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(_tf_user_login_pin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,11 +191,6 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(183, 183, 183)
-                    .addComponent(_lb_user_login_qrCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(208, Short.MAX_VALUE)))
         );
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -256,7 +283,6 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
         Jf_admin_backend jf_admin_backend = new Jf_admin_backend();
         jf_admin_backend.setVisible(true);
-        
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -311,11 +337,34 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void _tf_user_login_pinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_user_login_pinMouseClicked
+
+        setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_login_pin, _lb_user_login_pin, "Enter PIN Code");
+    }//GEN-LAST:event__tf_user_login_pinMouseClicked
+
+    int y = 0;
+    private void _tf_user_login_pinKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_user_login_pinKeyTyped
+
+        char c = evt.getKeyChar();
+        if (_tf_user_login_pin.getText().length() == 4 || Character.isLetter(c)) {
+            System.out.println("awa");
+            evt.consume();
+        }
+        if (y < 1) {
+            if (!(_tf_user_login_pin.getText().isEmpty())) {
+                setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_login_pin, _lb_user_login_pin, "Enter PIN Code");
+                y++;
+            }
+        }
+    }//GEN-LAST:event__tf_user_login_pinKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel _lb_admi_login_email;
     private javax.swing.JLabel _lb_admin_login_close;
+    private javax.swing.JLabel _lb_user_login_pin;
     private javax.swing.JLabel _lb_user_login_qrCode;
+    private javax.swing.JTextField _tf_user_login_pin;
     private javax.swing.JPanel adminLogin_emai;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
