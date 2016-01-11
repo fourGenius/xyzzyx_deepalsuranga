@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.registration;
+package com.fourgenius.www.public_access.student_update;
 
+import com.fourgenius.www.public_access.registration.*;
 import static com.fourgenius.www.private_access.admin.login.Jf_admin_login.main_panel;
 import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
 import java.awt.Color;
@@ -26,7 +27,7 @@ import javax.swing.border.Border;
  *
  * @author thilina
  */
-public class Jp_registration_student extends javax.swing.JPanel {
+public class Jp_update_student extends javax.swing.JPanel {
 
     Border border = BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
@@ -34,7 +35,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
     /**
      * Creates new form registration_student
      */
-    public Jp_registration_student() {
+    public Jp_update_student() {
 
         initComponents();
         try {
@@ -860,7 +861,6 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
     private void _tf_registration_student_personalInformation_browsePhoto_browseFileKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformation_browsePhoto_browseFileKeyReleased
 
-        
 
     }//GEN-LAST:event__tf_registration_student_personalInformation_browsePhoto_browseFileKeyReleased
 
@@ -945,7 +945,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
     }//GEN-LAST:event_add_Student3ActionPerformed
 
     private void _tf_registration_student_personalInformation_browsePhoto_browseFileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformation_browsePhoto_browseFileMouseClicked
-        
+
         try {
             JFileChooser jf = new JFileChooser();
             jf.showDialog(this, "Browse");
@@ -958,7 +958,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }//GEN-LAST:event__tf_registration_student_personalInformation_browsePhoto_browseFileMouseClicked
 
 
