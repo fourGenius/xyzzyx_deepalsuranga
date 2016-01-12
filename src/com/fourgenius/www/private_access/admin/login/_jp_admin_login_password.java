@@ -347,7 +347,7 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
         char c = evt.getKeyChar();
         if (_tf_user_login_pin.getText().length() == 4 || Character.isLetter(c)) {
-            System.out.println("awa");
+            System.out.println("Comming!");
             evt.consume();
         }
         if (y < 1) {
