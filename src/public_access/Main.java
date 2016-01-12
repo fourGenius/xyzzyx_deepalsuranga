@@ -103,7 +103,16 @@ public class Main {
             }
 
         } else {
+            if (aa.length()==1) {
+                  if (aa.matches("[0-9]*")) {
+                b = true;
+                System.out.println("Yeeeees7");
 
+            } else {
+                System.out.println("Noooooooo1");
+                b = false;
+            }
+            }
         }
         System.out.println("result: " + b);
         return b;

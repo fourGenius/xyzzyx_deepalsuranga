@@ -33,7 +33,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
     Border border = BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
-
+    boolean b;
     /**
      * Creates new form registration_student
      */
@@ -436,10 +436,15 @@ public class Jp_registration_student extends javax.swing.JPanel {
            try {
             if (_tf_registration_student_searchStudent.getText().length() == 2) {
 
-//                if (_tf_registration_student_searchStudent.getText().is) {
-//                    
-//                }
-//                else{
+                if (_tf_registration_student_searchStudent.getText().matches("[a-zA-Z]*")) {
+                b = true;
+                System.out.println("Yeeeees");
+
+            } else {
+                System.out.println("Noooooooo");
+                b = false;
+            }
+                
                 ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select stu_info_personal_nic from stu_info_personal where stu_info_personal_nic like '" + _tf_registration_student_searchStudent.getText() + "%'");
                 Vector v = new Vector();
                 if (_tf_registration_student_searchStudent.getText().isEmpty()) {
