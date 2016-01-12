@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.UIManager;
@@ -24,8 +25,9 @@ import javax.swing.border.Border;
  */
 public class Jp_registration_employee extends javax.swing.JPanel {
 
-    Border border=BorderFactory.createLineBorder(Color.white, 1);
+    Border border = BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
+
     /**
      * Creates new form registration_employee
      */
@@ -47,63 +49,21 @@ public class Jp_registration_employee extends javax.swing.JPanel {
     private void initComponents() {
 
         _bg_registration_employee_personalInformations_employeeDetails_gender = new javax.swing.ButtonGroup();
+        main = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        aca_emp = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tbl_admin_Administrators4 = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_employeeDetails_surName = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_employeeDetails_firstName = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_employeeDetails_lastName = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_employeeDetails_nicNumber = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        _rb_registration_employee_personalInformations_employeeDetails_gender_male = new javax.swing.JRadioButton();
-        _rb_registration_employee_personalInformations_employeeDetails_gender_female = new javax.swing.JRadioButton();
-        _dc_registration_employee_personalInformations_employeeDetails_dateOfBirth = new com.toedter.calendar.JDateChooser();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_contactDetails_mobileNumber = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_contactDetails_homeNumber = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_contactDetails_eMail = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_contactDetails_1stLine = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_contactDetails_2ndLine = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        _tf_registration_employee_personalInformations_contactDetails_city = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
-        _tf_registration_employee_personalInformation_browsePhoto_browseFile = new javax.swing.JTextField();
-        _bt_registration_employee_personalInformation_registerLecture = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        _lb_registration_employee_preview_image = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        _lb_registration_employee_preview_employeeID = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        _lb_registration_employee_preview_name = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        _lb_registration_employee_preview_nic = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        _lb_registration_employee_preview_dateOfBirth = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        _lb_registration_employee_preview_gender = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        _lb_registration_employee_preview_mobileNumber = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        _lb_registration_employee_preview_homeNumber = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        _lb_registration_employee_preview_eMail = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        _lb_registration_employee_preview_address = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         jPanel3 = new javax.swing.JPanel();
-        add_Student = new javax.swing.JButton();
-        add_Student1 = new javax.swing.JButton();
-        add_Student2 = new javax.swing.JButton();
-        add_Student3 = new javax.swing.JButton();
+        add_employee = new javax.swing.JButton();
+        view_employee = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setMaximumSize(new java.awt.Dimension(1366, 718));
@@ -111,628 +71,167 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1366, 718));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Personal Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(32767, 695));
-        jPanel1.setMinimumSize(new java.awt.Dimension(0, 695));
-        jPanel1.setPreferredSize(new java.awt.Dimension(827, 695));
+        main.setBackground(new java.awt.Color(66, 66, 66));
 
-        jPanel2.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Employee Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel2.setPreferredSize(new java.awt.Dimension(336, 251));
+        jPanel1.setBackground(new java.awt.Color(66, 66, 66));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Sur Name");
+        jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        _tf_registration_employee_personalInformations_employeeDetails_surName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_employeeDetails_surName.setPreferredSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_employeeDetails_surName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_employee_personalInformations_employeeDetails_surNameActionPerformed(evt);
+        jTabbedPane1.setFocusable(false);
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        aca_emp.setBackground(new java.awt.Color(207, 216, 220));
+        aca_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        aca_emp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        aca_emp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Employee ID", "Name", "Email", "NIC No"
             }
-        });
+        ));
+        aca_emp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jScrollPane2.setViewportView(aca_emp);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("First Name");
+        jTabbedPane1.addTab("Active Employee", jScrollPane2);
 
-        _tf_registration_employee_personalInformations_employeeDetails_firstName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_employeeDetails_firstName.setMinimumSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_employeeDetails_firstName.setPreferredSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_employeeDetails_firstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_employee_personalInformations_employeeDetails_firstNameActionPerformed(evt);
+        tbl_admin_Administrators4.setBackground(new java.awt.Color(207, 216, 220));
+        tbl_admin_Administrators4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_Administrators4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tbl_admin_Administrators4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Administrator ID", "Name", "Email", "NIC No"
             }
-        });
+        ));
+        jScrollPane5.setViewportView(tbl_admin_Administrators4);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Last Name");
+        jTabbedPane1.addTab("De-active Employee", jScrollPane5);
 
-        _tf_registration_employee_personalInformations_employeeDetails_lastName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_employeeDetails_lastName.setPreferredSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_employeeDetails_lastName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_employee_personalInformations_employeeDetails_lastNameActionPerformed(evt);
-            }
-        });
+        jTabbedPane2.addTab("Employee", jTabbedPane1);
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Date Of Birth");
+        jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 964, 618));
 
-        _tf_registration_employee_personalInformations_employeeDetails_nicNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_employeeDetails_nicNumber.setPreferredSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_employeeDetails_nicNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_employee_personalInformations_employeeDetails_nicNumberActionPerformed(evt);
-            }
-        });
+        jTextField1.setMaximumSize(new java.awt.Dimension(300, 50));
+        jTextField1.setMinimumSize(new java.awt.Dimension(300, 50));
+        jTextField1.setPreferredSize(new java.awt.Dimension(300, 50));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 38, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("NIC Number");
+        jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(50, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1304, 38, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Gender");
+        jList1.setAlignmentX(1.0F);
+        jScrollPane1.setViewportView(jList1);
 
-        _rb_registration_employee_personalInformations_employeeDetails_gender_male.setBackground(new java.awt.Color(2, 119, 189));
-        _bg_registration_employee_personalInformations_employeeDetails_gender.add(_rb_registration_employee_personalInformations_employeeDetails_gender_male);
-        _rb_registration_employee_personalInformations_employeeDetails_gender_male.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _rb_registration_employee_personalInformations_employeeDetails_gender_male.setForeground(new java.awt.Color(255, 255, 255));
-        _rb_registration_employee_personalInformations_employeeDetails_gender_male.setSelected(true);
-        _rb_registration_employee_personalInformations_employeeDetails_gender_male.setText("Male");
-        _rb_registration_employee_personalInformations_employeeDetails_gender_male.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _rb_registration_employee_personalInformations_employeeDetails_gender_maleMouseClicked(evt);
-            }
-        });
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 88, 300, 540));
 
-        _rb_registration_employee_personalInformations_employeeDetails_gender_female.setBackground(new java.awt.Color(2, 119, 189));
-        _bg_registration_employee_personalInformations_employeeDetails_gender.add(_rb_registration_employee_personalInformations_employeeDetails_gender_female);
-        _rb_registration_employee_personalInformations_employeeDetails_gender_female.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _rb_registration_employee_personalInformations_employeeDetails_gender_female.setForeground(new java.awt.Color(255, 255, 255));
-        _rb_registration_employee_personalInformations_employeeDetails_gender_female.setText("Female");
-        _rb_registration_employee_personalInformations_employeeDetails_gender_female.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _rb_registration_employee_personalInformations_employeeDetails_gender_femaleMouseClicked(evt);
-            }
-        });
-
-        _dc_registration_employee_personalInformations_employeeDetails_dateOfBirth.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _dc_registration_employee_personalInformations_employeeDetails_dateOfBirth.setPreferredSize(new java.awt.Dimension(91, 40));
-        _dc_registration_employee_personalInformations_employeeDetails_dateOfBirth.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _dc_registration_employee_personalInformations_employeeDetails_dateOfBirthMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(_rb_registration_employee_personalInformations_employeeDetails_gender_male)
-                        .addGap(18, 18, 18)
-                        .addComponent(_rb_registration_employee_personalInformations_employeeDetails_gender_female)
-                        .addGap(0, 197, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_employeeDetails_firstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_employeeDetails_lastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_employeeDetails_nicNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_employeeDetails_surName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_dc_registration_employee_personalInformations_employeeDetails_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
+        main.setLayout(mainLayout);
+        mainLayout.setHorizontalGroup(
+            mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
+        );
+        mainLayout.setVerticalGroup(
+            mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_employeeDetails_surName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_employeeDetails_firstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_employeeDetails_lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_employeeDetails_nicNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_dc_registration_employee_personalInformations_employeeDetails_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_rb_registration_employee_personalInformations_employeeDetails_gender_male)
-                    .addComponent(_rb_registration_employee_personalInformations_employeeDetails_gender_female))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
-        jPanel4.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contact Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel4.setPreferredSize(new java.awt.Dimension(349, 251));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Mobile Number");
-
-        _tf_registration_employee_personalInformations_contactDetails_mobileNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_contactDetails_mobileNumber.setPreferredSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_contactDetails_mobileNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_employee_personalInformations_contactDetails_mobileNumberActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Home Number");
-
-        _tf_registration_employee_personalInformations_contactDetails_homeNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_contactDetails_homeNumber.setPreferredSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_contactDetails_homeNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_employee_personalInformations_contactDetails_homeNumberActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("E-mail");
-
-        _tf_registration_employee_personalInformations_contactDetails_eMail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_contactDetails_eMail.setPreferredSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_contactDetails_eMail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_employee_personalInformations_contactDetails_eMailActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("1st Line");
-
-        _tf_registration_employee_personalInformations_contactDetails_1stLine.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_contactDetails_1stLine.setPreferredSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_contactDetails_1stLine.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_employee_personalInformations_contactDetails_1stLineActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("2nd Line");
-
-        _tf_registration_employee_personalInformations_contactDetails_2ndLine.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_contactDetails_2ndLine.setPreferredSize(new java.awt.Dimension(6, 40));
-        _tf_registration_employee_personalInformations_contactDetails_2ndLine.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_registration_employee_personalInformations_contactDetails_2ndLineActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("City");
-
-        _tf_registration_employee_personalInformations_contactDetails_city.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformations_contactDetails_city.setPreferredSize(new java.awt.Dimension(6, 40));
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Address___________________________________");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_contactDetails_homeNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_contactDetails_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_contactDetails_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_contactDetails_2ndLine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_contactDetails_city, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_contactDetails_1stLine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 5, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_contactDetails_mobileNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_contactDetails_homeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_contactDetails_eMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_contactDetails_1stLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_contactDetails_2ndLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_employee_personalInformations_contactDetails_city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        _pl_registration_lecture_personalInformation_browsePhoto1.setBackground(new java.awt.Color(2, 119, 189));
-        _pl_registration_lecture_personalInformation_browsePhoto1.setPreferredSize(new java.awt.Dimension(766, 123));
-
-        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setText("Broswe File");
-
-        _bt_registration_employee_personalInformation_registerLecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registration_employee_personalInformation_registerLecture.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registration_employee_personalInformation_registerLecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        _bt_registration_employee_personalInformation_registerLecture.setText("Register Employee");
-        _bt_registration_employee_personalInformation_registerLecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_registration_employee_personalInformation_registerLecture.setFocusPainted(false);
-        _bt_registration_employee_personalInformation_registerLecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registration_employee_personalInformation_registerLecture.setPreferredSize(new java.awt.Dimension(300, 50));
-        _bt_registration_employee_personalInformation_registerLecture.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_registration_employee_personalInformation_registerLectureMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_registration_employee_personalInformation_registerLectureMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_registration_employee_personalInformation_registerLectureMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_registration_employee_personalInformation_registerLectureMouseReleased(evt);
-            }
-        });
-        _bt_registration_employee_personalInformation_registerLecture.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_registration_employee_personalInformation_registerLectureActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout _pl_registration_lecture_personalInformation_browsePhoto1Layout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_browsePhoto1);
-        _pl_registration_lecture_personalInformation_browsePhoto1.setLayout(_pl_registration_lecture_personalInformation_browsePhoto1Layout);
-        _pl_registration_lecture_personalInformation_browsePhoto1Layout.setHorizontalGroup(
-            _pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(_tf_registration_employee_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(_bt_registration_employee_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        _pl_registration_lecture_personalInformation_browsePhoto1Layout.setVerticalGroup(
-            _pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_tf_registration_employee_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_employee_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(_pl_registration_lecture_personalInformation_browsePhoto1, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE))
-                .addGap(11, 11, 11)
-                .addComponent(_pl_registration_lecture_personalInformation_browsePhoto1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
-        );
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 810, 610));
-
-        jPanel7.setBackground(new java.awt.Color(117, 117, 117));
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Preview", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel7.setMinimumSize(new java.awt.Dimension(0, 695));
-        jPanel7.setPreferredSize(new java.awt.Dimension(525, 695));
-
-        _lb_registration_employee_preview_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Employee ID");
-
-        _lb_registration_employee_preview_employeeID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Name");
-
-        _lb_registration_employee_preview_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("NIC");
-
-        _lb_registration_employee_preview_nic.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Date of Birth      ");
-
-        _lb_registration_employee_preview_dateOfBirth.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Gender");
-
-        _lb_registration_employee_preview_gender.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Mobile Number  ");
-
-        _lb_registration_employee_preview_mobileNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Home Number");
-
-        _lb_registration_employee_preview_homeNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("E-mail");
-
-        _lb_registration_employee_preview_eMail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("Address");
-
-        _lb_registration_employee_preview_address.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_lb_registration_employee_preview_employeeID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_employee_preview_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_employee_preview_nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_employee_preview_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_employee_preview_gender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_employee_preview_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_employee_preview_homeNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_employee_preview_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_employee_preview_address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(_lb_registration_employee_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 302, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(_lb_registration_employee_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_employee_preview_employeeID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_employee_preview_name, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_employee_preview_nic, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_employee_preview_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_employee_preview_gender, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_employee_preview_mobileNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_employee_preview_homeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_employee_preview_eMail, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(_lb_registration_employee_preview_address, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(129, Short.MAX_VALUE))
-        );
-
-        add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 526, 610));
+        add(main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 640));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
-        add_Student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student.setText("Add Employee");
-        add_Student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student.setFocusPainted(false);
-        add_Student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_StudentMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_StudentMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_StudentMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_StudentMouseReleased(evt);
-            }
-        });
-        add_Student.addActionListener(new java.awt.event.ActionListener() {
+        add_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        add_employee.setForeground(new java.awt.Color(255, 255, 255));
+        add_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        add_employee.setText("Add Employee");
+        add_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_employee.setFocusPainted(false);
+        add_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add_employee.setPreferredSize(new java.awt.Dimension(300, 50));
+        add_employee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_StudentActionPerformed(evt);
+                add_employeeActionPerformed(evt);
             }
         });
 
-        add_Student1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student1.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student1.setText("Update Employee");
-        add_Student1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student1.setFocusPainted(false);
-        add_Student1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student1.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student1MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student1MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student1MouseReleased(evt);
-            }
-        });
-        add_Student1.addActionListener(new java.awt.event.ActionListener() {
+        view_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        view_employee.setForeground(new java.awt.Color(255, 255, 255));
+        view_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        view_employee.setText("View Employee");
+        view_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        view_employee.setFocusPainted(false);
+        view_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        view_employee.setPreferredSize(new java.awt.Dimension(300, 50));
+        view_employee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student1ActionPerformed(evt);
-            }
-        });
-
-        add_Student2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student2.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student2.setText("Remove Employee");
-        add_Student2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student2.setFocusPainted(false);
-        add_Student2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student2.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student2MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student2MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student2MouseReleased(evt);
-            }
-        });
-        add_Student2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student2ActionPerformed(evt);
-            }
-        });
-
-        add_Student3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student3.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student3.setText("Print Report");
-        add_Student3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student3.setFocusPainted(false);
-        add_Student3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student3.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student3MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student3MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student3MouseReleased(evt);
-            }
-        });
-        add_Student3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student3ActionPerformed(evt);
+                view_employeeActionPerformed(evt);
             }
         });
 
@@ -742,268 +241,78 @@ public class Jp_registration_employee extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(724, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 638, 1340, -1));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 1340, 70));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void _bt_registration_employee_personalInformation_registerLectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureMouseEntered
-        _bt_registration_employee_personalInformation_registerLecture.setBorder(border);
-    }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureMouseEntered
+    int i = 0;
+    private void add_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employeeActionPerformed
+        try {
 
-    private void _bt_registration_employee_personalInformation_registerLectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureMouseExited
-        _bt_registration_employee_personalInformation_registerLecture.setBorder(null);
-    }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureMouseExited
+            main.removeAll();
+            GroupLayout layout = new GroupLayout(main);
+            main.setLayout(layout);
 
-    private void _bt_registration_employee_personalInformation_registerLectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureMousePressed
-        _bt_registration_employee_personalInformation_registerLecture.setBorder(null);
-    }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureMousePressed
+            Jp_registration_employee_informations_add add_employee = new Jp_registration_employee_informations_add();
+            layout.setHorizontalGroup(
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.setVerticalGroup(
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
-    private void _bt_registration_employee_personalInformation_registerLectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureMouseReleased
-        _bt_registration_employee_personalInformation_registerLecture.setBorder(border);
-    }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureMouseReleased
+            System.gc();
 
-    private void _tf_registration_employee_personalInformations_employeeDetails_surNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_surNameActionPerformed
-        _tf_registration_employee_personalInformations_employeeDetails_firstName.grabFocus();
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_surNameActionPerformed
-
-    private void _tf_registration_employee_personalInformations_employeeDetails_firstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameActionPerformed
-        _tf_registration_employee_personalInformations_employeeDetails_lastName.grabFocus();
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameActionPerformed
-
-    private void _tf_registration_employee_personalInformations_employeeDetails_lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameActionPerformed
-        _tf_registration_employee_personalInformations_employeeDetails_nicNumber.grabFocus();
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameActionPerformed
-
-    private void _dc_registration_employee_personalInformations_employeeDetails_dateOfBirthMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__dc_registration_employee_personalInformations_employeeDetails_dateOfBirthMouseClicked
-        
-    }//GEN-LAST:event__dc_registration_employee_personalInformations_employeeDetails_dateOfBirthMouseClicked
-
-    private void _tf_registration_employee_personalInformations_employeeDetails_nicNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberActionPerformed
-        _dc_registration_employee_personalInformations_employeeDetails_dateOfBirth.grabFocus();
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberActionPerformed
-
-    private void _rb_registration_employee_personalInformations_employeeDetails_gender_maleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_employee_personalInformations_employeeDetails_gender_maleMouseClicked
-        _tf_registration_employee_personalInformations_contactDetails_mobileNumber.grabFocus();
-    }//GEN-LAST:event__rb_registration_employee_personalInformations_employeeDetails_gender_maleMouseClicked
-
-    private void _rb_registration_employee_personalInformations_employeeDetails_gender_femaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_employee_personalInformations_employeeDetails_gender_femaleMouseClicked
-        _tf_registration_employee_personalInformations_contactDetails_mobileNumber.grabFocus();
-    }//GEN-LAST:event__rb_registration_employee_personalInformations_employeeDetails_gender_femaleMouseClicked
-
-    private void _tf_registration_employee_personalInformations_contactDetails_mobileNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_mobileNumberActionPerformed
-        _tf_registration_employee_personalInformations_contactDetails_homeNumber.grabFocus();
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_mobileNumberActionPerformed
-
-    private void _tf_registration_employee_personalInformations_contactDetails_homeNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_homeNumberActionPerformed
-        _tf_registration_employee_personalInformations_contactDetails_eMail.grabFocus();
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_homeNumberActionPerformed
-
-    private void _tf_registration_employee_personalInformations_contactDetails_eMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_eMailActionPerformed
-        _tf_registration_employee_personalInformations_contactDetails_1stLine.grabFocus();
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_eMailActionPerformed
-
-    private void _tf_registration_employee_personalInformations_contactDetails_1stLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_1stLineActionPerformed
-        _tf_registration_employee_personalInformations_contactDetails_2ndLine.grabFocus();
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_1stLineActionPerformed
-
-    private void _tf_registration_employee_personalInformations_contactDetails_2ndLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_2ndLineActionPerformed
-        _tf_registration_employee_personalInformations_contactDetails_city.grabFocus();
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_2ndLineActionPerformed
-
-    int i=0;
-    private void _bt_registration_employee_personalInformation_registerLectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureActionPerformed
-        Date d=_dc_registration_employee_personalInformations_employeeDetails_dateOfBirth.getDate();
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-        String date=sdf.format(d);
-        _lb_registration_employee_preview_name.setText(_tf_registration_employee_personalInformations_employeeDetails_firstName.getText()+" "+_tf_registration_employee_personalInformations_employeeDetails_lastName.getText()+" "+_tf_registration_employee_personalInformations_employeeDetails_surName.getText());
-        _lb_registration_employee_preview_nic.setText(_tf_registration_employee_personalInformations_employeeDetails_nicNumber.getText());
-        _lb_registration_employee_preview_dateOfBirth.setText(date);
-        
-        String gender;
-        if (_rb_registration_employee_personalInformations_employeeDetails_gender_male.isSelected()) {
-            gender="Male";
-        }else{
-            gender="Female";
-        }
-        _lb_registration_employee_preview_gender.setText(gender);
-        
-        _lb_registration_employee_preview_mobileNumber.setText(_tf_registration_employee_personalInformations_contactDetails_mobileNumber.getText());
-        _lb_registration_employee_preview_homeNumber.setText(_tf_registration_employee_personalInformations_contactDetails_homeNumber.getText());
-        _lb_registration_employee_preview_eMail.setText(_tf_registration_employee_personalInformations_contactDetails_eMail.getText());
-        _lb_registration_employee_preview_address.setText(_tf_registration_employee_personalInformations_contactDetails_1stLine.getText()+","+_tf_registration_employee_personalInformations_contactDetails_2ndLine.getText()+","+_tf_registration_employee_personalInformations_contactDetails_city.getText());
-        _lb_registration_employee_preview_employeeID.setText("#ID-EMP00"+i+"-B4-COL-5-16-22");
-        
-         try {
-
-            newpath = path.replace("\\", "/");
-            File f = new File(newpath);
-            Image img = ImageIO.read(f);
-            img = img.getScaledInstance(_lb_registration_employee_preview_image.getWidth(), _lb_registration_employee_preview_image.getHeight(), Image.SCALE_SMOOTH);
-            _lb_registration_employee_preview_image.setIcon(new ImageIcon(img));
         } catch (Exception e) {
+            e.printStackTrace();
         }
-        i++;
-    }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureActionPerformed
+    }//GEN-LAST:event_add_employeeActionPerformed
 
-    private void add_StudentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseEntered
+    private void view_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_employeeActionPerformed
 
-    private void add_StudentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseExited
+      
+        main.removeAll();
+            GroupLayout layout = new GroupLayout(main);
+            main.setLayout(layout);
 
-    private void add_StudentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMousePressed
+              Jp_registration_employee_informations_view view_employee = new Jp_registration_employee_informations_view();
+            layout.setHorizontalGroup(
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.setVerticalGroup(
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
-    private void add_StudentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseReleased
-
-    private void add_StudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_StudentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentActionPerformed
-
-    private void add_Student1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseEntered
-
-    private void add_Student1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseExited
-
-    private void add_Student1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MousePressed
-
-    private void add_Student1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseReleased
-
-    private void add_Student1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1ActionPerformed
-
-    private void add_Student2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseEntered
-
-    private void add_Student2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseExited
-
-    private void add_Student2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MousePressed
-
-    private void add_Student2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseReleased
-
-    private void add_Student2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2ActionPerformed
-
-    private void add_Student3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseEntered
-
-    private void add_Student3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseExited
-
-    private void add_Student3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MousePressed
-
-    private void add_Student3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseReleased
-
-    private void add_Student3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3ActionPerformed
+            System.gc();
+    }//GEN-LAST:event_view_employeeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_employee_personalInformations_employeeDetails_gender;
-    private javax.swing.JButton _bt_registration_employee_personalInformation_registerLecture;
-    private com.toedter.calendar.JDateChooser _dc_registration_employee_personalInformations_employeeDetails_dateOfBirth;
-    private javax.swing.JLabel _lb_registration_employee_preview_address;
-    private javax.swing.JLabel _lb_registration_employee_preview_dateOfBirth;
-    private javax.swing.JLabel _lb_registration_employee_preview_eMail;
-    private javax.swing.JLabel _lb_registration_employee_preview_employeeID;
-    private javax.swing.JLabel _lb_registration_employee_preview_gender;
-    private javax.swing.JLabel _lb_registration_employee_preview_homeNumber;
-    private javax.swing.JLabel _lb_registration_employee_preview_image;
-    private javax.swing.JLabel _lb_registration_employee_preview_mobileNumber;
-    private javax.swing.JLabel _lb_registration_employee_preview_name;
-    private javax.swing.JLabel _lb_registration_employee_preview_nic;
-    private javax.swing.JPanel _pl_registration_lecture_personalInformation_browsePhoto1;
-    private javax.swing.JRadioButton _rb_registration_employee_personalInformations_employeeDetails_gender_female;
-    private javax.swing.JRadioButton _rb_registration_employee_personalInformations_employeeDetails_gender_male;
-    private javax.swing.JTextField _tf_registration_employee_personalInformation_browsePhoto_browseFile;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_contactDetails_1stLine;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_contactDetails_2ndLine;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_contactDetails_city;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_contactDetails_eMail;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_contactDetails_homeNumber;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_contactDetails_mobileNumber;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_firstName;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_lastName;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_nicNumber;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_surName;
-    private javax.swing.JButton add_Student;
-    private javax.swing.JButton add_Student1;
-    private javax.swing.JButton add_Student2;
-    private javax.swing.JButton add_Student3;
+    private javax.swing.JTable aca_emp;
+    private javax.swing.JButton add_employee;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel main;
+    private javax.swing.JTable tbl_admin_Administrators4;
+    private javax.swing.JButton view_employee;
     // End of variables declaration//GEN-END:variables
 }

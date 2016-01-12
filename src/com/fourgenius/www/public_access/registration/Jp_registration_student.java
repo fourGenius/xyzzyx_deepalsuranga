@@ -69,7 +69,6 @@ public class Jp_registration_student extends javax.swing.JPanel {
         tbl_admin_Administrators = new javax.swing.JTable();
         jScrollPane6 = new javax.swing.JScrollPane();
         tbl_admin_Administrators5 = new javax.swing.JTable();
-        _tf_registration_student_searchStudent = new javax.swing.JTextField();
         sp_registration_student_searchStudent = new javax.swing.JScrollPane();
         _li_registration_student_searchStudent = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
@@ -324,16 +323,6 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
         add(student_mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 620));
 
-        _tf_registration_student_searchStudent.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_student_searchStudentKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                _tf_registration_student_searchStudentKeyTyped(evt);
-            }
-        });
-        add(_tf_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 300, 50));
-
         sp_registration_student_searchStudent.setViewportView(_li_registration_student_searchStudent);
 
         add(sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 300, 570));
@@ -425,59 +414,9 @@ public class Jp_registration_student extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_add_Student3ActionPerformed
 
-    private void _tf_registration_student_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_searchStudentKeyReleased
-
-     
-
-    }//GEN-LAST:event__tf_registration_student_searchStudentKeyReleased
-
-    private void _tf_registration_student_searchStudentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_searchStudentKeyTyped
-        
-           try {
-            if (_tf_registration_student_searchStudent.getText().length() == 2) {
-
-                if (_tf_registration_student_searchStudent.getText().matches("[a-zA-Z]*")) {
-                b = true;
-                System.out.println("Yeeeees");
-
-            } else {
-                System.out.println("Noooooooo");
-                b = false;
-            }
-                
-                ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select stu_info_personal_nic from stu_info_personal where stu_info_personal_nic like '" + _tf_registration_student_searchStudent.getText() + "%'");
-                Vector v = new Vector();
-                if (_tf_registration_student_searchStudent.getText().isEmpty()) {
-                    sp_registration_student_searchStudent.setVisible(false);
-
-                } else {
-                    while (rs.next()) {
-                        v.add(rs.getString("stu_info_personal_nic"));
-
-                    }
-                    rs.close();
-                    _li_registration_student_searchStudent.setListData(v);
-
-                    if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
-                        sp_registration_student_searchStudent.setVisible(false);
-
-                    } else {
-                        sp_registration_student_searchStudent.setVisible(true);
-                    }
-
-                }
-//                }
-            }
-
-        } catch (Exception e) {
-        }
-        
-    }//GEN-LAST:event__tf_registration_student_searchStudentKeyTyped
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList _li_registration_student_searchStudent;
-    private javax.swing.JTextField _tf_registration_student_searchStudent;
     private javax.swing.JButton add_Student;
     private javax.swing.JButton add_Student1;
     private javax.swing.JButton add_Student2;
