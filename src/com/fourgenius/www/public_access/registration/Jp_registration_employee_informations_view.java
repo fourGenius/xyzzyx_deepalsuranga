@@ -4,16 +4,17 @@
  * and open the template in the editor.
  */
 package com.fourgenius.www.public_access.registration;
-
+import com.fourgenius.www.private_access.admin.method.*;
 /**
  *
  * @author Dineth Jayasekera
  */
 public class Jp_registration_employee_informations_view extends javax.swing.JPanel {
 
-    /**
+    /*
      * Creates new form Jp_registration_employee_informations_view
      */
+
     public Jp_registration_employee_informations_view() {
         initComponents();
         System.out.println("view");
@@ -35,9 +36,9 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
         jScrollPane5 = new javax.swing.JScrollPane();
         tbl_admin_Administrators4 = new javax.swing.JTable();
         _tf_registration_employee_informations_view_searchStudent = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         _li_registration_employee_informations_view_searchStudent = new javax.swing.JList();
+        _bt_registration_employee_informations_view_search = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -150,14 +151,17 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
         });
         add(_tf_registration_employee_informations_view_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 38, -1, -1));
 
-        jLabel1.setText("jLabel1");
-        jLabel1.setPreferredSize(new java.awt.Dimension(50, 50));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1304, 38, -1, -1));
-
         _li_registration_employee_informations_view_searchStudent.setAlignmentX(1.0F);
         jScrollPane1.setViewportView(_li_registration_employee_informations_view_searchStudent);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 88, 300, 540));
+
+        _bt_registration_employee_informations_view_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_registration_employee_informations_view_searchActionPerformed(evt);
+            }
+        });
+        add(_bt_registration_employee_informations_view_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 40, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_employee_informations_view_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
@@ -166,12 +170,20 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
         
     }//GEN-LAST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
 
+    private void _bt_registration_employee_informations_view_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_employee_informations_view_searchActionPerformed
+        
+        Md_check_id checkId=new Md_check_id();
+      String idType=checkId.Md_check_id(_tf_registration_employee_informations_view_searchStudent.getText());
+      
+        
+    }//GEN-LAST:event__bt_registration_employee_informations_view_searchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton _bt_registration_employee_informations_view_search;
     private javax.swing.JList _li_registration_employee_informations_view_searchStudent;
     private javax.swing.JTextField _tf_registration_employee_informations_view_searchStudent;
     private javax.swing.JTable aca_emp;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane5;
