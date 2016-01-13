@@ -5,7 +5,8 @@
  */
 package public_access;
 
-import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -78,45 +79,56 @@ public class Main {
      }
      } 
      */
+    /*
+     String lname = "Deepal";
+     boolean b;
 
-    String lname = "Deepal";
-    boolean b;
+     public static void main(String[] args) {
 
+     Main cs = new Main();
+     cs.cc("De");
+
+     //
+     }
+
+     boolean cc(String aa) {
+
+     if (aa.length() == 2) {
+     if (aa.matches("[a-zA-Z]*")) {
+     b = true;
+     System.out.println("Yeeeees");
+
+     } else {
+     System.out.println("Noooooooo");
+     b = false;
+     }
+
+     } else {
+     if (aa.length()==1) {
+     if (aa.matches("[0-9]*")) {
+     b = true;
+     System.out.println("Yeeeees7");
+
+     } else {
+     System.out.println("Noooooooo1");
+     b = false;
+     }
+     }
+     }
+     System.out.println("result: " + b);
+     return b;
+
+     }
+     */
     public static void main(String[] args) {
+        ImageIcon icon = new ImageIcon("newImage.jpg");
 
-        Main cs = new Main();
-        cs.cc("De");
-
-        //
-    }
-
-    boolean cc(String aa) {
-
-        if (aa.length() == 2) {
-            if (aa.matches("[a-zA-Z]*")) {
-                b = true;
-                System.out.println("Yeeeees");
-
-            } else {
-                System.out.println("Noooooooo");
-                b = false;
-            }
-
-        } else {
-            if (aa.length()==1) {
-                  if (aa.matches("[0-9]*")) {
-                b = true;
-                System.out.println("Yeeeees7");
-
-            } else {
-                System.out.println("Noooooooo1");
-                b = false;
-            }
-            }
-        }
-        System.out.println("result: " + b);
-        return b;
+        JOptionPane.showInputDialog(null, "I­nput something");
+        JOptionPane.showInputDialog(null, "H­ere is Some Text.", "A plain message", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showInputDialog(null, "H­ere is Some Text.", "Inane error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showInputDialog(null, "H­ere is Some Text.", "Inane warning", JOptionPane.WARNING_MESSAG­E);
+        JOptionPane.showInputDialog(null, "P­lease enter your favorite Shakespeare play", "Favorite Play", JOptionPane.INFORMATION_MESSAGE, icon, null, "");
 
     }
-
+//SELECT COUNT(*) FROM student;
 }

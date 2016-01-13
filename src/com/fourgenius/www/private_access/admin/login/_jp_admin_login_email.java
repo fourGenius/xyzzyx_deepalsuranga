@@ -5,9 +5,9 @@
  */
 package com.fourgenius.www.private_access.admin.login;
 
-import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 
 /**
@@ -23,6 +23,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
     public _jp_admin_login_email() {
         initComponents();
+        admin_forget_username.setVisible(false);
     }
 
     /**
@@ -40,9 +41,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         username = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        admin_forget_username = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        _lb_admi_login_email = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         _lb_admin_login_close = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -84,36 +84,33 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Forgot Username?");
+        admin_forget_username.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        admin_forget_username.setForeground(new java.awt.Color(255, 255, 255));
+        admin_forget_username.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        admin_forget_username.setText("Forgot Username?");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_AccountCircleGrey192x192.png"))); // NOI18N
-
-        _lb_admi_login_email.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(username, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 299, Short.MAX_VALUE)
-                                .addComponent(bt_next, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(admin_forget_username, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(username, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 299, Short.MAX_VALUE)
+                                    .addComponent(bt_next, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(70, 70, 70)
+                                .addComponent(jLabel4)))
+                        .addGap(1, 1, 1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -121,9 +118,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.DEFAULT_SIZE, 12, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,8 +127,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addContainerGap())
+                .addComponent(admin_forget_username)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -197,8 +192,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addGroup(_jp_admin_login_emailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _jp_admin_login_emailLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,29 +222,47 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    int i=0;
     private void bt_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_nextActionPerformed
 
-        String ss = username.getText();
+        i++;
+        try {
+            String ss = username.getText();
 
-        _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
-        adminLoginPassword._lb_admi_login_email.setText(ss);
+            _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
+            adminLoginPassword._lb_admi_login_email.setText(ss);
+            _jp_admin_login_email chackemailuse = new _jp_admin_login_email();
 
-        if (adminLoginPassword == null) {
-            adminLoginPassword = new _jp_admin_login_password();
-            Jf_admin_login.main_panel.removeAll();
-            Jf_admin_login.main_panel.repaint();
-            Jf_admin_login.main_panel.revalidate();
-            Jf_admin_login.main_panel.add(adminLoginPassword);
-            Jf_admin_login.main_panel.repaint();
-            Jf_admin_login.main_panel.revalidate();
-        } else {
-            Jf_admin_login.main_panel.removeAll();
-            Jf_admin_login.main_panel.repaint();
-            Jf_admin_login.main_panel.revalidate();
-            Jf_admin_login.main_panel.add(adminLoginPassword);
-            Jf_admin_login.main_panel.repaint();
-            Jf_admin_login.main_panel.revalidate();
+            if (chackemailuse.email_walidation(ss)) {
+
+                if (adminLoginPassword == null) {
+                    adminLoginPassword = new _jp_admin_login_password();
+                    Jf_admin_login.main_panel.removeAll();
+                    Jf_admin_login.main_panel.repaint();
+                    Jf_admin_login.main_panel.revalidate();
+                    Jf_admin_login.main_panel.add(adminLoginPassword);
+                    Jf_admin_login.main_panel.repaint();
+                    Jf_admin_login.main_panel.revalidate();
+                } else {
+                    Jf_admin_login.main_panel.removeAll();
+                    Jf_admin_login.main_panel.repaint();
+                    Jf_admin_login.main_panel.revalidate();
+                    Jf_admin_login.main_panel.add(adminLoginPassword);
+                    Jf_admin_login.main_panel.repaint();
+                    Jf_admin_login.main_panel.revalidate();
+                }
+
+                
+                
+            } else {
+                JOptionPane.showMessageDialog(this, "Please Enter Here Valid Administrator Email.", "Access Denied", 0, null);
+                if (i==3) {
+                   username.setText(null);
+                   admin_forget_username.setVisible(true);
+                }
+                System.out.println("i is "+i);
+            }
+        } catch (Exception e) {
         }
 
 
@@ -286,17 +299,27 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel _jp_admin_login_email;
-    private javax.swing.JLabel _lb_admi_login_email;
     private javax.swing.JLabel _lb_admin_login_close;
+    private javax.swing.JLabel admin_forget_username;
     private javax.swing.JButton bt_next;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
+
+    public boolean email_walidation(String email) {
+
+        String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        String email1 = email;
+        Boolean result = email1.matches(EMAIL_REGEX);
+        System.out.println("is e-mail: " + email1 + " :Valid = " + result);
+
+        return result;
+    }
+
 }
