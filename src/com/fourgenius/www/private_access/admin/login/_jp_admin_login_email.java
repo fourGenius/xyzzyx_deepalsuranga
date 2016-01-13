@@ -296,12 +296,15 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     if (i == 3) {
                         tf_username.setText(null);
                         admin_forget_username.setVisible(true);
+                        System.out.println("i is " + i +"Forget password is visible.");
                     }
-                    System.out.println("i is " + i);
+                    
                 }
             } catch (Exception e) {
             }
-            JOptionPane.showMessageDialog(this, "Administrator email is empty!", "WARNING!", JOptionPane.WARNING_MESSAGE);
+            
+        }else{
+        JOptionPane.showMessageDialog(this, "Administrator email is empty!", "WARNING!", JOptionPane.WARNING_MESSAGE);
         }
 
 
