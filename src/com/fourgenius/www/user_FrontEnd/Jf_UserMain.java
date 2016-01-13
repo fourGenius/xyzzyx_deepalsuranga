@@ -8,6 +8,7 @@ package com.fourgenius.www.user_FrontEnd;
 import static com.fourgenius.www.private_access.admin.login.Jf_admin_login.main_panel;
 import com.fourgenius.www.public_access.registration.Jp_registration_employee;
 import com.fourgenius.www.public_access.registration.Jp_registration_lecture;
+import com.fourgenius.www.public_access.registration.Jp_registration_lecture_informations;
 import com.fourgenius.www.public_access.registration.Jp_registration_student;
 import com.fourgenius.www.public_access.registration.Jp_registration_user;
 import com.fourgenius.www.public_access.registration.Jp_student_payment;
