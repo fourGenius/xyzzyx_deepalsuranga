@@ -284,14 +284,10 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     ////////////////////////////////////////////////////////////
                 } else {
                     try {
-                        //ImageIcon icon = new ImageIcon("/srcerror_message.GIF");
+                        
+                        JOptionPane.showMessageDialog(this, "Please Enter Valid Administrator Email.", "Access Denied", JOptionPane.WARNING_MESSAGE);
 
-                        ImageIcon icon;
-                        //icon = new ImageIcon("error_message.GIF");
-                        icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage("/error_message.GIF"));
-                        JOptionPane.showMessageDialog(this, "Please Enter Valid Administrator Email.", "Access Denied", JOptionPane.WARNING_MESSAGE, icon);
-
-                        Thread.sleep(5);
+                        Thread.sleep(3);
                         bt_next.setText("Login");
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -305,7 +301,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                 }
             } catch (Exception e) {
             }
-
+            JOptionPane.showMessageDialog(this, "Administrator email is empty!", "WARNING!", JOptionPane.WARNING_MESSAGE);
         }
 
 
