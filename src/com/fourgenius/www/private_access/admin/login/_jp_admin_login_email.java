@@ -234,13 +234,13 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
         i++;
         try {
-            String ss = username.getText();
+            String email = username.getText();
 
             _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
-            _jp_admin_login_password._lb_admi_login_email.setText(ss);
+            _jp_admin_login_password._lb_admi_login_email.setText(email);
             _jp_admin_login_email chackemailuse = new _jp_admin_login_email();
 
-            if (chackemailuse.email_validation(ss)) {
+            if (chackemailuse.email_validation(email)) {
 
                 if (adminLoginPassword == null) {
                     adminLoginPassword = new _jp_admin_login_password();
