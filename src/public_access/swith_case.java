@@ -13,7 +13,7 @@ public class swith_case {
 
     public static void main(String[] args) {
 
-        swith_case sd=new swith_case();
+        swith_case sd = new swith_case();
         sd.getTypeOfDayWithSwitchStatement("Monday");
     }
 
@@ -39,10 +39,10 @@ public class swith_case {
                 typeOfDay = "Weekend";
                 System.out.println("Weekend");
                 break;
-            
+
         }
         return typeOfDay;
-        
+
     }
 
 }

@@ -3,6 +3,7 @@ package public_access;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /*
  @author : deepal_suranga
@@ -45,6 +46,7 @@ public class MC_JavaDataBaseConnection {
 
         } catch (SQLException e) {
             System.out.println("Connection Failed! Check output console");
+            JOptionPane.showMessageDialog(null, "Connection Failed! Check output console");
             e.printStackTrace();
             return connection;
         }
@@ -53,6 +55,7 @@ public class MC_JavaDataBaseConnection {
             System.out.println("You made it, take control your database now!");
         } else {
             System.out.println("Failed to make connection!");
+            JOptionPane.showMessageDialog(null, "Failed to make connection!");
         }
         return connection;
     }

@@ -78,7 +78,6 @@ public class Main {
      }
      } 
      */
-
     String lname = "Deepal";
     boolean b;
 
@@ -103,15 +102,15 @@ public class Main {
             }
 
         } else {
-            if (aa.length()==1) {
-                  if (aa.matches("[0-9]*")) {
-                b = true;
-                System.out.println("Yeeeees7");
+            if (aa.length() == 1) {
+                if (aa.matches("[0-9]*")) {
+                    b = true;
+                    System.out.println("Yeeeees7");
 
-            } else {
-                System.out.println("Noooooooo1");
-                b = false;
-            }
+                } else {
+                    System.out.println("Noooooooo1");
+                    b = false;
+                }
             }
         }
         System.out.println("result: " + b);
@@ -119,21 +118,21 @@ public class Main {
 
     }
 //hi
-    
+
     /*
     
-    try {
-                        String newpath;
-                        String path="/error_message.GIF";
-            newpath = path.replace('\\', '/');
-            File ff = new File(newpath);
-            Image img = ImageIO.read(ff);
-            img = img.getScaledInstance(emp_photo.getWidth(), emp_photo.getHeight(), Image.SCALE_SMOOTH);
-            emp_photo.setIcon(new ImageIcon(img));
+     try {
+     String newpath;
+     String path="/error_message.GIF";
+     newpath = path.replace('\\', '/');
+     File ff = new File(newpath);
+     Image img = ImageIO.read(ff);
+     img = img.getScaledInstance(emp_photo.getWidth(), emp_photo.getHeight(), Image.SCALE_SMOOTH);
+     emp_photo.setIcon(new ImageIcon(img));
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+     } catch (Exception e) {
+     e.printStackTrace();
+     }
     
-    */
+     */
 }
