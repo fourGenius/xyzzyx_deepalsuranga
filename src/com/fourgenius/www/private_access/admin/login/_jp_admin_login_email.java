@@ -265,8 +265,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                      //ImageIcon icon = new ImageIcon("/srcerror_message.GIF");
 
                     ImageIcon icon;
-                    icon = new ImageIcon(_jp_admin_login_email.class.getResource("/error_message.GIF"));
-                    JOptionPane.showMessageDialog(this, "Please Enter Here Valid Administrator Email.", "Access Denied", JOptionPane.INFORMATION_MESSAGE, icon);
+                    icon = new ImageIcon("error_message.GIF");
+                    JOptionPane.showMessageDialog(this, "Please Enter Valid Administrator Email.", "Access Denied", JOptionPane.WARNING_MESSAGE);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
