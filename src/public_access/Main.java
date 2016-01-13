@@ -119,4 +119,21 @@ public class Main {
 
     }
 //hi
+    
+    /*
+    
+    try {
+                        String newpath;
+                        String path="/error_message.GIF";
+            newpath = path.replace('\\', '/');
+            File ff = new File(newpath);
+            Image img = ImageIO.read(ff);
+            img = img.getScaledInstance(emp_photo.getWidth(), emp_photo.getHeight(), Image.SCALE_SMOOTH);
+            emp_photo.setIcon(new ImageIcon(img));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+    */
 }
