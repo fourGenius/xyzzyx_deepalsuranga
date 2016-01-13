@@ -5,7 +5,6 @@
  */
 package com.fourgenius.www.private_access.admin.login;
 
-import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -238,7 +237,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             String ss = username.getText();
 
             _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
-            adminLoginPassword._lb_admi_login_email.setText(ss);
+            _jp_admin_login_password._lb_admi_login_email.setText(ss);
             _jp_admin_login_email chackemailuse = new _jp_admin_login_email();
 
             if (chackemailuse.email_validation(ss)) {
