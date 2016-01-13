@@ -113,11 +113,6 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _lb_registration_lecture_preview_mobileNumber = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         _lb_registration_lecture_preview_branch = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        add_Student = new javax.swing.JButton();
-        add_Student1 = new javax.swing.JButton();
-        add_Student2 = new javax.swing.JButton();
-        add_Student3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setMinimumSize(new java.awt.Dimension(1366, 718));
@@ -216,6 +211,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _bg_registration_lecture_personalInformations_employeeDetails_acadamy.add(_rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic);
         _rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic.setForeground(new java.awt.Color(255, 255, 255));
+        _rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic.setSelected(true);
         _rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic.setText("Acadamic");
         _rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -636,9 +632,6 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createSequentialGroup()
-                        .addComponent(_lb_registration_lecture_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 302, Short.MAX_VALUE))
-                    .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createSequentialGroup()
                         .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -653,7 +646,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_lb_registration_lecture_preview_lectureID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_registration_lecture_preview_lectureID, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -663,18 +656,20 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                             .addComponent(_lb_registration_lecture_preview_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_lecture_preview_branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(_lb_registration_lecture_preview_branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createSequentialGroup()
+                        .addComponent(_lb_registration_lecture_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_previewLayout.setVerticalGroup(
             _pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(_lb_registration_lecture_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_lecture_preview_lectureID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_lb_registration_lecture_preview_lectureID, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -719,149 +714,6 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         );
 
         add(_pl_registration_lecture_personalInformation_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 526, 620));
-
-        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
-
-        add_Student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student.setText("Add Lecture");
-        add_Student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student.setFocusPainted(false);
-        add_Student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_StudentMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_StudentMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_StudentMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_StudentMouseReleased(evt);
-            }
-        });
-        add_Student.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_StudentActionPerformed(evt);
-            }
-        });
-
-        add_Student1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student1.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student1.setText("Update Lecture");
-        add_Student1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student1.setFocusPainted(false);
-        add_Student1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student1.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student1MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student1MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student1MouseReleased(evt);
-            }
-        });
-        add_Student1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student1ActionPerformed(evt);
-            }
-        });
-
-        add_Student2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student2.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student2.setText("Remove Lecture");
-        add_Student2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student2.setFocusPainted(false);
-        add_Student2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student2.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student2MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student2MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student2MouseReleased(evt);
-            }
-        });
-        add_Student2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student2ActionPerformed(evt);
-            }
-        });
-
-        add_Student3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student3.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student3.setText("Print Report");
-        add_Student3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student3.setFocusPainted(false);
-        add_Student3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student3.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student3MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student3MousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student3MouseReleased(evt);
-            }
-        });
-        add_Student3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student3ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 1340, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_lecture_personalInformations_lectureDetails_surNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_personalInformations_lectureDetails_surNameActionPerformed
@@ -1001,86 +853,6 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event__rb_registration_lecture_personalInformations_lectureDetails_acadamy_kandyActionPerformed
 
-    private void add_StudentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseEntered
-
-    private void add_StudentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseExited
-
-    private void add_StudentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMousePressed
-
-    private void add_StudentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseReleased
-
-    private void add_StudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_StudentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentActionPerformed
-
-    private void add_Student1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseEntered
-
-    private void add_Student1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseExited
-
-    private void add_Student1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MousePressed
-
-    private void add_Student1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseReleased
-
-    private void add_Student1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1ActionPerformed
-
-    private void add_Student2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseEntered
-
-    private void add_Student2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseExited
-
-    private void add_Student2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MousePressed
-
-    private void add_Student2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseReleased
-
-    private void add_Student2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2ActionPerformed
-
-    private void add_Student3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseEntered
-
-    private void add_Student3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseExited
-
-    private void add_Student3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MousePressed
-
-    private void add_Student3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseReleased
-
-    private void add_Student3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformation_employeeDetails_branch;
@@ -1133,10 +905,6 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     private javax.swing.JTextField _tf_registration_lecture_personalInformations_lectureDetails_lastName;
     private javax.swing.JTextField _tf_registration_lecture_personalInformations_lectureDetails_nicNumber;
     private javax.swing.JTextField _tf_registration_lecture_personalInformations_lectureDetails_surName;
-    private javax.swing.JButton add_Student;
-    private javax.swing.JButton add_Student1;
-    private javax.swing.JButton add_Student2;
-    private javax.swing.JButton add_Student3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1152,6 +920,5 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

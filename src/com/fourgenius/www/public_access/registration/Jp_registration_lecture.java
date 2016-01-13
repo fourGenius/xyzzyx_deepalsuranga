@@ -5,17 +5,24 @@
  */
 package com.fourgenius.www.public_access.registration;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
+
 /**
  *
  * @author Pamitha Gayashan
  */
 public class Jp_registration_lecture extends javax.swing.JPanel {
 
+    Border border=BorderFactory.createLineBorder(Color.white, 1);
     /**
      * Creates new form Jp_registration_lecture
      */
     public Jp_registration_lecture() {
         initComponents();
+        
+        load_table_lecture_view();
     }
 
     /**
@@ -27,436 +34,359 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        _tf_registration_student_searchStudent = new javax.swing.JTextField();
-        sp_registration_student_searchStudent = new javax.swing.JScrollPane();
-        _li_registration_student_searchStudent = new javax.swing.JList();
-        jLabel1 = new javax.swing.JLabel();
-        student_mainPanel = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        aca_emp = new javax.swing.JTable();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators4 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        add_Student = new javax.swing.JButton();
-        add_Student1 = new javax.swing.JButton();
-        add_Student2 = new javax.swing.JButton();
-        add_Student3 = new javax.swing.JButton();
+        Jp_registraion_lecture_buttons = new javax.swing.JPanel();
+        _bt_registraion_lecture_buttons_add_lecture = new javax.swing.JButton();
+        _bt_registraion_lecture_buttons_update_lecture = new javax.swing.JButton();
+        _bt_registraion_lecture_buttons_remove_lecture = new javax.swing.JButton();
+        _bt_registraion_lecture_buttons_print_report = new javax.swing.JButton();
+        _bt_registraion_lecture_buttons_preview_lecture = new javax.swing.JButton();
+        Jp_registraion_lecture_main_panel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setVerifyInputWhenFocusTarget(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        _tf_registration_student_searchStudent.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_student_searchStudentKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                _tf_registration_student_searchStudentKeyTyped(evt);
-            }
-        });
-        add(_tf_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 300, 50));
+        Jp_registraion_lecture_buttons.setBackground(new java.awt.Color(102, 102, 102));
 
-        sp_registration_student_searchStudent.setViewportView(_li_registration_student_searchStudent);
-
-        add(sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 300, 570));
-
-        jLabel1.setText("jLabel1");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jLabel1.setPreferredSize(new java.awt.Dimension(50, 50));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 10, -1, -1));
-
-        student_mainPanel.setLayout(new java.awt.CardLayout());
-
-        jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jTabbedPane1.setFocusable(false);
-        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        aca_emp.setBackground(new java.awt.Color(207, 216, 220));
-        aca_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        aca_emp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        aca_emp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Lecture ID", "Name", "Email", "NIC No", "Password"
-            }
-        ));
-        aca_emp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane2.setViewportView(aca_emp);
-
-        jTabbedPane1.addTab("Active Lecture", jScrollPane2);
-
-        tbl_admin_Administrators4.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Lecture ID", "Name", "Email", "NIC No", "Password"
-            }
-        ));
-        jScrollPane5.setViewportView(tbl_admin_Administrators4);
-
-        jTabbedPane1.addTab("De-active Lecture", jScrollPane5);
-
-        jTabbedPane2.addTab("Lecture", jTabbedPane1);
-
-        student_mainPanel.add(jTabbedPane2, "card2");
-
-        add(student_mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 620));
-
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
-
-        add_Student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student.setText("Add Lecture");
-        add_Student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student.setFocusPainted(false);
-        add_Student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_registraion_lecture_buttons_add_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registraion_lecture_buttons_add_lecture.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registraion_lecture_buttons_add_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_registraion_lecture_buttons_add_lecture.setText("Add Lecture");
+        _bt_registraion_lecture_buttons_add_lecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registraion_lecture_buttons_add_lecture.setFocusPainted(false);
+        _bt_registraion_lecture_buttons_add_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registraion_lecture_buttons_add_lecture.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_registraion_lecture_buttons_add_lecture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_StudentMouseEntered(evt);
+                _bt_registraion_lecture_buttons_add_lectureMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_StudentMouseExited(evt);
+                _bt_registraion_lecture_buttons_add_lectureMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_StudentMousePressed(evt);
+                _bt_registraion_lecture_buttons_add_lectureMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_StudentMouseReleased(evt);
+                _bt_registraion_lecture_buttons_add_lectureMouseReleased(evt);
             }
         });
-        add_Student.addActionListener(new java.awt.event.ActionListener() {
+        _bt_registraion_lecture_buttons_add_lecture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_StudentActionPerformed(evt);
+                _bt_registraion_lecture_buttons_add_lectureActionPerformed(evt);
             }
         });
 
-        add_Student1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student1.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student1.setText("Update Lecture");
-        add_Student1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student1.setFocusPainted(false);
-        add_Student1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student1.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student1.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_registraion_lecture_buttons_update_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registraion_lecture_buttons_update_lecture.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registraion_lecture_buttons_update_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_registraion_lecture_buttons_update_lecture.setText("Update Lecture");
+        _bt_registraion_lecture_buttons_update_lecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registraion_lecture_buttons_update_lecture.setFocusPainted(false);
+        _bt_registraion_lecture_buttons_update_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registraion_lecture_buttons_update_lecture.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_registraion_lecture_buttons_update_lecture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student1MouseEntered(evt);
+                _bt_registraion_lecture_buttons_update_lectureMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student1MouseExited(evt);
+                _bt_registraion_lecture_buttons_update_lectureMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student1MousePressed(evt);
+                _bt_registraion_lecture_buttons_update_lectureMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student1MouseReleased(evt);
+                _bt_registraion_lecture_buttons_update_lectureMouseReleased(evt);
             }
         });
-        add_Student1.addActionListener(new java.awt.event.ActionListener() {
+        _bt_registraion_lecture_buttons_update_lecture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student1ActionPerformed(evt);
+                _bt_registraion_lecture_buttons_update_lectureActionPerformed(evt);
             }
         });
 
-        add_Student2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student2.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student2.setText("Remove Lecture");
-        add_Student2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student2.setFocusPainted(false);
-        add_Student2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student2.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student2.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_registraion_lecture_buttons_remove_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registraion_lecture_buttons_remove_lecture.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registraion_lecture_buttons_remove_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_registraion_lecture_buttons_remove_lecture.setText("Remove Lecture");
+        _bt_registraion_lecture_buttons_remove_lecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registraion_lecture_buttons_remove_lecture.setFocusPainted(false);
+        _bt_registraion_lecture_buttons_remove_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registraion_lecture_buttons_remove_lecture.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_registraion_lecture_buttons_remove_lecture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student2MouseEntered(evt);
+                _bt_registraion_lecture_buttons_remove_lectureMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student2MouseExited(evt);
+                _bt_registraion_lecture_buttons_remove_lectureMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student2MousePressed(evt);
+                _bt_registraion_lecture_buttons_remove_lectureMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student2MouseReleased(evt);
+                _bt_registraion_lecture_buttons_remove_lectureMouseReleased(evt);
             }
         });
-        add_Student2.addActionListener(new java.awt.event.ActionListener() {
+        _bt_registraion_lecture_buttons_remove_lecture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student2ActionPerformed(evt);
+                _bt_registraion_lecture_buttons_remove_lectureActionPerformed(evt);
             }
         });
 
-        add_Student3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student3.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student3.setText("Print Report");
-        add_Student3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student3.setFocusPainted(false);
-        add_Student3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student3.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student3.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_registraion_lecture_buttons_print_report.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registraion_lecture_buttons_print_report.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registraion_lecture_buttons_print_report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_registraion_lecture_buttons_print_report.setText("Print Report");
+        _bt_registraion_lecture_buttons_print_report.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registraion_lecture_buttons_print_report.setFocusPainted(false);
+        _bt_registraion_lecture_buttons_print_report.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registraion_lecture_buttons_print_report.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_registraion_lecture_buttons_print_report.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student3MouseEntered(evt);
+                _bt_registraion_lecture_buttons_print_reportMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student3MouseExited(evt);
+                _bt_registraion_lecture_buttons_print_reportMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student3MousePressed(evt);
+                _bt_registraion_lecture_buttons_print_reportMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student3MouseReleased(evt);
+                _bt_registraion_lecture_buttons_print_reportMouseReleased(evt);
             }
         });
-        add_Student3.addActionListener(new java.awt.event.ActionListener() {
+        _bt_registraion_lecture_buttons_print_report.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student3ActionPerformed(evt);
+                _bt_registraion_lecture_buttons_print_reportActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        _bt_registraion_lecture_buttons_preview_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registraion_lecture_buttons_preview_lecture.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registraion_lecture_buttons_preview_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_registraion_lecture_buttons_preview_lecture.setText("Preview Lecture");
+        _bt_registraion_lecture_buttons_preview_lecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registraion_lecture_buttons_preview_lecture.setFocusPainted(false);
+        _bt_registraion_lecture_buttons_preview_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registraion_lecture_buttons_preview_lecture.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_registraion_lecture_buttons_preview_lecture.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_registraion_lecture_buttons_preview_lectureMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_registraion_lecture_buttons_preview_lectureMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_registraion_lecture_buttons_preview_lectureMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_registraion_lecture_buttons_preview_lectureMouseReleased(evt);
+            }
+        });
+        _bt_registraion_lecture_buttons_preview_lecture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_registraion_lecture_buttons_preview_lectureActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Jp_registraion_lecture_buttonsLayout = new javax.swing.GroupLayout(Jp_registraion_lecture_buttons);
+        Jp_registraion_lecture_buttons.setLayout(Jp_registraion_lecture_buttonsLayout);
+        Jp_registraion_lecture_buttonsLayout.setHorizontalGroup(
+            Jp_registraion_lecture_buttonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Jp_registraion_lecture_buttonsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_registraion_lecture_buttons_preview_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(_bt_registraion_lecture_buttons_add_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(_bt_registraion_lecture_buttons_update_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(_bt_registraion_lecture_buttons_remove_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addComponent(_bt_registraion_lecture_buttons_print_report, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        Jp_registraion_lecture_buttonsLayout.setVerticalGroup(
+            Jp_registraion_lecture_buttonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Jp_registraion_lecture_buttonsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Jp_registraion_lecture_buttonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(_bt_registraion_lecture_buttons_add_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_registraion_lecture_buttons_update_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_registraion_lecture_buttons_remove_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_registraion_lecture_buttons_print_report, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_registraion_lecture_buttons_preview_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 638, 1340, -1));
+        add(Jp_registraion_lecture_buttons, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 638, 1340, -1));
+
+        Jp_registraion_lecture_main_panel.setBackground(new java.awt.Color(66, 66, 66));
+        Jp_registraion_lecture_main_panel.setLayout(new java.awt.CardLayout());
+        add(Jp_registraion_lecture_main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 630));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void _tf_registration_student_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_searchStudentKeyReleased
+    private void _bt_registraion_lecture_buttons_add_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_add_lectureMouseEntered
+        _bt_registraion_lecture_buttons_add_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_add_lectureMouseEntered
 
-    }//GEN-LAST:event__tf_registration_student_searchStudentKeyReleased
+    private void _bt_registraion_lecture_buttons_add_lectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_add_lectureMouseExited
+        _bt_registraion_lecture_buttons_add_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_add_lectureMouseExited
 
-    private void _tf_registration_student_searchStudentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_searchStudentKeyTyped
+    private void _bt_registraion_lecture_buttons_add_lectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_add_lectureMousePressed
+        _bt_registraion_lecture_buttons_add_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_add_lectureMousePressed
 
-        /*try {
-            if (_tf_registration_student_searchStudent.getText().length() == 2) {
+    private void _bt_registraion_lecture_buttons_add_lectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_add_lectureMouseReleased
+        _bt_registraion_lecture_buttons_add_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_add_lectureMouseReleased
 
-                if (_tf_registration_student_searchStudent.getText().matches("[a-zA-Z]*")) {
-                    b = true;
-                    System.out.println("Yeeeees");
-
-                } else {
-                    System.out.println("Noooooooo");
-                    b = false;
-                }
-
-                ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select stu_info_personal_nic from stu_info_personal where stu_info_personal_nic like '" + _tf_registration_student_searchStudent.getText() + "%'");
-                Vector v = new Vector();
-                if (_tf_registration_student_searchStudent.getText().isEmpty()) {
-                    sp_registration_student_searchStudent.setVisible(false);
-
-                } else {
-                    while (rs.next()) {
-                        v.add(rs.getString("stu_info_personal_nic"));
-
-                    }
-                    rs.close();
-                    _li_registration_student_searchStudent.setListData(v);
-
-                    if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
-                        sp_registration_student_searchStudent.setVisible(false);
-
-                    } else {
-                        sp_registration_student_searchStudent.setVisible(true);
-                    }
-
-                }
-                //                }
+    Jp_registration_lecture_informations add_lecture = new Jp_registration_lecture_informations();
+    private void _bt_registraion_lecture_buttons_add_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_add_lectureActionPerformed
+        if (add_lecture == null) {
+            add_lecture = new Jp_registration_lecture_informations();
+            Jp_registraion_lecture_main_panel.removeAll();
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+            Jp_registraion_lecture_main_panel.add(add_lecture);
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+        } else {
+            Jp_registraion_lecture_main_panel.removeAll();
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+            Jp_registraion_lecture_main_panel.add(add_lecture);
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
         }
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_add_lectureActionPerformed
 
-        } catch (Exception e) {
-        }*/
+    private void _bt_registraion_lecture_buttons_update_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMouseEntered
+        _bt_registraion_lecture_buttons_update_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureMouseEntered
 
-    }//GEN-LAST:event__tf_registration_student_searchStudentKeyTyped
+    private void _bt_registraion_lecture_buttons_update_lectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMouseExited
+        _bt_registraion_lecture_buttons_update_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureMouseExited
 
-    private void add_StudentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseEntered
+    private void _bt_registraion_lecture_buttons_update_lectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMousePressed
+        _bt_registraion_lecture_buttons_update_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureMousePressed
+
+    private void _bt_registraion_lecture_buttons_update_lectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMouseReleased
+        _bt_registraion_lecture_buttons_update_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureMouseReleased
+
+    
+    private void _bt_registraion_lecture_buttons_update_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureActionPerformed
+        
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureActionPerformed
+
+    private void _bt_registraion_lecture_buttons_remove_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_remove_lectureMouseEntered
+        _bt_registraion_lecture_buttons_remove_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_remove_lectureMouseEntered
+
+    private void _bt_registraion_lecture_buttons_remove_lectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_remove_lectureMouseExited
+        _bt_registraion_lecture_buttons_remove_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_remove_lectureMouseExited
+
+    private void _bt_registraion_lecture_buttons_remove_lectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_remove_lectureMousePressed
+        _bt_registraion_lecture_buttons_remove_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_remove_lectureMousePressed
+
+    private void _bt_registraion_lecture_buttons_remove_lectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_remove_lectureMouseReleased
+        _bt_registraion_lecture_buttons_remove_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_remove_lectureMouseReleased
+
+    private void _bt_registraion_lecture_buttons_remove_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_remove_lectureActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseEntered
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_remove_lectureActionPerformed
 
-    private void add_StudentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseExited
+    private void _bt_registraion_lecture_buttons_print_reportMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_print_reportMouseEntered
+        _bt_registraion_lecture_buttons_print_report.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_print_reportMouseEntered
 
-    private void add_StudentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMousePressed
+    private void _bt_registraion_lecture_buttons_print_reportMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_print_reportMouseExited
+        _bt_registraion_lecture_buttons_print_report.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_print_reportMouseExited
 
-    private void add_StudentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseReleased
+    private void _bt_registraion_lecture_buttons_print_reportMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_print_reportMousePressed
+        _bt_registraion_lecture_buttons_print_report.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_print_reportMousePressed
 
-    private void add_StudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_StudentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentActionPerformed
+    private void _bt_registraion_lecture_buttons_print_reportMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_print_reportMouseReleased
+        _bt_registraion_lecture_buttons_print_report.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_print_reportMouseReleased
 
-    private void add_Student1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseEntered
+    private void _bt_registraion_lecture_buttons_print_reportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_print_reportActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseEntered
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_print_reportActionPerformed
 
-    private void add_Student1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseExited
+    private void _bt_registraion_lecture_buttons_preview_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureMouseEntered
+        _bt_registraion_lecture_buttons_preview_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureMouseEntered
 
-    private void add_Student1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MousePressed
+    private void _bt_registraion_lecture_buttons_preview_lectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureMouseExited
+        _bt_registraion_lecture_buttons_preview_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureMouseExited
 
-    private void add_Student1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseReleased
+    private void _bt_registraion_lecture_buttons_preview_lectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureMousePressed
+        _bt_registraion_lecture_buttons_preview_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureMousePressed
 
-    private void add_Student1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1ActionPerformed
+    private void _bt_registraion_lecture_buttons_preview_lectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureMouseReleased
+        _bt_registraion_lecture_buttons_preview_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureMouseReleased
 
-    private void add_Student2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseEntered
-
-    private void add_Student2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseExited
-
-    private void add_Student2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MousePressed
-
-    private void add_Student2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseReleased
-
-    private void add_Student2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2ActionPerformed
-
-    private void add_Student3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseEntered
-
-    private void add_Student3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseExited
-
-    private void add_Student3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MousePressed
-
-    private void add_Student3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseReleased
-
-    private void add_Student3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3ActionPerformed
+    Jp_registration_lecture_table_view view_lecture_table = new Jp_registration_lecture_table_view();
+    private void _bt_registraion_lecture_buttons_preview_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureActionPerformed
+        if (view_lecture_table == null) {
+            view_lecture_table = new Jp_registration_lecture_table_view();
+            Jp_registraion_lecture_main_panel.removeAll();
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+            Jp_registraion_lecture_main_panel.add(view_lecture_table);
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+        } else {
+            Jp_registraion_lecture_main_panel.removeAll();
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+            Jp_registraion_lecture_main_panel.add(view_lecture_table);
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+        }
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList _li_registration_student_searchStudent;
-    private javax.swing.JTextField _tf_registration_student_searchStudent;
-    private javax.swing.JTable aca_emp;
-    private javax.swing.JButton add_Student;
-    private javax.swing.JButton add_Student1;
-    private javax.swing.JButton add_Student2;
-    private javax.swing.JButton add_Student3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JScrollPane sp_registration_student_searchStudent;
-    private javax.swing.JPanel student_mainPanel;
-    private javax.swing.JTable tbl_admin_Administrators4;
+    private javax.swing.JPanel Jp_registraion_lecture_buttons;
+    private javax.swing.JPanel Jp_registraion_lecture_main_panel;
+    private javax.swing.JButton _bt_registraion_lecture_buttons_add_lecture;
+    private javax.swing.JButton _bt_registraion_lecture_buttons_preview_lecture;
+    private javax.swing.JButton _bt_registraion_lecture_buttons_print_report;
+    private javax.swing.JButton _bt_registraion_lecture_buttons_remove_lecture;
+    private javax.swing.JButton _bt_registraion_lecture_buttons_update_lecture;
     // End of variables declaration//GEN-END:variables
+
+    private void load_table_lecture_view() {
+        Jp_registration_lecture_table_view view_lecture_table = new Jp_registration_lecture_table_view();
+        
+        if (view_lecture_table == null) {
+            view_lecture_table = new Jp_registration_lecture_table_view();
+            Jp_registraion_lecture_main_panel.removeAll();
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+            Jp_registraion_lecture_main_panel.add(view_lecture_table);
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+        } else {
+            Jp_registraion_lecture_main_panel.removeAll();
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+            Jp_registraion_lecture_main_panel.add(view_lecture_table);
+            Jp_registraion_lecture_main_panel.repaint();
+            Jp_registraion_lecture_main_panel.revalidate();
+        }
+    }
 }
