@@ -117,6 +117,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 _tf_registration_employee_personalInformations_employeeDetails_surNameActionPerformed(evt);
             }
         });
+        _tf_registration_employee_personalInformations_employeeDetails_surName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_surNameKeyReleased(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,6 +133,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         _tf_registration_employee_personalInformations_employeeDetails_firstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_employee_personalInformations_employeeDetails_firstNameActionPerformed(evt);
+            }
+        });
+        _tf_registration_employee_personalInformations_employeeDetails_firstName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_firstNameKeyReleased(evt);
             }
         });
 
@@ -142,6 +152,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 _tf_registration_employee_personalInformations_employeeDetails_lastNameActionPerformed(evt);
             }
         });
+        _tf_registration_employee_personalInformations_employeeDetails_lastName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_lastNameKeyReleased(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,6 +167,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         _tf_registration_employee_personalInformations_employeeDetails_nicNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_employee_personalInformations_employeeDetails_nicNumberActionPerformed(evt);
+            }
+        });
+        _tf_registration_employee_personalInformations_employeeDetails_nicNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased(evt);
             }
         });
 
@@ -720,6 +740,52 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
             i++;
     }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureActionPerformed
+
+    private void _tf_registration_employee_personalInformations_employeeDetails_surNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_surNameKeyReleased
+        
+        char c=evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_surNameKeyReleased
+
+    private void _tf_registration_employee_personalInformations_employeeDetails_firstNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameKeyReleased
+
+          char c=evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameKeyReleased
+
+    private void _tf_registration_employee_personalInformations_employeeDetails_lastNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameKeyReleased
+         char c=evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameKeyReleased
+
+    private void _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased
+        
+        char c=evt.getKeyChar();
+        
+        if (_tf_registration_employee_personalInformations_employeeDetails_nicNumber.getText().length() == 9 ) {
+            if (_tf_registration_employee_personalInformations_employeeDetails_nicNumber.getText().length()==10 ) {
+                evt.consume();
+            }
+            else if (Character.isDigit(c) | !((c=='v')||(c=='x')) ) {
+                evt.consume();
+            }
+            
+        }
+        else{
+            if (Character.isLetter(c)) {
+                evt.consume();
+            }
+        }   
+        
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

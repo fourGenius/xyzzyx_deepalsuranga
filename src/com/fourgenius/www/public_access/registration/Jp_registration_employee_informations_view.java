@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package com.fourgenius.www.public_access.registration;
+
 import com.fourgenius.www.private_access.admin.method.*;
+
 /**
  *
  * @author Dineth Jayasekera
@@ -14,7 +16,6 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     /*
      * Creates new form Jp_registration_employee_informations_view
      */
-
     public Jp_registration_employee_informations_view() {
         initComponents();
         System.out.println("view");
@@ -165,17 +166,27 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_employee_informations_view_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
-        
-        
-        
+
+
     }//GEN-LAST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
 
     private void _bt_registration_employee_informations_view_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_employee_informations_view_searchActionPerformed
-        
-        Md_check_id checkId=new Md_check_id();
-      String idType=checkId.Md_check_id(_tf_registration_employee_informations_view_searchStudent.getText());
-      
-        
+
+        Md_check_id checkId = new Md_check_id();
+        String idType = checkId.Md_check_id(_tf_registration_employee_informations_view_searchStudent.getText());
+        switch (idType) {
+            case "passport":
+                
+                break;
+
+            case "nic":
+                
+                break;
+
+            case "name":
+                
+                break;
+        }
     }//GEN-LAST:event__bt_registration_employee_informations_view_searchActionPerformed
 
 

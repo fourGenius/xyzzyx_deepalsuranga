@@ -16,10 +16,11 @@ String is_id;
          if (ID.length() == 1) {
             System.out.println("this is a :");
 
-            if (ID.charAt(0) == 'N') {
-                System.out.println("Pastport ID");
-                is_id = "password";
-            } else if (ID.matches("[0-9]*")) {
+//            if (ID.charAt(0) == 'N') {
+//                System.out.println("Pastport ID");
+//                is_id = "passport";
+//            } 
+            if (ID.matches("[0-9]*")) {
                 System.out.println("NIC");
                 is_id = "nic";
 
