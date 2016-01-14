@@ -16,7 +16,7 @@ import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
- * @author Shadow
+ * @author Shadow®
  */
 public class stu_user_info {
 
@@ -105,6 +105,32 @@ public class stu_user_info {
             JOptionPane.showConfirmDialog(null, "Error is: 5/stu_user_info;" + ex);
         }
     }
-
+    
+        ////////////////////////////////////////////////////////////Update///////////////////////////////////////
+    
+    public void setStu_user_info_email_update(String stu_user_info_id, String stu_user_info_email) {
+        this.stu_user_info_id = stu_user_info_id;
+        this.stu_user_info_email = stu_user_info_email;
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            statement.executeQuery("update stu_user_info set stu_user_info_email ='" + stu_user_info_email + "' where stu_user_info_id='" + stu_user_info_id + "'");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, "Error is: 6/stu_user_info;" + ex);
+        }
+    }
+    ///////////////////////////////////////////////////////////Delete///////////////////////////////////////
+    
+    public void setEmployee_nonAcademic_administrative_user_info_status_remove(String stu_user_info_status, String stu_user_info_id) {
+        this.stu_user_info_status = stu_user_info_status;
+        this.stu_user_info_id = stu_user_info_id;
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            statement.executeQuery("update stu_user_info set stu_user_info_status ='" + stu_user_info_status + "'where stu_user_info_id='" + stu_user_info_id + "'");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, "Error is: 8/stu_user_info;" + ex);
+        }
+    }
 }
 

@@ -19,7 +19,7 @@ import javax.swing.border.Border;
 
 /**
  *
- * @author Dineth Jayasekera
+ * @author Shadow®
  */
 public class Jp_registration_student_informations extends javax.swing.JPanel {
 

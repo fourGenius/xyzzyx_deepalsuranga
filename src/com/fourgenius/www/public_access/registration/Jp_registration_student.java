@@ -27,7 +27,7 @@ import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
- * @author thilina
+ * @author Shadow®
  */
 public class Jp_registration_student extends javax.swing.JPanel {
 

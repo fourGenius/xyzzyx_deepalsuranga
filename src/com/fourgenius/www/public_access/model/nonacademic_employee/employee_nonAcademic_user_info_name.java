@@ -87,7 +87,7 @@ public class employee_nonAcademic_user_info_name {
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeUpdate("insert into employee_nonAcademic_user_info_name(Employee_nonAcademic_user_info_name_first_name) values ('" + employee_nonAcademic_user_info_name_first_name + "')");
+            statement.executeUpdate("insert into employee_nonAcademic_user_info_name(employee_nonAcademic_user_info_name_first_name) values ('" + employee_nonAcademic_user_info_name_first_name + "')");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 4/employee_nonAcademic_user_info_name;" + ex);
         }
@@ -104,7 +104,7 @@ public class employee_nonAcademic_user_info_name {
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeUpdate("insert into employee_nonAcademic_user_info_name(Employee_nonAcademic_user_info_name_last_name) values ('" + employee_nonAcademic_user_info_name_last_name + "')");
+            statement.executeUpdate("insert into employee_nonAcademic_user_info_name(employee_nonAcademic_user_info_name_last_name) values ('" + employee_nonAcademic_user_info_name_last_name + "')");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 5/employee_nonAcademic_user_info_name;" + ex);
         }
@@ -129,7 +129,7 @@ public class employee_nonAcademic_user_info_name {
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeUpdate("update employee_nonAcademic_user_info_name set Employee_nonAcademic_user_info_name_first_name='" + employee_nonAcademic_user_info_name_first_name + "' where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
+            statement.executeUpdate("update employee_nonAcademic_user_info_name set employee_nonAcademic_user_info_name_first_name='" + employee_nonAcademic_user_info_name_first_name + "' where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 7/employee_nonAcademic_user_info_name;" + ex);
         }

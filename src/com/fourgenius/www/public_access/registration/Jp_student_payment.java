@@ -11,7 +11,7 @@ import javax.swing.border.Border;
 
 /**
  *
- * @author Pamitha Gayashan
+ * @author Shadow®
  */
 public class Jp_student_payment extends javax.swing.JPanel {
 
