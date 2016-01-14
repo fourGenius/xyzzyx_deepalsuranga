@@ -11,12 +11,15 @@ package com.fourgenius.www.public_access.registration;
  */
 public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
+    Jp_registration_lecture_informations_form_active_lectures_table active_lecture=new Jp_registration_lecture_informations_form_active_lectures_table();
+    Jp_registration_lecture_informations_form_deactive_lecture_table deactive_lecture=new Jp_registration_lecture_informations_form_deactive_lecture_table();
     /**
      * Creates new form Jp_registration_lecture_table_view
      */
     public Jp_registration_lecture_table_view() {
         initComponents();
-        
+        _tp_registration_lecture_tables.add("Active Lectures", active_lecture);
+        _tp_registration_lecture_tables.add("Deactive Lectures", deactive_lecture);
         
     }
 
@@ -34,12 +37,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         _li_registration_student_searchStudent = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        aca_emp = new javax.swing.JTable();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators4 = new javax.swing.JTable();
+        _tp_registration_lecture_tables = new javax.swing.JTabbedPane();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,103 +54,8 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.CardLayout());
 
-        jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jTabbedPane1.setFocusable(false);
-        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        aca_emp.setBackground(new java.awt.Color(207, 216, 220));
-        aca_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        aca_emp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        aca_emp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Lecture ID", "Name", "Email", "NIC No", "Password"
-            }
-        ));
-        aca_emp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane2.setViewportView(aca_emp);
-
-        jTabbedPane1.addTab("Active Lecture", jScrollPane2);
-
-        tbl_admin_Administrators4.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Lecture ID", "Name", "Email", "NIC No", "Password"
-            }
-        ));
-        jScrollPane5.setViewportView(tbl_admin_Administrators4);
-
-        jTabbedPane1.addTab("De-active Lecture", jScrollPane5);
-
-        jTabbedPane2.addTab("Lecture", jTabbedPane1);
-
-        jPanel1.add(jTabbedPane2, "card2");
+        _tp_registration_lecture_tables.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(_tp_registration_lecture_tables, "card2");
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 990, 620));
     }// </editor-fold>//GEN-END:initComponents
@@ -161,14 +64,9 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList _li_registration_student_searchStudent;
     private javax.swing.JTextField _tf_registration_student_searchStudent;
-    private javax.swing.JTable aca_emp;
+    private javax.swing.JTabbedPane _tp_registration_lecture_tables;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JScrollPane sp_registration_student_searchStudent;
-    private javax.swing.JTable tbl_admin_Administrators4;
     // End of variables declaration//GEN-END:variables
 }
