@@ -207,18 +207,18 @@ public class Jp_registration_employee extends javax.swing.JPanel {
                 _bt_view_employee.setEnabled(true);
                 _bt_add_employee.setText("Add Employee");
                 
-                 main.removeAll();
+               main.removeAll();
             GroupLayout layout = new GroupLayout(main);
             main.setLayout(layout);
 
-            Jp_registration_employee_informations_add add_employee = new Jp_registration_employee_informations_add();
-           
+              Jp_registration_employee_informations_view view_employee = new Jp_registration_employee_informations_view();
             layout.setHorizontalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
             layout.setVerticalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
             System.gc();
+             System.out.println("okkkkkk");
             }else{_bt_add_employee.setText("Finish");
          _bt_view_employee.setEnabled(false);}
     }//GEN-LAST:event__bt_add_employeeMouseClicked

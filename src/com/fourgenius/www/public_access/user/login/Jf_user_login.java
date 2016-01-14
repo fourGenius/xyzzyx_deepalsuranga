@@ -542,7 +542,7 @@ public class Jf_user_login extends javax.swing.JFrame {
     
     private void _pf_user_login_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__pf_user_login_passwordActionPerformed
 
-        
+        _bt_Jf_user_login_Login.doClick();
 
     }//GEN-LAST:event__pf_user_login_passwordActionPerformed
 

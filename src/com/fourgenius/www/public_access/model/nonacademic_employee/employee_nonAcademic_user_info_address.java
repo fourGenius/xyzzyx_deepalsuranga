@@ -35,7 +35,7 @@ public class employee_nonAcademic_user_info_address {
             if (rs.next()) {
                statement.executeUpdate("update employee_nonAcademic_user_info_address set employee_nonAcademic_user_info_address_lane1='" + employee_nonAcademic_user_info_address_lane1 + "',employee_nonAcademic_user_info_address_city='" + employee_nonAcademic_user_info_address_city+ "' ,employee_nonAcademic_user_info_address_cuntry='" + employee_nonAcademic_user_info_address_cuntry + "' where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
             } else {
-               statement.executeUpdate("insert employee_nonAcademic_user_info_address(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_user_info_address_lane1,employee_nonAcademic_user_info_address_city,employee_nonAcademic_user_info_address_cuntry) values ('"+employee_nonAcademic_administrative_user_info_id+"'," + employee_nonAcademic_user_info_address_lane1 + "','"+employee_nonAcademic_user_info_address_city+"','" + employee_nonAcademic_user_info_address_cuntry + "')");
+               statement.executeUpdate("insert into employee_nonAcademic_user_info_address(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_user_info_address_lane1,employee_nonAcademic_user_info_address_city,employee_nonAcademic_user_info_address_cuntry) values ('"+employee_nonAcademic_administrative_user_info_id+"','" + employee_nonAcademic_user_info_address_lane1 + "','"+employee_nonAcademic_user_info_address_city+"','" + employee_nonAcademic_user_info_address_cuntry + "')");
             }
             rs.close();
         } catch (SQLException ex) {

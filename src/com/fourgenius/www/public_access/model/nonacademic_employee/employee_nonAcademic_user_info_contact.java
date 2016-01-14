@@ -35,7 +35,7 @@ public class employee_nonAcademic_user_info_contact {
             if (rs.next()) {
                statement.executeUpdate("update employee_nonAcademic_user_info_contact set employee_nonAcademic_user_info_contact_mobile='" + employee_nonAcademic_user_info_contact_mobile + "',employee_nonAcademic_user_info_contact_land='" + employee_nonAcademic_user_info_contact_land+ "' ,employee_nonAcademic_user_info_contact_email='" + employee_nonAcademic_user_info_contact_email + "' where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
             } else {
-               statement.executeUpdate("insert employee_nonAcademic_user_info_contact(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_user_info_contact_mobile,employee_nonAcademic_user_info_contact_land,employee_nonAcademic_user_info_contact_email) values ('"+employee_nonAcademic_administrative_user_info_id+"'," + employee_nonAcademic_user_info_contact_mobile + "','" + employee_nonAcademic_user_info_contact_land + "','" + employee_nonAcademic_user_info_contact_email + "')");
+               statement.executeUpdate("insert into employee_nonAcademic_user_info_contact(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_user_info_contact_mobile,employee_nonAcademic_user_info_contact_land,employee_nonAcademic_user_info_contact_email) values ('"+employee_nonAcademic_administrative_user_info_id+"','" + employee_nonAcademic_user_info_contact_mobile + "','" + employee_nonAcademic_user_info_contact_land + "','" + employee_nonAcademic_user_info_contact_email +"')");
             }
             rs.close();
         } catch (SQLException ex) {

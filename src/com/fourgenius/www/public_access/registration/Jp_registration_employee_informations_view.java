@@ -18,7 +18,11 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
      */
     public Jp_registration_employee_informations_view() {
         initComponents();
-        System.out.println("view");
+       
+        Jp_registration_employee_informations_form_active_employee_table active_employee=new Jp_registration_employee_informations_form_active_employee_table();
+        Jp_registration_employee_informations_form_deactive_employee_table deactive_employee=new Jp_registration_employee_informations_form_deactive_employee_table();
+        jTabbedPane1.add("Active Employee", active_employee);
+        jTabbedPane1.add("De-active Employee", deactive_employee);
     }
 
     /**
@@ -31,10 +35,6 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        aca_emp = new javax.swing.JTable();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators4 = new javax.swing.JTable();
         _tf_registration_employee_informations_view_searchStudent = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         _li_registration_employee_informations_view_searchStudent = new javax.swing.JList();
@@ -45,97 +45,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
 
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        aca_emp.setBackground(new java.awt.Color(207, 216, 220));
-        aca_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        aca_emp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        aca_emp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Employee ID", "Name", "Email", "NIC No"
-            }
-        ));
-        aca_emp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane2.setViewportView(aca_emp);
-
-        jTabbedPane1.addTab("Active Employee", jScrollPane2);
-
-        tbl_admin_Administrators4.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Administrator ID", "Name", "Email", "NIC No"
-            }
-        ));
-        jScrollPane5.setViewportView(tbl_admin_Administrators4);
-
-        jTabbedPane1.addTab("De-active Employee", jScrollPane5);
-
-        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 38, 970, 590));
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 18, 970, 610));
 
         _tf_registration_employee_informations_view_searchStudent.setMaximumSize(new java.awt.Dimension(300, 50));
         _tf_registration_employee_informations_view_searchStudent.setMinimumSize(new java.awt.Dimension(300, 50));
@@ -157,7 +67,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
                 _bt_registration_employee_informations_view_searchActionPerformed(evt);
             }
         });
-        add(_bt_registration_employee_informations_view_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 40, 50, 50));
+        add(_bt_registration_employee_informations_view_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 38, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_employee_informations_view_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
@@ -189,11 +99,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     private javax.swing.JButton _bt_registration_employee_informations_view_search;
     private javax.swing.JList _li_registration_employee_informations_view_searchStudent;
     private javax.swing.JTextField _tf_registration_employee_informations_view_searchStudent;
-    private javax.swing.JTable aca_emp;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable tbl_admin_Administrators4;
     // End of variables declaration//GEN-END:variables
 }
