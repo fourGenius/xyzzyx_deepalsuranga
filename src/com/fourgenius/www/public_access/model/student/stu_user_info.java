@@ -16,7 +16,7 @@ import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
- * @author Dineth Jayasekera
+ * @author Shadow
  */
 public class stu_user_info {
 
