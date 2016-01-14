@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 
 /**
@@ -25,8 +26,9 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     /*
      * Creates new form Jp_registration_student_informations
      */
-      Border border = BorderFactory.createLineBorder(Color.white, 1);
-      String path, newpath;
+    Border border = BorderFactory.createLineBorder(Color.white, 1);
+    String path, newpath;
+
     public Jp_registration_student_informations() {
         initComponents();
     }
@@ -254,6 +256,11 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                 _tf_registration_student_personalInformations_contactDetails_mobileNumberActionPerformed(evt);
             }
         });
+        _tf_registration_student_personalInformations_contactDetails_mobileNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_student_personalInformations_contactDetails_mobileNumberKeyReleased(evt);
+            }
+        });
 
         _lb_registration_user_personalInformations_contactDetails_mobileNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_user_personalInformations_contactDetails_mobileNumber.setForeground(new java.awt.Color(255, 255, 255));
@@ -263,6 +270,11 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         _tf_registration_student_personalInformations_contactDetails_homeNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_student_personalInformations_contactDetails_homeNumberActionPerformed(evt);
+            }
+        });
+        _tf_registration_student_personalInformations_contactDetails_homeNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_student_personalInformations_contactDetails_homeNumberKeyReleased(evt);
             }
         });
 
@@ -294,7 +306,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
 
         _lb_registration_user_personalInformations_address_2ndLine.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_user_personalInformations_address_2ndLine.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_registration_user_personalInformations_address_2ndLine.setText("2nd Line");
+        _lb_registration_user_personalInformations_address_2ndLine.setText("City");
 
         _tf_registration_student_personalInformations_contactDetails_2ndLine.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_student_personalInformations_contactDetails_2ndLine.addActionListener(new java.awt.event.ActionListener() {
@@ -302,15 +314,25 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                 _tf_registration_student_personalInformations_contactDetails_2ndLineActionPerformed(evt);
             }
         });
+        _tf_registration_student_personalInformations_contactDetails_2ndLine.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_student_personalInformations_contactDetails_2ndLineKeyReleased(evt);
+            }
+        });
 
         _lb_registration_user_personalInformations_address_city.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_user_personalInformations_address_city.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_registration_user_personalInformations_address_city.setText("City");
+        _lb_registration_user_personalInformations_address_city.setText("Cuntry");
 
         _tf_registration_student_personalInformations_contactDetails_city.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_student_personalInformations_contactDetails_city.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_student_personalInformations_contactDetails_cityActionPerformed(evt);
+            }
+        });
+        _tf_registration_student_personalInformations_contactDetails_city.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_student_personalInformations_contactDetails_cityKeyReleased(evt);
             }
         });
 
@@ -667,7 +689,22 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__tf_registration_student_personalInformations_contactDetails_homeNumberActionPerformed
 
     private void _tf_registration_student_personalInformations_contactDetails_eMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_contactDetails_eMailActionPerformed
-        _tf_registration_student_personalInformations_contactDetails_1stLine.grabFocus();
+
+        String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        String email1 = _tf_registration_student_personalInformations_contactDetails_eMail.getText();
+        Boolean result = email1.matches(EMAIL_REGEX);
+
+        if (result) {
+            _tf_registration_student_personalInformations_contactDetails_1stLine.grabFocus();
+        } else {
+            try {
+                JOptionPane.showMessageDialog(this, "Please Enter Valid Email.", "Access Denied", JOptionPane.WARNING_MESSAGE);
+
+                Thread.sleep(3);
+            } catch (Exception e) {
+            }
+        }
+
     }//GEN-LAST:event__tf_registration_student_personalInformations_contactDetails_eMailActionPerformed
 
     private void _tf_registration_student_personalInformations_contactDetails_1stLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_contactDetails_1stLineActionPerformed
@@ -697,7 +734,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private void _bt_registration_student_personalInformation_registerLectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_registerLectureMouseReleased
         _bt_registration_student_personalInformation_registerLecture.setBorder(border);
     }//GEN-LAST:event__bt_registration_student_personalInformation_registerLectureMouseReleased
-int i=0;
+    int i = 0;
     private void _bt_registration_student_personalInformation_registerLectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_student_personalInformation_registerLectureActionPerformed
         Date d = _dc_registration_student_personalInformations_studentDetails_dateOfBirth.getDate();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -715,14 +752,49 @@ int i=0;
         try {
 
             newpath = path.replace("\\", "/");
-                File f = new File(newpath);
-                Image img = ImageIO.read(f);
-                img = img.getScaledInstance(_lb_registration_student_preview_image.getWidth(), _lb_registration_student_preview_image.getHeight(), Image.SCALE_SMOOTH);
-                _lb_registration_student_preview_image.setIcon(new ImageIcon(img));
-            } catch (Exception e) {
-            }
-            i++;
+            File f = new File(newpath);
+            Image img = ImageIO.read(f);
+            img = img.getScaledInstance(_lb_registration_student_preview_image.getWidth(), _lb_registration_student_preview_image.getHeight(), Image.SCALE_SMOOTH);
+            _lb_registration_student_preview_image.setIcon(new ImageIcon(img));
+        } catch (Exception e) {
+        }
+        i++;
     }//GEN-LAST:event__bt_registration_student_personalInformation_registerLectureActionPerformed
+
+    private void _tf_registration_student_personalInformations_contactDetails_mobileNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_contactDetails_mobileNumberKeyReleased
+
+        char c = evt.getKeyChar();
+        if (_tf_registration_student_personalInformations_contactDetails_mobileNumber.getText().length() == 10 || !(Character.isLetter(c))) {
+            evt.consume();
+        }
+
+    }//GEN-LAST:event__tf_registration_student_personalInformations_contactDetails_mobileNumberKeyReleased
+
+    private void _tf_registration_student_personalInformations_contactDetails_homeNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_contactDetails_homeNumberKeyReleased
+
+        char c = evt.getKeyChar();
+        if (_tf_registration_student_personalInformations_contactDetails_homeNumber.getText().length() == 10 || !(Character.isLetter(c))) {
+            evt.consume();
+        }
+
+    }//GEN-LAST:event__tf_registration_student_personalInformations_contactDetails_homeNumberKeyReleased
+
+    private void _tf_registration_student_personalInformations_contactDetails_cityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_contactDetails_cityKeyReleased
+        char c=evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event__tf_registration_student_personalInformations_contactDetails_cityKeyReleased
+
+    private void _tf_registration_student_personalInformations_contactDetails_2ndLineKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_contactDetails_2ndLineKeyReleased
+        
+          char c=evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event__tf_registration_student_personalInformations_contactDetails_2ndLineKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

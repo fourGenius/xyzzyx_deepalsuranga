@@ -490,7 +490,9 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     private void _tf_user_loging_userNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameMouseClicked
 
-        setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName, "User Name");
+        if (_tf_user_loging_userName.getText().equals("User Name")&_tf_user_loging_userName.getText().length()==9) {
+             setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName, "User Name");
+        }
 
     }//GEN-LAST:event__tf_user_loging_userNameMouseClicked
 
@@ -498,7 +500,7 @@ public class Jf_user_login extends javax.swing.JFrame {
     private void _tf_user_loging_userNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameKeyTyped
 
         if (i < 1) {
-            if (!(_tf_user_loging_userName.getText().isEmpty())) {
+            if (!(_tf_user_loging_userName.getText().isEmpty())&_tf_user_loging_userName.getText().length()==9) {
                 setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName, "User Name");
                 i++;
             }

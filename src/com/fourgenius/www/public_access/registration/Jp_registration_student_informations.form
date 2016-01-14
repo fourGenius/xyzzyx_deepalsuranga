@@ -434,6 +434,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_contactDetails_mobileNumberActionPerformed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contactDetails_mobileNumberKeyReleased"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_contactDetails_mobileNumber">
@@ -455,6 +456,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_contactDetails_homeNumberActionPerformed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contactDetails_homeNumberKeyReleased"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_contactDetails_eMail">
@@ -518,7 +520,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="2nd Line"/>
+                    <Property name="text" type="java.lang.String" value="City"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_contactDetails_2ndLine">
@@ -529,6 +531,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_contactDetails_2ndLineActionPerformed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contactDetails_2ndLineKeyReleased"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_address_city">
@@ -539,7 +542,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="City"/>
+                    <Property name="text" type="java.lang.String" value="Cuntry"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_contactDetails_city">
@@ -550,6 +553,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_contactDetails_cityActionPerformed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contactDetails_cityKeyReleased"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
