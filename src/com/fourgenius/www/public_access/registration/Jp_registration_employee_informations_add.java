@@ -421,9 +421,9 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 .addComponent(_tf_registration_employee_personalInformations_contactDetails_1stLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(_tf_registration_employee_personalInformations_contactDetails_city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_registration_employee_personalInformations_contactDetails_cuntry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -735,7 +735,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
 
     private void _tf_registration_employee_personalInformations_contactDetails_eMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_eMailActionPerformed
        
-         String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         String email1 = _tf_registration_employee_personalInformations_contactDetails_eMail.getText();
         Boolean result = email1.matches(EMAIL_REGEX);
         if (result) {
@@ -859,7 +859,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
     }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameKeyTyped
 
     private void _tf_registration_employee_personalInformations_contactDetails_cityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_cityKeyTyped
-         try {
+        try {
             char c=evt.getKeyChar();
         if (!(Character.isLetter(c))) {
             evt.consume();

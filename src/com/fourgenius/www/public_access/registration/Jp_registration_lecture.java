@@ -219,7 +219,7 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
         }else{
             load_table_lecture_view();
             _bt_registraion_lecture_buttons_add_lecture.setText("Add Lecture");
-            _bt_registraion_lecture_buttons_preview_lecture.setEnabled(false);
+            _bt_registraion_lecture_buttons_preview_lecture.setEnabled(true);
             _bt_registraion_lecture_buttons_update_lecture.setEnabled(true);
         }
         
@@ -248,7 +248,10 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
             buttons_enable(_bt_registraion_lecture_buttons_update_lecture.getText());
             _bt_registraion_lecture_buttons_update_lecture.setText("Finish");
         }else{
-            
+            load_table_lecture_view();
+            _bt_registraion_lecture_buttons_update_lecture.setText("Update Lecture");
+            _bt_registraion_lecture_buttons_preview_lecture.setEnabled(true);
+            _bt_registraion_lecture_buttons_add_lecture.setEnabled(true);
         }
     }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureActionPerformed
 

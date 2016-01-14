@@ -5,19 +5,35 @@
  */
 package com.fourgenius.www.public_access.model.academic_employee;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import public_access.MC_JavaDataBaseConnection;
+
 /**
  *
  * @author Dineth Jayasekera
  */
 public class employee_academic_user_info_address {
     
-    private String employee_academic_user_info_address_lane1,employee_academic_user_info_address_city,employee_academic_user_info_address_cuntry;
+    private String employee_academic_user_id, employee_academic_user_info_address_lane1,employee_academic_user_info_address_city,employee_academic_user_info_address_cuntry;
 
-    public employee_academic_user_info_address(String employee_academic_user_info_address_lane1, String employee_academic_user_info_address_city, String employee_academic_user_info_address_cuntry) {
+    public employee_academic_user_info_address(String employee_academic_user_id, String employee_academic_user_info_address_lane1, String employee_academic_user_info_address_city, String employee_academic_user_info_address_cuntry) {
         
+        this.employee_academic_user_id = employee_academic_user_id;
         this.employee_academic_user_info_address_lane1 = employee_academic_user_info_address_lane1;
         this.employee_academic_user_info_address_city = employee_academic_user_info_address_city;
         this.employee_academic_user_info_address_cuntry = employee_academic_user_info_address_cuntry;
+        
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("insert into employee_academic_user_info_address(employee_academic_user_id,employee_academic_user_info_address_lane1,employee_academic_user_info_address_city,employee_academic_user_info_address_cuntry) values ('" + employee_academic_user_id + "','" + employee_academic_user_info_address_lane1 + "','" + employee_academic_user_info_address_city + "','"+employee_academic_user_info_address_cuntry+"')");
+        } catch (SQLException ex) {
+
+            JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
+        }
     }
 
     
