@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.public_access.registration;
 
+import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
@@ -17,7 +18,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
-
+import com.fourgenius.www.public_access.model.nonacademic_employee.*;
 /**
  *
  * @author Dineth Jayasekera
@@ -26,6 +27,12 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
 
     Border border=BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
+    String first_name;
+    String sur_name;
+    String last_name;
+    String address_line1;
+    String address_city;
+    String address_cuntry;
     /*
      * Creates new form Jp_registration_employee_informations_add
      */
@@ -98,7 +105,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         _lb_registration_employee_preview_eMail = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         _lb_registration_employee_preview_address = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        _bt_registration_employee_personalInformation_add = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
 
@@ -444,7 +451,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         _bt_registration_employee_personalInformation_registerLecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registration_employee_personalInformation_registerLecture.setForeground(new java.awt.Color(255, 255, 255));
         _bt_registration_employee_personalInformation_registerLecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        _bt_registration_employee_personalInformation_registerLecture.setText("Register Employee");
+        _bt_registration_employee_personalInformation_registerLecture.setText("Preview");
         _bt_registration_employee_personalInformation_registerLecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_registration_employee_personalInformation_registerLecture.setFocusPainted(false);
         _bt_registration_employee_personalInformation_registerLecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -576,18 +583,18 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
 
         _lb_registration_employee_preview_address.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_DarkGreen_100x50.png"))); // NOI18N
-        jButton1.setText("OK");
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setFocusPainted(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 50));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        _bt_registration_employee_personalInformation_add.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registration_employee_personalInformation_add.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registration_employee_personalInformation_add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_DarkGreen_200x50.png"))); // NOI18N
+        _bt_registration_employee_personalInformation_add.setText("Register Employee");
+        _bt_registration_employee_personalInformation_add.setContentAreaFilled(false);
+        _bt_registration_employee_personalInformation_add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registration_employee_personalInformation_add.setFocusPainted(false);
+        _bt_registration_employee_personalInformation_add.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registration_employee_personalInformation_add.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_registration_employee_personalInformation_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                _bt_registration_employee_personalInformation_addActionPerformed(evt);
             }
         });
 
@@ -625,8 +632,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(363, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(263, Short.MAX_VALUE)
+                .addComponent(_bt_registration_employee_personalInformation_add, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
         );
         jPanel7Layout.setVerticalGroup(
@@ -671,7 +678,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                     .addComponent(jLabel23)
                     .addComponent(_lb_registration_employee_preview_address, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_registration_employee_personalInformation_add, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -770,39 +777,9 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         _bt_registration_employee_personalInformation_registerLecture.setBorder(border);
     }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureMouseReleased
 
-    int i=0;
+   
     private void _bt_registration_employee_personalInformation_registerLectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureActionPerformed
-        Date d=_dc_registration_employee_personalInformations_employeeDetails_dateOfBirth.getDate();
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-        String date=sdf.format(d);
-        _lb_registration_employee_preview_name.setText(_tf_registration_employee_personalInformations_employeeDetails_firstName.getText()+" "+_tf_registration_employee_personalInformations_employeeDetails_lastName.getText()+" "+_tf_registration_employee_personalInformations_employeeDetails_surName.getText());
-        _lb_registration_employee_preview_nic.setText(_tf_registration_employee_personalInformations_employeeDetails_nicNumber.getText());
-        _lb_registration_employee_preview_dateOfBirth.setText(date);
-
-        String gender;
-        if (_rb_registration_employee_personalInformations_employeeDetails_gender_male.isSelected()) {
-            gender="Male";
-        }else{
-            gender="Female";
-        }
-        _lb_registration_employee_preview_gender.setText(gender);
-
-        _lb_registration_employee_preview_mobileNumber.setText(_tf_registration_employee_personalInformations_contactDetails_mobileNumber.getText());
-        _lb_registration_employee_preview_homeNumber.setText(_tf_registration_employee_personalInformations_contactDetails_homeNumber.getText());
-        _lb_registration_employee_preview_eMail.setText(_tf_registration_employee_personalInformations_contactDetails_eMail.getText());
-        _lb_registration_employee_preview_address.setText(_tf_registration_employee_personalInformations_contactDetails_1stLine.getText()+","+_tf_registration_employee_personalInformations_contactDetails_city.getText()+","+_tf_registration_employee_personalInformations_contactDetails_cuntry.getText());
-        _lb_registration_employee_preview_employeeID.setText("#ID-EMP00"+i+"-B4-COL-5-16-22");
-
-        try {
-
-            newpath = path.replace("\\", "/");
-                File f = new File(newpath);
-                Image img = ImageIO.read(f);
-                img = img.getScaledInstance(_lb_registration_employee_preview_image.getWidth(), _lb_registration_employee_preview_image.getHeight(), Image.SCALE_SMOOTH);
-                _lb_registration_employee_preview_image.setIcon(new ImageIcon(img));
-            } catch (Exception e) {
-            }
-            i++;
+        priview();
     }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureActionPerformed
 
     private void _tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked
@@ -819,9 +796,9 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         }
     }//GEN-LAST:event__tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void _bt_registration_employee_personalInformation_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_addActionPerformed
         addToDb();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event__bt_registration_employee_personalInformation_addActionPerformed
 
     private void _tf_registration_employee_personalInformations_employeeDetails_surNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_surNameKeyTyped
         
@@ -921,7 +898,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         
         try {
               char c=evt.getKeyChar();
-        if (_tf_registration_employee_personalInformations_contactDetails_mobileNumber.getText().length()==10||Character.isLetter(c)) {
+        if (_tf_registration_employee_personalInformations_contactDetails_homeNumber.getText().length()==10||Character.isLetter(c)) {
             evt.consume();
         }
         } catch (Exception e) {
@@ -932,6 +909,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton _bt_registration_employee_personalInformation_add;
     private javax.swing.JButton _bt_registration_employee_personalInformation_registerLecture;
     private com.toedter.calendar.JDateChooser _dc_registration_employee_personalInformations_employeeDetails_dateOfBirth;
     private javax.swing.JLabel _lb_registration_employee_preview_address;
@@ -959,7 +937,6 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
     private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_nicNumber;
     private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_surName;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -989,6 +966,77 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
     // End of variables declaration//GEN-END:variables
 
     private void addToDb() {
-        
+        employee_nonAcademic_administrative_user_info info=new employee_nonAcademic_administrative_user_info(_lb_registration_employee_preview_employeeID.getText(),_lb_registration_employee_preview_eMail.getText(),"0",_lb_registration_employee_preview_nic.getText());
+        employee_nonAcademic_user_info_address address=new employee_nonAcademic_user_info_address(_lb_registration_employee_preview_employeeID.getText(),address_line1, address_city, address_cuntry);
+        employee_nonAcademic_user_info_contact contact=new employee_nonAcademic_user_info_contact(_lb_registration_employee_preview_employeeID.getText(), _lb_registration_employee_preview_mobileNumber.getText(), _lb_registration_employee_preview_homeNumber.getText(),_lb_registration_employee_preview_eMail.getText());
+        employee_nonAcademic_user_info_name name=new employee_nonAcademic_user_info_name(_lb_registration_employee_preview_employeeID.getText(), sur_name, first_name, last_name);
+        employee_nonAcademic_user_info_personal personal=new employee_nonAcademic_user_info_personal(_lb_registration_employee_preview_employeeID.getText(),newpath, _lb_registration_employee_preview_dateOfBirth.getText(), _lb_registration_employee_preview_gender.getText());
+        clear_Fields();
+    }
+ int i=0;
+    private void priview() {
+        Date d=_dc_registration_employee_personalInformations_employeeDetails_dateOfBirth.getDate();
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        String date=sdf.format(d);
+        first_name=_tf_registration_employee_personalInformations_employeeDetails_firstName.getText();
+        last_name=_tf_registration_employee_personalInformations_employeeDetails_lastName.getText();
+        sur_name=_tf_registration_employee_personalInformations_employeeDetails_surName.getText();
+        address_line1=_tf_registration_employee_personalInformations_contactDetails_1stLine.getText();
+        address_city=_tf_registration_employee_personalInformations_contactDetails_city.getText();
+        address_cuntry=_tf_registration_employee_personalInformations_contactDetails_cuntry.getText();
+        _lb_registration_employee_preview_name.setText(first_name+" "+last_name+" "+sur_name);
+        _lb_registration_employee_preview_nic.setText(_tf_registration_employee_personalInformations_employeeDetails_nicNumber.getText());
+        _lb_registration_employee_preview_dateOfBirth.setText(date);
+
+        String gender;
+        if (_rb_registration_employee_personalInformations_employeeDetails_gender_male.isSelected()) {
+            gender="Male";
+        }else{
+            gender="Female";
+        }
+        _lb_registration_employee_preview_gender.setText(gender);
+
+        _lb_registration_employee_preview_mobileNumber.setText(_tf_registration_employee_personalInformations_contactDetails_mobileNumber.getText());
+        _lb_registration_employee_preview_homeNumber.setText(_tf_registration_employee_personalInformations_contactDetails_homeNumber.getText());
+        _lb_registration_employee_preview_eMail.setText(_tf_registration_employee_personalInformations_contactDetails_eMail.getText());
+        _lb_registration_employee_preview_address.setText(address_line1+","+address_city+","+address_cuntry);
+        _lb_registration_employee_preview_employeeID.setText("#ID-EMP00"+i+"-B4-COL-5-16-22");
+
+        try {
+
+            newpath = path.replace("\\", "/");
+                File f = new File(newpath);
+                Image img = ImageIO.read(f);
+                img = img.getScaledInstance(_lb_registration_employee_preview_image.getWidth(), _lb_registration_employee_preview_image.getHeight(), Image.SCALE_SMOOTH);
+                _lb_registration_employee_preview_image.setIcon(new ImageIcon(img));
+            } catch (Exception e) {
+            }
+            i++;
+    }
+
+    private void clear_Fields() {
+///////////////////////////////////////////////////TF Clear///////////////////////////////////////////////        
+        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setText("Broswe File");
+        _tf_registration_employee_personalInformations_contactDetails_1stLine.setText(null);
+        _tf_registration_employee_personalInformations_contactDetails_city.setText(null);
+        _tf_registration_employee_personalInformations_contactDetails_cuntry.setText(null);
+        _tf_registration_employee_personalInformations_contactDetails_eMail.setText(null);
+        _tf_registration_employee_personalInformations_contactDetails_homeNumber.setText(null);
+        _tf_registration_employee_personalInformations_contactDetails_mobileNumber.setText(null);
+        _tf_registration_employee_personalInformations_employeeDetails_firstName.setText(null);
+        _tf_registration_employee_personalInformations_employeeDetails_lastName.setText(null);
+        _tf_registration_employee_personalInformations_employeeDetails_nicNumber.setText(null);
+        _tf_registration_employee_personalInformations_employeeDetails_surName.setText(null);
+  ////////////////////////////////////////////lable clear///////////////////////////////////////////////      
+        _lb_registration_employee_preview_address.setText(null);
+        _lb_registration_employee_preview_dateOfBirth.setText(null);
+        _lb_registration_employee_preview_eMail.setText(null);
+        _lb_registration_employee_preview_employeeID.setText(null);
+        _lb_registration_employee_preview_gender.setText(null);
+        _lb_registration_employee_preview_homeNumber.setText(null);
+        _lb_registration_employee_preview_image.setIcon(null);
+        _lb_registration_employee_preview_mobileNumber.setText(null);
+        _lb_registration_employee_preview_name.setText(null);
+        _lb_registration_employee_preview_nic.setText(null);
     }
 }

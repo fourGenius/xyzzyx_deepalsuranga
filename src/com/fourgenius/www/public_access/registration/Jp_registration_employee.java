@@ -62,8 +62,8 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jPanel3 = new javax.swing.JPanel();
-        add_employee = new javax.swing.JButton();
-        view_employee = new javax.swing.JButton();
+        _bt_add_employee = new javax.swing.JButton();
+        _bt_view_employee = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setMaximumSize(new java.awt.Dimension(1366, 718));
@@ -207,31 +207,47 @@ public class Jp_registration_employee extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
-        add_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_employee.setForeground(new java.awt.Color(255, 255, 255));
-        add_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_employee.setText("Add Employee");
-        add_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_employee.setFocusPainted(false);
-        add_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_employee.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_employee.addActionListener(new java.awt.event.ActionListener() {
+        _bt_add_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_add_employee.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_add_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_add_employee.setText("Add Employee");
+        _bt_add_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_add_employee.setFocusPainted(false);
+        _bt_add_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_add_employee.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_add_employee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_add_employeeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_add_employeeMouseExited(evt);
+            }
+        });
+        _bt_add_employee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_employeeActionPerformed(evt);
+                _bt_add_employeeActionPerformed(evt);
             }
         });
 
-        view_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        view_employee.setForeground(new java.awt.Color(255, 255, 255));
-        view_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        view_employee.setText("View Employee");
-        view_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        view_employee.setFocusPainted(false);
-        view_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        view_employee.setPreferredSize(new java.awt.Dimension(300, 50));
-        view_employee.addActionListener(new java.awt.event.ActionListener() {
+        _bt_view_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_view_employee.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_view_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_view_employee.setText("View Employee");
+        _bt_view_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_view_employee.setFocusPainted(false);
+        _bt_view_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_view_employee.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_view_employee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_view_employeeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_view_employeeMouseExited(evt);
+            }
+        });
+        _bt_view_employee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                view_employeeActionPerformed(evt);
+                _bt_view_employeeActionPerformed(evt);
             }
         });
 
@@ -240,29 +256,29 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(724, Short.MAX_VALUE))
+                .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 934, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 1340, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     int i = 0;
-    private void add_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_employeeActionPerformed
+    private void _bt_add_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_employeeActionPerformed
         try {
-
+             _bt_add_employee.setText("Finish");
+            _bt_view_employee.setEnabled(false);
             main.removeAll();
             GroupLayout layout = new GroupLayout(main);
             main.setLayout(layout);
@@ -275,12 +291,17 @@ public class Jp_registration_employee extends javax.swing.JPanel {
 
             System.gc();
 
+            if (_bt_add_employee.getText().equals("Finish")) {
+                _bt_view_employee.setEnabled(true);
+                _bt_add_employee.setText("Add Employee");
+                _bt_view_employeeActionPerformed(evt);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_add_employeeActionPerformed
+    }//GEN-LAST:event__bt_add_employeeActionPerformed
 
-    private void view_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_employeeActionPerformed
+    private void _bt_view_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_view_employeeActionPerformed
 
       
         main.removeAll();
@@ -294,13 +315,30 @@ public class Jp_registration_employee extends javax.swing.JPanel {
                     layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
             System.gc();
-    }//GEN-LAST:event_view_employeeActionPerformed
+    }//GEN-LAST:event__bt_view_employeeActionPerformed
+
+    private void _bt_view_employeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_view_employeeMouseEntered
+        _bt_view_employee.setBorder(border);
+    }//GEN-LAST:event__bt_view_employeeMouseEntered
+
+    private void _bt_view_employeeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_view_employeeMouseExited
+        _bt_view_employee.setBorder(null);
+    }//GEN-LAST:event__bt_view_employeeMouseExited
+
+    private void _bt_add_employeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_employeeMouseEntered
+       _bt_add_employee.setBorder(border);
+    }//GEN-LAST:event__bt_add_employeeMouseEntered
+
+    private void _bt_add_employeeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_employeeMouseExited
+        _bt_add_employee.setBorder(null);
+    }//GEN-LAST:event__bt_add_employeeMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_employee_personalInformations_employeeDetails_gender;
+    private javax.swing.JButton _bt_add_employee;
+    private javax.swing.JButton _bt_view_employee;
     private javax.swing.JTable aca_emp;
-    private javax.swing.JButton add_employee;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
@@ -313,6 +351,5 @@ public class Jp_registration_employee extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel main;
     private javax.swing.JTable tbl_admin_Administrators4;
-    private javax.swing.JButton view_employee;
     // End of variables declaration//GEN-END:variables
 }

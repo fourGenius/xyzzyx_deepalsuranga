@@ -30,7 +30,6 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         aca_emp = new javax.swing.JTable();
@@ -43,8 +42,6 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
 
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -138,9 +135,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
 
         jTabbedPane1.addTab("De-active Employee", jScrollPane5);
 
-        jTabbedPane2.addTab(" Employee", jTabbedPane1);
-
-        add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 964, 618));
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 38, 970, 590));
 
         _tf_registration_employee_informations_view_searchStudent.setMaximumSize(new java.awt.Dimension(300, 50));
         _tf_registration_employee_informations_view_searchStudent.setMinimumSize(new java.awt.Dimension(300, 50));
@@ -199,7 +194,6 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable tbl_admin_Administrators4;
     // End of variables declaration//GEN-END:variables
 }
