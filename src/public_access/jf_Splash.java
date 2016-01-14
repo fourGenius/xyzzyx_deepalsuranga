@@ -90,6 +90,7 @@ public class jf_Splash extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new jf_Splash().setVisible(true);
             }
