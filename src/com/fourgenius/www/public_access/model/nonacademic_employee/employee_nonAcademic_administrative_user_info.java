@@ -6,6 +6,7 @@
 package com.fourgenius.www.public_access.model.nonacademic_employee;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -16,34 +17,40 @@ import public_access.MC_JavaDataBaseConnection;
  * @author Dineth Jayasekera
  */
 public class employee_nonAcademic_administrative_user_info {
-  
-    private String employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_administrative_user_info_email,employee_nonAcademic_administrative_user_info_password,employee_nonAcademic_administrative_user_info_status;
+
+    private String employee_nonAcademic_administrative_user_info_id, employee_nonAcademic_administrative_user_info_email, employee_nonAcademic_administrative_user_info_status;
+//////////////////////////////////////////Insert//////////////////////////////////////////////
 
     public employee_nonAcademic_administrative_user_info(String employee_nonAcademic_administrative_user_info_id, String employee_nonAcademic_administrative_user_info_email, String employee_nonAcademic_administrative_user_info_password, String employee_nonAcademic_administrative_user_info_status) {
         this.employee_nonAcademic_administrative_user_info_id = employee_nonAcademic_administrative_user_info_id;
         this.employee_nonAcademic_administrative_user_info_email = employee_nonAcademic_administrative_user_info_email;
-        this.employee_nonAcademic_administrative_user_info_password = employee_nonAcademic_administrative_user_info_password;
         this.employee_nonAcademic_administrative_user_info_status = employee_nonAcademic_administrative_user_info_status;
-    
+
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeUpdate("insert into employee_nonAcademic_administrative_user_info(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_administrative_user_info_email,employee_nonAcademic_administrative_user_info_password,employee_nonAcademic_administrative_user_info_status) values ('" + employee_nonAcademic_administrative_user_info_id + "','" + employee_nonAcademic_administrative_user_info_email + "','" + employee_nonAcademic_administrative_user_info_password + "','" + employee_nonAcademic_administrative_user_info_status + "')");
+            ResultSet rs = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
+            if (rs.next()) {
+                statement.executeUpdate("update employee_nonAcademic_administrative_user_info set employee_nonAcademic_administrative_user_info_email='" + employee_nonAcademic_administrative_user_info_email + "',employee_nonAcademic_administrative_user_info_password='" + employee_nonAcademic_administrative_user_info_password + "' where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "')");
+            } else {
+                statement.executeUpdate("insert into employee_nonAcademic_administrative_user_info(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_administrative_user_info_email,employee_nonAcademic_administrative_user_info_password,employee_nonAcademic_administrative_user_info_status) values ('" + employee_nonAcademic_administrative_user_info_id + "','" + employee_nonAcademic_administrative_user_info_email + "','" + employee_nonAcademic_administrative_user_info_password + "','" + employee_nonAcademic_administrative_user_info_status + "')");
+            }
+            rs.close();
         } catch (SQLException ex) {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/employee_nonAcademic_administrative_user_info;" + ex);
         }
-        
+
     }
 
     public String getEmployee_nonAcademic_administrative_user_info_id() {
         return employee_nonAcademic_administrative_user_info_id;
-    
+
     }
 
     public void setEmployee_nonAcademic_administrative_user_info_id(String employee_nonAcademic_administrative_user_info_id) {
         this.employee_nonAcademic_administrative_user_info_id = employee_nonAcademic_administrative_user_info_id;
-    try {
+        try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_nonAcademic_administrative_user_info(employee_nonAcademic_administrative_user_info_id) values ('" + employee_nonAcademic_administrative_user_info_id + "')");
@@ -58,27 +65,12 @@ public class employee_nonAcademic_administrative_user_info {
 
     public void setEmployee_nonAcademic_administrative_user_info_email(String employee_nonAcademic_administrative_user_info_email) {
         this.employee_nonAcademic_administrative_user_info_email = employee_nonAcademic_administrative_user_info_email;
-     try {
+        try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_nonAcademic_administrative_user_info(employee_nonAcademic_administrative_user_info_email) values ('" + employee_nonAcademic_administrative_user_info_email + "')");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 3/employee_nonAcademic_administrative_user_info;" + ex);
-        }
-    }
-
-    public String getEmployee_nonAcademic_administrative_user_info_password() {
-        return employee_nonAcademic_administrative_user_info_password;
-    }
-
-    public void setEmployee_nonAcademic_administrative_user_info_password(String employee_nonAcademic_administrative_user_info_password) {
-        this.employee_nonAcademic_administrative_user_info_password = employee_nonAcademic_administrative_user_info_password;
-     try {
-            Connection connection = MC_JavaDataBaseConnection.myConnection();
-            Statement statement = connection.createStatement();
-            statement.executeQuery("insert into employee_nonAcademic_administrative_user_info(employee_nonAcademic_administrative_user_info_password) values ('" + employee_nonAcademic_administrative_user_info_password + "')");
-        } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, "Error is: 4/employee_nonAcademic_administrative_user_info;" + ex);
         }
     }
 
@@ -88,14 +80,41 @@ public class employee_nonAcademic_administrative_user_info {
 
     public void setEmployee_nonAcademic_administrative_user_info_status(String employee_nonAcademic_administrative_user_info_status) {
         this.employee_nonAcademic_administrative_user_info_status = employee_nonAcademic_administrative_user_info_status;
-     try {
+        try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_nonAcademic_administrative_user_info(employee_nonAcademic_administrative_user_info_status) values ('" + employee_nonAcademic_administrative_user_info_status + "')");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 5/employee_nonAcademic_administrative_user_info;" + ex);
         }
+
     }
-    
-    
+
+    ////////////////////////////////////////////////////////////Update///////////////////////////////////////
+    public void setEmployee_nonAcademic_administrative_user_info_email_update(String employee_nonAcademic_administrative_user_info_email, String employee_nonAcademic_administrative_user_info_id) {
+        this.employee_nonAcademic_administrative_user_info_id = employee_nonAcademic_administrative_user_info_id;
+        this.employee_nonAcademic_administrative_user_info_email = employee_nonAcademic_administrative_user_info_email;
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            statement.executeQuery("update employee_nonAcademic_administrative_user_info set employee_nonAcademic_administrative_user_info_email ='" + employee_nonAcademic_administrative_user_info_email + "' where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, "Error is: 7/employee_nonAcademic_administrative_user_info;" + ex);
+        }
+    }
+
+///////////////////////////////////////////////////////////Delete///////////////////////////////////////
+    public void setEmployee_nonAcademic_administrative_user_info_status_remove(String employee_nonAcademic_administrative_user_info_status, String employee_nonAcademic_administrative_user_info_id) {
+        this.employee_nonAcademic_administrative_user_info_status = employee_nonAcademic_administrative_user_info_status;
+        this.employee_nonAcademic_administrative_user_info_id = employee_nonAcademic_administrative_user_info_id;
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            statement.executeQuery("update employee_nonAcademic_administrative_user_info set employee_nonAcademic_administrative_user_info_status ='" + employee_nonAcademic_administrative_user_info_status + "'where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, "Error is: 8/employee_nonAcademic_administrative_user_info;" + ex);
+        }
+
+    }
+
 }

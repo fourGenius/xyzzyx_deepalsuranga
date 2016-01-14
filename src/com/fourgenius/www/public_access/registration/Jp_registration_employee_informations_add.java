@@ -125,8 +125,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
         });
         _tf_registration_employee_personalInformations_employeeDetails_surName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_employee_personalInformations_employeeDetails_surNameKeyReleased(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_surNameKeyTyped(evt);
             }
         });
 
@@ -143,8 +143,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
         });
         _tf_registration_employee_personalInformations_employeeDetails_firstName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_employee_personalInformations_employeeDetails_firstNameKeyReleased(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_firstNameKeyTyped(evt);
             }
         });
 
@@ -160,8 +160,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
         });
         _tf_registration_employee_personalInformations_employeeDetails_lastName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_employee_personalInformations_employeeDetails_lastNameKeyReleased(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_lastNameKeyTyped(evt);
             }
         });
 
@@ -177,8 +177,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
         });
         _tf_registration_employee_personalInformations_employeeDetails_nicNumber.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyTyped(evt);
             }
         });
 
@@ -294,8 +294,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
         });
         _tf_registration_employee_personalInformations_contactDetails_mobileNumber.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_employee_personalInformations_contactDetails_mobileNumberKeyReleased(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_contactDetails_mobileNumberKeyTyped(evt);
             }
         });
 
@@ -311,8 +311,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
         });
         _tf_registration_employee_personalInformations_contactDetails_homeNumber.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_employee_personalInformations_contactDetails_homeNumberKeyReleased(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_contactDetails_homeNumberKeyTyped(evt);
             }
         });
 
@@ -352,8 +352,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
         });
         _tf_registration_employee_personalInformations_contactDetails_city.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_employee_personalInformations_contactDetails_cityKeyReleased(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_contactDetails_cityKeyTyped(evt);
             }
         });
 
@@ -364,8 +364,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         _tf_registration_employee_personalInformations_contactDetails_cuntry.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_employee_personalInformations_contactDetails_cuntry.setPreferredSize(new java.awt.Dimension(6, 40));
         _tf_registration_employee_personalInformations_contactDetails_cuntry.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_employee_personalInformations_contactDetails_cuntryKeyReleased(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_contactDetails_cuntryKeyTyped(evt);
             }
         });
 
@@ -585,6 +585,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         jButton1.setFocusPainted(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setPreferredSize(new java.awt.Dimension(100, 50));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -687,7 +692,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 618, Short.MAX_VALUE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -800,33 +805,85 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             i++;
     }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureActionPerformed
 
-    private void _tf_registration_employee_personalInformations_employeeDetails_surNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_surNameKeyReleased
+    private void _tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked
+         try {
+            JFileChooser jf = new JFileChooser();
+            int i = jf.showOpenDialog(this);
+            if (i == jf.APPROVE_OPTION) {
+                File selectedfile = jf.getSelectedFile();
+                path = selectedfile.getAbsolutePath();
+                _tf_registration_employee_personalInformation_browsePhoto_browseFile.setText(path);
+            }
+        } catch (Exception e) {
+            
+        }
+    }//GEN-LAST:event__tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        addToDb();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void _tf_registration_employee_personalInformations_employeeDetails_surNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_surNameKeyTyped
         
         char c=evt.getKeyChar();
         if (!(Character.isLetter(c))) {
             evt.consume();
         }
         
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_surNameKeyReleased
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_surNameKeyTyped
 
-    private void _tf_registration_employee_personalInformations_employeeDetails_firstNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameKeyReleased
-
-          char c=evt.getKeyChar();
+    private void _tf_registration_employee_personalInformations_employeeDetails_firstNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameKeyTyped
+        
+        try {
+            char c=evt.getKeyChar();
         if (!(Character.isLetter(c))) {
             evt.consume();
         }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameKeyReleased
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameKeyTyped
 
-    private void _tf_registration_employee_personalInformations_employeeDetails_lastNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameKeyReleased
-         char c=evt.getKeyChar();
+    private void _tf_registration_employee_personalInformations_employeeDetails_lastNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameKeyTyped
+       
+        try {
+            char c=evt.getKeyChar();
         if (!(Character.isLetter(c))) {
             evt.consume();
         }
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameKeyReleased
-
-    private void _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameKeyTyped
+
+    private void _tf_registration_employee_personalInformations_contactDetails_cityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_cityKeyTyped
+         try {
+            char c=evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_cityKeyTyped
+
+    private void _tf_registration_employee_personalInformations_contactDetails_cuntryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_cuntryKeyTyped
+         try {
+            char c=evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_cuntryKeyTyped
+
+    private void _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyTyped
+        
+        try {
+                    
         char c=evt.getKeyChar();
         
         if (_tf_registration_employee_personalInformations_employeeDetails_nicNumber.getText().length() == 9 ) {
@@ -844,55 +901,34 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
         }   
         
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased
+        } catch (Exception e) {
+        }
+        
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyTyped
 
-    private void _tf_registration_employee_personalInformations_contactDetails_mobileNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_mobileNumberKeyReleased
-     
-        char c=evt.getKeyChar();
+    private void _tf_registration_employee_personalInformations_contactDetails_mobileNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_mobileNumberKeyTyped
+        try {
+              char c=evt.getKeyChar();
         if (_tf_registration_employee_personalInformations_contactDetails_mobileNumber.getText().length()==10||Character.isLetter(c)) {
             evt.consume();
         }
-        
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_mobileNumberKeyReleased
-
-    private void _tf_registration_employee_personalInformations_contactDetails_homeNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_homeNumberKeyReleased
-        
-         char c=evt.getKeyChar();
-        if (_tf_registration_employee_personalInformations_contactDetails_homeNumber.getText().length()==10||Character.isLetter(c)) {
-            evt.consume();
-        }
-        
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_homeNumberKeyReleased
-
-    private void _tf_registration_employee_personalInformations_contactDetails_cityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_cityKeyReleased
-        char c=evt.getKeyChar();
-        if (Character.isDigit(c)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_cityKeyReleased
-
-    private void _tf_registration_employee_personalInformations_contactDetails_cuntryKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_cuntryKeyReleased
-        
-         char c=evt.getKeyChar();
-        if (Character.isDigit(c)) {
-            evt.consume();
-        }
-        
-    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_cuntryKeyReleased
-
-    private void _tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked
-         try {
-            JFileChooser jf = new JFileChooser();
-            int i = jf.showOpenDialog(this);
-            if (i == jf.APPROVE_OPTION) {
-                File selectedfile = jf.getSelectedFile();
-                path = selectedfile.getAbsolutePath();
-                _tf_registration_employee_personalInformation_browsePhoto_browseFile.setText(path);
-            }
         } catch (Exception e) {
-            
+            e.printStackTrace();
         }
-    }//GEN-LAST:event__tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_mobileNumberKeyTyped
+
+    private void _tf_registration_employee_personalInformations_contactDetails_homeNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_homeNumberKeyTyped
+        
+        try {
+              char c=evt.getKeyChar();
+        if (_tf_registration_employee_personalInformations_contactDetails_mobileNumber.getText().length()==10||Character.isLetter(c)) {
+            evt.consume();
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_homeNumberKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -951,4 +987,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
+
+    private void addToDb() {
+        
+    }
 }
