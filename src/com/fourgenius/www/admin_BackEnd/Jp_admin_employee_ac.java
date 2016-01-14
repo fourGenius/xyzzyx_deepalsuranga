@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Jp_admin_employee_ac extends javax.swing.JPanel {
 
-    /**
+    /*
      * Creates new form _jp_admin_employee
      */
     public Jp_admin_employee_ac() {

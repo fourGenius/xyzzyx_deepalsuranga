@@ -5,14 +5,13 @@
  */
 package com.fourgenius.www.private_access.admin.login;
 
-import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
 import java.awt.Color;
-import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
+import net.java.balloontip.BalloonTip;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -29,6 +28,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     public _jp_admin_login_email() {
         initComponents();
         admin_forget_username.setVisible(false);
+        tf_username.grabFocus();
     }
 
     /**
@@ -43,12 +43,13 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         _jp_admin_login_email = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         bt_next = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bt_cancel = new javax.swing.JButton();
         tf_username = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         admin_forget_username = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         _lb_admi_login_email = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         _lb_admin_login_close = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -64,41 +65,79 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         bt_next.setForeground(new java.awt.Color(255, 255, 255));
         bt_next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/img_btn_adminBackEnd_Black.png"))); // NOI18N
         bt_next.setText("Next");
+        bt_next.setBorder(null);
         bt_next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bt_next.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_next.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_nextMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bt_nextMouseExited(evt);
+            }
+        });
         bt_next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_nextActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/img_btn_adminBackEnd_Black.png"))); // NOI18N
-        jButton2.setText("Cancel");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bt_cancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_cancel.setForeground(new java.awt.Color(255, 255, 255));
+        bt_cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/img_btn_adminBackEnd_Black.png"))); // NOI18N
+        bt_cancel.setText("Cancel");
+        bt_cancel.setBorder(null);
+        bt_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_cancelMouseClicked(evt);
+            }
+        });
+        bt_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bt_cancelActionPerformed(evt);
             }
         });
 
         tf_username.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tf_username.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tf_usernameMouseClicked(evt);
+            }
+        });
+        tf_username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_usernameKeyPressed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Username");
+        jLabel1.setText("E-mail");
 
         admin_forget_username.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         admin_forget_username.setForeground(new java.awt.Color(255, 255, 255));
         admin_forget_username.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         admin_forget_username.setText("Forgot Username?");
+        admin_forget_username.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                admin_forget_usernameMouseClicked(evt);
+            }
+        });
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_AccountCircleGrey192x192.png"))); // NOI18N
 
         _lb_admi_login_email.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_UsernameInformation.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,9 +149,12 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(admin_forget_username, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tf_username, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(bt_cancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(bt_next, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -122,20 +164,22 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
                         .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.DEFAULT_SIZE, 12, Short.MAX_VALUE)
                         .addGap(205, 205, 205))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1)
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bt_next, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bt_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(admin_forget_username)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -236,77 +280,9 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     int i = 0;
     private void bt_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_nextActionPerformed
 
-        ////////////////////////////////////////////////////////////////////////
-        //String pass = new String(_pf_user_login_password.getPassword());
-        ////////////////////////////////////////////////////////////////////////
-        i++;
+        tf_username.grabFocus();
         bt_next.setText("Loading...");
-        if (!tf_username.getText().isEmpty()) {
-            try {
-
-                String email = tf_username.getText();
-
-                _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
-                _jp_admin_login_password._lb_admi_login_email.setText(email);
-                _jp_admin_login_email chackemailuse = new _jp_admin_login_email();
-
-                if (chackemailuse.email_validation(email)) {
-
-                    ////////////////////////Database base to///////////////////////
-                    try {
-                        ResultSet rs;
-                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='" + tf_username.getText().trim() + "'");
-                        if (rs.next()) {
-
-                            if (adminLoginPassword == null) {
-                                adminLoginPassword = new _jp_admin_login_password();
-                                Jf_admin_login.main_panel.removeAll();
-                                Jf_admin_login.main_panel.repaint();
-                                Jf_admin_login.main_panel.revalidate();
-                                Jf_admin_login.main_panel.add(adminLoginPassword);
-                                Jf_admin_login.main_panel.repaint();
-                                Jf_admin_login.main_panel.revalidate();
-                            } else {
-                                Jf_admin_login.main_panel.removeAll();
-                                Jf_admin_login.main_panel.repaint();
-                                Jf_admin_login.main_panel.revalidate();
-                                Jf_admin_login.main_panel.add(adminLoginPassword);
-                                Jf_admin_login.main_panel.repaint();
-                                Jf_admin_login.main_panel.revalidate();
-                            }
-
-                        }
-                        rs.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                    ////////////////////////////////////////////////////////////
-                } else {
-                    try {
-                        
-                        JOptionPane.showMessageDialog(this, "Please Enter Valid Administrator Email.", "Access Denied", JOptionPane.WARNING_MESSAGE);
-
-                        Thread.sleep(3);
-                        bt_next.setText("Login");
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                    if (i == 3) {
-                        tf_username.setText(null);
-                        admin_forget_username.setVisible(true);
-                        System.out.println("i is " + i +"Forget password is visible.");
-                    }
-                    
-                }
-            } catch (Exception e) {
-            }
-            
-        }else{
-        JOptionPane.showMessageDialog(this, "Administrator email is empty!", "WARNING!", JOptionPane.WARNING_MESSAGE);
-        }
-
+        next_method();
 
     }//GEN-LAST:event_bt_nextActionPerformed
 
@@ -332,11 +308,59 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         _lb_admin_login_close.setBackground(new Color(61, 61, 61));
     }//GEN-LAST:event__lb_admin_login_closeMouseExited
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void bt_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cancelActionPerformed
 
         System.exit(0);
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_bt_cancelActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+
+        BalloonTip myBalloonTip = new BalloonTip(jLabel3, "Enter here your email address!");
+
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void tf_usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_usernameMouseClicked
+
+        tf_username.setBackground(new Color(255, 255, 255));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_usernameMouseClicked
+
+    private void tf_usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_usernameKeyPressed
+
+        int key = evt.getKeyChar();
+        if (key == KeyEvent.VK_ENTER) {
+            next_method();
+        }
+        tf_username.setBackground(new Color(255, 255, 255));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_usernameKeyPressed
+
+    private void bt_nextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_nextMouseClicked
+
+        bt_next.setBorder(border);
+
+
+    }//GEN-LAST:event_bt_nextMouseClicked
+
+    private void bt_cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cancelMouseClicked
+
+        bt_cancel.setBorder(border);
+
+    }//GEN-LAST:event_bt_cancelMouseClicked
+
+    private void bt_nextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_nextMouseExited
+
+        bt_next.setText("Next");
+
+    }//GEN-LAST:event_bt_nextMouseExited
+
+    private void admin_forget_usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admin_forget_usernameMouseClicked
+
+        
+        BalloonTip myBalloonTip = new BalloonTip(admin_forget_username, "Please Contact Other Administrator!");
+        
+    }//GEN-LAST:event_admin_forget_usernameMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -344,10 +368,11 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     private javax.swing.JLabel _lb_admi_login_email;
     private javax.swing.JLabel _lb_admin_login_close;
     private javax.swing.JLabel admin_forget_username;
+    private javax.swing.JButton bt_cancel;
     private javax.swing.JButton bt_next;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -363,6 +388,81 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         System.out.println("is e-mail: " + email1 + " :Valid = " + result);
 
         return result;
+    }
+
+    private void next_method() {
+
+        i++;
+
+        if (!tf_username.getText().isEmpty()) {
+            try {
+
+                String email = tf_username.getText().trim().toLowerCase();
+
+                _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
+                _jp_admin_login_password._lb_admi_login_email.setText(email);
+                _jp_admin_login_email chackemailuse = new _jp_admin_login_email();
+
+                if (chackemailuse.email_validation(email)) {
+
+                    ////////////////////////Database base to///////////////////////
+                    try {
+                        ResultSet rs;
+                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='" + tf_username.getText().trim() + "'");
+                        if (rs.next()) {
+
+                            //start-load panel
+                            if (adminLoginPassword == null) {
+                                adminLoginPassword = new _jp_admin_login_password();
+                                Jf_admin_login.main_panel.removeAll();
+                                Jf_admin_login.main_panel.repaint();
+                                Jf_admin_login.main_panel.revalidate();
+                                Jf_admin_login.main_panel.add(adminLoginPassword);
+                                Jf_admin_login.main_panel.repaint();
+                                Jf_admin_login.main_panel.revalidate();
+                            } else {
+                                Jf_admin_login.main_panel.removeAll();
+                                Jf_admin_login.main_panel.repaint();
+                                Jf_admin_login.main_panel.revalidate();
+                                Jf_admin_login.main_panel.add(adminLoginPassword);
+                                Jf_admin_login.main_panel.repaint();
+                                Jf_admin_login.main_panel.revalidate();
+
+                            }
+                            //end-load panel
+
+                        }
+                        rs.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    ////////////////////////////////////////////////////////////
+                } else {
+                    try {
+                        tf_username.setBackground(new Color(244, 67, 54));
+                        JOptionPane.showMessageDialog(this, "Please Enter Valid Administrator Email.", "Access Denied", JOptionPane.WARNING_MESSAGE);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    if (i == 3) {
+                        tf_username.setText(null);
+                        admin_forget_username.setVisible(true);
+                        System.out.println("i is " + i + "Forget password is visible.");
+                    }
+
+                }
+            } catch (Exception e) {
+            }
+
+        } else {
+            tf_username.setBackground(new Color(244, 67, 54));
+            JOptionPane.showMessageDialog(this, "Administrator email is empty!", "WARNING!", JOptionPane.WARNING_MESSAGE);
+
+        }
+
     }
 
 }
