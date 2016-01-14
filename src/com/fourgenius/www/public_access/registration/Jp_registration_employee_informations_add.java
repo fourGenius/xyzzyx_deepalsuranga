@@ -780,6 +780,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
    
     private void _bt_registration_employee_personalInformation_registerLectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_registerLectureActionPerformed
         priview();
+        
     }//GEN-LAST:event__bt_registration_employee_personalInformation_registerLectureActionPerformed
 
     private void _tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked

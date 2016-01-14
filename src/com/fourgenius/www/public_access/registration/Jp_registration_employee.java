@@ -6,17 +6,8 @@
 package com.fourgenius.www.public_access.registration;
 
 import java.awt.Color;
-import java.awt.Image;
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
 
 /**
@@ -34,7 +25,8 @@ public class Jp_registration_employee extends javax.swing.JPanel {
     public Jp_registration_employee() {
         initComponents();
         try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            _bt_view_employeeActionPerformed(null);
+          
         } catch (Exception ex) {
         }
     }
@@ -50,20 +42,9 @@ public class Jp_registration_employee extends javax.swing.JPanel {
 
         _bg_registration_employee_personalInformations_employeeDetails_gender = new javax.swing.ButtonGroup();
         main = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        aca_emp = new javax.swing.JTable();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators4 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
         jPanel3 = new javax.swing.JPanel();
-        _bt_add_employee = new javax.swing.JButton();
         _bt_view_employee = new javax.swing.JButton();
+        _bt_add_employee = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setMaximumSize(new java.awt.Dimension(1366, 718));
@@ -73,165 +54,24 @@ public class Jp_registration_employee extends javax.swing.JPanel {
 
         main.setBackground(new java.awt.Color(66, 66, 66));
 
-        jPanel1.setBackground(new java.awt.Color(66, 66, 66));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jTabbedPane1.setFocusable(false);
-        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        aca_emp.setBackground(new java.awt.Color(207, 216, 220));
-        aca_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        aca_emp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        aca_emp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Employee ID", "Name", "Email", "NIC No"
-            }
-        ));
-        aca_emp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane2.setViewportView(aca_emp);
-
-        jTabbedPane1.addTab("Active Employee", jScrollPane2);
-
-        tbl_admin_Administrators4.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Administrator ID", "Name", "Email", "NIC No"
-            }
-        ));
-        jScrollPane5.setViewportView(tbl_admin_Administrators4);
-
-        jTabbedPane1.addTab("De-active Employee", jScrollPane5);
-
-        jTabbedPane2.addTab("Employee", jTabbedPane1);
-
-        jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 964, 618));
-
-        jTextField1.setMaximumSize(new java.awt.Dimension(300, 50));
-        jTextField1.setMinimumSize(new java.awt.Dimension(300, 50));
-        jTextField1.setPreferredSize(new java.awt.Dimension(300, 50));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 38, -1, -1));
-
-        jLabel1.setText("jLabel1");
-        jLabel1.setPreferredSize(new java.awt.Dimension(50, 50));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1304, 38, -1, -1));
-
-        jList1.setAlignmentX(1.0F);
-        jScrollPane1.setViewportView(jList1);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 88, 300, 540));
-
         javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
         main.setLayout(mainLayout);
         mainLayout.setHorizontalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addGap(0, 1360, Short.MAX_VALUE)
         );
         mainLayout.setVerticalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 630, Short.MAX_VALUE)
         );
 
-        add(main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 640));
+        add(main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 630));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
-        _bt_add_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_add_employee.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_add_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        _bt_add_employee.setText("Add Employee");
-        _bt_add_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_add_employee.setFocusPainted(false);
-        _bt_add_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_add_employee.setPreferredSize(new java.awt.Dimension(300, 50));
-        _bt_add_employee.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_add_employeeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_add_employeeMouseExited(evt);
-            }
-        });
-        _bt_add_employee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_add_employeeActionPerformed(evt);
-            }
-        });
-
         _bt_view_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_view_employee.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_view_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_view_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
         _bt_view_employee.setText("View Employee");
         _bt_view_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_view_employee.setFocusPainted(false);
@@ -251,23 +91,48 @@ public class Jp_registration_employee extends javax.swing.JPanel {
             }
         });
 
+        _bt_add_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_add_employee.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_add_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_add_employee.setText("Add Employee");
+        _bt_add_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_add_employee.setFocusPainted(false);
+        _bt_add_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_add_employee.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_add_employee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _bt_add_employeeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_add_employeeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_add_employeeMouseExited(evt);
+            }
+        });
+        _bt_add_employee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_add_employeeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(_bt_view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 934, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 930, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_bt_view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -275,32 +140,6 @@ public class Jp_registration_employee extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     int i = 0;
-    private void _bt_add_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_employeeActionPerformed
-        try {
-             _bt_add_employee.setText("Finish");
-            _bt_view_employee.setEnabled(false);
-            main.removeAll();
-            GroupLayout layout = new GroupLayout(main);
-            main.setLayout(layout);
-
-            Jp_registration_employee_informations_add add_employee = new Jp_registration_employee_informations_add();
-            layout.setHorizontalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-            layout.setVerticalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-
-            System.gc();
-
-            if (_bt_add_employee.getText().equals("Finish")) {
-                _bt_view_employee.setEnabled(true);
-                _bt_add_employee.setText("Add Employee");
-                _bt_view_employeeActionPerformed(evt);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event__bt_add_employeeActionPerformed
-
     private void _bt_view_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_view_employeeActionPerformed
 
       
@@ -325,31 +164,71 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         _bt_view_employee.setBorder(null);
     }//GEN-LAST:event__bt_view_employeeMouseExited
 
+    private void _bt_add_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_employeeActionPerformed
+        
+        try {
+            
+           
+            main.removeAll();
+            GroupLayout layout = new GroupLayout(main);
+            main.setLayout(layout);
+
+            Jp_registration_employee_informations_add add_employee = new Jp_registration_employee_informations_add();
+           
+            layout.setHorizontalGroup(
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.setVerticalGroup(
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+            System.gc();
+
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event__bt_add_employeeActionPerformed
+
     private void _bt_add_employeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_employeeMouseEntered
-       _bt_add_employee.setBorder(border);
+       
+        _bt_add_employee.setBorder(border);
+        
     }//GEN-LAST:event__bt_add_employeeMouseEntered
 
     private void _bt_add_employeeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_employeeMouseExited
         _bt_add_employee.setBorder(null);
     }//GEN-LAST:event__bt_add_employeeMouseExited
 
+    private void _bt_add_employeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_employeeMouseClicked
+        
+        
+        
+         if (_bt_add_employee.getText().equals("Finish")) {
+                _bt_view_employee.setEnabled(true);
+                _bt_add_employee.setText("Add Employee");
+                
+                 main.removeAll();
+            GroupLayout layout = new GroupLayout(main);
+            main.setLayout(layout);
+
+            Jp_registration_employee_informations_add add_employee = new Jp_registration_employee_informations_add();
+           
+            layout.setHorizontalGroup(
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.setVerticalGroup(
+                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+            System.gc();
+            }else{_bt_add_employee.setText("Finish");
+         _bt_view_employee.setEnabled(false);}
+    }//GEN-LAST:event__bt_add_employeeMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_employee_personalInformations_employeeDetails_gender;
     private javax.swing.JButton _bt_add_employee;
     private javax.swing.JButton _bt_view_employee;
-    private javax.swing.JTable aca_emp;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JList jList1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel main;
-    private javax.swing.JTable tbl_admin_Administrators4;
     // End of variables declaration//GEN-END:variables
 }
