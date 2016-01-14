@@ -322,6 +322,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
     private void tf_usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_usernameMouseClicked
 
+        tf_username.selectAll();
         tf_username.setBackground(new Color(255, 255, 255));
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_usernameMouseClicked

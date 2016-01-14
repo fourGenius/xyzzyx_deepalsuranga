@@ -7,6 +7,7 @@ package com.fourgenius.www.private_access.admin.login;
 
 import com.fourgenius.www.admin_BackEnd.Jf_admin_backend;
 import com.fourgenius.www.private_access.admin.method.Md_move_text;
+import com.fourgenius.www.private_access.admin_menu.jf_admin_mainFrame;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -413,7 +414,8 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
     private void tf_admin_login_pinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_admin_login_pinMouseClicked
 
-        setLableValuesNullAndAdd._md_textFiledToLabel(tf_admin_login_pin, _lb_user_login_pin, "Enter PIN Code");
+        tf_admin_login_pin.setBackground(new Color(255, 255, 255));
+        //setLableValuesNullAndAdd._md_textFiledToLabel(tf_admin_login_pin, _lb_user_login_pin, "Enter PIN Code");
     }//GEN-LAST:event_tf_admin_login_pinMouseClicked
 
     int y = 0;
@@ -442,9 +444,9 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
         int key = evt.getKeyChar();
         if (key == KeyEvent.VK_ENTER) {
-            
+
             pf_admin_login_password.grabFocus();
-            
+
         }
 
     }//GEN-LAST:event_tf_admin_login_pinKeyPressed
@@ -460,6 +462,7 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
     private void pf_admin_login_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pf_admin_login_passwordMouseClicked
 
+        pf_admin_login_password.selectAll();
         try {
             bt_admin_login.setText("Login");
         } catch (Exception e) {
@@ -485,14 +488,14 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
     private void lb_pin_infoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_pin_infoMouseClicked
 
-       // BalloonTip myBalloonTip = new BalloonTip(jLabel3, "Enter here your email address!");
-        BalloonTipStyle edgedLook = new EdgedBalloonStyle(new Color(224,224,224), new Color(61, 61, 61));
-        BalloonTip ba=new BalloonTip(lb_pin_info, "Scan Left Side QR CODE & Enter here \n it's embedded random number", edgedLook, true);
+        // BalloonTip myBalloonTip = new BalloonTip(jLabel3, "Enter here your email address!");
+        BalloonTipStyle edgedLook = new EdgedBalloonStyle(new Color(224, 224, 224), new Color(61, 61, 61));
+        BalloonTip ba = new BalloonTip(lb_pin_info, "Scan Left Side QR CODE & Enter here \n it's embedded random number", edgedLook, true);
     }//GEN-LAST:event_lb_pin_infoMouseClicked
 
     private void lb_password_infoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_password_infoMouseClicked
-        BalloonTipStyle edgedLook = new EdgedBalloonStyle(new Color(224,224,224), new Color(61, 61, 61));
-        BalloonTip ba=new BalloonTip(lb_password_info, "Enter here your valid Password", edgedLook, true);
+        BalloonTipStyle edgedLook = new EdgedBalloonStyle(new Color(224, 224, 224), new Color(61, 61, 61));
+        BalloonTip ba = new BalloonTip(lb_password_info, "Enter here your valid Password", edgedLook, true);
     }//GEN-LAST:event_lb_password_infoMouseClicked
 
 
@@ -523,42 +526,46 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         try {
             String admin_password = new String(pf_admin_login_password.getPassword());
             System.out.println("Admin password: " + admin_password);
-            if (!tf_admin_login_pin.equals("") && pf_admin_login_password.equals("")) {
+//            if (pf_admin_login_password.equals("")) {
 
-                if (!tf_admin_login_pin.equals("")) {
-                    String pin = tf_admin_login_pin.getText();
-                    System.out.println("Admin pin: " + pin);
+//                if (!tf_admin_login_pin.equals("")) {
+            String pin = tf_admin_login_pin.getText();
+            System.out.println("Admin pin: " + pin);
 
-                    if (pin.equals(code_Gen.getRandom_pin())) {
+            if (pin.equals(code_Gen.getRandom_pin())) {
 
-                        ResultSet resultSet;
-                        resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_password='" + admin_password + "'");
-                        if (resultSet.next()) {
-                            Jf_admin_backend jf_admin_backend = new Jf_admin_backend();
-                            jf_admin_backend.setVisible(true);
+                ResultSet resultSet;
+                resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_password='" + admin_password + "'");
+                if (resultSet.next()) {
+                    Jf_admin_backend jf_admin_backend = new Jf_admin_backend();
+                    jf_admin_backend.setVisible(true);
+//                    jf_admin_mainFrame frame=new jf_admin_mainFrame();
+//                    frame.setVisible(true);
+                    
 
-                        } else {
-                            pf_admin_login_password.setBackground(new Color(244, 67, 54));
-                            JOptionPane.showMessageDialog(this, "Incorrect Password!");
+                } else {
+                    pf_admin_login_password.setBackground(new Color(244, 67, 54));
+                    JOptionPane.showMessageDialog(this, "Password is Incorrect!");
+                    pf_admin_login_password.selectAll();
 
-                        }
-
-                    } else {
-                        pf_admin_login_password.setBackground(new Color(244, 67, 54));
-                        tf_admin_login_pin.setBackground(new Color(244, 67, 54));
-                        JOptionPane.showMessageDialog(this, "QR code is incorrect!");
-                    }
-                }else {
-                        pf_admin_login_password.setBackground(new Color(244, 67, 54)); 
-                        JOptionPane.showMessageDialog(this, "Password is incorrect!");
-                    }
+                }
 
             } else {
                 pf_admin_login_password.setBackground(new Color(244, 67, 54));
                 tf_admin_login_pin.setBackground(new Color(244, 67, 54));
-                JOptionPane.showMessageDialog(this, "Password & Pin is empty!");
+                JOptionPane.showMessageDialog(this, "QR code is incorrect!");
+                tf_admin_login_pin.selectAll();
             }
+//                }else {
+//                        tf_admin_login_pin.setBackground(new Color(244, 67, 54)); 
+//                        JOptionPane.showMessageDialog(this, "QR code is incorrect!");
+//                    }
 
+//            } else {
+//                pf_admin_login_password.setBackground(new Color(244, 67, 54));
+//                //tf_admin_login_pin.setBackground(new Color(244, 67, 54));
+//                JOptionPane.showMessageDialog(this, "Password is incorrect!");
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }
