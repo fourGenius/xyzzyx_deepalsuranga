@@ -5,7 +5,6 @@
  */
 package com.fourgenius.www.public_access.registration;
 
-import static com.fourgenius.www.private_access.admin.login.Jf_admin_login.main_panel;
 import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
 import java.awt.Color;
 import java.awt.Image;
@@ -34,18 +33,18 @@ public class Jp_registration_student extends javax.swing.JPanel {
     Border border = BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
     boolean b;
+
     /**
      * Creates new form registration_student
      */
     public Jp_registration_student() {
 
         initComponents();
-        sp_registration_student_searchStudent.setVisible(false);
+        load_table_stu_view();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
-
     }
 
     /**
@@ -58,20 +57,12 @@ public class Jp_registration_student extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        add_Student = new javax.swing.JButton();
-        add_Student1 = new javax.swing.JButton();
-        add_Student2 = new javax.swing.JButton();
-        add_Student3 = new javax.swing.JButton();
-        student_mainPanel = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators = new javax.swing.JTable();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators5 = new javax.swing.JTable();
-        sp_registration_student_searchStudent = new javax.swing.JScrollPane();
-        _li_registration_student_searchStudent = new javax.swing.JList();
-        jLabel1 = new javax.swing.JLabel();
+        add_stu = new javax.swing.JButton();
+        update_stu = new javax.swing.JButton();
+        remove_stu = new javax.swing.JButton();
+        print_stu = new javax.swing.JButton();
+        preview_stu = new javax.swing.JButton();
+        Jp_registraion_stu_main_panel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setForeground(new java.awt.Color(66, 66, 66));
@@ -81,115 +72,143 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
-        add_Student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student.setText("Add Student");
-        add_Student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student.setFocusPainted(false);
-        add_Student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student.addMouseListener(new java.awt.event.MouseAdapter() {
+        add_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        add_stu.setForeground(new java.awt.Color(255, 255, 255));
+        add_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        add_stu.setText("Add Student");
+        add_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_stu.setFocusPainted(false);
+        add_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add_stu.setPreferredSize(new java.awt.Dimension(300, 50));
+        add_stu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_StudentMouseEntered(evt);
+                add_stuMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_StudentMouseExited(evt);
+                add_stuMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_StudentMousePressed(evt);
+                add_stuMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_StudentMouseReleased(evt);
+                add_stuMouseReleased(evt);
             }
         });
-        add_Student.addActionListener(new java.awt.event.ActionListener() {
+        add_stu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_StudentActionPerformed(evt);
+                add_stuActionPerformed(evt);
             }
         });
 
-        add_Student1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student1.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student1.setText("Update Student");
-        add_Student1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student1.setFocusPainted(false);
-        add_Student1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student1.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student1.addMouseListener(new java.awt.event.MouseAdapter() {
+        update_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        update_stu.setForeground(new java.awt.Color(255, 255, 255));
+        update_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        update_stu.setText("Update Student");
+        update_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        update_stu.setFocusPainted(false);
+        update_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        update_stu.setPreferredSize(new java.awt.Dimension(300, 50));
+        update_stu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student1MouseEntered(evt);
+                update_stuMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student1MouseExited(evt);
+                update_stuMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student1MousePressed(evt);
+                update_stuMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student1MouseReleased(evt);
+                update_stuMouseReleased(evt);
             }
         });
-        add_Student1.addActionListener(new java.awt.event.ActionListener() {
+        update_stu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student1ActionPerformed(evt);
+                update_stuActionPerformed(evt);
             }
         });
 
-        add_Student2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student2.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student2.setText("Remove Student");
-        add_Student2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student2.setFocusPainted(false);
-        add_Student2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student2.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student2.addMouseListener(new java.awt.event.MouseAdapter() {
+        remove_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        remove_stu.setForeground(new java.awt.Color(255, 255, 255));
+        remove_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        remove_stu.setText("Remove Student");
+        remove_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        remove_stu.setFocusPainted(false);
+        remove_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        remove_stu.setPreferredSize(new java.awt.Dimension(300, 50));
+        remove_stu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student2MouseEntered(evt);
+                remove_stuMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student2MouseExited(evt);
+                remove_stuMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student2MousePressed(evt);
+                remove_stuMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student2MouseReleased(evt);
+                remove_stuMouseReleased(evt);
             }
         });
-        add_Student2.addActionListener(new java.awt.event.ActionListener() {
+        remove_stu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student2ActionPerformed(evt);
+                remove_stuActionPerformed(evt);
             }
         });
 
-        add_Student3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_Student3.setForeground(new java.awt.Color(255, 255, 255));
-        add_Student3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        add_Student3.setText("Print Report");
-        add_Student3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_Student3.setFocusPainted(false);
-        add_Student3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_Student3.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_Student3.addMouseListener(new java.awt.event.MouseAdapter() {
+        print_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        print_stu.setForeground(new java.awt.Color(255, 255, 255));
+        print_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        print_stu.setText("Print Report");
+        print_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        print_stu.setFocusPainted(false);
+        print_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        print_stu.setPreferredSize(new java.awt.Dimension(300, 50));
+        print_stu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_Student3MouseEntered(evt);
+                print_stuMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_Student3MouseExited(evt);
+                print_stuMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_Student3MousePressed(evt);
+                print_stuMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_Student3MouseReleased(evt);
+                print_stuMouseReleased(evt);
             }
         });
-        add_Student3.addActionListener(new java.awt.event.ActionListener() {
+        print_stu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_Student3ActionPerformed(evt);
+                print_stuActionPerformed(evt);
+            }
+        });
+
+        preview_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        preview_stu.setForeground(new java.awt.Color(255, 255, 255));
+        preview_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        preview_stu.setText("Preview Student");
+        preview_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        preview_stu.setFocusPainted(false);
+        preview_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        preview_stu.setPreferredSize(new java.awt.Dimension(300, 50));
+        preview_stu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                preview_stuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                preview_stuMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                preview_stuMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                preview_stuMouseReleased(evt);
+            }
+        });
+        preview_stu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                preview_stuActionPerformed(evt);
             }
         });
 
@@ -199,13 +218,15 @@ public class Jp_registration_student extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(preview_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(add_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(update_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(remove_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
+                .addComponent(print_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -213,224 +234,138 @@ public class Jp_registration_student extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_Student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(add_Student3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(add_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(update_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(remove_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(print_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(preview_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 638, 1340, -1));
 
-        student_mainPanel.setLayout(new java.awt.CardLayout());
-
-        jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jTabbedPane3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTabbedPane3.setPreferredSize(new java.awt.Dimension(430, 433));
-
-        tbl_admin_Administrators.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Administrator ID", "Name", "Email", "NIC No", "Password"
-            }
-        ));
-        jScrollPane1.setViewportView(tbl_admin_Administrators);
-
-        jTabbedPane3.addTab("Active Student", jScrollPane1);
-
-        tbl_admin_Administrators5.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "User ID", "Name", "Email", "NIC No", "Password"
-            }
-        ));
-        jScrollPane6.setViewportView(tbl_admin_Administrators5);
-
-        jTabbedPane3.addTab("De-Active Student", jScrollPane6);
-
-        jTabbedPane2.addTab("Student", jTabbedPane3);
-
-        student_mainPanel.add(jTabbedPane2, "card2");
-
-        add(student_mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 620));
-
-        sp_registration_student_searchStudent.setViewportView(_li_registration_student_searchStudent);
-
-        add(sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 300, 570));
-
-        jLabel1.setText("jLabel1");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jLabel1.setPreferredSize(new java.awt.Dimension(50, 50));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
+        Jp_registraion_stu_main_panel.setBackground(new java.awt.Color(66, 66, 66));
+        Jp_registraion_stu_main_panel.setLayout(new java.awt.CardLayout());
+        add(Jp_registraion_stu_main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 630));
     }// </editor-fold>//GEN-END:initComponents
     int i = 0;
 
-    private void add_StudentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseEntered
+    private void add_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseEntered
+    }//GEN-LAST:event_add_stuMouseEntered
 
-    private void add_StudentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseExited
+    private void add_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseExited
+    }//GEN-LAST:event_add_stuMouseExited
 
-    private void add_StudentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMousePressed
+    private void add_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMousePressed
+    }//GEN-LAST:event_add_stuMousePressed
 
-    private void add_StudentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_StudentMouseReleased
+    private void add_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentMouseReleased
+    }//GEN-LAST:event_add_stuMouseReleased
 
-    private void add_StudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_StudentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_StudentActionPerformed
+    private void add_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_stuActionPerformed
 
-    private void add_Student1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseEntered
+        load_stu_information_form();
 
-    private void add_Student1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseExited
+        buttons_enable(add_stu.getText());
 
-    private void add_Student1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MousePressed
+    }//GEN-LAST:event_add_stuActionPerformed
 
-    private void add_Student1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student1MouseReleased
+    private void update_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1MouseReleased
+    }//GEN-LAST:event_update_stuMouseEntered
 
-    private void add_Student1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student1ActionPerformed
+    private void update_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student1ActionPerformed
+    }//GEN-LAST:event_update_stuMouseExited
 
-    private void add_Student2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseEntered
+    private void update_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseEntered
+    }//GEN-LAST:event_update_stuMousePressed
 
-    private void add_Student2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseExited
+    private void update_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseExited
+    }//GEN-LAST:event_update_stuMouseReleased
 
-    private void add_Student2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MousePressed
+    private void update_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_stuActionPerformed
 
-    private void add_Student2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student2MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2MouseReleased
+        buttons_enable(update_stu.getText());
+    }//GEN-LAST:event_update_stuActionPerformed
 
-    private void add_Student2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student2ActionPerformed
+    private void remove_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student2ActionPerformed
+    }//GEN-LAST:event_remove_stuMouseEntered
 
-    private void add_Student3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseEntered
+    private void remove_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseEntered
+    }//GEN-LAST:event_remove_stuMouseExited
 
-    private void add_Student3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseExited
+    private void remove_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseExited
+    }//GEN-LAST:event_remove_stuMousePressed
 
-    private void add_Student3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MousePressed
+    private void remove_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MousePressed
+    }//GEN-LAST:event_remove_stuMouseReleased
 
-    private void add_Student3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_Student3MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3MouseReleased
+    private void remove_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_stuActionPerformed
+        buttons_enable(remove_stu.getText());
+    }//GEN-LAST:event_remove_stuActionPerformed
 
-    private void add_Student3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_Student3ActionPerformed
+    private void print_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_add_Student3ActionPerformed
+    }//GEN-LAST:event_print_stuMouseEntered
+
+    private void print_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_print_stuMouseExited
+
+    private void print_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_print_stuMousePressed
+
+    private void print_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_print_stuMouseReleased
+
+    private void print_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_stuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_print_stuActionPerformed
+
+    private void preview_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMouseEntered
+        preview_stu.setBorder(border);
+    }//GEN-LAST:event_preview_stuMouseEntered
+
+    private void preview_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMouseExited
+        preview_stu.setBorder(null);
+    }//GEN-LAST:event_preview_stuMouseExited
+
+    private void preview_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMousePressed
+        preview_stu.setBorder(null);
+    }//GEN-LAST:event_preview_stuMousePressed
+
+    private void preview_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMouseReleased
+        preview_stu.setBorder(border);
+    }//GEN-LAST:event_preview_stuMouseReleased
+
+    private void preview_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preview_stuActionPerformed
+        load_table_stu_view();
+
+        buttons_enable(preview_stu.getText());
+    }//GEN-LAST:event_preview_stuActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList _li_registration_student_searchStudent;
-    private javax.swing.JButton add_Student;
-    private javax.swing.JButton add_Student1;
-    private javax.swing.JButton add_Student2;
-    private javax.swing.JButton add_Student3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel Jp_registraion_stu_main_panel;
+    private javax.swing.JButton add_stu;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JScrollPane sp_registration_student_searchStudent;
-    private javax.swing.JPanel student_mainPanel;
-    private javax.swing.JTable tbl_admin_Administrators;
-    private javax.swing.JTable tbl_admin_Administrators5;
+    private javax.swing.JButton preview_stu;
+    private javax.swing.JButton print_stu;
+    private javax.swing.JButton remove_stu;
+    private javax.swing.JButton update_stu;
     // End of variables declaration//GEN-END:variables
 
     public void printReport() {
@@ -464,4 +399,68 @@ public class Jp_registration_student extends javax.swing.JPanel {
 //  
     }
 
+    private void load_table_stu_view() {
+        Jp_registration_student_c_layout cl = new Jp_registration_student_c_layout();
+
+        if (cl == null) {
+            cl = new Jp_registration_student_c_layout();
+            Jp_registraion_stu_main_panel.removeAll();
+            Jp_registraion_stu_main_panel.repaint();
+            Jp_registraion_stu_main_panel.revalidate();
+            Jp_registraion_stu_main_panel.add(cl);
+            Jp_registraion_stu_main_panel.repaint();
+            Jp_registraion_stu_main_panel.revalidate();
+        } else {
+            Jp_registraion_stu_main_panel.removeAll();
+            Jp_registraion_stu_main_panel.repaint();
+            Jp_registraion_stu_main_panel.revalidate();
+            Jp_registraion_stu_main_panel.add(cl);
+            Jp_registraion_stu_main_panel.repaint();
+            Jp_registraion_stu_main_panel.revalidate();
+        }
+    }
+
+    private void buttons_enable(String button_name) {
+        if (button_name.equals(preview_stu.getText())) {
+            preview_stu.setEnabled(false);
+            add_stu.setEnabled(true);
+            remove_stu.setEnabled(true);
+            update_stu.setEnabled(true);
+        } else if (button_name.equals(add_stu.getText())) {
+            add_stu.setEnabled(false);
+            remove_stu.setEnabled(true);
+            update_stu.setEnabled(true);
+            preview_stu.setEnabled(true);
+        } else if (button_name.equals(update_stu.getText())) {
+            update_stu.setEnabled(false);
+            preview_stu.setEnabled(true);
+            remove_stu.setEnabled(true);
+            add_stu.setEnabled(true);
+        } else {
+            remove_stu.setEnabled(false);
+            add_stu.setEnabled(true);
+            preview_stu.setEnabled(true);
+            update_stu.setEnabled(true);
+        }
+    }
+
+    private void load_stu_information_form() {
+        Jp_registration_student_informations reg_student = new Jp_registration_student_informations();
+        if (add_stu == null) {
+            reg_student = new Jp_registration_student_informations();
+            Jp_registraion_stu_main_panel.removeAll();
+            Jp_registraion_stu_main_panel.repaint();
+            Jp_registraion_stu_main_panel.revalidate();
+            Jp_registraion_stu_main_panel.add(reg_student);
+            Jp_registraion_stu_main_panel.repaint();
+            Jp_registraion_stu_main_panel.revalidate();
+        } else {
+            Jp_registraion_stu_main_panel.removeAll();
+            Jp_registraion_stu_main_panel.repaint();
+            Jp_registraion_stu_main_panel.revalidate();
+            Jp_registraion_stu_main_panel.add(reg_student);
+            Jp_registraion_stu_main_panel.repaint();
+            Jp_registraion_stu_main_panel.revalidate();
+        }
+    }
 }

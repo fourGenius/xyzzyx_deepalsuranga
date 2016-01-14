@@ -73,5 +73,29 @@ public class stu_user_recovery {
             JOptionPane.showConfirmDialog(null, "Error is: 3/stu_user_recovery;" + ex);
         }
     }
+/////////////////////////////////////////////Update/////////////////////////////////////////////////
 
+    public void setEmployee_nonAcademic_administrative_user_recovery_question_no_update(String stu_user_recovery_question_no, String stu_user_info_id) {
+        this.stu_user_recovery_question_no = stu_user_recovery_question_no;
+        this.stu_user_info_id = stu_user_info_id;
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("Update stu_user_recovery set stu_user_recovery_question_no='" + stu_user_recovery_question_no + "' where stu_user_info_id='" + stu_user_info_id + "'");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, "Error is: 4/stu_user_recovery;" + ex);
+        }
+    }
+
+    public void setEmployee_nonAcademic_administrative_user_recoveryanswer_update(String stu_user_recovery_answer, String stu_user_info_id) {
+        this.stu_user_recovery_answer = stu_user_recovery_answer;
+        this.stu_user_info_id = stu_user_info_id;
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("update stu_user_recovery set stu_user_recovery_answer='" + stu_user_recovery_answer + "' where stu_user_info_id='" + stu_user_info_id + "'");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, "Error is: 5/stu_user_recovery;" + ex);
+        }
+    }
 }

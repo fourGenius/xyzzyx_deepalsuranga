@@ -9,7 +9,7 @@ import com.fourgenius.www.public_access.user.login.Jf_user_login;
 
 /**
  *
- * @author Dineth Jayasekera
+ * @author Shadow®
  */
 public class jf_Splash extends javax.swing.JFrame {
 
