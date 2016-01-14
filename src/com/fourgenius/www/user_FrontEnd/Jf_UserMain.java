@@ -534,7 +534,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jp_userMain_main_panel;
     private javax.swing.JButton _bt_UserMain_EmployeeRegistration;
-    private javax.swing.JButton _bt_UserMain_LectureRegistration;
+    public javax.swing.JButton _bt_UserMain_LectureRegistration;
     private javax.swing.JButton _bt_UserMain_StudentRegistration;
     private javax.swing.JButton _bt_UserMain_payments;
     private javax.swing.JButton jButton5;

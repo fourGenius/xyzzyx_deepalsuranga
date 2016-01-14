@@ -46,8 +46,7 @@ public class employee_academic_user_info {
 //        }
 //    }
 
-    public employee_academic_user_info() {
-    }
+    
 
     public employee_academic_user_info(String employee_academic_user_id, String employee_academic_user_email, String employee_academic_user_password, String employee_academic_user_info_status) {
 
@@ -65,6 +64,9 @@ public class employee_academic_user_info {
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
         }
 
+    }
+
+    public employee_academic_user_info() {
     }
 
     public String getEmployee_academic_user_id_s(String id) {
@@ -94,7 +96,7 @@ public class employee_academic_user_info {
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info(employee_academic_user_id) values '" + employee_academic_user_id + "'");
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
+            JOptionPane.showConfirmDialog(null, "Error is: 2/Employee info;" + ex);
         }
     }
 
@@ -109,7 +111,7 @@ public class employee_academic_user_info {
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info(employee_academic_user_email) values '" + employee_academic_user_email + "'");
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
+            JOptionPane.showConfirmDialog(null, "Error is: 3/Employee info;" + ex);
         }
     }
 
@@ -124,7 +126,7 @@ public class employee_academic_user_info {
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info(employee_academic_user_id) values '" + employee_academic_user_id + "'");
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
+            JOptionPane.showConfirmDialog(null, "Error is: 4/Employee info;" + ex);
         }
     }
 
@@ -139,7 +141,7 @@ public class employee_academic_user_info {
             Statement statement = connection.createStatement();
             statement.executeQuery("insert into employee_info(employee_academic_user_info_status) values '" + employee_academic_user_info_status + "'");
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
+            JOptionPane.showConfirmDialog(null, "Error is: 5/Employee info;" + ex);
         }
     }
 

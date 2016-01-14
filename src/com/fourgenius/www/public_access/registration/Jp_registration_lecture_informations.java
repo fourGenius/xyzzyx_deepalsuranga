@@ -6,6 +6,7 @@
 package com.fourgenius.www.public_access.registration;
 
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
+import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
@@ -16,6 +17,8 @@ import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
@@ -26,8 +29,9 @@ import javax.swing.border.Border;
  */
 public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
-    Border border=BorderFactory.createLineBorder(Color.white, 1);
+    Border border = BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
+
     /**
      * Creates new form registration_lecture
      */
@@ -37,8 +41,9 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
-        _bt_registration_lecture_personalInformation_back.setEnabled(false);
-        load_lecture_information_form();
+        
+
+        //load_lecture_information_form();
     }
 
     /**
@@ -54,6 +59,41 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _bg_registration_lecture_personalInformations_employeeDetails_gender = new javax.swing.ButtonGroup();
         _bg_registration_lecture_personalInformation_employeeDetails_branch = new javax.swing.ButtonGroup();
         _pl_registration_lecture_personalInformation_main_panel = new javax.swing.JPanel();
+        _pl_registration_lecture_personalInformation = new javax.swing.JPanel();
+        _pl_registration_lecture_personalInformation_contactDetails = new javax.swing.JPanel();
+        _lb_registration_lecture_information_form_mobile_number = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_mobile_number = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_home_number = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_home_number = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_email = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_email = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_1stline = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_1stline = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_city = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_city = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_country = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_country = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_address = new javax.swing.JLabel();
+        _pl_registration_lecture_personalInformation_lectureName = new javax.swing.JPanel();
+        _lb_registration_lecture_information_form_sur_name = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_sur_name = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_first_name = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_first_name = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_last_name = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_last_name = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_dob = new javax.swing.JLabel();
+        _tf_registration_lecture_information_form_nic = new javax.swing.JTextField();
+        _lb_registration_lecture_information_form_nic = new javax.swing.JLabel();
+        _rb_registration_lecture_information_form_male = new javax.swing.JRadioButton();
+        _lb_registration_lecture_information_form_gender = new javax.swing.JLabel();
+        _rb_registration_lecture_information_form_female = new javax.swing.JRadioButton();
+        _lb_registration_lecture_information_form_academy = new javax.swing.JLabel();
+        _rb_registration_lecture_information_form_academic = new javax.swing.JRadioButton();
+        _rb_registration_lecture_information_form_non_academic = new javax.swing.JRadioButton();
+        _dc_registration_lecture_information_form_dob = new com.toedter.calendar.JDateChooser();
+        _lb_registration_lecture_information_form_branch = new javax.swing.JLabel();
+        _rb_registration_lecture_information_form_colombo = new javax.swing.JRadioButton();
+        _rb_registration_lecture_information_form_kandy = new javax.swing.JRadioButton();
         _pl_registration_lecture_personalInformation_preview = new javax.swing.JPanel();
         _lb_registration_lecture_preview_image = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -73,15 +113,17 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         jLabel22 = new javax.swing.JLabel();
         _lb_registration_lecture_preview_eMail = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        _lb_registration_lecture_preview_address = new javax.swing.JLabel();
+        _lb_registration_lecture_preview_address_line1 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         _lb_registration_lecture_preview_mobileNumber = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         _lb_registration_lecture_preview_branch = new javax.swing.JLabel();
+        _lb_registration_lecture_preview_address_city = new javax.swing.JLabel();
+        _lb_registration_lecture_preview_address_country = new javax.swing.JLabel();
+        _bt_registration_lecture_preview_register_lecture = new javax.swing.JButton();
         _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
         _tf_registration_lecture_personalInformation_browsePhoto_browseFile = new javax.swing.JTextField();
-        _bt_registration_lecture_personalInformation_registerLecture = new javax.swing.JButton();
-        _bt_registration_lecture_personalInformation_back = new javax.swing.JButton();
+        _bt_registration_lecture_personalInformation_preview = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setMinimumSize(new java.awt.Dimension(1366, 718));
@@ -94,6 +136,387 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _pl_registration_lecture_personalInformation_main_panel.setMinimumSize(new java.awt.Dimension(0, 695));
         _pl_registration_lecture_personalInformation_main_panel.setPreferredSize(new java.awt.Dimension(815, 695));
         _pl_registration_lecture_personalInformation_main_panel.setLayout(new java.awt.CardLayout());
+
+        _pl_registration_lecture_personalInformation.setBackground(new java.awt.Color(2, 119, 189));
+        _pl_registration_lecture_personalInformation.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        _pl_registration_lecture_personalInformation_contactDetails.setBackground(new java.awt.Color(2, 119, 189));
+        _pl_registration_lecture_personalInformation_contactDetails.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contact Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+
+        _lb_registration_lecture_information_form_mobile_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_mobile_number.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_mobile_number.setText("Mobile Number");
+
+        _tf_registration_lecture_information_form_mobile_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_mobile_number.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_mobile_numberActionPerformed(evt);
+            }
+        });
+        _tf_registration_lecture_information_form_mobile_number.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_lecture_information_form_mobile_numberKeyReleased(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_home_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_home_number.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_home_number.setText("Home Number");
+
+        _tf_registration_lecture_information_form_home_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_home_number.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_home_numberActionPerformed(evt);
+            }
+        });
+        _tf_registration_lecture_information_form_home_number.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_lecture_information_form_home_numberKeyReleased(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_email.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_email.setText("E-mail");
+
+        _tf_registration_lecture_information_form_email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_emailActionPerformed(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_1stline.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_1stline.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_1stline.setText("1st Line");
+
+        _tf_registration_lecture_information_form_1stline.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_1stline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_1stlineActionPerformed(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_city.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_city.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_city.setText("City");
+
+        _tf_registration_lecture_information_form_city.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_city.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_cityActionPerformed(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_country.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_country.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_country.setText("Country");
+
+        _tf_registration_lecture_information_form_country.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_country.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_countryActionPerformed(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_address.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_address.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_address.setText("Address___________________________________");
+
+        javax.swing.GroupLayout _pl_registration_lecture_personalInformation_contactDetailsLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_contactDetails);
+        _pl_registration_lecture_personalInformation_contactDetails.setLayout(_pl_registration_lecture_personalInformation_contactDetailsLayout);
+        _pl_registration_lecture_personalInformation_contactDetailsLayout.setHorizontalGroup(
+            _pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(_tf_registration_lecture_information_form_city)
+                        .addComponent(_tf_registration_lecture_information_form_1stline)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(_lb_registration_lecture_information_form_mobile_number, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                                .addComponent(_tf_registration_lecture_information_form_mobile_number)
+                                .addComponent(_lb_registration_lecture_information_form_home_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(_tf_registration_lecture_information_form_home_number)
+                                .addComponent(_lb_registration_lecture_information_form_email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(_tf_registration_lecture_information_form_email))
+                            .addComponent(_lb_registration_lecture_information_form_city, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(_lb_registration_lecture_information_form_country, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(_tf_registration_lecture_information_form_country))
+                    .addComponent(_lb_registration_lecture_information_form_1stline, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_lb_registration_lecture_information_form_address))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        _pl_registration_lecture_personalInformation_contactDetailsLayout.setVerticalGroup(
+            _pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(_lb_registration_lecture_information_form_mobile_number)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_mobile_number, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_home_number)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_home_number, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_email)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_email, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(_lb_registration_lecture_information_form_address)
+                .addGap(11, 11, 11)
+                .addComponent(_lb_registration_lecture_information_form_1stline)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_1stline, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(_lb_registration_lecture_information_form_city)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_city, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_country)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_country, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        _pl_registration_lecture_personalInformation.add(_pl_registration_lecture_personalInformation_contactDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, 550));
+
+        _pl_registration_lecture_personalInformation_lectureName.setBackground(new java.awt.Color(2, 119, 189));
+        _pl_registration_lecture_personalInformation_lectureName.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lecture Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+
+        _lb_registration_lecture_information_form_sur_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_sur_name.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_sur_name.setText("Sur Name");
+
+        _tf_registration_lecture_information_form_sur_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_sur_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_sur_nameActionPerformed(evt);
+            }
+        });
+        _tf_registration_lecture_information_form_sur_name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_lecture_information_form_sur_nameKeyReleased(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_first_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_first_name.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_first_name.setText("First Name");
+
+        _tf_registration_lecture_information_form_first_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_first_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_first_nameActionPerformed(evt);
+            }
+        });
+        _tf_registration_lecture_information_form_first_name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_lecture_information_form_first_nameKeyReleased(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_last_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_last_name.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_last_name.setText("Last Name");
+
+        _tf_registration_lecture_information_form_last_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_last_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_last_nameActionPerformed(evt);
+            }
+        });
+        _tf_registration_lecture_information_form_last_name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_lecture_information_form_last_nameKeyReleased(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_dob.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_dob.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_dob.setText("Date Of Birth");
+
+        _tf_registration_lecture_information_form_nic.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_information_form_nic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_information_form_nicActionPerformed(evt);
+            }
+        });
+        _tf_registration_lecture_information_form_nic.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_lecture_information_form_nicKeyReleased(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_nic.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_nic.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_nic.setText("NIC Number");
+
+        _rb_registration_lecture_information_form_male.setBackground(new java.awt.Color(2, 119, 189));
+        _rb_registration_lecture_information_form_male.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _rb_registration_lecture_information_form_male.setForeground(new java.awt.Color(255, 255, 255));
+        _rb_registration_lecture_information_form_male.setSelected(true);
+        _rb_registration_lecture_information_form_male.setText("Male");
+        _rb_registration_lecture_information_form_male.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _rb_registration_lecture_information_form_maleMouseClicked(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_gender.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_gender.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_gender.setText("Gender");
+
+        _rb_registration_lecture_information_form_female.setBackground(new java.awt.Color(2, 119, 189));
+        _rb_registration_lecture_information_form_female.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _rb_registration_lecture_information_form_female.setForeground(new java.awt.Color(255, 255, 255));
+        _rb_registration_lecture_information_form_female.setText("Female");
+        _rb_registration_lecture_information_form_female.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _rb_registration_lecture_information_form_femaleMouseClicked(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_academy.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_academy.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_academy.setText("Acadamy");
+
+        _rb_registration_lecture_information_form_academic.setBackground(new java.awt.Color(2, 119, 189));
+        _rb_registration_lecture_information_form_academic.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _rb_registration_lecture_information_form_academic.setForeground(new java.awt.Color(255, 255, 255));
+        _rb_registration_lecture_information_form_academic.setSelected(true);
+        _rb_registration_lecture_information_form_academic.setText("Academic");
+        _rb_registration_lecture_information_form_academic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _rb_registration_lecture_information_form_academicMouseClicked(evt);
+            }
+        });
+
+        _rb_registration_lecture_information_form_non_academic.setBackground(new java.awt.Color(2, 119, 189));
+        _rb_registration_lecture_information_form_non_academic.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _rb_registration_lecture_information_form_non_academic.setForeground(new java.awt.Color(255, 255, 255));
+        _rb_registration_lecture_information_form_non_academic.setText("Non Academic");
+        _rb_registration_lecture_information_form_non_academic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _rb_registration_lecture_information_form_non_academicMouseClicked(evt);
+            }
+        });
+
+        _dc_registration_lecture_information_form_dob.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _dc_registration_lecture_information_form_dob.setPreferredSize(new java.awt.Dimension(91, 40));
+        _dc_registration_lecture_information_form_dob.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _dc_registration_lecture_information_form_dobMouseClicked(evt);
+            }
+        });
+
+        _lb_registration_lecture_information_form_branch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_information_form_branch.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_information_form_branch.setText("Branch");
+
+        _rb_registration_lecture_information_form_colombo.setBackground(new java.awt.Color(2, 119, 189));
+        _rb_registration_lecture_information_form_colombo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _rb_registration_lecture_information_form_colombo.setForeground(new java.awt.Color(255, 255, 255));
+        _rb_registration_lecture_information_form_colombo.setSelected(true);
+        _rb_registration_lecture_information_form_colombo.setText("Colombo");
+
+        _rb_registration_lecture_information_form_kandy.setBackground(new java.awt.Color(2, 119, 189));
+        _rb_registration_lecture_information_form_kandy.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _rb_registration_lecture_information_form_kandy.setForeground(new java.awt.Color(255, 255, 255));
+        _rb_registration_lecture_information_form_kandy.setText("Kandy");
+        _rb_registration_lecture_information_form_kandy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _rb_registration_lecture_information_form_kandyActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout _pl_registration_lecture_personalInformation_lectureNameLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_lectureName);
+        _pl_registration_lecture_personalInformation_lectureName.setLayout(_pl_registration_lecture_personalInformation_lectureNameLayout);
+        _pl_registration_lecture_personalInformation_lectureNameLayout.setHorizontalGroup(
+            _pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(_dc_registration_lecture_information_form_dob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(_lb_registration_lecture_information_form_gender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(_lb_registration_lecture_information_form_academy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
+                        .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(_lb_registration_lecture_information_form_sur_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(_lb_registration_lecture_information_form_first_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(_tf_registration_lecture_information_form_first_name)
+                                .addComponent(_lb_registration_lecture_information_form_last_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(_lb_registration_lecture_information_form_nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(_lb_registration_lecture_information_form_dob, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                                .addComponent(_tf_registration_lecture_information_form_nic)
+                                .addComponent(_tf_registration_lecture_information_form_last_name)
+                                .addComponent(_tf_registration_lecture_information_form_sur_name))
+                            .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
+                                .addComponent(_rb_registration_lecture_information_form_male)
+                                .addGap(53, 53, 53)
+                                .addComponent(_rb_registration_lecture_information_form_female))
+                            .addComponent(_lb_registration_lecture_information_form_branch)
+                            .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
+                                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(_rb_registration_lecture_information_form_academic)
+                                    .addComponent(_rb_registration_lecture_information_form_colombo))
+                                .addGap(18, 18, 18)
+                                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(_rb_registration_lecture_information_form_kandy)
+                                    .addComponent(_rb_registration_lecture_information_form_non_academic))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        _pl_registration_lecture_personalInformation_lectureNameLayout.setVerticalGroup(
+            _pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(_lb_registration_lecture_information_form_sur_name)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_sur_name, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_first_name)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_first_name, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_last_name)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_last_name, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_nic)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_registration_lecture_information_form_nic, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_dob)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_dc_registration_lecture_information_form_dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_gender)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(_rb_registration_lecture_information_form_male)
+                    .addComponent(_rb_registration_lecture_information_form_female))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_academy)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(_rb_registration_lecture_information_form_non_academic)
+                    .addComponent(_rb_registration_lecture_information_form_academic))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_information_form_branch)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(_rb_registration_lecture_information_form_colombo)
+                    .addComponent(_rb_registration_lecture_information_form_kandy))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        _pl_registration_lecture_personalInformation.add(_pl_registration_lecture_personalInformation_lectureName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 550));
+
+        _pl_registration_lecture_personalInformation_main_panel.add(_pl_registration_lecture_personalInformation, "card2");
+
         add(_pl_registration_lecture_personalInformation_main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 810, 560));
 
         _pl_registration_lecture_personalInformation_preview.setBackground(new java.awt.Color(117, 117, 117));
@@ -153,7 +576,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Address");
 
-        _lb_registration_lecture_preview_address.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_preview_address_line1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,6 +589,39 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         jLabel25.setText("Branch");
 
         _lb_registration_lecture_preview_branch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        _lb_registration_lecture_preview_address_city.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        _lb_registration_lecture_preview_address_country.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        _bt_registration_lecture_preview_register_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registration_lecture_preview_register_lecture.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registration_lecture_preview_register_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_DarkGreen_200x50.png"))); // NOI18N
+        _bt_registration_lecture_preview_register_lecture.setText("Register Lecture");
+        _bt_registration_lecture_preview_register_lecture.setContentAreaFilled(false);
+        _bt_registration_lecture_preview_register_lecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registration_lecture_preview_register_lecture.setFocusPainted(false);
+        _bt_registration_lecture_preview_register_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registration_lecture_preview_register_lecture.setPreferredSize(new java.awt.Dimension(100, 50));
+        _bt_registration_lecture_preview_register_lecture.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_registration_lecture_preview_register_lectureMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_registration_lecture_preview_register_lectureMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_registration_lecture_preview_register_lectureMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_registration_lecture_preview_register_lectureMouseReleased(evt);
+            }
+        });
+        _bt_registration_lecture_preview_register_lecture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_registration_lecture_preview_register_lectureActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_previewLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_preview);
         _pl_registration_lecture_personalInformation_preview.setLayout(_pl_registration_lecture_personalInformation_previewLayout);
@@ -189,6 +645,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(_lb_registration_lecture_preview_address_city, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_lectureID, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -197,62 +654,72 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                             .addComponent(_lb_registration_lecture_preview_academy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_homeNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_lecture_preview_address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_registration_lecture_preview_address_line1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_lecture_preview_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_lecture_preview_branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(_lb_registration_lecture_preview_branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_registration_lecture_preview_address_country, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createSequentialGroup()
-                        .addComponent(_lb_registration_lecture_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(_lb_registration_lecture_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_previewLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(_bt_registration_lecture_preview_register_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_previewLayout.setVerticalGroup(
             _pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createSequentialGroup()
-                .addComponent(_lb_registration_lecture_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_lb_registration_lecture_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_lecture_preview_lectureID, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_lecture_preview_name, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_lecture_preview_nic, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_lecture_preview_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_lecture_preview_gender, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_lecture_preview_academy, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel25)
                     .addComponent(_lb_registration_lecture_preview_branch, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_lecture_preview_mobileNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_lecture_preview_homeNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_lb_registration_lecture_preview_eMail, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
-                    .addComponent(_lb_registration_lecture_preview_address, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_registration_lecture_preview_address_line1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_preview_address_city, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_preview_address_country, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(_bt_registration_lecture_preview_register_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -264,65 +731,34 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText("Browse Photo");
 
-        _bt_registration_lecture_personalInformation_registerLecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registration_lecture_personalInformation_registerLecture.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registration_lecture_personalInformation_registerLecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        _bt_registration_lecture_personalInformation_registerLecture.setText("Next");
-        _bt_registration_lecture_personalInformation_registerLecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_registration_lecture_personalInformation_registerLecture.setFocusPainted(false);
-        _bt_registration_lecture_personalInformation_registerLecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registration_lecture_personalInformation_registerLecture.setPreferredSize(new java.awt.Dimension(300, 50));
-        _bt_registration_lecture_personalInformation_registerLecture.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_registration_lecture_personalInformation_preview.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registration_lecture_personalInformation_preview.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registration_lecture_personalInformation_preview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_registration_lecture_personalInformation_preview.setText("Preview");
+        _bt_registration_lecture_personalInformation_preview.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registration_lecture_personalInformation_preview.setFocusPainted(false);
+        _bt_registration_lecture_personalInformation_preview.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registration_lecture_personalInformation_preview.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_registration_lecture_personalInformation_preview.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureMouseClicked(evt);
+                _bt_registration_lecture_personalInformation_previewMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureMouseEntered(evt);
+                _bt_registration_lecture_personalInformation_previewMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureMouseExited(evt);
+                _bt_registration_lecture_personalInformation_previewMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureMousePressed(evt);
+                _bt_registration_lecture_personalInformation_previewMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureMouseReleased(evt);
+                _bt_registration_lecture_personalInformation_previewMouseReleased(evt);
             }
         });
-        _bt_registration_lecture_personalInformation_registerLecture.addActionListener(new java.awt.event.ActionListener() {
+        _bt_registration_lecture_personalInformation_preview.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_registration_lecture_personalInformation_registerLectureActionPerformed(evt);
-            }
-        });
-
-        _bt_registration_lecture_personalInformation_back.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registration_lecture_personalInformation_back.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registration_lecture_personalInformation_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        _bt_registration_lecture_personalInformation_back.setText("Back");
-        _bt_registration_lecture_personalInformation_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_registration_lecture_personalInformation_back.setFocusPainted(false);
-        _bt_registration_lecture_personalInformation_back.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registration_lecture_personalInformation_back.setPreferredSize(new java.awt.Dimension(300, 50));
-        _bt_registration_lecture_personalInformation_back.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_backMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_backMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_backMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_backMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_registration_lecture_personalInformation_backMouseReleased(evt);
-            }
-        });
-        _bt_registration_lecture_personalInformation_back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_registration_lecture_personalInformation_backActionPerformed(evt);
+                _bt_registration_lecture_personalInformation_previewActionPerformed(evt);
             }
         });
 
@@ -333,10 +769,8 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
             .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(_tf_registration_lecture_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(_bt_registration_lecture_personalInformation_back, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(_bt_registration_lecture_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
+                .addComponent(_bt_registration_lecture_personalInformation_preview, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_browsePhoto1Layout.setVerticalGroup(
@@ -344,76 +778,205 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
             .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
                 .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(_tf_registration_lecture_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_lecture_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_lecture_personalInformation_back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_bt_registration_lecture_personalInformation_preview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10))
         );
 
         add(_pl_registration_lecture_personalInformation_browsePhoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, 810, 60));
     }// </editor-fold>//GEN-END:initComponents
 
-    int i=0;
-    private void _bt_registration_lecture_personalInformation_registerLectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureMouseEntered
-        _bt_registration_lecture_personalInformation_registerLecture.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureMouseEntered
+    int i = 0;
+    private void _bt_registration_lecture_personalInformation_previewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewMouseEntered
+        _bt_registration_lecture_personalInformation_preview.setBorder(border);
+    }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewMouseEntered
 
-    private void _bt_registration_lecture_personalInformation_registerLectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureMouseExited
-        _bt_registration_lecture_personalInformation_registerLecture.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureMouseExited
+    private void _bt_registration_lecture_personalInformation_previewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewMouseExited
+        _bt_registration_lecture_personalInformation_preview.setBorder(null);
+    }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewMouseExited
 
-    private void _bt_registration_lecture_personalInformation_registerLectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureMousePressed
-        _bt_registration_lecture_personalInformation_registerLecture.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureMousePressed
+    private void _bt_registration_lecture_personalInformation_previewMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewMousePressed
+        _bt_registration_lecture_personalInformation_preview.setBorder(null);
+    }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewMousePressed
 
-    private void _bt_registration_lecture_personalInformation_registerLectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureMouseReleased
-        _bt_registration_lecture_personalInformation_registerLecture.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureMouseReleased
+    private void _bt_registration_lecture_personalInformation_previewMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewMouseReleased
+        _bt_registration_lecture_personalInformation_preview.setBorder(border);
+    }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewMouseReleased
 
-    private void _bt_registration_lecture_personalInformation_registerLectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureActionPerformed
-        load_information_forms();
-        button_enable(_bt_registration_lecture_personalInformation_registerLecture.getText());
-        
+    private void _bt_registration_lecture_personalInformation_previewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewActionPerformed
         add_to_preview_form();
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureActionPerformed
+//        load_information_forms();
+        
 
-    private void _bt_registration_lecture_personalInformation_registerLectureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_registerLectureMouseClicked
+
+    }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewActionPerformed
+
+    private void _bt_registration_lecture_personalInformation_previewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_registerLectureMouseClicked
+    }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewMouseClicked
 
-    private void _bt_registration_lecture_personalInformation_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_backMouseClicked
+    private void _tf_registration_lecture_information_form_mobile_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_mobile_numberActionPerformed
+        _tf_registration_lecture_information_form_home_number.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_mobile_numberActionPerformed
+
+    private void _tf_registration_lecture_information_form_mobile_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_mobile_numberKeyReleased
+        char c = evt.getKeyChar();
+        if (_tf_registration_lecture_information_form_mobile_number.getText().length() == 10 || Character.isLetter(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_mobile_numberKeyReleased
+
+    private void _tf_registration_lecture_information_form_home_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_home_numberActionPerformed
+        _tf_registration_lecture_information_form_email.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_home_numberActionPerformed
+
+    private void _tf_registration_lecture_information_form_home_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_home_numberKeyReleased
+        char c = evt.getKeyChar();
+        if (_tf_registration_lecture_information_form_home_number.getText().length() == 10 || Character.isLetter(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_home_numberKeyReleased
+
+    private void _tf_registration_lecture_information_form_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_emailActionPerformed
+        _tf_registration_lecture_information_form_1stline.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_emailActionPerformed
+
+    private void _tf_registration_lecture_information_form_1stlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_1stlineActionPerformed
+        _tf_registration_lecture_information_form_city.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_1stlineActionPerformed
+
+    private void _tf_registration_lecture_information_form_cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_cityActionPerformed
+        _tf_registration_lecture_information_form_country.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_cityActionPerformed
+
+    private void _tf_registration_lecture_information_form_countryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_countryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_backMouseClicked
+    }//GEN-LAST:event__tf_registration_lecture_information_form_countryActionPerformed
 
-    private void _bt_registration_lecture_personalInformation_backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_backMouseEntered
-        _bt_registration_lecture_personalInformation_back.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_backMouseEntered
+    private void _tf_registration_lecture_information_form_sur_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_sur_nameActionPerformed
+        _tf_registration_lecture_information_form_first_name.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_sur_nameActionPerformed
 
-    private void _bt_registration_lecture_personalInformation_backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_backMouseExited
-        _bt_registration_lecture_personalInformation_back.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_backMouseExited
+    private void _tf_registration_lecture_information_form_sur_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_sur_nameKeyReleased
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_sur_nameKeyReleased
 
-    private void _bt_registration_lecture_personalInformation_backMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_backMousePressed
-        _bt_registration_lecture_personalInformation_back.setBorder(null);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_backMousePressed
+    private void _tf_registration_lecture_information_form_first_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_first_nameActionPerformed
+        _tf_registration_lecture_information_form_last_name.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_first_nameActionPerformed
 
-    private void _bt_registration_lecture_personalInformation_backMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_backMouseReleased
-        _bt_registration_lecture_personalInformation_back.setBorder(border);
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_backMouseReleased
+    private void _tf_registration_lecture_information_form_first_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_first_nameKeyReleased
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_first_nameKeyReleased
 
-    private void _bt_registration_lecture_personalInformation_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_backActionPerformed
-        button_enable(_bt_registration_lecture_personalInformation_back.getText());
-        load_lecture_information_form();
-    }//GEN-LAST:event__bt_registration_lecture_personalInformation_backActionPerformed
+    private void _tf_registration_lecture_information_form_last_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_last_nameActionPerformed
+        _tf_registration_lecture_information_form_nic.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_last_nameActionPerformed
+
+    private void _tf_registration_lecture_information_form_last_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_last_nameKeyReleased
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_last_nameKeyReleased
+
+    private void _tf_registration_lecture_information_form_nicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_nicActionPerformed
+        _dc_registration_lecture_information_form_dob.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_nicActionPerformed
+
+    private void _tf_registration_lecture_information_form_nicKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_nicKeyReleased
+        char c = evt.getKeyChar();
+
+        if (_tf_registration_lecture_information_form_nic.getText().length() == 9) {
+            if (_tf_registration_lecture_information_form_nic.getText().length() == 10) {
+                evt.consume();
+            } else if (Character.isDigit(c) | !((c == 'v') || (c == 'x'))) {
+                evt.consume();
+            }
+
+        } else {
+            if (Character.isLetter(c)) {
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_nicKeyReleased
+
+    private void _rb_registration_lecture_information_form_maleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_maleMouseClicked
+
+    }//GEN-LAST:event__rb_registration_lecture_information_form_maleMouseClicked
+
+    private void _rb_registration_lecture_information_form_femaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_femaleMouseClicked
+
+    }//GEN-LAST:event__rb_registration_lecture_information_form_femaleMouseClicked
+
+    private void _rb_registration_lecture_information_form_academicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_academicMouseClicked
+        _tf_registration_lecture_information_form_mobile_number.grabFocus();
+    }//GEN-LAST:event__rb_registration_lecture_information_form_academicMouseClicked
+
+    private void _rb_registration_lecture_information_form_non_academicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_non_academicMouseClicked
+        _tf_registration_lecture_information_form_mobile_number.grabFocus();
+    }//GEN-LAST:event__rb_registration_lecture_information_form_non_academicMouseClicked
+
+    private void _dc_registration_lecture_information_form_dobMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__dc_registration_lecture_information_form_dobMouseClicked
+
+    }//GEN-LAST:event__dc_registration_lecture_information_form_dobMouseClicked
+
+    private void _rb_registration_lecture_information_form_kandyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_kandyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__rb_registration_lecture_information_form_kandyActionPerformed
+
+    private void _bt_registration_lecture_preview_register_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_preview_register_lectureActionPerformed
+        
+    }//GEN-LAST:event__bt_registration_lecture_preview_register_lectureActionPerformed
+
+    private void _bt_registration_lecture_preview_register_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_preview_register_lectureMouseEntered
+        _bt_registration_lecture_preview_register_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registration_lecture_preview_register_lectureMouseEntered
+
+    private void _bt_registration_lecture_preview_register_lectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_preview_register_lectureMouseExited
+        _bt_registration_lecture_preview_register_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registration_lecture_preview_register_lectureMouseExited
+
+    private void _bt_registration_lecture_preview_register_lectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_preview_register_lectureMousePressed
+        _bt_registration_lecture_preview_register_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registration_lecture_preview_register_lectureMousePressed
+
+    private void _bt_registration_lecture_preview_register_lectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_preview_register_lectureMouseReleased
+        _bt_registration_lecture_preview_register_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registration_lecture_preview_register_lectureMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformation_employeeDetails_branch;
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_acadamy;
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_gender;
-    private javax.swing.JButton _bt_registration_lecture_personalInformation_back;
-    private javax.swing.JButton _bt_registration_lecture_personalInformation_registerLecture;
+    private javax.swing.JButton _bt_registration_lecture_personalInformation_preview;
+    private javax.swing.JButton _bt_registration_lecture_preview_register_lecture;
+    public com.toedter.calendar.JDateChooser _dc_registration_lecture_information_form_dob;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_1stline;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_academy;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_address;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_branch;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_city;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_country;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_dob;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_email;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_first_name;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_gender;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_home_number;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_last_name;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_mobile_number;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_nic;
+    private javax.swing.JLabel _lb_registration_lecture_information_form_sur_name;
     private javax.swing.JLabel _lb_registration_lecture_preview_academy;
-    private javax.swing.JLabel _lb_registration_lecture_preview_address;
+    private javax.swing.JLabel _lb_registration_lecture_preview_address_city;
+    private javax.swing.JLabel _lb_registration_lecture_preview_address_country;
+    private javax.swing.JLabel _lb_registration_lecture_preview_address_line1;
     private javax.swing.JLabel _lb_registration_lecture_preview_branch;
     private javax.swing.JLabel _lb_registration_lecture_preview_dateOfBirth;
     private javax.swing.JLabel _lb_registration_lecture_preview_eMail;
@@ -422,11 +985,30 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     private javax.swing.JLabel _lb_registration_lecture_preview_image;
     private javax.swing.JLabel _lb_registration_lecture_preview_lectureID;
     private javax.swing.JLabel _lb_registration_lecture_preview_mobileNumber;
-    private javax.swing.JLabel _lb_registration_lecture_preview_name;
+    public javax.swing.JLabel _lb_registration_lecture_preview_name;
     private javax.swing.JLabel _lb_registration_lecture_preview_nic;
+    private javax.swing.JPanel _pl_registration_lecture_personalInformation;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_browsePhoto1;
+    private javax.swing.JPanel _pl_registration_lecture_personalInformation_contactDetails;
+    private javax.swing.JPanel _pl_registration_lecture_personalInformation_lectureName;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_main_panel;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_preview;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_academic;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_colombo;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_female;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_kandy;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_male;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_non_academic;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_1stline;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_city;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_country;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_email;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_first_name;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_home_number;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_last_name;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_mobile_number;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_nic;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_sur_name;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_browsePhoto_browseFile;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
@@ -442,75 +1024,75 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void load_lecture_information_form() {
-        Jp_registration_lecture_informations_form view_lecture_information_form = new Jp_registration_lecture_informations_form();
-        
-        if (view_lecture_information_form == null) {
-            view_lecture_information_form = new Jp_registration_lecture_informations_form();
-            _pl_registration_lecture_personalInformation_main_panel.removeAll();
-            _pl_registration_lecture_personalInformation_main_panel.repaint();
-            _pl_registration_lecture_personalInformation_main_panel.revalidate();
-            _pl_registration_lecture_personalInformation_main_panel.add(view_lecture_information_form);
-            _pl_registration_lecture_personalInformation_main_panel.repaint();
-            _pl_registration_lecture_personalInformation_main_panel.revalidate();
-        } else {
-            _pl_registration_lecture_personalInformation_main_panel.removeAll();
-            _pl_registration_lecture_personalInformation_main_panel.repaint();
-            _pl_registration_lecture_personalInformation_main_panel.revalidate();
-            _pl_registration_lecture_personalInformation_main_panel.add(view_lecture_information_form);
-            _pl_registration_lecture_personalInformation_main_panel.repaint();
-            _pl_registration_lecture_personalInformation_main_panel.revalidate();
-        }
-    }
+        try {
+            Jp_registration_lecture_informations_form view_lecture_information_form = new Jp_registration_lecture_informations_form();
 
-    private void load_information_forms() {
-        Jp_registration_lecture_informations_qulifications_form view_lecture_information_qulification_form = new Jp_registration_lecture_informations_qulifications_form();
-        
-        Jp_registration_lecture_informations_form view_lecture_information_form = new Jp_registration_lecture_informations_form();
-        if (_bt_registration_lecture_personalInformation_registerLecture.getText().equals("Next")) {
-            if (view_lecture_information_qulification_form == null) {
-                view_lecture_information_qulification_form = new Jp_registration_lecture_informations_qulifications_form();
+            if (view_lecture_information_form == null) {
+                view_lecture_information_form = new Jp_registration_lecture_informations_form();
                 _pl_registration_lecture_personalInformation_main_panel.removeAll();
                 _pl_registration_lecture_personalInformation_main_panel.repaint();
                 _pl_registration_lecture_personalInformation_main_panel.revalidate();
-                _pl_registration_lecture_personalInformation_main_panel.add(view_lecture_information_qulification_form);
+                _pl_registration_lecture_personalInformation_main_panel.add(view_lecture_information_form);
                 _pl_registration_lecture_personalInformation_main_panel.repaint();
                 _pl_registration_lecture_personalInformation_main_panel.revalidate();
             } else {
                 _pl_registration_lecture_personalInformation_main_panel.removeAll();
                 _pl_registration_lecture_personalInformation_main_panel.repaint();
                 _pl_registration_lecture_personalInformation_main_panel.revalidate();
-                _pl_registration_lecture_personalInformation_main_panel.add(view_lecture_information_qulification_form);
+                _pl_registration_lecture_personalInformation_main_panel.add(view_lecture_information_form);
                 _pl_registration_lecture_personalInformation_main_panel.repaint();
                 _pl_registration_lecture_personalInformation_main_panel.revalidate();
             }
-        }else{
-            load_lecture_information_form();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        
-        
+    }
+
+    private void load_information_forms() {
+        try {
+            Jp_registration_lecture_informations_qulifications_form view_lecture_information_qulification_form = new Jp_registration_lecture_informations_qulifications_form();
+
+            Jp_registration_lecture_informations_form view_lecture_information_form = new Jp_registration_lecture_informations_form();
+            if (_bt_registration_lecture_personalInformation_preview.getText().equals("Next")) {
+                if (view_lecture_information_qulification_form == null) {
+                    view_lecture_information_qulification_form = new Jp_registration_lecture_informations_qulifications_form();
+                    _pl_registration_lecture_personalInformation_main_panel.removeAll();
+                    _pl_registration_lecture_personalInformation_main_panel.repaint();
+                    _pl_registration_lecture_personalInformation_main_panel.revalidate();
+                    _pl_registration_lecture_personalInformation_main_panel.add(view_lecture_information_qulification_form);
+                    _pl_registration_lecture_personalInformation_main_panel.repaint();
+                    _pl_registration_lecture_personalInformation_main_panel.revalidate();
+                } else {
+                    _pl_registration_lecture_personalInformation_main_panel.removeAll();
+                    _pl_registration_lecture_personalInformation_main_panel.repaint();
+                    _pl_registration_lecture_personalInformation_main_panel.revalidate();
+                    _pl_registration_lecture_personalInformation_main_panel.add(view_lecture_information_qulification_form);
+                    _pl_registration_lecture_personalInformation_main_panel.repaint();
+                    _pl_registration_lecture_personalInformation_main_panel.revalidate();
+                }
+            } else {
+//                load_lecture_information_form();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void button_enable(String button_name) {
-        if (button_name.equals(_bt_registration_lecture_personalInformation_registerLecture.getText())) {
-            if (_bt_registration_lecture_personalInformation_registerLecture.getText().equals("Next")) {
-                _bt_registration_lecture_personalInformation_registerLecture.setText("Register Lecture");
-                _bt_registration_lecture_personalInformation_back.setEnabled(true);
-                _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setVisible(false);
-            }else{
-                _bt_registration_lecture_personalInformation_registerLecture.setText("Next");
-                _bt_registration_lecture_personalInformation_back.setEnabled(false);
-                _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setVisible(true);
-            }
-        }else{
-            _bt_registration_lecture_personalInformation_registerLecture.setText("Next");
-            _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setVisible(true);
-            _bt_registration_lecture_personalInformation_back.setEnabled(false);
+        try {
+            
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     private void add_to_preview_form() {
-        
-        
-        
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

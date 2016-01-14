@@ -45,6 +45,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        _bg_lecture_qulification_ol_al = new javax.swing.ButtonGroup();
         _pl_registration_lecture_personalInformation_qulifications = new javax.swing.JPanel();
         _pl_registration_lecture_personalInformation_qulifications_details = new javax.swing.JPanel();
         _lb_registration_lecture_personalInformation_lectureName_sirName = new javax.swing.JLabel();
@@ -68,6 +69,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         _bt_registration_lecture_personalInformation_qulification_preview_update = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         _tp_registration_lecture_qulifications_tables = new javax.swing.JTabbedPane();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
 
@@ -76,10 +78,12 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
 
         _pl_registration_lecture_personalInformation_qulifications_details.setBackground(new java.awt.Color(2, 119, 189));
         _pl_registration_lecture_personalInformation_qulifications_details.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Qulifications Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        _pl_registration_lecture_personalInformation_qulifications_details.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         _lb_registration_lecture_personalInformation_lectureName_sirName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_lectureName_sirName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_sirName.setText("Qulifications File No");
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_lb_registration_lecture_personalInformation_lectureName_sirName, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 30, 333, -1));
 
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNo.addActionListener(new java.awt.event.ActionListener() {
@@ -87,10 +91,12 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 _tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNoActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 53, 333, 40));
 
         _lb_registration_lecture_personalInformation_lectureName_firstName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_lectureName_firstName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_firstName.setText("Qulification Name");
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_lb_registration_lecture_personalInformation_lectureName_firstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 99, 333, -1));
 
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_name.addActionListener(new java.awt.event.ActionListener() {
@@ -98,10 +104,12 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 _tf_registration_lecture_personalInformations_lectureDetails_qulifications_nameActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 122, 333, 40));
 
         _lb_registration_lecture_personalInformation_lectureName_lastName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_lectureName_lastName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_lastName.setText("Qulifications Type");
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_lb_registration_lecture_personalInformation_lectureName_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 168, 333, -1));
 
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_type.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_type.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +117,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 _tf_registration_lecture_personalInformations_lectureDetails_qulifications_typeActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 191, 333, 40));
 
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year.addActionListener(new java.awt.event.ActionListener() {
@@ -116,10 +125,12 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 _tf_registration_lecture_personalInformations_lectureDetails_qulifications_yearActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 260, 333, 40));
 
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setText("Qulification Year");
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_lb_registration_lecture_personalInformation_idInformation_nicNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 237, 333, -1));
 
         _bt_registration_lecture_personalInformation_qulification_details_add.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registration_lecture_personalInformation_qulification_details_add.setForeground(new java.awt.Color(255, 255, 255));
@@ -143,6 +154,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 _bt_registration_lecture_personalInformation_qulification_details_addMouseReleased(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_bt_registration_lecture_personalInformation_qulification_details_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 482, 200, -1));
 
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1.addActionListener(new java.awt.event.ActionListener() {
@@ -150,6 +162,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1ActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 431, 115, 40));
 
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2.addActionListener(new java.awt.event.ActionListener() {
@@ -157,6 +170,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2ActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 431, 200, 40));
 
         _bt_registration_lecture_personalInformation_qulification_details_add1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registration_lecture_personalInformation_qulification_details_add1.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,99 +194,32 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 _bt_registration_lecture_personalInformation_qulification_details_add1MouseReleased(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_bt_registration_lecture_personalInformation_qulification_details_add1, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 311, 200, -1));
 
         _lb_registration_lecture_personalInformation_lectureName_sirName1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_lectureName_sirName1.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_sirName1.setText("Subject");
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_lb_registration_lecture_personalInformation_lectureName_sirName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 408, 123, -1));
 
         _lb_registration_lecture_personalInformation_lectureName_sirName2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_lectureName_sirName2.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_sirName2.setText("Result");
+        _pl_registration_lecture_personalInformation_qulifications_details.add(_lb_registration_lecture_personalInformation_lectureName_sirName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 408, 115, -1));
 
         jRadioButton1.setBackground(new java.awt.Color(2, 119, 189));
+        _bg_lecture_qulification_ol_al.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setSelected(true);
         jRadioButton1.setText("O/L Results");
+        _pl_registration_lecture_personalInformation_qulifications_details.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 376, -1, -1));
 
         jRadioButton2.setBackground(new java.awt.Color(2, 119, 189));
+        _bg_lecture_qulification_ol_al.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("A/L Results");
-
-        javax.swing.GroupLayout _pl_registration_lecture_personalInformation_qulifications_detailsLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_qulifications_details);
-        _pl_registration_lecture_personalInformation_qulifications_details.setLayout(_pl_registration_lecture_personalInformation_qulifications_detailsLayout);
-        _pl_registration_lecture_personalInformation_qulifications_detailsLayout.setHorizontalGroup(
-            _pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_qulifications_detailsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_bt_registration_lecture_personalInformation_qulification_details_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(_bt_registration_lecture_personalInformation_qulification_details_add1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createSequentialGroup()
-                        .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton1)
-                            .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                                .addComponent(_lb_registration_lecture_personalInformation_lectureName_firstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_name)
-                                .addComponent(_lb_registration_lecture_personalInformation_lectureName_lastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(_lb_registration_lecture_personalInformation_idInformation_nicNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year)
-                                .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_type)
-                                .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNo)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createSequentialGroup()
-                        .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jRadioButton2)
-                            .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName2, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                            .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1))))
-                .addContainerGap())
-        );
-        _pl_registration_lecture_personalInformation_qulifications_detailsLayout.setVerticalGroup(
-            _pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_registration_lecture_personalInformation_lectureName_firstName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_name, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_registration_lecture_personalInformation_lectureName_lastName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_type, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_registration_lecture_personalInformation_idInformation_nicNumber)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(_bt_registration_lecture_personalInformation_qulification_details_add1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName2)
-                    .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(_pl_registration_lecture_personalInformation_qulifications_detailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(_bt_registration_lecture_personalInformation_qulification_details_add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        _pl_registration_lecture_personalInformation_qulifications_details.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 376, -1, -1));
 
         _pl_registration_lecture_personalInformation_qulifications.add(_pl_registration_lecture_personalInformation_qulifications_details, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 365, 550));
 
@@ -328,6 +275,19 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         jPanel1.setLayout(new java.awt.CardLayout());
         jPanel1.add(_tp_registration_lecture_qulifications_tables, "card2");
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        jButton1.setText("Finish");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusPainted(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_qulifications_previewLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_qulifications_preview);
         _pl_registration_lecture_personalInformation_qulifications_preview.setLayout(_pl_registration_lecture_personalInformation_qulifications_previewLayout);
         _pl_registration_lecture_personalInformation_qulifications_previewLayout.setHorizontalGroup(
@@ -339,15 +299,21 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 .addComponent(_bt_registration_lecture_personalInformation_qulification_preview_update, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(_pl_registration_lecture_personalInformation_qulifications_previewLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         _pl_registration_lecture_personalInformation_qulifications_previewLayout.setVerticalGroup(
             _pl_registration_lecture_personalInformation_qulifications_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_qulifications_previewLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(_pl_registration_lecture_personalInformation_qulifications_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(_bt_registration_lecture_personalInformation_qulification_preview_remove, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(_bt_registration_lecture_personalInformation_qulification_preview_update, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -453,8 +419,13 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         // TODO add your handling code here:
     }//GEN-LAST:event__bt_registration_lecture_personalInformation_qulification_details_add1MouseReleased
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup _bg_lecture_qulification_ol_al;
     private javax.swing.JButton _bt_registration_lecture_personalInformation_qulification_details_add;
     private javax.swing.JButton _bt_registration_lecture_personalInformation_qulification_details_add1;
     private javax.swing.JButton _bt_registration_lecture_personalInformation_qulification_preview_remove;
@@ -475,6 +446,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
     private javax.swing.JTextField _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1;
     private javax.swing.JTextField _tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2;
     private javax.swing.JTabbedPane _tp_registration_lecture_qulifications_tables;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;

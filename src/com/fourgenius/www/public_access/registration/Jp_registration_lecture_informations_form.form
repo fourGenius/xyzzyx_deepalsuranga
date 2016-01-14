@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="_bg_registration_lecture_information_form_gender">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="_bg_registration_lecture_information_form_academy">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="_bg_registration_lecture_information_form_branch">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="42" green="42" red="42" type="rgb"/>
@@ -69,24 +77,24 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="_tf_registration_lecture_personalInformations_contactDetails_2ndLine" alignment="0" max="32767" attributes="0"/>
-                              <Component id="_tf_registration_lecture_personalInformations_contactDetails_1stLine" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_tf_registration_lecture_information_form_city" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_tf_registration_lecture_information_form_1stline" alignment="0" max="32767" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="_lb_registration_lecture_personalInformation_contactDetails_mobileNumber" alignment="0" pref="333" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_lecture_personalInformations_contactDetails_mobileNumber" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_lecture_personalInformation_contactDetails_landNumber" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_lecture_personalInformations_contactDetails_homeNumber" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_lecture_personalInformation_contactDetails_eMail" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_lecture_personalInformations_contactDetails_eMail" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_information_form_mobile_number" alignment="0" pref="333" max="32767" attributes="0"/>
+                                      <Component id="_tf_registration_lecture_information_form_mobile_number" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_information_form_home_number" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_tf_registration_lecture_information_form_home_number" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_information_form_email" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_tf_registration_lecture_information_form_email" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="_lb_registration_lecture_personalInformation_address_2ndLine" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                  <Component id="_lb_registration_lecture_personalInformation_address_city" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="_lb_registration_lecture_information_form_city" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="_lb_registration_lecture_information_form_country" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="_tf_registration_lecture_personalInformations_contactDetails_country" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_tf_registration_lecture_information_form_country" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="_lb_registration_lecture_personalInformation_address_1stLine" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="_lb_registration_lecture_information_form_1stline" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="_lb_registration_lecture_information_form_address" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -96,38 +104,38 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_contactDetails_mobileNumber" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_mobile_number" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_contactDetails_mobileNumber" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_mobile_number" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_contactDetails_landNumber" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_home_number" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_contactDetails_homeNumber" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_home_number" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_contactDetails_eMail" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_email" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_contactDetails_eMail" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_email" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_address" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_address_1stLine" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_1stline" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_contactDetails_1stLine" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_1stline" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_address_2ndLine" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_city" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_contactDetails_2ndLine" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_city" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_address_city" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_country" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_contactDetails_country" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_country" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace pref="67" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_contactDetails_mobileNumber">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_mobile_number">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -138,17 +146,21 @@
                 <Property name="text" type="java.lang.String" value="Mobile Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_contactDetails_mobileNumber">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_mobile_number">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_contactDetails_mobileNumberActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_mobile_numberActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_lecture_information_form_mobile_numberKeyReleased"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_contactDetails_landNumber">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_home_number">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -159,17 +171,21 @@
                 <Property name="text" type="java.lang.String" value="Home Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_contactDetails_homeNumber">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_home_number">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_contactDetails_homeNumberActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_home_numberActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_lecture_information_form_home_numberKeyReleased"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_contactDetails_eMail">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_email">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -180,17 +196,20 @@
                 <Property name="text" type="java.lang.String" value="E-mail"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_contactDetails_eMail">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_email">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_contactDetails_eMailActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_emailActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_address_1stLine">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_1stline">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -201,17 +220,20 @@
                 <Property name="text" type="java.lang.String" value="1st Line"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_contactDetails_1stLine">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_1stline">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_contactDetails_1stLineActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_1stlineActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_address_2ndLine">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_city">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -222,17 +244,20 @@
                 <Property name="text" type="java.lang.String" value="City"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_contactDetails_2ndLine">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_city">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_contactDetails_2ndLineActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_cityActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_address_city">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_country">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -243,17 +268,20 @@
                 <Property name="text" type="java.lang.String" value="Country"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_contactDetails_country">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_country">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_contactDetails_countryActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_countryActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel13">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_address">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -292,37 +320,37 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="_dc_registration_lecture_personalInformations_lectureDetails_dateOfBirth" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
+                          <Component id="_dc_registration_lecture_information_form_dob" alignment="0" max="32767" attributes="0"/>
+                          <Component id="_lb_registration_lecture_information_form_gender" alignment="0" max="32767" attributes="0"/>
+                          <Component id="_lb_registration_lecture_information_form_academy" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="_lb_registration_lecture_personalInformation_lectureName_sirName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_lecture_personalInformation_lectureName_firstName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_firstName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_lecture_personalInformation_lectureName_lastName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_lecture_personalInformation_idInformation_nicNumber" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth" alignment="0" pref="333" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_nicNumber" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_lastName" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_surName" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_information_form_sur_name" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_information_form_first_name" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_tf_registration_lecture_information_form_first_name" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_information_form_last_name" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_information_form_nic" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_information_form_dob" alignment="0" pref="333" max="32767" attributes="0"/>
+                                      <Component id="_tf_registration_lecture_information_form_nic" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_tf_registration_lecture_information_form_last_name" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_tf_registration_lecture_information_form_sur_name" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="_rb_registration_lecture_personalInformations_lectureDetails_gender_male" min="-2" max="-2" attributes="0"/>
+                                      <Component id="_rb_registration_lecture_information_form_male" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="_rb_registration_lecture_personalInformations_lectureDetails_gender_female" min="-2" max="-2" attributes="0"/>
+                                      <Component id="_rb_registration_lecture_information_form_female" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="_lb_registration_lecture_information_form_branch" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_colombo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="_rb_registration_lecture_information_form_academic" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="_rb_registration_lecture_information_form_colombo" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_kandy" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_academy_nonAcadamic" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="_rb_registration_lecture_information_form_kandy" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="_rb_registration_lecture_information_form_non_academic" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -337,45 +365,45 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_lectureName_sirName" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_sur_name" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_surName" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_sur_name" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_lectureName_firstName" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_first_name" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_firstName" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_first_name" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_lectureName_lastName" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_last_name" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_lastName" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_last_name" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_idInformation_nicNumber" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_nic" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_nicNumber" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_information_form_nic" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_dob" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_dc_registration_lecture_personalInformations_lectureDetails_dateOfBirth" min="-2" max="-2" attributes="0"/>
+                      <Component id="_dc_registration_lecture_information_form_dob" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_gender" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_gender_male" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_gender_female" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="_rb_registration_lecture_information_form_male" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="_rb_registration_lecture_information_form_female" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_academy" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_academy_nonAcadamic" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="_rb_registration_lecture_information_form_non_academic" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="_rb_registration_lecture_information_form_academic" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_information_form_branch" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_colombo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_kandy" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="_rb_registration_lecture_information_form_colombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="_rb_registration_lecture_information_form_kandy" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -383,7 +411,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_lectureName_sirName">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_sur_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -394,17 +422,21 @@
                 <Property name="text" type="java.lang.String" value="Sur Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_lectureDetails_surName">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_sur_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_lectureDetails_surNameActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_sur_nameActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_lecture_information_form_sur_nameKeyReleased"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_lectureName_firstName">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_first_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -415,17 +447,21 @@
                 <Property name="text" type="java.lang.String" value="First Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_lectureDetails_firstName">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_first_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_lectureDetails_firstNameActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_first_nameActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_lecture_information_form_first_nameKeyReleased"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_lectureName_lastName">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_last_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -436,17 +472,21 @@
                 <Property name="text" type="java.lang.String" value="Last Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_lectureDetails_lastName">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_last_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_lectureDetails_lastNameActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_last_nameActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_lecture_information_form_last_nameKeyReleased"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_dob">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -457,17 +497,21 @@
                 <Property name="text" type="java.lang.String" value="Date Of Birth"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_lectureDetails_nicNumber">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_information_form_nic">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_lectureDetails_nicNumberActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_information_form_nicActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_lecture_information_form_nicKeyReleased"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_idInformation_nicNumber">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_nic">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -478,10 +522,13 @@
                 <Property name="text" type="java.lang.String" value="NIC Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_personalInformations_lectureDetails_gender_male">
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_information_form_male">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="_bg_registration_lecture_information_form_gender"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -493,10 +540,13 @@
                 <Property name="text" type="java.lang.String" value="Male"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_personalInformations_lectureDetails_gender_maleMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_information_form_maleMouseClicked"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_gender">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -507,10 +557,13 @@
                 <Property name="text" type="java.lang.String" value="Gender"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_personalInformations_lectureDetails_gender_female">
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_information_form_female">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="_bg_registration_lecture_information_form_gender"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -521,10 +574,13 @@
                 <Property name="text" type="java.lang.String" value="Female"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_personalInformations_lectureDetails_gender_femaleMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_information_form_femaleMouseClicked"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel15">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_academy">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -535,10 +591,13 @@
                 <Property name="text" type="java.lang.String" value="Acadamy"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamic">
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_information_form_academic">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="_bg_registration_lecture_information_form_academy"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -547,16 +606,22 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="selected" type="boolean" value="true"/>
-                <Property name="text" type="java.lang.String" value="Acadamic"/>
+                <Property name="text" type="java.lang.String" value="Academic"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_acadamicMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_information_form_academicMouseClicked"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_personalInformations_lectureDetails_academy_nonAcadamic">
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_information_form_non_academic">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="_bg_registration_lecture_information_form_academy"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -564,13 +629,16 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Non Acadamic"/>
+                <Property name="text" type="java.lang.String" value="Non Academic"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_personalInformations_lectureDetails_academy_nonAcadamicMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_information_form_non_academicMouseClicked"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="com.toedter.calendar.JDateChooser" name="_dc_registration_lecture_personalInformations_lectureDetails_dateOfBirth">
+            <Component class="com.toedter.calendar.JDateChooser" name="_dc_registration_lecture_information_form_dob">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -580,10 +648,13 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_dc_registration_lecture_personalInformations_lectureDetails_dateOfBirthMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_dc_registration_lecture_information_form_dobMouseClicked"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_branch">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -594,10 +665,13 @@
                 <Property name="text" type="java.lang.String" value="Branch"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_colombo">
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_information_form_colombo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="_bg_registration_lecture_information_form_branch"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -608,11 +682,17 @@
                 <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Colombo"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_kandy">
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_information_form_kandy">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="_bg_registration_lecture_information_form_branch"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -623,8 +703,11 @@
                 <Property name="text" type="java.lang.String" value="Kandy"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_rb_registration_lecture_personalInformations_lectureDetails_acadamy_kandyActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_rb_registration_lecture_information_form_kandyActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
