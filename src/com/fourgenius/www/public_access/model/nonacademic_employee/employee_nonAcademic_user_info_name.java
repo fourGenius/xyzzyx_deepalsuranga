@@ -18,7 +18,7 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class employee_nonAcademic_user_info_name {
 
-    private String employee_nonAcademic_administrative_user_info_id, employee_nonAcademic_user_info_name_sirName, employee_nonAcademic_user_info_name_first_name, employee_nonAcademic_user_info_name_last_name;
+    private String employee_nonAcademic_administrative_user_info_id, employee_nonAcademic_user_info_name_sirName, employee_nonAcademic_user_info_name_first_name, employee_nonAcademic_user_info_name_last_name,fullName;
 
     public employee_nonAcademic_user_info_name() {
     }
@@ -146,5 +146,19 @@ public class employee_nonAcademic_user_info_name {
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 8/employee_nonAcademic_user_info_name;" + ex);
         }
+    }
+    //////////////////////////////////////Search//////////////////////////////////////////////////////////
+    public String getFullName(String name) {
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            ResultSet rs=statement.executeQuery("select  concat_ws(employee_nonAcademic_user_info_name_sirName,employee_nonAcademic_user_info_name_first_name,employee_nonAcademic_user_info_name_last_name) as fullname  from employee_nonAcademic_user_info_name where employee_nonAcademic_user_info_name_sirName like '%"+name+"%' or employee_nonAcademic_user_info_name_first_name like '%"+name+"%' or employee_nonAcademic_user_info_name_last_name like '%"+name+"%'");
+            fullName=rs.getString("fullname");
+            rs.close();
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, "Error is: 6/employee_nonAcademic_administrative_user_info;" + ex);
+        }
+        return fullName;
+        
     }
 }

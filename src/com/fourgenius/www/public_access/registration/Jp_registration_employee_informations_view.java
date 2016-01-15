@@ -6,6 +6,8 @@
 package com.fourgenius.www.public_access.registration;
 
 import com.fourgenius.www.private_access.admin.method.*;
+import com.fourgenius.www.public_access.model.nonacademic_employee.*;
+import java.util.Vector;
 
 /**
  *
@@ -18,11 +20,12 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
      */
     public Jp_registration_employee_informations_view() {
         initComponents();
-       
-        Jp_registration_employee_informations_form_active_employee_table active_employee=new Jp_registration_employee_informations_form_active_employee_table();
-        Jp_registration_employee_informations_form_deactive_employee_table deactive_employee=new Jp_registration_employee_informations_form_deactive_employee_table();
+
+        Jp_registration_employee_informations_form_active_employee_table active_employee = new Jp_registration_employee_informations_form_active_employee_table();
+        Jp_registration_employee_informations_form_deactive_employee_table deactive_employee = new Jp_registration_employee_informations_form_deactive_employee_table();
         jTabbedPane1.add("Active Employee", active_employee);
         jTabbedPane1.add("De-active Employee", deactive_employee);
+        jScrollPane1.setVisible(false);
     }
 
     /**
@@ -62,6 +65,10 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 88, 300, 540));
 
+        _bt_registration_employee_informations_view_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/search_icon.png"))); // NOI18N
+        _bt_registration_employee_informations_view_search.setContentAreaFilled(false);
+        _bt_registration_employee_informations_view_search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registration_employee_informations_view_search.setFocusPainted(false);
         _bt_registration_employee_informations_view_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _bt_registration_employee_informations_view_searchActionPerformed(evt);
@@ -79,17 +86,92 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
 
         Md_check_id checkId = new Md_check_id();
         String idType = checkId.Md_check_id(_tf_registration_employee_informations_view_searchStudent.getText());
+        employee_nonAcademic_administrative_user_info info = new employee_nonAcademic_administrative_user_info();
+        Vector v = new Vector();
         switch (idType) {
             case "passport":
-                
+                try {
+
+                    if (_tf_registration_employee_informations_view_searchStudent.getText().isEmpty()) {
+                        jScrollPane1.setVisible(false);
+
+                    } else {
+                        while (!(info.getEmployee_nonAcademic_administrative_user_info_nic(_tf_registration_employee_informations_view_searchStudent.getText()).isEmpty())) {
+                            v.add(info.getEmployee_nonAcademic_administrative_user_info_nic(_tf_registration_employee_informations_view_searchStudent.getText()));
+
+                        }
+
+                        _li_registration_employee_informations_view_searchStudent.setListData(v);
+
+                        if (_li_registration_employee_informations_view_searchStudent.getModel().getSize() == 0) {
+                            jScrollPane1.setVisible(false);
+
+                        } else {
+                            jScrollPane1.setVisible(true);
+                        }
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
 
             case "nic":
-                
+
+                try {
+                    if (_tf_registration_employee_informations_view_searchStudent.getText().isEmpty()) {
+                        jScrollPane1.setVisible(false);
+
+                    } else {
+                        while (!(info.getEmployee_nonAcademic_administrative_user_info_nic(_tf_registration_employee_informations_view_searchStudent.getText()).isEmpty())) {
+                            v.add(info.getEmployee_nonAcademic_administrative_user_info_nic(_tf_registration_employee_informations_view_searchStudent.getText()));
+
+                        }
+
+                        _li_registration_employee_informations_view_searchStudent.setListData(v);
+
+                        if (_li_registration_employee_informations_view_searchStudent.getModel().getSize() == 0) {
+                            jScrollPane1.setVisible(false);
+
+                        } else {
+                            jScrollPane1.setVisible(true);
+                        }
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 break;
 
             case "name":
-                
+
+                employee_nonAcademic_user_info_name na = new employee_nonAcademic_user_info_name();
+
+                try {
+                    if (_tf_registration_employee_informations_view_searchStudent.getText().isEmpty()) {
+                        jScrollPane1.setVisible(false);
+
+                    } else {
+                        while (!(na.getFullName(_tf_registration_employee_informations_view_searchStudent.getText()).isEmpty())) {
+                            v.add(na.getFullName(_tf_registration_employee_informations_view_searchStudent.getText()));
+
+                        }
+
+                        _li_registration_employee_informations_view_searchStudent.setListData(v);
+
+                        if (_li_registration_employee_informations_view_searchStudent.getModel().getSize() == 0) {
+                            jScrollPane1.setVisible(false);
+
+                        } else {
+                            jScrollPane1.setVisible(true);
+                        }
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 break;
         }
     }//GEN-LAST:event__bt_registration_employee_informations_view_searchActionPerformed
