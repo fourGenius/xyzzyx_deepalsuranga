@@ -86,9 +86,10 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
 
         Md_check_id checkId = new Md_check_id();
         String idType = checkId.Md_check_id(_tf_registration_employee_informations_view_searchStudent.getText());
+        System.out.println(idType);
         employee_nonAcademic_administrative_user_info info = new employee_nonAcademic_administrative_user_info();
         Vector v = new Vector();
-        switch (idType) {
+        switch ("name") {
             case "passport":
                 try {
 

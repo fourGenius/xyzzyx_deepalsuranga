@@ -37,7 +37,7 @@ public class employee_nonAcademic_user_info_address {
             } else {
                statement.executeUpdate("insert into employee_nonAcademic_user_info_address(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_user_info_address_lane1,employee_nonAcademic_user_info_address_city,employee_nonAcademic_user_info_address_cuntry) values ('"+employee_nonAcademic_administrative_user_info_id+"','" + employee_nonAcademic_user_info_address_lane1 + "','"+employee_nonAcademic_user_info_address_city+"','" + employee_nonAcademic_user_info_address_cuntry + "')");
             }
-            rs.close();
+//            rs.close();
         } catch (SQLException ex) {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/employee_nonAcademic_user_info_contact;" + ex);

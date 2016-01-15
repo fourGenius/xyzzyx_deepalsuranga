@@ -5,18 +5,29 @@
  */
 package com.fourgenius.www.public_access.registration;
 
+import com.fourgenius.www.public_access.model.nonacademic_employee.employee_nonAcademic_administrative_user_info;
+import com.fourgenius.www.public_access.model.nonacademic_employee.employee_nonAcademic_user_info_name;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import public_access.MC_JavaDataBaseConnection;
+
 /**
  *
  * @author Dineth Jayasekera
  */
 public class Jp_registration_employee_informations_form_active_employee_table extends javax.swing.JPanel {
 
-    /**
+    /*
      * Creates new form
      * Jp_registration_lecture_informations_form_active_employee_table
      */
     public Jp_registration_employee_informations_form_active_employee_table() {
         initComponents();
+        addToTable();
     }
 
     /**
@@ -58,4 +69,31 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    private void addToTable() {
+        try {
+
+            DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+            Vector v = new Vector();
+
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            ResultSet name = statement.executeQuery("select * from employee_nonAcademic_user_info_name;");
+            ResultSet info = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info;");
+            
+            while (name.next() & info.next()) {
+               
+                v.add(info.getString("employee_nonAcademic_administrative_user_info_id"));
+                v.add(name.getString("employee_nonAcademic_user_info_name_first_name") + " " + name.getString("employee_nonAcademic_user_info_name_last_name") + " " + name.getString("employee_nonAcademic_user_info_name_sirName"));
+                v.add(info.getString("employee_nonAcademic_administrative_user_info_email"));
+                v.add(info.getString("employee_nonAcademic_administrative_user_info_nic"));
+
+            }
+            dtm.addRow(v);
+             
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

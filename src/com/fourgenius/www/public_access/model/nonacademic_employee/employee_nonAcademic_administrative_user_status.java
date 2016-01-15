@@ -35,7 +35,7 @@ public class employee_nonAcademic_administrative_user_status {
                 statement.executeUpdate("insert into employee_nonAcademic_administrative_user_status(employee_nonAcademic_administrative_user_status_code,employee_nonAcademic_administrative_user_status_name) values '" + employee_nonAcademic_administrative_user_status_code + "','" + employee_nonAcademic_administrative_user_status_name + "'");
 
             }
-            rs.close();
+//            rs.close();
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 1/employee_nonAcademic_administrative_user_status;" + ex);
         }
