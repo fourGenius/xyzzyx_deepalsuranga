@@ -46,7 +46,7 @@ public class MC_JavaDataBaseConnection {
 
         } catch (SQLException e) {
             System.out.println("Connection Failed! Check output console");
-            JOptionPane.showMessageDialog(null, "Connection Failed! Check output console");
+            JOptionPane.showMessageDialog(null, "Connection Failed!Please Check Your Internet Connection");
             e.printStackTrace();
             return connection;
         }
