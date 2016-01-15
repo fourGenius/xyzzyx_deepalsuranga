@@ -7,7 +7,6 @@ package com.fourgenius.www.private_access.admin.login;
 
 import com.fourgenius.www.admin_BackEnd.Jf_admin_backend;
 import com.fourgenius.www.private_access.admin.method.Md_move_text;
-import com.fourgenius.www.private_access.admin_menu.jf_admin_mainFrame;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
 import java.awt.Color;
 import java.awt.event.KeyEvent;

@@ -27,72 +27,69 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel9" min="-2" pref="230" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" pref="230" max="-2" attributes="0"/>
+                  <Component id="lb_payments_infromation" min="-2" pref="230" max="-2" attributes="0"/>
+                  <Component id="lb_student_information" min="-2" pref="230" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel5" min="-2" pref="230" max="-2" attributes="0"/>
-                  <Component id="jLabel10" min="-2" pref="230" max="-2" attributes="0"/>
+                  <Component id="lb_lecture_information" min="-2" pref="230" max="-2" attributes="0"/>
+                  <Component id="lb_administration_information" min="-2" pref="230" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jLabel6" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="lb_user_information" min="-2" pref="230" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="lb_employee_information" min="-2" pref="230" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jLabel11" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="lb_practical_information" min="-2" pref="230" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel8" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="lb_exam_information" min="-2" pref="230" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="254" max="32767" attributes="0"/>
-              <Component id="workArea" min="-2" pref="60" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="workArea" pref="174" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="41" max="32767" attributes="0"/>
-              <Component id="workArea" min="-2" pref="701" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel6" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="lb_user_information" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="lb_employee_information" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel11" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                          <Component id="jLabel8" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="lb_practical_information" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="lb_exam_information" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jLabel5" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="lb_lecture_information" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel10" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="lb_administration_information" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jLabel4" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="lb_student_information" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                      <Component id="jLabel9" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="lb_payments_infromation" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="138" max="32767" attributes="0"/>
           </Group>
+          <Component id="workArea" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="workArea">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="lb_student_information">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -107,11 +104,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseClicked"/>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseEntered"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_student_informationMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_student_informationMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_student_informationMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="lb_lecture_information">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -126,11 +124,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel5MouseClicked"/>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel5MouseEntered"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_lecture_informationMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_lecture_informationMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_lecture_informationMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="lb_user_information">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -145,11 +144,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseClicked"/>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseEntered"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_user_informationMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_user_informationMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_user_informationMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="lb_employee_information">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -164,10 +164,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel7MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_employee_informationMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_employee_informationMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_employee_informationMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="lb_exam_information">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -182,11 +184,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MouseClicked"/>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MouseEntered"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_exam_informationMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_exam_informationMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_exam_informationMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="lb_payments_infromation">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -201,11 +204,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel9MouseClicked"/>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel9MouseEntered"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_payments_infromationMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_payments_infromationMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_payments_infromationMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JLabel" name="lb_administration_information">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -220,11 +224,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel10MouseClicked"/>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel10MouseEntered"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_administration_informationMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_administration_informationMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_administration_informationMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
+    <Component class="javax.swing.JLabel" name="lb_practical_information">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -239,8 +244,9 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel11MouseClicked"/>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel11MouseEntered"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_practical_informationMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_practical_informationMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_practical_informationMouseExited"/>
       </Events>
     </Component>
   </SubComponents>

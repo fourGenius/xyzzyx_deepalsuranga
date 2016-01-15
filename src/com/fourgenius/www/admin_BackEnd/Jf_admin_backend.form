@@ -1,6 +1,240 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JPanel" name="Jp_admin_in_menu_M">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="42" green="42" red="42" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel9" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="jLabel4" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel5" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="jLabel10" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel6" min="-2" pref="230" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" pref="230" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel11" min="-2" pref="230" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel8" min="-2" pref="230" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="130" max="32767" attributes="0"/>
+                  <Component id="workArea" min="-2" pref="60" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="workArea" min="-2" pref="701" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel6" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel11" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="jLabel8" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel5" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel10" min="-2" pref="150" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel4" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                          <Component id="jLabel9" min="-2" pref="150" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="workArea">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/admin_menu_student.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseExited"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/admin_menu_lecture.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel5MouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel5MouseEntered"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/admin_menu_user.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseEntered"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/admin_menu_employee.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel7MouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/admin_menu_exam.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MouseEntered"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/admin_menu_payments.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel9MouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel9MouseEntered"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/admin_menu_adminstration.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel10MouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel10MouseEntered"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/admin_menu_Practical.png"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel11MouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel11MouseEntered"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -107,13 +341,16 @@
                   <Dimension value="[1360, 668]"/>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
             </Container>
             <Container class="javax.swing.JPanel" name="menuPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="bd" green="77" red="2" type="rgb"/>
+                  <Color blue="21" green="21" red="21" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -122,23 +359,23 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="bt_admin_bE_home" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bt_admin_backEnd_students" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="bt_admin_bE_students" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bt_admin_backEnd_users" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="bt_admin_bE_users" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bt_admin_backEnd_employees" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="bt_admin_bE_employees" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bt_admin_backEnd_exams" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="bt_admin_bE_exams" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bt_admin_backEnd_payments" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="bt_admin_bE_payments" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bt_admin_backEnd_practicals" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="bt_admin_bE_practicals" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bt_admin_backEnd_practicals1" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="bt_admin_bE_administrator" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="bt_admin_backEnd_logout" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="bt_admin_bE_logout" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -148,15 +385,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="bt_admin_backEnd_logout" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="bt_admin_backEnd_payments" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bt_admin_backEnd_practicals" max="32767" attributes="0"/>
-                              <Component id="bt_admin_backEnd_students" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton1" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="bt_admin_backEnd_users" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bt_admin_backEnd_employees" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bt_admin_backEnd_exams" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bt_admin_backEnd_practicals1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_bE_logout" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="bt_admin_bE_payments" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_bE_practicals" max="32767" attributes="0"/>
+                              <Component id="bt_admin_bE_students" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_bE_home" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="bt_admin_bE_users" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_bE_employees" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_bE_exams" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_bE_administrator" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -164,7 +401,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="bt_admin_backEnd_users">
+                <Component class="javax.swing.JButton" name="bt_admin_bE_users">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -172,10 +409,13 @@
                     <Property name="text" type="java.lang.String" value="Users"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_backEnd_usersActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_bE_usersActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="bt_admin_backEnd_students">
+                <Component class="javax.swing.JButton" name="bt_admin_bE_students">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -183,10 +423,13 @@
                     <Property name="text" type="java.lang.String" value="Students"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_backEnd_studentsActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_bE_studentsActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="bt_admin_backEnd_employees">
+                <Component class="javax.swing.JButton" name="bt_admin_bE_employees">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -194,10 +437,13 @@
                     <Property name="text" type="java.lang.String" value="Employees"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_backEnd_employeesActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_bE_employeesActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="bt_admin_backEnd_exams">
+                <Component class="javax.swing.JButton" name="bt_admin_bE_exams">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -205,10 +451,13 @@
                     <Property name="text" type="java.lang.String" value="Exams"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_backEnd_examsActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_bE_examsActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="bt_admin_backEnd_payments">
+                <Component class="javax.swing.JButton" name="bt_admin_bE_payments">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -216,10 +465,13 @@
                     <Property name="text" type="java.lang.String" value="Payments"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_backEnd_paymentsActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_bE_paymentsActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="bt_admin_backEnd_practicals">
+                <Component class="javax.swing.JButton" name="bt_admin_bE_practicals">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -227,10 +479,13 @@
                     <Property name="text" type="java.lang.String" value="Practicals"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_backEnd_practicalsActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_bE_practicalsActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="bt_admin_backEnd_logout">
+                <Component class="javax.swing.JButton" name="bt_admin_bE_logout">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -246,10 +501,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_backEnd_logoutActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_bE_logoutActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="bt_admin_backEnd_practicals1">
+                <Component class="javax.swing.JButton" name="bt_admin_bE_administrator">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -257,18 +512,24 @@
                     <Property name="text" type="java.lang.String" value="Administrator"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_backEnd_practicals1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_bE_administratorActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="bt_admin_bE_home">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/home.png"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_bE_homeActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
