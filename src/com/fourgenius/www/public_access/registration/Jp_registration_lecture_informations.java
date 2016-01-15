@@ -957,9 +957,9 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         
         int i=JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (i==JOptionPane.YES_OPTION) {
-//            add_to_database();
-//            clear_personal_information_form();
-//            clear_preview_form();
+            add_to_database();
+            clear_personal_information_form();
+            clear_preview_form();
             load_information_qulifications_form();
         }
         
