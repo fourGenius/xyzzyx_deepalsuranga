@@ -86,7 +86,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="menuPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="admin_mainPanel" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -121,10 +121,12 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="bt_admin_backEnd_users" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="bt_admin_backEnd_students" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="bt_admin_backEnd_users" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="bt_admin_backEnd_employees" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -135,7 +137,7 @@
                           <Component id="bt_admin_backEnd_practicals" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="bt_admin_backEnd_practicals1" min="-2" pref="150" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="bt_admin_backEnd_logout" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -145,17 +147,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="bt_admin_backEnd_exams" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bt_admin_backEnd_payments" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bt_admin_backEnd_practicals" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bt_admin_backEnd_practicals1" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="bt_admin_backEnd_logout" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="bt_admin_backEnd_payments" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_backEnd_practicals" max="32767" attributes="0"/>
                               <Component id="bt_admin_backEnd_students" alignment="0" max="32767" attributes="0"/>
-                              <Component id="bt_admin_backEnd_employees" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButton1" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="bt_admin_backEnd_users" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_backEnd_employees" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_backEnd_exams" alignment="0" max="32767" attributes="0"/>
+                              <Component id="bt_admin_backEnd_practicals1" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="15" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -255,6 +258,16 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_admin_backEnd_practicals1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/com/fourgenius/www/private_access/admin_menu/src/home.png"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
