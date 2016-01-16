@@ -81,10 +81,10 @@ public class Jf_user_login extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Middle.setBackground(new java.awt.Color(2, 119, 189));
+        Middle.setBackground(new java.awt.Color(0, 131, 143));
         Middle.setPreferredSize(new java.awt.Dimension(1370, 770));
 
-        Top.setBackground(new java.awt.Color(18, 75, 163));
+        Top.setBackground(new java.awt.Color(25, 118, 210));
         Top.setPreferredSize(new java.awt.Dimension(1366, 60));
 
         _lb_user_login_close.setBackground(new java.awt.Color(18, 75, 163));
@@ -166,7 +166,7 @@ public class Jf_user_login extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(18, 75, 163));
+        jPanel1.setBackground(new java.awt.Color(25, 118, 210));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

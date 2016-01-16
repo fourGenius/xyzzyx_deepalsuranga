@@ -27,6 +27,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
+        
         md_setvisible_false(bt_admin_bE_home);
         md_setvisible_false(bt_admin_bE_students);
         md_setvisible_false(bt_admin_bE_users);
