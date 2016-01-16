@@ -25,11 +25,15 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
+        
+        
+        
         ///////////////////////////////////////////////////////////////////////
         DefaultTableModel defaultTableModel = (DefaultTableModel) aca_emp.getModel();
         defaultTableModel.setRowCount(0);
         employee_academic_user_info in = new employee_academic_user_info();
         int mass = in.max;
+        System.out.println("max is: "+mass);
         Vector v = new Vector();
         v.add(in.getEmployee_academic_user_id_s("0"));
 

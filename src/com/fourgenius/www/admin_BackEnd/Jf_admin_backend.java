@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
@@ -28,7 +29,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
      */
     public Jf_admin_backend() {
         initComponents();
-        showTime();
+        //showTime();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
@@ -93,10 +94,10 @@ public class Jf_admin_backend extends javax.swing.JFrame {
         bt_admin_bE_exams = new javax.swing.JButton();
         bt_admin_bE_payments = new javax.swing.JButton();
         bt_admin_bE_practicals = new javax.swing.JButton();
-        bt_admin_bE_logout = new javax.swing.JButton();
         bt_admin_bE_administrator = new javax.swing.JButton();
         bt_admin_bE_home = new javax.swing.JButton();
-        lb_date_time = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        bt_admin_bE_logout = new javax.swing.JButton();
 
         Jp_admin_in_menu_M.setBackground(new java.awt.Color(66, 66, 66));
 
@@ -314,16 +315,6 @@ public class Jf_admin_backend extends javax.swing.JFrame {
             }
         });
 
-        bt_admin_bE_logout.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        bt_admin_bE_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/private_access/admin_menu/src/logout_normal.png"))); // NOI18N
-        bt_admin_bE_logout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bt_admin_bE_logout.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/private_access/admin_menu/src/logout_select.png"))); // NOI18N
-        bt_admin_bE_logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_admin_bE_logoutActionPerformed(evt);
-            }
-        });
-
         bt_admin_bE_administrator.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bt_admin_bE_administrator.setText("Administrator");
         bt_admin_bE_administrator.addActionListener(new java.awt.event.ActionListener() {
@@ -339,10 +330,28 @@ public class Jf_admin_backend extends javax.swing.JFrame {
             }
         });
 
-        lb_date_time.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lb_date_time.setForeground(new java.awt.Color(255, 255, 255));
-        lb_date_time.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lb_date_time.setText("jLabel1");
+        bt_admin_bE_logout.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_admin_bE_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/private_access/admin_menu/src/logout_normal.png"))); // NOI18N
+        bt_admin_bE_logout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_admin_bE_logout.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/private_access/admin_menu/src/logout_select.png"))); // NOI18N
+        bt_admin_bE_logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_admin_bE_logoutActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bt_admin_bE_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bt_admin_bE_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -365,20 +374,17 @@ public class Jf_admin_backend extends javax.swing.JFrame {
                 .addComponent(bt_admin_bE_practicals, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bt_admin_bE_administrator, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lb_date_time, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_admin_bE_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lb_date_time)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(bt_admin_bE_logout, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(bt_admin_bE_payments, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bt_admin_bE_practicals, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bt_admin_bE_students, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -396,19 +402,17 @@ public class Jf_admin_backend extends javax.swing.JFrame {
             backLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(backLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(admin_mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(admin_mainPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
         );
         backLayout.setVerticalGroup(
             backLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(admin_mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(admin_mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE))
         );
 
         background_card.add(back, "card2");
@@ -829,7 +833,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel lb_date_time;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JLabel workArea;
     // End of variables declaration//GEN-END:variables
@@ -842,7 +846,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
         bt.setVisible(true);
     }
     
-    void showTime() {
+    void showTime(JLabel label) {
         new Timer(0, new ActionListener() {
 
             @Override
@@ -851,7 +855,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
                 Date d = new Date();
                 SimpleDateFormat stim = new SimpleDateFormat("hh:mm:ss a");
                 String st = stim.format(d);
-                lb_date_time.setText(st);
+                label.setText(st);
 
             }
         }).start();

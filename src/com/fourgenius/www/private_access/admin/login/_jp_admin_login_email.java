@@ -358,9 +358,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
     private void admin_forget_usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admin_forget_usernameMouseClicked
 
-        
         BalloonTip myBalloonTip = new BalloonTip(admin_forget_username, "Please Contact Other Administrator!");
-        
+
     }//GEN-LAST:event_admin_forget_usernameMouseClicked
 
 
@@ -378,7 +377,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField tf_username;
+    public static javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
 
     public boolean email_validation(String email) {
@@ -410,6 +409,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     try {
                         ResultSet rs;
                         rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='" + tf_username.getText().trim() + "'");
+                        System.out.println("query is OK!");
                         if (rs.next()) {
 
                             //start-load panel
@@ -434,9 +434,15 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
                         }
                         rs.close();
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+//                    try {
+//                        _jp_admin_login_password emailset = new _jp_admin_login_password(email);
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
 
                     ////////////////////////////////////////////////////////////
                 } else {

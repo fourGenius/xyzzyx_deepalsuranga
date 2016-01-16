@@ -35,11 +35,20 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
     public _jp_admin_login_password() {
         initComponents();
+        _jp_admin_login_email jp=new _jp_admin_login_email();
+       
         code_Gen.load_qr(_lb_user_login_qrCode);
         System.out.println("QR Code is" + code_Gen.getRandom_pin());
         tf_admin_login_pin.grabFocus();
     }
 
+    String emails;
+
+    public _jp_admin_login_password(String emails) {
+        lb_admin_email.setText(emails);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
