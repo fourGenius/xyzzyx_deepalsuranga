@@ -16,7 +16,12 @@ import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_stud
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_users;
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.md_setvisible_true;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.BorderFactory;
+import javax.swing.Timer;
 import javax.swing.border.Border;
 
 /**
@@ -30,6 +35,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
      */
     public Jp_admin_mainManu_in() {
         initComponents();
+        showTime();
     }
 
     /**
@@ -51,6 +57,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
         lb_administration_information = new javax.swing.JLabel();
         lb_practical_information = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        lb_time_date = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setPreferredSize(new java.awt.Dimension(1360, 668));
@@ -182,11 +189,14 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(1245, Short.MAX_VALUE)
+                .addComponent(lb_time_date, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addComponent(lb_time_date, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -678,7 +688,24 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
     private javax.swing.JLabel lb_payments_infromation;
     private javax.swing.JLabel lb_practical_information;
     private javax.swing.JLabel lb_student_information;
+    private javax.swing.JLabel lb_time_date;
     private javax.swing.JLabel lb_user_information;
     private javax.swing.JLabel workArea;
     // End of variables declaration//GEN-END:variables
+
+    void showTime() {
+        new Timer(0, new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                Date d = new Date();
+                SimpleDateFormat stim = new SimpleDateFormat("hh:mm:ss a");
+                String st = stim.format(d);
+                lb_time_date.setText(st);
+
+            }
+        }).start();
+    }
+    
 }
