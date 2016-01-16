@@ -5,18 +5,19 @@
  */
 package com.fourgenius.www.user_FrontEnd;
 
-import static com.fourgenius.www.private_access.admin.login.Jf_admin_login.main_panel;
 import com.fourgenius.www.public_access.registration.Jp_registration_employee;
 import com.fourgenius.www.public_access.registration.Jp_registration_lecture;
-import com.fourgenius.www.public_access.registration.Jp_registration_lecture_informations;
 import com.fourgenius.www.public_access.registration.Jp_registration_student;
 import com.fourgenius.www.public_access.registration.Jp_registration_user;
 import com.fourgenius.www.public_access.registration.Jp_student_payment;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.BorderFactory;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 
@@ -32,6 +33,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
      */
     public Jf_UserMain() {
         initComponents();
+        showTime();
         try {
             initComponents();
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -59,6 +61,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
         _bt_UserMain_payments = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        lb_time_date = new javax.swing.JLabel();
         Jp_userMain_main_panel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -225,6 +228,11 @@ public class Jf_UserMain extends javax.swing.JFrame {
             }
         });
 
+        lb_time_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_time_date.setForeground(new java.awt.Color(255, 255, 255));
+        lb_time_date.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_time_date.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -238,9 +246,11 @@ public class Jf_UserMain extends javax.swing.JFrame {
                 .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 390, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_time_date, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -254,7 +264,8 @@ public class Jf_UserMain extends javax.swing.JFrame {
                         .addComponent(_bt_UserMain_StudentRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lb_time_date))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -541,6 +552,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lb_time_date;
     // End of variables declaration//GEN-END:variables
 
     public void payment() {
@@ -586,5 +598,20 @@ public class Jf_UserMain extends javax.swing.JFrame {
             Jp_userMain_main_panel.repaint();
             Jp_userMain_main_panel.revalidate();
         }
+    }
+    
+    void showTime() {
+        new Timer(0, new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                Date d = new Date();
+                SimpleDateFormat stim = new SimpleDateFormat("hh:mm:ss a");
+                String st = stim.format(d);
+                lb_time_date.setText(st);
+
+            }
+        }).start();
     }
 }
