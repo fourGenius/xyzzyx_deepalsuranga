@@ -44,7 +44,7 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
 
             },
             new String [] {
-                "Employee ID", "Name", "Email", "NIC"
+
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -67,27 +67,47 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
-    private void addToTable() {
+   public void addToTable() {
         try {
 
             DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
-            Vector v = new Vector();
+            Vector id = new Vector();
+            Vector name_add = new Vector();
+            Vector email = new Vector();
+            Vector nic = new Vector();
 
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            ResultSet name = statement.executeQuery("select * from employee_nonAcademic_user_info_name;");
-            ResultSet info = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info;");
-            
-            while (name.next() & info.next()) {
-               
-                v.add(info.getString("employee_nonAcademic_administrative_user_info_id"));
-                v.add(name.getString("employee_nonAcademic_user_info_name_first_name") + " " + name.getString("employee_nonAcademic_user_info_name_last_name") + " " + name.getString("employee_nonAcademic_user_info_name_sirName"));
-                v.add(info.getString("employee_nonAcademic_administrative_user_info_email"));
-                v.add(info.getString("employee_nonAcademic_administrative_user_info_nic"));
+
+            ResultSet info = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info");
+            while (info.next()) {
+
+                id.add(info.getString("employee_nonAcademic_administrative_user_info_id"));
 
             }
-            dtm.addRow(v);
-             
+            dtm.addColumn("Employee ID", id);
+            info.close();
+
+            ResultSet name = statement.executeQuery("select * from employee_nonAcademic_user_info_name");
+            while (name.next()) {
+
+                name_add.add(name.getString("employee_nonAcademic_user_info_name_first_name") + " " + name.getString("employee_nonAcademic_user_info_name_last_name") + " " + name.getString("employee_nonAcademic_user_info_name_sirName"));
+
+            }
+            dtm.addColumn("Name", name_add);
+            name.close();
+
+            info = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info");
+            while (info.next()) {
+
+                email.add(info.getString("employee_nonAcademic_administrative_user_info_email"));
+                nic.add(info.getString("employee_nonAcademic_administrative_user_info_nic"));
+
+            }
+            info.close();
+            dtm.addColumn("Email", email);
+            dtm.addColumn("NIC", nic);
+          jTable1.setEnabled(false);
         } catch (Exception e) {
             e.printStackTrace();
         }

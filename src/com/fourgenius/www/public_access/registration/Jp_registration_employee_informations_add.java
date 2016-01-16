@@ -183,6 +183,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 _tf_registration_employee_personalInformations_employeeDetails_nicNumberActionPerformed(evt);
             }
         });
+        _tf_registration_employee_personalInformations_employeeDetails_nicNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -876,6 +881,13 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         }
         
     }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_homeNumberKeyTyped
+
+    private void _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased
+      char c=evt.getKeyChar();
+        if ( _tf_registration_employee_personalInformations_employeeDetails_nicNumber.getText().length()<11){
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

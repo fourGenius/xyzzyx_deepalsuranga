@@ -39,7 +39,7 @@ public class employee_nonAcademic_user_info_name {
             } else {
                 statement.executeUpdate("insert into employee_nonAcademic_user_info_name(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_user_info_name_sirName,employee_nonAcademic_user_info_name_last_name,employee_nonAcademic_user_info_name_first_name) values ('" + employee_nonAcademic_administrative_user_info_id + "','" + employee_nonAcademic_user_info_name_sirName + "','" + employee_nonAcademic_user_info_name_last_name + "','" + employee_nonAcademic_user_info_name_first_name + "')");
             }
-//            rs.close();
+            rs.close();
         } catch (SQLException ex) {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/employee_nonAcademic_user_info_name;" + ex);
@@ -148,7 +148,7 @@ public class employee_nonAcademic_user_info_name {
             Statement statement = connection.createStatement();
             ResultSet rs=statement.executeQuery("select  concat_ws(employee_nonAcademic_user_info_name_sirName,employee_nonAcademic_user_info_name_first_name,employee_nonAcademic_user_info_name_last_name) as fullname  from employee_nonAcademic_user_info_name where employee_nonAcademic_user_info_name_sirName like '%"+name+"%' or employee_nonAcademic_user_info_name_first_name like '%"+name+"%' or employee_nonAcademic_user_info_name_last_name like '%"+name+"%'");
             fullName=rs.getString("fullname");
-//            rs.close();
+            rs.close();
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 9/employee_nonAcademic_administrative_user_info;" + ex);
         }

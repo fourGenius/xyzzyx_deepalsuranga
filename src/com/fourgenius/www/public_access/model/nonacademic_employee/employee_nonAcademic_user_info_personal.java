@@ -39,7 +39,7 @@ public class employee_nonAcademic_user_info_personal {
                 System.out.println("oooooooooooooo");               
 statement.executeUpdate("insert into employee_nonAcademic_user_info_personal(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_user_info_personal_profile_image,employee_nonAcademic_user_info_personal_dob,employee_nonAcademic_user_info_personal_gender) values ('"+employee_nonAcademic_administrative_user_info_id+"','" + employee_nonAcademic_user_info_personal_profile_image + "','" + employee_nonAcademic_user_info_personal_dob+ "','" + employee_nonAcademic_user_info_personal_gender + "')");
             }
-//            rs.close();
+            rs.close();
         } catch (SQLException ex) {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/employee_nonAcademic_user_info_personal;" + ex);

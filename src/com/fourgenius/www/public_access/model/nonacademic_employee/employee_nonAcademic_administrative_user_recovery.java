@@ -37,7 +37,7 @@ public class employee_nonAcademic_administrative_user_recovery {
          }else{
             statement.executeUpdate("insert into employee_nonAcademic_administrative_user_recovery (employee_nonAcademic_administrative_user_recovery_question_no,employee_nonAcademic_administrative_user_recoveryanswer) values ('" + employee_nonAcademic_administrative_user_recovery_question_no + "','" + employee_nonAcademic_administrative_user_recoveryanswer+ "')");
             }
-//            rs.close();
+            rs.close();
             } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 1/employee_nonAcademic_administrative_user_recovery;" + ex);
         }

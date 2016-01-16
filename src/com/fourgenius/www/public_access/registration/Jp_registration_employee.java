@@ -25,7 +25,7 @@ public class Jp_registration_employee extends javax.swing.JPanel {
     public Jp_registration_employee() {
         initComponents();
         try {
-            _bt_view_employeeActionPerformed(null);
+            _bt_view_employee.doClick();
           
         } catch (Exception ex) {
         }
@@ -206,17 +206,9 @@ public class Jp_registration_employee extends javax.swing.JPanel {
          if (_bt_add_employee.getText().equals("Finish")) {
                 _bt_view_employee.setEnabled(true);
                 _bt_add_employee.setText("Add Employee");
-                
-               main.removeAll();
-            GroupLayout layout = new GroupLayout(main);
-            main.setLayout(layout);
-
-              Jp_registration_employee_informations_view view_employee = new Jp_registration_employee_informations_view();
-            layout.setHorizontalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-            layout.setVerticalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-
+             _bt_view_employee.doClick();
+             Jp_registration_employee_informations_form_active_employee_table active_emp_table=new Jp_registration_employee_informations_form_active_employee_table();
+             active_emp_table.addToTable();
             System.gc();
              System.out.println("okkkkkk");
             }else{_bt_add_employee.setText("Finish");

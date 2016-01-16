@@ -40,7 +40,7 @@ public class employee_nonAcademic_administrative_user_info {
             } else {
                 statement.executeUpdate("insert into employee_nonAcademic_administrative_user_info(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_administrative_user_info_email,employee_nonAcademic_administrative_user_info_status,employee_nonAcademic_administrative_user_info_nic) values ('" + employee_nonAcademic_administrative_user_info_id + "','" + employee_nonAcademic_administrative_user_info_email + "','" + employee_nonAcademic_administrative_user_info_status + "','"+employee_nonAcademic_administrative_user_info_nic+"')");
             }
-//            rs.close();
+            rs.close();
         } catch (SQLException ex) {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/employee_nonAcademic_administrative_user_info;" + ex);
@@ -146,7 +146,7 @@ public class employee_nonAcademic_administrative_user_info {
             Statement statement = connection.createStatement();
              ResultSet rs=statement.executeQuery("select employee_nonAcademic_administrative_user_info_nic from employee_nonAcademic_administrative_user_info where employee_nonAcademic_administrative_user_info_nic like'%"+nic+"%' ");
             employee_nonAcademic_administrative_user_info_nic=rs.getString("employee_nonAcademic_administrative_user_info_nic");
-//            rs.close();
+            rs.close();
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 10/employee_nonAcademic_administrative_user_info;" + ex);
         }
