@@ -5,13 +5,10 @@
  */
 package com.fourgenius.www.public_access.registration;
 
-import com.fourgenius.www.public_access.model.nonacademic_employee.employee_nonAcademic_administrative_user_info;
-import com.fourgenius.www.public_access.model.nonacademic_employee.employee_nonAcademic_user_info_name;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import public_access.MC_JavaDataBaseConnection;
 

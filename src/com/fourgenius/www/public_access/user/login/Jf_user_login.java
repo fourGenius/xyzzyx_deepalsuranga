@@ -511,9 +511,9 @@ public class Jf_user_login extends javax.swing.JFrame {
     private void _tf_user_loging_userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameActionPerformed
 
         try {
-            _pf_user_login_password.grabFocus();
+            
             ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "'");
-
+            _pf_user_login_password.grabFocus();
         } catch (Exception e) {
         }
     }//GEN-LAST:event__tf_user_loging_userNameActionPerformed
