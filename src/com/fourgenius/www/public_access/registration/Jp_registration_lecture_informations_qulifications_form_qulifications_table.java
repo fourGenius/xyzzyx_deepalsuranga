@@ -5,12 +5,15 @@
  */
 package com.fourgenius.www.public_access.registration;
 
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Pamitha Gayashan
  */
 public class Jp_registration_lecture_informations_qulifications_form_qulifications_table extends javax.swing.JPanel {
-
+    
     /**
      * Creates new form
      * Jp_registration_lecture_informations_qulifications_form_qulifications_table
@@ -18,9 +21,18 @@ public class Jp_registration_lecture_informations_qulifications_form_qulificatio
     public Jp_registration_lecture_informations_qulifications_form_qulifications_table() {
         initComponents();
     }
-
-    public Jp_registration_lecture_informations_qulifications_form_qulifications_table(String s) {
-        
+    
+    public Jp_registration_lecture_informations_qulifications_form_qulifications_table(String qulification_name, String start_year, String end_year) {
+        try {
+            DefaultTableModel dtm=(DefaultTableModel)_tb_qulification_preview.getModel();
+            Vector v=new Vector();
+            v.add(qulification_name);
+            v.add(start_year);
+            v.add(end_year);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
     
@@ -37,30 +49,20 @@ public class Jp_registration_lecture_informations_qulifications_form_qulificatio
         jScrollPane1 = new javax.swing.JScrollPane();
         _tb_qulification_preview = new javax.swing.JTable();
 
+        setPreferredSize(new java.awt.Dimension(438, 343));
+        setLayout(new java.awt.CardLayout());
+
         _tb_qulification_preview.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Qulification Name", "Qulification Type", "Qulificatoin Year"
+                "Qulification Name", "Start Year", "End Year"
             }
         ));
         jScrollPane1.setViewportView(_tb_qulification_preview);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(jScrollPane1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -68,4 +70,5 @@ public class Jp_registration_lecture_informations_qulifications_form_qulificatio
     private javax.swing.JTable _tb_qulification_preview;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
 }

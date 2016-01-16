@@ -31,6 +31,8 @@ public class Jp_registration_lecture_informations_form_active_lectures_table ext
         jScrollPane2 = new javax.swing.JScrollPane();
         aca_emp = new javax.swing.JTable();
 
+        setLayout(new java.awt.CardLayout());
+
         aca_emp.setBackground(new java.awt.Color(207, 216, 220));
         aca_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         aca_emp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -45,20 +47,7 @@ public class Jp_registration_lecture_informations_form_active_lectures_table ext
         aca_emp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane2.setViewportView(aca_emp);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(jScrollPane2, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
 

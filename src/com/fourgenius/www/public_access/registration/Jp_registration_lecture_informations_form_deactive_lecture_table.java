@@ -31,6 +31,8 @@ public class Jp_registration_lecture_informations_form_deactive_lecture_table ex
         jScrollPane5 = new javax.swing.JScrollPane();
         tbl_admin_Administrators4 = new javax.swing.JTable();
 
+        setLayout(new java.awt.CardLayout());
+
         tbl_admin_Administrators4.setBackground(new java.awt.Color(207, 216, 220));
         tbl_admin_Administrators4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         tbl_admin_Administrators4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -44,20 +46,7 @@ public class Jp_registration_lecture_informations_form_deactive_lecture_table ex
         ));
         jScrollPane5.setViewportView(tbl_admin_Administrators4);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(jScrollPane5, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
 

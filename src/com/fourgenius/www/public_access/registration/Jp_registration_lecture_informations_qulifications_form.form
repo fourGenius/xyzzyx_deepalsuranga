@@ -25,12 +25,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="_pl_registration_lecture_personalInformation_qulifications" alignment="0" min="-2" pref="838" max="-2" attributes="0"/>
+          <Component id="_pl_registration_lecture_personalInformation_qulifications" alignment="0" min="-2" pref="810" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="_pl_registration_lecture_personalInformation_qulifications" alignment="0" min="-2" pref="557" max="-2" attributes="0"/>
+          <Component id="_pl_registration_lecture_personalInformation_qulifications" alignment="0" pref="560" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -62,7 +62,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="0" width="365" height="550"/>
+              <AbsoluteConstraints x="0" y="0" width="365" height="550"/>
             </Constraint>
           </Constraints>
 
@@ -73,58 +73,65 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="_lb_registration_lecture_personalInformation_lectureName_sirName" min="-2" pref="333" max="-2" attributes="0"/>
+                              <Component id="_lb_registration_lecture_informations_qulifications_file_no" min="-2" pref="333" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNo" min="-2" pref="333" max="-2" attributes="0"/>
+                              <Component id="_tf_registration_lecture_informations_qulifications_file_no" min="-2" pref="333" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="_lb_registration_lecture_personalInformation_lectureName_firstName" min="-2" pref="333" max="-2" attributes="0"/>
+                              <Component id="_lb_registration_lecture_informations_qulifications_name" min="-2" pref="333" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_name" min="-2" pref="333" max="-2" attributes="0"/>
+                              <Component id="_tf_registration_lecture_informations_qulifications_name" min="-2" pref="333" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="_lb_registration_lecture_personalInformation_idInformation_nicNumber" min="-2" pref="333" max="-2" attributes="0"/>
+                              <Component id="_lb_registration_lecture_informations_qulifications_start_year" min="-2" pref="333" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year" min="-2" pref="333" max="-2" attributes="0"/>
+                              <Component id="_tf_registration_lecture_informations_qulifications_start_year" min="-2" pref="333" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="143" pref="143" max="-2" attributes="0"/>
-                              <Component id="_bt_registration_lecture_personalInformation_qulification_details_add1" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="_bt_registration_lecture_informations_qulifications_add" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="_rb_registration_lecture_informations_qulifications_ol_results" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="_rb_registration_lecture_informations_qulifications_al_results" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="_lb_registration_lecture_personalInformation_lectureName_sirName1" min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_informations_qulifications_subject" min="-2" pref="123" max="-2" attributes="0"/>
                                       <EmptySpace min="95" pref="95" max="-2" attributes="0"/>
-                                      <Component id="_lb_registration_lecture_personalInformation_lectureName_sirName2" min="-2" pref="115" max="-2" attributes="0"/>
+                                      <Component id="_lb_registration_lecture_informations_qulifications_ruslt" min="-2" pref="115" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="_tf_registration_lecture_informations_qulifications_subject" min="-2" pref="200" max="-2" attributes="0"/>
                                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1" min="-2" pref="115" max="-2" attributes="0"/>
+                                      <Component id="_tf_registration_lecture_informations_qulifications_result" min="-2" pref="115" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
-                                      <Component id="_bt_registration_lecture_personalInformation_qulification_details_add" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <Component id="_bt_registration_lecture_informations_qulifications_ol_al_add" min="-2" pref="200" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="_lb_registration_lecture_informations_qulifications_end_year" alignment="0" min="-2" pref="333" max="-2" attributes="0"/>
+                          <Component id="_tf_registration_lecture_informations_qulifications_end_year" alignment="0" min="-2" pref="333" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -132,43 +139,47 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_lectureName_sirName" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_informations_qulifications_file_no" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNo" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_informations_qulifications_file_no" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_lectureName_firstName" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_informations_qulifications_name" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_name" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_informations_qulifications_name" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_lb_registration_lecture_personalInformation_idInformation_nicNumber" min="-2" max="-2" attributes="0"/>
+                      <Component id="_lb_registration_lecture_informations_qulifications_start_year" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_informations_qulifications_start_year" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
+                      <Component id="_lb_registration_lecture_informations_qulifications_end_year" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_lecture_informations_qulifications_end_year" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="_bt_registration_lecture_personalInformation_qulification_details_add1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="_bt_registration_lecture_informations_qulifications_add" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="_rb_registration_lecture_informations_qulifications_ol_results" min="-2" max="-2" attributes="0"/>
+                          <Component id="_rb_registration_lecture_informations_qulifications_al_results" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="_lb_registration_lecture_personalInformation_lectureName_sirName1" min="-2" max="-2" attributes="0"/>
-                          <Component id="_lb_registration_lecture_personalInformation_lectureName_sirName2" min="-2" max="-2" attributes="0"/>
+                          <Component id="_lb_registration_lecture_informations_qulifications_subject" min="-2" max="-2" attributes="0"/>
+                          <Component id="_lb_registration_lecture_informations_qulifications_ruslt" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="_tf_registration_lecture_informations_qulifications_subject" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="_tf_registration_lecture_informations_qulifications_result" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                      <Component id="_bt_registration_lecture_personalInformation_qulification_details_add" min="-2" max="-2" attributes="0"/>
+                      <Component id="_bt_registration_lecture_informations_qulifications_ol_al_add" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_lectureName_sirName">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_informations_qulifications_file_no">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -179,17 +190,20 @@
                 <Property name="text" type="java.lang.String" value="Qulifications File No"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNo">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_informations_qulifications_file_no">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_fileNoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_file_noActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_lectureName_firstName">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_informations_qulifications_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -200,27 +214,27 @@
                 <Property name="text" type="java.lang.String" value="Qulification Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_name">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_informations_qulifications_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_nameActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_nameActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_informations_qulifications_start_year">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_yearActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_start_yearActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_idInformation_nicNumber">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_informations_qulifications_start_year">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -228,58 +242,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Qulification Year"/>
+                <Property name="text" type="java.lang.String" value="Start Year"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_qulification_details_add">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Add"/>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
-                </Property>
-                <Property name="focusPainted" type="boolean" value="false"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[300, 50]"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_details_addMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_details_addMouseExited"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_details_addMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_details_addMouseReleased"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year1ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformations_lectureDetails_qulifications_year2ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_qulification_details_add1">
+            <Component class="javax.swing.JButton" name="_bt_registration_lecture_informations_qulifications_ol_al_add">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -301,13 +267,63 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_details_add1MouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_details_add1MouseExited"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_details_add1MousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_details_add1MouseReleased"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_ol_al_addMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_ol_al_addMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_ol_al_addMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_ol_al_addMouseReleased"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registration_lecture_informations_qulifications_ol_al_addActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_lectureName_sirName1">
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_informations_qulifications_result">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_resultActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_informations_qulifications_subject">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_subjectActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="_bt_registration_lecture_informations_qulifications_add">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
+                <Property name="focusPainted" type="boolean" value="false"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[300, 50]"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_addMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_addMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_addMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_addMouseReleased"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registration_lecture_informations_qulifications_addActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_informations_qulifications_subject">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -318,7 +334,7 @@
                 <Property name="text" type="java.lang.String" value="Subject"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_lectureName_sirName2">
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_informations_qulifications_ruslt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -329,7 +345,7 @@
                 <Property name="text" type="java.lang.String" value="Result"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_informations_qulifications_ol_results">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
@@ -346,8 +362,11 @@
                 <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="O/L Results"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_informations_qulifications_ol_resultsMouseClicked"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+            <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_informations_qulifications_al_results">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
@@ -363,6 +382,30 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="A/L Results"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_informations_qulifications_al_resultsMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="_lb_registration_lecture_informations_qulifications_end_year">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="End Year"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="_tf_registration_lecture_informations_qulifications_end_year">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_end_yearActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -382,25 +425,23 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="380" y="0" width="450" height="550"/>
+              <AbsoluteConstraints x="380" y="0" width="420" height="550"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_bt_registration_lecture_personalInformation_qulification_preview_remove" min="-2" pref="200" max="-2" attributes="0"/>
-                      <EmptySpace pref="18" max="32767" attributes="0"/>
-                      <Component id="_bt_registration_lecture_personalInformation_qulification_preview_update" min="-2" pref="200" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="_bt_registration_lecture_informations_qulifications_remove" min="-2" pref="200" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="_bt_registration_lecture_informations_qulifications_update" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jPanel1" alignment="0" pref="408" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="300" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="_bt_registration_lecture_informations_qulifications_finish" min="-2" pref="300" max="-2" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -410,18 +451,18 @@
                       <Component id="jPanel1" min="-2" pref="343" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="_bt_registration_lecture_personalInformation_qulification_preview_remove" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="_bt_registration_lecture_personalInformation_qulification_preview_update" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="_bt_registration_lecture_informations_qulifications_remove" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="_bt_registration_lecture_informations_qulifications_update" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="52" max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="_bt_registration_lecture_informations_qulifications_finish" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_qulification_preview_remove">
+            <Component class="javax.swing.JButton" name="_bt_registration_lecture_informations_qulifications_remove">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -443,13 +484,14 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_preview_removeMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_preview_removeMouseExited"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_preview_removeMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_preview_removeMouseReleased"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_removeMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_removeMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_removeMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_removeMouseReleased"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registration_lecture_informations_qulifications_removeActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_qulification_preview_update">
+            <Component class="javax.swing.JButton" name="_bt_registration_lecture_informations_qulifications_update">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -471,10 +513,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_preview_updateMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_preview_updateMouseExited"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_preview_updateMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_personalInformation_qulification_preview_updateMouseReleased"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_updateMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_updateMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_updateMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_updateMouseReleased"/>
               </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel1">
@@ -489,10 +531,113 @@
                   </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName="Qulification">
+                            <Property name="tabTitle" type="java.lang.String" value="Qulification"/>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="_tb_qulification_preview">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="3" rowCount="0">
+                                <Column editable="true" title="Qulification Name" type="java.lang.Object"/>
+                                <Column editable="true" title="Start Year" type="java.lang.Object"/>
+                                <Column editable="true" title="End Year" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="_tb_qulification_previewFocusGained"/>
+                            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="_tb_qulification_previewFocusLost"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tb_qulification_previewMouseClicked"/>
+                          </Events>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName="O/L Results">
+                            <Property name="tabTitle" type="java.lang.String" value="O/L Results"/>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="_tb_olresutls_preview">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="0">
+                                <Column editable="true" title="Subject" type="java.lang.Object"/>
+                                <Column editable="true" title="Results" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="_tb_olresutls_previewFocusLost"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tb_olresutls_previewMouseClicked"/>
+                          </Events>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName="A/L Results">
+                            <Property name="tabTitle" type="java.lang.String" value="A/L Results"/>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="_tb_alresults_preview">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="0">
+                                <Column editable="true" title="Subjects" type="java.lang.Object"/>
+                                <Column editable="true" title="Results" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="_tb_alresults_previewFocusLost"/>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tb_alresults_previewMouseClicked"/>
+                          </Events>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="_bt_registration_lecture_informations_qulifications_finish">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -511,7 +656,11 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_finishMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_finishMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_finishMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_finishMouseReleased"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registration_lecture_informations_qulifications_finishActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

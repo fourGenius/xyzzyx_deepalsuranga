@@ -858,109 +858,17 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewMouseClicked
 
-    private void _tf_registration_lecture_information_form_mobile_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_mobile_numberActionPerformed
-        _tf_registration_lecture_information_form_home_number.grabFocus();
-    }//GEN-LAST:event__tf_registration_lecture_information_form_mobile_numberActionPerformed
-
-    private void _tf_registration_lecture_information_form_mobile_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_mobile_numberKeyReleased
-
-    }//GEN-LAST:event__tf_registration_lecture_information_form_mobile_numberKeyReleased
-
-    private void _tf_registration_lecture_information_form_home_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_home_numberActionPerformed
-        _tf_registration_lecture_information_form_email.grabFocus();
-    }//GEN-LAST:event__tf_registration_lecture_information_form_home_numberActionPerformed
-
-    private void _tf_registration_lecture_information_form_home_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_home_numberKeyReleased
-
-    }//GEN-LAST:event__tf_registration_lecture_information_form_home_numberKeyReleased
-
-    private void _tf_registration_lecture_information_form_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_emailActionPerformed
-        String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
-        String email1 = _tf_registration_lecture_information_form_email.getText();
-        Boolean result = email1.matches(EMAIL_REGEX);
-        if (result) {
-            _tf_registration_lecture_information_form_address_line.grabFocus();
-        } else {
-            JOptionPane.showMessageDialog(this, "Please Enter Valid Email.", "WARNING!", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event__tf_registration_lecture_information_form_emailActionPerformed
-
-    private void _tf_registration_lecture_information_form_address_lineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_address_lineActionPerformed
-        _tf_registration_lecture_information_form_city.grabFocus();
-    }//GEN-LAST:event__tf_registration_lecture_information_form_address_lineActionPerformed
-
-    private void _tf_registration_lecture_information_form_cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_cityActionPerformed
-        _tf_registration_lecture_information_form_country.grabFocus();
-    }//GEN-LAST:event__tf_registration_lecture_information_form_cityActionPerformed
-
-    private void _tf_registration_lecture_information_form_countryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_countryActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event__tf_registration_lecture_information_form_countryActionPerformed
-
-    private void _tf_registration_lecture_information_form_sur_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_sur_nameActionPerformed
-        _tf_registration_lecture_information_form_first_name.grabFocus();
-    }//GEN-LAST:event__tf_registration_lecture_information_form_sur_nameActionPerformed
-
-    private void _tf_registration_lecture_information_form_sur_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_sur_nameKeyReleased
-
-    }//GEN-LAST:event__tf_registration_lecture_information_form_sur_nameKeyReleased
-
-    private void _tf_registration_lecture_information_form_first_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_first_nameActionPerformed
-        _tf_registration_lecture_information_form_last_name.grabFocus();
-    }//GEN-LAST:event__tf_registration_lecture_information_form_first_nameActionPerformed
-
-    private void _tf_registration_lecture_information_form_first_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_first_nameKeyReleased
-
-    }//GEN-LAST:event__tf_registration_lecture_information_form_first_nameKeyReleased
-
-    private void _tf_registration_lecture_information_form_last_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_last_nameActionPerformed
-        _tf_registration_lecture_information_form_nic.grabFocus();
-    }//GEN-LAST:event__tf_registration_lecture_information_form_last_nameActionPerformed
-
-    private void _tf_registration_lecture_information_form_last_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_last_nameKeyReleased
-
-    }//GEN-LAST:event__tf_registration_lecture_information_form_last_nameKeyReleased
-
-    private void _tf_registration_lecture_information_form_nicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_nicActionPerformed
-        _dc_registration_lecture_information_form_dob.grabFocus();
-    }//GEN-LAST:event__tf_registration_lecture_information_form_nicActionPerformed
-
-    private void _tf_registration_lecture_information_form_nicKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_nicKeyReleased
-
-    }//GEN-LAST:event__tf_registration_lecture_information_form_nicKeyReleased
-
-    private void _rb_registration_lecture_information_form_maleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_maleMouseClicked
-
-    }//GEN-LAST:event__rb_registration_lecture_information_form_maleMouseClicked
-
-    private void _rb_registration_lecture_information_form_femaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_femaleMouseClicked
-
-    }//GEN-LAST:event__rb_registration_lecture_information_form_femaleMouseClicked
-
-    private void _rb_registration_lecture_information_form_academicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_academicMouseClicked
-        _tf_registration_lecture_information_form_mobile_number.grabFocus();
-    }//GEN-LAST:event__rb_registration_lecture_information_form_academicMouseClicked
-
-    private void _rb_registration_lecture_information_form_non_academicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_non_academicMouseClicked
-        _tf_registration_lecture_information_form_mobile_number.grabFocus();
-    }//GEN-LAST:event__rb_registration_lecture_information_form_non_academicMouseClicked
-
-    private void _dc_registration_lecture_information_form_dobMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__dc_registration_lecture_information_form_dobMouseClicked
-
-    }//GEN-LAST:event__dc_registration_lecture_information_form_dobMouseClicked
-
-    private void _rb_registration_lecture_information_form_kandyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_kandyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event__rb_registration_lecture_information_form_kandyActionPerformed
-
     private void _bt_registration_lecture_preview_register_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_preview_register_lectureActionPerformed
         
         int i=JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (i==JOptionPane.YES_OPTION) {
-            add_to_database();
+//            add_to_database();
             clear_personal_information_form();
             clear_preview_form();
             load_information_qulifications_form();
+            
+            Jp_registration_lecture_informations_qulifications_form qf=new Jp_registration_lecture_informations_qulifications_form();
+            qf._tf_registration_lecture_informations_qulifications_file_no.grabFocus();
         }
         
     }//GEN-LAST:event__bt_registration_lecture_preview_register_lectureActionPerformed
@@ -981,26 +889,43 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _bt_registration_lecture_preview_register_lecture.setBorder(border);
     }//GEN-LAST:event__bt_registration_lecture_preview_register_lectureMouseReleased
 
-    private void _tf_registration_lecture_information_form_sur_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_sur_nameKeyTyped
-        char c = evt.getKeyChar();
-        if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
-            evt.consume();
+    private void _tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked
+        try {
+            JFileChooser jf = new JFileChooser();
+            int i = jf.showOpenDialog(this);
+            if (i == jf.APPROVE_OPTION) {
+                File selectedfile = jf.getSelectedFile();
+                path = selectedfile.getAbsolutePath();
+                _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText(path);
+            }
+        } catch (Exception e) {
+            
         }
-    }//GEN-LAST:event__tf_registration_lecture_information_form_sur_nameKeyTyped
+    }//GEN-LAST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked
 
-    private void _tf_registration_lecture_information_form_first_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_first_nameKeyTyped
-        char c = evt.getKeyChar();
-        if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
-            evt.consume();
-        }
-    }//GEN-LAST:event__tf_registration_lecture_information_form_first_nameKeyTyped
+    private void _rb_registration_lecture_information_form_kandyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_kandyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__rb_registration_lecture_information_form_kandyActionPerformed
 
-    private void _tf_registration_lecture_information_form_last_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_last_nameKeyTyped
-        char c = evt.getKeyChar();
-        if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
-            evt.consume();
-        }
-    }//GEN-LAST:event__tf_registration_lecture_information_form_last_nameKeyTyped
+    private void _dc_registration_lecture_information_form_dobMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__dc_registration_lecture_information_form_dobMouseClicked
+
+    }//GEN-LAST:event__dc_registration_lecture_information_form_dobMouseClicked
+
+    private void _rb_registration_lecture_information_form_non_academicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_non_academicMouseClicked
+        _tf_registration_lecture_information_form_mobile_number.grabFocus();
+    }//GEN-LAST:event__rb_registration_lecture_information_form_non_academicMouseClicked
+
+    private void _rb_registration_lecture_information_form_academicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_academicMouseClicked
+        _tf_registration_lecture_information_form_mobile_number.grabFocus();
+    }//GEN-LAST:event__rb_registration_lecture_information_form_academicMouseClicked
+
+    private void _rb_registration_lecture_information_form_femaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_femaleMouseClicked
+
+    }//GEN-LAST:event__rb_registration_lecture_information_form_femaleMouseClicked
+
+    private void _rb_registration_lecture_information_form_maleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_maleMouseClicked
+
+    }//GEN-LAST:event__rb_registration_lecture_information_form_maleMouseClicked
 
     private void _tf_registration_lecture_information_form_nicKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_nicKeyTyped
         try {
@@ -1025,16 +950,103 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         }
     }//GEN-LAST:event__tf_registration_lecture_information_form_nicKeyTyped
 
-    private void _tf_registration_lecture_information_form_mobile_numberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_mobile_numberKeyTyped
+    private void _tf_registration_lecture_information_form_nicKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_nicKeyReleased
+
+    }//GEN-LAST:event__tf_registration_lecture_information_form_nicKeyReleased
+
+    private void _tf_registration_lecture_information_form_nicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_nicActionPerformed
+        _dc_registration_lecture_information_form_dob.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_nicActionPerformed
+
+    private void _tf_registration_lecture_information_form_last_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_last_nameKeyTyped
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_last_nameKeyTyped
+
+    private void _tf_registration_lecture_information_form_last_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_last_nameKeyReleased
+
+    }//GEN-LAST:event__tf_registration_lecture_information_form_last_nameKeyReleased
+
+    private void _tf_registration_lecture_information_form_last_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_last_nameActionPerformed
+        _tf_registration_lecture_information_form_nic.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_last_nameActionPerformed
+
+    private void _tf_registration_lecture_information_form_first_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_first_nameKeyTyped
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_first_nameKeyTyped
+
+    private void _tf_registration_lecture_information_form_first_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_first_nameKeyReleased
+
+    }//GEN-LAST:event__tf_registration_lecture_information_form_first_nameKeyReleased
+
+    private void _tf_registration_lecture_information_form_first_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_first_nameActionPerformed
+        _tf_registration_lecture_information_form_last_name.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_first_nameActionPerformed
+
+    private void _tf_registration_lecture_information_form_sur_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_sur_nameKeyTyped
+        char c = evt.getKeyChar();
+        if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_sur_nameKeyTyped
+
+    private void _tf_registration_lecture_information_form_sur_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_sur_nameKeyReleased
+
+    }//GEN-LAST:event__tf_registration_lecture_information_form_sur_nameKeyReleased
+
+    private void _tf_registration_lecture_information_form_sur_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_sur_nameActionPerformed
+        _tf_registration_lecture_information_form_first_name.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_sur_nameActionPerformed
+
+    private void _tf_registration_lecture_information_form_countryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_countryKeyTyped
         try {
-            char c = evt.getKeyChar();
-            if (_tf_registration_lecture_information_form_mobile_number.getText().length() == 10 || Character.isLetter(c)) {
+            char c=evt.getKeyChar();
+            if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
                 evt.consume();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event__tf_registration_lecture_information_form_mobile_numberKeyTyped
+    }//GEN-LAST:event__tf_registration_lecture_information_form_countryKeyTyped
+
+    private void _tf_registration_lecture_information_form_countryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_countryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tf_registration_lecture_information_form_countryActionPerformed
+
+    private void _tf_registration_lecture_information_form_cityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_cityKeyTyped
+        try {
+            char c=evt.getKeyChar();
+            if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
+                evt.consume();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_cityKeyTyped
+
+    private void _tf_registration_lecture_information_form_cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_cityActionPerformed
+        _tf_registration_lecture_information_form_country.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_cityActionPerformed
+
+    private void _tf_registration_lecture_information_form_address_lineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_address_lineActionPerformed
+        _tf_registration_lecture_information_form_city.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_address_lineActionPerformed
+
+    private void _tf_registration_lecture_information_form_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_emailActionPerformed
+        String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        String email1 = _tf_registration_lecture_information_form_email.getText();
+        Boolean result = email1.matches(EMAIL_REGEX);
+        if (result) {
+            _tf_registration_lecture_information_form_address_line.grabFocus();
+        } else {
+            JOptionPane.showMessageDialog(this, "Please Enter Valid Email.", "WARNING!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event__tf_registration_lecture_information_form_emailActionPerformed
 
     private void _tf_registration_lecture_information_form_home_numberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_home_numberKeyTyped
         try {
@@ -1047,41 +1059,32 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         }
     }//GEN-LAST:event__tf_registration_lecture_information_form_home_numberKeyTyped
 
-    private void _tf_registration_lecture_information_form_cityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_cityKeyTyped
-        try {
-            char c=evt.getKeyChar();
-        if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
-            evt.consume();
-        }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event__tf_registration_lecture_information_form_cityKeyTyped
+    private void _tf_registration_lecture_information_form_home_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_home_numberKeyReleased
 
-    private void _tf_registration_lecture_information_form_countryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_countryKeyTyped
-        try {
-            char c=evt.getKeyChar();
-        if (!(Character.isLetter(c))&& !(Character.isSpaceChar(c))) {
-            evt.consume();
-        }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event__tf_registration_lecture_information_form_countryKeyTyped
+    }//GEN-LAST:event__tf_registration_lecture_information_form_home_numberKeyReleased
 
-    private void _tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked
+    private void _tf_registration_lecture_information_form_home_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_home_numberActionPerformed
+        _tf_registration_lecture_information_form_email.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_home_numberActionPerformed
+
+    private void _tf_registration_lecture_information_form_mobile_numberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_mobile_numberKeyTyped
         try {
-            JFileChooser jf = new JFileChooser();
-            int i = jf.showOpenDialog(this);
-            if (i == jf.APPROVE_OPTION) {
-                File selectedfile = jf.getSelectedFile();
-                path = selectedfile.getAbsolutePath();
-                _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText(path);
+            char c = evt.getKeyChar();
+            if (_tf_registration_lecture_information_form_mobile_number.getText().length() == 10 || Character.isLetter(c)) {
+                evt.consume();
             }
         } catch (Exception e) {
-            
+            e.printStackTrace();
         }
-    }//GEN-LAST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked
+    }//GEN-LAST:event__tf_registration_lecture_information_form_mobile_numberKeyTyped
+
+    private void _tf_registration_lecture_information_form_mobile_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_mobile_numberKeyReleased
+
+    }//GEN-LAST:event__tf_registration_lecture_information_form_mobile_numberKeyReleased
+
+    private void _tf_registration_lecture_information_form_mobile_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_mobile_numberActionPerformed
+        _tf_registration_lecture_information_form_home_number.grabFocus();
+    }//GEN-LAST:event__tf_registration_lecture_information_form_mobile_numberActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1090,7 +1093,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_gender;
     private javax.swing.JButton _bt_registration_lecture_personalInformation_preview;
     private javax.swing.JButton _bt_registration_lecture_preview_register_lecture;
-    public com.toedter.calendar.JDateChooser _dc_registration_lecture_information_form_dob;
+    private com.toedter.calendar.JDateChooser _dc_registration_lecture_information_form_dob;
     private javax.swing.JLabel _lb_registration_lecture_information_form_academy;
     private javax.swing.JLabel _lb_registration_lecture_information_form_address;
     private javax.swing.JLabel _lb_registration_lecture_information_form_address_line;
@@ -1126,22 +1129,22 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_lectureName;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_main_panel;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_preview;
-    public javax.swing.JRadioButton _rb_registration_lecture_information_form_academic;
-    public javax.swing.JRadioButton _rb_registration_lecture_information_form_colombo;
-    public javax.swing.JRadioButton _rb_registration_lecture_information_form_female;
-    public javax.swing.JRadioButton _rb_registration_lecture_information_form_kandy;
-    public javax.swing.JRadioButton _rb_registration_lecture_information_form_male;
-    public javax.swing.JRadioButton _rb_registration_lecture_information_form_non_academic;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_address_line;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_city;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_country;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_email;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_first_name;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_home_number;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_last_name;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_mobile_number;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_nic;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_sur_name;
+    private javax.swing.JRadioButton _rb_registration_lecture_information_form_academic;
+    private javax.swing.JRadioButton _rb_registration_lecture_information_form_colombo;
+    private javax.swing.JRadioButton _rb_registration_lecture_information_form_female;
+    private javax.swing.JRadioButton _rb_registration_lecture_information_form_kandy;
+    private javax.swing.JRadioButton _rb_registration_lecture_information_form_male;
+    private javax.swing.JRadioButton _rb_registration_lecture_information_form_non_academic;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_address_line;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_city;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_country;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_email;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_first_name;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_home_number;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_last_name;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_mobile_number;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_nic;
+    private javax.swing.JTextField _tf_registration_lecture_information_form_sur_name;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_browsePhoto_browseFile;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;

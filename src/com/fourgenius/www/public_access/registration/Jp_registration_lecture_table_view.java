@@ -41,23 +41,23 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(_tf_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 300, 50));
+        add(_tf_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 310, 50));
 
         sp_registration_student_searchStudent.setViewportView(_li_registration_student_searchStudent);
 
-        add(sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 300, 570));
+        add(sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 310, 570));
 
         jLabel1.setText("jLabel1");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jLabel1.setPreferredSize(new java.awt.Dimension(50, 50));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 10, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
 
         jPanel1.setLayout(new java.awt.CardLayout());
 
         _tp_registration_lecture_tables.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(_tp_registration_lecture_tables, "card2");
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 990, 620));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 620));
     }// </editor-fold>//GEN-END:initComponents
 
 
