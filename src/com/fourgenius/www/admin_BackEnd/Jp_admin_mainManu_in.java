@@ -40,8 +40,8 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
         showTime();
         //user alert
         String user_mail = lb_welcome_note.getText().trim();
-        SendMailSSL sslsendSL=new SendMailSSL();
-        sslsendSL.sendingSSL(user_mail, "acedamymanager69@gmail.com", "manager@admin", "Login Alert Your Account", "Login Status: System Is Access!\n\n Username:" + lb_welcome_note.getText() + "\n\n" , "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+        //SendMailSSL sslsendSL=new SendMailSSL();
+        //sslsendSL.sendingSSL(user_mail, "acedamymanager69@gmail.com", "manager@admin", "Login Alert Your Account", "Login Status: System Is Access!\n\n Username:" + lb_welcome_note.getText() + "\n\n" , "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
         
         System.out.println("user mail:" + user_mail);
     }

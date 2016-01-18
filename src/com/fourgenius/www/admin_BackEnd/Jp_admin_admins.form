@@ -42,7 +42,13 @@
                   <Component id="jTabbedPane2" min="-2" pref="866" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="admin_main_panel" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="admin_main_panel" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="lb_admin_id" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -51,7 +57,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="68" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="lb_admin_id" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -64,7 +73,7 @@
                           </Group>
                           <Component id="bt_disable_admin" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="admin_main_panel" max="32767" attributes="0"/>
               </Group>
@@ -157,9 +166,8 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="_pl_registration_lecture_personalInformation_lectureName" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                      <Component id="_pl_registration_lecture_personalInformation_lectureName" min="-2" pref="561" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -210,9 +218,9 @@
                               <Component id="pf_conPassword" alignment="0" max="32767" attributes="0"/>
                               <Component id="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1" max="32767" attributes="0"/>
                               <Component id="co_securityQu" max="32767" attributes="0"/>
-                              <Component id="tf_securityAnswer" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth3" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -222,7 +230,7 @@
                                   </Group>
                                   <EmptySpace min="0" pref="210" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tf_securityAnswer" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -269,8 +277,8 @@
                           <Component id="co_securityQu" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="tf_securityAnswer" min="-2" pref="40" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="tf_securityAnswer" pref="49" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -351,14 +359,6 @@
                     <Property name="text" type="java.lang.String" value="NIC Number"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tf_securityAnswer">
-                  <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_securityAnswerActionPerformed"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JPasswordField" name="pf_conPassword">
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1">
@@ -389,10 +389,10 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                        <StringItem index="0" value="1"/>
+                        <StringItem index="1" value="2"/>
+                        <StringItem index="2" value="3"/>
+                        <StringItem index="3" value="4"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -453,6 +453,8 @@
                     <Property name="text" type="java.lang.String" value="Security Answer"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JTextField" name="tf_securityAnswer">
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -498,7 +500,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tbl_admin_Administrators2">
+                <Component class="javax.swing.JTable" name="tbl_admin_administrators_active">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="dc" green="d8" red="cf" type="rgb"/>
@@ -797,5 +799,10 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="lb_admin_id">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

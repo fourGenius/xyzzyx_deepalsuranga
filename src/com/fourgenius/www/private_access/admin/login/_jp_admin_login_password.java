@@ -385,10 +385,10 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
     private void bt_admin_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_loginActionPerformed
 
         login_method();
-        
+
         lb_welcome_note.setText(_lb_admi_login_email.getText());
 
-        System.out.println("ok! passing: "+_lb_admi_login_email.getText());
+        System.out.println("ok! passing: " + _lb_admi_login_email.getText());
     }//GEN-LAST:event_bt_admin_loginActionPerformed
 
     private void _lb_admin_login_closeMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_closeMouseMoved
@@ -572,10 +572,9 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                     SendMailSSL sslsend = new SendMailSSL();
                     //admin Alert
                     sslsend.sendingSSL("acedamy_manager@outlook.com", "acedamymanager69@gmail.com", "manager@admin", _lb_admi_login_email.getText(), "Login Status:System Entered!\n\n" + "Username:" + _lb_admi_login_email.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
-                    
+
 //                    jf_admin_mainFrame frame=new jf_admin_mainFrame();
 //                    frame.setVisible(true);
-
                 } else {
                     pf_admin_login_password.setBackground(new Color(244, 67, 54));
                     JOptionPane.showMessageDialog(this, "Password is Incorrect!");

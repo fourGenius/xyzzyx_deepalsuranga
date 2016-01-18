@@ -5,8 +5,14 @@
  */
 package com.fourgenius.www.admin_BackEnd;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Vector;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.table.DefaultTableModel;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -14,15 +20,17 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class Jp_admin_student extends javax.swing.JPanel {
 
-    /**
+    /*
      * Creates new form _jp_admin_student
      */
     public Jp_admin_student() {
         initComponents();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
         }
+        
+        load_allData();
     }
 
     /**
@@ -38,7 +46,7 @@ public class Jp_admin_student extends javax.swing.JPanel {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators = new javax.swing.JTable();
+        tbl_admin_Student_active = new javax.swing.JTable();
         jScrollPane6 = new javax.swing.JScrollPane();
         tbl_admin_Administrators5 = new javax.swing.JTable();
         _pl_registration_lecture_personalInformation_lectureName = new javax.swing.JPanel();
@@ -74,10 +82,10 @@ public class Jp_admin_student extends javax.swing.JPanel {
 
         jTabbedPane3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        tbl_admin_Administrators.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_admin_Student_active.setBackground(new java.awt.Color(207, 216, 220));
+        tbl_admin_Student_active.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_Student_active.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tbl_admin_Student_active.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -114,7 +122,7 @@ public class Jp_admin_student extends javax.swing.JPanel {
                 "Administrator ID", "Name", "Email", "NIC No", "Password"
             }
         ));
-        jScrollPane1.setViewportView(tbl_admin_Administrators);
+        jScrollPane1.setViewportView(tbl_admin_Student_active);
 
         jTabbedPane3.addTab("Active Student", jScrollPane1);
 
@@ -160,7 +168,7 @@ public class Jp_admin_student extends javax.swing.JPanel {
         ));
         jScrollPane6.setViewportView(tbl_admin_Administrators5);
 
-        jTabbedPane3.addTab("De-Active Student", jScrollPane6);
+        jTabbedPane3.addTab("Course Completed", jScrollPane6);
 
         jTabbedPane2.addTab("Student", jTabbedPane3);
 
@@ -278,9 +286,7 @@ public class Jp_admin_student extends javax.swing.JPanel {
                             .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1)
                             .addComponent(_tf_registration_lecture_personalInformation_idInformation_dateOfBirth1))
                         .addGap(0, 103, Short.MAX_VALUE))
-                    .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(changeBtnsss, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(changeBtnsss, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_lectureNameLayout.setVerticalGroup(
@@ -470,7 +476,35 @@ public class Jp_admin_student extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable tbl_admin_Administrators;
     private javax.swing.JTable tbl_admin_Administrators5;
+    private javax.swing.JTable tbl_admin_Student_active;
     // End of variables declaration//GEN-END:variables
+
+    private void load_allData() {
+        try {
+            
+            DefaultTableModel tableModel_student_active=(DefaultTableModel) tbl_admin_Student_active.getModel();
+            tableModel_student_active.setRowCount(0);
+            
+            Connection connection=MC_JavaDataBaseConnection.myConnection();
+            Statement statement=connection.createStatement();
+            
+            String query="SELECT * FROM stu_info_personal";
+            ResultSet rs=statement.executeQuery(query);
+            
+            while (rs.next()) {                
+                Vector v=new Vector();
+                v.add(rs.getString("stu_user_info_id"));
+                v.add(rs.getString("stu_info_personal_nic"));
+                v.add(rs.getString("stu_info_personal_dob"));
+                v.add(rs.getString("stu_info_personal_gender"));
+                v.add(rs.getString("stu_info_personal_course"));
+                tableModel_student_active.addRow(v);
+                
+            }
+            
+            
+        } catch (Exception e) {
+        }
+    }
 }

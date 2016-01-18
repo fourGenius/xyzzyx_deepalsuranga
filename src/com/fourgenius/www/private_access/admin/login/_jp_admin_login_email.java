@@ -50,6 +50,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         _lb_admi_login_email = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        tf_randPIN_forget = new javax.swing.JTextField();
+        lb_forget_infromatin = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         _lb_admin_login_close = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -118,7 +120,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
         admin_forget_username.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         admin_forget_username.setForeground(new java.awt.Color(255, 255, 255));
-        admin_forget_username.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        admin_forget_username.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         admin_forget_username.setText("Forgot Username?");
         admin_forget_username.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -139,6 +141,14 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             }
         });
 
+        lb_forget_infromatin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_forget_infromatin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_UsernameInformation.png"))); // NOI18N
+        lb_forget_infromatin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_forget_infromatinMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -146,15 +156,19 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(tf_randPIN_forget)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(admin_forget_username, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tf_username, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bt_cancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(bt_next, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(admin_forget_username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lb_forget_infromatin)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -167,7 +181,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                 .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.DEFAULT_SIZE, 12, Short.MAX_VALUE)
+                        .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(205, 205, 205))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
@@ -181,8 +195,12 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bt_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(admin_forget_username)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(admin_forget_username)
+                            .addComponent(lb_forget_infromatin))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_randPIN_forget, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -246,8 +264,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addGroup(_jp_admin_login_emailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _jp_admin_login_emailLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,12 +373,18 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         bt_next.setText("Next");
 
     }//GEN-LAST:event_bt_nextMouseExited
-
+    BalloonTip myBalloonTip;
     private void admin_forget_usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admin_forget_usernameMouseClicked
 
-        BalloonTip myBalloonTip = new BalloonTip(admin_forget_username, "Please Contact Other Administrator!");
+        myBalloonTip = new BalloonTip(admin_forget_username, "Please Contact Other Administrator!");
 
     }//GEN-LAST:event_admin_forget_usernameMouseClicked
+
+    private void lb_forget_infromatinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_forget_infromatinMouseClicked
+
+        myBalloonTip = new BalloonTip(lb_forget_infromatin, "Please chack your email & enter code here!");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lb_forget_infromatinMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -377,6 +401,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lb_forget_infromatin;
+    private javax.swing.JTextField tf_randPIN_forget;
     public static javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
 

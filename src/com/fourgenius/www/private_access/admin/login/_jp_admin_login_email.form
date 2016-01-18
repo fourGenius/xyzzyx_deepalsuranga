@@ -84,8 +84,8 @@
                       <Component id="_lb_admin_login_close" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="143" max="32767" attributes="0"/>
+                  <Component id="jPanel1" min="-2" pref="434" max="-2" attributes="0"/>
+                  <EmptySpace pref="108" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel2" min="-2" pref="132" max="-2" attributes="0"/>
@@ -114,8 +114,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="tf_randPIN_forget" max="32767" attributes="0"/>
                           <Component id="jLabel4" max="32767" attributes="0"/>
-                          <Component id="admin_forget_username" alignment="0" max="32767" attributes="0"/>
                           <Component id="tf_username" alignment="0" max="32767" attributes="0"/>
                           <Component id="bt_cancel" alignment="0" pref="0" max="32767" attributes="0"/>
                           <Component id="bt_next" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
@@ -123,6 +123,11 @@
                               <Component id="jLabel1" min="-2" pref="275" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="admin_forget_username" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lb_forget_infromatin" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -139,7 +144,7 @@
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="_lb_admi_login_email" pref="12" max="32767" attributes="0"/>
+                              <Component id="_lb_admi_login_email" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -155,8 +160,13 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="bt_cancel" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="admin_forget_username" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="admin_forget_username" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lb_forget_infromatin" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="tf_randPIN_forget" pref="40" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -248,7 +258,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="Forgot Username?"/>
               </Properties>
               <Events>
@@ -277,6 +287,19 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="tf_randPIN_forget">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lb_forget_infromatin">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images/img_UsernameInformation.png"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lb_forget_infromatinMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>

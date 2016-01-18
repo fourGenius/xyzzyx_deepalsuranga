@@ -6,7 +6,9 @@
 package com.fourgenius.www.admin_BackEnd;
 
 import java.awt.Color;
+import java.sql.ResultSet;
 import javax.swing.UIManager;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -23,6 +25,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
+        
         //Border border=BorderFactory.createLineBorder(Color.white, 1);
         //admin_main_panel.add("Label Set", (Component) border);
 
@@ -55,7 +58,6 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth = new javax.swing.JLabel();
         tf_nic = new javax.swing.JTextField();
         _lb_registration_lecture_personalInformation_idInformation_nicNumber = new javax.swing.JLabel();
-        tf_securityAnswer = new javax.swing.JTextField();
         pf_conPassword = new javax.swing.JPasswordField();
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1 = new javax.swing.JLabel();
         pf_password = new javax.swing.JPasswordField();
@@ -65,10 +67,11 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth3 = new javax.swing.JLabel();
+        tf_securityAnswer = new javax.swing.JTextField();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators2 = new javax.swing.JTable();
+        tbl_admin_administrators_active = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         tbl_admin_Administrators3 = new javax.swing.JTable();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -76,6 +79,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         tbl_admin_Administrators1 = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
         tbl_admin_Administrators4 = new javax.swing.JTable();
+        lb_admin_id = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(96, 125, 139));
         setMinimumSize(new java.awt.Dimension(1360, 668));
@@ -164,13 +168,6 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setText("NIC Number");
 
-        tf_securityAnswer.setEditable(false);
-        tf_securityAnswer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_securityAnswerActionPerformed(evt);
-            }
-        });
-
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setText("Security Question");
@@ -179,7 +176,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth2.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth2.setText("Conform Password");
 
-        co_securityQu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        co_securityQu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,16 +223,16 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                     .addComponent(pf_conPassword)
                     .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(co_securityQu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_securityAnswer)
+                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                        .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
                                 .addComponent(jRadioButton3)
                                 .addGap(18, 18, 18)
                                 .addComponent(jRadioButton4))
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 210, Short.MAX_VALUE))
-                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tf_securityAnswer))
                 .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_lectureNameLayout.setVerticalGroup(
@@ -276,8 +273,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                 .addComponent(co_securityQu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tf_securityAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_securityAnswer, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Add_AdministatorsLayout = new javax.swing.GroupLayout(Add_Administators);
@@ -292,9 +289,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         Add_AdministatorsLayout.setVerticalGroup(
             Add_AdministatorsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Add_AdministatorsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 13, Short.MAX_VALUE)
+                .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         admin_main_panel.add(Add_Administators, "card2");
@@ -303,10 +299,10 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
         jTabbedPane4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        tbl_admin_Administrators2.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators2.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_admin_administrators_active.setBackground(new java.awt.Color(207, 216, 220));
+        tbl_admin_administrators_active.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_administrators_active.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tbl_admin_administrators_active.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -339,7 +335,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                 "Administrator ID", "Name", "Email", "NIC No", "Security Qu:"
             }
         ));
-        jScrollPane3.setViewportView(tbl_admin_Administrators2);
+        jScrollPane3.setViewportView(tbl_admin_administrators_active);
 
         jTabbedPane4.addTab("Active Administrator", jScrollPane3);
 
@@ -475,6 +471,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
         jTabbedPane2.addTab("Managers", jTabbedPane1);
 
+        lb_admin_id.setText("1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -491,14 +489,20 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                         .addComponent(bt_add_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(admin_main_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(admin_main_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lb_admin_id)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_admin_id, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -509,13 +513,14 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                                 .addComponent(bt_add_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(bt_update_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(bt_disable_admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 2, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(admin_main_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_add_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_add_adminActionPerformed
+        ResultSet resultSet, rs;
 
         try {
             String fname = tf_fname.getText().trim();
@@ -523,8 +528,23 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             String emai = tf_email.getText().trim();
             String nic = tf_nic.getText().trim();
             String password = new String(pf_conPassword.getPassword()).trim();
+            String id = lb_admin_id.getText().trim();
+            String qu = co_securityQu.getSelectedIndex() + "";
+            String answer = tf_securityAnswer.getText().trim();
+            System.out.println("co_securityQu index is" + qu);
+
             if (!fname.isEmpty() & !lname.isEmpty()) {
-                System.out.println("noooooooooo empty!");
+                resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("INSERT INTO admin_info(admin_firstName,admin_lastName,admin_email,admin_nic,admin_security_qu,admin_security_answer) VALUES('" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + qu + "','" + answer + "')");
+//                try {
+//                    rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from admin_info where admin_info_id='" + id + "'");
+//                    if (rs.next()) {
+//                        //resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("UPDATE admin_info SET admin_firstName='"+fname+"' ");
+//                                //executeUpdate("UPDATE customer_details SET customer_title='" + txt + "');
+//                    } else {
+//                        //resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("INSERT INTO admin_info VALUES('" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + password + "')");
+//                    }
+//                } catch (Exception e) {
+//                }
 
             } else {
                 tf_fname.setBackground(new Color(244, 67, 54));
@@ -563,10 +583,6 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_nicActionPerformed
 
-    private void tf_securityAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_securityAnswerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_securityAnswerActionPerformed
-
     private void bt_disable_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_disable_adminActionPerformed
 
 //        changeBtnsss.setVisible(true);
@@ -603,12 +619,13 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JLabel lb_admin_id;
     private javax.swing.JPasswordField pf_conPassword;
     private javax.swing.JPasswordField pf_password;
     private javax.swing.JTable tbl_admin_Administrators1;
-    private javax.swing.JTable tbl_admin_Administrators2;
     private javax.swing.JTable tbl_admin_Administrators3;
     private javax.swing.JTable tbl_admin_Administrators4;
+    private javax.swing.JTable tbl_admin_administrators_active;
     private javax.swing.JTextField tf_email;
     private javax.swing.JTextField tf_fname;
     private javax.swing.JTextField tf_lname;

@@ -126,7 +126,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tbl_admin_Administrators">
+                <Component class="javax.swing.JTable" name="tbl_admin_Student_active">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="dc" green="d8" red="cf" type="rgb"/>
@@ -163,8 +163,8 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="De-Active Student">
-                    <Property name="tabTitle" type="java.lang.String" value="De-Active Student"/>
+                  <JTabbedPaneConstraints tabName="Course Completed">
+                    <Property name="tabTitle" type="java.lang.String" value="Course Completed"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -250,10 +250,7 @@
                           </Group>
                           <EmptySpace min="0" pref="103" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="125" max="32767" attributes="0"/>
-                          <Component id="changeBtnsss" min="-2" pref="172" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="changeBtnsss" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
