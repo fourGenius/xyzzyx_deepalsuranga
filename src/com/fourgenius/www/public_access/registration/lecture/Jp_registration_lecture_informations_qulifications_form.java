@@ -22,9 +22,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Jp_registration_lecture_informations_qulifications_form extends javax.swing.JPanel {
 
-    Jp_registration_lecture_informations_qulifications_form_qulifications_table qulification_table = new Jp_registration_lecture_informations_qulifications_form_qulifications_table();
-    Jp_registration_lecture_informations_qulifications_form_ol_table ol_table = new Jp_registration_lecture_informations_qulifications_form_ol_table();
-    Jp_registration_lecture_informations_qulifications_form_al_table al_table = new Jp_registration_lecture_informations_qulifications_form_al_table();
+    
 
     Border border = BorderFactory.createLineBorder(Color.white, 1);
 
@@ -56,10 +54,10 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         
         lecture_file_no=branch_name+"-"+"0000"+id_no+"-"+full_name;
         _tf_registration_lecture_informations_qulifications_file_no.setText(lecture_file_no);
-
-//        _tp_registration_lecture_qulifications_tables.add("Qulification", qulification_table);
-//        _tp_registration_lecture_qulifications_tables.add("O/L Results", ol_table);
-//        _tp_registration_lecture_qulifications_tables.add("A/L Results", al_table);
+        
+        _tf_registration_lecture_informations_qulifications_name.grabFocus();
+        
+        
     }
 
     /**
@@ -117,6 +115,8 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
 
         _tf_registration_lecture_informations_qulifications_file_no.setEditable(false);
         _tf_registration_lecture_informations_qulifications_file_no.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_informations_qulifications_file_no.setMaximumSize(new java.awt.Dimension(333, 40));
+        _tf_registration_lecture_informations_qulifications_file_no.setPreferredSize(new java.awt.Dimension(333, 40));
         _tf_registration_lecture_informations_qulifications_file_no.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_lecture_informations_qulifications_file_noActionPerformed(evt);
@@ -128,6 +128,8 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         _lb_registration_lecture_informations_qulifications_name.setText("Qulification Name");
 
         _tf_registration_lecture_informations_qulifications_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_informations_qulifications_name.setMaximumSize(new java.awt.Dimension(333, 40));
+        _tf_registration_lecture_informations_qulifications_name.setPreferredSize(new java.awt.Dimension(333, 40));
         _tf_registration_lecture_informations_qulifications_name.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _tf_registration_lecture_informations_qulifications_nameMouseClicked(evt);
@@ -140,6 +142,8 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         });
 
         _tf_registration_lecture_informations_qulifications_start_year.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_informations_qulifications_start_year.setMaximumSize(new java.awt.Dimension(333, 40));
+        _tf_registration_lecture_informations_qulifications_start_year.setPreferredSize(new java.awt.Dimension(333, 40));
         _tf_registration_lecture_informations_qulifications_start_year.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _tf_registration_lecture_informations_qulifications_start_yearMouseClicked(evt);
@@ -184,6 +188,8 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         });
 
         _tf_registration_lecture_informations_qulifications_result.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_informations_qulifications_result.setMaximumSize(new java.awt.Dimension(115, 40));
+        _tf_registration_lecture_informations_qulifications_result.setPreferredSize(new java.awt.Dimension(115, 40));
         _tf_registration_lecture_informations_qulifications_result.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _tf_registration_lecture_informations_qulifications_resultMouseClicked(evt);
@@ -196,6 +202,8 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         });
 
         _tf_registration_lecture_informations_qulifications_subject.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_informations_qulifications_subject.setMaximumSize(new java.awt.Dimension(200, 40));
+        _tf_registration_lecture_informations_qulifications_subject.setPreferredSize(new java.awt.Dimension(200, 40));
         _tf_registration_lecture_informations_qulifications_subject.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _tf_registration_lecture_informations_qulifications_subjectMouseClicked(evt);
@@ -271,6 +279,8 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         _lb_registration_lecture_informations_qulifications_end_year.setText("End Year");
 
         _tf_registration_lecture_informations_qulifications_end_year.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_lecture_informations_qulifications_end_year.setMaximumSize(new java.awt.Dimension(333, 40));
+        _tf_registration_lecture_informations_qulifications_end_year.setPreferredSize(new java.awt.Dimension(333, 40));
         _tf_registration_lecture_informations_qulifications_end_year.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _tf_registration_lecture_informations_qulifications_end_yearMouseClicked(evt);
@@ -449,7 +459,6 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 "Qulification Name", "Start Year", "End Year"
             }
         ));
-        _tb_qulification_preview.setEnabled(false);
         _tb_qulification_preview.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 _tb_qulification_previewFocusGained(evt);
@@ -475,7 +484,6 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 "Subject", "Results"
             }
         ));
-        _tb_olresutls_preview.setEnabled(false);
         _tb_olresutls_preview.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 _tb_olresutls_previewFocusLost(evt);
@@ -498,7 +506,6 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 "Subjects", "Results"
             }
         ));
-        _tb_alresults_preview.setEnabled(false);
         _tb_alresults_preview.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 _tb_alresults_previewFocusLost(evt);

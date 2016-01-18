@@ -6,8 +6,10 @@
 package com.fourgenius.www.public_access.model.academic_employee;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import public_access.MC_JavaDataBaseConnection;
 
@@ -34,6 +36,16 @@ public class employee_academic_user_info_name {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
         }
+    }
+
+    public employee_academic_user_info_name() {
+    }
+    
+
+    public String getEmployee_academic_user_id() {
+        
+
+        return employee_academic_user_id;
     }
 
     public String getEmployee_academic_user_info_name_surName() {

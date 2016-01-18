@@ -368,6 +368,7 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
                 Jp_registraion_lecture_main_panel.repaint();
                 Jp_registraion_lecture_main_panel.revalidate();
             }
+            add_lecture._tf_registration_lecture_information_form_sur_name.grabFocus();
         } catch (Exception e) {
             e.printStackTrace();
         }

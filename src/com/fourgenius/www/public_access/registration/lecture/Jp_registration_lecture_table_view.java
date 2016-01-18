@@ -5,21 +5,29 @@
  */
 package com.fourgenius.www.public_access.registration.lecture;
 
+import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+import public_access.MC_JavaDataBaseConnection;
+
 /**
  *
  * @author Pamitha Gayashan
  */
 public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
-    Jp_registration_lecture_informations_form_active_lectures_table active_lecture=new Jp_registration_lecture_informations_form_active_lectures_table();
-    Jp_registration_lecture_informations_form_deactive_lecture_table deactive_lecture=new Jp_registration_lecture_informations_form_deactive_lecture_table();
+    
     /**
      * Creates new form Jp_registration_lecture_table_view
      */
     public Jp_registration_lecture_table_view() {
         initComponents();
-        _tp_registration_lecture_tables.add("Active Lectures", active_lecture);
-        _tp_registration_lecture_tables.add("Deactive Lectures", deactive_lecture);
+        
+        add_active_table_data();
+        
         
     }
 
@@ -38,6 +46,10 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         _tp_registration_lecture_tables = new javax.swing.JTabbedPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        _tb_registration_lecture_view_active = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        _tb_registration_lecture_view_deactive = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,6 +67,38 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         jPanel1.setLayout(new java.awt.CardLayout());
 
         _tp_registration_lecture_tables.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        _tb_registration_lecture_view_active.setBackground(new java.awt.Color(207, 216, 220));
+        _tb_registration_lecture_view_active.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        _tb_registration_lecture_view_active.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tb_registration_lecture_view_active.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Lecture ID", "Name", "NIC", "Email", "Mobile No"
+            }
+        ));
+        _tb_registration_lecture_view_active.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jScrollPane2.setViewportView(_tb_registration_lecture_view_active);
+
+        _tp_registration_lecture_tables.addTab("Active", jScrollPane2);
+
+        _tb_registration_lecture_view_deactive.setBackground(new java.awt.Color(207, 216, 220));
+        _tb_registration_lecture_view_deactive.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        _tb_registration_lecture_view_deactive.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tb_registration_lecture_view_deactive.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Lecture ID", "Name", "Email", "NIC No", "Password"
+            }
+        ));
+        jScrollPane5.setViewportView(_tb_registration_lecture_view_deactive);
+
+        _tp_registration_lecture_tables.addTab("Deactive", jScrollPane5);
+
         jPanel1.add(_tp_registration_lecture_tables, "card2");
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 620));
@@ -63,10 +107,37 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList _li_registration_student_searchStudent;
+    private javax.swing.JTable _tb_registration_lecture_view_active;
+    private javax.swing.JTable _tb_registration_lecture_view_deactive;
     private javax.swing.JTextField _tf_registration_student_searchStudent;
     private javax.swing.JTabbedPane _tp_registration_lecture_tables;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane sp_registration_student_searchStudent;
     // End of variables declaration//GEN-END:variables
+
+    private void add_active_table_data() {
+        try {
+            DefaultTableModel dtm=(DefaultTableModel)_tb_registration_lecture_view_active.getModel();
+            Vector active_lecture=new Vector();
+            
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            
+            ResultSet getdata=statement.executeQuery("SELECT a.employee_academic_user_id, a.employee_academic_user_email, b.employee_academic_user_info_name_first_name, c.employee_academic_user_info_personal_nic, d.employee_academic_user_info_contact_mobile FROM employee_academic_user_info a,   employee_academic_user_info_name b, employee_academic_user_info_personal c, employee_academic_user_info_contact d WHERE a.employee_academic_user_id=b.employee_academic_user_id AND a.employee_academic_user_id=c.employee_academic_user_id AND a.employee_academic_user_id=d.employee_academic_user_id");
+            while (getdata.next()) {
+               active_lecture.add(getdata.getString("employee_academic_user_id"));
+               active_lecture.add(getdata.getString("employee_academic_user_info_name_first_name"));
+               active_lecture.add(getdata.getString("employee_academic_user_info_personal_nic"));
+               active_lecture.add(getdata.getString("employee_academic_user_email"));
+               active_lecture.add(getdata.getString("employee_academic_user_info_contact_mobile"));
+            }
+            dtm.addRow(active_lecture);
+                
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
