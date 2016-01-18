@@ -31,11 +31,11 @@ public class stu_info_contact {
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from stu_info_contact where stu_user_info_id='" + stu_user_info_id + "'");
+            ResultSet rs = statement.executeQuery("select * from stu_info_contact where stu_user_info_id='"+stu_user_info_id+"'");
             if (rs.next()) {
-                statement.executeUpdate("update stu_info_contact set stu_info_telephone_mobile='" + stu_info_telephone_mobile + "',stu_info_telephone_land='" + stu_info_telephone_land + "' where stu_user_info_id='" + stu_user_info_id + "'");
+                statement.executeUpdate("update stu_info_contact set stu_info_telephone_mobile='"+stu_info_telephone_mobile+"',stu_info_telephone_land='"+stu_info_telephone_land+"' where stu_user_info_id='"+stu_user_info_id+"'");
             } else {
-                statement.executeUpdate("insert stu_info_contact(stu_user_info_id,stu_info_telephone_mobile,stu_info_telephone_land,employee_nonAcademic_user_info_contact_email) values ('" + stu_user_info_id + "'," + stu_info_telephone_mobile + "','" + stu_info_telephone_land + "')");
+                statement.executeUpdate("insert stu_info_contact(stu_user_info_id,stu_info_telephone_mobile,stu_info_telephone_land,employee_nonAcademic_user_info_contact_email) values ('"+stu_user_info_id+"',"+stu_info_telephone_mobile+"','"+stu_info_telephone_land+"')");
             }
             rs.close();
         } catch (SQLException ex) {

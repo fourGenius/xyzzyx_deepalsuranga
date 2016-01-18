@@ -35,7 +35,7 @@ public class stu_info_personal {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from stu_info_personal where stu_info_personal_id='" + stu_info_personal_id + "'");
             if (rs.next()) {
-                statement.executeUpdate("update stu_info_personal set stu_info_personal_profile_image='" + stu_info_personal_profile_image + "',stu_info_personal_dob='" + stu_info_personal_dob + "',stu_info_personal_branch='" + stu_info_personal_branch + "', ,stu_info_personal_gender='" + stu_info_personal_gender + "' where stu_info_personal_id='" + stu_info_personal_id + "'");
+                statement.executeUpdate("update stu_info_personal set stu_info_personal_profile_image='" + stu_info_personal_profile_image + "',stu_info_personal_dob='" + stu_info_personal_dob + "',stu_info_personal_branch='" + stu_info_personal_branch + "',stu_info_personal_gender='" + stu_info_personal_gender + "' where stu_info_personal_id='" + stu_info_personal_id + "'");
             } else {
                 statement.executeUpdate("insert stu_info_personal(stu_info_personal_id,stu_info_personal_profile_image,stu_info_personal_dob,stu_info_personal_branch,stu_info_personal_gender) values ('" + stu_info_personal_id + "'," + stu_info_personal_profile_image + "','" + stu_info_personal_dob + "','"+ stu_info_personal_branch +"','" + stu_info_personal_gender + "')");
             }

@@ -30,13 +30,13 @@ public class stu_info_address {
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from stu_info_address where stu_user_info_id='" + stu_user_info_id + "'");
-            if (rs.next()) {
-                statement.executeUpdate("update stu_info_address set stu_info_address_lane1='" + stu_info_address_lane1 + "',stu_info_address_city='" + stu_info_address_city + "',stu_info_address_cuntry='" + stu_info_address_cuntry + "' where stu_user_info_id='" + stu_user_info_id + "'");
-            } else {
-                statement.executeUpdate("insert stu_info_address(stu_user_info_id,stu_info_address_lane1,stu_info_address_city,stu_info_address_cuntry) values ('" + stu_user_info_id + "'," + stu_info_address_lane1 + "','" + stu_info_address_city + "','" + stu_info_address_cuntry + "')");
+            try (ResultSet rs = statement.executeQuery("select * from stu_info_address where stu_user_info_id='" + stu_user_info_id + "'")) {
+                if (rs.next()) {
+                    statement.executeUpdate("update stu_info_address set stu_info_address_lane1='" + stu_info_address_lane1 + "',stu_info_address_city='" + stu_info_address_city + "',stu_info_address_cuntry='" + stu_info_address_cuntry + "' where stu_user_info_id='" + stu_user_info_id + "'");
+                } else {
+                    statement.executeUpdate("insert stu_info_address(stu_user_info_id,stu_info_address_lane1,stu_info_address_city,stu_info_address_cuntry) values ('" + stu_user_info_id + "'," + stu_info_address_lane1 + "','" + stu_info_address_city + "','" + stu_info_address_cuntry + "')");
+                }
             }
-            rs.close();
         } catch (SQLException ex) {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/stu_info_address;" + ex);

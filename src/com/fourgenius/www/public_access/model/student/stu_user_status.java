@@ -29,9 +29,9 @@ public class stu_user_status {
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from stu_user_status where stu_user_info_id='" + stu_user_info_id + "'");
+            ResultSet rs = statement.executeQuery("select * from stu_user_status where stu_user_info_id='"+stu_user_info_id+"'");
             if (rs.next()) {
-                statement.executeUpdate("update stu_user_status set stu_user_status_code='" + stu_user_status_code + "',stu_user_status_name='" + stu_user_status_name + "' where stu_user_info_id='" + stu_user_info_id + "' ");
+                statement.executeUpdate("update stu_user_status set stu_user_status_code='" + stu_user_status_code + "',stu_user_status_name='" + stu_user_status_name + "' where stu_user_info_id='" + stu_user_info_id + "'");
             } else {
                 statement.executeUpdate("insert into stu_user_status(stu_user_info_id,stu_user_status_code,stu_user_status_name) values ('" + stu_user_info_id + "','" + stu_user_status_code + "','" + stu_user_status_name + "')");
 

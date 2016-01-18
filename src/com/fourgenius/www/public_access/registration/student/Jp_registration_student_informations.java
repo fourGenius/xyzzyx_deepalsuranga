@@ -936,7 +936,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
 
     private void _tf_registration_student_personalInformations_contactDetails_homeNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_contactDetails_homeNumberKeyTyped
         char c = evt.getKeyChar();
-        if (_tf_registration_student_personalInformations_contactDetails_homeNumber.getText().length() == 10 || !(Character.isLetter(c))) {
+        if (_tf_registration_student_personalInformations_contactDetails_homeNumber.getText().length() == 10 || (Character.isLetter(c))) {
             evt.consume();
         }
     }//GEN-LAST:event__tf_registration_student_personalInformations_contactDetails_homeNumberKeyTyped
