@@ -408,10 +408,10 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     ////////////////////////Database base to///////////////////////
                     try {
                         ResultSet rs;
-                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='" + tf_username.getText().trim() + "'");
-                        System.out.println("query is OK!");
+                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='"+email+"'");
+                        
                         if (rs.next()) {
-
+                            System.out.println("query is OK!");
                             //start-load panel
                             if (adminLoginPassword == null) {
                                 adminLoginPassword = new _jp_admin_login_password();
@@ -466,7 +466,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
         } else {
             tf_username.setBackground(new Color(244, 67, 54));
-            JOptionPane.showMessageDialog(this, "Administrator email is empty!", "WARNING!", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Administrator email is not valid!", "WARNING!", JOptionPane.WARNING_MESSAGE);
 
         }
 

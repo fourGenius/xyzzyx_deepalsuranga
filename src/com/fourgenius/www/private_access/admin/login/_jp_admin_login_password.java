@@ -6,13 +6,19 @@
 package com.fourgenius.www.private_access.admin.login;
 
 import com.fourgenius.www.admin_BackEnd.Jf_admin_backend;
+import static com.fourgenius.www.admin_BackEnd.Jp_admin_mainManu_in.lb_welcome_note;
 import com.fourgenius.www.private_access.admin.method.Md_move_text;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import javax.swing.border.Border;
 import net.java.balloontip.BalloonTip;
 import net.java.balloontip.styles.BalloonTipStyle;
@@ -35,8 +41,10 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
     public _jp_admin_login_password() {
         initComponents();
-        _jp_admin_login_email jp=new _jp_admin_login_email();
-       
+        showTime();
+        showDate();
+        _jp_admin_login_email jp = new _jp_admin_login_email();
+
         code_Gen.load_qr(_lb_user_login_qrCode);
         System.out.println("QR Code is" + code_Gen.getRandom_pin());
         tf_admin_login_pin.grabFocus();
@@ -44,11 +52,6 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
     String emails;
 
-    public _jp_admin_login_password(String emails) {
-        lb_admin_email.setText(emails);
-    }
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,13 +74,14 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         _lb_user_login_qrCode = new javax.swing.JLabel();
         _lb_user_login_pin = new javax.swing.JLabel();
         tf_admin_login_pin = new javax.swing.JTextField();
-        lb_admin_email = new javax.swing.JLabel();
         lb_pin_info = new javax.swing.JLabel();
         lb_password_info = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         _lb_admin_login_close = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        lb_time_date = new javax.swing.JLabel();
+        lb_date_view = new javax.swing.JLabel();
 
         adminLogin_emai.setBackground(new java.awt.Color(61, 61, 61));
         adminLogin_emai.setMinimumSize(new java.awt.Dimension(1366, 768));
@@ -184,9 +188,6 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
             }
         });
 
-        lb_admin_email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lb_admin_email.setForeground(new java.awt.Color(255, 255, 255));
-
         lb_pin_info.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_pin_info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_UsernameInformation.png"))); // NOI18N
         lb_pin_info.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -211,10 +212,6 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lb_admin_login_forgetPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tf_admin_login_cancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -233,11 +230,18 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(lb_password_info))))
-                        .addGap(1, 1, 1))
-                    .addComponent(pf_admin_login_password, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_admin_email, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGap(311, 311, 311))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(pf_admin_login_password, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(310, 310, 310))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,36 +250,30 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(205, 205, 205))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_admin_email, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(_lb_user_login_qrCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_lb_user_login_qrCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(_lb_user_login_pin)
-                                    .addComponent(lb_pin_info))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tf_admin_login_pin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(_lb_user_login_pin)
+                            .addComponent(lb_pin_info))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(lb_password_info))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pf_admin_login_password, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bt_admin_login, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_admin_login_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_admin_login_forgetPassword)
-                        .addContainerGap(22, Short.MAX_VALUE))))
+                        .addComponent(tf_admin_login_pin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(lb_password_info))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pf_admin_login_password, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bt_admin_login, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_admin_login_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_admin_login_forgetPassword)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -312,24 +310,38 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/img_poweredBy_4G.png"))); // NOI18N
 
+        lb_time_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_time_date.setForeground(new java.awt.Color(255, 255, 255));
+        lb_time_date.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_time_date.setText("jLabel3");
+
+        lb_date_view.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_date_view.setForeground(new java.awt.Color(255, 255, 255));
+        lb_date_view.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_date_view.setText("jLabel3");
+
         javax.swing.GroupLayout adminLogin_emaiLayout = new javax.swing.GroupLayout(adminLogin_emai);
         adminLogin_emai.setLayout(adminLogin_emaiLayout);
         adminLogin_emaiLayout.setHorizontalGroup(
             adminLogin_emaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminLogin_emaiLayout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminLogin_emaiLayout.createSequentialGroup()
-                .addContainerGap(548, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(518, 518, 518))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminLogin_emaiLayout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addGroup(adminLogin_emaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminLogin_emaiLayout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminLogin_emaiLayout.createSequentialGroup()
+                        .addContainerGap(549, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(403, 403, 403)
+                        .addGroup(adminLogin_emaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lb_time_date, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(lb_date_view, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminLogin_emaiLayout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)))
                 .addContainerGap())
         );
         adminLogin_emaiLayout.setVerticalGroup(
@@ -339,7 +351,13 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                     .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
+                .addGroup(adminLogin_emaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
+                    .addGroup(adminLogin_emaiLayout.createSequentialGroup()
+                        .addComponent(lb_time_date)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lb_date_view)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(adminLogin_emaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(adminLogin_emaiLayout.createSequentialGroup()
@@ -358,7 +376,7 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGap(0, 786, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(adminLogin_emai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -367,7 +385,10 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
     private void bt_admin_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_loginActionPerformed
 
         login_method();
+        
+        lb_welcome_note.setText(_lb_admi_login_email.getText());
 
+        System.out.println("ok! passing: "+_lb_admi_login_email.getText());
     }//GEN-LAST:event_bt_admin_loginActionPerformed
 
     private void _lb_admin_login_closeMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_closeMouseMoved
@@ -521,10 +542,11 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JLabel lb_admin_email;
     private javax.swing.JLabel lb_admin_login_forgetPassword;
+    private javax.swing.JLabel lb_date_view;
     private javax.swing.JLabel lb_password_info;
     private javax.swing.JLabel lb_pin_info;
+    private javax.swing.JLabel lb_time_date;
     private javax.swing.JPasswordField pf_admin_login_password;
     private javax.swing.JButton tf_admin_login_cancel;
     private javax.swing.JTextField tf_admin_login_pin;
@@ -547,9 +569,12 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                 if (resultSet.next()) {
                     Jf_admin_backend jf_admin_backend = new Jf_admin_backend();
                     jf_admin_backend.setVisible(true);
+                    SendMailSSL sslsend = new SendMailSSL();
+                    //admin Alert
+                    sslsend.sendingSSL("acedamy_manager@outlook.com", "acedamymanager69@gmail.com", "manager@admin", _lb_admi_login_email.getText(), "Login Status:System Entered!\n\n" + "Username:" + _lb_admi_login_email.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+                    
 //                    jf_admin_mainFrame frame=new jf_admin_mainFrame();
 //                    frame.setVisible(true);
-                    
 
                 } else {
                     pf_admin_login_password.setBackground(new Color(244, 67, 54));
@@ -577,6 +602,30 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+    }
+
+    void showTime() {
+        new Timer(0, new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                Date d = new Date();
+                SimpleDateFormat stim = new SimpleDateFormat("hh:mm:ss a");
+                String st = stim.format(d);
+                lb_time_date.setText(st);
+
+            }
+        }).start();
+    }
+
+    void showDate() {
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String s = sdf.format(d);
+        lb_date_view.setText(s);
+        System.out.println(s);
 
     }
 }

@@ -15,6 +15,8 @@ import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_prac
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_students;
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_users;
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.md_setvisible_true;
+
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,6 +38,12 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
     public Jp_admin_mainManu_in() {
         initComponents();
         showTime();
+        //user alert
+        String user_mail = lb_welcome_note.getText().trim();
+        SendMailSSL sslsendSL=new SendMailSSL();
+        sslsendSL.sendingSSL(user_mail, "acedamymanager69@gmail.com", "manager@admin", "Login Alert Your Account", "Login Status: System Is Access!\n\n Username:" + lb_welcome_note.getText() + "\n\n" , "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+        
+        System.out.println("user mail:" + user_mail);
     }
 
     /**
@@ -58,6 +66,8 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
         lb_practical_information = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lb_time_date = new javax.swing.JLabel();
+        lb_welcome_note = new javax.swing.JLabel();
+        lb_date_view = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setPreferredSize(new java.awt.Dimension(1360, 668));
@@ -196,12 +206,16 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
+        lb_welcome_note.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_welcome_note.setForeground(new java.awt.Color(255, 255, 255));
+        lb_welcome_note.setText("deepalsuranga@live.com");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
@@ -222,7 +236,13 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
                                 .addComponent(lb_practical_information, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lb_exam_information, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(lb_time_date, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lb_welcome_note, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lb_date_view, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lb_time_date, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(workArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -230,8 +250,12 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lb_time_date, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addGap(94, 94, 94)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lb_time_date, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addComponent(lb_welcome_note, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_date_view, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +273,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
                         .addComponent(lb_student_information, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(95, 95, 95)
                         .addComponent(lb_payments_infromation, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addGap(108, 108, 108)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(workArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -383,32 +407,35 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_administration_informationMouseEntered
 
     private void lb_practical_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_practical_informationMouseClicked
+
+        pro.setVisible(true);
+
         try {
-            md_setvisible_true(bt_admin_bE_home);
-            md_setvisible_true(bt_admin_bE_students);
-            md_setvisible_true(bt_admin_bE_users);
-            md_setvisible_true(bt_admin_bE_employees);
-            md_setvisible_true(bt_admin_bE_exams);
-            md_setvisible_true(bt_admin_bE_payments);
-            md_setvisible_true(bt_admin_bE_practicals);
-            md_setvisible_true(bt_admin_bE_administrator);
+//            md_setvisible_true(bt_admin_bE_home);
+//            md_setvisible_true(bt_admin_bE_students);
+//            md_setvisible_true(bt_admin_bE_users);
+//            md_setvisible_true(bt_admin_bE_employees);
+            //md_setvisible_true(bt_admin_bE_exams);
+//            md_setvisible_true(bt_admin_bE_payments);
+            //md_setvisible_true(bt_admin_bE_practicals);
+//            md_setvisible_true(bt_admin_bE_administrator);
 
             //jLabel4.setBorder(borderC);
-            Jp_admin_practical M = new Jp_admin_practical();
-            if (M == null) {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M = new Jp_admin_practical();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            } else {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            }
+//            Jp_admin_practical M = new Jp_admin_practical();
+//            if (M == null) {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M = new Jp_admin_practical();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            } else {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            }
             //jLabel4.setBorder(borderE);
             lb_practical_information.setBorder(borderC);
         } catch (Exception e) {
@@ -425,33 +452,34 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
 
     private void lb_lecture_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_lecture_informationMouseClicked
 
+        pro.setVisible(true);
+
         try {
             md_setvisible_true(bt_admin_bE_home);
             md_setvisible_true(bt_admin_bE_students);
             md_setvisible_true(bt_admin_bE_users);
             md_setvisible_true(bt_admin_bE_employees);
-            md_setvisible_true(bt_admin_bE_exams);
+            //md_setvisible_true(bt_admin_bE_exams);
             md_setvisible_true(bt_admin_bE_payments);
-            md_setvisible_true(bt_admin_bE_practicals);
+            //md_setvisible_true(bt_admin_bE_practicals);
             md_setvisible_true(bt_admin_bE_administrator);
 
             //jLabel4.setBorder(borderC);
-            Jp_admin_employee_ac M = new Jp_admin_employee_ac();
-            if (M == null) {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M = new Jp_admin_employee_ac();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            } else {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            }
-
+//            Jp_admin_employee_ac M = new Jp_admin_employee_ac();
+//            if (M == null) {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M = new Jp_admin_employee_ac();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            } else {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            }
             //jLabel5.setBorder(borderE);
             lb_lecture_information.setBorder(borderC);
         } catch (Exception e) {
@@ -480,9 +508,9 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             md_setvisible_true(bt_admin_bE_students);
             md_setvisible_true(bt_admin_bE_users);
             md_setvisible_true(bt_admin_bE_employees);
-            md_setvisible_true(bt_admin_bE_exams);
+            //md_setvisible_true(bt_admin_bE_exams);
             md_setvisible_true(bt_admin_bE_payments);
-            md_setvisible_true(bt_admin_bE_practicals);
+            //md_setvisible_true(bt_admin_bE_practicals);
             md_setvisible_true(bt_admin_bE_administrator);
 
             //jLabel4.setBorder(borderC);
@@ -515,8 +543,10 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_lb_user_informationMouseEntered
-
+    jf_pro_version pro = new jf_pro_version();
     private void lb_employee_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_employee_informationMouseClicked
+
+        pro.setVisible(true);
 
         try {
             md_setvisible_true(bt_admin_bE_home);
@@ -552,33 +582,34 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_employee_informationMouseClicked
 
     private void lb_exam_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_exam_informationMouseClicked
-
+        jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
         try {
-            md_setvisible_true(bt_admin_bE_home);
-            md_setvisible_true(bt_admin_bE_students);
-            md_setvisible_true(bt_admin_bE_users);
-            md_setvisible_true(bt_admin_bE_employees);
-            md_setvisible_true(bt_admin_bE_exams);
-            md_setvisible_true(bt_admin_bE_payments);
-            md_setvisible_true(bt_admin_bE_practicals);
-            md_setvisible_true(bt_admin_bE_administrator);
+//            md_setvisible_true(bt_admin_bE_home);
+//            md_setvisible_true(bt_admin_bE_students);
+//            md_setvisible_true(bt_admin_bE_users);
+//            md_setvisible_true(bt_admin_bE_employees);
+//            md_setvisible_true(bt_admin_bE_exams);
+//            md_setvisible_true(bt_admin_bE_payments);
+//            md_setvisible_true(bt_admin_bE_practicals);
+//            md_setvisible_true(bt_admin_bE_administrator);
 
             //jLabel4.setBorder(borderC);
-            Jp_admin_exam M = new Jp_admin_exam();
-            if (M == null) {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M = new Jp_admin_exam();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            } else {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            }
+//            Jp_admin_exam M = new Jp_admin_exam();
+//            if (M == null) {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M = new Jp_admin_exam();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            } else {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            }
             //jLabel4.setBorder(borderE);
             lb_exam_information.setBorder(borderC);
 
@@ -682,6 +713,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_administration_information;
+    private javax.swing.JLabel lb_date_view;
     private javax.swing.JLabel lb_employee_information;
     private javax.swing.JLabel lb_exam_information;
     private javax.swing.JLabel lb_lecture_information;
@@ -690,6 +722,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
     private javax.swing.JLabel lb_student_information;
     private javax.swing.JLabel lb_time_date;
     private javax.swing.JLabel lb_user_information;
+    public static javax.swing.JLabel lb_welcome_note;
     private javax.swing.JLabel workArea;
     // End of variables declaration//GEN-END:variables
 
@@ -707,5 +740,14 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             }
         }).start();
     }
-    
+
+    void showDate() {
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String s = sdf.format(d);
+        lb_date_view.setText(s);
+        System.out.println(s);
+
+    }
+
 }
