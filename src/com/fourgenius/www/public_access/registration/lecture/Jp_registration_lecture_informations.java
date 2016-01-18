@@ -323,10 +323,10 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                 .addComponent(_lb_registration_lecture_information_form_country)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_registration_lecture_information_form_country, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
-        _pl_registration_lecture_personalInformation.add(_pl_registration_lecture_personalInformation_contactDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, 550));
+        _pl_registration_lecture_personalInformation.add(_pl_registration_lecture_personalInformation_contactDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, 540));
 
         _pl_registration_lecture_personalInformation_lectureName.setBackground(new java.awt.Color(2, 119, 189));
         _pl_registration_lecture_personalInformation_lectureName.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lecture Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -585,7 +585,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        _pl_registration_lecture_personalInformation.add(_pl_registration_lecture_personalInformation_lectureName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 550));
+        _pl_registration_lecture_personalInformation.add(_pl_registration_lecture_personalInformation_lectureName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 540));
 
         _pl_registration_lecture_personalInformation_main_panel.add(_pl_registration_lecture_personalInformation, "card2");
 
@@ -1322,7 +1322,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     }
 
     private void add_to_database() {
-        employee_academic_user_info user_info = new employee_academic_user_info(_lb_registration_lecture_preview_lectureID.getText(), _lb_registration_lecture_preview_eMail.getText(), "0");
+        employee_academic_user_info user_info = new employee_academic_user_info(_lb_registration_lecture_preview_lectureID.getText(), _lb_registration_lecture_preview_eMail.getText(), "1");
 
         employee_academic_user_info_address user_info_address = new employee_academic_user_info_address(_lb_registration_lecture_preview_lectureID.getText(), _lb_registration_lecture_preview_address_address_line.getText(), _lb_registration_lecture_preview_address_city.getText(), _lb_registration_lecture_preview_address_country.getText());
 
@@ -1330,7 +1330,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
         employee_academic_user_info_name user_info_name = new employee_academic_user_info_name(_lb_registration_lecture_preview_lectureID.getText(), sur_name, first_name, last_name);
 
-        employee_academic_user_info_personal user_info_personal = new employee_academic_user_info_personal(_lb_registration_lecture_preview_lectureID.getText(), newpath, _lb_registration_lecture_preview_dateOfBirth.getText(), _lb_registration_lecture_preview_gender.getText(), _lb_registration_lecture_preview_nic.getText(), _lb_registration_lecture_information_form_branch.getText());
+        employee_academic_user_info_personal user_info_personal = new employee_academic_user_info_personal(_lb_registration_lecture_preview_lectureID.getText(), newpath, _lb_registration_lecture_preview_dateOfBirth.getText(), _lb_registration_lecture_preview_gender.getText(), _lb_registration_lecture_preview_nic.getText(), _lb_registration_lecture_preview_branch.getText());
     }
 
     private void clear_personal_information_form() {

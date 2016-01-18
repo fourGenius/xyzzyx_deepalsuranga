@@ -458,7 +458,15 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
             new String [] {
                 "Qulification Name", "Start Year", "End Year"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         _tb_qulification_preview.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 _tb_qulification_previewFocusGained(evt);
@@ -473,6 +481,10 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
             }
         });
         jScrollPane1.setViewportView(_tb_qulification_preview);
+        if (_tb_qulification_preview.getColumnModel().getColumnCount() > 0) {
+            _tb_qulification_preview.getColumnModel().getColumn(1).setResizable(false);
+            _tb_qulification_preview.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         _tp_registration_lecture_qulifications_tables.addTab("Qulification", jScrollPane1);
 
@@ -483,7 +495,15 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
             new String [] {
                 "Subject", "Results"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         _tb_olresutls_preview.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 _tb_olresutls_previewFocusLost(evt);
@@ -505,7 +525,15 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
             new String [] {
                 "Subjects", "Results"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         _tb_alresults_preview.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 _tb_alresults_previewFocusLost(evt);
