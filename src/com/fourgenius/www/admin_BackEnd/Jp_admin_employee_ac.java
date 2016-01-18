@@ -6,9 +6,13 @@
 package com.fourgenius.www.admin_BackEnd;
 
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Vector;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -25,19 +29,48 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
-        
-        
-        
-        ///////////////////////////////////////////////////////////////////////
-        DefaultTableModel defaultTableModel = (DefaultTableModel) aca_emp.getModel();
-        defaultTableModel.setRowCount(0);
-        employee_academic_user_info in = new employee_academic_user_info();
-        int mass = in.max;
-        System.out.println("max is: "+mass);
-        Vector v = new Vector();
-        v.add(in.getEmployee_academic_user_id_s("0"));
 
-        defaultTableModel.addRow(v);
+        try {
+            DefaultTableModel tableModel_ac_active = (DefaultTableModel) tbl_admin_ac_active.getModel();
+            tableModel_ac_active.setRowCount(0);
+
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+
+            //String query="SELECT * FROM employee_academic_user_info";
+            String query1 = "SELECT a.employee_academic_user_id,a.employee_academic_user_email,b.employee_academic_user_info_name_surName,b.employee_academic_user_info_name_first_name,b.employee_academic_user_info_name_last_name,c.employee_academic_user_info_personal_nic,c.employee_academic_user_info_personal_branch FROM employee_academic_user_info a,employee_academic_user_info_name b,employee_academic_user_info_personal c WHERE b.employee_academic_user_id=c.employee_academic_user_id AND a.employee_academic_user_id=b.employee_academic_user_id AND a.employee_academic_user_id=c.employee_academic_user_id";
+            ResultSet rs1 = statement.executeQuery(query1);
+
+            while (rs1.next()) {
+
+                Vector v = new Vector();
+
+                v.add(rs1.getString("b.employee_academic_user_info_name_surName"));
+                v.add(rs1.getString("b.employee_academic_user_info_name_first_name"));
+                v.add(rs1.getString("b.employee_academic_user_info_name_last_name"));
+
+                //v.add(rs1.getString("a.employee_academic_user_id"));
+                v.add(rs1.getString("a.employee_academic_user_email"));
+
+                v.add(rs1.getString("c.employee_academic_user_info_personal_nic"));
+                v.add(rs1.getString("c.employee_academic_user_info_personal_branch"));
+                
+                tableModel_ac_active.addRow(v);
+
+            }
+            /*
+             SELECT a.ord_num,b.cust_name,a.cust_code,
+             c.agent_code,b.cust_city
+             FROM agents c,customer b,orders a
+             WHERE b.cust_city=c.working_area
+             AND a.cust_code=b.cust_code
+             AND a.agent_code=c.agent_code;
+             */
+
+        } catch (Exception e) {
+        }
+
+        ///////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     }
 
@@ -77,7 +110,7 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        aca_emp = new javax.swing.JTable();
+        tbl_admin_ac_active = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
         tbl_admin_Administrators4 = new javax.swing.JTable();
 
@@ -90,7 +123,7 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Academic Employee");
+        jLabel1.setText("Academic Employee(Lecture)");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Add  Employee");
@@ -305,48 +338,48 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        aca_emp.setBackground(new java.awt.Color(207, 216, 220));
-        aca_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        aca_emp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        aca_emp.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_admin_ac_active.setBackground(new java.awt.Color(207, 216, 220));
+        tbl_admin_ac_active.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_ac_active.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tbl_admin_ac_active.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Employee ID", "Name", "Email", "NIC No", "Password"
+                "Surname", "First Name", "Last Name", "Email", "NIC No", "Branch"
             }
         ));
-        aca_emp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane2.setViewportView(aca_emp);
+        tbl_admin_ac_active.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jScrollPane2.setViewportView(tbl_admin_ac_active);
 
         jTabbedPane1.addTab("Active Employee", jScrollPane2);
 
@@ -402,17 +435,21 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(admin_main_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(admin_main_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -442,7 +479,7 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -517,7 +554,6 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_lectureName_FirstName;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_lectureName_lastName;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_lectureName_sirName;
-    private javax.swing.JTable aca_emp;
     private javax.swing.JPanel admin_main_panel;
     private javax.swing.JButton changeBtnsss;
     private javax.swing.JButton jButton1;
@@ -533,5 +569,6 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable tbl_admin_Administrators4;
+    private javax.swing.JTable tbl_admin_ac_active;
     // End of variables declaration//GEN-END:variables
 }

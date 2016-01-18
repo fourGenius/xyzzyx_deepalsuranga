@@ -25,11 +25,12 @@ public class Jp_admin_student extends javax.swing.JPanel {
      */
     public Jp_admin_student() {
         initComponents();
+        jScrollPane2.setVisible(false);
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
-        
+
         load_allData();
     }
 
@@ -50,6 +51,8 @@ public class Jp_admin_student extends javax.swing.JPanel {
         jScrollPane6 = new javax.swing.JScrollPane();
         tbl_admin_Administrators5 = new javax.swing.JTable();
         _pl_registration_lecture_personalInformation_lectureName = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lt_serach = new javax.swing.JList();
         _lb_registration_lecture_personalInformation_lectureName_sirName = new javax.swing.JLabel();
         _tf_registration_lecture_personalInformation_lectureName_sirName = new javax.swing.JTextField();
         _lb_registration_lecture_personalInformation_lectureName_firstName = new javax.swing.JLabel();
@@ -65,18 +68,19 @@ public class Jp_admin_student extends javax.swing.JPanel {
         jRadioButton2 = new javax.swing.JRadioButton();
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1 = new javax.swing.JLabel();
         _tf_registration_lecture_personalInformation_idInformation_dateOfBirth1 = new javax.swing.JTextField();
-        changeBtnsss = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        tf_serach = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(52, 52, 77));
         setMinimumSize(new java.awt.Dimension(1360, 668));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Student");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("Student Information");
 
         jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -174,46 +178,64 @@ public class Jp_admin_student extends javax.swing.JPanel {
 
         _pl_registration_lecture_personalInformation_lectureName.setBackground(new java.awt.Color(0, 102, 102));
         _pl_registration_lecture_personalInformation_lectureName.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Student Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        _pl_registration_lecture_personalInformation_lectureName.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lt_serach.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(lt_serach);
+
+        _pl_registration_lecture_personalInformation_lectureName.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
 
         _lb_registration_lecture_personalInformation_lectureName_sirName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_lectureName_sirName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_sirName.setText("First Name");
+        _pl_registration_lecture_personalInformation_lectureName.add(_lb_registration_lecture_personalInformation_lectureName_sirName, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 30, 333, -1));
 
         _tf_registration_lecture_personalInformation_lectureName_sirName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_lecture_personalInformation_lectureName_sirNameActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_lectureName.add(_tf_registration_lecture_personalInformation_lectureName_sirName, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 53, 333, 40));
 
         _lb_registration_lecture_personalInformation_lectureName_firstName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_lectureName_firstName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_firstName.setText("Last Name");
+        _pl_registration_lecture_personalInformation_lectureName.add(_lb_registration_lecture_personalInformation_lectureName_firstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 99, 333, -1));
 
         _tf_registration_lecture_personalInformation_lectureName_FirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_lecture_personalInformation_lectureName_FirstNameActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_lectureName.add(_tf_registration_lecture_personalInformation_lectureName_FirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 122, 333, 40));
 
         _lb_registration_lecture_personalInformation_lectureName_lastName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_lectureName_lastName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_lastName.setText("Email");
+        _pl_registration_lecture_personalInformation_lectureName.add(_lb_registration_lecture_personalInformation_lectureName_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 168, 333, -1));
 
         _tf_registration_lecture_personalInformation_lectureName_lastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_lecture_personalInformation_lectureName_lastNameActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_lectureName.add(_tf_registration_lecture_personalInformation_lectureName_lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 191, 333, 40));
 
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth.setText("Password");
+        _pl_registration_lecture_personalInformation_lectureName.add(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 306, 333, -1));
 
         _tf_registration_lecture_personalInformation_idInformation_nicNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_lecture_personalInformation_idInformation_nicNumberActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_lectureName.add(_tf_registration_lecture_personalInformation_idInformation_nicNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 260, 333, 40));
 
         _tf_registration_lecture_personalInformation_idInformation_dateOfBirth.setEditable(false);
         _tf_registration_lecture_personalInformation_idInformation_dateOfBirth.addActionListener(new java.awt.event.ActionListener() {
@@ -221,28 +243,34 @@ public class Jp_admin_student extends javax.swing.JPanel {
                 _tf_registration_lecture_personalInformation_idInformation_dateOfBirthActionPerformed(evt);
             }
         });
+        _pl_registration_lecture_personalInformation_lectureName.add(_tf_registration_lecture_personalInformation_idInformation_dateOfBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 329, 333, 40));
 
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setText("NIC Number");
+        _pl_registration_lecture_personalInformation_lectureName.add(_lb_registration_lecture_personalInformation_idInformation_nicNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 237, 333, -1));
 
         jRadioButton1.setBackground(new java.awt.Color(0, 102, 102));
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("Male");
+        _pl_registration_lecture_personalInformation_lectureName.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 460, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Gender");
+        _pl_registration_lecture_personalInformation_lectureName.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 441, 333, -1));
 
         jRadioButton2.setBackground(new java.awt.Color(0, 102, 102));
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("Female");
+        _pl_registration_lecture_personalInformation_lectureName.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 460, -1, -1));
 
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setText("Confirm Password");
+        _pl_registration_lecture_personalInformation_lectureName.add(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 375, -1, -1));
 
         _tf_registration_lecture_personalInformation_idInformation_dateOfBirth1.setEditable(false);
         _tf_registration_lecture_personalInformation_idInformation_dateOfBirth1.addActionListener(new java.awt.event.ActionListener() {
@@ -250,86 +278,7 @@ public class Jp_admin_student extends javax.swing.JPanel {
                 _tf_registration_lecture_personalInformation_idInformation_dateOfBirth1ActionPerformed(evt);
             }
         });
-
-        changeBtnsss.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        changeBtnsss.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        changeBtnsss.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                changeBtnsssActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout _pl_registration_lecture_personalInformation_lectureNameLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_lectureName);
-        _pl_registration_lecture_personalInformation_lectureName.setLayout(_pl_registration_lecture_personalInformation_lectureNameLayout);
-        _pl_registration_lecture_personalInformation_lectureNameLayout.setHorizontalGroup(
-            _pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                        .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_lecture_personalInformation_lectureName_firstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_tf_registration_lecture_personalInformation_lectureName_FirstName)
-                            .addComponent(_lb_registration_lecture_personalInformation_lectureName_lastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_lecture_personalInformation_idInformation_nicNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                            .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_tf_registration_lecture_personalInformation_idInformation_nicNumber)
-                            .addComponent(_tf_registration_lecture_personalInformation_idInformation_dateOfBirth)
-                            .addComponent(_tf_registration_lecture_personalInformation_lectureName_lastName)
-                            .addComponent(_tf_registration_lecture_personalInformation_lectureName_sirName)
-                            .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addGap(52, 52, 52)
-                                .addComponent(jRadioButton2))
-                            .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1)
-                            .addComponent(_tf_registration_lecture_personalInformation_idInformation_dateOfBirth1))
-                        .addGap(0, 103, Short.MAX_VALUE))
-                    .addComponent(changeBtnsss, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        _pl_registration_lecture_personalInformation_lectureNameLayout.setVerticalGroup(
-            _pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformation_lectureName_sirName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_registration_lecture_personalInformation_lectureName_firstName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformation_lectureName_FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_registration_lecture_personalInformation_lectureName_lastName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformation_lectureName_lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_registration_lecture_personalInformation_idInformation_nicNumber)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformation_idInformation_nicNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformation_idInformation_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_lecture_personalInformation_idInformation_dateOfBirth1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(jLabel14)
-                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                        .addComponent(changeBtnsss, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-        );
+        _pl_registration_lecture_personalInformation_lectureName.add(_tf_registration_lecture_personalInformation_idInformation_dateOfBirth1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 398, 333, 40));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("Add  Student");
@@ -358,45 +307,69 @@ public class Jp_admin_student extends javax.swing.JPanel {
             }
         });
 
+        tf_serach.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tf_serachKeyReleased(evt);
+            }
+        });
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(353, 353, 353)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTabbedPane2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 426, Short.MAX_VALUE)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tf_serach, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_serach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -425,29 +398,36 @@ public class Jp_admin_student extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event__tf_registration_lecture_personalInformation_idInformation_dateOfBirth1ActionPerformed
 
-    private void changeBtnsssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeBtnsssActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_changeBtnsssActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        changeBtnsss.setVisible(true);
-        changeBtnsss.setText("Add Student");
 
         //INSERT INTO `g4_2015_java_se_management_ramanifernando`.`admin` (`idadmin`, `admin_email`, `admin_password`, `admin_status`) VALUES ('3', 'a', 'a', '1');
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        changeBtnsss.setVisible(true);
-        changeBtnsss.setText("Update Student");
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
-        changeBtnsss.setVisible(true);
-        changeBtnsss.setText("Disable Student");
+
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tf_serachKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_serachKeyReleased
+
+        if (tf_serach.getText().isEmpty()) {
+            jScrollPane2.setVisible(false);
+        }
+        if (lt_serach.getModel().getSize() == 0) {
+            jScrollPane2.setVisible(false);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_serachKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -464,7 +444,7 @@ public class Jp_admin_student extends javax.swing.JPanel {
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_lectureName_FirstName;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_lectureName_lastName;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_lectureName_sirName;
-    private javax.swing.JButton changeBtnsss;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -473,38 +453,56 @@ public class Jp_admin_student extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JList lt_serach;
     private javax.swing.JTable tbl_admin_Administrators5;
     private javax.swing.JTable tbl_admin_Student_active;
+    private javax.swing.JTextField tf_serach;
     // End of variables declaration//GEN-END:variables
 
     private void load_allData() {
         try {
-            
-            DefaultTableModel tableModel_student_active=(DefaultTableModel) tbl_admin_Student_active.getModel();
+
+            DefaultTableModel tableModel_student_active = (DefaultTableModel) tbl_admin_Student_active.getModel();
             tableModel_student_active.setRowCount(0);
-            
-            Connection connection=MC_JavaDataBaseConnection.myConnection();
-            Statement statement=connection.createStatement();
-            
-            String query="SELECT * FROM stu_info_personal";
-            ResultSet rs=statement.executeQuery(query);
-            
-            while (rs.next()) {                
-                Vector v=new Vector();
+
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+
+            String query = "SELECT * FROM stu_info_personal";
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()) {
+                Vector v = new Vector();
                 v.add(rs.getString("stu_user_info_id"));
                 v.add(rs.getString("stu_info_personal_nic"));
                 v.add(rs.getString("stu_info_personal_dob"));
                 v.add(rs.getString("stu_info_personal_gender"));
                 v.add(rs.getString("stu_info_personal_course"));
                 tableModel_student_active.addRow(v);
-                
+
             }
-            
-            
+
         } catch (Exception e) {
+        }
+    }
+
+    void emp_search_for_jlist() {
+        try {
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT stu_info_personal_nic FROM stu_info_personal where nic  like '%" + tf_serach.getText().trim() + "%'");
+            Vector v = new Vector();
+
+            while (rs.next()) {
+                v.add(rs.getString("stu_info_personal_nic"));
+
+                lt_serach.setListData(v);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

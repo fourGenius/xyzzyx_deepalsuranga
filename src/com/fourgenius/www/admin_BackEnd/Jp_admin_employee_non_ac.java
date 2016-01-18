@@ -26,7 +26,7 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
         } catch (Exception ex) {
         }
         ///////////////////////////////////////////////////////////////////////
-        DefaultTableModel defaultTableModel = (DefaultTableModel) aca_emp.getModel();
+        DefaultTableModel defaultTableModel = (DefaultTableModel) tbl_admin_n_ac_active.getModel();
         defaultTableModel.setRowCount(0);
         employee_academic_user_info in = new employee_academic_user_info();
         int mass = in.max;
@@ -50,9 +50,9 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        aca_emp = new javax.swing.JTable();
+        tbl_admin_n_ac_active = new javax.swing.JTable();
         jScrollPane6 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators5 = new javax.swing.JTable();
+        tbl_admin_ac_deactive = new javax.swing.JTable();
         _pl_registration_lecture_personalInformation_lectureName = new javax.swing.JPanel();
         _lb_registration_lecture_personalInformation_lectureName_sirName = new javax.swing.JLabel();
         _tf_registration_lecture_personalInformation_lectureName_sirName = new javax.swing.JTextField();
@@ -69,7 +69,6 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
         jRadioButton2 = new javax.swing.JRadioButton();
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1 = new javax.swing.JLabel();
         _tf_registration_lecture_personalInformation_idInformation_dateOfBirth1 = new javax.swing.JTextField();
-        changeBtnsss = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -80,16 +79,16 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Non Academic Employee");
+        jLabel1.setText("Non-Academic Employee");
 
         jTabbedPane2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jTabbedPane3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        aca_emp.setBackground(new java.awt.Color(207, 216, 220));
-        aca_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        aca_emp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        aca_emp.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_admin_n_ac_active.setBackground(new java.awt.Color(207, 216, 220));
+        tbl_admin_n_ac_active.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_n_ac_active.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tbl_admin_n_ac_active.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -123,14 +122,14 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
                 "Administrator ID", "Name", "Email", "NIC No", "Password"
             }
         ));
-        jScrollPane1.setViewportView(aca_emp);
+        jScrollPane1.setViewportView(tbl_admin_n_ac_active);
 
         jTabbedPane3.addTab("Active Employee", jScrollPane1);
 
-        tbl_admin_Administrators5.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators5.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_admin_ac_deactive.setBackground(new java.awt.Color(207, 216, 220));
+        tbl_admin_ac_deactive.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_ac_deactive.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tbl_admin_ac_deactive.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -167,7 +166,7 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
                 "User ID", "Name", "Email", "NIC No", "Password"
             }
         ));
-        jScrollPane6.setViewportView(tbl_admin_Administrators5);
+        jScrollPane6.setViewportView(tbl_admin_ac_deactive);
 
         jTabbedPane3.addTab("De-active Employee", jScrollPane6);
 
@@ -252,14 +251,6 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
             }
         });
 
-        changeBtnsss.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        changeBtnsss.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        changeBtnsss.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                changeBtnsssActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_lectureNameLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_lectureName);
         _pl_registration_lecture_personalInformation_lectureName.setLayout(_pl_registration_lecture_personalInformation_lectureNameLayout);
         _pl_registration_lecture_personalInformation_lectureNameLayout.setHorizontalGroup(
@@ -286,11 +277,7 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
                                 .addComponent(jRadioButton2))
                             .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1)
                             .addComponent(_tf_registration_lecture_personalInformation_idInformation_dateOfBirth1))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                        .addGap(0, 204, Short.MAX_VALUE)
-                        .addComponent(changeBtnsss, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11)))
+                        .addGap(0, 82, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_lectureNameLayout.setVerticalGroup(
@@ -326,9 +313,7 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
                 .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton1)
                     .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(changeBtnsss, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -365,38 +350,38 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(281, Short.MAX_VALUE)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jTabbedPane2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -425,28 +410,21 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event__tf_registration_lecture_personalInformation_idInformation_dateOfBirth1ActionPerformed
 
-    private void changeBtnsssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeBtnsssActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_changeBtnsssActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-        changeBtnsss.setVisible(true);
-        changeBtnsss.setText("Add Employee");
+        
 
         //INSERT INTO `g4_2015_java_se_management_ramanifernando`.`admin` (`idadmin`, `admin_email`, `admin_password`, `admin_status`) VALUES ('3', 'a', 'a', '1');
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        changeBtnsss.setVisible(true);
-        changeBtnsss.setText("Update Employee");
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
-        changeBtnsss.setVisible(true);
-        changeBtnsss.setText("Disable Employee");
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
 
@@ -464,8 +442,6 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_lectureName_FirstName;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_lectureName_lastName;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_lectureName_sirName;
-    private javax.swing.JTable aca_emp;
-    private javax.swing.JButton changeBtnsss;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -477,6 +453,7 @@ public class Jp_admin_employee_non_ac extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable tbl_admin_Administrators5;
+    private javax.swing.JTable tbl_admin_ac_deactive;
+    private javax.swing.JTable tbl_admin_n_ac_active;
     // End of variables declaration//GEN-END:variables
 }

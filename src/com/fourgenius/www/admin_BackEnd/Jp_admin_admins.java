@@ -6,8 +6,12 @@
 package com.fourgenius.www.admin_BackEnd;
 
 import java.awt.Color;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Vector;
 import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -25,10 +29,10 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
-        
+        load_allData();
+
         //Border border=BorderFactory.createLineBorder(Color.white, 1);
         //admin_main_panel.add("Label Set", (Component) border);
-
 //        changeBtnsss.setVisible(false);
     }
 
@@ -64,8 +68,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth2 = new javax.swing.JLabel();
         co_securityQu = new javax.swing.JComboBox();
         jLabel15 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        rb_admin = new javax.swing.JRadioButton();
+        rb_manager = new javax.swing.JRadioButton();
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth3 = new javax.swing.JLabel();
         tf_securityAnswer = new javax.swing.JTextField();
         jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -86,8 +90,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Administrators");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("Administrators Information");
 
         bt_add_admin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bt_add_admin.setText("Add Administrator");
@@ -182,17 +186,17 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Position Type");
 
-        jRadioButton3.setBackground(new java.awt.Color(0, 102, 102));
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton3.setText("Administrator");
+        rb_admin.setBackground(new java.awt.Color(0, 102, 102));
+        buttonGroup1.add(rb_admin);
+        rb_admin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        rb_admin.setForeground(new java.awt.Color(255, 255, 255));
+        rb_admin.setText("Administrator");
 
-        jRadioButton4.setBackground(new java.awt.Color(0, 102, 102));
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton4.setText("Manager");
+        rb_manager.setBackground(new java.awt.Color(0, 102, 102));
+        buttonGroup1.add(rb_manager);
+        rb_manager.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        rb_manager.setForeground(new java.awt.Color(255, 255, 255));
+        rb_manager.setText("Manager");
 
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth3.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,9 +231,9 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                     .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
                         .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
-                                .addComponent(jRadioButton3)
+                                .addComponent(rb_admin)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton4))
+                                .addComponent(rb_manager))
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 210, Short.MAX_VALUE))
                     .addComponent(tf_securityAnswer))
@@ -241,8 +245,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(rb_admin)
+                    .addComponent(rb_manager))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName)
@@ -479,20 +483,21 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bt_disable_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bt_update_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bt_add_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(admin_main_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bt_disable_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bt_update_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bt_add_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(admin_main_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lb_admin_id)))
                 .addContainerGap())
         );
@@ -523,6 +528,15 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         ResultSet resultSet, rs;
 
         try {
+
+            String type_p;
+            if (rb_admin.isSelected()) {
+                type_p = "Administrator";
+            } else {
+                type_p = "Manager";
+            }
+
+            String type = type_p;
             String fname = tf_fname.getText().trim();
             String lname = tf_lname.getText().trim();
             String emai = tf_email.getText().trim();
@@ -534,7 +548,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             System.out.println("co_securityQu index is" + qu);
 
             if (!fname.isEmpty() & !lname.isEmpty()) {
-                resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("INSERT INTO admin_info(admin_firstName,admin_lastName,admin_email,admin_nic,admin_security_qu,admin_security_answer) VALUES('" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + qu + "','" + answer + "')");
+                resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("INSERT INTO admin_info(admin_firstName,admin_lastName,admin_email,admin_nic,admin_security_qu,admin_security_answer,admin_type) VALUES('" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + qu + "','" + answer + "','" + type + "')");
 //                try {
 //                    rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from admin_info where admin_info_id='" + id + "'");
 //                    if (rs.next()) {
@@ -610,8 +624,6 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     private javax.swing.JComboBox co_securityQu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -622,6 +634,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     private javax.swing.JLabel lb_admin_id;
     private javax.swing.JPasswordField pf_conPassword;
     private javax.swing.JPasswordField pf_password;
+    private javax.swing.JRadioButton rb_admin;
+    private javax.swing.JRadioButton rb_manager;
     private javax.swing.JTable tbl_admin_Administrators1;
     private javax.swing.JTable tbl_admin_Administrators3;
     private javax.swing.JTable tbl_admin_Administrators4;
@@ -632,4 +646,33 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     private javax.swing.JTextField tf_nic;
     private javax.swing.JTextField tf_securityAnswer;
     // End of variables declaration//GEN-END:variables
+
+    private void load_allData() {
+        try {
+
+            DefaultTableModel tableModel_administrator_active = (DefaultTableModel) tbl_admin_administrators_active.getModel();
+            tableModel_administrator_active.setRowCount(0);
+
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+
+            String query = "SELECT * FROM admin_info";
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()) {
+                Vector v = new Vector();
+
+                v.add(rs.getString("admin_firstName"));
+                v.add(rs.getString("admin_lastName"));
+                v.add(rs.getString("admin_nic"));
+                //v.add(rs.getString("stu_info_personal_gender"));
+                //v.add(rs.getString("stu_info_personal_course"));
+                tableModel_administrator_active.addRow(v);
+
+            }
+
+        } catch (Exception e) {
+        }
+    }
+
 }
