@@ -20,15 +20,15 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class stu_info_name {
 
-    private String stu_info_name_id, stu_info_name_sirName, stu_info_name_first_name, stu_info_name_second_name, stu_info_name_last_name;
+    
+    private String stu_info_name_id, stu_info_name_sirName, stu_info_name_first_name, stu_info_name_last_name;
 
 //////////////////////////////////////////////////////Insert//////////////////////////////////////////////
-    public stu_info_name(String stu_info_name_id, String stu_info_name_sirName, String stu_info_name_first_name, String stu_info_name_second_name, String stu_info_name_last_name) {
+    public stu_info_name(String stu_info_name_id, String stu_info_name_sirName, String stu_info_name_first_name, String stu_info_name_last_name) {
 
         this.stu_info_name_id = stu_info_name_id;
         this.stu_info_name_sirName = stu_info_name_sirName;
         this.stu_info_name_first_name = stu_info_name_first_name;
-        this.stu_info_name_second_name = stu_info_name_second_name;
         this.stu_info_name_last_name = stu_info_name_last_name;
 
         try {
@@ -92,21 +92,6 @@ public class stu_info_name {
         }
     }
 
-    public String getStu_info_name_second_name() {
-        return stu_info_name_second_name;
-    }
-
-    public void setStu_info_name_second_name(String stu_info_name_second_name) {
-        this.stu_info_name_second_name = stu_info_name_second_name;
-        try {
-            Connection connection = MC_JavaDataBaseConnection.myConnection();
-            Statement statement = connection.createStatement();
-            statement.executeUpdate("insert into stu_info_name(stu_info_name_second_name) values ('" + stu_info_name_second_name + "')");
-        } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, "Error is: 5/stu_info_name;" + ex);
-        }
-    }
-
     public String getStu_info_name_last_name() {
         return stu_info_name_last_name;
     }
@@ -146,18 +131,6 @@ public class stu_info_name {
             JOptionPane.showConfirmDialog(null, "Error is: 7/stu_info_name;" + ex);
         }
 
-    }
-
-    public void setStu_info_name_second_name_update(String stu_info_name_id, String stu_info_name_second_name) {
-        this.stu_info_name_second_name = stu_info_name_second_name;
-        this.stu_info_name_id = stu_info_name_id;
-        try {
-            Connection connection = MC_JavaDataBaseConnection.myConnection();
-            Statement statement = connection.createStatement();
-            statement.executeUpdate("update stu_info_name set stu_info_name_last_name='" + stu_info_name_second_name + "' where stu_info_name_id='" + stu_info_name_id + "'");
-        } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, "Error is: 8/stu_info_name;" + ex);
-        }
     }
 
     public void setStu_info_name_last_name_update(String stu_info_name_id, String stu_info_name_last_name) {
