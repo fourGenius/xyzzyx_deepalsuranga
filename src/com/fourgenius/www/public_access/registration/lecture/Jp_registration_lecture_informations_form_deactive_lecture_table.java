@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.registration;
+package com.fourgenius.www.public_access.registration.lecture;
 
 /**
  *
  * @author Pamitha Gayashan
  */
-public class Jp_registration_lecture_informations_form_active_lectures_table extends javax.swing.JPanel {
+public class Jp_registration_lecture_informations_form_deactive_lecture_table extends javax.swing.JPanel {
 
     /**
      * Creates new form
-     * Jp_registration_lecture_informations_form_active_lectures
+     * Jp_registration_lecture_informations_form_deactive_lecture_table
      */
-    public Jp_registration_lecture_informations_form_active_lectures_table() {
+    public Jp_registration_lecture_informations_form_deactive_lecture_table() {
         initComponents();
     }
 
@@ -28,15 +28,15 @@ public class Jp_registration_lecture_informations_form_active_lectures_table ext
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        aca_emp = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tbl_admin_Administrators4 = new javax.swing.JTable();
 
         setLayout(new java.awt.CardLayout());
 
-        aca_emp.setBackground(new java.awt.Color(207, 216, 220));
-        aca_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        aca_emp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        aca_emp.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_admin_Administrators4.setBackground(new java.awt.Color(207, 216, 220));
+        tbl_admin_Administrators4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_Administrators4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tbl_admin_Administrators4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -44,15 +44,14 @@ public class Jp_registration_lecture_informations_form_active_lectures_table ext
                 "Lecture ID", "Name", "Email", "NIC No", "Password"
             }
         ));
-        aca_emp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane2.setViewportView(aca_emp);
+        jScrollPane5.setViewportView(tbl_admin_Administrators4);
 
-        add(jScrollPane2, "card2");
+        add(jScrollPane5, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable aca_emp;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTable tbl_admin_Administrators4;
     // End of variables declaration//GEN-END:variables
 }

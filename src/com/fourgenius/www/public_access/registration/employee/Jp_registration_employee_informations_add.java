@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.registration;
+package com.fourgenius.www.public_access.registration.employee;
 
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
 import java.awt.Color;

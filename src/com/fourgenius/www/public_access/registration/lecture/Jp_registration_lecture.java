@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.registration;
+package com.fourgenius.www.public_access.registration.lecture;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;

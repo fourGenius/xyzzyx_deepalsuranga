@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.registration;
+package com.fourgenius.www.public_access.registration.lecture;
 
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_address;
@@ -1093,7 +1093,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_gender;
     private javax.swing.JButton _bt_registration_lecture_personalInformation_preview;
     private javax.swing.JButton _bt_registration_lecture_preview_register_lecture;
-    private com.toedter.calendar.JDateChooser _dc_registration_lecture_information_form_dob;
+    public com.toedter.calendar.JDateChooser _dc_registration_lecture_information_form_dob;
     private javax.swing.JLabel _lb_registration_lecture_information_form_academy;
     private javax.swing.JLabel _lb_registration_lecture_information_form_address;
     private javax.swing.JLabel _lb_registration_lecture_information_form_address_line;
@@ -1129,22 +1129,22 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_lectureName;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_main_panel;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_preview;
-    private javax.swing.JRadioButton _rb_registration_lecture_information_form_academic;
-    private javax.swing.JRadioButton _rb_registration_lecture_information_form_colombo;
-    private javax.swing.JRadioButton _rb_registration_lecture_information_form_female;
-    private javax.swing.JRadioButton _rb_registration_lecture_information_form_kandy;
-    private javax.swing.JRadioButton _rb_registration_lecture_information_form_male;
-    private javax.swing.JRadioButton _rb_registration_lecture_information_form_non_academic;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_address_line;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_city;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_country;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_email;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_first_name;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_home_number;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_last_name;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_mobile_number;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_nic;
-    private javax.swing.JTextField _tf_registration_lecture_information_form_sur_name;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_academic;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_colombo;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_female;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_kandy;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_male;
+    public javax.swing.JRadioButton _rb_registration_lecture_information_form_non_academic;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_address_line;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_city;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_country;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_email;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_first_name;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_home_number;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_last_name;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_mobile_number;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_nic;
+    public javax.swing.JTextField _tf_registration_lecture_information_form_sur_name;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_browsePhoto_browseFile;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;

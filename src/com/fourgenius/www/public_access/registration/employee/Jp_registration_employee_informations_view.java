@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.registration;
+package com.fourgenius.www.public_access.registration.employee;
 
+import com.fourgenius.www.public_access.registration.employee.Jp_registration_employee_informations_form_deactive_employee_table;
+import com.fourgenius.www.public_access.registration.employee.Jp_registration_employee_informations_form_active_employee_table;
 import com.fourgenius.www.private_access.admin.method.*;
 import com.fourgenius.www.public_access.model.nonacademic_employee.*;
 import java.util.Vector;

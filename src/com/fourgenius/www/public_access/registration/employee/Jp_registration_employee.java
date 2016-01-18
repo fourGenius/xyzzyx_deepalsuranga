@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.registration;
+package com.fourgenius.www.public_access.registration.employee;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
@@ -45,6 +45,7 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         _bt_view_employee = new javax.swing.JButton();
         _bt_add_employee = new javax.swing.JButton();
+        _bt_update_employee = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setMaximumSize(new java.awt.Dimension(1366, 718));
@@ -116,6 +117,17 @@ public class Jp_registration_employee extends javax.swing.JPanel {
             }
         });
 
+        _bt_update_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_update_employee.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_update_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
+        _bt_update_employee.setText("Update Employee");
+        _bt_update_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_update_employee.setFocusPainted(false);
+        _bt_update_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_update_employee.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_update_employee.setMinimumSize(new java.awt.Dimension(200, 50));
+        _bt_update_employee.setPreferredSize(new java.awt.Dimension(200, 50));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -124,7 +136,9 @@ public class Jp_registration_employee extends javax.swing.JPanel {
                 .addComponent(_bt_view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 930, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(_bt_update_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 720, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +146,8 @@ public class Jp_registration_employee extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(_bt_view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_update_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -219,6 +234,7 @@ public class Jp_registration_employee extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_employee_personalInformations_employeeDetails_gender;
     private javax.swing.JButton _bt_add_employee;
+    private javax.swing.JButton _bt_update_employee;
     private javax.swing.JButton _bt_view_employee;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel main;
