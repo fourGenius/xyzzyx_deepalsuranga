@@ -17,20 +17,21 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class employee_academic_user_info_personal {
     
-    private String employee_academic_user_id,employee_academic_user_info_personal_profile_image,employee_academic_user_info_personal_dob,employee_academic_user_info_personal_gender,employee_academic_user_info_personal_nic;
+    private String employee_academic_user_id,employee_academic_user_info_personal_profile_image,employee_academic_user_info_personal_dob,employee_academic_user_info_personal_gender,employee_academic_user_info_personal_nic, employee_academic_user_info_personal_branch;
 
-    public employee_academic_user_info_personal(String employee_academic_user_id, String employee_academic_user_info_personal_profile_image, String employee_academic_user_info_personal_dob, String employee_academic_user_info_personal_gender,String employee_academic_user_info_personal_nic) {
+    public employee_academic_user_info_personal(String employee_academic_user_id, String employee_academic_user_info_personal_profile_image, String employee_academic_user_info_personal_dob, String employee_academic_user_info_personal_gender,String employee_academic_user_info_personal_nic, String employee_academic_user_info_personal_branch) {
         
         this.employee_academic_user_id = employee_academic_user_id;
         this.employee_academic_user_info_personal_profile_image = employee_academic_user_info_personal_profile_image;
         this.employee_academic_user_info_personal_dob = employee_academic_user_info_personal_dob;
         this.employee_academic_user_info_personal_gender = employee_academic_user_info_personal_gender;
         this.employee_academic_user_info_personal_nic = employee_academic_user_info_personal_nic;
+        this.employee_academic_user_info_personal_branch = employee_academic_user_info_personal_branch;
         
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeUpdate("insert into employee_academic_user_info_personal(employee_academic_user_id,employee_academic_user_info_personal_profile_image,employee_academic_user_info_personal_dob,employee_academic_user_info_personal_gender,employee_academic_user_info_personal_nic) values ('" + employee_academic_user_id + "','" + employee_academic_user_info_personal_profile_image + "','" + employee_academic_user_info_personal_dob + "','"+employee_academic_user_info_personal_gender+"','"+employee_academic_user_info_personal_nic+"')");
+            statement.executeUpdate("insert into employee_academic_user_info_personal(employee_academic_user_id,employee_academic_user_info_personal_profile_image,employee_academic_user_info_personal_dob,employee_academic_user_info_personal_gender,employee_academic_user_info_personal_nic,employee_academic_user_info_personal_branch) values ('" + employee_academic_user_id + "','" + employee_academic_user_info_personal_profile_image + "','" + employee_academic_user_info_personal_dob + "','"+employee_academic_user_info_personal_gender+"','"+employee_academic_user_info_personal_nic+"','"+employee_academic_user_info_personal_branch+"')");
         } catch (SQLException ex) {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
@@ -68,6 +69,14 @@ public class employee_academic_user_info_personal {
 
     public void setEmployee_academic_user_info_personal_nic(String employee_academic_user_info_personal_nic) {
         this.employee_academic_user_info_personal_nic = employee_academic_user_info_personal_nic;
+    }
+    
+    public String getEmployee_academic_user_info_personal_branch(){
+        return employee_academic_user_info_personal_branch;
+    }
+    
+    public void setEmployee_academic_user_info_personal_branch(String employee_academic_user_info_personal_branch){
+        this.employee_academic_user_info_personal_branch=employee_academic_user_info_personal_branch;
     }
 
 }

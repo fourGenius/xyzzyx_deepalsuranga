@@ -192,6 +192,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="_tf_registration_lecture_informations_qulifications_file_no">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
@@ -221,6 +222,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_lecture_informations_qulifications_nameMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_nameActionPerformed"/>
               </Events>
             </Component>
@@ -231,6 +233,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_lecture_informations_qulifications_start_yearMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_start_yearActionPerformed"/>
               </Events>
             </Component>
@@ -281,6 +284,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_lecture_informations_qulifications_resultMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_resultActionPerformed"/>
               </Events>
             </Component>
@@ -291,6 +295,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_lecture_informations_qulifications_subjectMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_subjectActionPerformed"/>
               </Events>
             </Component>
@@ -404,6 +409,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_lecture_informations_qulifications_end_yearMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_informations_qulifications_end_yearActionPerformed"/>
               </Events>
             </Component>
@@ -440,7 +446,7 @@
                   <Component id="jPanel1" alignment="0" pref="408" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                      <Component id="_bt_registration_lecture_informations_qulifications_finish" min="-2" pref="300" max="-2" attributes="0"/>
+                      <Component id="_bt_registration_lecture_informations_qulifications_save" min="-2" pref="300" max="-2" attributes="0"/>
                       <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -455,7 +461,7 @@
                           <Component id="_bt_registration_lecture_informations_qulifications_update" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="52" max="32767" attributes="0"/>
-                      <Component id="_bt_registration_lecture_informations_qulifications_finish" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="_bt_registration_lecture_informations_qulifications_save" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -517,6 +523,7 @@
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_updateMouseExited"/>
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_updateMousePressed"/>
                 <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_updateMouseReleased"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registration_lecture_informations_qulifications_updateActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel1">
@@ -524,6 +531,9 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
                 <Container class="javax.swing.JTabbedPane" name="_tp_registration_lecture_qulifications_tables">
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tp_registration_lecture_qulifications_tablesMouseClicked"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                       <CardConstraints cardName="card2"/>
@@ -555,6 +565,7 @@
                                 <Column editable="true" title="End Year" type="java.lang.Object"/>
                               </Table>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
@@ -589,6 +600,7 @@
                                 <Column editable="true" title="Results" type="java.lang.Object"/>
                               </Table>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
@@ -622,6 +634,7 @@
                                 <Column editable="true" title="Results" type="java.lang.Object"/>
                               </Table>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
@@ -637,7 +650,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="_bt_registration_lecture_informations_qulifications_finish">
+            <Component class="javax.swing.JButton" name="_bt_registration_lecture_informations_qulifications_save">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -648,7 +661,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Finish"/>
+                <Property name="text" type="java.lang.String" value="Save"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
                 </Property>
@@ -656,11 +669,11 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_finishMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_finishMouseExited"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_finishMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_finishMouseReleased"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registration_lecture_informations_qulifications_finishActionPerformed"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_saveMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_saveMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_saveMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registration_lecture_informations_qulifications_saveMouseReleased"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registration_lecture_informations_qulifications_saveActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

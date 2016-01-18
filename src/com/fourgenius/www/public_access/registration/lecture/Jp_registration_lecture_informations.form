@@ -1204,6 +1204,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_lecture_personalInformation_browsePhoto_browseFileActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="_bt_registration_lecture_personalInformation_preview">

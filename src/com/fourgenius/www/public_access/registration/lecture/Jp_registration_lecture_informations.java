@@ -37,6 +37,11 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     Border border = BorderFactory.createLineBorder(Color.white, 1);
     public String path, newpath;
     public String sur_name,first_name,last_name;
+    
+    public String lecture_id;
+    public int id_no;
+    public String branch_name;
+    public String full_name;
 
     /**
      * Creates new form registration_lecture
@@ -50,8 +55,9 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
         Date d = Calendar.getInstance().getTime();
         _dc_registration_lecture_information_form_dob.setMaxSelectableDate(d);
+        
 
-        //load_lecture_information_form();
+        load_lecture_information_form();
     }
 
     /**
@@ -777,6 +783,11 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                 _tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked(evt);
             }
         });
+        _tf_registration_lecture_personalInformation_browsePhoto_browseFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_registration_lecture_personalInformation_browsePhoto_browseFileActionPerformed(evt);
+            }
+        });
 
         _bt_registration_lecture_personalInformation_preview.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registration_lecture_personalInformation_preview.setForeground(new java.awt.Color(255, 255, 255));
@@ -850,8 +861,9 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewMouseReleased
 
     private void _bt_registration_lecture_personalInformation_previewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewActionPerformed
+        check_empty_fields();
         add_to_preview_form();
-        
+        generate_lecture_id();
     }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewActionPerformed
 
     private void _bt_registration_lecture_personalInformation_previewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewMouseClicked
@@ -860,15 +872,15 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
     private void _bt_registration_lecture_preview_register_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_preview_register_lectureActionPerformed
         
-        int i=JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (i==JOptionPane.YES_OPTION) {
-//            add_to_database();
+        int option=JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (option==JOptionPane.YES_OPTION) {
+            add_to_database();
             clear_personal_information_form();
             clear_preview_form();
             load_information_qulifications_form();
-            
-            Jp_registration_lecture_informations_qulifications_form qf=new Jp_registration_lecture_informations_qulifications_form();
-            qf._tf_registration_lecture_informations_qulifications_file_no.grabFocus();
+            _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setVisible(false);
+            _bt_registration_lecture_personalInformation_preview.setVisible(false);
+
         }
         
     }//GEN-LAST:event__bt_registration_lecture_preview_register_lectureActionPerformed
@@ -892,8 +904,8 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     private void _tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileMouseClicked
         try {
             JFileChooser jf = new JFileChooser();
-            int i = jf.showOpenDialog(this);
-            if (i == jf.APPROVE_OPTION) {
+            int show = jf.showOpenDialog(this);
+            if (show == jf.APPROVE_OPTION) {
                 File selectedfile = jf.getSelectedFile();
                 path = selectedfile.getAbsolutePath();
                 _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText(path);
@@ -920,7 +932,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__rb_registration_lecture_information_form_academicMouseClicked
 
     private void _rb_registration_lecture_information_form_femaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_femaleMouseClicked
-
+        
     }//GEN-LAST:event__rb_registration_lecture_information_form_femaleMouseClicked
 
     private void _rb_registration_lecture_information_form_maleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__rb_registration_lecture_information_form_maleMouseClicked
@@ -1086,6 +1098,10 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _tf_registration_lecture_information_form_home_number.grabFocus();
     }//GEN-LAST:event__tf_registration_lecture_information_form_mobile_numberActionPerformed
 
+    private void _tf_registration_lecture_personalInformation_browsePhoto_browseFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformation_employeeDetails_branch;
@@ -1186,10 +1202,10 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
     private void load_information_qulifications_form() {
         try {
-            Jp_registration_lecture_informations_qulifications_form view_lecture_information_qulification_form = new Jp_registration_lecture_informations_qulifications_form();
+            Jp_registration_lecture_informations_qulifications_form view_lecture_information_qulification_form = new Jp_registration_lecture_informations_qulifications_form(lecture_id, id_no, branch_name, full_name);
 
                 if (view_lecture_information_qulification_form == null) {
-                    view_lecture_information_qulification_form = new Jp_registration_lecture_informations_qulifications_form();
+                    view_lecture_information_qulification_form = new Jp_registration_lecture_informations_qulifications_form(lecture_id, id_no, branch_name, full_name);
                     _pl_registration_lecture_personalInformation_main_panel.removeAll();
                     _pl_registration_lecture_personalInformation_main_panel.repaint();
                     _pl_registration_lecture_personalInformation_main_panel.revalidate();
@@ -1222,23 +1238,34 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         
         try {
             
-            newpath = path.replace("\\", "/");
-            File f = new File(newpath);
-            Image img = ImageIO.read(f);
-            img = img.getScaledInstance(_lb_registration_lecture_preview_image.getWidth(), _lb_registration_lecture_preview_image.getHeight(), Image.SCALE_SMOOTH);
-            _lb_registration_lecture_preview_image.setIcon(new ImageIcon(img));
+            try {
+                newpath = path.replace("\\", "/");
+                File f = new File(newpath);
+                Image img = ImageIO.read(f);
+                img = img.getScaledInstance(_lb_registration_lecture_preview_image.getWidth(), _lb_registration_lecture_preview_image.getHeight(), Image.SCALE_SMOOTH);
+                _lb_registration_lecture_preview_image.setIcon(new ImageIcon(img));
+            } catch (Exception e) {
+                _lb_registration_lecture_preview_image.setIcon(null);
+            }
             
             sur_name=_tf_registration_lecture_information_form_sur_name.getText();
             first_name=_tf_registration_lecture_information_form_first_name.getText();
             last_name=_tf_registration_lecture_information_form_last_name.getText();
+            
+            full_name=first_name+"_"+last_name;
+                    
             _lb_registration_lecture_preview_name.setText(sur_name+" "+first_name+" "+last_name);
             
             _lb_registration_lecture_preview_nic.setText(_tf_registration_lecture_information_form_nic.getText());
+            try {
+                Date d=_dc_registration_lecture_information_form_dob.getDate();
+                SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+                String date=sdf.format(d);
+                _lb_registration_lecture_preview_dateOfBirth.setText(date);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Please Enter Birhtday");
+            }
             
-            Date d=_dc_registration_lecture_information_form_dob.getDate();
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-            String date=sdf.format(d);
-            _lb_registration_lecture_preview_dateOfBirth.setText(date);
             
             String gender;
             if (_rb_registration_lecture_information_form_male.isSelected()) {
@@ -1271,7 +1298,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
             _lb_registration_lecture_preview_address_city.setText(_tf_registration_lecture_information_form_city.getText());
             _lb_registration_lecture_preview_address_country.setText(_tf_registration_lecture_information_form_country.getText());
             
-            generate_lecture_id();
+            
             
             
         } catch (Exception e) {
@@ -1287,17 +1314,17 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         employee_academic_user_info user_info=new employee_academic_user_info();
         String countid=user_info.getIdemployee_academic_user();
         int idcount=Integer.parseInt(countid);
-        int i=++idcount;
+        id_no=++idcount;
         
         
-        String branch;
+        
         if (_rb_registration_lecture_information_form_colombo.isSelected()) {
-            branch="COL";
+            branch_name="COL";
         }else{
-            branch="KAN";
+            branch_name="KAN";
         }
         
-        String lecture_id=id+"-"+lc+"-"+"0000"+i+"-"+branch;
+        lecture_id=id+"-"+lc+"-"+"0000"+id_no+"-"+branch_name;
         _lb_registration_lecture_preview_lectureID.setText(lecture_id);
     }
 
@@ -1310,7 +1337,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         
         employee_academic_user_info_name user_info_name=new employee_academic_user_info_name(_lb_registration_lecture_preview_lectureID.getText(), sur_name, first_name, last_name);
         
-        employee_academic_user_info_personal user_info_personal=new employee_academic_user_info_personal(_lb_registration_lecture_preview_lectureID.getText(), path, _lb_registration_lecture_preview_dateOfBirth.getText(), _lb_registration_lecture_preview_gender.getText(), _lb_registration_lecture_preview_nic.getText());
+        employee_academic_user_info_personal user_info_personal=new employee_academic_user_info_personal(_lb_registration_lecture_preview_lectureID.getText(), path, _lb_registration_lecture_preview_dateOfBirth.getText(), _lb_registration_lecture_preview_gender.getText(), _lb_registration_lecture_preview_nic.getText(), _lb_registration_lecture_information_form_branch.getText());
     }
 
     private void clear_personal_information_form() {
@@ -1328,6 +1355,8 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _tf_registration_lecture_information_form_address_line.setText(null);
         _tf_registration_lecture_information_form_city.setText(null);
         _tf_registration_lecture_information_form_country.setText(null);
+        _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText("Browse Photo");
+        
     }
 
     private void clear_preview_form() {
@@ -1344,5 +1373,10 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _lb_registration_lecture_preview_address_address_line.setText(null);
         _lb_registration_lecture_preview_address_city.setText(null);
         _lb_registration_lecture_preview_address_country.setText(null);
+        _lb_registration_lecture_preview_image.setIcon(null);
+    }
+
+    private void check_empty_fields() {
+        
     }
 }
