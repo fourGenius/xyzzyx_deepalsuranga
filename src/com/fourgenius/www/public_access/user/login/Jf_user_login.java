@@ -192,6 +192,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         _bt_Jf_user_login_Login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_Jf_user_login_Login.setFocusPainted(false);
         _bt_Jf_user_login_Login.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_Jf_user_login_Login.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_DarkGreen_300x50.png"))); // NOI18N
         _bt_Jf_user_login_Login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _bt_Jf_user_login_LoginMouseClicked(evt);
@@ -222,6 +223,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         _bt_Jf_user_login_Cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_Jf_user_login_Cancel.setFocusPainted(false);
         _bt_Jf_user_login_Cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_Jf_user_login_Cancel.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_DarkGreen_300x50.png"))); // NOI18N
         _bt_Jf_user_login_Cancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _bt_Jf_user_login_CancelMouseClicked(evt);
