@@ -27,6 +27,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
     public _jp_admin_login_email() {
         initComponents();
+        
         admin_forget_username.setVisible(false);
         tf_username.grabFocus();
     }
@@ -299,7 +300,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     private void bt_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_nextActionPerformed
 
         tf_username.grabFocus();
-        bt_next.setText("Loading...");
+        //bt_next.setText("Loading...");
         next_method();
 
     }//GEN-LAST:event_bt_nextActionPerformed
@@ -328,6 +329,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
     private void bt_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cancelActionPerformed
 
+       
         System.exit(0);
 
     }//GEN-LAST:event_bt_cancelActionPerformed
@@ -434,8 +436,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     ////////////////////////Database base to///////////////////////
                     try {
                         ResultSet rs;
-                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='"+email+"'");
-                        
+                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='" + email + "'");
+
                         if (rs.next()) {
                             System.out.println("query is OK!");
                             //start-load panel
@@ -464,21 +466,10 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-//                    try {
-//                        _jp_admin_login_password emailset = new _jp_admin_login_password(email);
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
-
-                    ////////////////////////////////////////////////////////////
                 } else {
-                    try {
-                        tf_username.setBackground(new Color(244, 67, 54));
-                        JOptionPane.showMessageDialog(this, "Please Enter Valid Administrator Email.", "Access Denied", JOptionPane.WARNING_MESSAGE);
 
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    tf_username.setBackground(new Color(244, 67, 54));
+                    JOptionPane.showMessageDialog(this, "Please Enter Valid Administrator Email.", "Access Denied", JOptionPane.WARNING_MESSAGE);
 
                     if (i == 3) {
                         tf_username.setText(null);

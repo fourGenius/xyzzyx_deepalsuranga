@@ -452,7 +452,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
 
     private void lb_lecture_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_lecture_informationMouseClicked
 
-        pro.setVisible(true);
+        //pro.setVisible(true);
 
         try {
             md_setvisible_true(bt_admin_bE_home);

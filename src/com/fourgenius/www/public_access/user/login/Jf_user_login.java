@@ -81,10 +81,10 @@ public class Jf_user_login extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Middle.setBackground(new java.awt.Color(0, 131, 143));
+        Middle.setBackground(new java.awt.Color(0, 200, 83));
         Middle.setPreferredSize(new java.awt.Dimension(1370, 770));
 
-        Top.setBackground(new java.awt.Color(25, 118, 210));
+        Top.setBackground(new java.awt.Color(97, 97, 97));
         Top.setPreferredSize(new java.awt.Dimension(1366, 60));
 
         _lb_user_login_close.setBackground(new java.awt.Color(18, 75, 163));
@@ -166,7 +166,7 @@ public class Jf_user_login extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(25, 118, 210));
+        jPanel1.setBackground(new java.awt.Color(97, 97, 97));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -179,7 +179,7 @@ public class Jf_user_login extends javax.swing.JFrame {
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(25, 118, 210));
+        jPanel2.setBackground(new java.awt.Color(97, 97, 97));
 
         _lb_user_login_password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_user_login_password.setForeground(new java.awt.Color(240, 240, 240));
@@ -187,7 +187,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         _bt_Jf_user_login_Login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_Jf_user_login_Login.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_Jf_user_login_Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_Jf_user_login_Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"))); // NOI18N
         _bt_Jf_user_login_Login.setText("Login");
         _bt_Jf_user_login_Login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_Jf_user_login_Login.setFocusPainted(false);
@@ -217,7 +217,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         _bt_Jf_user_login_Cancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_Jf_user_login_Cancel.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_Jf_user_login_Cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_Jf_user_login_Cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"))); // NOI18N
         _bt_Jf_user_login_Cancel.setText("Cancel");
         _bt_Jf_user_login_Cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_Jf_user_login_Cancel.setFocusPainted(false);
