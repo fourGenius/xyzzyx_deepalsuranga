@@ -31,7 +31,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
         Jp_registration_employee_informations_form_active_employee_table active_employee = new Jp_registration_employee_informations_form_active_employee_table();
         Jp_registration_employee_informations_form_deactive_employee_table deactive_employee = new Jp_registration_employee_informations_form_deactive_employee_table();
         jTabbedPane1.add("Active Employee", active_employee);
-        jTabbedPane1.add("De-active Employee", deactive_employee);
+        //jTabbedPane1.add("De-active Employee", deactive_employee);
         jScrollPane1.setVisible(false);
     }
 
@@ -44,6 +44,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         _tf_registration_employee_informations_view_searchStudent = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -53,9 +54,13 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setLayout(new java.awt.CardLayout());
+
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 18, 980, 620));
+        jPanel1.add(jTabbedPane1, "card2");
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 980, 620));
 
         _tf_registration_employee_informations_view_searchStudent.setMaximumSize(new java.awt.Dimension(300, 50));
         _tf_registration_employee_informations_view_searchStudent.setMinimumSize(new java.awt.Dimension(300, 50));
@@ -187,6 +192,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     private javax.swing.JButton _bt_registration_employee_informations_view_search;
     private javax.swing.JList _li_registration_employee_informations_view_searchStudent;
     private javax.swing.JTextField _tf_registration_employee_informations_view_searchStudent;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
