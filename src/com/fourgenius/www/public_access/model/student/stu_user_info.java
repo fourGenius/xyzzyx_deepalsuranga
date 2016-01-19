@@ -45,6 +45,9 @@ public class stu_user_info {
         }
     }
 
+    public stu_user_info() {
+    }
+
 //    public String getStu_user_info_id() {
 //        return stu_user_info_id;
 //    }

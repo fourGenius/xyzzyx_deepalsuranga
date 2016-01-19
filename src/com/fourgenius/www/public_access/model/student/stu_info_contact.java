@@ -20,13 +20,14 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class stu_info_contact {
 
-    private String stu_user_info_id, stu_info_telephone_mobile, stu_info_telephone_land;
+    private String stu_user_info_id, stu_info_telephone_mobile, stu_info_telephone_land, stu_info_contact_email;
 
 //////////////////////////////////////////////////Insert///////////////////////////////////////////////
-    public stu_info_contact(String stu_user_info_id, String stu_info_telephone_mobile, String stu_info_telephone_land) {
+    public stu_info_contact(String stu_user_info_id, String stu_info_telephone_mobile, String stu_info_telephone_land, String stu_info_contact_email) {
         this.stu_user_info_id = stu_user_info_id;
         this.stu_info_telephone_mobile = stu_info_telephone_mobile;
         this.stu_info_telephone_land = stu_info_telephone_land;
+        this.stu_info_contact_email = stu_info_contact_email;
 
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
@@ -35,7 +36,7 @@ public class stu_info_contact {
             if (rs.next()) {
                 statement.executeUpdate("update stu_info_contact set stu_info_telephone_mobile='"+stu_info_telephone_mobile+"', stu_info_telephone_land='"+stu_info_telephone_land+"' where stu_user_info_id='"+stu_user_info_id+"'");
             } else {
-                statement.executeUpdate("insert stu_info_contact(stu_user_info_id, stu_info_telephone_mobile, stu_info_telephone_land) values ('"+stu_user_info_id+"','"+stu_info_telephone_mobile+"','"+stu_info_telephone_land+"')");
+                statement.executeUpdate("insert stu_info_contact(stu_user_info_id, stu_info_telephone_mobile, stu_info_telephone_land, stu_info_contact_email) values ('"+stu_user_info_id+"','"+stu_info_telephone_mobile+"','"+stu_info_telephone_land+"','"+stu_info_contact_email+"')");
             }
             rs.close();
         } catch (SQLException ex) {

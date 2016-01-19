@@ -59,12 +59,12 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     private void initComponents() {
 
         student_mainPanel = new javax.swing.JPanel();
-        jtp_stu_table = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         _sp_registration_student_searchStudent = new javax.swing.JScrollPane();
         _li_registration_student_searchStudent = new javax.swing.JList();
         _tf_registration_student_searchStudent = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setForeground(new java.awt.Color(66, 66, 66));
@@ -74,13 +74,9 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
 
         student_mainPanel.setLayout(new java.awt.CardLayout());
 
-        jtp_stu_table.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "NIC", "Name", "Cose"
@@ -96,10 +92,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jtp_stu_table.addTab("Active Student", jScrollPane1);
-
-        student_mainPanel.add(jtp_stu_table, "card2");
-        jtp_stu_table.getAccessibleContext().setAccessibleName("");
+        student_mainPanel.add(jScrollPane1, "card2");
 
         add(student_mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 620));
 
@@ -113,6 +106,9 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
             }
         });
         add(_tf_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 310, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/search_icon.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_student_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_searchStudentKeyReleased
@@ -191,9 +187,9 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     private javax.swing.JList _li_registration_student_searchStudent;
     private javax.swing.JScrollPane _sp_registration_student_searchStudent;
     private javax.swing.JTextField _tf_registration_student_searchStudent;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTable1;
-    private javax.swing.JTabbedPane jtp_stu_table;
     private javax.swing.JPanel student_mainPanel;
     // End of variables declaration//GEN-END:variables
 

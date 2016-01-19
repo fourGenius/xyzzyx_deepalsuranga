@@ -22,6 +22,7 @@ import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
@@ -55,6 +56,9 @@ public class Jp_registration_student extends javax.swing.JPanel {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
+        update_stu.setVisible(false);
+        remove_stu.setVisible(false);
+        print_stu.setVisible(false);
     }
 
     /**
@@ -84,7 +88,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
         add_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add_stu.setForeground(new java.awt.Color(255, 255, 255));
-        add_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        add_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
         add_stu.setText("Add Student");
         add_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add_stu.setFocusPainted(false);
@@ -115,12 +119,12 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
         update_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         update_stu.setForeground(new java.awt.Color(255, 255, 255));
-        update_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        update_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
         update_stu.setText("Update Student");
         update_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         update_stu.setFocusPainted(false);
         update_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        update_stu.setPreferredSize(new java.awt.Dimension(300, 50));
+        update_stu.setPreferredSize(new java.awt.Dimension(200, 50));
         update_stu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 update_stuMouseEntered(evt);
@@ -143,7 +147,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
         remove_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         remove_stu.setForeground(new java.awt.Color(255, 255, 255));
-        remove_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        remove_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
         remove_stu.setText("Remove Student");
         remove_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         remove_stu.setFocusPainted(false);
@@ -231,15 +235,15 @@ public class Jp_registration_student extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(preview_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(add_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(update_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(remove_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
-                .addComponent(print_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(preview_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(add_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(update_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(remove_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addComponent(print_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -286,11 +290,15 @@ public class Jp_registration_student extends javax.swing.JPanel {
             buttons_enable(add_stu.getText());
             add_stu.setText("Finish");
         } else {
-            load_table_stu_view();
-            add_stu.setText("Add Student");
-            preview_stu.setEnabled(true);
-            update_stu.setEnabled(true);
-            remove_stu.setEnabled(true);
+            int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (option == JOptionPane.YES_OPTION) {
+                load_table_stu_view();
+                add_stu.setText("Add Student");
+                preview_stu.setEnabled(true);
+                update_stu.setEnabled(true);
+                remove_stu.setEnabled(true);
+            }
+
         }
 
 
@@ -456,7 +464,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
     private void buttons_enable(String button_name) {
         if (button_name.equals(preview_stu.getText())) {
             preview_stu.setEnabled(true);
-            add_stu.setEnabled(false);
+            add_stu.setEnabled(true);
             remove_stu.setEnabled(true);
             update_stu.setEnabled(true);
         } else if (button_name.equals(add_stu.getText())) {
@@ -471,9 +479,9 @@ public class Jp_registration_student extends javax.swing.JPanel {
             add_stu.setEnabled(false);
         } else {
             remove_stu.setEnabled(true);
-            add_stu.setEnabled(false);
-            preview_stu.setEnabled(false);
-            update_stu.setEnabled(false);
+            add_stu.setEnabled(true);
+            preview_stu.setEnabled(true);
+            update_stu.setEnabled(true);
         }
     }
 
