@@ -9,6 +9,8 @@ import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,6 +24,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -33,7 +41,8 @@ public class Jp_registration_student extends javax.swing.JPanel {
     Border border = BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
     boolean b;
-
+    Jp_registration_student_c_layout table=new Jp_registration_student_c_layout();
+    DefaultTableModel dtm=(DefaultTableModel)table.jTable1.getModel();
     /**
      * Creates new form registration_student
      */
@@ -348,7 +357,7 @@ String button_name=add_stu.getText();
     }//GEN-LAST:event_print_stuMouseReleased
 
     private void print_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_stuActionPerformed
-        // TODO add your handling code here:
+printReport();        
     }//GEN-LAST:event_print_stuActionPerformed
 
     private void preview_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMouseEntered
@@ -391,33 +400,36 @@ String button_name=add_stu.getText();
 
     public void printReport() {
 
-        //        
-//                   try {
-//            String report_path = "src/reports/student_reg.jrxml";
-//                       System.out.println("oooo");
-//            JasperReport compileReport=JasperCompileManager.compileReport(report_path);
-//                       System.out.println("ok1");
-//                       Map<String, Object> m = new HashMap<String, Object>();
-//            System.out.println("ok2");
-//            m.put("course", _lb_registration_student_preview_course.getText());
-//            m.put("name",_lb_registration_student_preview_name.getText() );
-//            m.put("address",_lb_registration_student_preview_address.getText() );
-//            m.put("telePhone",_lb_registration_student_preview_homeNumber.getText() );
-//            m.put("mobilePhone", _lb_registration_student_preview_mobileNumber.getText());
-//            m.put("email", _lb_registration_student_preview_eMail.getText());
-//            m.put("dob", _lb_registration_student_preview_dateOfBirth.getText());
-//            m.put("age",_lb_registration_student_preview_age.getText());
-//            m.put("nic", _lb_registration_student_preview_nic.getText());
-//            m.put("sid", _lb_registration_student_preview_studentID.getText());
-//                       System.out.println("ok3");
-//                       JasperPrint jp=JasperFillManager.fillReport(compileReport, m);
-//                       System.out.println("ok4");
-//                       JasperViewer.viewReport(jp, false);
-//                       System.out.println("ok5");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//  
+                
+                   try {
+            String report_path = "‪\\reports\\student_reg.jrxml";
+                       InputStream in=new FileInputStream(new File(report_path));
+                       System.out.println("oooo");
+            Jp_registration_student_informations info=new Jp_registration_student_informations();
+                       JasperReport compileReport=JasperCompileManager.compileReport(in);
+                       System.out.println("ok1");
+                       Map<String, Object> m = new HashMap<String, Object>();
+            System.out.println("ok2");
+            m.put("course", info._lb_registration_student_preview_course.getText());
+            m.put("name",info._lb_registration_student_preview_name.getText() );
+            m.put("address",info._lb_registration_student_preview_lane1.getText() );
+            m.put("telePhone",info._lb_registration_student_preview_homeNumber.getText() );
+            m.put("mobilePhone",info. _lb_registration_student_preview_mobileNumber.getText());
+            m.put("email", info._lb_registration_student_preview_eMail.getText());
+            m.put("dob", info._lb_registration_student_preview_dateOfBirth.getText());
+            
+            m.put("nic",info. _lb_registration_student_preview_nic.getText());
+            m.put("sid", info._lb_registration_student_preview_studentID.getText());
+            m.put("pic",info.newpath);           
+            System.out.println("ok3");
+                       JasperPrint jp=JasperFillManager.fillReport(compileReport, m);
+                       System.out.println("ok4");
+                       JasperViewer.viewReport(jp, false);
+                       System.out.println("ok5");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+  
     }
 
     private void load_table_stu_view() {
