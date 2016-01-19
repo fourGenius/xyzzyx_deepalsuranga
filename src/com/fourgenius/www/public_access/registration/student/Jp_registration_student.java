@@ -402,11 +402,11 @@ public class Jp_registration_student extends javax.swing.JPanel {
     public void printReport() {
 
         try {
-            String report_path = "‪C:\\hello\\student_reg.jrxml";
+            String report_path = "‪src\\reports\\student_reg.jrxml";
             InputStream in = new FileInputStream(new File(report_path));
             System.out.println("oooo");
             Jp_registration_student_informations info = new Jp_registration_student_informations();
-            JasperReport compileReport = JasperCompileManager.compileReport(in);
+            JasperReport compileReport = JasperCompileManager.compileReport(report_path);
             System.out.println("ok1");
             Map<String, Object> m = new HashMap<String, Object>();
             System.out.println("ok2");
