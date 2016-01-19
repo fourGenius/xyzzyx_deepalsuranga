@@ -295,9 +295,9 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             md_setvisible_true(bt_admin_bE_students);
             md_setvisible_true(bt_admin_bE_users);
             md_setvisible_true(bt_admin_bE_employees);
-            md_setvisible_true(bt_admin_bE_exams);
+//            md_setvisible_true(bt_admin_bE_exams);
             md_setvisible_true(bt_admin_bE_payments);
-            md_setvisible_true(bt_admin_bE_practicals);
+//            md_setvisible_true(bt_admin_bE_practicals);
             md_setvisible_true(bt_admin_bE_administrator);
 
             //jLabel4.setBorder(borderC);
@@ -328,9 +328,9 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             md_setvisible_true(bt_admin_bE_students);
             md_setvisible_true(bt_admin_bE_users);
             md_setvisible_true(bt_admin_bE_employees);
-            md_setvisible_true(bt_admin_bE_exams);
+//            md_setvisible_true(bt_admin_bE_exams);
             md_setvisible_true(bt_admin_bE_payments);
-            md_setvisible_true(bt_admin_bE_practicals);
+//            md_setvisible_true(bt_admin_bE_practicals);
             md_setvisible_true(bt_admin_bE_administrator);
 
             //jLabel4.setBorder(borderC);
@@ -370,9 +370,9 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             md_setvisible_true(bt_admin_bE_students);
             md_setvisible_true(bt_admin_bE_users);
             md_setvisible_true(bt_admin_bE_employees);
-            md_setvisible_true(bt_admin_bE_exams);
+//            md_setvisible_true(bt_admin_bE_exams);
             md_setvisible_true(bt_admin_bE_payments);
-            md_setvisible_true(bt_admin_bE_practicals);
+//            md_setvisible_true(bt_admin_bE_practicals);
             md_setvisible_true(bt_admin_bE_administrator);
 
             //jLabel4.setBorder(borderC);
@@ -465,21 +465,21 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             md_setvisible_true(bt_admin_bE_administrator);
 
             //jLabel4.setBorder(borderC);
-//            Jp_admin_employee_ac M = new Jp_admin_employee_ac();
-//            if (M == null) {
-//                admin_mainPanel.removeAll();
-//                revalidate();
-//                M = new Jp_admin_employee_ac();
-//                M.setVisible(true);
-//                admin_mainPanel.add(M);
-//                revalidate();
-//            } else {
-//                admin_mainPanel.removeAll();
-//                revalidate();
-//                M.setVisible(true);
-//                admin_mainPanel.add(M);
-//                revalidate();
-//            }
+            Jp_admin_employee_ac M = new Jp_admin_employee_ac();
+            if (M == null) {
+                admin_mainPanel.removeAll();
+                revalidate();
+                M = new Jp_admin_employee_ac();
+                M.setVisible(true);
+                admin_mainPanel.add(M);
+                revalidate();
+            } else {
+                admin_mainPanel.removeAll();
+                revalidate();
+                M.setVisible(true);
+                admin_mainPanel.add(M);
+                revalidate();
+            }
             //jLabel5.setBorder(borderE);
             lb_lecture_information.setBorder(borderC);
         } catch (Exception e) {
@@ -553,9 +553,9 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             md_setvisible_true(bt_admin_bE_students);
             md_setvisible_true(bt_admin_bE_users);
             md_setvisible_true(bt_admin_bE_employees);
-            md_setvisible_true(bt_admin_bE_exams);
+//            md_setvisible_true(bt_admin_bE_exams);
             md_setvisible_true(bt_admin_bE_payments);
-            md_setvisible_true(bt_admin_bE_practicals);
+//            md_setvisible_true(bt_admin_bE_practicals);
             md_setvisible_true(bt_admin_bE_administrator);
 
             //jLabel4.setBorder(borderC);

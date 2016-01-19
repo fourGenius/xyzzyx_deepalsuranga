@@ -25,6 +25,8 @@ public class Jp_admin_employee_ac extends javax.swing.JPanel {
      */
     public Jp_admin_employee_ac() {
         initComponents();
+        jButton2.setVisible(false);
+        jButton3.setVisible(false);
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
