@@ -62,6 +62,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
 //      Set max selectable date for validate date of birth
         Date d = Calendar.getInstance().getTime();
+        _bt_registration_lecture_preview_register_lecture.setEnabled(false);
     }
 
     /**
@@ -902,6 +903,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
             load_information_qulifications_form();
             _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setVisible(false);
             _bt_registration_lecture_personalInformation_preview.setVisible(false);
+            _bt_registration_lecture_preview_register_lecture.setEnabled(false);
 
         }
 
@@ -1292,6 +1294,8 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                 _lb_registration_lecture_preview_address_address_line.setText(_tf_registration_lecture_information_form_address_line.getText());
                 _lb_registration_lecture_preview_address_city.setText(_tf_registration_lecture_information_form_city.getText());
                 _lb_registration_lecture_preview_address_country.setText(_tf_registration_lecture_information_form_country.getText());
+                
+                _bt_registration_lecture_preview_register_lecture.setEnabled(true);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Birthday is Empty");
             }

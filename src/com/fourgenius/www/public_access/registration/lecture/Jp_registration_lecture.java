@@ -7,6 +7,7 @@ package com.fourgenius.www.public_access.registration.lecture;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 
 /**
@@ -24,6 +25,8 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
         initComponents();
 
         load_table_lecture_view();
+        _bt_registraion_lecture_buttons_update_lecture.setVisible(false);
+        _bt_registraion_lecture_buttons_print_report.setVisible(false);
     }
 
     /**
@@ -211,18 +214,22 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_registraion_lecture_buttons_add_lectureMouseReleased
 
     private void _bt_registraion_lecture_buttons_add_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_add_lectureActionPerformed
-        String button_name=_bt_registraion_lecture_buttons_add_lecture.getText();
+        String button_name = _bt_registraion_lecture_buttons_add_lecture.getText();
         if (button_name.equals("Add Lecture")) {
             load_lecture_information_form();
-            buttons_enable(_bt_registraion_lecture_buttons_add_lecture.getText());  
+            buttons_enable(_bt_registraion_lecture_buttons_add_lecture.getText());
             _bt_registraion_lecture_buttons_add_lecture.setText("Finish");
-        }else{
-            load_table_lecture_view();
-            _bt_registraion_lecture_buttons_add_lecture.setText("Add Lecture");
-            _bt_registraion_lecture_buttons_preview_lecture.setEnabled(true);
-            _bt_registraion_lecture_buttons_update_lecture.setEnabled(true);
+        } else {
+            int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (option == JOptionPane.YES_OPTION) {
+                load_table_lecture_view();
+                _bt_registraion_lecture_buttons_add_lecture.setText("Add Lecture");
+                _bt_registraion_lecture_buttons_preview_lecture.setEnabled(true);
+                _bt_registraion_lecture_buttons_update_lecture.setEnabled(true);
+            }
+
         }
-        
+
     }//GEN-LAST:event__bt_registraion_lecture_buttons_add_lectureActionPerformed
 
     private void _bt_registraion_lecture_buttons_update_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMouseEntered
@@ -243,11 +250,11 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
 
 
     private void _bt_registraion_lecture_buttons_update_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureActionPerformed
-        String button_name=_bt_registraion_lecture_buttons_update_lecture.getText();
+        String button_name = _bt_registraion_lecture_buttons_update_lecture.getText();
         if (button_name.equals("Update Lecture")) {
             buttons_enable(_bt_registraion_lecture_buttons_update_lecture.getText());
             _bt_registraion_lecture_buttons_update_lecture.setText("Finish");
-        }else{
+        } else {
             load_table_lecture_view();
             _bt_registraion_lecture_buttons_update_lecture.setText("Update Lecture");
             _bt_registraion_lecture_buttons_preview_lecture.setEnabled(true);
@@ -373,8 +380,9 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
-    public void call_action(){
-        
+
+    public void call_action() {
+
         load_table_lecture_view();
     }
 }

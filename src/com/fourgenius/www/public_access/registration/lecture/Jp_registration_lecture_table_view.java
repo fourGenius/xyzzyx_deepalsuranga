@@ -11,7 +11,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import net.java.balloontip.BalloonTip;
 import public_access.MC_JavaDataBaseConnection;
 
@@ -21,12 +24,15 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
+        DefaultTableModel dtm;
+        TableRowSorter<DefaultTableModel> sorter;
     /**
      * Creates new form Jp_registration_lecture_table_view
      */
     public Jp_registration_lecture_table_view() {
         initComponents();
         _sp_registration_student_searchStudent.setVisible(false);
+        
 
         add_active_table_data();
 
@@ -77,7 +83,6 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         add(_sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 310, 560));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/search_icon.png"))); // NOI18N
-        jLabel1.setPreferredSize(new java.awt.Dimension(50, 50));
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
 
         jPanel1.setLayout(new java.awt.CardLayout());
@@ -107,71 +112,72 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
     private void _tf_registration_student_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_searchStudentKeyReleased
 
-            try {
-                if (_tf_registration_student_searchStudent.getText().isEmpty()) {
-                    _sp_registration_student_searchStudent.setVisible(false);
-                } else {
-                    String text = _tf_registration_student_searchStudent.getText();
-                    char first = text.charAt(0);
-                    if (Character.isDigit(first)) {
-                        Connection c = MC_JavaDataBaseConnection.myConnection();
-                        Statement s = c.createStatement();
+        try {
+            if (_tf_registration_student_searchStudent.getText().isEmpty()) {
+                _sp_registration_student_searchStudent.setVisible(false);
+            } else {
+                String text = _tf_registration_student_searchStudent.getText();
+                char first = text.charAt(0);
+                if (Character.isDigit(first)) {
+                    Connection c = MC_JavaDataBaseConnection.myConnection();
+                    Statement s = c.createStatement();
 
-                        ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE a.employee_academic_user_info_personal_nic like '"+_tf_registration_student_searchStudent.getText()+"' AND c.employee_academic_user_info_status>='1'");
-                        Vector v = new Vector();
-                        while (rs.next()) {
-                            v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
-                        }
-                        rs.close();
-                        _li_registration_student_searchStudent.setListData(v);
+                    ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE a.employee_academic_user_info_personal_nic like '" + _tf_registration_student_searchStudent.getText() + "' AND c.employee_academic_user_info_status>='1'");
+                    Vector v = new Vector();
+                    while (rs.next()) {
+                        v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
+                    }
+                    rs.close();
+                    _li_registration_student_searchStudent.setListData(v);
+                    _sp_registration_student_searchStudent.setVisible(false);
+                    if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
                         _sp_registration_student_searchStudent.setVisible(false);
-                        if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
+                    } else {
+                        _sp_registration_student_searchStudent.setVisible(true);
+                    }
+                    if (evt.getKeyCode() == 40) {
+                        _sp_registration_student_searchStudent.setVisible(true);
+                        _li_registration_student_searchStudent.grabFocus();
+                    }
+                } else {
+                    try {
+
+                        if (_tf_registration_student_searchStudent.getText().isEmpty()) {
                             _sp_registration_student_searchStudent.setVisible(false);
                         } else {
-                            _sp_registration_student_searchStudent.setVisible(true);
+                            Connection c = MC_JavaDataBaseConnection.myConnection();
+                            Statement s = c.createStatement();
+
+                            ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE CONCAT (b.employee_academic_user_info_name_first_name, ' ', b.employee_academic_user_info_name_last_name) like '%" + _tf_registration_student_searchStudent.getText() + "%' AND c.employee_academic_user_info_status>='1'");
+                            Vector v = new Vector();
+                            while (rs.next()) {
+                                v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
+                            }
+                            rs.close();
+                            _li_registration_student_searchStudent.setListData(v);
+                            _sp_registration_student_searchStudent.setVisible(false);
+                            if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
+                                _sp_registration_student_searchStudent.setVisible(false);
+                            } else {
+                                _sp_registration_student_searchStudent.setVisible(true);
+                            }
                         }
                         if (evt.getKeyCode() == 40) {
                             _sp_registration_student_searchStudent.setVisible(true);
                             _li_registration_student_searchStudent.grabFocus();
                         }
-                    } else {
-                        try {
-                            if (_tf_registration_student_searchStudent.getText().isEmpty()) {
-                                _sp_registration_student_searchStudent.setVisible(false);
-                            } else {
-                                Connection c = MC_JavaDataBaseConnection.myConnection();
-                                Statement s = c.createStatement();
 
-                                ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE CONCAT (b.employee_academic_user_info_name_first_name, ' ', b.employee_academic_user_info_name_last_name) like '%" + _tf_registration_student_searchStudent.getText() + "%' AND c.employee_academic_user_info_status>='1'");
-                                Vector v = new Vector();
-                                while (rs.next()) {
-                                    v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
-                                }
-                                rs.close();
-                                _li_registration_student_searchStudent.setListData(v);
-                                _sp_registration_student_searchStudent.setVisible(false);
-                                if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
-                                    _sp_registration_student_searchStudent.setVisible(false);
-                                } else {
-                                    _sp_registration_student_searchStudent.setVisible(true);
-                                }
-                            }
-                            if (evt.getKeyCode() == 40) {
-                                _sp_registration_student_searchStudent.setVisible(true);
-                                _li_registration_student_searchStudent.grabFocus();
-                            }
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-
                 }
 
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-       
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }//GEN-LAST:event__tf_registration_student_searchStudentKeyReleased
 
@@ -184,8 +190,16 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
     }//GEN-LAST:event__tf_registration_student_searchStudentActionPerformed
 
     private void _li_registration_student_searchStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__li_registration_student_searchStudentMouseClicked
+        DefaultTableModel dtm=(DefaultTableModel)_tb_registration_lecture_view_active.getModel();
         _tf_registration_student_searchStudent.setText(_li_registration_student_searchStudent.getSelectedValue().toString());
         _sp_registration_student_searchStudent.setVisible(false);
+        String name=_li_registration_student_searchStudent.getSelectedValue().toString();
+        for (int row = 0; row < _tb_registration_lecture_view_active.getRowCount(); row++) {
+            String next=_tb_registration_lecture_view_active.getValueAt(row, 1).toString();
+            if (next.equals(name)) {
+                _tb_registration_lecture_view_active.setRowSelectionInterval(row, row);
+            }
+        }
         search_lecture();
     }//GEN-LAST:event__li_registration_student_searchStudentMouseClicked
 
@@ -224,15 +238,15 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
     private void search_lecture() {
         try {
-            DefaultTableModel dtm=(DefaultTableModel)_tb_registration_lecture_view_active.getModel();
-            String fullname=_li_registration_student_searchStudent.getSelectedValue().toString();
-            String[] splitname=fullname.split(" ");
-            String fname=splitname[0];
-            String lname=splitname[1];
-            Connection c=MC_JavaDataBaseConnection.myConnection();
-            Statement s=c.createStatement();
-            ResultSet rs=s.executeQuery("SELECT a.employee_academic_user_id, a.employee_academic_user_email, b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name, c.employee_academic_user_info_personal_nic, d.employee_academic_user_info_contact_mobile FROM employee_academic_user_info a,   employee_academic_user_info_name b, employee_academic_user_info_personal c, employee_academic_user_info_contact d WHERE a.employee_academic_user_id=b.employee_academic_user_id AND a.employee_academic_user_id=c.employee_academic_user_id AND a.employee_academic_user_id=d.employee_academic_user_id AND a.employee_academic_user_info_status >= '1' AND b.employee_academic_user_info_name_first_name='"+fname+"' and b.employee_academic_user_info_name_last_name='"+lname+"'");
-            while (rs.next()) {
+
+//            String fullname=_li_registration_student_searchStudent.getSelectedValue().toString();
+//            String[] splitname=fullname.split(" ");
+//            String fname=splitname[0];
+//            String lname=splitname[1];
+//            Connection c=MC_JavaDataBaseConnection.myConnection();
+//            Statement s=c.createStatement();
+//            ResultSet rs=s.executeQuery("SELECT a.employee_academic_user_id, a.employee_academic_user_email, b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name, c.employee_academic_user_info_personal_nic, d.employee_academic_user_info_contact_mobile FROM employee_academic_user_info a,   employee_academic_user_info_name b, employee_academic_user_info_personal c, employee_academic_user_info_contact d WHERE a.employee_academic_user_id=b.employee_academic_user_id AND a.employee_academic_user_id=c.employee_academic_user_id AND a.employee_academic_user_id=d.employee_academic_user_id AND a.employee_academic_user_info_status >= '1' AND b.employee_academic_user_info_name_first_name='"+fname+"' and b.employee_academic_user_info_name_last_name='"+lname+"'");
+//            while (rs.next()) {
 //                Vector v = new Vector();
 //                v.add(rs.getString("employee_academic_user_id"));
 //                v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
@@ -240,9 +254,13 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 //                v.add(rs.getString("employee_academic_user_email"));
 //                v.add(rs.getString("employee_academic_user_info_contact_mobile"));
 //                dtm.addRow(v);
-            }
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    
+
+    
 }
