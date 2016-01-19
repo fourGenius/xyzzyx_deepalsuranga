@@ -47,6 +47,7 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
 
             }
         ));
+        jTable1.setEditingRow(0);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -64,7 +65,7 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
    public void addToTable() {
@@ -79,7 +80,7 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
 
-            ResultSet info = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info");
+            ResultSet info = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info where employee_nonAcademic_administrative_user_info_status='1'");
             while (info.next()) {
 
                 id.add(info.getString("employee_nonAcademic_administrative_user_info_id"));
@@ -88,7 +89,12 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
             dtm.addColumn("Employee ID", id);
             info.close();
 
-            ResultSet name = statement.executeQuery("select * from employee_nonAcademic_user_info_name");
+            ResultSet name = statement.executeQuery("select b.employee_nonAcademic_user_info_name_first_name,"
+                    + "b.employee_nonAcademic_user_info_name_last_name,b.employee_nonAcademic_user_info_name_sirName "
+                    + "from employee_nonAcademic_administrative_user_info a"
+                    + " left join employee_nonAcademic_user_info_name b on "
+                    + "a.employee_nonAcademic_administrative_user_info_id=b.employee_nonAcademic_administrative_user_info_id"
+                    + " where a.employee_nonAcademic_administrative_user_info_status='1'");
             while (name.next()) {
 
                 name_add.add(name.getString("employee_nonAcademic_user_info_name_first_name") + " " + name.getString("employee_nonAcademic_user_info_name_last_name") + " " + name.getString("employee_nonAcademic_user_info_name_sirName"));
@@ -97,7 +103,7 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
             dtm.addColumn("Name", name_add);
             name.close();
 
-            info = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info");
+            info = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info where employee_nonAcademic_administrative_user_info_status='1'");
             while (info.next()) {
 
                 email.add(info.getString("employee_nonAcademic_administrative_user_info_email"));

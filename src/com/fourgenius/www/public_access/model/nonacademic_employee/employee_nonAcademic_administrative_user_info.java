@@ -18,7 +18,7 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class employee_nonAcademic_administrative_user_info {
 
-    private String employee_nonAcademic_administrative_user_info_id, employee_nonAcademic_administrative_user_info_email, employee_nonAcademic_administrative_user_info_status,employee_nonAcademic_administrative_user_info_nic;
+    private String employee_nonAcademic_administrative_user_info_id, employee_nonAcademic_administrative_user_info_email, employee_nonAcademic_administrative_user_info_status,employee_nonAcademic_administrative_user_info_nic,employee_nonAcademic_administrative_user_info_branch;
 
     public employee_nonAcademic_administrative_user_info() {
     }
@@ -26,19 +26,20 @@ public class employee_nonAcademic_administrative_user_info {
 
 //////////////////////////////////////////Insert//////////////////////////////////////////////
 
-    public employee_nonAcademic_administrative_user_info(String employee_nonAcademic_administrative_user_info_id, String employee_nonAcademic_administrative_user_info_email,  String employee_nonAcademic_administrative_user_info_status,String employee_nonAcademic_administrative_user_info_nic) {
+    public employee_nonAcademic_administrative_user_info(String employee_nonAcademic_administrative_user_info_id, String employee_nonAcademic_administrative_user_info_email,  String employee_nonAcademic_administrative_user_info_status,String employee_nonAcademic_administrative_user_info_nic,String employee_nonAcademic_administrative_user_info_branch) {
         this.employee_nonAcademic_administrative_user_info_id = employee_nonAcademic_administrative_user_info_id;
         this.employee_nonAcademic_administrative_user_info_email = employee_nonAcademic_administrative_user_info_email;
         this.employee_nonAcademic_administrative_user_info_status = employee_nonAcademic_administrative_user_info_status;
         this.employee_nonAcademic_administrative_user_info_nic=employee_nonAcademic_administrative_user_info_nic;
+        this.employee_nonAcademic_administrative_user_info_branch=employee_nonAcademic_administrative_user_info_branch;
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
              ResultSet rs = statement.executeQuery("select * from employee_nonAcademic_administrative_user_info where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
             if (rs.next()) {
-                statement.executeUpdate("update employee_nonAcademic_administrative_user_info set employee_nonAcademic_administrative_user_info_email='" + employee_nonAcademic_administrative_user_info_email + "',employee_nonAcademic_administrative_user_info_nic='"+employee_nonAcademic_administrative_user_info_nic+"' where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
+                statement.executeUpdate("update employee_nonAcademic_administrative_user_info set employee_nonAcademic_administrative_user_info_email='" + employee_nonAcademic_administrative_user_info_email + "',employee_nonAcademic_administrative_user_info_nic='"+employee_nonAcademic_administrative_user_info_nic+"',employee_nonAcademic_administrative_user_info_branch='"+employee_nonAcademic_administrative_user_info_branch+"' where employee_nonAcademic_administrative_user_info_id='" + employee_nonAcademic_administrative_user_info_id + "'");
             } else {
-                statement.executeUpdate("insert into employee_nonAcademic_administrative_user_info(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_administrative_user_info_email,employee_nonAcademic_administrative_user_info_status,employee_nonAcademic_administrative_user_info_nic) values ('" + employee_nonAcademic_administrative_user_info_id + "','" + employee_nonAcademic_administrative_user_info_email + "','" + employee_nonAcademic_administrative_user_info_status + "','"+employee_nonAcademic_administrative_user_info_nic+"')");
+                statement.executeUpdate("insert into employee_nonAcademic_administrative_user_info(employee_nonAcademic_administrative_user_info_id,employee_nonAcademic_administrative_user_info_email,employee_nonAcademic_administrative_user_info_status,employee_nonAcademic_administrative_user_info_nic,employee_nonAcademic_administrative_user_info_branch) values ('" + employee_nonAcademic_administrative_user_info_id + "','" + employee_nonAcademic_administrative_user_info_email + "','" + employee_nonAcademic_administrative_user_info_status + "','"+employee_nonAcademic_administrative_user_info_nic+"','"+employee_nonAcademic_administrative_user_info_branch+"')");
             }
             rs.close();
         } catch (SQLException ex) {
@@ -144,8 +145,10 @@ public class employee_nonAcademic_administrative_user_info {
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-             ResultSet rs=statement.executeQuery("select employee_nonAcademic_administrative_user_info_nic from employee_nonAcademic_administrative_user_info where employee_nonAcademic_administrative_user_info_nic like'%"+nic+"%' ");
-            employee_nonAcademic_administrative_user_info_nic=rs.getString("employee_nonAcademic_administrative_user_info_nic");
+             ResultSet rs=statement.executeQuery("select employee_nonAcademic_administrative_user_info_nic from employee_nonAcademic_administrative_user_info where employee_nonAcademic_administrative_user_info_nic ='"+nic+"' ");
+            if (rs.next()) {
+                 employee_nonAcademic_administrative_user_info_nic=rs.getString("employee_nonAcademic_administrative_user_info_nic");
+            }
             rs.close();
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, "Error is: 10/employee_nonAcademic_administrative_user_info;" + ex);
@@ -155,6 +158,16 @@ public class employee_nonAcademic_administrative_user_info {
     }
     
     public String getEmployee_nonAcademic_administrative_user_info_id() {
+         try {
+            Connection c=MC_JavaDataBaseConnection.myConnection();
+            Statement s= c.createStatement();
+            ResultSet rs = s.executeQuery("SELECT COUNT(employee_nonAcademic_administrative_user_info_id) AS x FROM employee_nonAcademic_administrative_user_info");
+            if (rs.next()) {
+                employee_nonAcademic_administrative_user_info_id=rs.getString("x");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
        
         return employee_nonAcademic_administrative_user_info_id;

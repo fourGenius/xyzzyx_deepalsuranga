@@ -8,8 +8,9 @@ package com.fourgenius.www.public_access.registration.employee;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.Border;
-
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author thilina
@@ -29,6 +30,7 @@ public class Jp_registration_employee extends javax.swing.JPanel {
           
         } catch (Exception ex) {
         }
+        _bt_update_employee.setVisible(false);
     }
 
     /**
@@ -127,6 +129,11 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         _bt_update_employee.setMaximumSize(new java.awt.Dimension(200, 50));
         _bt_update_employee.setMinimumSize(new java.awt.Dimension(200, 50));
         _bt_update_employee.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_update_employee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_update_employeeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -154,7 +161,7 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 1340, 70));
     }// </editor-fold>//GEN-END:initComponents
 
-    int i = 0;
+    
     private void _bt_view_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_view_employeeActionPerformed
 
       
@@ -229,6 +236,19 @@ public class Jp_registration_employee extends javax.swing.JPanel {
             }else{_bt_add_employee.setText("Finish");
          _bt_view_employee.setEnabled(false);}
     }//GEN-LAST:event__bt_add_employeeMouseClicked
+
+    private void _bt_update_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_update_employeeActionPerformed
+        
+          Jp_registration_employee_informations_form_active_employee_table active_employee=new Jp_registration_employee_informations_form_active_employee_table();
+       DefaultTableModel dtm=(DefaultTableModel)active_employee.jTable1.getModel();
+      active_employee.jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+       int rof=active_employee.jTable1.getSelectedRow();
+            System.out.println(rof+"   jtjhij");
+       String id=dtm.getValueAt(0,0).toString();
+            System.out.println(id);
+        
+        
+    }//GEN-LAST:event__bt_update_employeeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

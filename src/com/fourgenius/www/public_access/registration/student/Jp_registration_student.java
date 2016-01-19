@@ -81,6 +81,9 @@ public class Jp_registration_student extends javax.swing.JPanel {
         add_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add_stu.setPreferredSize(new java.awt.Dimension(300, 50));
         add_stu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                add_stuMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 add_stuMouseEntered(evt);
             }
@@ -251,11 +254,11 @@ public class Jp_registration_student extends javax.swing.JPanel {
     int i = 0;
 
     private void add_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseEntered
-        // TODO add your handling code here:
+        add_stu.setBorder(border);
     }//GEN-LAST:event_add_stuMouseEntered
 
     private void add_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseExited
-        // TODO add your handling code here:
+        add_stu.setBorder(null);
     }//GEN-LAST:event_add_stuMouseExited
 
     private void add_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMousePressed
@@ -267,19 +270,28 @@ public class Jp_registration_student extends javax.swing.JPanel {
     }//GEN-LAST:event_add_stuMouseReleased
 
     private void add_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_stuActionPerformed
-
-        load_stu_information_form();
-
-        buttons_enable(add_stu.getText());
+String button_name=add_stu.getText();
+        if (button_name.equals("Add Student")) {
+            load_stu_information_form();
+            buttons_enable(add_stu.getText());  
+           add_stu.setText("Finish");
+        }else{
+            load_table_stu_view();
+            add_stu.setText("Add Student");
+            preview_stu.setEnabled(true);
+          update_stu.setEnabled(true);
+          remove_stu.setEnabled(true);
+        }
+       
 
     }//GEN-LAST:event_add_stuActionPerformed
 
     private void update_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseEntered
-        // TODO add your handling code here:
+       update_stu.setBorder(border);
     }//GEN-LAST:event_update_stuMouseEntered
 
     private void update_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseExited
-        // TODO add your handling code here:
+        update_stu.setBorder(null);
     }//GEN-LAST:event_update_stuMouseExited
 
     private void update_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMousePressed
@@ -296,11 +308,15 @@ public class Jp_registration_student extends javax.swing.JPanel {
     }//GEN-LAST:event_update_stuActionPerformed
 
     private void remove_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseEntered
-        // TODO add your handling code here:
+       
+        remove_stu.setBorder(border);
+        
     }//GEN-LAST:event_remove_stuMouseEntered
 
     private void remove_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseExited
-        // TODO add your handling code here:
+        
+        remove_stu.setBorder(null);
+        
     }//GEN-LAST:event_remove_stuMouseExited
 
     private void remove_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMousePressed
@@ -316,11 +332,11 @@ public class Jp_registration_student extends javax.swing.JPanel {
     }//GEN-LAST:event_remove_stuActionPerformed
 
     private void print_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMouseEntered
-        // TODO add your handling code here:
+        print_stu.setBorder(border);
     }//GEN-LAST:event_print_stuMouseEntered
 
     private void print_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMouseExited
-        // TODO add your handling code here:
+        print_stu.setBorder(null);
     }//GEN-LAST:event_print_stuMouseExited
 
     private void print_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMousePressed
@@ -356,6 +372,11 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
         buttons_enable(preview_stu.getText());
     }//GEN-LAST:event_preview_stuActionPerformed
+
+    private void add_stuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseClicked
+  
+        
+    }//GEN-LAST:event_add_stuMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -422,25 +443,25 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
     private void buttons_enable(String button_name) {
         if (button_name.equals(preview_stu.getText())) {
-            preview_stu.setEnabled(false);
-            add_stu.setEnabled(true);
-            remove_stu.setEnabled(true);
-            update_stu.setEnabled(true);
-        } else if (button_name.equals(add_stu.getText())) {
+            preview_stu.setEnabled(true);
             add_stu.setEnabled(false);
             remove_stu.setEnabled(true);
             update_stu.setEnabled(true);
-            preview_stu.setEnabled(true);
-        } else if (button_name.equals(update_stu.getText())) {
-            update_stu.setEnabled(false);
-            preview_stu.setEnabled(true);
-            remove_stu.setEnabled(true);
+        } else if (button_name.equals(add_stu.getText())) {
             add_stu.setEnabled(true);
-        } else {
             remove_stu.setEnabled(false);
-            add_stu.setEnabled(true);
-            preview_stu.setEnabled(true);
+            update_stu.setEnabled(false);
+            preview_stu.setEnabled(false);
+        } else if (button_name.equals(update_stu.getText())) {
             update_stu.setEnabled(true);
+            preview_stu.setEnabled(false);
+            remove_stu.setEnabled(false);
+            add_stu.setEnabled(false);
+        } else {
+            remove_stu.setEnabled(true);
+            add_stu.setEnabled(false);
+            preview_stu.setEnabled(false);
+            update_stu.setEnabled(false);
         }
     }
 

@@ -5,15 +5,7 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="42" green="42" red="42" type="rgb"/>
     </Property>
-    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="42" green="42" red="42" type="rgb"/>
-    </Property>
-    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1360, 718]"/>
-    </Property>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1360, 718]"/>
-    </Property>
+    <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
   </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -32,7 +24,7 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="Jp_registraion_lecture_buttons">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -49,15 +41,15 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="preview_stu" min="-2" pref="199" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="add_stu" min="-2" pref="199" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="update_stu" min="-2" pref="199" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="remove_stu" min="-2" pref="199" max="-2" attributes="0"/>
-                  <EmptySpace pref="199" max="32767" attributes="0"/>
-                  <Component id="print_stu" min="-2" pref="199" max="-2" attributes="0"/>
+                  <Component id="_bt_registraion_lecture_buttons_preview_lecture" min="-2" pref="200" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="_bt_registraion_lecture_buttons_add_lecture" min="-2" pref="200" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="_bt_registraion_lecture_buttons_update_lecture" min="-2" pref="200" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="_bt_registraion_lecture_buttons_remove_lecture" min="-2" pref="200" max="-2" attributes="0"/>
+                  <EmptySpace pref="166" max="32767" attributes="0"/>
+                  <Component id="_bt_registraion_lecture_buttons_print_report" min="-2" pref="300" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -67,11 +59,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="add_stu" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="update_stu" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="remove_stu" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="print_stu" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="preview_stu" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="_bt_registraion_lecture_buttons_add_lecture" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="_bt_registraion_lecture_buttons_update_lecture" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="_bt_registraion_lecture_buttons_remove_lecture" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="_bt_registraion_lecture_buttons_print_report" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="_bt_registraion_lecture_buttons_preview_lecture" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -79,7 +71,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="add_stu">
+        <Component class="javax.swing.JButton" name="_bt_registraion_lecture_buttons_add_lecture">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -88,9 +80,9 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"/>
+              <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Add Student"/>
+            <Property name="text" type="java.lang.String" value="Add Lecture"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
@@ -101,15 +93,14 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="add_stuMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="add_stuMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="add_stuMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="add_stuMousePressed"/>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="add_stuMouseReleased"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_stuActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_add_lectureMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_add_lectureMouseExited"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_add_lectureMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_add_lectureMouseReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registraion_lecture_buttons_add_lectureActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="update_stu">
+        <Component class="javax.swing.JButton" name="_bt_registraion_lecture_buttons_update_lecture">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -118,9 +109,9 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"/>
+              <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Update Student"/>
+            <Property name="text" type="java.lang.String" value="Update Lecture"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
@@ -131,14 +122,14 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="update_stuMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="update_stuMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="update_stuMousePressed"/>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="update_stuMouseReleased"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="update_stuActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_update_lectureMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_update_lectureMouseExited"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_update_lectureMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_update_lectureMouseReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registraion_lecture_buttons_update_lectureActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="remove_stu">
+        <Component class="javax.swing.JButton" name="_bt_registraion_lecture_buttons_remove_lecture">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -147,9 +138,9 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"/>
+              <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Remove Student"/>
+            <Property name="text" type="java.lang.String" value="Remove Lecture"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
@@ -160,14 +151,14 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="remove_stuMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="remove_stuMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="remove_stuMousePressed"/>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="remove_stuMouseReleased"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="remove_stuActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_remove_lectureMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_remove_lectureMouseExited"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_remove_lectureMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_remove_lectureMouseReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registraion_lecture_buttons_remove_lectureActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="print_stu">
+        <Component class="javax.swing.JButton" name="_bt_registraion_lecture_buttons_print_report">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -189,14 +180,14 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="print_stuMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="print_stuMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="print_stuMousePressed"/>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="print_stuMouseReleased"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="print_stuActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_print_reportMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_print_reportMouseExited"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_print_reportMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_print_reportMouseReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registraion_lecture_buttons_print_reportActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="preview_stu">
+        <Component class="javax.swing.JButton" name="_bt_registraion_lecture_buttons_preview_lecture">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -207,7 +198,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Preview Student"/>
+            <Property name="text" type="java.lang.String" value="Preview Lecture"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
@@ -218,16 +209,16 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="preview_stuMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="preview_stuMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="preview_stuMousePressed"/>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="preview_stuMouseReleased"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="preview_stuActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_preview_lectureMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_preview_lectureMouseExited"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_preview_lectureMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_preview_lectureMouseReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registraion_lecture_buttons_preview_lectureActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="Jp_registraion_stu_main_panel">
+    <Container class="javax.swing.JPanel" name="Jp_registraion_lecture_main_panel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="42" green="42" red="42" type="rgb"/>

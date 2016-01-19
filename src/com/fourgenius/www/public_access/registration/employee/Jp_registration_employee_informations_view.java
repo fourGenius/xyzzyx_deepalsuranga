@@ -9,7 +9,12 @@ import com.fourgenius.www.public_access.registration.employee.Jp_registration_em
 import com.fourgenius.www.public_access.registration.employee.Jp_registration_employee_informations_form_active_employee_table;
 import com.fourgenius.www.private_access.admin.method.*;
 import com.fourgenius.www.public_access.model.nonacademic_employee.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -50,7 +55,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
 
         jTabbedPane1.setFocusable(false);
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 18, 970, 610));
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 18, 980, 620));
 
         _tf_registration_employee_informations_view_searchStudent.setMaximumSize(new java.awt.Dimension(300, 50));
         _tf_registration_employee_informations_view_searchStudent.setMinimumSize(new java.awt.Dimension(300, 50));
@@ -63,6 +68,12 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
         add(_tf_registration_employee_informations_view_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 38, -1, -1));
 
         _li_registration_employee_informations_view_searchStudent.setAlignmentX(1.0F);
+        _li_registration_employee_informations_view_searchStudent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _li_registration_employee_informations_view_searchStudent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _li_registration_employee_informations_view_searchStudentMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(_li_registration_employee_informations_view_searchStudent);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 88, 300, 540));
@@ -80,104 +91,96 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_employee_informations_view_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
+ if (_tf_registration_employee_informations_view_searchStudent.getText().isEmpty()) {
+                jScrollPane1.setVisible(false);
 
+            }
 
     }//GEN-LAST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
 
     private void _bt_registration_employee_informations_view_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_employee_informations_view_searchActionPerformed
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+             ResultSet rs=statement.executeQuery("select employee_nonAcademic_administrative_user_info_nic from employee_nonAcademic_administrative_user_info where employee_nonAcademic_administrative_user_info_nic ='"+_tf_registration_employee_informations_view_searchStudent.getText()+"' ");
+            Vector v = new Vector();
 
-        Md_check_id checkId = new Md_check_id();
-        String idType = checkId.Md_check_id(_tf_registration_employee_informations_view_searchStudent.getText());
-        System.out.println(idType);
-        employee_nonAcademic_administrative_user_info info = new employee_nonAcademic_administrative_user_info();
-        Vector v = new Vector();
-        switch ("name") {
-            case "passport":
-                try {
+           
+                while (rs.next()) {
+                    v.add(rs.getString("employee_nonAcademic_administrative_user_info_nic"));
 
-                    if (_tf_registration_employee_informations_view_searchStudent.getText().isEmpty()) {
-                        jScrollPane1.setVisible(false);
+                
 
-                    } else {
-                        while (!(info.getEmployee_nonAcademic_administrative_user_info_nic(_tf_registration_employee_informations_view_searchStudent.getText()).isEmpty())) {
-                            v.add(info.getEmployee_nonAcademic_administrative_user_info_nic(_tf_registration_employee_informations_view_searchStudent.getText()));
+                _li_registration_employee_informations_view_searchStudent.setListData(v);
 
-                        }
+                if (_li_registration_employee_informations_view_searchStudent.getModel().getSize() == 0) {
+                    jScrollPane1.setVisible(false);
 
-                        _li_registration_employee_informations_view_searchStudent.setListData(v);
-
-                        if (_li_registration_employee_informations_view_searchStudent.getModel().getSize() == 0) {
-                            jScrollPane1.setVisible(false);
-
-                        } else {
-                            jScrollPane1.setVisible(true);
-                        }
-
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                break;
-
-            case "nic":
-
-                try {
-                    if (_tf_registration_employee_informations_view_searchStudent.getText().isEmpty()) {
-                        jScrollPane1.setVisible(false);
-
-                    } else {
-                        while (!(info.getEmployee_nonAcademic_administrative_user_info_nic(_tf_registration_employee_informations_view_searchStudent.getText()).isEmpty())) {
-                            v.add(info.getEmployee_nonAcademic_administrative_user_info_nic(_tf_registration_employee_informations_view_searchStudent.getText()));
-
-                        }
-
-                        _li_registration_employee_informations_view_searchStudent.setListData(v);
-
-                        if (_li_registration_employee_informations_view_searchStudent.getModel().getSize() == 0) {
-                            jScrollPane1.setVisible(false);
-
-                        } else {
-                            jScrollPane1.setVisible(true);
-                        }
-
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+                } else {
+                    jScrollPane1.setVisible(true);
                 }
 
-                break;
+            }
 
-            case "name":
-
-                employee_nonAcademic_user_info_name na = new employee_nonAcademic_user_info_name();
-
-                try {
-                    if (_tf_registration_employee_informations_view_searchStudent.getText().isEmpty()) {
-                        jScrollPane1.setVisible(false);
-
-                    } else {
-                        while (!(na.getFullName(_tf_registration_employee_informations_view_searchStudent.getText()).isEmpty())) {
-                            v.add(na.getFullName(_tf_registration_employee_informations_view_searchStudent.getText()));
-
-                        }
-
-                        _li_registration_employee_informations_view_searchStudent.setListData(v);
-
-                        if (_li_registration_employee_informations_view_searchStudent.getModel().getSize() == 0) {
-                            jScrollPane1.setVisible(false);
-
-                        } else {
-                            jScrollPane1.setVisible(true);
-                        }
-
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                break;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event__bt_registration_employee_informations_view_searchActionPerformed
+
+    private void _li_registration_employee_informations_view_searchStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__li_registration_employee_informations_view_searchStudentMouseClicked
+        String selection = _li_registration_employee_informations_view_searchStudent.getSelectedValue().toString();
+        try {
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("select b.employee_nonAcademic_user_info_name_first_name,b.employee_nonAcademic_user_info_name_last_name,b.employee_nonAcademic_user_info_name_sirName, a.employee_nonAcademic_administrative_user_info_id, a.employee_nonAcademic_administrative_user_info_email, a.employee_nonAcademic_administrative_user_info_status from employee_nonAcademic_administrative_user_info a left join employee_nonAcademic_user_info_name b on a.employee_nonAcademic_administrative_user_info_id=b.employee_nonAcademic_administrative_user_info_id where a.employee_nonAcademic_administrative_user_info_nic='" + selection + "'");
+
+            if (rs.next()) {
+                String state = rs.getString("employee_nonAcademic_administrative_user_info_status");
+                if (state.equals("1")) {
+                    jTabbedPane1.setSelectedIndex(0);
+                    Jp_registration_employee_informations_form_active_employee_table active_table = new Jp_registration_employee_informations_form_active_employee_table();
+
+                    DefaultTableModel dtm = (DefaultTableModel) active_table.jTable1.getModel();
+                    dtm.setRowCount(0);
+                    rs.close();
+                    Vector v = new Vector();
+                    ResultSet rs1 = statement.executeQuery("select b.employee_nonAcademic_user_info_name_first_name,b.employee_nonAcademic_user_info_name_last_name,b.employee_nonAcademic_user_info_name_sirName, a.employee_nonAcademic_administrative_user_info_id, a.employee_nonAcademic_administrative_user_info_email from employee_nonAcademic_administrative_user_info a left join employee_nonAcademic_user_info_name b on a.employee_nonAcademic_administrative_user_info_id=b.employee_nonAcademic_administrative_user_info_id where a.employee_nonAcademic_administrative_user_info_nic='" + selection + "' and a.employee_nonAcademic_administrative_user_info_status='1'");
+                    if (rs1.next()) {
+                        v.add(rs.getString("employee_nonAcademic_administrative_user_info_id"));
+                        v.add(rs.getString("employee_nonAcademic_user_info_name_first_name") + " " + rs.getString("employee_nonAcademic_user_info_name_last_name") + " " + rs.getString("employee_nonAcademic_user_info_name_sirName"));
+                        v.add(rs.getString("employee_nonAcademic_administrative_user_info_email"));
+
+                    }
+                    dtm.addRow(v);
+                    dtm.setValueAt(selection, 0, 3);
+                    rs1.close();
+                } else {
+                    jTabbedPane1.setSelectedIndex(1);
+                    Jp_registration_employee_informations_form_deactive_employee_table deactive_employee = new Jp_registration_employee_informations_form_deactive_employee_table();
+                    DefaultTableModel dtm = (DefaultTableModel) deactive_employee.jTable2.getModel();
+                    deactive_employee.set_row_count();
+                    
+                    Vector v = new Vector();
+                    ResultSet rs2 = statement.executeQuery("select b.employee_nonAcademic_user_info_name_first_name,b.employee_nonAcademic_user_info_name_last_name,b.employee_nonAcademic_user_info_name_sirName, a.employee_nonAcademic_administrative_user_info_id, a.employee_nonAcademic_administrative_user_info_email from employee_nonAcademic_administrative_user_info a left join employee_nonAcademic_user_info_name b on a.employee_nonAcademic_administrative_user_info_id=b.employee_nonAcademic_administrative_user_info_id where a.employee_nonAcademic_administrative_user_info_nic='" + selection + "' and a.employee_nonAcademic_administrative_user_info_status='0'");
+                    if (rs2.next()) {
+                        v.add(rs2.getString("employee_nonAcademic_administrative_user_info_id"));
+                        v.add(rs2.getString("employee_nonAcademic_user_info_name_first_name") + " " + rs.getString("employee_nonAcademic_user_info_name_last_name") + " " + rs.getString("employee_nonAcademic_user_info_name_sirName"));
+                        v.add(rs2.getString("employee_nonAcademic_administrative_user_info_email"));
+
+                    }
+                    dtm.addRow(v);
+                    dtm.setValueAt(selection, 0, 3);
+                    
+                    rs2.close();
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }//GEN-LAST:event__li_registration_employee_informations_view_searchStudentMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

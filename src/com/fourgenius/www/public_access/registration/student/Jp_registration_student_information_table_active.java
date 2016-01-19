@@ -23,6 +23,7 @@ public class Jp_registration_student_information_table_active extends javax.swin
      */
     public Jp_registration_student_information_table_active() {
         initComponents();
+        addToTable();
     }
 
     /**
@@ -45,7 +46,7 @@ public class Jp_registration_student_information_table_active extends javax.swin
 
             },
             new String [] {
-                "Administrator ID", "Name", "Email", "NIC No", "Password"
+                "Name", "Email", "NIC No"
             }
         ));
         jScrollPane1.setViewportView(tbl_admin_Administrators);
@@ -69,66 +70,13 @@ public class Jp_registration_student_information_table_active extends javax.swin
     // End of variables declaration//GEN-END:variables
 
     public void addToTable() {
+    
         try {
-
-            DefaultTableModel dtm = (DefaultTableModel) tbl_admin_Administrators.getModel();
             
-            Vector id = new Vector();
-            Vector name_add = new Vector();
-            Vector email = new Vector();
-            Vector nic = new Vector();
-            Vector course = new Vector();
-            Vector gen = new Vector();
-           
-
-            Connection connection = MC_JavaDataBaseConnection.myConnection();
-            Statement statement = connection.createStatement();
-
-// ID
-            ResultSet info = statement.executeQuery("select * from stu_user_info");
-            while (info.next()) {
-
-                id.add(info.getString("stu_user_info_id"));
-
-            }
-            dtm.addColumn("Student ID", id);
-            info.close();
-
-// NAME
-            ResultSet name = statement.executeQuery("select * from stu_info_name");
-            while (name.next()) {
-
-                name_add.add(name.getString("stu_info_name_first_name") + " " + name.getString("stu_info_name_last_name") + " " + name.getString("stu_info_name_sirName"));
-
-            }
-            dtm.addColumn("Name", name_add);
-            name.close();
-
-//  EMAIL
-            info = statement.executeQuery("select * from stu_user_info");
-            while (info.next()) {
-
-                email.add(info.getString("stu_user_info_email"));
-            }
-            info.close();
-            dtm.addColumn("Email", email);
-
-//  NIC & COURSE
-            ResultSet personal = statement.executeQuery("select * from stu_info_personal");
-            while (personal.next()) {
-
-                nic.add(info.getString("stu_info_personal_nic"));
-                course.add(personal.getString("stu_info_personal_course"));
-                
-            }
-            dtm.addColumn("NIC", nic);
-            dtm.addColumn("Course", name_add);
-            personal.close();
-
-            tbl_admin_Administrators.setEnabled(false);
+            
+            
         } catch (Exception e) {
-            e.printStackTrace();
         }
-
+    
     }
 }

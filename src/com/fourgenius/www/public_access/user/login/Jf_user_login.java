@@ -87,7 +87,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         Top.setBackground(new java.awt.Color(97, 97, 97));
         Top.setPreferredSize(new java.awt.Dimension(1366, 60));
 
-        _lb_user_login_close.setBackground(new java.awt.Color(18, 75, 163));
+        _lb_user_login_close.setBackground(new java.awt.Color(25, 118, 210));
         _lb_user_login_close.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         _lb_user_login_close.setForeground(new java.awt.Color(255, 255, 255));
         _lb_user_login_close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -436,7 +436,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     private void _lb_user_login_closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseExited
         _lb_user_login_close.setBorder(null);
-        _lb_user_login_close.setBackground(new Color(18, 75, 163));
+        _lb_user_login_close.setBackground(new Color(25,118,210));
     }//GEN-LAST:event__lb_user_login_closeMouseExited
 
     private void _lb_user_login_minimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_minimizeMouseEntered
@@ -514,7 +514,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         try {
             
-            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "'");
+//            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "'");
             _pf_user_login_password.grabFocus();
         } catch (Exception e) {
         }
@@ -616,13 +616,12 @@ public class Jf_user_login extends javax.swing.JFrame {
             }
             if (rs.next()) {
                 System.out.println("ok!");
-                //if (_tf_user_login_pin.equals(code_Gen.getRandom_pin())) {
-                    System.out.println("Okyda?");
+                
                     Jf_UserMain user_menu = new Jf_UserMain();
                     user_menu.setVisible(true);
                     this.dispose();
-                    //System.gc();
-                //}
+                    System.gc();
+                
             }
             rs.close();
         } catch (Exception e) {

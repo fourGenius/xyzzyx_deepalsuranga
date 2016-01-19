@@ -27,7 +27,8 @@ import javax.swing.border.Border;
  */
 public class Jf_UserMain extends javax.swing.JFrame {
 
-    Border border=BorderFactory.createLineBorder(Color.white, 1);
+    Border border = BorderFactory.createLineBorder(Color.white, 1);
+
     /**
      * Creates new form main_frame
      */
@@ -293,7 +294,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
         _bt_UserMain_EmployeeRegistration.setEnabled(true);
         _bt_UserMain_LectureRegistration.setEnabled(true);
         _bt_UserMain_payments.setEnabled(true);
-        
+
         if (add_student == null) {
             add_student = new Jp_registration_student();
             Jp_userMain_main_panel.removeAll();
@@ -322,7 +323,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
         _bt_UserMain_EmployeeRegistration.setEnabled(true);
         _bt_UserMain_LectureRegistration.setEnabled(false);
         _bt_UserMain_payments.setEnabled(true);
-        
+
         if (add_lecture == null) {
             add_lecture = new Jp_registration_lecture();
             Jp_userMain_main_panel.removeAll();
@@ -339,9 +340,9 @@ public class Jf_UserMain extends javax.swing.JFrame {
             Jp_userMain_main_panel.repaint();
             Jp_userMain_main_panel.revalidate();
         }
-        
+
         if (add_lecture.isVisible()) {
-            
+
         }
 
     }//GEN-LAST:event__bt_UserMain_LectureRegistrationActionPerformed
@@ -354,7 +355,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
         _bt_UserMain_EmployeeRegistration.setEnabled(false);
         _bt_UserMain_LectureRegistration.setEnabled(true);
         _bt_UserMain_payments.setEnabled(true);
-        
+
         if (add_employee == null) {
             add_employee = new Jp_registration_employee();
             Jp_userMain_main_panel.removeAll();
@@ -374,7 +375,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event__bt_UserMain_EmployeeRegistrationActionPerformed
 
-    Jp_registration_user add_user = new Jp_registration_user();
+    Jp_student_payment payment = new Jp_student_payment();
     private void _bt_UserMain_paymentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsActionPerformed
 
         _bt_UserMain_StudentRegistration.setForeground(Color.black);
@@ -382,24 +383,23 @@ public class Jf_UserMain extends javax.swing.JFrame {
         _bt_UserMain_EmployeeRegistration.setEnabled(true);
         _bt_UserMain_LectureRegistration.setEnabled(true);
         _bt_UserMain_payments.setEnabled(false);
-        
-        
-        /*if (add_user == null) {
-            add_user = new Jp_registration_user();
-            main_panel.removeAll();
-            main_panel.repaint();
-            main_panel.revalidate();
-            main_panel.add(add_user);
-            main_panel.repaint();
-            main_panel.revalidate();
+
+        if (payment == null) {
+            payment = new Jp_student_payment();
+            Jp_userMain_main_panel.removeAll();
+            Jp_userMain_main_panel.repaint();
+            Jp_userMain_main_panel.revalidate();
+            Jp_userMain_main_panel.add(payment);
+            Jp_userMain_main_panel.repaint();
+            Jp_userMain_main_panel.revalidate();
         } else {
-            main_panel.removeAll();
-            main_panel.repaint();
-            main_panel.revalidate();
-            main_panel.add(add_user);
-            main_panel.repaint();
-            main_panel.revalidate();
-        }*/
+            Jp_userMain_main_panel.removeAll();
+            Jp_userMain_main_panel.repaint();
+            Jp_userMain_main_panel.revalidate();
+            Jp_userMain_main_panel.add(payment);
+            Jp_userMain_main_panel.repaint();
+            Jp_userMain_main_panel.revalidate();
+        }
 
     }//GEN-LAST:event__bt_UserMain_paymentsActionPerformed
 
@@ -483,26 +483,26 @@ public class Jf_UserMain extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         payment();
-        
+
 //        Jp_student_payment._tf_student_payment_paymentDatails_studentName.setText(Jp_registration_student._lb_registration_student_preview_name.getText());
 //        Jp_student_payment._tf_student_payment_paymentDatails_course.setText(Jp_registration_student._lb_registration_student_preview_course.getText());
 //        Jp_student_payment._tf_student_payment_paymentDatails_courseFee.setText("70000");
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void _bt_UserMain_StudentRegistrationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_StudentRegistrationMouseClicked
-        
+
     }//GEN-LAST:event__bt_UserMain_StudentRegistrationMouseClicked
 
     private void _bt_UserMain_LectureRegistrationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_LectureRegistrationMouseClicked
-        
+
     }//GEN-LAST:event__bt_UserMain_LectureRegistrationMouseClicked
 
     private void _bt_UserMain_EmployeeRegistrationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_EmployeeRegistrationMouseClicked
-        
+
     }//GEN-LAST:event__bt_UserMain_EmployeeRegistrationMouseClicked
 
     private void _bt_UserMain_paymentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsMouseClicked
-        
+
     }//GEN-LAST:event__bt_UserMain_paymentsMouseClicked
 
     /**
@@ -556,8 +556,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void payment() {
-        
-        
+
         Jp_student_payment student_payment = new Jp_student_payment();
         if (student_payment == null) {
             student_payment = new Jp_student_payment();
@@ -575,13 +574,13 @@ public class Jf_UserMain extends javax.swing.JFrame {
             Jp_userMain_main_panel.repaint();
             Jp_userMain_main_panel.revalidate();
         }
-        
+
     }
 
     private void loadFrame() {
         _bt_UserMain_StudentRegistration.setEnabled(false);
         Jp_registration_student add_student = new Jp_registration_student();
-        
+
         if (add_student == null) {
             add_student = new Jp_registration_student();
             Jp_userMain_main_panel.removeAll();
@@ -599,7 +598,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
             Jp_userMain_main_panel.revalidate();
         }
     }
-    
+
     void showTime() {
         new Timer(0, new ActionListener() {
 

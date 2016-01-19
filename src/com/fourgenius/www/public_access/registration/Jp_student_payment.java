@@ -3,25 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.registration.student;
+package com.fourgenius.www.public_access.registration;
 
-import com.fourgenius.www.private_access.admin.login._jp_admin_login_email;
 import java.awt.Color;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Vector;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
-import javax.swing.table.DefaultTableModel;
-import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
- * @author Shadow®
+ * @author Pamitha Gayashan
  */
 public class Jp_student_payment extends javax.swing.JPanel {
 
@@ -31,24 +21,8 @@ public class Jp_student_payment extends javax.swing.JPanel {
      */
     public Jp_student_payment() {
         initComponents();
-         Date d=Calendar.getInstance().getTime();
-         SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
-         _lb_date.setText(sdf.format(d));
-       addToTable(); 
-    }
-
-    public Jp_student_payment(String id) {
-        try {
-            _tf_student_payment_paymentDatails_studentId.setText(id);
-        Connection connection = MC_JavaDataBaseConnection.myConnection();
-            Statement statement = connection.createStatement();
-            ResultSet rs= statement.executeQuery("select b.stu_info_name_first_name,b.stu_info_name_last_name,b.stu_info_name_sirName from stu_info_personal a left join stu_info_name b on a.stu_user_info_id=b.stu_user_info_id where  a.stu_info_personal_nic='"+id+"' ");
-            if (rs.next()) {
-                _tf_student_payment_paymentDatails_studentName.setText(rs.getString("stu_info_name_first_name")+" "+rs.getString("stu_info_name_last_name")+" "+rs.getString("stu_info_name_sirName"));
-            }
-            _tf_student_payment_paymentDatails_course.grabFocus();
-        } catch (Exception e) {
-        }
+        _tf_student_payment_paymentDatails_date.setText("2016-01-05");
+        _tf_student_payment_paymentDatails_invoiceID.setText("INVO001");
     }
 
     /**
@@ -62,7 +36,7 @@ public class Jp_student_payment extends javax.swing.JPanel {
 
         _pl_registration_lecture_personalInformation_contactDetails = new javax.swing.JPanel();
         _lb_registration_lecture_personalInformation_contactDetails_mobileNumber = new javax.swing.JLabel();
-        _tf_student_payment_paymentDatails_studentId = new javax.swing.JTextField();
+        _tf_student_payment_paymentDatails_invoiceID = new javax.swing.JTextField();
         _lb_registration_lecture_personalInformation_contactDetails_landNumber = new javax.swing.JLabel();
         _tf_student_payment_paymentDatails_studentName = new javax.swing.JTextField();
         _lb_registration_lecture_personalInformation_contactDetails_eMail = new javax.swing.JLabel();
@@ -74,10 +48,11 @@ public class Jp_student_payment extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_address_city = new javax.swing.JLabel();
         _tf_registration_lecture_personalInformations_contactDetails_duePayment = new javax.swing.JTextField();
         _lb_registration_lecture_personalInformation_contactDetails_mobileNumber1 = new javax.swing.JLabel();
+        _tf_student_payment_paymentDatails_date = new javax.swing.JTextField();
         _bt_student_payment_submit = new javax.swing.JButton();
-        _lb_date = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        _bt_student_payment_updatePayment = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
 
@@ -86,12 +61,13 @@ public class Jp_student_payment extends javax.swing.JPanel {
 
         _lb_registration_lecture_personalInformation_contactDetails_mobileNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_contactDetails_mobileNumber.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_registration_lecture_personalInformation_contactDetails_mobileNumber.setText("Student NIC");
+        _lb_registration_lecture_personalInformation_contactDetails_mobileNumber.setText("Invoice ID");
 
-        _tf_student_payment_paymentDatails_studentId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_student_payment_paymentDatails_studentId.addActionListener(new java.awt.event.ActionListener() {
+        _tf_student_payment_paymentDatails_invoiceID.setEditable(false);
+        _tf_student_payment_paymentDatails_invoiceID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_student_payment_paymentDatails_invoiceID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_student_payment_paymentDatails_studentIdActionPerformed(evt);
+                _tf_student_payment_paymentDatails_invoiceIDActionPerformed(evt);
             }
         });
 
@@ -111,6 +87,7 @@ public class Jp_student_payment extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_contactDetails_eMail.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_contactDetails_eMail.setText("Course");
 
+        _tf_student_payment_paymentDatails_course.setEditable(false);
         _tf_student_payment_paymentDatails_course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_student_payment_paymentDatails_course.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,15 +99,11 @@ public class Jp_student_payment extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_address_1stLine.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_address_1stLine.setText("Course Fee");
 
+        _tf_student_payment_paymentDatails_courseFee.setEditable(false);
         _tf_student_payment_paymentDatails_courseFee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_student_payment_paymentDatails_courseFee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_student_payment_paymentDatails_courseFeeActionPerformed(evt);
-            }
-        });
-        _tf_student_payment_paymentDatails_courseFee.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_student_payment_paymentDatails_courseFeeKeyReleased(evt);
             }
         });
 
@@ -142,11 +115,6 @@ public class Jp_student_payment extends javax.swing.JPanel {
         _tf_student_payment_paymentDatails_payement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_student_payment_paymentDatails_payementActionPerformed(evt);
-            }
-        });
-        _tf_student_payment_paymentDatails_payement.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_student_payment_paymentDatails_payementKeyReleased(evt);
             }
         });
 
@@ -161,15 +129,18 @@ public class Jp_student_payment extends javax.swing.JPanel {
                 _tf_registration_lecture_personalInformations_contactDetails_duePaymentActionPerformed(evt);
             }
         });
-        _tf_registration_lecture_personalInformations_contactDetails_duePayment.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_registration_lecture_personalInformations_contactDetails_duePaymentKeyReleased(evt);
-            }
-        });
 
         _lb_registration_lecture_personalInformation_contactDetails_mobileNumber1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_contactDetails_mobileNumber1.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_contactDetails_mobileNumber1.setText("Date");
+
+        _tf_student_payment_paymentDatails_date.setEditable(false);
+        _tf_student_payment_paymentDatails_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_student_payment_paymentDatails_date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_student_payment_paymentDatails_dateActionPerformed(evt);
+            }
+        });
 
         _bt_student_payment_submit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_student_payment_submit.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,14 +162,6 @@ public class Jp_student_payment extends javax.swing.JPanel {
                 _bt_student_payment_submitMouseReleased(evt);
             }
         });
-        _bt_student_payment_submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_student_payment_submitActionPerformed(evt);
-            }
-        });
-
-        _lb_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _lb_date.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_contactDetailsLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_contactDetails);
         _pl_registration_lecture_personalInformation_contactDetails.setLayout(_pl_registration_lecture_personalInformation_contactDetailsLayout);
@@ -206,9 +169,11 @@ public class Jp_student_payment extends javax.swing.JPanel {
             _pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(_lb_registration_lecture_personalInformation_address_1stLine, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_lb_registration_lecture_personalInformation_contactDetails_mobileNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(_lb_registration_lecture_personalInformation_contactDetails_mobileNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(_tf_student_payment_paymentDatails_date, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(_bt_student_payment_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -217,15 +182,14 @@ public class Jp_student_payment extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(_lb_registration_lecture_personalInformation_contactDetails_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                                    .addComponent(_tf_student_payment_paymentDatails_studentId)
+                                    .addComponent(_tf_student_payment_paymentDatails_invoiceID)
                                     .addComponent(_lb_registration_lecture_personalInformation_contactDetails_landNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(_tf_student_payment_paymentDatails_studentName)
                                     .addComponent(_lb_registration_lecture_personalInformation_contactDetails_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(_tf_student_payment_paymentDatails_course))
                                 .addComponent(_lb_registration_lecture_personalInformation_address_2ndLine, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(_lb_registration_lecture_personalInformation_address_city, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(_tf_registration_lecture_personalInformations_contactDetails_duePayment)))
-                    .addComponent(_lb_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(_tf_registration_lecture_personalInformations_contactDetails_duePayment))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         _pl_registration_lecture_personalInformation_contactDetailsLayout.setVerticalGroup(
@@ -234,11 +198,11 @@ public class Jp_student_payment extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(_lb_registration_lecture_personalInformation_contactDetails_mobileNumber1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_lb_date, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_tf_student_payment_paymentDatails_date, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_lecture_personalInformation_contactDetails_mobileNumber)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_student_payment_paymentDatails_studentId, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_tf_student_payment_paymentDatails_invoiceID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_lecture_personalInformation_contactDetails_landNumber)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -259,28 +223,44 @@ public class Jp_student_payment extends javax.swing.JPanel {
                 .addComponent(_lb_registration_lecture_personalInformation_address_city)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_registration_lecture_personalInformations_contactDetails_duePayment, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addComponent(_bt_student_payment_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Student ID", "Student Name", "Course Name", "Course Fee", "Payment", "Due Payment", "Payment Date", "Complete Payemnt"
+                "Invoice ID", "Student Name", "Course Name", "Course Fee", "Payment", "Due Payment", "Payment Date", "Complete Payemnt"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true
-            };
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        _bt_student_payment_updatePayment.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_student_payment_updatePayment.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_student_payment_updatePayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_student_payment_updatePayment.setText("Update Payment");
+        _bt_student_payment_updatePayment.setFocusPainted(false);
+        _bt_student_payment_updatePayment.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_student_payment_updatePayment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_student_payment_updatePaymentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_student_payment_updatePaymentMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_student_payment_updatePaymentMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_student_payment_updatePaymentMouseReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -288,7 +268,9 @@ public class Jp_student_payment extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 965, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 965, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_student_payment_updatePayment, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(_pl_registration_lecture_personalInformation_contactDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -299,40 +281,20 @@ public class Jp_student_payment extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(_pl_registration_lecture_personalInformation_contactDetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(_bt_student_payment_updatePayment, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-Double due_payment=0.0;
-    private void _tf_student_payment_paymentDatails_studentIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_studentIdActionPerformed
-        try {
-            Connection connection = MC_JavaDataBaseConnection.myConnection();
-            Statement statement = connection.createStatement();
-            ResultSet rs= statement.executeQuery("select b.stu_info_name_first_name,b.stu_info_name_last_name,b.stu_info_name_sirName from stu_info_personal a left join stu_info_name b on a.stu_user_info_id=b.stu_user_info_id where  a.stu_info_personal_nic='"+_tf_student_payment_paymentDatails_studentId.getText()+"' ");
-            if (rs.next()) {
-                _tf_student_payment_paymentDatails_studentName.setText(rs.getString("stu_info_name_first_name")+" "+rs.getString("stu_info_name_last_name")+" "+rs.getString("stu_info_name_sirName"));
-              _tf_student_payment_paymentDatails_course.grabFocus();
-           rs.close();
-              ResultSet rs1=statement.executeQuery("select * from student_payment where student_id='"+_tf_student_payment_paymentDatails_studentId.getText()+"'");
-                System.out.println("drhzrtze");
-            if (rs1.next()) {
-               due_payment=rs1.getDouble("due_payment");
-                System.out.println(due_payment); 
-               _tf_student_payment_paymentDatails_course.setText(rs1.getString("course"));
-                System.out.println(rs1.getString("course"));
-                _tf_student_payment_paymentDatails_courseFee.setText(rs1.getDouble("course_fee")+"");
-                System.out.println(rs1.getDouble("course_fee"));
-            _tf_student_payment_paymentDatails_payement.grabFocus();
-            }
-            }
-            
-            
-        } catch (Exception e) {
-        }
-    }//GEN-LAST:event__tf_student_payment_paymentDatails_studentIdActionPerformed
+
+    private void _tf_student_payment_paymentDatails_invoiceIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_invoiceIDActionPerformed
+        _tf_student_payment_paymentDatails_studentName.grabFocus();
+    }//GEN-LAST:event__tf_student_payment_paymentDatails_invoiceIDActionPerformed
 
     private void _tf_student_payment_paymentDatails_studentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_studentNameActionPerformed
-       
+        _tf_student_payment_paymentDatails_course.grabFocus();
     }//GEN-LAST:event__tf_student_payment_paymentDatails_studentNameActionPerformed
 
     private void _tf_student_payment_paymentDatails_courseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_courseActionPerformed
@@ -341,25 +303,35 @@ Double due_payment=0.0;
 
     private void _tf_student_payment_paymentDatails_courseFeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_courseFeeActionPerformed
         _tf_student_payment_paymentDatails_payement.grabFocus();
-        
     }//GEN-LAST:event__tf_student_payment_paymentDatails_courseFeeActionPerformed
 
     private void _tf_student_payment_paymentDatails_payementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_payementActionPerformed
-        if (!(due_payment==0.0)) {
-            System.out.println("akkopk");
-            Double new_due=due_payment-Double.parseDouble(_tf_student_payment_paymentDatails_payement.getText());
-            _tf_registration_lecture_personalInformations_contactDetails_duePayment.setText(new_due+"0");
-        }
-        else{
-        
-         Double due= Double.parseDouble(_tf_student_payment_paymentDatails_courseFee.getText())-Double.parseDouble(_tf_student_payment_paymentDatails_payement.getText());
-      _tf_registration_lecture_personalInformations_contactDetails_duePayment.setText(due+"0");
-        }
+        _tf_registration_lecture_personalInformations_contactDetails_duePayment.grabFocus();
     }//GEN-LAST:event__tf_student_payment_paymentDatails_payementActionPerformed
 
     private void _tf_registration_lecture_personalInformations_contactDetails_duePaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_personalInformations_contactDetails_duePaymentActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event__tf_registration_lecture_personalInformations_contactDetails_duePaymentActionPerformed
+
+    private void _tf_student_payment_paymentDatails_dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_dateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tf_student_payment_paymentDatails_dateActionPerformed
+
+    private void _bt_student_payment_updatePaymentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_payment_updatePaymentMouseEntered
+        _bt_student_payment_updatePayment.setBorder(border);
+    }//GEN-LAST:event__bt_student_payment_updatePaymentMouseEntered
+
+    private void _bt_student_payment_updatePaymentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_payment_updatePaymentMouseExited
+        _bt_student_payment_updatePayment.setBorder(null);
+    }//GEN-LAST:event__bt_student_payment_updatePaymentMouseExited
+
+    private void _bt_student_payment_updatePaymentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_payment_updatePaymentMousePressed
+        _bt_student_payment_updatePayment.setBorder(null);
+    }//GEN-LAST:event__bt_student_payment_updatePaymentMousePressed
+
+    private void _bt_student_payment_updatePaymentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_payment_updatePaymentMouseReleased
+        _bt_student_payment_updatePayment.setBorder(border);
+    }//GEN-LAST:event__bt_student_payment_updatePaymentMouseReleased
 
     private void _bt_student_payment_submitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_payment_submitMouseEntered
         _bt_student_payment_submit.setBorder(border);
@@ -377,69 +349,10 @@ Double due_payment=0.0;
         _bt_student_payment_submit.setBorder(border);
     }//GEN-LAST:event__bt_student_payment_submitMouseReleased
 
-    private void _bt_student_payment_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_student_payment_submitActionPerformed
-        
-        try {
-            Connection connection = MC_JavaDataBaseConnection.myConnection();
-            Statement statement = connection.createStatement();
-            ResultSet rs=statement.executeQuery("select * from student_payment where student_id='"+_tf_student_payment_paymentDatails_studentId.getText()+"'");
-            if (rs.next()) {
-               statement.executeUpdate("update student_payment set date='"+_lb_date.getText()+"',student_id='"+_tf_student_payment_paymentDatails_studentId.getText()+"',student_name='"+_tf_student_payment_paymentDatails_studentName.getText()+"',course='"+_tf_student_payment_paymentDatails_course.getText()+"',course_fee='"+_tf_student_payment_paymentDatails_courseFee.getText()+"',payment='"+_tf_student_payment_paymentDatails_payement.getText()+"',due_payment='"+_tf_registration_lecture_personalInformations_contactDetails_duePayment.getText()+"'");
-           addToTable();
-            }else{
-            statement.executeUpdate("insert into student_payment(date,student_id,student_name,course,course_fee,payment,due_payment) values ('"+_lb_date.getText()+"','" + _tf_student_payment_paymentDatails_studentId.getText() + "','" +_tf_student_payment_paymentDatails_studentName.getText()+ "','"+_tf_student_payment_paymentDatails_course.getText()+"','"+_tf_student_payment_paymentDatails_courseFee.getText()+"','"+_tf_student_payment_paymentDatails_payement.getText()+"','"+_tf_registration_lecture_personalInformations_contactDetails_duePayment.getText()+"')");
-            addToTable();
-            }
-            
-            _tf_registration_lecture_personalInformations_contactDetails_duePayment.setText(null);
-            _tf_student_payment_paymentDatails_course.setText(null);
-            _tf_student_payment_paymentDatails_courseFee.setText(null);
-            _tf_student_payment_paymentDatails_payement.setText(null);
-            _tf_student_payment_paymentDatails_studentId.setText(null);
-            _tf_student_payment_paymentDatails_studentName.setText(null);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
-    }//GEN-LAST:event__bt_student_payment_submitActionPerformed
-
-    private void _tf_student_payment_paymentDatails_courseFeeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_courseFeeKeyReleased
-        
-        char c=evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            
-            evt.consume();
-            
-        }
-        
-    }//GEN-LAST:event__tf_student_payment_paymentDatails_courseFeeKeyReleased
-
-    private void _tf_student_payment_paymentDatails_payementKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_payementKeyReleased
-        
-         char c=evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            
-            evt.consume();
-            
-        }
-        
-    }//GEN-LAST:event__tf_student_payment_paymentDatails_payementKeyReleased
-
-    private void _tf_registration_lecture_personalInformations_contactDetails_duePaymentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_personalInformations_contactDetails_duePaymentKeyReleased
-       
-         char c=evt.getKeyChar();
-        if (Character.isLetter(c)) {
-            
-            evt.consume();
-            
-        }
-        
-    }//GEN-LAST:event__tf_registration_lecture_personalInformations_contactDetails_duePaymentKeyReleased
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton _bt_student_payment_submit;
-    private javax.swing.JLabel _lb_date;
+    private javax.swing.JButton _bt_student_payment_updatePayment;
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_address_1stLine;
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_address_2ndLine;
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_address_city;
@@ -451,40 +364,11 @@ Double due_payment=0.0;
     private javax.swing.JTextField _tf_registration_lecture_personalInformations_contactDetails_duePayment;
     public static javax.swing.JTextField _tf_student_payment_paymentDatails_course;
     public static javax.swing.JTextField _tf_student_payment_paymentDatails_courseFee;
+    public static javax.swing.JTextField _tf_student_payment_paymentDatails_date;
+    public static javax.swing.JTextField _tf_student_payment_paymentDatails_invoiceID;
     private javax.swing.JTextField _tf_student_payment_paymentDatails_payement;
-    public static javax.swing.JTextField _tf_student_payment_paymentDatails_studentId;
     public static javax.swing.JTextField _tf_student_payment_paymentDatails_studentName;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-
-    private void addToTable() {
-        try {
-              Connection connection = MC_JavaDataBaseConnection.myConnection();
-            Statement statement = connection.createStatement();
-            ResultSet rs=statement.executeQuery("select * from student_payment");
-            DefaultTableModel dtm=(DefaultTableModel)jTable1.getModel();
-            Vector v=new Vector();
-           
-            while (rs.next()) {                
-                v.add(rs.getString("student_id"));
-                v.add(rs.getString("student_name"));
-                v.add(rs.getString("course"));
-                v.add(rs.getString("course_fee"));
-                v.add(rs.getString("payment"));
-                v.add(rs.getString("due_payment"));
-                v.add(rs.getString("date"));
-             if (rs.getString("due_payment").equals("0")) {
-                v.add("Completed");
-            }else{
-             v.add("Not completed");
-             }
-            }
-           
-            dtm.addRow(v);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-            
-    }
 }

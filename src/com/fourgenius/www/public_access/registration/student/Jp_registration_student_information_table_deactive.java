@@ -38,7 +38,7 @@ public class Jp_registration_student_information_table_deactive extends javax.sw
 
             },
             new String [] {
-                "User ID", "Name", "Email", "NIC No", "Password"
+                "Name", "Email", "NIC No"
             }
         ));
         jScrollPane6.setViewportView(tbl_admin_Administrators5);
