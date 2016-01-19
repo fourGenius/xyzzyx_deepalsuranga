@@ -41,8 +41,9 @@ public class Jp_registration_student extends javax.swing.JPanel {
     Border border = BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
     boolean b;
-    Jp_registration_student_c_layout table=new Jp_registration_student_c_layout();
-    DefaultTableModel dtm=(DefaultTableModel)table.jTable1.getModel();
+    Jp_registration_student_c_layout table = new Jp_registration_student_c_layout();
+    DefaultTableModel dtm = (DefaultTableModel) table.jTable1.getModel();
+
     /**
      * Creates new form registration_student
      */
@@ -279,24 +280,24 @@ public class Jp_registration_student extends javax.swing.JPanel {
     }//GEN-LAST:event_add_stuMouseReleased
 
     private void add_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_stuActionPerformed
-String button_name=add_stu.getText();
+        String button_name = add_stu.getText();
         if (button_name.equals("Add Student")) {
             load_stu_information_form();
-            buttons_enable(add_stu.getText());  
-           add_stu.setText("Finish");
-        }else{
+            buttons_enable(add_stu.getText());
+            add_stu.setText("Finish");
+        } else {
             load_table_stu_view();
             add_stu.setText("Add Student");
             preview_stu.setEnabled(true);
-          update_stu.setEnabled(true);
-          remove_stu.setEnabled(true);
+            update_stu.setEnabled(true);
+            remove_stu.setEnabled(true);
         }
-       
+
 
     }//GEN-LAST:event_add_stuActionPerformed
 
     private void update_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseEntered
-       update_stu.setBorder(border);
+        update_stu.setBorder(border);
     }//GEN-LAST:event_update_stuMouseEntered
 
     private void update_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseExited
@@ -317,15 +318,15 @@ String button_name=add_stu.getText();
     }//GEN-LAST:event_update_stuActionPerformed
 
     private void remove_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseEntered
-       
+
         remove_stu.setBorder(border);
-        
+
     }//GEN-LAST:event_remove_stuMouseEntered
 
     private void remove_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseExited
-        
+
         remove_stu.setBorder(null);
-        
+
     }//GEN-LAST:event_remove_stuMouseExited
 
     private void remove_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMousePressed
@@ -357,7 +358,7 @@ String button_name=add_stu.getText();
     }//GEN-LAST:event_print_stuMouseReleased
 
     private void print_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_stuActionPerformed
-printReport();        
+        printReport();
     }//GEN-LAST:event_print_stuActionPerformed
 
     private void preview_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMouseEntered
@@ -383,8 +384,8 @@ printReport();
     }//GEN-LAST:event_preview_stuActionPerformed
 
     private void add_stuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseClicked
-  
-        
+
+
     }//GEN-LAST:event_add_stuMouseClicked
 
 
@@ -400,36 +401,35 @@ printReport();
 
     public void printReport() {
 
-                
-                   try {
-            String report_path = "‪\\reports\\student_reg.jrxml";
-                       InputStream in=new FileInputStream(new File(report_path));
-                       System.out.println("oooo");
-            Jp_registration_student_informations info=new Jp_registration_student_informations();
-                       JasperReport compileReport=JasperCompileManager.compileReport(in);
-                       System.out.println("ok1");
-                       Map<String, Object> m = new HashMap<String, Object>();
+        try {
+            String report_path = "‪C:\\hello\\student_reg.jrxml";
+            InputStream in = new FileInputStream(new File(report_path));
+            System.out.println("oooo");
+            Jp_registration_student_informations info = new Jp_registration_student_informations();
+            JasperReport compileReport = JasperCompileManager.compileReport(in);
+            System.out.println("ok1");
+            Map<String, Object> m = new HashMap<String, Object>();
             System.out.println("ok2");
             m.put("course", info._lb_registration_student_preview_course.getText());
-            m.put("name",info._lb_registration_student_preview_name.getText() );
-            m.put("address",info._lb_registration_student_preview_lane1.getText() );
-            m.put("telePhone",info._lb_registration_student_preview_homeNumber.getText() );
-            m.put("mobilePhone",info. _lb_registration_student_preview_mobileNumber.getText());
+            m.put("name", info._lb_registration_student_preview_name.getText());
+            m.put("address", info._lb_registration_student_preview_lane1.getText());
+            m.put("telePhone", info._lb_registration_student_preview_homeNumber.getText());
+            m.put("mobilePhone", info._lb_registration_student_preview_mobileNumber.getText());
             m.put("email", info._lb_registration_student_preview_eMail.getText());
             m.put("dob", info._lb_registration_student_preview_dateOfBirth.getText());
-            
-            m.put("nic",info. _lb_registration_student_preview_nic.getText());
+
+            m.put("nic", info._lb_registration_student_preview_nic.getText());
             m.put("sid", info._lb_registration_student_preview_studentID.getText());
-            m.put("pic",info.newpath);           
+            m.put("pic", info.newpath);
             System.out.println("ok3");
-                       JasperPrint jp=JasperFillManager.fillReport(compileReport, m);
-                       System.out.println("ok4");
-                       JasperViewer.viewReport(jp, false);
-                       System.out.println("ok5");
+            JasperPrint jp = JasperFillManager.fillReport(compileReport, m);
+            System.out.println("ok4");
+            JasperViewer.viewReport(jp, false);
+            System.out.println("ok5");
         } catch (Exception e) {
             e.printStackTrace();
         }
-  
+
     }
 
     private void load_table_stu_view() {
