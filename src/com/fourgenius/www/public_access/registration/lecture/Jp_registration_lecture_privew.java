@@ -5,6 +5,13 @@
  */
 package com.fourgenius.www.public_access.registration.lecture;
 
+import java.awt.Image;
+import java.io.File;
+import java.sql.ResultSet;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import public_access.MC_JavaDataBaseConnection;
+
 /**
  *
  * @author Dineth Jayasekera
@@ -20,7 +27,7 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
 
     public Jp_registration_lecture_privew(String id) {
     
-    loadForm();
+    loadForm(id);
         
     }
     
@@ -46,7 +53,7 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
         _lb_address_line = new javax.swing.JLabel();
         _lb_gender = new javax.swing.JLabel();
         _lb_nic = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        _lb_name = new javax.swing.JLabel();
         _lb_id = new javax.swing.JLabel();
         _lb_city = new javax.swing.JLabel();
         _lb_cuntry = new javax.swing.JLabel();
@@ -131,11 +138,11 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
         _lb_nic.setMinimumSize(new java.awt.Dimension(500, 25));
         _lb_nic.setPreferredSize(new java.awt.Dimension(500, 25));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setMaximumSize(new java.awt.Dimension(500, 25));
-        jLabel13.setMinimumSize(new java.awt.Dimension(500, 25));
-        jLabel13.setPreferredSize(new java.awt.Dimension(500, 25));
+        _lb_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_name.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_name.setMaximumSize(new java.awt.Dimension(500, 25));
+        _lb_name.setMinimumSize(new java.awt.Dimension(500, 25));
+        _lb_name.setPreferredSize(new java.awt.Dimension(500, 25));
 
         _lb_id.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_id.setForeground(new java.awt.Color(255, 255, 255));
@@ -313,7 +320,7 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(_lb_dob, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(_lb_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(_lb_nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(_lb_gender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(_lb_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -339,7 +346,7 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(_lb_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -395,13 +402,13 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
     private javax.swing.JLabel _lb_id;
     private javax.swing.JLabel _lb_land;
     private javax.swing.JLabel _lb_mobile;
+    private javax.swing.JLabel _lb_name;
     private javax.swing.JLabel _lb_nic;
     private javax.swing.JLabel _lb_picture;
     private javax.swing.JTable _tb_Qulification_table;
     private javax.swing.JTable _tb_al_result_table;
     private javax.swing.JTable _tb_ol_result_table;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -420,7 +427,70 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 
-    private void loadForm() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void loadForm(String id) {
+        _lb_id.setText(id);
+        loadname(id);
+        loadpersonal(id);
+        loadContact(id);
+        loadAddress(id); 
+    }
+private void loadname(String id) {
+        try {
+            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from employee_academic_user_info_name where employee_academic_user_id='"+id+"'");
+            if (rs.next()) {
+                _lb_name.setText(rs.getString("employee_academic_user_info_name_first_name")+" "+rs.getString("employee_academic_user_info_name_last_name")+" "+rs.getString("employee_academic_user_info_name_surName"));
+            }
+        rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadpersonal(String id) {
+        try {
+            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_personal where stu_user_info_id='"+id+"'");
+            if (rs.next()) {
+                _lb_nic.setText(rs.getString("stu_info_personal_nic"));
+                _lb_dob.setText(rs.getString("stu_info_personal_dob"));
+                _lb_branch.setText(rs.getString("stu_info_personal_branch"));
+                _lb_gender.setText(rs.getString("stu_info_personal_gender"));
+               String path=rs.getString("stu_info_personal_profile_image"); 
+                File f = new File(path);
+                    Image img = ImageIO.read(f);
+                    img = img.getScaledInstance(_lb_picture.getWidth(), _lb_picture.getHeight(), Image.SCALE_SMOOTH);
+                    _lb_picture.setIcon(new ImageIcon(img));
+            }
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadContact(String id) {
+        try {
+             ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_contact where stu_user_info_id='"+id+"'");
+            if (rs.next()) {
+                _lb_mobile.setText(rs.getString("stu_info_telephone_mobile"));
+                _lb_land.setText(rs.getString("stu_info_telephone_land"));
+                _lb_email.setText(rs.getString("stu_info_contact_email"));
+            }
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadAddress(String id) {
+         try {
+             ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_address where stu_user_info_id='"+id+"'");
+            if (rs.next()) {
+               _lb_address_line.setText(rs.getString("stu_info_address_lane1"));
+               _lb_city.setText(rs.getString("stu_info_address_city"));
+               _lb_cuntry.setText(rs.getString("stu_info_address_cuntry"));
+            }
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
