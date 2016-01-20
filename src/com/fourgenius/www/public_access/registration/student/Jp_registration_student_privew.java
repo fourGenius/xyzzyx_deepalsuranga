@@ -6,7 +6,6 @@
 package com.fourgenius.www.public_access.registration.student;
 
 import com.fourgenius.www.public_access.registration.lecture.*;
-import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.m;
 import java.awt.Image;
 import java.io.File;
 import java.sql.ResultSet;
