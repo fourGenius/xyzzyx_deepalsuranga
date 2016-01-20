@@ -65,6 +65,9 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _bt_registration_lecture_preview_register_lecture.setEnabled(false);
     }
 
+    public Jp_registration_lecture_informations(String lec_id) {
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
