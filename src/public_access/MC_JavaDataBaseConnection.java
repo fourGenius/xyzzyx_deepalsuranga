@@ -41,8 +41,7 @@ public class MC_JavaDataBaseConnection {
         Connection connection = null;
 
         try {
-            connection = DriverManager
-                    .getConnection(DB_URL, USER, PASS);
+            connection = DriverManager.getConnection(DB_URL, USER, PASS);
 
         } catch (SQLException e) {
             System.out.println("Connection Failed! Check output console");

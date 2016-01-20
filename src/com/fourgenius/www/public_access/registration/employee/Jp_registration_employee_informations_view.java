@@ -5,7 +5,6 @@
  */
 package com.fourgenius.www.public_access.registration.employee;
 
-import com.fourgenius.www.public_access.registration.employee.Jp_registration_employee_informations_form_deactive_employee_table;
 import com.fourgenius.www.public_access.registration.employee.Jp_registration_employee_informations_form_active_employee_table;
 import com.fourgenius.www.private_access.admin.method.*;
 import com.fourgenius.www.public_access.model.nonacademic_employee.*;
@@ -29,8 +28,8 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
         initComponents();
 
         Jp_registration_employee_informations_form_active_employee_table active_employee = new Jp_registration_employee_informations_form_active_employee_table();
-        Jp_registration_employee_informations_form_deactive_employee_table deactive_employee = new Jp_registration_employee_informations_form_deactive_employee_table();
-        jTabbedPane1.add("Active Employee", active_employee);
+       
+//        jTabbedPane1.add("Active Employee", active_employee);
         //jTabbedPane1.add("De-active Employee", deactive_employee);
         jScrollPane1.setVisible(false);
     }
@@ -45,7 +44,8 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         _tf_registration_employee_informations_view_searchStudent = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         _li_registration_employee_informations_view_searchStudent = new javax.swing.JList();
@@ -56,9 +56,18 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
 
         jPanel1.setLayout(new java.awt.CardLayout());
 
-        jTabbedPane1.setFocusable(false);
-        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(jTabbedPane1, "card2");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jTable1.setEditingRow(0);
+        jScrollPane2.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane2, "card2");
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 980, 620));
 
@@ -142,7 +151,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
             if (rs.next()) {
                 String state = rs.getString("employee_nonAcademic_administrative_user_info_status");
                 if (state.equals("1")) {
-                    jTabbedPane1.setSelectedIndex(0);
+//                    jTabbedPane1.setSelectedIndex(0);
                     Jp_registration_employee_informations_form_active_employee_table active_table = new Jp_registration_employee_informations_form_active_employee_table();
 
                     DefaultTableModel dtm = (DefaultTableModel) active_table.jTable1.getModel();
@@ -159,25 +168,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
                     dtm.addRow(v);
                     dtm.setValueAt(selection, 0, 3);
                     rs1.close();
-                } else {
-                    jTabbedPane1.setSelectedIndex(1);
-                    Jp_registration_employee_informations_form_deactive_employee_table deactive_employee = new Jp_registration_employee_informations_form_deactive_employee_table();
-                    DefaultTableModel dtm = (DefaultTableModel) deactive_employee.jTable2.getModel();
-                    deactive_employee.set_row_count();
-                    
-                    Vector v = new Vector();
-                    ResultSet rs2 = statement.executeQuery("select b.employee_nonAcademic_user_info_name_first_name,b.employee_nonAcademic_user_info_name_last_name,b.employee_nonAcademic_user_info_name_sirName, a.employee_nonAcademic_administrative_user_info_id, a.employee_nonAcademic_administrative_user_info_email from employee_nonAcademic_administrative_user_info a left join employee_nonAcademic_user_info_name b on a.employee_nonAcademic_administrative_user_info_id=b.employee_nonAcademic_administrative_user_info_id where a.employee_nonAcademic_administrative_user_info_nic='" + selection + "' and a.employee_nonAcademic_administrative_user_info_status='0'");
-                    if (rs2.next()) {
-                        v.add(rs2.getString("employee_nonAcademic_administrative_user_info_id"));
-                        v.add(rs2.getString("employee_nonAcademic_user_info_name_first_name") + " " + rs.getString("employee_nonAcademic_user_info_name_last_name") + " " + rs.getString("employee_nonAcademic_user_info_name_sirName"));
-                        v.add(rs2.getString("employee_nonAcademic_administrative_user_info_email"));
-
-                    }
-                    dtm.addRow(v);
-                    dtm.setValueAt(selection, 0, 3);
-                    
-                    rs2.close();
-                }
+                } 
             }
 
         } catch (Exception e) {
@@ -194,6 +185,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     private javax.swing.JTextField _tf_registration_employee_informations_view_searchStudent;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
