@@ -29,6 +29,7 @@ import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperPrintManager;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import public_access.MC_JavaDataBaseConnection;
@@ -40,10 +41,13 @@ import public_access.MC_JavaDataBaseConnection;
 public class Jp_registration_student extends javax.swing.JPanel {
 
     Border border = BorderFactory.createLineBorder(Color.white, 1);
-    String path, newpath;
+
     boolean b;
     Jp_registration_student_c_layout table = new Jp_registration_student_c_layout();
     DefaultTableModel dtm = (DefaultTableModel) table.jTable1.getModel();
+    JasperPrint jp1;
+    String student_id;
+    String newpath;
 
     /**
      * Creates new form registration_student
@@ -58,7 +62,19 @@ public class Jp_registration_student extends javax.swing.JPanel {
         }
         update_stu.setVisible(false);
         remove_stu.setVisible(false);
-        print_stu.setVisible(false);
+//        print_stu.setVisible(false);
+    }
+  static  Map<String, Object> m = new HashMap<String, Object>();
+
+    public Jp_registration_student(String id, String pic) {
+        System.out.println("elaaaaaaaa");
+       
+        
+        m.put("sid", id);
+        m.put("pic", pic);
+        
+        System.out.println(id);
+        System.out.println(pic);
     }
 
     /**
@@ -410,30 +426,17 @@ public class Jp_registration_student extends javax.swing.JPanel {
     public void printReport() {
 
         try {
-            String report_path = "‪src\\reports\\student_reg.jrxml";
-            InputStream in = new FileInputStream(new File(report_path));
-            System.out.println("oooo");
-            Jp_registration_student_informations info = new Jp_registration_student_informations();
-            JasperReport compileReport = JasperCompileManager.compileReport(report_path);
-            System.out.println("ok1");
-            Map<String, Object> m = new HashMap<String, Object>();
-            System.out.println("ok2");
-            m.put("course", info._lb_registration_student_preview_course.getText());
-            m.put("name", info._lb_registration_student_preview_name.getText());
-            m.put("address", info._lb_registration_student_preview_lane1.getText());
-            m.put("telePhone", info._lb_registration_student_preview_homeNumber.getText());
-            m.put("mobilePhone", info._lb_registration_student_preview_mobileNumber.getText());
-            m.put("email", info._lb_registration_student_preview_eMail.getText());
-            m.put("dob", info._lb_registration_student_preview_dateOfBirth.getText());
 
-            m.put("nic", info._lb_registration_student_preview_nic.getText());
-            m.put("sid", info._lb_registration_student_preview_studentID.getText());
-            m.put("pic", info.newpath);
-            System.out.println("ok3");
-            JasperPrint jp = JasperFillManager.fillReport(compileReport, m);
-            System.out.println("ok4");
-            JasperViewer.viewReport(jp, false);
-            System.out.println("ok5");
+            String is = "src/reports/student_reg.jrxml";
+            JasperReport jr = JasperCompileManager.compileReport(is);
+            Jp_registration_student_informations info = new Jp_registration_student_informations();
+
+            System.out.println("ok2");
+           
+
+            jp1 = JasperFillManager.fillReport(jr, m, MC_JavaDataBaseConnection.myConnection());
+            JasperViewer.viewReport(jp1, false);
+            JasperPrintManager.printReport(jp1, false);
         } catch (Exception e) {
             e.printStackTrace();
         }

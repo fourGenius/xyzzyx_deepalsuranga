@@ -193,36 +193,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     private javax.swing.JPanel student_mainPanel;
     // End of variables declaration//GEN-END:variables
 
-    public void printReport() {
-
-        //        
-//                   try {
-//            String report_path = "src/reports/student_reg.jrxml";
-//                       System.out.println("oooo");
-//            JasperReport compileReport=JasperCompileManager.compileReport(report_path);
-//                       System.out.println("ok1");
-//                       Map<String, Object> m = new HashMap<String, Object>();
-//            System.out.println("ok2");
-//            m.put("course", _lb_registration_student_preview_course.getText());
-//            m.put("name",_lb_registration_student_preview_name.getText() );
-//            m.put("address",_lb_registration_student_preview_address.getText() );
-//            m.put("telePhone",_lb_registration_student_preview_homeNumber.getText() );
-//            m.put("mobilePhone", _lb_registration_student_preview_mobileNumber.getText());
-//            m.put("email", _lb_registration_student_preview_eMail.getText());
-//            m.put("dob", _lb_registration_student_preview_dateOfBirth.getText());
-//            m.put("age",_lb_registration_student_preview_age.getText());
-//            m.put("nic", _lb_registration_student_preview_nic.getText());
-//            m.put("sid", _lb_registration_student_preview_studentID.getText());
-//                       System.out.println("ok3");
-//                       JasperPrint jp=JasperFillManager.fillReport(compileReport, m);
-//                       System.out.println("ok4");
-//                       JasperViewer.viewReport(jp, false);
-//                       System.out.println("ok5");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//  
-    }
+   
 
     private void addToTable() {
          

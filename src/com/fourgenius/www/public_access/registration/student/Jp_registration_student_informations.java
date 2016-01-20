@@ -38,7 +38,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     Border border = BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
     public String sur_name, first_name, last_name;
-
+public String student_id;
     public Jp_registration_student_informations() {
         initComponents();
         setComb();
@@ -1099,20 +1099,20 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private javax.swing.JButton _bt_registration_lecture_preview_register_lecture;
     private javax.swing.JButton _bt_registration_student_personal_Information_previwestudent;
     private com.toedter.calendar.JDateChooser _dc_registration_student_personalInformations_studentDetails_dateOfBirth;
-    public static javax.swing.JLabel _lb_registration_student_preview_branch;
-    private javax.swing.JLabel _lb_registration_student_preview_city;
-    private javax.swing.JLabel _lb_registration_student_preview_country;
-    public static javax.swing.JLabel _lb_registration_student_preview_course;
-    public static javax.swing.JLabel _lb_registration_student_preview_dateOfBirth;
-    public static javax.swing.JLabel _lb_registration_student_preview_eMail;
-    public static javax.swing.JLabel _lb_registration_student_preview_gender;
-    public static javax.swing.JLabel _lb_registration_student_preview_homeNumber;
+    public javax.swing.JLabel _lb_registration_student_preview_branch;
+    public javax.swing.JLabel _lb_registration_student_preview_city;
+    public javax.swing.JLabel _lb_registration_student_preview_country;
+    public javax.swing.JLabel _lb_registration_student_preview_course;
+    public javax.swing.JLabel _lb_registration_student_preview_dateOfBirth;
+    public javax.swing.JLabel _lb_registration_student_preview_eMail;
+    public javax.swing.JLabel _lb_registration_student_preview_gender;
+    public javax.swing.JLabel _lb_registration_student_preview_homeNumber;
     private javax.swing.JLabel _lb_registration_student_preview_image;
-    public static javax.swing.JLabel _lb_registration_student_preview_lane1;
-    public static javax.swing.JLabel _lb_registration_student_preview_mobileNumber;
-    public static javax.swing.JLabel _lb_registration_student_preview_name;
-    public static javax.swing.JLabel _lb_registration_student_preview_nic;
-    public static javax.swing.JLabel _lb_registration_student_preview_studentID;
+    public javax.swing.JLabel _lb_registration_student_preview_lane1;
+    public javax.swing.JLabel _lb_registration_student_preview_mobileNumber;
+    public javax.swing.JLabel _lb_registration_student_preview_name;
+    public javax.swing.JLabel _lb_registration_student_preview_nic;
+    public javax.swing.JLabel _lb_registration_student_preview_studentID;
     private javax.swing.JLabel _lb_registration_user_personalInformations_address_1stLine;
     private javax.swing.JLabel _lb_registration_user_personalInformations_address_2ndLine;
     private javax.swing.JLabel _lb_registration_user_personalInformations_address_city;
@@ -1231,6 +1231,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                     _lb_registration_student_preview_image.setIcon(null);
                 }
                 _bt_registration_lecture_preview_register_lecture.setEnabled(true);
+            Jp_registration_student reg_stu=new Jp_registration_student(student_id, newpath);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Birthday is Empty");
             }
@@ -1286,6 +1287,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     }
 
     private void check_empty_fields() {
+        
         if (!_tf_registration_student_personalInformations_studentDetails_surName.getText().isEmpty()) {
             if (!_tf_registration_student_personalInformations_studentDetails_firstName.getText().isEmpty()) {
                 if (!_tf_registration_student_personalInformations_studentDetails_nicNumber.getText().isEmpty()) {
@@ -1338,7 +1340,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
             branch_name = "KAN";
         }
 
-        String lecture_id = id + "-" + lc + "-" + "0000" + id_no + "-" + branch_name;
-        _lb_registration_student_preview_studentID.setText(lecture_id);
+         student_id = id + "-" + lc + "-" + "0000" + id_no + "-" + branch_name;
+        _lb_registration_student_preview_studentID.setText(student_id);
     }
 }

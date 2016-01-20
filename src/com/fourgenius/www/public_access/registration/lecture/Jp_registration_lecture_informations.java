@@ -48,6 +48,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     public int id_no;
     public String branch_name;
     public String full_name;
+    public String gen_id;
 
     /**
      * d
@@ -1316,7 +1317,18 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         employee_academic_user_info user_info = new employee_academic_user_info();
         String countid = user_info.getIdemployee_academic_user();
         int idcount = Integer.parseInt(countid);
-        id_no = ++idcount;
+        int i = ++idcount;
+        
+        if (i < 10) {
+            gen_id = "0000" + i;
+
+        } else if (i > 10) {
+            gen_id = "000" + i;
+        } else if (i < 100) {
+            gen_id = "00" + i;
+        } else if (i < 1000) {
+            gen_id = "0" + i;
+        }
 
         if (_rb_registration_lecture_information_form_colombo.isSelected()) {
             branch_name = "COL";
@@ -1324,7 +1336,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
             branch_name = "KAN";
         }
 
-        lecture_id = id + "-" + lc + "-" + "0000" + id_no + "-" + branch_name;
+        lecture_id = id + "-" + lc + "-" + gen_id + "-" + branch_name;
         _lb_registration_lecture_preview_lectureID.setText(lecture_id);
     }
 
