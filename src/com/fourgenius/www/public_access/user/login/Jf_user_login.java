@@ -13,7 +13,13 @@ import javax.swing.border.Border;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
 import com.fourgenius.www.private_access.admin.method.Md_move_text;
 import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import public_access.MC_JavaDataBaseConnection;
@@ -33,19 +39,18 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     public Jf_user_login() {
         initComponents();
+        showDate();;
+        showTime();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
-
-        
 
         setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_userName);
         setLableValuesNullAndAdd._md_setLableValuesNull(_lb_user_login_password);
         setLableValuesNullAndAdd._md_setTextFieldValues(_tf_user_loging_userName, "User Name");
         setLableValuesNullAndAdd._md_setPasswordFieldvalues(_pf_user_login_password, "Password");
         _pf_user_login_password.setEchoChar((char) 0);
-        
 
     }
 
@@ -65,6 +70,8 @@ public class Jf_user_login extends javax.swing.JFrame {
         _lb_user_login_seperator = new javax.swing.JLabel();
         _lb_user_login_logo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        lb_time_date = new javax.swing.JLabel();
+        lb_date_view = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         _lb_user_login_password = new javax.swing.JLabel();
         _bt_Jf_user_login_Login = new javax.swing.JButton();
@@ -168,15 +175,34 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(97, 97, 97));
 
+        lb_time_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_time_date.setForeground(new java.awt.Color(255, 255, 255));
+        lb_time_date.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_time_date.setText("Time View");
+
+        lb_date_view.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_date_view.setForeground(new java.awt.Color(255, 255, 255));
+        lb_date_view.setText("Date View");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb_date_view, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lb_time_date, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lb_time_date)
+                    .addComponent(lb_date_view))
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(97, 97, 97));
@@ -285,6 +311,9 @@ public class Jf_user_login extends javax.swing.JFrame {
             }
         });
         _pf_user_login_password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                _pf_user_login_passwordKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 _pf_user_login_passwordKeyTyped(evt);
             }
@@ -385,15 +414,15 @@ public class Jf_user_login extends javax.swing.JFrame {
             .addGroup(MiddleLayout.createSequentialGroup()
                 .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Top, javax.swing.GroupLayout.DEFAULT_SIZE, 1370, Short.MAX_VALUE)
-                    .addGroup(MiddleLayout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiddleLayout.createSequentialGroup()
                         .addGap(140, 140, 140)
                         .addComponent(_lb_user_login_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(_lb_user_login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 249, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(34, 249, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         MiddleLayout.setVerticalGroup(
@@ -401,14 +430,15 @@ public class Jf_user_login extends javax.swing.JFrame {
             .addGroup(MiddleLayout.createSequentialGroup()
                 .addComponent(Top, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiddleLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(MiddleLayout.createSequentialGroup()
                         .addGap(229, 229, 229)
                         .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(_lb_user_login_logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_user_login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(_lb_user_login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 24, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiddleLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(145, 145, 145)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -430,13 +460,13 @@ public class Jf_user_login extends javax.swing.JFrame {
         _lb_user_login_close.setBackground(Color.red);
 
         _lb_user_login_minimize.setToolTipText("Close");
-        
+
 
     }//GEN-LAST:event__lb_user_login_closeMouseEntered
 
     private void _lb_user_login_closeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseExited
         _lb_user_login_close.setBorder(null);
-        _lb_user_login_close.setBackground(new Color(25,118,210));
+        _lb_user_login_close.setBackground(new Color(25, 118, 210));
     }//GEN-LAST:event__lb_user_login_closeMouseExited
 
     private void _lb_user_login_minimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_minimizeMouseEntered
@@ -493,7 +523,7 @@ public class Jf_user_login extends javax.swing.JFrame {
     private void _tf_user_loging_userNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameMouseClicked
 
         if (_tf_user_loging_userName.getText().equals("User Name")) {
-             setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName, "User Name");
+            setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName, "User Name");
         }
 
     }//GEN-LAST:event__tf_user_loging_userNameMouseClicked
@@ -513,7 +543,7 @@ public class Jf_user_login extends javax.swing.JFrame {
     private void _tf_user_loging_userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameActionPerformed
 
         try {
-            
+
 //            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "'");
             _pf_user_login_password.grabFocus();
         } catch (Exception e) {
@@ -541,7 +571,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event__pf_user_login_passwordKeyTyped
 
-    
+
     private void _pf_user_login_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__pf_user_login_passwordActionPerformed
 
         _bt_Jf_user_login_Login.doClick();
@@ -607,33 +637,24 @@ public class Jf_user_login extends javax.swing.JFrame {
     }//GEN-LAST:event__bt_Jf_user_login_CancelMouseReleased
 
     private void _bt_Jf_user_login_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginActionPerformed
-        String pass = new String(_pf_user_login_password.getPassword());
-        try {
-            ResultSet rs;
-            rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM user WHERE user_email='" + _tf_user_loging_userName.getText() + "' AND user_password='" + pass + "'");
-            if (rs.isFirst()) {
-                System.out.println("OOOOk!");
-            }
-            if (rs.next()) {
-                System.out.println("ok!");
-                
-                    Jf_UserMain user_menu = new Jf_UserMain();
-                    user_menu.setVisible(true);
-                    this.dispose();
-                    System.gc();
-                
-            }
-            rs.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        login_user_method();
     }//GEN-LAST:event__bt_Jf_user_login_LoginActionPerformed
 
     private void _lb_user_login_dis_usernameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_dis_usernameMouseEntered
 
         //_lb_user_login_sh
-        
+
     }//GEN-LAST:event__lb_user_login_dis_usernameMouseEntered
+
+    private void _pf_user_login_passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__pf_user_login_passwordKeyPressed
+
+        int key=evt.getKeyChar();
+        if (key==KeyEvent.VK_ENTER) {
+            login_user_method();
+            System.gc();
+        }
+        
+    }//GEN-LAST:event__pf_user_login_passwordKeyPressed
 
     /**
      * @param args the command line arguments
@@ -696,5 +717,60 @@ public class Jf_user_login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lb_date_view;
+    private javax.swing.JLabel lb_time_date;
     // End of variables declaration//GEN-END:variables
+
+    void showTime() {
+        new Timer(0, new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                Date d = new Date();
+                SimpleDateFormat stim = new SimpleDateFormat("hh:mm:ss a");
+                String st = stim.format(d);
+                lb_time_date.setText(st);
+
+            }
+        }).start();
+    }
+
+    void showDate() {
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String s = sdf.format(d);
+        lb_date_view.setText(s);
+        System.out.println(s);
+
+    }
+
+    public void login_user_method() {
+
+        String pass = new String(_pf_user_login_password.getPassword());
+        try {
+            ResultSet rs;
+            rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM user WHERE user_email='" + _tf_user_loging_userName.getText() + "' AND user_password='" + pass + "'");
+            if (rs.next()) {
+                System.out.println("User Quer ok!");
+
+                Jf_UserMain user_menu = new Jf_UserMain();
+                user_menu.setVisible(true);
+                this.dispose();
+                User_SendMailSSL usmssl = new User_SendMailSSL();
+                usmssl.sendingSSL(_tf_user_loging_userName.getText().trim(), "User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+
+                Admin_SendMailSSL asmssl = new Admin_SendMailSSL();
+                asmssl.sendingSSL("User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+
+                System.gc();
+
+            }
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

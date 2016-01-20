@@ -590,11 +590,16 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                 ResultSet resultSet;
                 resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_password='" + admin_password + "'");
                 if (resultSet.next()) {
+
+                    //////// email send/////////////////////////////////////////
+                    Admin_SendMailSSL sslsend = new Admin_SendMailSSL();
+                    //admin Alert
+                    sslsend.sendingSSL("Administrator", "Login Status:System Entered!\n\n" + "Username:" + _lb_admi_login_email.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+
+                    ////////////////////////////////////////////////////////////
                     Jf_admin_backend jf_admin_backend = new Jf_admin_backend();
                     jf_admin_backend.setVisible(true);
-                    SendMailSSL sslsend = new SendMailSSL();
-                    //admin Alert
-                    sslsend.sendingSSL(_lb_admi_login_email.getText(), "acedamymanager69@gmail.com", "manager@admin", _lb_admi_login_email.getText(), "Login Status:System Entered!\n\n" + "Username:" + _lb_admi_login_email.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+                    
 
 //                    jf_admin_mainFrame frame=new jf_admin_mainFrame();
 //                    frame.setVisible(true);
@@ -603,13 +608,16 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(this, "Password is Incorrect!");
                     pf_admin_login_password.selectAll();
 
+                    resultSet.close();
                 }
 
+                resultSet.close();
             } else {
                 pf_admin_login_password.setBackground(new Color(244, 67, 54));
                 tf_admin_login_pin.setBackground(new Color(244, 67, 54));
                 JOptionPane.showMessageDialog(this, "QR code is incorrect!");
                 tf_admin_login_pin.selectAll();
+                
             }
 //                }else {
 //                        tf_admin_login_pin.setBackground(new Color(244, 67, 54)); 
@@ -621,6 +629,7 @@ public class _jp_admin_login_password extends javax.swing.JPanel {
 //                //tf_admin_login_pin.setBackground(new Color(244, 67, 54));
 //                JOptionPane.showMessageDialog(this, "Password is incorrect!");
 //            }
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
