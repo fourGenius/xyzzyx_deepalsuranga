@@ -307,8 +307,8 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jp_registraion_lecture_buttons;
-    private javax.swing.JPanel Jp_registraion_lecture_main_panel;
-    private javax.swing.JButton _bt_registraion_lecture_buttons_add_lecture;
+    public static javax.swing.JPanel Jp_registraion_lecture_main_panel;
+    public static javax.swing.JButton _bt_registraion_lecture_buttons_add_lecture;
     private javax.swing.JButton _bt_registraion_lecture_buttons_preview_lecture;
     private javax.swing.JButton _bt_registraion_lecture_buttons_print_report;
     private javax.swing.JButton _bt_registraion_lecture_buttons_update_lecture;

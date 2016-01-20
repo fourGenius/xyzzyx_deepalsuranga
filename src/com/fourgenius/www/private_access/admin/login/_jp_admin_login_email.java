@@ -26,16 +26,10 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
      */
 
     public _jp_admin_login_email() {
+
         initComponents();
-        //tf_randPIN_forget.setVisible(false);
-        admin_forget_username.setVisible(false);
-        lb_forget_infromatin.setVisible(false);
-        
-        admin_forget_username.setVisible(false);
         tf_username.grabFocus();
-        lb_forget_infromatin.setVisible(false);
-        //tf_randPIN_forget.setVisible(false);
-        admin_forget_username.setVisible(false);
+
     }
 
     /**
@@ -53,11 +47,9 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         bt_cancel = new javax.swing.JButton();
         tf_username = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        admin_forget_username = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         _lb_admi_login_email = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        lb_forget_infromatin = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         _lb_admin_login_close = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -76,6 +68,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         bt_next.setBorder(null);
         bt_next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bt_next.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_next.setMaximumSize(new java.awt.Dimension(300, 50));
+        bt_next.setMinimumSize(new java.awt.Dimension(300, 50));
         bt_next.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_nextMouseClicked(evt);
@@ -97,6 +91,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         bt_cancel.setBorder(null);
         bt_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bt_cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_cancel.setMaximumSize(new java.awt.Dimension(300, 50));
+        bt_cancel.setMinimumSize(new java.awt.Dimension(300, 50));
         bt_cancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_cancelMouseClicked(evt);
@@ -109,6 +105,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         });
 
         tf_username.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tf_username.setMaximumSize(new java.awt.Dimension(100, 40));
+        tf_username.setMinimumSize(new java.awt.Dimension(100, 40));
         tf_username.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tf_usernameMouseClicked(evt);
@@ -118,21 +116,14 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tf_usernameKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tf_usernameKeyReleased(evt);
+            }
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("E-mail");
-
-        admin_forget_username.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        admin_forget_username.setForeground(new java.awt.Color(255, 255, 255));
-        admin_forget_username.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        admin_forget_username.setText("Forgot Username?");
-        admin_forget_username.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                admin_forget_usernameMouseClicked(evt);
-            }
-        });
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_AccountCircleGrey192x192.png"))); // NOI18N
@@ -147,14 +138,6 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             }
         });
 
-        lb_forget_infromatin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_forget_infromatin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_UsernameInformation.png"))); // NOI18N
-        lb_forget_infromatin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_forget_infromatinMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -163,17 +146,13 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_username, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_username, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bt_cancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(bt_next, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(admin_forget_username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_forget_infromatin)))
+                        .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -184,26 +163,18 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(205, 205, 205))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bt_next, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bt_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(admin_forget_username)
-                            .addComponent(lb_forget_infromatin))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(_lb_admi_login_email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bt_next, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bt_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -267,8 +238,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
                 .addGroup(_jp_admin_login_emailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _jp_admin_login_emailLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -298,7 +269,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    int i = 0;
+
     private void bt_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_nextActionPerformed
 
         tf_username.grabFocus();
@@ -314,6 +285,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     private void _lb_admin_login_closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_closeMouseClicked
 
         System.exit(0);
+
     }//GEN-LAST:event__lb_admin_login_closeMouseClicked
 
     private void _lb_admin_login_closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_admin_login_closeMouseEntered
@@ -331,7 +303,6 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
     private void bt_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cancelActionPerformed
 
-       
         System.exit(0);
 
     }//GEN-LAST:event_bt_cancelActionPerformed
@@ -346,7 +317,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
         tf_username.selectAll();
         tf_username.setBackground(new Color(255, 255, 255));
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_tf_usernameMouseClicked
 
     private void tf_usernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_usernameKeyPressed
@@ -356,7 +327,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             next_method();
         }
         tf_username.setBackground(new Color(255, 255, 255));
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_tf_usernameKeyPressed
 
     private void bt_nextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_nextMouseClicked
@@ -377,25 +348,23 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         bt_next.setText("Next");
 
     }//GEN-LAST:event_bt_nextMouseExited
-    BalloonTip myBalloonTip;
-    private void admin_forget_usernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admin_forget_usernameMouseClicked
 
-        myBalloonTip = new BalloonTip(admin_forget_username, "Please Contact Other Administrator!");
+    private void tf_usernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_usernameKeyReleased
 
-    }//GEN-LAST:event_admin_forget_usernameMouseClicked
+        if (tf_username.getText().length() == 100) {
+            JOptionPane.showMessageDialog(this, "You entered More than 100 letters");
+            evt.consume();
+            tf_username.selectAll();
+        }
+        int key = evt.getKeyCode();
+        System.out.println("Key is:" + key);
 
-    private void lb_forget_infromatinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_forget_infromatinMouseClicked
-
-        myBalloonTip = new BalloonTip(lb_forget_infromatin, "Please chack your email & enter code here!");
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lb_forget_infromatinMouseClicked
-
+    }//GEN-LAST:event_tf_usernameKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel _jp_admin_login_email;
     private javax.swing.JLabel _lb_admi_login_email;
     private javax.swing.JLabel _lb_admin_login_close;
-    private javax.swing.JLabel admin_forget_username;
     private javax.swing.JButton bt_cancel;
     private javax.swing.JButton bt_next;
     private javax.swing.JLabel jLabel1;
@@ -405,7 +374,6 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lb_forget_infromatin;
     public static javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
 
@@ -415,30 +383,22 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         String email1 = email;
         Boolean result = email1.matches(EMAIL_REGEX);
         System.out.println("is e-mail: " + email1 + " :Valid = " + result);
-
         return result;
+
     }
 
     private void next_method() {
-
-        i++;
-
         if (!tf_username.getText().isEmpty()) {
             try {
-
                 String email = tf_username.getText().trim().toLowerCase();
-
                 _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
                 _jp_admin_login_password._lb_admi_login_email.setText(email);
                 _jp_admin_login_email chackemailuse = new _jp_admin_login_email();
-
                 if (chackemailuse.email_validation(email)) {
-
                     ////////////////////////Database base to///////////////////////
                     try {
                         ResultSet rs;
                         rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='" + email + "'");
-
                         if (rs.next()) {
                             System.out.println("query is OK!");
                             //start-load panel
@@ -457,37 +417,24 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                                 Jf_admin_login.main_panel.add(adminLoginPassword);
                                 Jf_admin_login.main_panel.repaint();
                                 Jf_admin_login.main_panel.revalidate();
-
                             }
                             //end-load panel
-
                         }
                         rs.close();
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
-
+                    tf_username.grabFocus();
                     tf_username.setBackground(new Color(244, 67, 54));
                     JOptionPane.showMessageDialog(this, "Please Enter Valid Administrator Email.", "Access Denied", JOptionPane.WARNING_MESSAGE);
-
-                    if (i == 3) {
-                        tf_username.setText(null);
-                        admin_forget_username.setVisible(true);
-                        System.out.println("i is " + i + "Forget password is visible.");
-                    }
-
                 }
             } catch (Exception e) {
             }
-
         } else {
+            tf_username.grabFocus();
             tf_username.setBackground(new Color(244, 67, 54));
             JOptionPane.showMessageDialog(this, "Administrator email is not valid!", "WARNING!", JOptionPane.WARNING_MESSAGE);
-
         }
-
     }
-
 }

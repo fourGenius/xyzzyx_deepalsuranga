@@ -1,74 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student_reg" language="groovy" pageWidth="595" pageHeight="864" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a7bdee31-6b19-4229-b142-08e2683c137f">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student_reg" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a7bdee31-6b19-4229-b142-08e2683c137f">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<parameter name="course" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="telePhone" class="java.lang.String"/>
+	<parameter name="mobilePhone" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="dob" class="java.lang.String"/>
+	<parameter name="nic" class="java.lang.String"/>
 	<parameter name="sid" class="java.lang.String"/>
 	<parameter name="pic" class="java.lang.String"/>
-	<queryString>
-		<![CDATA[select  a.stu_info_address_lane1,a.stu_info_address_city ,a.stu_info_address_cuntry,b.stu_info_telephone_mobile ,b.stu_info_telephone_land,b.stu_info_contact_email ,c.stu_info_name_sirName ,c.stu_info_name_first_name ,c.stu_info_name_last_name ,d.stu_user_info_id,d.stu_info_personal_profile_image ,d.stu_info_personal_nic ,d.stu_info_personal_dob ,d.stu_info_personal_course
-from stu_info_address a left join stu_info_contact b on a.stu_user_info_id=b.stu_user_info_id left join stu_info_name c on a.stu_user_info_id=c.stu_user_info_id left join stu_info_personal d on a.stu_user_info_id=d.stu_user_info_id
-where a.stu_user_info_id=$P{sid}]]>
-	</queryString>
-	<field name="stu_info_address_lane1" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_address_city" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_address_cuntry" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_telephone_mobile" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_telephone_land" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_contact_email" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_name_sirName" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_name_first_name" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_name_last_name" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_user_info_id" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_personal_profile_image" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_personal_nic" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_personal_dob" class="java.sql.Date">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="stu_info_personal_course" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<variable name="stu_info_name_first_name_1" class="java.lang.Integer" resetType="Column" calculation="Count">
-		<variableExpression><![CDATA[$F{stu_info_name_first_name}]]></variableExpression>
-	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="207" splitType="Stretch">
+		<band height="185" splitType="Stretch">
 			<staticText>
-				<reportElement x="59" y="138" width="282" height="20" uuid="26b76cdb-0f3f-4fd0-adac-f256d0cb5349"/>
+				<reportElement x="53" y="146" width="282" height="20" uuid="26b76cdb-0f3f-4fd0-adac-f256d0cb5349"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="14" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[STUDENT ENROLLMENT FORM]]></text>
 			</staticText>
 			<image>
-				<reportElement x="402" y="0" width="150" height="206" uuid="6647a854-a91a-47f3-bde0-8ccf18229ea2"/>
+				<reportElement x="401" y="4" width="150" height="178" uuid="6647a854-a91a-47f3-bde0-8ccf18229ea2"/>
 				<imageExpression><![CDATA[$P{pic}]]></imageExpression>
 			</image>
 			<image>
@@ -94,42 +52,42 @@ where a.stu_user_info_id=$P{sid}]]>
 				<text><![CDATA[Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="118" width="100" height="20" uuid="bcc34161-f643-45e5-9795-c0349359eafb"/>
+				<reportElement x="4" y="58" width="100" height="20" uuid="bcc34161-f643-45e5-9795-c0349359eafb"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Address]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="176" width="100" height="20" uuid="84b2ad77-6128-4542-837c-8a9f4fe8c27d"/>
+				<reportElement x="4" y="116" width="100" height="20" uuid="84b2ad77-6128-4542-837c-8a9f4fe8c27d"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Mobile Phone]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="147" width="100" height="20" uuid="7f615172-9be2-4a3d-91f5-196a0e186191"/>
+				<reportElement x="4" y="87" width="100" height="20" uuid="7f615172-9be2-4a3d-91f5-196a0e186191"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Tele Phone]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="206" width="100" height="20" uuid="108312a2-fd66-4c85-8eec-480cd4c56c2c"/>
+				<reportElement x="4" y="146" width="100" height="20" uuid="108312a2-fd66-4c85-8eec-480cd4c56c2c"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Email]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="60" width="100" height="20" uuid="a0ca0538-bee2-4426-be11-cfe8a95bc98e"/>
+				<reportElement x="4" y="176" width="100" height="20" uuid="a0ca0538-bee2-4426-be11-cfe8a95bc98e"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Date of Birth]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="89" width="100" height="20" uuid="68aa2fa0-1dbe-4eba-bb1f-74b046a72002"/>
+				<reportElement x="4" y="208" width="100" height="20" uuid="68aa2fa0-1dbe-4eba-bb1f-74b046a72002"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
@@ -142,6 +100,38 @@ where a.stu_user_info_id=$P{sid}]]>
 				</textElement>
 				<text><![CDATA[I hereby agree that the payment made as the registration fee is not refundeble or transferable to any other course.]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="137" y="3" width="100" height="20" uuid="09c72830-9eea-4a03-a767-096b95120226"/>
+				<textFieldExpression><![CDATA[$P{course}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="30" width="100" height="20" uuid="e703974b-1d2c-4f73-b49a-6ab299b82982"/>
+				<textFieldExpression><![CDATA[$P{course}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="58" width="100" height="20" uuid="bc1d028b-ec75-41ba-a226-87632e4bc9e7"/>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="87" width="100" height="20" uuid="d1cbba3e-8c47-41ea-a1bf-c99f527d96b8"/>
+				<textFieldExpression><![CDATA[$P{telePhone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="116" width="100" height="20" uuid="2f0bec0c-52fb-4876-9f78-16762b5ae441"/>
+				<textFieldExpression><![CDATA[$P{mobilePhone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="146" width="100" height="20" uuid="1977a334-ec63-4ded-9190-054cd9c040c3"/>
+				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="176" width="100" height="20" uuid="0593e6d6-a19c-4741-a8e3-2d22cb9c6a87"/>
+				<textFieldExpression><![CDATA[$P{dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="208" width="100" height="20" uuid="2c312635-3ce6-4c85-80d8-bfe1c9bc305b"/>
+				<textFieldExpression><![CDATA[$P{nic}]]></textFieldExpression>
+			</textField>
 			<rectangle>
 				<reportElement x="452" y="2" width="100" height="76" uuid="46e75508-954e-48b1-b0e5-c726aed3129c"/>
 			</rectangle>
@@ -165,97 +155,6 @@ where a.stu_user_info_id=$P{sid}]]>
 			<line>
 				<reportElement x="503" y="2" width="1" height="75" uuid="37b55484-99cc-4cfa-8a85-4c6419c3781d"/>
 			</line>
-			<textField>
-				<reportElement x="104" y="3" width="200" height="20" uuid="43968ed7-ee21-4d7b-8665-b659e10cd71c"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_personal_course}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="104" y="60" width="175" height="20" uuid="47dd7db3-bff5-463e-9bba-535d093dc21c"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_personal_dob}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="104" y="89" width="175" height="20" uuid="2e668aa4-146d-46e6-8155-c286f015e4c1"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_personal_nic}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="104" y="147" width="200" height="20" uuid="12891aa1-a4e1-44bf-aa20-a96a655c961b"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_telephone_land}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="104" y="176" width="200" height="20" uuid="37c32a22-eb49-470d-8091-48e465481007"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_telephone_mobile}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="104" y="206" width="200" height="20" uuid="a1ca35b0-c287-49f8-ba7b-6a53f2796d52"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_contact_email}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="56" y="395" width="100" height="20" uuid="4c549619-3ceb-4fda-b5bd-6d167a3f3a23"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{sid}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="104" y="30" width="100" height="20" uuid="6cd902ad-5938-47f2-8f02-4b03300ba223"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_name_first_name}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="204" y="30" width="100" height="20" uuid="e7943460-97bb-4800-9bd5-66ec821a93c2"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_name_last_name}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="304" y="30" width="100" height="20" uuid="9d5ae59d-72f1-4bf2-9aff-e2fc879aa4d0"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_name_sirName}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="104" y="118" width="100" height="20" uuid="64f01589-61bc-4d79-81fc-86a2b18dfc9f"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_address_lane1}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="204" y="118" width="100" height="20" uuid="87b7326e-749c-4158-a4de-2f30cfeef79c"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_address_city}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="304" y="118" width="100" height="20" uuid="494092c9-43e3-405c-892c-cbea9c30de7c"/>
-				<textElement>
-					<font fontName="Tahoma" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{stu_info_address_cuntry}]]></textFieldExpression>
-			</textField>
 		</band>
 	</columnHeader>
 	<columnFooter>
@@ -293,7 +192,7 @@ where a.stu_user_info_id=$P{sid}]]>
 				<text><![CDATA[For Office use only]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="-58" width="52" height="20" uuid="08cba84e-34cc-43c4-83a9-7818890a4596"/>
+				<reportElement x="4" y="-58" width="100" height="20" uuid="08cba84e-34cc-43c4-83a9-7818890a4596"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
@@ -324,6 +223,10 @@ where a.stu_user_info_id=$P{sid}]]>
 				<reportElement x="428" y="-49" width="124" height="20" uuid="370b2eb4-8037-496a-ae72-833abda5d7ac"/>
 				<text><![CDATA[...................................................]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="104" y="-58" width="100" height="20" uuid="4c549619-3ceb-4fda-b5bd-6d167a3f3a23"/>
+				<textFieldExpression><![CDATA[$P{sid}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnFooter>
 </jasperReport>

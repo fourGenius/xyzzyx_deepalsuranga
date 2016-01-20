@@ -60,7 +60,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
 
         student_mainPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        _tb_registration_student_view_active = new javax.swing.JTable();
         _sp_registration_student_searchStudent = new javax.swing.JScrollPane();
         _li_registration_student_searchStudent = new javax.swing.JList();
         _tf_registration_student_searchStudent = new javax.swing.JTextField();
@@ -74,7 +74,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
 
         student_mainPanel.setLayout(new java.awt.CardLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        _tb_registration_student_view_active.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -90,7 +90,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(_tb_registration_student_view_active);
 
         student_mainPanel.add(jScrollPane1, "card2");
 
@@ -186,36 +186,63 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList _li_registration_student_searchStudent;
     private javax.swing.JScrollPane _sp_registration_student_searchStudent;
+    public javax.swing.JTable _tb_registration_student_view_active;
     private javax.swing.JTextField _tf_registration_student_searchStudent;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
     private javax.swing.JPanel student_mainPanel;
     // End of variables declaration//GEN-END:variables
 
-   
+    public void printReport() {
+
+        //        
+//                   try {
+//            String report_path = "src/reports/student_reg.jrxml";
+//                       System.out.println("oooo");
+//            JasperReport compileReport=JasperCompileManager.compileReport(report_path);
+//                       System.out.println("ok1");
+//                       Map<String, Object> m = new HashMap<String, Object>();
+//            System.out.println("ok2");
+//            m.put("course", _lb_registration_student_preview_course.getText());
+//            m.put("name",_lb_registration_student_preview_name.getText() );
+//            m.put("address",_lb_registration_student_preview_address.getText() );
+//            m.put("telePhone",_lb_registration_student_preview_homeNumber.getText() );
+//            m.put("mobilePhone", _lb_registration_student_preview_mobileNumber.getText());
+//            m.put("email", _lb_registration_student_preview_eMail.getText());
+//            m.put("dob", _lb_registration_student_preview_dateOfBirth.getText());
+//            m.put("age",_lb_registration_student_preview_age.getText());
+//            m.put("nic", _lb_registration_student_preview_nic.getText());
+//            m.put("sid", _lb_registration_student_preview_studentID.getText());
+//                       System.out.println("ok3");
+//                       JasperPrint jp=JasperFillManager.fillReport(compileReport, m);
+//                       System.out.println("ok4");
+//                       JasperViewer.viewReport(jp, false);
+//                       System.out.println("ok5");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//  
+    }
 
     private void addToTable() {
-         
-    
         try {
-           
-            String sql="select b.`stu_info_personal_nic`, b.`stu_info_personal_course`, a.`stu_info_name_sirName`, a.`stu_info_name_first_name`, a.`stu_info_name_last_name` from stu_info_name a , stu_info_personal b , stu_user_info c where a.stu_user_info_id=b.stu_user_info_id and a.stu_user_info_id=c.stu_user_info_id and c.stu_user_info_status='1' ";
-             ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql);
-             Vector v =new Vector();
-             DefaultTableModel dtm=(DefaultTableModel)jTable1.getModel();
-             dtm.setRowCount(0);
-             while (rs.next()) {                
-              
-                 v.add(rs.getString("stu_info_personal_nic"));
-                v.add(rs.getString("stu_info_name_first_name")+" "+rs.getString("stu_info_name_last_name")+" "+rs.getString("stu_info_name_sirName"));
-                 v.add(rs.getString("stu_info_personal_course"));
-                 dtm.addRow(v);
+            
+            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_student_view_active.getModel();
+
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            String search_query = "select b.stu_info_personal_nic, b.stu_info_personal_course, a.stu_info_name_sirName, a.stu_info_name_first_name, a.stu_info_name_last_name from stu_info_name a , stu_info_personal b , stu_user_info c where a.stu_user_info_id=b.stu_user_info_id and a.stu_user_info_id=c.stu_user_info_id and c.stu_user_info_status='1'";
+            ResultSet rs = s.executeQuery(search_query);
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString("stu_info_personal_nic"));
+                v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
+                v.add(rs.getString("stu_info_personal_course"));
+                dtm.addRow(v);
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
-    
-    
     }
 
 }
