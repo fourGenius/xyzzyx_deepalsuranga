@@ -13,11 +13,11 @@ public class MC_JavaDataBaseConnection {
     public MC_JavaDataBaseConnection() {
     }
 
-    private static final String HOST = "166.62.27.145";
-    private static final String DATABASE = "g4_2015_java_se_management_ramanifernando";
-    private static final String USER = "deepalsuranga";
-    private static final String PASS = "WelComeDB1129";
-    private static final String PORT = "3306";
+    private static String HOST = "166.62.27.145";
+    private static String DATABASE = "g4_2015_java_se_management_ramanifernando";
+    private static String USER = "deepalsuranga";
+    private static String PASS = "WelComeDB1129";
+    private static String PORT = "3306";
 
     ///////////////////////////////////////////////////////////////////////////
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
