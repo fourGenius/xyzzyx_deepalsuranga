@@ -34,7 +34,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         admin_forget_username.setVisible(false);
         tf_username.grabFocus();
         lb_forget_infromatin.setVisible(false);
-        tf_randPIN_forget.setVisible(false);
+        //tf_randPIN_forget.setVisible(false);
         admin_forget_username.setVisible(false);
     }
 
