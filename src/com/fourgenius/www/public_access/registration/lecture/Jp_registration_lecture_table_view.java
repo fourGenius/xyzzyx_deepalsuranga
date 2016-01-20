@@ -8,6 +8,7 @@ package com.fourgenius.www.public_access.registration.lecture;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture.Jp_registraion_lecture_main_panel;
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_add_lecture;
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_preview_lecture;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -60,7 +61,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         _tb_registration_lecture_view_active = new javax.swing.JTable();
-        _bt_registraion_lecture_buttons_preview_lecture = new javax.swing.JButton();
+        _bt_preview_table_lecture_buttons_preview_lecture = new javax.swing.JButton();
         _bt_registraion_lecture_buttons_update_lecture = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
@@ -122,34 +123,34 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 540));
 
-        _bt_registraion_lecture_buttons_preview_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_registraion_lecture_buttons_preview_lecture.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registraion_lecture_buttons_preview_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        _bt_registraion_lecture_buttons_preview_lecture.setText("Preview");
-        _bt_registraion_lecture_buttons_preview_lecture.setFocusPainted(false);
-        _bt_registraion_lecture_buttons_preview_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_registraion_lecture_buttons_preview_lecture.setMaximumSize(new java.awt.Dimension(200, 50));
-        _bt_registraion_lecture_buttons_preview_lecture.setPreferredSize(new java.awt.Dimension(200, 50));
-        _bt_registraion_lecture_buttons_preview_lecture.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_preview_table_lecture_buttons_preview_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_preview_table_lecture_buttons_preview_lecture.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_preview_table_lecture_buttons_preview_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_preview_table_lecture_buttons_preview_lecture.setText("Preview");
+        _bt_preview_table_lecture_buttons_preview_lecture.setFocusPainted(false);
+        _bt_preview_table_lecture_buttons_preview_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_preview_table_lecture_buttons_preview_lecture.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_preview_table_lecture_buttons_preview_lecture.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_preview_table_lecture_buttons_preview_lecture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_registraion_lecture_buttons_preview_lectureMouseEntered(evt);
+                _bt_preview_table_lecture_buttons_preview_lectureMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_registraion_lecture_buttons_preview_lectureMouseExited(evt);
+                _bt_preview_table_lecture_buttons_preview_lectureMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_registraion_lecture_buttons_preview_lectureMousePressed(evt);
+                _bt_preview_table_lecture_buttons_preview_lectureMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_registraion_lecture_buttons_preview_lectureMouseReleased(evt);
+                _bt_preview_table_lecture_buttons_preview_lectureMouseReleased(evt);
             }
         });
-        _bt_registraion_lecture_buttons_preview_lecture.addActionListener(new java.awt.event.ActionListener() {
+        _bt_preview_table_lecture_buttons_preview_lecture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_registraion_lecture_buttons_preview_lectureActionPerformed(evt);
+                _bt_preview_table_lecture_buttons_preview_lectureActionPerformed(evt);
             }
         });
-        add(_bt_registraion_lecture_buttons_preview_lecture, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, -1, -1));
+        add(_bt_preview_table_lecture_buttons_preview_lecture, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, -1, -1));
 
         _bt_registraion_lecture_buttons_update_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registraion_lecture_buttons_update_lecture.setForeground(new java.awt.Color(255, 255, 255));
@@ -274,25 +275,25 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         search_lecture();
     }//GEN-LAST:event__li_registration_student_searchStudentMouseClicked
 
-    private void _bt_registraion_lecture_buttons_preview_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureMouseEntered
-        _bt_registraion_lecture_buttons_preview_lecture.setBorder(border);
-    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureMouseEntered
+    private void _bt_preview_table_lecture_buttons_preview_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_preview_lectureMouseEntered
+        _bt_preview_table_lecture_buttons_preview_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_preview_lectureMouseEntered
 
-    private void _bt_registraion_lecture_buttons_preview_lectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureMouseExited
-        _bt_registraion_lecture_buttons_preview_lecture.setBorder(null);
-    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureMouseExited
+    private void _bt_preview_table_lecture_buttons_preview_lectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_preview_lectureMouseExited
+        _bt_preview_table_lecture_buttons_preview_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_preview_lectureMouseExited
 
-    private void _bt_registraion_lecture_buttons_preview_lectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureMousePressed
-        _bt_registraion_lecture_buttons_preview_lecture.setBorder(null);
-    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureMousePressed
+    private void _bt_preview_table_lecture_buttons_preview_lectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_preview_lectureMousePressed
+        _bt_preview_table_lecture_buttons_preview_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_preview_lectureMousePressed
 
-    private void _bt_registraion_lecture_buttons_preview_lectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureMouseReleased
-        _bt_registraion_lecture_buttons_preview_lecture.setBorder(border);
-    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureMouseReleased
+    private void _bt_preview_table_lecture_buttons_preview_lectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_preview_lectureMouseReleased
+        _bt_preview_table_lecture_buttons_preview_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_preview_lectureMouseReleased
 
-    private void _bt_registraion_lecture_buttons_preview_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_preview_lectureActionPerformed
+    private void _bt_preview_table_lecture_buttons_preview_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_preview_lectureActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event__bt_registraion_lecture_buttons_preview_lectureActionPerformed
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_preview_lectureActionPerformed
 
     private void _bt_registraion_lecture_buttons_update_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMouseEntered
         _bt_registraion_lecture_buttons_update_lecture.setBorder(border);
@@ -320,7 +321,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton _bt_registraion_lecture_buttons_preview_lecture;
+    private javax.swing.JButton _bt_preview_table_lecture_buttons_preview_lecture;
     private javax.swing.JButton _bt_registraion_lecture_buttons_update_lecture;
     private javax.swing.JList _li_registration_student_searchStudent;
     private javax.swing.JScrollPane _sp_registration_student_searchStudent;
@@ -399,6 +400,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
                 revalidate();
             }
             _bt_registraion_lecture_buttons_add_lecture.setText("Finish");
+            _bt_registraion_lecture_buttons_preview_lecture.setEnabled(false);
         } catch (Exception e) {
             e.printStackTrace();
         }

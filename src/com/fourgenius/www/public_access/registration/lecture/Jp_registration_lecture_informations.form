@@ -395,7 +395,6 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="_dc_registration_lecture_information_form_dob" alignment="0" max="32767" attributes="0"/>
                               <Component id="_lb_registration_lecture_information_form_gender" alignment="0" max="32767" attributes="0"/>
-                              <Component id="_lb_registration_lecture_information_form_academy" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -416,15 +415,9 @@
                                       </Group>
                                       <Component id="_lb_registration_lecture_information_form_branch" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="_rb_registration_lecture_information_form_academic" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="_rb_registration_lecture_information_form_colombo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="_rb_registration_lecture_information_form_kandy" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="_rb_registration_lecture_information_form_non_academic" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="_rb_registration_lecture_information_form_colombo" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Component id="_rb_registration_lecture_information_form_kandy" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -465,20 +458,13 @@
                               <Component id="_rb_registration_lecture_information_form_female" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_lb_registration_lecture_information_form_academy" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="_rb_registration_lecture_information_form_non_academic" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="_rb_registration_lecture_information_form_academic" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_lecture_information_form_branch" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="_rb_registration_lecture_information_form_colombo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="_rb_registration_lecture_information_form_kandy" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="68" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -681,64 +667,6 @@
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="_lb_registration_lecture_information_form_academy">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Acadamy"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_information_form_academic">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="bd" green="77" red="2" type="rgb"/>
-                    </Property>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="_bg_registration_lecture_personalInformations_employeeDetails_acadamy"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="selected" type="boolean" value="true"/>
-                    <Property name="text" type="java.lang.String" value="Academic"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_information_form_academicMouseClicked"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="_rb_registration_lecture_information_form_non_academic">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="bd" green="77" red="2" type="rgb"/>
-                    </Property>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="_bg_registration_lecture_personalInformations_employeeDetails_acadamy"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Non Academic"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_rb_registration_lecture_information_form_non_academicMouseClicked"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </Component>
                 <Component class="com.toedter.calendar.JDateChooser" name="_dc_registration_lecture_information_form_dob">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -847,7 +775,6 @@
                               <Component id="jLabel25" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel24" max="32767" attributes="0"/>
                               <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel20" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
@@ -864,7 +791,6 @@
                               <Component id="_lb_registration_lecture_preview_nic" alignment="0" max="32767" attributes="0"/>
                               <Component id="_lb_registration_lecture_preview_dateOfBirth" alignment="0" max="32767" attributes="0"/>
                               <Component id="_lb_registration_lecture_preview_gender" alignment="0" max="32767" attributes="0"/>
-                              <Component id="_lb_registration_lecture_preview_academy" alignment="0" max="32767" attributes="0"/>
                               <Component id="_lb_registration_lecture_preview_homeNumber" alignment="0" max="32767" attributes="0"/>
                               <Component id="_lb_registration_lecture_preview_eMail" alignment="0" max="32767" attributes="0"/>
                               <Component id="_lb_registration_lecture_preview_address_address_line" alignment="0" max="32767" attributes="0"/>
@@ -916,11 +842,6 @@
                       <Component id="_lb_registration_lecture_preview_gender" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel20" alignment="0" max="32767" attributes="0"/>
-                      <Component id="_lb_registration_lecture_preview_academy" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                       <Component id="_lb_registration_lecture_preview_branch" min="-2" pref="17" max="-2" attributes="0"/>
@@ -949,7 +870,7 @@
                   <Component id="_lb_registration_lecture_preview_address_city" min="-2" pref="17" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="_lb_registration_lecture_preview_address_country" min="-2" pref="17" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="_bt_registration_lecture_preview_register_lecture" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -1055,24 +976,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="_lb_registration_lecture_preview_gender">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="0"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel20">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Academy"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="_lb_registration_lecture_preview_academy">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>

@@ -10,11 +10,15 @@ import com.fourgenius.www.public_access.model.academic_employee.employee_academi
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_qulifications;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Vector;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
+import public_access.MC_JavaDataBaseConnection;
 
 /**
  *
@@ -22,19 +26,17 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Jp_registration_lecture_informations_qulifications_form extends javax.swing.JPanel {
 
-    
-
     Border border = BorderFactory.createLineBorder(Color.white, 1);
 
     int qtable_row;
     int oltable_row;
     int altable_row;
-    
+
     public String lecture_id;
     public int id_no;
     public String branch_name;
     public String full_name;
-    
+
     public String lecture_file_no;
 
     /**
@@ -45,19 +47,27 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         _bt_registration_lecture_informations_qulifications_remove.setEnabled(false);
         _bt_registration_lecture_informations_qulifications_update.setEnabled(false);
         _bt_registration_lecture_informations_qulifications_save.setEnabled(false);
-        _tf_registration_lecture_informations_qulifications_name.grabFocus();
-        
-        lecture_id=id;
-        id_no=i;
-        branch_name=branch;
-        full_name=name;
-        
-        lecture_file_no=branch_name+"-"+"0000"+id_no+"-"+full_name;
+
+        lecture_id = id;
+        id_no = i;
+        branch_name = branch;
+        full_name = name;
+
+        lecture_file_no = branch_name + "-" + "0000" + id_no + "-" + full_name;
         _tf_registration_lecture_informations_qulifications_file_no.setText(lecture_file_no);
-        
+
         _tf_registration_lecture_informations_qulifications_name.grabFocus();
-        
-        
+
+    }
+
+    public Jp_registration_lecture_informations_qulifications_form(String lec_file_no, String lec_id) {
+        initComponents();
+        _bt_registration_lecture_informations_qulifications_remove.setEnabled(false);
+        _bt_registration_lecture_informations_qulifications_update.setEnabled(false);
+        _tf_registration_lecture_informations_qulifications_file_no.setText(lec_file_no);
+        lecture_id = lec_id;
+        _bt_registration_lecture_informations_qulifications_save.setText("Save Update");
+        load_lecture_qulification_table_details(lecture_id);
     }
 
     /**
@@ -689,12 +699,12 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 add_to_al_table();
                 clear_al_form();
             }
-        }else{
+        } else {
             if (_rb_registration_lecture_informations_qulifications_ol_results.isSelected()) {
                 update_ol_table_data();
                 clear_ol_form();
                 _bt_registration_lecture_informations_qulifications_ol_al_add.setText("Add");
-            }else{
+            } else {
                 update_al_table_data();
                 clear_al_form();
                 _bt_registration_lecture_informations_qulifications_ol_al_add.setText("Add");
@@ -724,12 +734,29 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
     }//GEN-LAST:event__bt_registration_lecture_informations_qulifications_addMouseReleased
 
     private void _bt_registration_lecture_informations_qulifications_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_informations_qulifications_saveActionPerformed
-        int option=JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (option==JOptionPane.YES_OPTION) {
-            add_to_db();   
-            clear_form();
+        if (_bt_registration_lecture_informations_qulifications_save.getText().equals("Save")) {
+            int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (option == JOptionPane.YES_OPTION) {
+                add_to_db();
+                clear_form();
+            }
+        } else {
+            int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (option == JOptionPane.YES_OPTION) {
+//                add_to_db();
+//                clear_form();
+
+                DefaultTableModel qdtm = (DefaultTableModel) _tb_qulification_preview.getModel();
+                for (int i = 0; i < _tb_qulification_preview.getRowCount(); i++) {
+                    String qname = qdtm.getValueAt(i, 0).toString();
+                    String start_year = qdtm.getValueAt(i, 1).toString();
+                    String end_year = qdtm.getValueAt(i, 2).toString();
+
+                    employee_academic_user_info_qulifications qulification = new employee_academic_user_info_qulifications(lecture_id, lecture_file_no, qname, start_year, end_year);
+
+                }
+            }
         }
-        
     }//GEN-LAST:event__bt_registration_lecture_informations_qulifications_saveActionPerformed
 
     private void _tf_registration_lecture_informations_qulifications_end_yearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_informations_qulifications_end_yearActionPerformed
@@ -780,12 +807,12 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 add_to_al_table();
                 clear_al_form();
             }
-        }else{
+        } else {
             if (_rb_registration_lecture_informations_qulifications_ol_results.isSelected()) {
                 update_ol_table_data();
                 clear_ol_form();
                 _bt_registration_lecture_informations_qulifications_ol_al_add.setText("Add");
-            }else{
+            } else {
                 update_al_table_data();
                 clear_al_form();
                 _bt_registration_lecture_informations_qulifications_ol_al_add.setText("Add");
@@ -901,14 +928,14 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
     }//GEN-LAST:event__bt_registration_lecture_informations_qulifications_updateActionPerformed
 
     private void _tp_registration_lecture_qulifications_tablesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tp_registration_lecture_qulifications_tablesMouseClicked
-        
-            _tb_alresults_preview.setSelectionMode(0);
-            _tb_olresutls_preview.setSelectionMode(0);
-            _tb_qulification_preview.setSelectionMode(0);
-            
-            _bt_registration_lecture_informations_qulifications_remove.setEnabled(false);
-            _bt_registration_lecture_informations_qulifications_update.setEnabled(false);
-        
+
+        _tb_alresults_preview.setSelectionMode(0);
+        _tb_olresutls_preview.setSelectionMode(0);
+        _tb_qulification_preview.setSelectionMode(0);
+
+        _bt_registration_lecture_informations_qulifications_remove.setEnabled(false);
+        _bt_registration_lecture_informations_qulifications_update.setEnabled(false);
+
     }//GEN-LAST:event__tp_registration_lecture_qulifications_tablesMouseClicked
 
     private void _tf_registration_lecture_informations_qulifications_nameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_lecture_informations_qulifications_nameMouseClicked
@@ -1063,7 +1090,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
 
     private void update_qulification_table_data() {
         DefaultTableModel dtm = (DefaultTableModel) _tb_qulification_preview.getModel();
-        
+
         String qname = _tf_registration_lecture_informations_qulifications_name.getText();
         String start_year = _tf_registration_lecture_informations_qulifications_start_year.getText();
         String end_year = _tf_registration_lecture_informations_qulifications_end_year.getText();
@@ -1074,26 +1101,26 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
     }
 
     private void update_ol_table_data() {
-        DefaultTableModel dtm=(DefaultTableModel)_tb_olresutls_preview.getModel();
-        
-        String subject=_tf_registration_lecture_informations_qulifications_subject.getText();
-        String result=_tf_registration_lecture_informations_qulifications_result.getText();
-        
+        DefaultTableModel dtm = (DefaultTableModel) _tb_olresutls_preview.getModel();
+
+        String subject = _tf_registration_lecture_informations_qulifications_subject.getText();
+        String result = _tf_registration_lecture_informations_qulifications_result.getText();
+
         dtm.setValueAt(subject, oltable_row, 0);
         dtm.setValueAt(result, oltable_row, 1);
-        
+
         _rb_registration_lecture_informations_qulifications_ol_results.setSelected(true);
     }
 
     private void update_al_table_data() {
-        DefaultTableModel dtm=(DefaultTableModel)_tb_alresults_preview.getModel();
-        
-        String subject=_tf_registration_lecture_informations_qulifications_subject.getText();
-        String result=_tf_registration_lecture_informations_qulifications_result.getText();
-        
+        DefaultTableModel dtm = (DefaultTableModel) _tb_alresults_preview.getModel();
+
+        String subject = _tf_registration_lecture_informations_qulifications_subject.getText();
+        String result = _tf_registration_lecture_informations_qulifications_result.getText();
+
         dtm.setValueAt(subject, altable_row, 0);
         dtm.setValueAt(subject, altable_row, 1);
-        
+
         _rb_registration_lecture_informations_qulifications_al_results.setSelected(true);
     }
 
@@ -1101,32 +1128,32 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         try {
 
 //            Add to qulification table
-            DefaultTableModel qdtm=(DefaultTableModel)_tb_qulification_preview.getModel();
+            DefaultTableModel qdtm = (DefaultTableModel) _tb_qulification_preview.getModel();
             for (int i = 0; i < _tb_qulification_preview.getRowCount(); i++) {
-                String qname=qdtm.getValueAt(i, 0).toString();
-                String start_year=qdtm.getValueAt(i, 1).toString();
-                String end_year=qdtm.getValueAt(i, 2).toString();
-                
-                employee_academic_user_info_qulifications qulification=new employee_academic_user_info_qulifications(lecture_id, lecture_file_no, qname, start_year, end_year);
-                
+                String qname = qdtm.getValueAt(i, 0).toString();
+                String start_year = qdtm.getValueAt(i, 1).toString();
+                String end_year = qdtm.getValueAt(i, 2).toString();
+
+                employee_academic_user_info_qulifications qulification = new employee_academic_user_info_qulifications(lecture_id, lecture_file_no, qname, start_year, end_year);
+
             }
-            
+
 //            Add to ol table
-            DefaultTableModel oldtm=(DefaultTableModel)_tb_olresutls_preview.getModel();
+            DefaultTableModel oldtm = (DefaultTableModel) _tb_olresutls_preview.getModel();
             for (int i = 0; i < _tb_olresutls_preview.getRowCount(); i++) {
-                String subject=oldtm.getValueAt(i, 0).toString();
-                String result=oldtm.getValueAt(i, 1).toString();
-                
-                employee_academic_user_info_ol_results ol=new employee_academic_user_info_ol_results(lecture_id, subject, result);
+                String subject = oldtm.getValueAt(i, 0).toString();
+                String result = oldtm.getValueAt(i, 1).toString();
+
+                employee_academic_user_info_ol_results ol = new employee_academic_user_info_ol_results(lecture_id, subject, result);
             }
-            
+
 //            Add to al table
-            DefaultTableModel aldtm=(DefaultTableModel)_tb_alresults_preview.getModel();
+            DefaultTableModel aldtm = (DefaultTableModel) _tb_alresults_preview.getModel();
             for (int i = 0; i < _tb_alresults_preview.getRowCount(); i++) {
-                String subject=aldtm.getValueAt(i, 0).toString();
-                String result=oldtm.getValueAt(i, 1).toString();
-                
-                employee_academic_user_info_al_results al=new employee_academic_user_info_al_results(lecture_id, subject, result);
+                String subject = aldtm.getValueAt(i, 0).toString();
+                String result = oldtm.getValueAt(i, 1).toString();
+
+                employee_academic_user_info_al_results al = new employee_academic_user_info_al_results(lecture_id, subject, result);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -1141,17 +1168,17 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         _tf_registration_lecture_informations_qulifications_end_year.setText(null);
         _tf_registration_lecture_informations_qulifications_subject.setText(null);
         _tf_registration_lecture_informations_qulifications_result.setText(null);
-        
+
 //        Clear Table Datas
-        DefaultTableModel qdtm=(DefaultTableModel)_tb_qulification_preview.getModel();
+        DefaultTableModel qdtm = (DefaultTableModel) _tb_qulification_preview.getModel();
         qdtm.setRowCount(0);
-        
-        DefaultTableModel oldtm=(DefaultTableModel)_tb_olresutls_preview.getModel();
+
+        DefaultTableModel oldtm = (DefaultTableModel) _tb_olresutls_preview.getModel();
         oldtm.setRowCount(0);
-        
-        DefaultTableModel aldtm=(DefaultTableModel)_tb_alresults_preview.getModel();
+
+        DefaultTableModel aldtm = (DefaultTableModel) _tb_alresults_preview.getModel();
         aldtm.setRowCount(0);
-        
+
 //        Disable All Fields
         _tf_registration_lecture_informations_qulifications_file_no.setEnabled(false);
         _tf_registration_lecture_informations_qulifications_name.setEnabled(false);
@@ -1164,6 +1191,44 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         _bt_registration_lecture_informations_qulifications_remove.setEnabled(false);
         _bt_registration_lecture_informations_qulifications_update.setEnabled(false);
         _bt_registration_lecture_informations_qulifications_save.setEnabled(false);
+    }
+
+    private void load_lecture_qulification_table_details(String lecture_id) {
+        try {
+            DefaultTableModel dtmql = (DefaultTableModel) _tb_qulification_preview.getModel();
+            DefaultTableModel dtmol = (DefaultTableModel) _tb_olresutls_preview.getModel();
+            DefaultTableModel dtmal = (DefaultTableModel) _tb_alresults_preview.getModel();
+
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+
+            ResultSet rsql = statement.executeQuery("SELECT * FROM employee_academic_user_info_qulifications WHERE employee_academic_user_id='" + lecture_id + "'");
+            while (rsql.next()) {
+                Vector v = new Vector();
+                v.add(rsql.getString("employee_academic_user_info_qulifications_name"));
+                v.add(rsql.getString("employee_academic_user_info_qulifications_start_year"));
+                v.add(rsql.getString("employee_academic_user_info_qulifications_end_year"));
+                dtmql.addRow(v);
+            }
+
+            ResultSet rsol = statement.executeQuery("SELECT * FROM employee_academic_user_info_ol_result WHERE employee_academic_user_id='" + lecture_id + "'");
+            while (rsol.next()) {
+                Vector v = new Vector();
+                v.add(rsol.getString("employee_academic_user_info_ol_result_subject"));
+                v.add(rsol.getString("employee_academic_user_info_ol_result_result"));
+                dtmol.addRow(v);
+            }
+
+            ResultSet rsal = statement.executeQuery("SELECT * FROM employee_academic_user_info_al_result WHERE employee_academic_user_id='" + lecture_id + "'");
+            while (rsal.next()) {
+                Vector v = new Vector();
+                v.add(rsal.getString("employee_academic_user_info_al_result_subject"));
+                v.add(rsal.getString("employee_academic_user_info_al_result_result"));
+                dtmal.addRow(v);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

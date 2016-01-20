@@ -144,7 +144,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="_bt_registraion_lecture_buttons_preview_lecture">
+    <Component class="javax.swing.JButton" name="_bt_preview_table_lecture_buttons_preview_lecture">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="0"/>
@@ -166,11 +166,11 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_preview_lectureMouseEntered"/>
-        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_preview_lectureMouseExited"/>
-        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_preview_lectureMousePressed"/>
-        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_registraion_lecture_buttons_preview_lectureMouseReleased"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_registraion_lecture_buttons_preview_lectureActionPerformed"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_preview_table_lecture_buttons_preview_lectureMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_preview_table_lecture_buttons_preview_lectureMouseExited"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_preview_table_lecture_buttons_preview_lectureMousePressed"/>
+        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_preview_table_lecture_buttons_preview_lectureMouseReleased"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_preview_table_lecture_buttons_preview_lectureActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

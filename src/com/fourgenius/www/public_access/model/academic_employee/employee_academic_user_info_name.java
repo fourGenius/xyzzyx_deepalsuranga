@@ -31,7 +31,13 @@ public class employee_academic_user_info_name {
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeUpdate("insert into employee_academic_user_info_name(employee_academic_user_id,employee_academic_user_info_name_surName,employee_academic_user_info_name_first_name,employee_academic_user_info_name_last_name) values ('" + employee_academic_user_id + "','" + employee_academic_user_info_name_surName + "','" + employee_academic_user_info_name_first_name + "','" + employee_academic_user_info_name_last_name + "')");
+            ResultSet rs = statement.executeQuery("SELECT * FROM employee_academic_user_info_name WHERE employee_academic_user_id='" + employee_academic_user_id + "'");
+            if (rs.next()) {
+                statement.executeUpdate("UPDATE employee_academic_user_info_name SET employee_academic_user_info_name_surName='"+employee_academic_user_info_name_surName+"', employee_academic_user_info_name_first_name='"+employee_academic_user_info_name_first_name+"', employee_academic_user_info_name_last_name='"+employee_academic_user_info_name_last_name+"' WHERE employee_academic_user_id='" + employee_academic_user_id + "'");
+            } else {
+                statement.executeUpdate("INSERT INTO employee_academic_user_info_name(employee_academic_user_id,employee_academic_user_info_name_surName,employee_academic_user_info_name_first_name,employee_academic_user_info_name_last_name) VALUES ('" + employee_academic_user_id + "','" + employee_academic_user_info_name_surName + "','" + employee_academic_user_info_name_first_name + "','" + employee_academic_user_info_name_last_name + "')");
+
+            }
         } catch (SQLException ex) {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
@@ -40,10 +46,8 @@ public class employee_academic_user_info_name {
 
     public employee_academic_user_info_name() {
     }
-    
 
     public String getEmployee_academic_user_id() {
-        
 
         return employee_academic_user_id;
     }

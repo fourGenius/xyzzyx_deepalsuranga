@@ -37,11 +37,8 @@ public class employee_academic_user_info {
     private String idemployee_academic_user, employee_academic_user_id, employee_academic_user_email, employee_academic_user_info_status;
     public int max;
 
-    
-
     public employee_academic_user_info(String employee_academic_user_id, String employee_academic_user_email, String employee_academic_user_info_status) {
 
-        
         this.employee_academic_user_id = employee_academic_user_id;
         this.employee_academic_user_email = employee_academic_user_email;
         this.employee_academic_user_info_status = employee_academic_user_info_status;
@@ -49,7 +46,13 @@ public class employee_academic_user_info {
         try {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeUpdate("insert into employee_academic_user_info(employee_academic_user_id,employee_academic_user_email,employee_academic_user_info_status) values ('" + employee_academic_user_id + "','" + employee_academic_user_email + "','" + employee_academic_user_info_status + "')");
+            ResultSet rs = statement.executeQuery("SELECT * FROM employee_academic_user_info WHERE employee_academic_user_id='"+employee_academic_user_id+"'");
+            if (rs.next()) {
+                statement.executeUpdate("UPDATE employee_academic_user_info SET employee_academic_user_email='"+employee_academic_user_email+"' WHERE employee_academic_user_id='" + employee_academic_user_id + "'");
+            } else {
+                statement.executeUpdate("INSERT INTO employee_academic_user_info(employee_academic_user_id,employee_academic_user_email,employee_academic_user_info_status) VALUES ('" + employee_academic_user_id + "','" + employee_academic_user_email + "','" + employee_academic_user_info_status + "')");
+
+            }
         } catch (SQLException ex) {
 
             JOptionPane.showConfirmDialog(null, "Error is: 1/Employee info;" + ex);
@@ -60,20 +63,20 @@ public class employee_academic_user_info {
     public employee_academic_user_info() {
     }
 
-    public String getIdemployee_academic_user(){
+    public String getIdemployee_academic_user() {
         try {
-            Connection c=MC_JavaDataBaseConnection.myConnection();
-            Statement s= c.createStatement();
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
             ResultSet rs = s.executeQuery("SELECT COUNT(idemployee_academic_user) AS x FROM employee_academic_user_info");
             if (rs.next()) {
-                idemployee_academic_user=rs.getString("x");
+                idemployee_academic_user = rs.getString("x");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return idemployee_academic_user;
     }
-    
+
     public String getEmployee_academic_user_id_s(String id) {
 
         try {
@@ -119,8 +122,6 @@ public class employee_academic_user_info {
             JOptionPane.showConfirmDialog(null, "Error is: 3/Employee info;" + ex);
         }
     }
-
-    
 
     public String getEmployee_academic_user_info_status() {
         return employee_academic_user_info_status;
