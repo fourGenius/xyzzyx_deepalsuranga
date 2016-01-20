@@ -20,7 +20,7 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
 
     public Jp_registration_lecture_privew(String id) {
     
-    
+    loadForm();
         
     }
     
@@ -419,4 +419,8 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void loadForm() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
