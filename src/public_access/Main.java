@@ -5,8 +5,6 @@
  */
 package public_access;
 
-import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
-
 /**
  *
  * @author thilina
@@ -14,7 +12,6 @@ import com.fourgenius.www.public_access.model.academic_employee.employee_academi
 public class Main {
 
     /*
-    //hhhgyrytyuyr
      //    =Academic Employee
      //    ==Name:employee_academic_user_info
      private String employee_academic_user_id,employee_academic_user_email,employee_academic_user_password,employee_academic_user_info_status;
