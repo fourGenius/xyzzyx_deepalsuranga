@@ -44,7 +44,11 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
 
     public Jp_registration_student_privew(String id) {
         this();
-        loadForm(id);
+        _lb_id.setText(id);
+        loadname(id);
+        loadpersonal(id);
+        loadContact(id);
+        loadAddress(id);
         m.put("sid", id);
 
     }
@@ -405,13 +409,6 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
     private javax.swing.JButton print_report;
     // End of variables declaration//GEN-END:variables
 
-    private void loadForm(String id) {
-        _lb_id.setText(id);
-        loadname(id);
-        loadpersonal(id);
-        loadContact(id);
-        loadAddress(id);
-    }
 
     private void loadname(String id) {
         try {

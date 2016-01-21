@@ -74,6 +74,11 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         Capture_photo.setEnabled(false);
     }
 
+    public Jp_registration_student_informations(String path) {
+    newpath=path;
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1225,7 +1230,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
             Thread.sleep(10);
 
             try {
-                String newst_path = "E:\\FSC\\Images\\" + fullname + ".jpg";
+                String newst_path = "C:\\Program Files\\Four Genius\\" + fullname + ".jpg";
 
                 File f = new File(newst_path);
                 Image img;

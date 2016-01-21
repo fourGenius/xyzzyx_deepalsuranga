@@ -32,9 +32,9 @@ public class user_image_copy {
 //            
 
             FileInputStream from = new FileInputStream("C:\\Program Files\\Four Genius\\" + fullname + ".jpg");
-            FileOutputStream to = new FileOutputStream(user_dir+"\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
-            System.out.println("File Upload path : "+user_dir+"\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
-
+            FileOutputStream to = new FileOutputStream(user_dir + "\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
+            System.out.println("File Upload path : " + user_dir + "\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
+            Jp_registration_student_informations pic = new Jp_registration_student_informations(user_dir + "\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
             byte[] buffer = new byte[4096];
             int byteRead;
             while ((byteRead = from.read(buffer)) != -1) {

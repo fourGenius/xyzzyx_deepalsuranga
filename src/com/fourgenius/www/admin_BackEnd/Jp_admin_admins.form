@@ -368,6 +368,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="pf_conPassword">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pf_conPasswordActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1">
                   <Properties>
@@ -381,6 +384,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="pf_password">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pf_passwordActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_lecture_personalInformation_idInformation_dateOfBirth2">
                   <Properties>
@@ -399,6 +405,9 @@
                       <StringArray count="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="co_securityQuActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel15">
                   <Properties>
@@ -685,7 +694,7 @@
                         <Column editable="true" title="Name" type="java.lang.Object"/>
                         <Column editable="true" title="Email" type="java.lang.Object"/>
                         <Column editable="true" title="NIC No" type="java.lang.Object"/>
-                        <Column editable="true" title="Password" type="java.lang.Object"/>
+                        <Column editable="true" title="Security Qu:" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -816,6 +825,9 @@
           <StringArray count="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="admin_emailMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

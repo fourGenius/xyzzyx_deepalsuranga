@@ -177,13 +177,31 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setText("NIC Number");
 
+        pf_conPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pf_conPasswordActionPerformed(evt);
+            }
+        });
+
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setText("Security Question");
 
+        pf_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pf_passwordActionPerformed(evt);
+            }
+        });
+
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth2.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth2.setText("Conform Password");
+
+        co_securityQu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                co_securityQuActionPerformed(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -425,7 +443,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Manager ID", "Name", "Email", "NIC No", "Password"
+                "Manager ID", "Name", "Email", "NIC No", "Security Qu:"
             }
         ));
         jScrollPane2.setViewportView(tbl_admin_Administrators1);
@@ -481,6 +499,11 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         lb_admin_id.setText("1");
 
         admin_email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        admin_email.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                admin_emailMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -614,6 +637,33 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
     }//GEN-LAST:event_bt_disable_adminActionPerformed
 
+    private void admin_emailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admin_emailMouseClicked
+        try {
+            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from admin_info where admin_email='"+admin_email.getSelectedItem().toString()+"'");
+            while (rs.next()) {                
+                tf_fname.setText(rs.getString("admin_firstName"));
+                tf_lname.setText(rs.getString("admin_lastName"));
+                tf_nic.setText("admin_nic");
+                tf_email.setText(admin_email.getSelectedItem().toString());
+                pf_password.grabFocus();
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_admin_emailMouseClicked
+
+    private void pf_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pf_passwordActionPerformed
+        pf_conPassword.grabFocus();
+    }//GEN-LAST:event_pf_passwordActionPerformed
+
+    private void pf_conPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pf_conPasswordActionPerformed
+        co_securityQu.setEditable(true);
+        co_securityQu.grabFocus();
+    }//GEN-LAST:event_pf_conPasswordActionPerformed
+
+    private void co_securityQuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_co_securityQuActionPerformed
+        tf_securityAnswer.grabFocus();
+    }//GEN-LAST:event_co_securityQuActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Add_Administators;
@@ -667,22 +717,46 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
 
-            String query = "SELECT * FROM admin_info";
+            String query = "SELECT * FROM admin_info WHERE admin_type='Administrator'";
             ResultSet rs = statement.executeQuery(query);
 
             while (rs.next()) {
                 Vector v = new Vector();
-
-                v.add(rs.getString("admin_firstName"));
-                v.add(rs.getString("admin_lastName"));
+                v.add(rs.getString("admin_id"));
+                v.add(rs.getString("admin_firstName")+" "+rs.getString("admin_lastName"));
+                 v.add(rs.getString("admin_email"));
                 v.add(rs.getString("admin_nic"));
-                //v.add(rs.getString("stu_info_personal_gender"));
-                //v.add(rs.getString("stu_info_personal_course"));
+                v.add(rs.getString("admin_security_qu"));
+               
                 tableModel_administrator_active.addRow(v);
 
             }
+            rs.close();
+           
+ //////////////////////////////////////////////////////Fill Manager///////////////////////////////////////////           
+            DefaultTableModel tableModel_manager_active = (DefaultTableModel) tbl_admin_Administrators1.getModel(); 
+            tableModel_manager_active.setRowCount(0);
+
+           
+
+            String query_manager = "SELECT * FROM admin_info WHERE admin_type='Manager'";
+            ResultSet rs_manager = statement.executeQuery(query_manager);
+
+            while (rs_manager.next()) {
+                Vector v = new Vector();
+                v.add(rs_manager.getString("admin_id"));
+                v.add(rs_manager.getString("admin_firstName")+" "+rs.getString("admin_lastName"));
+                 v.add(rs_manager.getString("admin_email"));
+                v.add(rs_manager.getString("admin_nic"));
+                v.add(rs_manager.getString("admin_security_qu"));
+               
+                tableModel_manager_active.addRow(v);
+
+            }
+            rs_manager.close();
 
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     void set_admin_email_Comb() {
