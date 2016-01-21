@@ -25,6 +25,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
      */
     public Jp_admin_admins() {
         initComponents();
+        set_admin_email_Comb();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
@@ -86,6 +87,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         jScrollPane5 = new javax.swing.JScrollPane();
         tbl_admin_Administrators4 = new javax.swing.JTable();
         lb_admin_id = new javax.swing.JLabel();
+        admin_email = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(96, 125, 139));
         setMinimumSize(new java.awt.Dimension(1360, 668));
@@ -479,6 +481,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
         lb_admin_id.setText("1");
 
+        admin_email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -500,7 +504,9 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lb_admin_id)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lb_admin_id, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(admin_email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -508,7 +514,9 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(admin_email, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lb_admin_id, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -619,6 +627,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_lectureName_lastName;
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_lectureName_sirName;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_lectureName;
+    private javax.swing.JComboBox admin_email;
     private javax.swing.JPanel admin_main_panel;
     private javax.swing.JButton bt_add_admin;
     private javax.swing.JButton bt_disable_admin;
@@ -677,5 +686,19 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         } catch (Exception e) {
         }
     }
+    void set_admin_email_Comb() {
 
+        try {
+            ResultSet rs;
+            String sql = "SELECT * FROM admin";
+            rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql);
+
+            while (rs.next()) {
+                String name = rs.getString("admin_email");
+                admin_email.addItem(name);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
