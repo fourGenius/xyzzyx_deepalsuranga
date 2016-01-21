@@ -289,7 +289,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
     Jp_registration_student add_student = new Jp_registration_student();
     private void _bt_UserMain_StudentRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_StudentRegistrationActionPerformed
 
-        _bt_UserMain_StudentRegistration.setForeground(Color.black);
+        
         _bt_UserMain_StudentRegistration.setEnabled(false);
         _bt_UserMain_EmployeeRegistration.setEnabled(true);
         _bt_UserMain_LectureRegistration.setEnabled(true);
@@ -318,7 +318,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
     Jp_registration_lecture add_lecture = new Jp_registration_lecture();
     private void _bt_UserMain_LectureRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_LectureRegistrationActionPerformed
 
-        _bt_UserMain_StudentRegistration.setForeground(Color.black);
+        
         _bt_UserMain_StudentRegistration.setEnabled(true);
         _bt_UserMain_EmployeeRegistration.setEnabled(true);
         _bt_UserMain_LectureRegistration.setEnabled(false);
@@ -350,7 +350,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
     Jp_registration_employee add_employee = new Jp_registration_employee();
     private void _bt_UserMain_EmployeeRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_EmployeeRegistrationActionPerformed
 
-        _bt_UserMain_StudentRegistration.setForeground(Color.black);
+        
         _bt_UserMain_StudentRegistration.setEnabled(true);
         _bt_UserMain_EmployeeRegistration.setEnabled(false);
         _bt_UserMain_LectureRegistration.setEnabled(true);
@@ -378,7 +378,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
     Jp_student_payment payment = new Jp_student_payment();
     private void _bt_UserMain_paymentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsActionPerformed
 
-        _bt_UserMain_StudentRegistration.setForeground(Color.black);
+        
         _bt_UserMain_StudentRegistration.setEnabled(true);
         _bt_UserMain_EmployeeRegistration.setEnabled(true);
         _bt_UserMain_LectureRegistration.setEnabled(true);

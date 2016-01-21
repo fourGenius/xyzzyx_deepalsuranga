@@ -6,13 +6,16 @@
 package com.fourgenius.www.public_access.registration.student;
 
 import com.fourgenius.www.public_access.registration.lecture.*;
+import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.border.Border;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -20,27 +23,30 @@ import net.sf.jasperreports.engine.JasperPrintManager;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 import public_access.MC_JavaDataBaseConnection;
+
 /**
  *
  * @author Dineth Jayasekera
  */
 public class Jp_registration_student_privew extends javax.swing.JPanel {
 
+    Border border = BorderFactory.createLineBorder(Color.white, 1);
     /*
      * Creates new form Jp_registration_lecture_privew
      */
+
     public Jp_registration_student_privew() {
         initComponents();
-        
-        
+
     }
     String path;
-  static  Map<String, Object> m = new HashMap<String, Object>();
+    static Map<String, Object> m = new HashMap<String, Object>();
+
     public Jp_registration_student_privew(String id) {
         this();
         loadForm(id);
         m.put("sid", id);
-       
+
     }
 
     /**
@@ -75,9 +81,9 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
         _lb_land = new javax.swing.JLabel();
         _lb_email = new javax.swing.JLabel();
         _lb_picture = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        print_report = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(2, 119, 189));
+        setBackground(new java.awt.Color(117, 117, 117));
         setForeground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(500, 25));
         setMinimumSize(new java.awt.Dimension(500, 25));
@@ -199,16 +205,33 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
         _lb_picture.setMinimumSize(new java.awt.Dimension(178, 150));
         _lb_picture.setPreferredSize(new java.awt.Dimension(178, 150));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
-        jButton1.setText("Print Report");
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        print_report.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        print_report.setForeground(new java.awt.Color(255, 255, 255));
+        print_report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
+        print_report.setText("Print Report");
+        print_report.setContentAreaFilled(false);
+        print_report.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        print_report.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        print_report.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                print_reportMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                print_reportMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                print_reportMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                print_reportMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                print_reportMouseReleased(evt);
+            }
+        });
+        print_report.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                print_reportActionPerformed(evt);
             }
         });
 
@@ -222,7 +245,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(print_report, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
@@ -267,7 +290,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(print_report, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -316,15 +339,15 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         try {
+    private void print_reportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_reportActionPerformed
+        try {
 
             String is = "src/reports/student_reg.jrxml";
             JasperReport jr = JasperCompileManager.compileReport(is);
             Jp_registration_student_informations info = new Jp_registration_student_informations();
 
             System.out.println("ok2");
-           m.put("pic", path);
+            m.put("pic", path);
 
             JasperPrint jp1 = JasperFillManager.fillReport(jr, m, MC_JavaDataBaseConnection.myConnection());
             JasperViewer.viewReport(jp1, false);
@@ -332,7 +355,27 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_print_reportActionPerformed
+
+    private void print_reportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMouseClicked
+
+    }//GEN-LAST:event_print_reportMouseClicked
+
+    private void print_reportMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMouseEntered
+        print_report.setBorder(border);
+    }//GEN-LAST:event_print_reportMouseEntered
+
+    private void print_reportMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMouseExited
+        print_report.setBorder(null);
+    }//GEN-LAST:event_print_reportMouseExited
+
+    private void print_reportMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMousePressed
+        print_report.setBorder(null);
+    }//GEN-LAST:event_print_reportMousePressed
+
+    private void print_reportMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMouseReleased
+        print_report.setBorder(border);
+    }//GEN-LAST:event_print_reportMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -349,7 +392,6 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
     private javax.swing.JLabel _lb_name;
     private javax.swing.JLabel _lb_nic;
     private javax.swing.JLabel _lb_picture;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -360,6 +402,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton print_report;
     // End of variables declaration//GEN-END:variables
 
     private void loadForm(String id) {
@@ -372,11 +415,11 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
 
     private void loadname(String id) {
         try {
-            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_name where stu_user_info_id='"+id+"'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_name where stu_user_info_id='" + id + "'");
             if (rs.next()) {
-                _lb_name.setText(rs.getString("stu_info_name_first_name")+" "+rs.getString("stu_info_name_last_name")+" "+rs.getString("stu_info_name_sirName"));
+                _lb_name.setText(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name") + " " + rs.getString("stu_info_name_sirName"));
             }
-        rs.close();
+            rs.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -384,17 +427,17 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
 
     private void loadpersonal(String id) {
         try {
-            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_personal where stu_user_info_id='"+id+"'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_personal where stu_user_info_id='" + id + "'");
             if (rs.next()) {
                 _lb_nic.setText(rs.getString("stu_info_personal_nic"));
                 _lb_dob.setText(rs.getString("stu_info_personal_dob"));
                 _lb_branch.setText(rs.getString("stu_info_personal_branch"));
                 _lb_gender.setText(rs.getString("stu_info_personal_gender"));
-                path=rs.getString("stu_info_personal_profile_image"); 
-                File f = new File(path);
-                    Image img = ImageIO.read(f);
-                    img = img.getScaledInstance(_lb_picture.getWidth(), _lb_picture.getHeight(), Image.SCALE_SMOOTH);
-                    _lb_picture.setIcon(new ImageIcon(img));
+//                path = rs.getString("stu_info_personal_profile_image");
+//                File f = new File(path);
+//                Image img = ImageIO.read(f);
+//                img = img.getScaledInstance(_lb_picture.getWidth(), _lb_picture.getHeight(), Image.SCALE_SMOOTH);
+//                _lb_picture.setIcon(new ImageIcon(img));
             }
             rs.close();
         } catch (Exception e) {
@@ -404,7 +447,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
 
     private void loadContact(String id) {
         try {
-             ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_contact where stu_user_info_id='"+id+"'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_contact where stu_user_info_id='" + id + "'");
             if (rs.next()) {
                 _lb_mobile.setText(rs.getString("stu_info_telephone_mobile"));
                 _lb_land.setText(rs.getString("stu_info_telephone_land"));
@@ -417,12 +460,12 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
     }
 
     private void loadAddress(String id) {
-         try {
-             ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_address where stu_user_info_id='"+id+"'");
+        try {
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_address where stu_user_info_id='" + id + "'");
             if (rs.next()) {
-               _lb_address_line.setText(rs.getString("stu_info_address_lane1"));
-               _lb_city.setText(rs.getString("stu_info_address_city"));
-               _lb_cuntry.setText(rs.getString("stu_info_address_cuntry"));
+                _lb_address_line.setText(rs.getString("stu_info_address_lane1"));
+                _lb_city.setText(rs.getString("stu_info_address_city"));
+                _lb_cuntry.setText(rs.getString("stu_info_address_cuntry"));
             }
             rs.close();
         } catch (Exception e) {

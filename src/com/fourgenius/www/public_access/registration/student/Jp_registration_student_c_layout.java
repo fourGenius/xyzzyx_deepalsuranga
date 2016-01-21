@@ -9,6 +9,7 @@ import static com.fourgenius.www.public_access.registration.lecture.Jp_registrat
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_add_lecture;
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_preview_lecture;
 import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_informations;
+import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_preview;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.Jp_registraion_stu_main_panel;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.add_stu;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.preview_stu;
@@ -51,8 +52,9 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
 
         initComponents();
         _sp_registration_student_searchStudent.setVisible(false);
-        _bt_preview_table_student_buttons_preview_student.setEnabled(false);
+        _bt_preview_table_student_buttons_preview_student.setVisible(false);
         _bt_registraion_student_buttons_update_student.setEnabled(false);
+        
         addToTable();
     }
 
@@ -293,7 +295,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_registraion_student_buttons_update_studentActionPerformed
 
     private void _tb_registration_student_view_activeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_registration_student_view_activeMouseClicked
-        _bt_preview_table_student_buttons_preview_student.setEnabled(true);
+        
         _bt_registraion_student_buttons_update_student.setEnabled(true);
     }//GEN-LAST:event__tb_registration_student_view_activeMouseClicked
     int i = 0;
@@ -396,7 +398,29 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     }
 
     private void add_preview_form() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_student_view_active.getModel();
+            int row = _tb_registration_student_view_active.getSelectedRow();
+            String lec_id = dtm.getValueAt(row, 0).toString();
+
+            Jp_registration_student_privew student_preview = new Jp_registration_student_privew(lec_id);
+            if (student_preview == null) {
+                Jp_registraion_stu_main_panel.removeAll();
+                revalidate();
+                student_preview = new Jp_registration_student_privew(lec_id);
+                student_preview.setVisible(true);
+                Jp_registraion_stu_main_panel.add(student_preview);
+                revalidate();
+            } else {
+                Jp_registraion_stu_main_panel.removeAll();
+                revalidate();
+                student_preview.setVisible(true);
+                Jp_registraion_stu_main_panel.add(student_preview);
+                revalidate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

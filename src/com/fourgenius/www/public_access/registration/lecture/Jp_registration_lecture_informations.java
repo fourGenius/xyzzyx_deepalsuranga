@@ -70,6 +70,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         Date d = Calendar.getInstance().getTime();
         _dc_registration_lecture_information_form_dob.setMaxSelectableDate(d);
         _bt_registration_lecture_preview_register_lecture.setEnabled(false);
+        Open_Camera.setEnabled(false);
         Capture_photo.setEnabled(false);
     }
 
@@ -83,6 +84,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _bt_registration_lecture_preview_register_lecture.setText("Update Lecture");
         _bt_registration_lecture_personalInformation_preview.setText("Preview Update");
         _bt_registration_lecture_preview_register_lecture.setEnabled(false);
+        Open_Camera.setEnabled(false);
         Capture_photo.setEnabled(false);
 
     }
@@ -789,7 +791,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
         _bt_registration_lecture_personalInformation_preview.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registration_lecture_personalInformation_preview.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_registration_lecture_personalInformation_preview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_registration_lecture_personalInformation_preview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
         _bt_registration_lecture_personalInformation_preview.setText("Preview");
         _bt_registration_lecture_personalInformation_preview.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_registration_lecture_personalInformation_preview.setFocusPainted(false);
@@ -870,13 +872,13 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _pl_registration_lecture_personalInformation_browsePhoto1Layout.setHorizontalGroup(
             _pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
-                .addGap(478, 478, 478)
+                .addGap(441, 441, 441)
                 .addComponent(Open_Camera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Capture_photo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_bt_registration_lecture_personalInformation_preview, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(_bt_registration_lecture_personalInformation_preview, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
         _pl_registration_lecture_personalInformation_browsePhoto1Layout.setVerticalGroup(
             _pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1172,7 +1174,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileActionPerformed
 
     private void Open_CameraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open_CameraActionPerformed
-        Capture_photo.setEnabled(true);
+        
         try {
             Thread webcam = new Thread() {
                 public void run() {

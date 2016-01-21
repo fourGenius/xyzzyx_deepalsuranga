@@ -236,6 +236,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         _lb_registration_user_personalInformations_idInformations_dateOfBirth.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_user_personalInformations_idInformations_dateOfBirth.setText("Date Of Birth");
 
+        _dc_registration_student_personalInformations_studentDetails_dateOfBirth.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _dc_registration_student_personalInformations_studentDetails_dateOfBirth.setMaximumSize(new java.awt.Dimension(6, 23));
         _dc_registration_student_personalInformations_studentDetails_dateOfBirth.setMinimumSize(new java.awt.Dimension(6, 23));
         _dc_registration_student_personalInformations_studentDetails_dateOfBirth.setPreferredSize(new java.awt.Dimension(91, 40));

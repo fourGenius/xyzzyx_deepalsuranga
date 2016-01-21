@@ -130,6 +130,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         _bt_preview_table_lecture_buttons_preview_lecture.setForeground(new java.awt.Color(255, 255, 255));
         _bt_preview_table_lecture_buttons_preview_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
         _bt_preview_table_lecture_buttons_preview_lecture.setText("Preview");
+        _bt_preview_table_lecture_buttons_preview_lecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_preview_table_lecture_buttons_preview_lecture.setFocusPainted(false);
         _bt_preview_table_lecture_buttons_preview_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         _bt_preview_table_lecture_buttons_preview_lecture.setMaximumSize(new java.awt.Dimension(200, 50));

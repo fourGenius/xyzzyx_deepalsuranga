@@ -7,9 +7,13 @@ package com.fourgenius.www.public_access.registration.lecture;
 
 import java.awt.Image;
 import java.io.File;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Vector;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -23,11 +27,14 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
      */
     public Jp_registration_lecture_preview(String id) {
         initComponents();
-        _lb_id.setText(id);
-        loadname(id);
-        loadpersonal(id);
-        loadContact(id);
-        loadAddress(id);
+        load_form_data(id);
+
+//        initComponents();
+//        _lb_id.setText(id);
+//        loadname(id);
+//        loadpersonal(id);
+//        loadContact(id);
+//        loadAddress(id);
     }
 
     public Jp_registration_lecture_preview() {
@@ -239,7 +246,15 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
             new String [] {
                 "Subject", "Result"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane3.setViewportView(_tb_ol_result_table);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -430,10 +445,11 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void loadForm(String id) {
-       
+
     }
 
     private void loadname(String id) {
+        System.out.println("LoadName");
         try {
             ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from employee_academic_user_info_name where employee_academic_user_id='" + id + "'");
             if (rs.next()) {
@@ -446,6 +462,7 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
     }
 
     private void loadpersonal(String id) {
+        System.out.println("Personal");
         try {
             ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_personal where stu_user_info_id='" + id + "'");
             if (rs.next()) {
@@ -466,6 +483,7 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
     }
 
     private void loadContact(String id) {
+        System.out.println("Contact");
         try {
             ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_contact where stu_user_info_id='" + id + "'");
             if (rs.next()) {
@@ -480,6 +498,7 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
     }
 
     private void loadAddress(String id) {
+        System.out.println("Address");
         try {
             ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_address where stu_user_info_id='" + id + "'");
             if (rs.next()) {
@@ -488,6 +507,98 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
                 _lb_cuntry.setText(rs.getString("stu_info_address_cuntry"));
             }
             rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void load_form_data(String id) {
+        try {
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+
+            _lb_id.setText(id);
+            ResultSet rs_name = s.executeQuery("SELECT * FROM employee_academic_user_info_name WHERE employee_academic_user_id='" + id + "'");
+            if (rs_name.next()) {
+                _lb_name.setText(rs_name.getString("employee_academic_user_info_name_surName") + " " + rs_name.getString("employee_academic_user_info_name_first_name") + " " + rs_name.getString("employee_academic_user_info_name_last_name"));
+            }
+
+            ResultSet rs_personal = s.executeQuery("SELECT * FROM employee_academic_user_info_personal WHERE employee_academic_user_id='" + id + "'");
+            if (rs_personal.next()) {
+                _lb_nic.setText(rs_personal.getString("employee_academic_user_info_personal_nic"));
+                _lb_dob.setText(rs_personal.getString("employee_academic_user_info_personal_dob"));
+
+                String gender = rs_personal.getString("employee_academic_user_info_personal_gender");
+                if (gender.equals("Male")) {
+                    _lb_gender.setText("Male");
+                } else {
+                    _lb_gender.setText("Female");
+                }
+
+                String branch = rs_personal.getString("employee_academic_user_info_personal_branch");
+                if (branch.equals("Colombo")) {
+                    _lb_branch.setText("Colombo");
+                } else {
+                    _lb_branch.setText("Kandy");
+                }
+
+//                String pic = rs_personal.getString("employee_academic_user_info_personal_profile_image");
+//                File f = new File(pic);
+//                Image img = ImageIO.read(f);
+//                img = img.getScaledInstance(_lb_picture.getWidth(), _lb_picture.getHeight(), Image.SCALE_SMOOTH);
+//                _lb_picture.setIcon(new ImageIcon(img));
+
+            }
+
+            ResultSet rs_contact = s.executeQuery("SELECT * FROM employee_academic_user_info_contact WHERE employee_academic_user_id='" + id + "'");
+            if (rs_contact.next()) {
+                _lb_mobile.setText(rs_contact.getString("employee_academic_user_info_contact_mobile"));
+                _lb_land.setText(rs_contact.getString("employee_academic_user_info_contact_land"));
+                _lb_email.setText(rs_contact.getString("employee_academic_user_info_contact_email"));
+            }
+
+            ResultSet rs_address = s.executeQuery("SELECT * FROM employee_academic_user_info_address WHERE employee_academic_user_id='" + id + "'");
+            if (rs_address.next()) {
+                _lb_address_line.setText(rs_address.getString("employee_academic_user_info_address_lane1"));
+                _lb_city.setText(rs_address.getString("employee_academic_user_info_address_city"));
+                _lb_cuntry.setText(rs_address.getString("employee_academic_user_info_address_cuntry"));
+            }
+            
+            
+            
+            
+            DefaultTableModel dtmql = (DefaultTableModel) _tb_Qulification_table.getModel();
+            DefaultTableModel dtmol = (DefaultTableModel) _tb_ol_result_table.getModel();
+            DefaultTableModel dtmal = (DefaultTableModel) _tb_al_result_table.getModel();
+
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+
+            ResultSet rsql = statement.executeQuery("SELECT * FROM employee_academic_user_info_qulifications WHERE employee_academic_user_id='" + id + "'");
+            while (rsql.next()) {
+                Vector v = new Vector();
+                v.add(rsql.getString("employee_academic_user_info_qulifications_name"));
+                v.add(rsql.getString("employee_academic_user_info_qulifications_start_year"));
+                v.add(rsql.getString("employee_academic_user_info_qulifications_end_year"));
+                dtmql.addRow(v);
+            }
+
+            ResultSet rsol = statement.executeQuery("SELECT * FROM employee_academic_user_info_ol_result WHERE employee_academic_user_id='" + id + "'");
+            while (rsol.next()) {
+                Vector v = new Vector();
+                v.add(rsol.getString("employee_academic_user_info_ol_result_subject"));
+                v.add(rsol.getString("employee_academic_user_info_ol_result_result"));
+                dtmol.addRow(v);
+            }
+
+            ResultSet rsal = statement.executeQuery("SELECT * FROM employee_academic_user_info_al_result WHERE employee_academic_user_id='" + id + "'");
+            while (rsal.next()) {
+                Vector v = new Vector();
+                v.add(rsal.getString("employee_academic_user_info_al_result_subject"));
+                v.add(rsal.getString("employee_academic_user_info_al_result_result"));
+                dtmal.addRow(v);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -86,8 +86,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         jLabel6 = new javax.swing.JLabel();
         _tf_registration_employee_personalInformations_contactDetails_cuntry = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
         _tf_registration_employee_personalInformation_browsePhoto_browseFile = new javax.swing.JTextField();
+        _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
         _bt_registration_employee_personalInformation_registerLecture = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         _lb_registration_employee_preview_image = new javax.swing.JLabel();
@@ -123,6 +123,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         jPanel1.setMaximumSize(new java.awt.Dimension(32767, 695));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 695));
         jPanel1.setPreferredSize(new java.awt.Dimension(827, 695));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(2, 119, 189));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Employee Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -338,9 +339,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 365, 520));
+
         jPanel4.setBackground(new java.awt.Color(2, 119, 189));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contact Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel4.setPreferredSize(new java.awt.Dimension(349, 251));
+        jPanel4.setPreferredSize(new java.awt.Dimension(365, 545));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -429,7 +432,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Cuntry");
+        jLabel6.setText("Country");
 
         _tf_registration_employee_personalInformations_contactDetails_cuntry.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_employee_personalInformations_contactDetails_cuntry.setMaximumSize(new java.awt.Dimension(333, 40));
@@ -445,6 +448,17 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Address___________________________________");
 
+        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setText("Broswe File");
+        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setMaximumSize(new java.awt.Dimension(333, 40));
+        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setMinimumSize(new java.awt.Dimension(333, 40));
+        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setPreferredSize(new java.awt.Dimension(333, 40));
+        _tf_registration_employee_personalInformation_browsePhoto_browseFile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -459,15 +473,16 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                     .addComponent(_tf_registration_employee_personalInformations_contactDetails_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_tf_registration_employee_personalInformations_contactDetails_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_tf_registration_employee_personalInformations_contactDetails_city, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_tf_registration_employee_personalInformations_contactDetails_cuntry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(_tf_registration_employee_personalInformations_contactDetails_1stLine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(_tf_registration_employee_personalInformations_contactDetails_cuntry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(_tf_registration_employee_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -487,34 +502,26 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 .addComponent(_tf_registration_employee_personalInformations_contactDetails_eMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(4, 4, 4)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_registration_employee_personalInformations_contactDetails_1stLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_registration_employee_personalInformations_contactDetails_city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_registration_employee_personalInformations_contactDetails_cuntry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(_tf_registration_employee_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, 520));
 
         _pl_registration_lecture_personalInformation_browsePhoto1.setBackground(new java.awt.Color(2, 119, 189));
         _pl_registration_lecture_personalInformation_browsePhoto1.setPreferredSize(new java.awt.Dimension(766, 123));
-
-        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setText("Broswe File");
-        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setMaximumSize(new java.awt.Dimension(333, 40));
-        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setMinimumSize(new java.awt.Dimension(333, 40));
-        _tf_registration_employee_personalInformation_browsePhoto_browseFile.setPreferredSize(new java.awt.Dimension(333, 40));
-        _tf_registration_employee_personalInformation_browsePhoto_browseFile.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _tf_registration_employee_personalInformation_browsePhoto_browseFileMouseClicked(evt);
-            }
-        });
 
         _bt_registration_employee_personalInformation_registerLecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registration_employee_personalInformation_registerLecture.setForeground(new java.awt.Color(255, 255, 255));
@@ -549,46 +556,18 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         _pl_registration_lecture_personalInformation_browsePhoto1Layout.setHorizontalGroup(
             _pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(_tf_registration_employee_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(_bt_registration_employee_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(524, Short.MAX_VALUE)
+                .addComponent(_bt_registration_employee_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_browsePhoto1Layout.setVerticalGroup(
             _pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_tf_registration_employee_personalInformation_browsePhoto_browseFile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_employee_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
+                .addComponent(_bt_registration_employee_personalInformation_registerLecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(_pl_registration_lecture_personalInformation_browsePhoto1, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))
-                .addGap(11, 11, 11)
-                .addComponent(_pl_registration_lecture_personalInformation_browsePhoto1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jPanel1.add(_pl_registration_lecture_personalInformation_browsePhoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 778, 55));
 
         jPanel7.setBackground(new java.awt.Color(117, 117, 117));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Preview", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -684,7 +663,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(_lb_registration_employee_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 342, Short.MAX_VALUE))
+                        .addGap(0, 348, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -781,7 +760,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -789,8 +768,8 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 618, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 618, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 618, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
