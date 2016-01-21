@@ -77,12 +77,13 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="_bt_view_employee" min="-2" pref="200" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="_bt_add_employee" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="_bt_update_employee" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="720" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

@@ -69,7 +69,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
 
         jPanel1.add(jScrollPane2, "card2");
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 980, 620));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 970, 630));
 
         _tf_registration_employee_informations_view_searchStudent.setMaximumSize(new java.awt.Dimension(300, 50));
         _tf_registration_employee_informations_view_searchStudent.setMinimumSize(new java.awt.Dimension(300, 50));
@@ -79,7 +79,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
                 _tf_registration_employee_informations_view_searchStudentKeyReleased(evt);
             }
         });
-        add(_tf_registration_employee_informations_view_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 38, -1, -1));
+        add(_tf_registration_employee_informations_view_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 10, 310, -1));
 
         _li_registration_employee_informations_view_searchStudent.setAlignmentX(1.0F);
         _li_registration_employee_informations_view_searchStudent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -90,7 +90,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
         });
         jScrollPane1.setViewportView(_li_registration_employee_informations_view_searchStudent);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(992, 88, 300, 540));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 60, 310, 580));
 
         _bt_registration_employee_informations_view_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/search_icon.png"))); // NOI18N
         _bt_registration_employee_informations_view_search.setContentAreaFilled(false);
@@ -101,7 +101,7 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
                 _bt_registration_employee_informations_view_searchActionPerformed(evt);
             }
         });
-        add(_bt_registration_employee_informations_view_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 38, 50, 50));
+        add(_bt_registration_employee_informations_view_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, 50, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_employee_informations_view_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
