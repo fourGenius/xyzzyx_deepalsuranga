@@ -193,7 +193,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
         preview_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         preview_stu.setForeground(new java.awt.Color(255, 255, 255));
         preview_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        preview_stu.setText("Preview Student");
+        preview_stu.setText("Students Details");
         preview_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         preview_stu.setFocusPainted(false);
         preview_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -387,10 +387,10 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Jp_registraion_stu_main_panel;
-    private javax.swing.JButton add_stu;
+    public static javax.swing.JPanel Jp_registraion_stu_main_panel;
+    public static javax.swing.JButton add_stu;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton preview_stu;
+    public static javax.swing.JButton preview_stu;
     private javax.swing.JButton print_stu;
     private javax.swing.JButton remove_stu;
     private javax.swing.JButton update_stu;

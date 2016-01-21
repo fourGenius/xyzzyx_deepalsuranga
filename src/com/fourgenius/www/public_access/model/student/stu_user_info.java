@@ -34,7 +34,7 @@ public class stu_user_info {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from stu_user_info where stu_user_info_id='"+stu_user_info_id+"'");
             if (rs.next()) {
-                statement.executeUpdate("update stu_user_info set stu_user_info_email='"+stu_user_info_email+"' where stu_user_info_id='"+stu_user_info_id+"'");
+                statement.executeUpdate("UPDATE stu_user_info SET stu_user_info_email='"+stu_user_info_email+"' WHERE stu_user_info_id='"+stu_user_info_id+"'");
             } else {
                 statement.executeUpdate("insert into stu_user_info(stu_user_info_id,stu_user_info_email,stu_user_info_status) values ('"+stu_user_info_id+"','"+stu_user_info_email+"','"+stu_user_info_status+"')");
             }

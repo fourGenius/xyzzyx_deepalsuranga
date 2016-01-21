@@ -10,11 +10,15 @@ import com.fourgenius.www.public_access.model.academic_employee.employee_academi
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_contact;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_personal;
-import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
-import java.awt.BorderLayout;
+import com.fourgenius.www.public_access.registration.student.user_image_copy;
+import com.googlecode.javacv.CanvasFrame;
+import com.googlecode.javacv.OpenCVFrameGrabber;
+import com.googlecode.javacv.cpp.opencv_core;
+import com.googlecode.javacv.cpp.opencv_highgui;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -25,10 +29,8 @@ import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
 import public_access.MC_JavaDataBaseConnection;
 
@@ -68,6 +70,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         Date d = Calendar.getInstance().getTime();
         _dc_registration_lecture_information_form_dob.setMaxSelectableDate(d);
         _bt_registration_lecture_preview_register_lecture.setEnabled(false);
+        Capture_photo.setEnabled(false);
     }
 
     public Jp_registration_lecture_informations(String lec_id) {
@@ -80,6 +83,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _bt_registration_lecture_preview_register_lecture.setText("Update Lecture");
         _bt_registration_lecture_personalInformation_preview.setText("Preview Update");
         _bt_registration_lecture_preview_register_lecture.setEnabled(false);
+        Capture_photo.setEnabled(false);
 
     }
 
@@ -156,6 +160,8 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _bt_registration_lecture_preview_register_lecture = new javax.swing.JButton();
         _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
         _bt_registration_lecture_personalInformation_preview = new javax.swing.JButton();
+        Open_Camera = new javax.swing.JButton();
+        Capture_photo = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setMinimumSize(new java.awt.Dimension(1366, 718));
@@ -812,20 +818,75 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
             }
         });
 
+        Open_Camera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/registration/student/camera_white.png"))); // NOI18N
+        Open_Camera.setFocusPainted(false);
+        Open_Camera.setMaximumSize(new java.awt.Dimension(60, 50));
+        Open_Camera.setMinimumSize(new java.awt.Dimension(60, 50));
+        Open_Camera.setPreferredSize(new java.awt.Dimension(60, 50));
+        Open_Camera.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Open_CameraMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Open_CameraMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Open_CameraMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Open_CameraMouseReleased(evt);
+            }
+        });
+        Open_Camera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Open_CameraActionPerformed(evt);
+            }
+        });
+
+        Capture_photo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/camera_capture_18dp.png"))); // NOI18N
+        Capture_photo.setFocusPainted(false);
+        Capture_photo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Capture_photoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Capture_photoMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Capture_photoMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Capture_photoMouseReleased(evt);
+            }
+        });
+        Capture_photo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Capture_photoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_browsePhoto1Layout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_browsePhoto1);
         _pl_registration_lecture_personalInformation_browsePhoto1.setLayout(_pl_registration_lecture_personalInformation_browsePhoto1Layout);
         _pl_registration_lecture_personalInformation_browsePhoto1Layout.setHorizontalGroup(
             _pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
-                .addContainerGap(600, Short.MAX_VALUE)
+                .addGap(478, 478, 478)
+                .addComponent(Open_Camera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Capture_photo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_bt_registration_lecture_personalInformation_preview, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_browsePhoto1Layout.setVerticalGroup(
             _pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createSequentialGroup()
-                .addComponent(_bt_registration_lecture_personalInformation_preview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11))
+                .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(_bt_registration_lecture_personalInformation_preview, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(_pl_registration_lecture_personalInformation_browsePhoto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(Capture_photo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Open_Camera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         add(_pl_registration_lecture_personalInformation_browsePhoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, 810, 60));
@@ -850,10 +911,10 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
     private void _bt_registration_lecture_personalInformation_previewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewActionPerformed
         if (_bt_registration_lecture_personalInformation_preview.getText().equals("Preview")) {
-            System.out.println("LEC 01");
+            
             check_empty_fields();
         } else {
-            System.out.println("WRONG ELSE");
+            
             check_update_empty_fields();
         }
     }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewActionPerformed
@@ -879,7 +940,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
             } else {
                 int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (option == JOptionPane.YES_OPTION) {
-//                    add_to_database();
+                    add_to_database();
                     clear_personal_information_form();
                     clear_preview_form();
 
@@ -1110,8 +1171,122 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileActionPerformed
 
+    private void Open_CameraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open_CameraActionPerformed
+        Capture_photo.setEnabled(true);
+        try {
+            Thread webcam = new Thread() {
+                public void run() {
+
+                    opencv_highgui.CvCapture capture = opencv_highgui.cvCreateCameraCapture(0);
+                    opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_HEIGHT, 400);
+                    opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_WIDTH, 200);
+                    opencv_core.IplImage grabbedImage = opencv_highgui.cvQueryFrame(capture);
+                    CanvasFrame frame = new CanvasFrame("Student Image Capture");
+
+                    frame.setAlwaysOnTop(true);
+                    //Canvas can=new Canvas();
+
+                    while (frame.isVisible() && (grabbedImage = opencv_highgui.cvQueryFrame(capture)) != null) {
+                        frame.showImage(grabbedImage);
+
+                    }
+
+                }
+            };
+
+            webcam.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event_Open_CameraActionPerformed
+
+    private void Capture_photoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Capture_photoActionPerformed
+
+        try {
+            String fullname = _tf_registration_lecture_information_form_nic.getText() + "-" + _tf_registration_lecture_information_form_sur_name.getText() + "-capture";
+
+            OpenCVFrameGrabber grabber = new OpenCVFrameGrabber(0);
+            try {
+                grabber.start();
+                opencv_core.IplImage img = grabber.grab();
+                if (img != null) {
+                    opencv_highgui.cvSaveImage(fullname + ".jpg", img);
+                    JOptionPane.showMessageDialog(this, "Capture is OK! \n " + fullname + ".jpg");
+
+                }
+
+            } catch (Exception e) {
+            }
+
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException ex) {
+
+            }
+            user_image_copy con = new user_image_copy();
+            con.copyImage(fullname);
+
+            try {
+                Thread.sleep(10);
+
+                try {
+                    String newst_path = "E:\\FSC\\Images\\" + fullname + ".jpg";
+
+                    File f = new File(newst_path);
+                    Image img;
+
+                    img = ImageIO.read(f);
+                    img = img.getScaledInstance(_lb_registration_lecture_preview_image.getWidth(), _lb_registration_lecture_preview_image.getHeight(), Image.SCALE_SMOOTH);
+                    _lb_registration_lecture_preview_image.setIcon(new ImageIcon(img));
+                } catch (IOException ex) {
+
+                }
+            } catch (InterruptedException ex) {
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event_Capture_photoActionPerformed
+
+    private void Open_CameraMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Open_CameraMouseEntered
+        Open_Camera.setBorder(border);
+    }//GEN-LAST:event_Open_CameraMouseEntered
+
+    private void Open_CameraMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Open_CameraMouseExited
+        Open_Camera.setBorder(null);
+    }//GEN-LAST:event_Open_CameraMouseExited
+
+    private void Open_CameraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Open_CameraMousePressed
+        Open_Camera.setBorder(null);
+    }//GEN-LAST:event_Open_CameraMousePressed
+
+    private void Open_CameraMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Open_CameraMouseReleased
+        Open_Camera.setBorder(border);
+    }//GEN-LAST:event_Open_CameraMouseReleased
+
+    private void Capture_photoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Capture_photoMouseEntered
+        Open_Camera.setBorder(border);
+    }//GEN-LAST:event_Capture_photoMouseEntered
+
+    private void Capture_photoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Capture_photoMouseExited
+        Open_Camera.setBorder(null);
+    }//GEN-LAST:event_Capture_photoMouseExited
+
+    private void Capture_photoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Capture_photoMousePressed
+        Open_Camera.setBorder(null);
+    }//GEN-LAST:event_Capture_photoMousePressed
+
+    private void Capture_photoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Capture_photoMouseReleased
+        Open_Camera.setBorder(border);
+    }//GEN-LAST:event_Capture_photoMouseReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Capture_photo;
+    private javax.swing.JButton Open_Camera;
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformation_employeeDetails_branch;
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_acadamy;
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_gender;
@@ -1216,7 +1391,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
         try {
             try {
-                System.out.println("LEC 3");
+                
                 Date d = _dc_registration_lecture_information_form_dob.getDate();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String date = sdf.format(d);
@@ -1279,7 +1454,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     }
 
     private void generate_lecture_id() {
-        System.out.println("LECTURE ID");
+        
         String id = "ID";
         String lc = "LE";
 
@@ -1355,7 +1530,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                             String email1 = _tf_registration_lecture_information_form_email.getText();
                             Boolean result = email1.matches(EMAIL_REGEX);
                             if (result) {
-                                System.out.println("LEC 02");
+                                
                                 add_to_preview_form();
                             } else {
                                 JOptionPane.showMessageDialog(this, "Please Enter Valid Email.", "WARNING!", JOptionPane.WARNING_MESSAGE);
@@ -1541,23 +1716,23 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     }
 
     private void load_information_qulifications_update_form(String file_id) {
-        Jp_registration_lecture_informations_qulifications_form qform=new Jp_registration_lecture_informations_qulifications_form(file_id, lecture_id);
-        
+        Jp_registration_lecture_informations_qulifications_form qform = new Jp_registration_lecture_informations_qulifications_form(file_id, lecture_id);
+
         if (qform == null) {
-                qform = new Jp_registration_lecture_informations_qulifications_form(file_id, lecture_id);
-                _pl_registration_lecture_personalInformation_main_panel.removeAll();
-                _pl_registration_lecture_personalInformation_main_panel.repaint();
-                _pl_registration_lecture_personalInformation_main_panel.revalidate();
-                _pl_registration_lecture_personalInformation_main_panel.add(qform);
-                _pl_registration_lecture_personalInformation_main_panel.repaint();
-                _pl_registration_lecture_personalInformation_main_panel.revalidate();
-            } else {
-                _pl_registration_lecture_personalInformation_main_panel.removeAll();
-                _pl_registration_lecture_personalInformation_main_panel.repaint();
-                _pl_registration_lecture_personalInformation_main_panel.revalidate();
-                _pl_registration_lecture_personalInformation_main_panel.add(qform);
-                _pl_registration_lecture_personalInformation_main_panel.repaint();
-                _pl_registration_lecture_personalInformation_main_panel.revalidate();
-            }
+            qform = new Jp_registration_lecture_informations_qulifications_form(file_id, lecture_id);
+            _pl_registration_lecture_personalInformation_main_panel.removeAll();
+            _pl_registration_lecture_personalInformation_main_panel.repaint();
+            _pl_registration_lecture_personalInformation_main_panel.revalidate();
+            _pl_registration_lecture_personalInformation_main_panel.add(qform);
+            _pl_registration_lecture_personalInformation_main_panel.repaint();
+            _pl_registration_lecture_personalInformation_main_panel.revalidate();
+        } else {
+            _pl_registration_lecture_personalInformation_main_panel.removeAll();
+            _pl_registration_lecture_personalInformation_main_panel.repaint();
+            _pl_registration_lecture_personalInformation_main_panel.revalidate();
+            _pl_registration_lecture_personalInformation_main_panel.add(qform);
+            _pl_registration_lecture_personalInformation_main_panel.repaint();
+            _pl_registration_lecture_personalInformation_main_panel.revalidate();
+        }
     }
 }

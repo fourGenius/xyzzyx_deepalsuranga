@@ -75,7 +75,7 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         _bt_view_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_view_employee.setForeground(new java.awt.Color(255, 255, 255));
         _bt_view_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        _bt_view_employee.setText("View Employee");
+        _bt_view_employee.setText("Employees Details");
         _bt_view_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_view_employee.setFocusPainted(false);
         _bt_view_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

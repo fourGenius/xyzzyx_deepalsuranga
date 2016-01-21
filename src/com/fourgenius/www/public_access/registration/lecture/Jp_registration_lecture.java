@@ -138,7 +138,7 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
         _bt_registraion_lecture_buttons_preview_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registraion_lecture_buttons_preview_lecture.setForeground(new java.awt.Color(255, 255, 255));
         _bt_registraion_lecture_buttons_preview_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        _bt_registraion_lecture_buttons_preview_lecture.setText("Preview Lecture");
+        _bt_registraion_lecture_buttons_preview_lecture.setText("Lectures Details");
         _bt_registraion_lecture_buttons_preview_lecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_registraion_lecture_buttons_preview_lecture.setFocusPainted(false);
         _bt_registraion_lecture_buttons_preview_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

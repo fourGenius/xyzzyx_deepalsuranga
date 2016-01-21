@@ -5,6 +5,13 @@
  */
 package com.fourgenius.www.public_access.registration.student;
 
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture.Jp_registraion_lecture_main_panel;
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_add_lecture;
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_preview_lecture;
+import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_informations;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.Jp_registraion_stu_main_panel;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.add_stu;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.preview_stu;
 import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
 import java.awt.Color;
 import java.awt.Image;
@@ -36,8 +43,6 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     Border border = BorderFactory.createLineBorder(Color.white, 1);
     String path, newpath;
     boolean b;
-    
-   
 
     /**
      * Creates new form registration_student
@@ -45,8 +50,10 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     public Jp_registration_student_c_layout() {
 
         initComponents();
-       addToTable();
-         _sp_registration_student_searchStudent.setVisible(false);
+        _sp_registration_student_searchStudent.setVisible(false);
+        _bt_preview_table_student_buttons_preview_student.setEnabled(false);
+        _bt_registraion_student_buttons_update_student.setEnabled(false);
+        addToTable();
     }
 
     /**
@@ -65,6 +72,8 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
         _li_registration_student_searchStudent = new javax.swing.JList();
         _tf_registration_student_searchStudent = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        _bt_preview_table_student_buttons_preview_student = new javax.swing.JButton();
+        _bt_registraion_student_buttons_update_student = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setForeground(new java.awt.Color(66, 66, 66));
@@ -79,26 +88,31 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
 
             },
             new String [] {
-                "NIC", "Name", "Cose"
+                "Student ID", "NIC", "Name", "Course"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        _tb_registration_student_view_active.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tb_registration_student_view_activeMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(_tb_registration_student_view_active);
 
         student_mainPanel.add(jScrollPane1, "card2");
 
-        add(student_mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 620));
+        add(student_mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 540));
 
         _sp_registration_student_searchStudent.setViewportView(_li_registration_student_searchStudent);
 
-        add(_sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 310, 570));
+        add(_sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 310, 490));
 
         _tf_registration_student_searchStudent.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -109,81 +123,186 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/search_icon.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
+
+        _bt_preview_table_student_buttons_preview_student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_preview_table_student_buttons_preview_student.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_preview_table_student_buttons_preview_student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_preview_table_student_buttons_preview_student.setText("Preview");
+        _bt_preview_table_student_buttons_preview_student.setFocusPainted(false);
+        _bt_preview_table_student_buttons_preview_student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_preview_table_student_buttons_preview_student.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_preview_table_student_buttons_preview_student.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_preview_table_student_buttons_preview_student.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_student_buttons_preview_studentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_student_buttons_preview_studentMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_student_buttons_preview_studentMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_student_buttons_preview_studentMouseReleased(evt);
+            }
+        });
+        _bt_preview_table_student_buttons_preview_student.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_preview_table_student_buttons_preview_studentActionPerformed(evt);
+            }
+        });
+        add(_bt_preview_table_student_buttons_preview_student, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, -1, -1));
+
+        _bt_registraion_student_buttons_update_student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registraion_student_buttons_update_student.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registraion_student_buttons_update_student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_registraion_student_buttons_update_student.setText("Update Student");
+        _bt_registraion_student_buttons_update_student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registraion_student_buttons_update_student.setFocusPainted(false);
+        _bt_registraion_student_buttons_update_student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registraion_student_buttons_update_student.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_registraion_student_buttons_update_student.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_registraion_student_buttons_update_studentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_registraion_student_buttons_update_studentMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_registraion_student_buttons_update_studentMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_registraion_student_buttons_update_studentMouseReleased(evt);
+            }
+        });
+        _bt_registraion_student_buttons_update_student.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_registraion_student_buttons_update_studentActionPerformed(evt);
+            }
+        });
+        add(_bt_registraion_student_buttons_update_student, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_student_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_searchStudentKeyReleased
-       
-           try {
-                if (_tf_registration_student_searchStudent.getText().isEmpty()) {
-                    _sp_registration_student_searchStudent.setVisible(false);
-                } else {
-                    String text = _tf_registration_student_searchStudent.getText();
-                    char first = text.charAt(0);
-                    if (Character.isDigit(first)) {
-                        Connection c = MC_JavaDataBaseConnection.myConnection();
-                        Statement s = c.createStatement();
 
-                        ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE a.employee_academic_user_info_personal_nic like '"+_tf_registration_student_searchStudent.getText()+"' AND c.employee_academic_user_info_status>='1'");
-                        Vector v = new Vector();
-                        while (rs.next()) {
-                            v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
-                        }
-                        rs.close();
-                        _li_registration_student_searchStudent.setListData(v);
+        try {
+            if (_tf_registration_student_searchStudent.getText().isEmpty()) {
+                _sp_registration_student_searchStudent.setVisible(false);
+            } else {
+                String text = _tf_registration_student_searchStudent.getText();
+                char first = text.charAt(0);
+                if (Character.isDigit(first)) {
+                    Connection c = MC_JavaDataBaseConnection.myConnection();
+                    Statement s = c.createStatement();
+
+                    ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE a.employee_academic_user_info_personal_nic like '" + _tf_registration_student_searchStudent.getText() + "' AND c.employee_academic_user_info_status>='1'");
+                    Vector v = new Vector();
+                    while (rs.next()) {
+                        v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
+                    }
+                    rs.close();
+                    _li_registration_student_searchStudent.setListData(v);
+                    _sp_registration_student_searchStudent.setVisible(false);
+                    if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
                         _sp_registration_student_searchStudent.setVisible(false);
-                        if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
+                    } else {
+                        _sp_registration_student_searchStudent.setVisible(true);
+                    }
+                    if (evt.getKeyCode() == 40) {
+                        _sp_registration_student_searchStudent.setVisible(true);
+                        _li_registration_student_searchStudent.grabFocus();
+                    }
+                } else {
+                    try {
+                        if (_tf_registration_student_searchStudent.getText().isEmpty()) {
                             _sp_registration_student_searchStudent.setVisible(false);
                         } else {
-                            _sp_registration_student_searchStudent.setVisible(true);
+                            Connection c = MC_JavaDataBaseConnection.myConnection();
+                            Statement s = c.createStatement();
+
+                            ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE CONCAT (b.employee_academic_user_info_name_first_name, ' ', b.employee_academic_user_info_name_last_name) like '%" + _tf_registration_student_searchStudent.getText() + "%' AND c.employee_academic_user_info_status>='1'");
+                            Vector v = new Vector();
+                            while (rs.next()) {
+                                v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
+                            }
+                            rs.close();
+                            _li_registration_student_searchStudent.setListData(v);
+                            _sp_registration_student_searchStudent.setVisible(false);
+                            if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
+                                _sp_registration_student_searchStudent.setVisible(false);
+                            } else {
+                                _sp_registration_student_searchStudent.setVisible(true);
+                            }
                         }
                         if (evt.getKeyCode() == 40) {
                             _sp_registration_student_searchStudent.setVisible(true);
                             _li_registration_student_searchStudent.grabFocus();
                         }
-                    } else {
-                        try {
-                            if (_tf_registration_student_searchStudent.getText().isEmpty()) {
-                                _sp_registration_student_searchStudent.setVisible(false);
-                            } else {
-                                Connection c = MC_JavaDataBaseConnection.myConnection();
-                                Statement s = c.createStatement();
 
-                                ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE CONCAT (b.employee_academic_user_info_name_first_name, ' ', b.employee_academic_user_info_name_last_name) like '%" + _tf_registration_student_searchStudent.getText() + "%' AND c.employee_academic_user_info_status>='1'");
-                                Vector v = new Vector();
-                                while (rs.next()) {
-                                    v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
-                                }
-                                rs.close();
-                                _li_registration_student_searchStudent.setListData(v);
-                                _sp_registration_student_searchStudent.setVisible(false);
-                                if (_li_registration_student_searchStudent.getModel().getSize() == 0) {
-                                    _sp_registration_student_searchStudent.setVisible(false);
-                                } else {
-                                    _sp_registration_student_searchStudent.setVisible(true);
-                                }
-                            }
-                            if (evt.getKeyCode() == 40) {
-                                _sp_registration_student_searchStudent.setVisible(true);
-                                _li_registration_student_searchStudent.grabFocus();
-                            }
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-
                 }
 
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-        
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }//GEN-LAST:event__tf_registration_student_searchStudentKeyReleased
+
+    private void _bt_preview_table_student_buttons_preview_studentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_preview_studentMouseEntered
+        _bt_preview_table_student_buttons_preview_student.setBorder(border);
+    }//GEN-LAST:event__bt_preview_table_student_buttons_preview_studentMouseEntered
+
+    private void _bt_preview_table_student_buttons_preview_studentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_preview_studentMouseExited
+        _bt_preview_table_student_buttons_preview_student.setBorder(null);
+    }//GEN-LAST:event__bt_preview_table_student_buttons_preview_studentMouseExited
+
+    private void _bt_preview_table_student_buttons_preview_studentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_preview_studentMousePressed
+        _bt_preview_table_student_buttons_preview_student.setBorder(null);
+    }//GEN-LAST:event__bt_preview_table_student_buttons_preview_studentMousePressed
+
+    private void _bt_preview_table_student_buttons_preview_studentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_preview_studentMouseReleased
+        _bt_preview_table_student_buttons_preview_student.setBorder(border);
+    }//GEN-LAST:event__bt_preview_table_student_buttons_preview_studentMouseReleased
+
+    private void _bt_preview_table_student_buttons_preview_studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_preview_studentActionPerformed
+        add_preview_form();
+    }//GEN-LAST:event__bt_preview_table_student_buttons_preview_studentActionPerformed
+
+    private void _bt_registraion_student_buttons_update_studentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_student_buttons_update_studentMouseEntered
+        _bt_registraion_student_buttons_update_student.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_student_buttons_update_studentMouseEntered
+
+    private void _bt_registraion_student_buttons_update_studentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_student_buttons_update_studentMouseExited
+        _bt_registraion_student_buttons_update_student.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_student_buttons_update_studentMouseExited
+
+    private void _bt_registraion_student_buttons_update_studentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_student_buttons_update_studentMousePressed
+        _bt_registraion_student_buttons_update_student.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_student_buttons_update_studentMousePressed
+
+    private void _bt_registraion_student_buttons_update_studentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_student_buttons_update_studentMouseReleased
+        _bt_registraion_student_buttons_update_student.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_student_buttons_update_studentMouseReleased
+
+    private void _bt_registraion_student_buttons_update_studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_student_buttons_update_studentActionPerformed
+        update_selected_student();
+    }//GEN-LAST:event__bt_registraion_student_buttons_update_studentActionPerformed
+
+    private void _tb_registration_student_view_activeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_registration_student_view_activeMouseClicked
+        _bt_preview_table_student_buttons_preview_student.setEnabled(true);
+        _bt_registraion_student_buttons_update_student.setEnabled(true);
+    }//GEN-LAST:event__tb_registration_student_view_activeMouseClicked
     int i = 0;
 
     Jp_registration_student_informations rsi = new Jp_registration_student_informations();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton _bt_preview_table_student_buttons_preview_student;
+    private javax.swing.JButton _bt_registraion_student_buttons_update_student;
     private javax.swing.JList _li_registration_student_searchStudent;
     private javax.swing.JScrollPane _sp_registration_student_searchStudent;
     public javax.swing.JTable _tb_registration_student_view_active;
@@ -226,15 +345,16 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
 
     private void addToTable() {
         try {
-            
+
             DefaultTableModel dtm = (DefaultTableModel) _tb_registration_student_view_active.getModel();
 
             Connection c = MC_JavaDataBaseConnection.myConnection();
             Statement s = c.createStatement();
-            String search_query = "select b.stu_info_personal_nic, b.stu_info_personal_course, a.stu_info_name_sirName, a.stu_info_name_first_name, a.stu_info_name_last_name from stu_info_name a , stu_info_personal b , stu_user_info c where a.stu_user_info_id=b.stu_user_info_id and a.stu_user_info_id=c.stu_user_info_id and c.stu_user_info_status='1'";
+            String search_query = "SELECT a.stu_user_info_id, b.stu_info_personal_nic, b.stu_info_personal_course, c.stu_info_name_first_name, c.stu_info_name_last_name FROM stu_user_info a , stu_info_personal b , stu_info_name c WHERE a.stu_user_info_id=b.stu_user_info_id and a.stu_user_info_id=c.stu_user_info_id AND a.stu_user_info_status='1'";
             ResultSet rs = s.executeQuery(search_query);
             while (rs.next()) {
                 Vector v = new Vector();
+                v.add(rs.getString("stu_user_info_id"));
                 v.add(rs.getString("stu_info_personal_nic"));
                 v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
                 v.add(rs.getString("stu_info_personal_course"));
@@ -243,6 +363,40 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    
+
+    private void update_selected_student() {
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_student_view_active.getModel();
+            int row = _tb_registration_student_view_active.getSelectedRow();
+            String stu_id = dtm.getValueAt(row, 0).toString();
+
+            Jp_registration_student_informations register_student = new Jp_registration_student_informations(stu_id);
+            if (register_student == null) {
+                Jp_registraion_stu_main_panel.removeAll();
+                revalidate();
+                register_student = new Jp_registration_student_informations(stu_id);
+                register_student.setVisible(true);
+                Jp_registraion_stu_main_panel.add(register_student);
+                revalidate();
+            } else {
+                Jp_registraion_stu_main_panel.removeAll();
+                revalidate();
+                register_student.setVisible(true);
+                Jp_registraion_stu_main_panel.add(register_student);
+                revalidate();
+            }
+            add_stu.setText("Finish");
+            preview_stu.setEnabled(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void add_preview_form() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
