@@ -13,9 +13,6 @@ import com.fourgenius.www.public_access.model.academic_employee.employee_academi
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     /*
     //hhhgyrytyuyr
      //    =Academic Employee
