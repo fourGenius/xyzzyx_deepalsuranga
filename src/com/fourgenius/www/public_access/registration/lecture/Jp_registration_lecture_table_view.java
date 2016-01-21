@@ -41,6 +41,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         initComponents();
         _sp_registration_student_searchStudent.setVisible(false);
         _bt_registraion_lecture_buttons_update_lecture.setEnabled(false);
+        _bt_preview_table_lecture_buttons_preview_lecture.setEnabled(false);
         add_active_table_data();
 
     }
@@ -67,6 +68,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        _tf_registration_student_searchStudent.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_registration_student_searchStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_student_searchStudentActionPerformed(evt);
@@ -82,6 +84,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         });
         add(_tf_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 310, 50));
 
+        _li_registration_student_searchStudent.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _li_registration_student_searchStudent.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _li_registration_student_searchStudentMouseClicked(evt);
@@ -292,7 +295,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_preview_table_lecture_buttons_preview_lectureMouseReleased
 
     private void _bt_preview_table_lecture_buttons_preview_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_preview_lectureActionPerformed
-        // TODO add your handling code here:
+        add_preview_form();
     }//GEN-LAST:event__bt_preview_table_lecture_buttons_preview_lectureActionPerformed
 
     private void _bt_registraion_lecture_buttons_update_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMouseEntered
@@ -317,6 +320,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
 
     private void _tb_registration_lecture_view_activeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_registration_lecture_view_activeMouseClicked
         _bt_registraion_lecture_buttons_update_lecture.setEnabled(true);
+        _bt_preview_table_lecture_buttons_preview_lecture.setEnabled(true);
     }//GEN-LAST:event__tb_registration_lecture_view_activeMouseClicked
 
 
@@ -401,6 +405,32 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
             }
             _bt_registraion_lecture_buttons_add_lecture.setText("Finish");
             _bt_registraion_lecture_buttons_preview_lecture.setEnabled(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void add_preview_form() {
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_lecture_view_active.getModel();
+            int row = _tb_registration_lecture_view_active.getSelectedRow();
+            String lec_id = dtm.getValueAt(row, 0).toString();
+
+            Jp_registration_lecture_preview lecture_preview = new Jp_registration_lecture_preview(lec_id);
+            if (lecture_preview == null) {
+                Jp_registraion_lecture_main_panel.removeAll();
+                revalidate();
+                lecture_preview = new Jp_registration_lecture_preview(lec_id);
+                lecture_preview.setVisible(true);
+                Jp_registraion_lecture_main_panel.add(lecture_preview);
+                revalidate();
+            } else {
+                Jp_registraion_lecture_main_panel.removeAll();
+                revalidate();
+                lecture_preview.setVisible(true);
+                Jp_registraion_lecture_main_panel.add(lecture_preview);
+                revalidate();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

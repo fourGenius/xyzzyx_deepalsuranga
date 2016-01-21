@@ -16,21 +16,19 @@ import public_access.MC_JavaDataBaseConnection;
  *
  * @author Dineth Jayasekera
  */
-public class Jp_registration_lecture_privew extends javax.swing.JPanel {
+public class Jp_registration_lecture_preview extends javax.swing.JPanel {
 
     /**
      * Creates new form Jp_registration_lecture_privew
      */
-    public Jp_registration_lecture_privew() {
+    public Jp_registration_lecture_preview(String id) {
         initComponents();
+        loadForm(id);
     }
 
-    public Jp_registration_lecture_privew(String id) {
-    
-    loadForm(id);
-        
+    public Jp_registration_lecture_preview() {
+
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -75,7 +73,7 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         _tb_al_result_table = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(2, 119, 189));
+        setBackground(new java.awt.Color(117, 117, 117));
         setForeground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(500, 25));
         setMinimumSize(new java.awt.Dimension(500, 25));
@@ -432,15 +430,16 @@ public class Jp_registration_lecture_privew extends javax.swing.JPanel {
         loadname(id);
         loadpersonal(id);
         loadContact(id);
-        loadAddress(id); 
+        loadAddress(id);
     }
-private void loadname(String id) {
+
+    private void loadname(String id) {
         try {
-            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from employee_academic_user_info_name where employee_academic_user_id='"+id+"'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from employee_academic_user_info_name where employee_academic_user_id='" + id + "'");
             if (rs.next()) {
-                _lb_name.setText(rs.getString("employee_academic_user_info_name_first_name")+" "+rs.getString("employee_academic_user_info_name_last_name")+" "+rs.getString("employee_academic_user_info_name_surName"));
+                _lb_name.setText(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name") + " " + rs.getString("employee_academic_user_info_name_surName"));
             }
-        rs.close();
+            rs.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -448,17 +447,17 @@ private void loadname(String id) {
 
     private void loadpersonal(String id) {
         try {
-            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_personal where stu_user_info_id='"+id+"'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_personal where stu_user_info_id='" + id + "'");
             if (rs.next()) {
                 _lb_nic.setText(rs.getString("stu_info_personal_nic"));
                 _lb_dob.setText(rs.getString("stu_info_personal_dob"));
                 _lb_branch.setText(rs.getString("stu_info_personal_branch"));
                 _lb_gender.setText(rs.getString("stu_info_personal_gender"));
-               String path=rs.getString("stu_info_personal_profile_image"); 
+                String path = rs.getString("stu_info_personal_profile_image");
                 File f = new File(path);
-                    Image img = ImageIO.read(f);
-                    img = img.getScaledInstance(_lb_picture.getWidth(), _lb_picture.getHeight(), Image.SCALE_SMOOTH);
-                    _lb_picture.setIcon(new ImageIcon(img));
+                Image img = ImageIO.read(f);
+                img = img.getScaledInstance(_lb_picture.getWidth(), _lb_picture.getHeight(), Image.SCALE_SMOOTH);
+                _lb_picture.setIcon(new ImageIcon(img));
             }
             rs.close();
         } catch (Exception e) {
@@ -468,7 +467,7 @@ private void loadname(String id) {
 
     private void loadContact(String id) {
         try {
-             ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_contact where stu_user_info_id='"+id+"'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_contact where stu_user_info_id='" + id + "'");
             if (rs.next()) {
                 _lb_mobile.setText(rs.getString("stu_info_telephone_mobile"));
                 _lb_land.setText(rs.getString("stu_info_telephone_land"));
@@ -481,12 +480,12 @@ private void loadname(String id) {
     }
 
     private void loadAddress(String id) {
-         try {
-             ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_address where stu_user_info_id='"+id+"'");
+        try {
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_address where stu_user_info_id='" + id + "'");
             if (rs.next()) {
-               _lb_address_line.setText(rs.getString("stu_info_address_lane1"));
-               _lb_city.setText(rs.getString("stu_info_address_city"));
-               _lb_cuntry.setText(rs.getString("stu_info_address_cuntry"));
+                _lb_address_line.setText(rs.getString("stu_info_address_lane1"));
+                _lb_city.setText(rs.getString("stu_info_address_city"));
+                _lb_cuntry.setText(rs.getString("stu_info_address_cuntry"));
             }
             rs.close();
         } catch (Exception e) {

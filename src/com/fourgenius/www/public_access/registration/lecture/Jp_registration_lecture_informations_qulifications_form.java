@@ -65,6 +65,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         _bt_registration_lecture_informations_qulifications_remove.setEnabled(false);
         _bt_registration_lecture_informations_qulifications_update.setEnabled(false);
         _tf_registration_lecture_informations_qulifications_file_no.setText(lec_file_no);
+        lecture_file_no = lec_file_no;
         lecture_id = lec_id;
         _bt_registration_lecture_informations_qulifications_save.setText("Save Update");
         load_lecture_qulification_table_details(lecture_id);
@@ -734,28 +735,22 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
     }//GEN-LAST:event__bt_registration_lecture_informations_qulifications_addMouseReleased
 
     private void _bt_registration_lecture_informations_qulifications_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_informations_qulifications_saveActionPerformed
-        if (_bt_registration_lecture_informations_qulifications_save.getText().equals("Save")) {
-            int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (option == JOptionPane.YES_OPTION) {
-                add_to_db();
-                clear_form();
-            }
-        } else {
-            int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (option == JOptionPane.YES_OPTION) {
-//                add_to_db();
-//                clear_form();
-
-                DefaultTableModel qdtm = (DefaultTableModel) _tb_qulification_preview.getModel();
-                for (int i = 0; i < _tb_qulification_preview.getRowCount(); i++) {
-                    String qname = qdtm.getValueAt(i, 0).toString();
-                    String start_year = qdtm.getValueAt(i, 1).toString();
-                    String end_year = qdtm.getValueAt(i, 2).toString();
-
-                    employee_academic_user_info_qulifications qulification = new employee_academic_user_info_qulifications(lecture_id, lecture_file_no, qname, start_year, end_year);
-
+        try {
+            if (_bt_registration_lecture_informations_qulifications_save.getText().equals("Save")) {
+                int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (option == JOptionPane.YES_OPTION) {
+                    add_to_db();
+                    clear_form();
+                }
+            } else {
+                int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (option == JOptionPane.YES_OPTION) {
+                    add_to_db();
+                    clear_form();
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event__bt_registration_lecture_informations_qulifications_saveActionPerformed
 
@@ -1128,32 +1123,73 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         try {
 
 //            Add to qulification table
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();
+
             DefaultTableModel qdtm = (DefaultTableModel) _tb_qulification_preview.getModel();
-            for (int i = 0; i < _tb_qulification_preview.getRowCount(); i++) {
-                String qname = qdtm.getValueAt(i, 0).toString();
-                String start_year = qdtm.getValueAt(i, 1).toString();
-                String end_year = qdtm.getValueAt(i, 2).toString();
+            ResultSet rsql = statement.executeQuery("SELECT * FROM employee_academic_user_info_qulifications WHERE employee_academic_user_id='" + lecture_id + "'");
+            if (rsql.next()) {
+                statement.executeUpdate("DELETE FROM employee_academic_user_info_qulifications WHERE employee_academic_user_id='" + lecture_id + "'");
+                for (int i = 0; i < _tb_qulification_preview.getRowCount(); i++) {
+                    String qname = qdtm.getValueAt(i, 0).toString();
+                    String start_year = qdtm.getValueAt(i, 1).toString();
+                    String end_year = qdtm.getValueAt(i, 2).toString();
 
-                employee_academic_user_info_qulifications qulification = new employee_academic_user_info_qulifications(lecture_id, lecture_file_no, qname, start_year, end_year);
+                    employee_academic_user_info_qulifications qulification = new employee_academic_user_info_qulifications(lecture_id, lecture_file_no, qname, start_year, end_year);
 
+                }
+            } else {
+                for (int i = 0; i < _tb_qulification_preview.getRowCount(); i++) {
+                    String qname = qdtm.getValueAt(i, 0).toString();
+                    String start_year = qdtm.getValueAt(i, 1).toString();
+                    String end_year = qdtm.getValueAt(i, 2).toString();
+
+                    employee_academic_user_info_qulifications qulification = new employee_academic_user_info_qulifications(lecture_id, lecture_file_no, qname, start_year, end_year);
+
+                }
             }
 
 //            Add to ol table
             DefaultTableModel oldtm = (DefaultTableModel) _tb_olresutls_preview.getModel();
-            for (int i = 0; i < _tb_olresutls_preview.getRowCount(); i++) {
-                String subject = oldtm.getValueAt(i, 0).toString();
-                String result = oldtm.getValueAt(i, 1).toString();
+            ResultSet rsol = statement.executeQuery("SELECT * FROM employee_academic_user_info_ol_result WHERE employee_academic_user_id='" + lecture_id + "'");
+            if (rsol.next()) {
+                statement.executeUpdate("DELETE FROM employee_academic_user_info_ol_result WHERE employee_academic_user_id='" + lecture_id + "'");
+                for (int i = 0; i < _tb_olresutls_preview.getRowCount(); i++) {
+                    String subject = oldtm.getValueAt(i, 0).toString();
+                    String result = oldtm.getValueAt(i, 1).toString();
 
-                employee_academic_user_info_ol_results ol = new employee_academic_user_info_ol_results(lecture_id, subject, result);
+                    employee_academic_user_info_ol_results ol = new employee_academic_user_info_ol_results(lecture_id, subject, result);
+                }
+            } else {
+                for (int i = 0; i < _tb_olresutls_preview.getRowCount(); i++) {
+                    String subject = oldtm.getValueAt(i, 0).toString();
+                    String result = oldtm.getValueAt(i, 1).toString();
+
+                    employee_academic_user_info_ol_results ol = new employee_academic_user_info_ol_results(lecture_id, subject, result);
+                }
+
             }
 
 //            Add to al table
-            DefaultTableModel aldtm = (DefaultTableModel) _tb_alresults_preview.getModel();
-            for (int i = 0; i < _tb_alresults_preview.getRowCount(); i++) {
-                String subject = aldtm.getValueAt(i, 0).toString();
-                String result = oldtm.getValueAt(i, 1).toString();
+            ResultSet rsal = statement.executeQuery("SELECT * FROM employee_academic_user_info_al_result WHERE employee_academic_user_id='" + lecture_id + "'");
+            if (rsal.next()) {
+                statement.executeUpdate("DELETE FROM employee_academic_user_info_al_result WHERE employee_academic_user_id='" + lecture_id + "'");
+                DefaultTableModel aldtm = (DefaultTableModel) _tb_alresults_preview.getModel();
+                for (int i = 0; i < _tb_alresults_preview.getRowCount(); i++) {
+                    String subject = aldtm.getValueAt(i, 0).toString();
+                    String result = oldtm.getValueAt(i, 1).toString();
 
-                employee_academic_user_info_al_results al = new employee_academic_user_info_al_results(lecture_id, subject, result);
+                    employee_academic_user_info_al_results al = new employee_academic_user_info_al_results(lecture_id, subject, result);
+                }
+            } else {
+                DefaultTableModel aldtm = (DefaultTableModel) _tb_alresults_preview.getModel();
+                for (int i = 0; i < _tb_alresults_preview.getRowCount(); i++) {
+                    String subject = aldtm.getValueAt(i, 0).toString();
+                    String result = oldtm.getValueAt(i, 1).toString();
+
+                    employee_academic_user_info_al_results al = new employee_academic_user_info_al_results(lecture_id, subject, result);
+                }
+
             }
         } catch (Exception e) {
             e.printStackTrace();
