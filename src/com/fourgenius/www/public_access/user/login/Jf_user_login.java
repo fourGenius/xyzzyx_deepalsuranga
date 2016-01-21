@@ -19,6 +19,7 @@ import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -88,7 +89,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Middle.setBackground(new java.awt.Color(0, 200, 83));
+        Middle.setBackground(new java.awt.Color(48, 79, 254));
         Middle.setPreferredSize(new java.awt.Dimension(1370, 770));
 
         Top.setBackground(new java.awt.Color(97, 97, 97));
@@ -213,12 +214,12 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         _bt_Jf_user_login_Login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_Jf_user_login_Login.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_Jf_user_login_Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"))); // NOI18N
+        _bt_Jf_user_login_Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
         _bt_Jf_user_login_Login.setText("Login");
         _bt_Jf_user_login_Login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_Jf_user_login_Login.setFocusPainted(false);
         _bt_Jf_user_login_Login.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_Jf_user_login_Login.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_DarkGreen_300x50.png"))); // NOI18N
+        _bt_Jf_user_login_Login.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_perpul_300x50.png"))); // NOI18N
         _bt_Jf_user_login_Login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _bt_Jf_user_login_LoginMouseClicked(evt);
@@ -244,12 +245,12 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         _bt_Jf_user_login_Cancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_Jf_user_login_Cancel.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_Jf_user_login_Cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightGreen_300x50.png"))); // NOI18N
+        _bt_Jf_user_login_Cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
         _bt_Jf_user_login_Cancel.setText("Cancel");
         _bt_Jf_user_login_Cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_Jf_user_login_Cancel.setFocusPainted(false);
         _bt_Jf_user_login_Cancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_Jf_user_login_Cancel.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_DarkGreen_300x50.png"))); // NOI18N
+        _bt_Jf_user_login_Cancel.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_perpul_300x50.png"))); // NOI18N
         _bt_Jf_user_login_Cancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 _bt_Jf_user_login_CancelMouseClicked(evt);
@@ -275,6 +276,9 @@ public class Jf_user_login extends javax.swing.JFrame {
         _lb_user_login_forgotPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _lb_user_login_forgotPassword.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         _lb_user_login_forgotPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _lb_user_login_forgotPasswordMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 _lb_user_login_forgotPasswordMouseEntered(evt);
             }
@@ -298,7 +302,11 @@ public class Jf_user_login extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_AccountCircleWhite192x192.png"))); // NOI18N
 
-        _pf_user_login_password.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        _pf_user_login_password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _pf_user_login_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        _pf_user_login_password.setAutoscrolls(false);
+        _pf_user_login_password.setMaximumSize(new java.awt.Dimension(300, 40));
+        _pf_user_login_password.setMinimumSize(new java.awt.Dimension(300, 40));
         _pf_user_login_password.setPreferredSize(new java.awt.Dimension(300, 40));
         _pf_user_login_password.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -338,7 +346,11 @@ public class Jf_user_login extends javax.swing.JFrame {
         _lb_user_login_userName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_user_login_userName.setText("User Name");
 
-        _tf_user_loging_userName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        _tf_user_loging_userName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_user_loging_userName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        _tf_user_loging_userName.setAutoscrolls(false);
+        _tf_user_loging_userName.setMaximumSize(new java.awt.Dimension(300, 40));
+        _tf_user_loging_userName.setMinimumSize(new java.awt.Dimension(300, 40));
         _tf_user_loging_userName.setPreferredSize(new java.awt.Dimension(300, 40));
         _tf_user_loging_userName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -655,6 +667,24 @@ public class Jf_user_login extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event__pf_user_login_passwordKeyPressed
+
+    private void _lb_user_login_forgotPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_forgotPasswordMouseClicked
+
+        int i = JOptionPane.showConfirmDialog(this, "Send Password in email", "Request Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (i == JOptionPane.YES_OPTION) {
+        
+            
+            
+        }else if (i==JOptionPane.NO_OPTION) {
+            
+            
+            
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event__lb_user_login_forgotPasswordMouseClicked
 
     /**
      * @param args the command line arguments

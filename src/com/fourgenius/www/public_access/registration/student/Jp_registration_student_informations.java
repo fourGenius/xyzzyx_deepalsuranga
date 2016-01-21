@@ -11,9 +11,14 @@ import com.fourgenius.www.public_access.model.student.stu_info_contact;
 import com.fourgenius.www.public_access.model.student.stu_info_name;
 import com.fourgenius.www.public_access.model.student.stu_info_personal;
 import com.fourgenius.www.public_access.model.student.stu_user_info;
+import com.googlecode.javacv.CanvasFrame;
+import com.googlecode.javacv.OpenCVFrameGrabber;
+import com.googlecode.javacv.cpp.opencv_core;
+import com.googlecode.javacv.cpp.opencv_highgui;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -97,6 +102,8 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         _tf_registration_student_personalInformation_browsePhoto_browseFile = new javax.swing.JTextField();
         _bt_registration_student_personal_Information_previwestudent = new javax.swing.JButton();
+        Open_Camera = new javax.swing.JButton();
+        Capture_photo = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -560,6 +567,23 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
             }
         });
 
+        Open_Camera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/registration/student/camera_white.png"))); // NOI18N
+        Open_Camera.setMaximumSize(new java.awt.Dimension(60, 50));
+        Open_Camera.setMinimumSize(new java.awt.Dimension(60, 50));
+        Open_Camera.setPreferredSize(new java.awt.Dimension(60, 50));
+        Open_Camera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Open_CameraActionPerformed(evt);
+            }
+        });
+
+        Capture_photo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/camera_capture_18dp.png"))); // NOI18N
+        Capture_photo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Capture_photoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout _pl_registration_user_personalInformationsLayout = new javax.swing.GroupLayout(_pl_registration_user_personalInformations);
         _pl_registration_user_personalInformations.setLayout(_pl_registration_user_personalInformationsLayout);
         _pl_registration_user_personalInformationsLayout.setHorizontalGroup(
@@ -567,10 +591,15 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
             .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(_pl_registration_user_personalInformations_studentName, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(_pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_pl_registration_user_personalInformations_contactDetails, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registration_student_personal_Information_previwestudent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(_pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(_pl_registration_user_personalInformations_contactDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
+                        .addComponent(Open_Camera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Capture_photo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(_bt_registration_student_personal_Information_previwestudent, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         _pl_registration_user_personalInformationsLayout.setVerticalGroup(
@@ -578,11 +607,15 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
             .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(_pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_pl_registration_user_personalInformations_studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
                         .addComponent(_pl_registration_user_personalInformations_contactDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(_bt_registration_student_personal_Information_previwestudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(_pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(_bt_registration_student_personal_Information_previwestudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(_pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(Capture_photo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Open_Camera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(_pl_registration_user_personalInformations_studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1093,9 +1126,83 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private void _rb_registration_student_information_form_femaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__rb_registration_student_information_form_femaleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event__rb_registration_student_information_form_femaleActionPerformed
+
+    private void Open_CameraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open_CameraActionPerformed
+
+        Thread webcam = new Thread() {
+            public void run() {
+
+                opencv_highgui.CvCapture capture = opencv_highgui.cvCreateCameraCapture(0);
+                opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_HEIGHT, 400);
+                opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_WIDTH, 200);
+                opencv_core.IplImage grabbedImage = opencv_highgui.cvQueryFrame(capture);
+                CanvasFrame frame = new CanvasFrame("Student Image Capture");
+
+                frame.setAlwaysOnTop(true);
+                //Canvas can=new Canvas();
+
+                while (frame.isVisible() && (grabbedImage = opencv_highgui.cvQueryFrame(capture)) != null) {
+                    frame.showImage(grabbedImage);
+
+                }
+
+            }
+        };
+
+        webcam.start();
+        
+    }//GEN-LAST:event_Open_CameraActionPerformed
+
+    private void Capture_photoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Capture_photoActionPerformed
+
+        String fullname = _tf_registration_student_personalInformations_studentDetails_nicNumber.getText() + "-" + _tf_registration_student_personalInformations_studentDetails_surName.getText() + "-capture";
+
+        OpenCVFrameGrabber grabber = new OpenCVFrameGrabber(0);
+        try {
+            grabber.start();
+            opencv_core.IplImage img = grabber.grab();
+            if (img != null) {
+                opencv_highgui.cvSaveImage(fullname + ".jpg", img);
+                JOptionPane.showMessageDialog(this, "Capture is OK! \n " + fullname + ".jpg");
+
+            }
+
+        } catch (Exception e) {
+        }
+
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException ex) {
+
+        }
+        user_image_copy con = new user_image_copy();
+        con.copyImage(fullname);
+
+        try {
+            Thread.sleep(10);
+
+            try {
+                String newst_path = "E:\\FSC\\Images\\" + fullname + ".jpg";
+
+                File f = new File(newst_path);
+                Image img;
+
+                img = ImageIO.read(f);
+                img = img.getScaledInstance(_lb_registration_student_preview_image.getWidth(), _lb_registration_student_preview_image.getHeight(), Image.SCALE_SMOOTH);
+                _lb_registration_student_preview_image.setIcon(new ImageIcon(img));
+            } catch (IOException ex) {
+
+            }
+        } catch (InterruptedException ex) {
+
+        }
+        
+    }//GEN-LAST:event_Capture_photoActionPerformed
     int i = 0;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Capture_photo;
+    private javax.swing.JButton Open_Camera;
     private javax.swing.JButton _bt_registration_lecture_preview_register_lecture;
     private javax.swing.JButton _bt_registration_student_personal_Information_previwestudent;
     private com.toedter.calendar.JDateChooser _dc_registration_student_personalInformations_studentDetails_dateOfBirth;
