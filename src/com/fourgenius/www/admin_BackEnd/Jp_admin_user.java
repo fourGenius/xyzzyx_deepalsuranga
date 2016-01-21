@@ -410,7 +410,9 @@ public class Jp_admin_user extends javax.swing.JPanel {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         try {
-            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into ");
+           String fullname=tf_fname.getText()+tf_lname.getText();
+           
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into (user_id,user_email,user_password,user_status,user_name,user_nic) values(,'"+user_email.getSelectedItem().toString()+"','"+pf_password.getText()+"','1','"+fullname+"','"+tf_nic.getText()+"'");
         } catch (Exception e) {
         }
         

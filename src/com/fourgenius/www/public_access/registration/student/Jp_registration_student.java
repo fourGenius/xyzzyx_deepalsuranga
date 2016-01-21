@@ -407,17 +407,17 @@ public class Jp_registration_student extends javax.swing.JPanel {
             System.out.println("ok1");
             Map<String, Object> m = new HashMap<String, Object>();
             System.out.println("ok2");
-            m.put("course", info._lb_registration_student_preview_course.getText());
-            m.put("name", info._lb_registration_student_preview_name.getText());
-            m.put("address", info._lb_registration_student_preview_lane1.getText());
-            m.put("telePhone", info._lb_registration_student_preview_homeNumber.getText());
-            m.put("mobilePhone", info._lb_registration_student_preview_mobileNumber.getText());
-            m.put("email", info._lb_registration_student_preview_eMail.getText());
-            m.put("dob", info._lb_registration_student_preview_dateOfBirth.getText());
-
-            m.put("nic", info._lb_registration_student_preview_nic.getText());
+//            m.put("course", info._lb_registration_student_preview_course.getText());
+//            m.put("name", info._lb_registration_student_preview_name.getText());
+//            m.put("address", info._lb_registration_student_preview_lane1.getText());
+//            m.put("telePhone", info._lb_registration_student_preview_homeNumber.getText());
+//            m.put("mobilePhone", info._lb_registration_student_preview_mobileNumber.getText());
+//            m.put("email", info._lb_registration_student_preview_eMail.getText());
+//            m.put("dob", info._lb_registration_student_preview_dateOfBirth.getText());
+//
+//            m.put("nic", info._lb_registration_student_preview_nic.getText());
             m.put("sid", info._lb_registration_student_preview_studentID.getText());
-            m.put("pic", info.newpath);
+//            m.put("pic", info.newpath);
             System.out.println("ok3");
             JasperPrint jp = JasperFillManager.fillReport(compileReport, m);
             System.out.println("ok4");

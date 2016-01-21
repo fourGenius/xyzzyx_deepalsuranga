@@ -57,7 +57,10 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         _dc_registration_student_personalInformations_studentDetails_dateOfBirth.setMaxSelectableDate(d);
         _bt_registration_student_preview_register_student.setEnabled(false);
         _tf_registration_student_personalInformations_studentDetails_surName.grabFocus();
-
+_tf_registration_student_personalInformation_browsePhoto_browseFile.setEnabled(false);
+Open_Camera.setEnabled(false);
+Capture_photo.setEnabled(false);
+_lb_registration_student_preview_image.setEnabled(false);
     }
 
     public Jp_registration_student_informations(String stu_id) {
@@ -74,9 +77,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         Capture_photo.setEnabled(false);
     }
 
-    public Jp_registration_student_informations(String path) {
-    newpath=path;
-    }
+    
     
 
     /**
@@ -1376,15 +1377,15 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                 _lb_registration_student_preview_city.setText(_tf_registration_student_personalInformations_contactDetails_city.getText());
                 _lb_registration_student_preview_country.setText(_tf_registration_student_personalInformations_contact_Details_country.getText());
 
-                try {
-                    newpath = _tf_registration_student_personalInformation_browsePhoto_browseFile.getText().replace("\\", "/");
-                    File f = new File(newpath);
-                    Image img = ImageIO.read(f);
-                    img = img.getScaledInstance(_lb_registration_student_preview_image.getWidth(), _lb_registration_student_preview_image.getHeight(), Image.SCALE_SMOOTH);
-                    _lb_registration_student_preview_image.setIcon(new ImageIcon(img));
-                } catch (Exception e) {
-                    _lb_registration_student_preview_image.setIcon(null);
-                }
+//                try {
+//                    newpath = _tf_registration_student_personalInformation_browsePhoto_browseFile.getText().replace("\\", "/");
+//                    File f = new File(newpath);
+//                    Image img = ImageIO.read(f);
+//                    img = img.getScaledInstance(_lb_registration_student_preview_image.getWidth(), _lb_registration_student_preview_image.getHeight(), Image.SCALE_SMOOTH);
+//                    _lb_registration_student_preview_image.setIcon(new ImageIcon(img));
+//                } catch (Exception e) {
+//                    _lb_registration_student_preview_image.setIcon(null);
+//                }
                 _bt_registration_student_preview_register_student.setEnabled(true);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Birthday is Empty");
@@ -1528,9 +1529,9 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                     _rb_registration_student_information_form_kandy.setSelected(true);
                 }
 
-                String pic = rs_personal.getString("stu_info_personal_profile_image");
-                String picpath = pic.replace("/", "\\");
-                _tf_registration_student_personalInformation_browsePhoto_browseFile.setText(picpath);
+//                String pic = rs_personal.getString("stu_info_personal_profile_image");
+//                String picpath = pic.replace("/", "\\");
+//                _tf_registration_student_personalInformation_browsePhoto_browseFile.setText(picpath);
 
                 String course = rs_personal.getString("stu_info_personal_course");
                 _tf_registration_student_personalInformations_studentDetails_course.setSelectedItem(course);
@@ -1633,16 +1634,16 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                 _lb_registration_student_preview_lane1.setText(_tf_registration_student_personalInformations_contactDetails_lane1.getText());
                 _lb_registration_student_preview_city.setText(_tf_registration_student_personalInformations_contactDetails_city.getText());
                 _lb_registration_student_preview_country.setText(_tf_registration_student_personalInformations_contact_Details_country.getText());
-
-                try {
-                    newpath = _tf_registration_student_personalInformation_browsePhoto_browseFile.getText().replace("\\", "/");
-                    File f = new File(newpath);
-                    Image img = ImageIO.read(f);
-                    img = img.getScaledInstance(_lb_registration_student_preview_image.getWidth(), _lb_registration_student_preview_image.getHeight(), Image.SCALE_SMOOTH);
-                    _lb_registration_student_preview_image.setIcon(new ImageIcon(img));
-                } catch (Exception e) {
-                    _lb_registration_student_preview_image.setIcon(null);
-                }
+//
+//                try {
+//                    newpath = _tf_registration_student_personalInformation_browsePhoto_browseFile.getText().replace("\\", "/");
+//                    File f = new File(newpath);
+//                    Image img = ImageIO.read(f);
+//                    img = img.getScaledInstance(_lb_registration_student_preview_image.getWidth(), _lb_registration_student_preview_image.getHeight(), Image.SCALE_SMOOTH);
+//                    _lb_registration_student_preview_image.setIcon(new ImageIcon(img));
+//                } catch (Exception e) {
+//                    _lb_registration_student_preview_image.setIcon(null);
+//                }
                 _bt_registration_student_preview_register_student.setEnabled(true);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Birthday is Empty");

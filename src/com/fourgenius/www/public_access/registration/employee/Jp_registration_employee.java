@@ -240,13 +240,13 @@ public class Jp_registration_employee extends javax.swing.JPanel {
 
     private void _bt_update_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_update_employeeActionPerformed
         
-          Jp_registration_employee_informations_form_active_employee_table active_employee=new Jp_registration_employee_informations_form_active_employee_table();
-       DefaultTableModel dtm=(DefaultTableModel)active_employee.jTable1.getModel();
-      active_employee.jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-       int rof=active_employee.jTable1.getSelectedRow();
-            System.out.println(rof+"   jtjhij");
-       String id=dtm.getValueAt(0,0).toString();
-            System.out.println(id);
+//          Jp_registration_employee_informations_view active_employee=new Jp_registration_employee_informations_view();
+//       DefaultTableModel dtm=(DefaultTableModel)active_employee.jTable1.getModel();
+//      active_employee.jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+//       int rof=active_employee.jTable1.getSelectedRow();
+//            System.out.println(rof+"   jtjhij");
+//       String id=dtm.getValueAt(0,0).toString();
+//            System.out.println(id);
         
         
     }//GEN-LAST:event__bt_update_employeeActionPerformed

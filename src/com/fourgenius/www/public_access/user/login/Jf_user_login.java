@@ -660,30 +660,24 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     private void _pf_user_login_passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__pf_user_login_passwordKeyPressed
 
-        int key=evt.getKeyChar();
-        if (key==KeyEvent.VK_ENTER) {
+        int key = evt.getKeyChar();
+        if (key == KeyEvent.VK_ENTER) {
             login_user_method();
             System.gc();
         }
-        
+
     }//GEN-LAST:event__pf_user_login_passwordKeyPressed
 
     private void _lb_user_login_forgotPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_forgotPasswordMouseClicked
 
         int i = JOptionPane.showConfirmDialog(this, "Send Password in email", "Request Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (i == JOptionPane.YES_OPTION) {
-        
-            
-            
-        }else if (i==JOptionPane.NO_OPTION) {
-            
-            
-            
+
+        } else if (i == JOptionPane.NO_OPTION) {
+
         }
-        
-        
-        
-        
+
+
     }//GEN-LAST:event__lb_user_login_forgotPasswordMouseClicked
 
     /**
@@ -784,15 +778,14 @@ public class Jf_user_login extends javax.swing.JFrame {
             if (rs.next()) {
                 System.out.println("User Quer ok!");
 
-                Jf_UserMain user_menu = new Jf_UserMain();
-                user_menu.setVisible(true);
-                this.dispose();
                 User_SendMailSSL usmssl = new User_SendMailSSL();
                 usmssl.sendingSSL(_tf_user_loging_userName.getText().trim(), "User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
 
                 Admin_SendMailSSL asmssl = new Admin_SendMailSSL();
                 asmssl.sendingSSL("User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
-
+                Jf_UserMain user_menu = new Jf_UserMain();
+                user_menu.setVisible(true);
+                this.dispose();
                 System.gc();
 
             }

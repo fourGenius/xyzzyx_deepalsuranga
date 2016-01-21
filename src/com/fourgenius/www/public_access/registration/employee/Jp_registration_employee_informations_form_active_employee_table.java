@@ -36,10 +36,10 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -47,31 +47,30 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
 
             }
         ));
-        jTable1.setEditingRow(0);
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 
    public void addToTable() {
         try {
 
-            DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+            DefaultTableModel dtm = (DefaultTableModel) jTable2.getModel();
             Vector id = new Vector();
             Vector name_add = new Vector();
             Vector email = new Vector();
@@ -94,7 +93,7 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
                     + "from employee_nonAcademic_administrative_user_info a"
                     + " left join employee_nonAcademic_user_info_name b on "
                     + "a.employee_nonAcademic_administrative_user_info_id=b.employee_nonAcademic_administrative_user_info_id"
-                    + " where a.employee_nonAcademic_administrative_user_info_status='1'");
+                    + " where a.employee_nonAcademic_administrative_user_info_status='0'");
             while (name.next()) {
 
                 name_add.add(name.getString("employee_nonAcademic_user_info_name_first_name") + " " + name.getString("employee_nonAcademic_user_info_name_last_name") + " " + name.getString("employee_nonAcademic_user_info_name_sirName"));
@@ -113,7 +112,7 @@ public class Jp_registration_employee_informations_form_active_employee_table ex
             info.close();
             dtm.addColumn("Email", email);
             dtm.addColumn("NIC", nic);
-          jTable1.setEnabled(false);
+          jTable2.setEnabled(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
