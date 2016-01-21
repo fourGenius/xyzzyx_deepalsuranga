@@ -31,7 +31,7 @@ public class user_image_copy {
 //            
 //            
 
-            FileInputStream from = new FileInputStream("E:\\xyzzyx_deepalsuranga\\" + fullname + ".jpg");
+            FileInputStream from = new FileInputStream("C:\\Program Files\\Four Genius\\" + fullname + ".jpg");
             FileOutputStream to = new FileOutputStream(user_dir+"\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
             System.out.println("File Upload path : "+user_dir+"\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
 

@@ -23,7 +23,11 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
      */
     public Jp_registration_lecture_preview(String id) {
         initComponents();
-        loadForm(id);
+        _lb_id.setText(id);
+        loadname(id);
+        loadpersonal(id);
+        loadContact(id);
+        loadAddress(id);
     }
 
     public Jp_registration_lecture_preview() {
@@ -426,11 +430,7 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void loadForm(String id) {
-        _lb_id.setText(id);
-        loadname(id);
-        loadpersonal(id);
-        loadContact(id);
-        loadAddress(id);
+       
     }
 
     private void loadname(String id) {
