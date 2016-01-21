@@ -26,6 +26,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     public Jp_admin_admins() {
         initComponents();
         set_admin_email_Comb();
+        set_admin_ans_Comb();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
@@ -183,8 +184,6 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth2.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth2.setText("Conform Password");
-
-        co_securityQu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -701,4 +700,20 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
+        void set_admin_ans_Comb() {
+
+        try {
+            ResultSet rs;
+            String sql = "SELECT * FROM user_recovery";
+            rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql);
+
+            while (rs.next()) {
+                String name = rs.getString("stu_user_recovery_question_no");
+                co_securityQu.addItem(name);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
+//
