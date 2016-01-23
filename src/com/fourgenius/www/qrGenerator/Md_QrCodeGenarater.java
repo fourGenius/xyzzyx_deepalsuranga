@@ -29,13 +29,13 @@ import net.glxn.qrgen.image.ImageType;
 public class Md_QrCodeGenarater {
 
     private String set_qr_label;
-    private String path = "src\\FourGenius\\FourGenius.PNG";
+    private String path = "C:\\FourGenius\\FourGenius.PNG";
     private String random_pin;
 
     public void load_qr(JLabel qr_set_lable) {
 
         ///// file make 
-        File file = new File("src\\FourGenius");
+        File file = new File("C:\\FourGenius");
         if (!file.exists()) {
             file.mkdir();
             System.out.println("Ok File");

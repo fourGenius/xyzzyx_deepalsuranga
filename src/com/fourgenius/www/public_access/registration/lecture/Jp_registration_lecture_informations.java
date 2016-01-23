@@ -1471,7 +1471,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
             branch_name = "KAN";
         }
 
-        lecture_id = id + "-" + lc + "-" + "0000" + id_no + "-" + branch_name;
+        lecture_id = id + "-" + lc + "-" +branch_name+"-"+ "0000" + id_no;
         _lb_registration_lecture_preview_lectureID.setText(lecture_id);
 
     }

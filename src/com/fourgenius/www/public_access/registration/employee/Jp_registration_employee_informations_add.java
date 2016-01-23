@@ -1140,7 +1140,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             branch="KAN";
         }
         
-        String employee_id=id+"-"+em+"-"+"0000"+i+"-"+branch;
+        String employee_id=id+"-"+em+"-"+branch+"-"+"0000"+i;
         _lb_registration_employee_preview_employeeID.setText(employee_id);
     }
 }
