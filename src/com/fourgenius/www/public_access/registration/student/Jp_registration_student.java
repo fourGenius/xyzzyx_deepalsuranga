@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.public_access.registration.student;
 
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._tf_registration_student_personalInformations_studentDetails_surName;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,11 +29,11 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class Jp_registration_student extends javax.swing.JPanel {
 
+    //set border color for buttons
     Border border = BorderFactory.createLineBorder(Color.white, 1);
+
+    //set variables for add picture
     String path, newpath;
-    boolean b;
-    Jp_registration_student_c_layout table = new Jp_registration_student_c_layout();
-    DefaultTableModel dtm = (DefaultTableModel) table._tb_registration_student_view_active.getModel();
 
     /**
      * Creates new form registration_student
@@ -40,14 +41,14 @@ public class Jp_registration_student extends javax.swing.JPanel {
     public Jp_registration_student() {
 
         initComponents();
-        load_table_stu_view();
+        
+        //Load table view for main panel
+        load_table_student_view();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
+            ex.printStackTrace();
         }
-        update_stu.setVisible(false);
-        remove_stu.setVisible(false);
-        print_stu.setVisible(false);
     }
 
     /**
@@ -60,11 +61,8 @@ public class Jp_registration_student extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        add_stu = new javax.swing.JButton();
-        update_stu = new javax.swing.JButton();
-        remove_stu = new javax.swing.JButton();
-        print_stu = new javax.swing.JButton();
-        preview_stu = new javax.swing.JButton();
+        _bt_add_student = new javax.swing.JButton();
+        _bt_student_details = new javax.swing.JButton();
         Jp_registraion_stu_main_panel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(66, 66, 66));
@@ -75,146 +73,59 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
-        add_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add_stu.setForeground(new java.awt.Color(255, 255, 255));
-        add_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        add_stu.setText("Add Student");
-        add_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        add_stu.setFocusPainted(false);
-        add_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add_stu.setPreferredSize(new java.awt.Dimension(300, 50));
-        add_stu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                add_stuMouseClicked(evt);
-            }
+        _bt_add_student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_add_student.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_add_student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_add_student.setText("Add Student");
+        _bt_add_student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_add_student.setFocusPainted(false);
+        _bt_add_student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_add_student.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_add_student.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                add_stuMouseEntered(evt);
+                _bt_add_studentMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                add_stuMouseExited(evt);
+                _bt_add_studentMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                add_stuMousePressed(evt);
+                _bt_add_studentMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                add_stuMouseReleased(evt);
+                _bt_add_studentMouseReleased(evt);
             }
         });
-        add_stu.addActionListener(new java.awt.event.ActionListener() {
+        _bt_add_student.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_stuActionPerformed(evt);
+                _bt_add_studentActionPerformed(evt);
             }
         });
 
-        update_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        update_stu.setForeground(new java.awt.Color(255, 255, 255));
-        update_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        update_stu.setText("Update Student");
-        update_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        update_stu.setFocusPainted(false);
-        update_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        update_stu.setPreferredSize(new java.awt.Dimension(200, 50));
-        update_stu.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_student_details.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_student_details.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_student_details.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_student_details.setText("Students Details");
+        _bt_student_details.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_student_details.setFocusPainted(false);
+        _bt_student_details.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_student_details.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_student_details.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                update_stuMouseEntered(evt);
+                _bt_student_detailsMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                update_stuMouseExited(evt);
+                _bt_student_detailsMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                update_stuMousePressed(evt);
+                _bt_student_detailsMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                update_stuMouseReleased(evt);
+                _bt_student_detailsMouseReleased(evt);
             }
         });
-        update_stu.addActionListener(new java.awt.event.ActionListener() {
+        _bt_student_details.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                update_stuActionPerformed(evt);
-            }
-        });
-
-        remove_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        remove_stu.setForeground(new java.awt.Color(255, 255, 255));
-        remove_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        remove_stu.setText("Remove Student");
-        remove_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        remove_stu.setFocusPainted(false);
-        remove_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        remove_stu.setPreferredSize(new java.awt.Dimension(300, 50));
-        remove_stu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                remove_stuMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                remove_stuMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                remove_stuMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                remove_stuMouseReleased(evt);
-            }
-        });
-        remove_stu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                remove_stuActionPerformed(evt);
-            }
-        });
-
-        print_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        print_stu.setForeground(new java.awt.Color(255, 255, 255));
-        print_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
-        print_stu.setText("Print Report");
-        print_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        print_stu.setFocusPainted(false);
-        print_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        print_stu.setPreferredSize(new java.awt.Dimension(300, 50));
-        print_stu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                print_stuMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                print_stuMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                print_stuMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                print_stuMouseReleased(evt);
-            }
-        });
-        print_stu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                print_stuActionPerformed(evt);
-            }
-        });
-
-        preview_stu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        preview_stu.setForeground(new java.awt.Color(255, 255, 255));
-        preview_stu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        preview_stu.setText("Students Details");
-        preview_stu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        preview_stu.setFocusPainted(false);
-        preview_stu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        preview_stu.setPreferredSize(new java.awt.Dimension(300, 50));
-        preview_stu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                preview_stuMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                preview_stuMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                preview_stuMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                preview_stuMouseReleased(evt);
-            }
-        });
-        preview_stu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                preview_stuActionPerformed(evt);
+                _bt_student_detailsActionPerformed(evt);
             }
         });
 
@@ -224,27 +135,18 @@ public class Jp_registration_student extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(preview_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_student_details, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(add_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(update_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(remove_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
-                .addComponent(print_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(_bt_add_student, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(912, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(update_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(remove_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(print_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(preview_stu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_bt_add_student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(_bt_student_details, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -254,146 +156,75 @@ public class Jp_registration_student extends javax.swing.JPanel {
         Jp_registraion_stu_main_panel.setLayout(new java.awt.CardLayout());
         add(Jp_registraion_stu_main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 630));
     }// </editor-fold>//GEN-END:initComponents
-    int i = 0;
 
-    private void add_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseEntered
-        add_stu.setBorder(border);
-    }//GEN-LAST:event_add_stuMouseEntered
+    private void _bt_add_studentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_studentMouseEntered
+        _bt_add_student.setBorder(border);
+    }//GEN-LAST:event__bt_add_studentMouseEntered
 
-    private void add_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseExited
-        add_stu.setBorder(null);
-    }//GEN-LAST:event_add_stuMouseExited
+    private void _bt_add_studentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_studentMouseExited
+        _bt_add_student.setBorder(null);
+    }//GEN-LAST:event__bt_add_studentMouseExited
 
-    private void add_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_stuMousePressed
+    private void _bt_add_studentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_studentMousePressed
+        _bt_add_student.setBorder(null);
+    }//GEN-LAST:event__bt_add_studentMousePressed
 
-    private void add_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_add_stuMouseReleased
+    private void _bt_add_studentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_studentMouseReleased
+        _bt_add_student.setBorder(border);
+    }//GEN-LAST:event__bt_add_studentMouseReleased
 
-    private void add_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_stuActionPerformed
-        String button_name = add_stu.getText();
-        if (button_name.equals("Add Student")) {
-            load_stu_information_form();
-            buttons_enable(add_stu.getText());
-            add_stu.setText("Finish");
-        } else {
-            int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (option == JOptionPane.YES_OPTION) {
-                load_table_stu_view();
-                add_stu.setText("Add Student");
-                preview_stu.setEnabled(true);
-                update_stu.setEnabled(true);
-                remove_stu.setEnabled(true);
+    private void _bt_add_studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_studentActionPerformed
+        try {
+            String button_name = _bt_add_student.getText();
+            if (button_name.equals("Add Student")) {
+                load_student_information_form();
+                buttons_enable(_bt_add_student.getText());
+                _bt_add_student.setText("Cancel");
+            } else {
+                int option = JOptionPane.showConfirmDialog(this, "All Data You Didn't Save is Lost", "Are You Sure?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (option == JOptionPane.YES_OPTION) {
+                    load_table_student_view();
+                    _bt_add_student.setText("Add Student");
+                    _bt_student_details.setEnabled(true);
+                }
             }
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }//GEN-LAST:event__bt_add_studentActionPerformed
 
+    private void _bt_student_detailsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_detailsMouseEntered
+        _bt_student_details.setBorder(border);
+    }//GEN-LAST:event__bt_student_detailsMouseEntered
 
-    }//GEN-LAST:event_add_stuActionPerformed
+    private void _bt_student_detailsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_detailsMouseExited
+        _bt_student_details.setBorder(null);
+    }//GEN-LAST:event__bt_student_detailsMouseExited
 
-    private void update_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseEntered
-        update_stu.setBorder(border);
-    }//GEN-LAST:event_update_stuMouseEntered
+    private void _bt_student_detailsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_detailsMousePressed
+        _bt_student_details.setBorder(null);
+    }//GEN-LAST:event__bt_student_detailsMousePressed
 
-    private void update_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseExited
-        update_stu.setBorder(null);
-    }//GEN-LAST:event_update_stuMouseExited
+    private void _bt_student_detailsMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_detailsMouseReleased
+        _bt_student_details.setBorder(border);
+    }//GEN-LAST:event__bt_student_detailsMouseReleased
 
-    private void update_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_update_stuMousePressed
+    private void _bt_student_detailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_student_detailsActionPerformed
+        try {
+            load_table_student_view();
 
-    private void update_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_stuMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_update_stuMouseReleased
-
-    private void update_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_stuActionPerformed
-
-        buttons_enable(update_stu.getText());
-    }//GEN-LAST:event_update_stuActionPerformed
-
-    private void remove_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseEntered
-
-        remove_stu.setBorder(border);
-
-    }//GEN-LAST:event_remove_stuMouseEntered
-
-    private void remove_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseExited
-
-        remove_stu.setBorder(null);
-
-    }//GEN-LAST:event_remove_stuMouseExited
-
-    private void remove_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_remove_stuMousePressed
-
-    private void remove_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remove_stuMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_remove_stuMouseReleased
-
-    private void remove_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_stuActionPerformed
-        buttons_enable(remove_stu.getText());
-    }//GEN-LAST:event_remove_stuActionPerformed
-
-    private void print_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMouseEntered
-        print_stu.setBorder(border);
-    }//GEN-LAST:event_print_stuMouseEntered
-
-    private void print_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMouseExited
-        print_stu.setBorder(null);
-    }//GEN-LAST:event_print_stuMouseExited
-
-    private void print_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_print_stuMousePressed
-
-    private void print_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_stuMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_print_stuMouseReleased
-
-    private void print_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_stuActionPerformed
-        printReport();
-    }//GEN-LAST:event_print_stuActionPerformed
-
-    private void preview_stuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMouseEntered
-        preview_stu.setBorder(border);
-    }//GEN-LAST:event_preview_stuMouseEntered
-
-    private void preview_stuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMouseExited
-        preview_stu.setBorder(null);
-    }//GEN-LAST:event_preview_stuMouseExited
-
-    private void preview_stuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMousePressed
-        preview_stu.setBorder(null);
-    }//GEN-LAST:event_preview_stuMousePressed
-
-    private void preview_stuMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_preview_stuMouseReleased
-        preview_stu.setBorder(border);
-    }//GEN-LAST:event_preview_stuMouseReleased
-
-    private void preview_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preview_stuActionPerformed
-        load_table_stu_view();
-
-        buttons_enable(preview_stu.getText());
-    }//GEN-LAST:event_preview_stuActionPerformed
-
-    private void add_stuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_stuMouseClicked
-
-
-    }//GEN-LAST:event_add_stuMouseClicked
+            buttons_enable(_bt_student_details.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event__bt_student_detailsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JPanel Jp_registraion_stu_main_panel;
-    public static javax.swing.JButton add_stu;
+    public static javax.swing.JButton _bt_add_student;
+    public static javax.swing.JButton _bt_student_details;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JButton preview_stu;
-    private javax.swing.JButton print_stu;
-    private javax.swing.JButton remove_stu;
-    private javax.swing.JButton update_stu;
     // End of variables declaration//GEN-END:variables
 
     public void printReport() {
@@ -429,68 +260,67 @@ public class Jp_registration_student extends javax.swing.JPanel {
 
     }
 
-    private void load_table_stu_view() {
-        Jp_registration_student_c_layout cl = new Jp_registration_student_c_layout();
+    private void load_table_student_view() {
+        try {
+            Jp_registration_student_c_layout cl = new Jp_registration_student_c_layout();
 
-        if (cl == null) {
-            cl = new Jp_registration_student_c_layout();
-            Jp_registraion_stu_main_panel.removeAll();
-            Jp_registraion_stu_main_panel.repaint();
-            Jp_registraion_stu_main_panel.revalidate();
-            Jp_registraion_stu_main_panel.add(cl);
-            Jp_registraion_stu_main_panel.repaint();
-            Jp_registraion_stu_main_panel.revalidate();
-        } else {
-            Jp_registraion_stu_main_panel.removeAll();
-            Jp_registraion_stu_main_panel.repaint();
-            Jp_registraion_stu_main_panel.revalidate();
-            Jp_registraion_stu_main_panel.add(cl);
-            Jp_registraion_stu_main_panel.repaint();
-            Jp_registraion_stu_main_panel.revalidate();
+            if (cl == null) {
+                cl = new Jp_registration_student_c_layout();
+                Jp_registraion_stu_main_panel.removeAll();
+                Jp_registraion_stu_main_panel.repaint();
+                Jp_registraion_stu_main_panel.revalidate();
+                Jp_registraion_stu_main_panel.add(cl);
+                Jp_registraion_stu_main_panel.repaint();
+                Jp_registraion_stu_main_panel.revalidate();
+            } else {
+                Jp_registraion_stu_main_panel.removeAll();
+                Jp_registraion_stu_main_panel.repaint();
+                Jp_registraion_stu_main_panel.revalidate();
+                Jp_registraion_stu_main_panel.add(cl);
+                Jp_registraion_stu_main_panel.repaint();
+                Jp_registraion_stu_main_panel.revalidate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     private void buttons_enable(String button_name) {
-        if (button_name.equals(preview_stu.getText())) {
-            preview_stu.setEnabled(true);
-            add_stu.setEnabled(true);
-            remove_stu.setEnabled(true);
-            update_stu.setEnabled(true);
-        } else if (button_name.equals(add_stu.getText())) {
-            add_stu.setEnabled(true);
-            remove_stu.setEnabled(false);
-            update_stu.setEnabled(false);
-            preview_stu.setEnabled(false);
-        } else if (button_name.equals(update_stu.getText())) {
-            update_stu.setEnabled(true);
-            preview_stu.setEnabled(false);
-            remove_stu.setEnabled(false);
-            add_stu.setEnabled(false);
-        } else {
-            remove_stu.setEnabled(true);
-            add_stu.setEnabled(true);
-            preview_stu.setEnabled(true);
-            update_stu.setEnabled(true);
+        try {
+            if (button_name.equals(_bt_student_details.getText())) {
+                _bt_student_details.setEnabled(true);
+                _bt_add_student.setEnabled(true);
+            } else {
+                _bt_add_student.setEnabled(true);
+                _bt_student_details.setEnabled(false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    private void load_stu_information_form() {
-        Jp_registration_student_informations reg_student = new Jp_registration_student_informations();
-        if (add_stu == null) {
-            reg_student = new Jp_registration_student_informations();
-            Jp_registraion_stu_main_panel.removeAll();
-            Jp_registraion_stu_main_panel.repaint();
-            Jp_registraion_stu_main_panel.revalidate();
-            Jp_registraion_stu_main_panel.add(reg_student);
-            Jp_registraion_stu_main_panel.repaint();
-            Jp_registraion_stu_main_panel.revalidate();
-        } else {
-            Jp_registraion_stu_main_panel.removeAll();
-            Jp_registraion_stu_main_panel.repaint();
-            Jp_registraion_stu_main_panel.revalidate();
-            Jp_registraion_stu_main_panel.add(reg_student);
-            Jp_registraion_stu_main_panel.repaint();
-            Jp_registraion_stu_main_panel.revalidate();
+    private void load_student_information_form() {
+        try {
+            Jp_registration_student_informations reg_student = new Jp_registration_student_informations();
+            if (_bt_add_student == null) {
+                reg_student = new Jp_registration_student_informations();
+                Jp_registraion_stu_main_panel.removeAll();
+                Jp_registraion_stu_main_panel.repaint();
+                Jp_registraion_stu_main_panel.revalidate();
+                Jp_registraion_stu_main_panel.add(reg_student);
+                Jp_registraion_stu_main_panel.repaint();
+                Jp_registraion_stu_main_panel.revalidate();
+            } else {
+                Jp_registraion_stu_main_panel.removeAll();
+                Jp_registraion_stu_main_panel.repaint();
+                Jp_registraion_stu_main_panel.revalidate();
+                Jp_registraion_stu_main_panel.add(reg_student);
+                Jp_registraion_stu_main_panel.repaint();
+                Jp_registraion_stu_main_panel.revalidate();
+            }
+            _tf_registration_student_personalInformations_studentDetails_surName.grabFocus();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

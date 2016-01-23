@@ -69,13 +69,13 @@ public class stu_user_info {
             Statement s= c.createStatement();
             ResultSet rs = s.executeQuery("SELECT COUNT(stu_user_info_id) AS x FROM stu_user_info");
             if (rs.next()) {
-                stu_user_info_email=rs.getString("x");
+                stu_user_info_id=rs.getString("x");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         
-        return stu_user_info_email;
+        return stu_user_info_id;
     }
 //
 //    public void setStu_user_info_email(String stu_user_info_email) {

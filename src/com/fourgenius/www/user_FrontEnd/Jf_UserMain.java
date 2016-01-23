@@ -286,10 +286,10 @@ public class Jf_UserMain extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    Jp_registration_student add_student = new Jp_registration_student();
-    private void _bt_UserMain_StudentRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_StudentRegistrationActionPerformed
 
-        
+    private void _bt_UserMain_StudentRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_StudentRegistrationActionPerformed
+        Jp_registration_student add_student = new Jp_registration_student();
+
         _bt_UserMain_StudentRegistration.setEnabled(false);
         _bt_UserMain_EmployeeRegistration.setEnabled(true);
         _bt_UserMain_LectureRegistration.setEnabled(true);
@@ -315,9 +315,9 @@ public class Jf_UserMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event__bt_UserMain_StudentRegistrationActionPerformed
 
-    Jp_registration_lecture add_lecture = new Jp_registration_lecture();
+    
     private void _bt_UserMain_LectureRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_LectureRegistrationActionPerformed
-
+        Jp_registration_lecture add_lecture = new Jp_registration_lecture();
         
         _bt_UserMain_StudentRegistration.setEnabled(true);
         _bt_UserMain_EmployeeRegistration.setEnabled(true);
@@ -347,9 +347,9 @@ public class Jf_UserMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event__bt_UserMain_LectureRegistrationActionPerformed
 
-    Jp_registration_employee add_employee = new Jp_registration_employee();
+    
     private void _bt_UserMain_EmployeeRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_EmployeeRegistrationActionPerformed
-
+        Jp_registration_employee add_employee = new Jp_registration_employee();
         
         _bt_UserMain_StudentRegistration.setEnabled(true);
         _bt_UserMain_EmployeeRegistration.setEnabled(false);
@@ -375,9 +375,9 @@ public class Jf_UserMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event__bt_UserMain_EmployeeRegistrationActionPerformed
 
-    Jp_student_payment payment = new Jp_student_payment();
+    
     private void _bt_UserMain_paymentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsActionPerformed
-
+        Jp_student_payment payment = new Jp_student_payment();
         
         _bt_UserMain_StudentRegistration.setEnabled(true);
         _bt_UserMain_EmployeeRegistration.setEnabled(true);

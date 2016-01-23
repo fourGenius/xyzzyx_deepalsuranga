@@ -11,8 +11,8 @@ import static com.fourgenius.www.public_access.registration.lecture.Jp_registrat
 import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_informations;
 import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_preview;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.Jp_registraion_stu_main_panel;
-import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.add_stu;
-import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.preview_stu;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student._bt_add_student;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student._bt_student_details;
 import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
 import java.awt.Color;
 import java.awt.Image;
@@ -52,7 +52,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
 
         initComponents();
         _sp_registration_student_searchStudent.setVisible(false);
-        _bt_preview_table_student_buttons_preview_student.setVisible(false);
+        _bt_preview_table_student_buttons_preview_student.setEnabled(false);
         _bt_registraion_student_buttons_update_student.setEnabled(false);
         
         addToTable();
@@ -130,6 +130,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
         _bt_preview_table_student_buttons_preview_student.setForeground(new java.awt.Color(255, 255, 255));
         _bt_preview_table_student_buttons_preview_student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
         _bt_preview_table_student_buttons_preview_student.setText("Preview");
+        _bt_preview_table_student_buttons_preview_student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         _bt_preview_table_student_buttons_preview_student.setFocusPainted(false);
         _bt_preview_table_student_buttons_preview_student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         _bt_preview_table_student_buttons_preview_student.setMaximumSize(new java.awt.Dimension(200, 50));
@@ -295,7 +296,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_registraion_student_buttons_update_studentActionPerformed
 
     private void _tb_registration_student_view_activeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_registration_student_view_activeMouseClicked
-        
+        _bt_preview_table_student_buttons_preview_student.setEnabled(true);
         _bt_registraion_student_buttons_update_student.setEnabled(true);
     }//GEN-LAST:event__tb_registration_student_view_activeMouseClicked
     int i = 0;
@@ -390,8 +391,8 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
                 Jp_registraion_stu_main_panel.add(register_student);
                 revalidate();
             }
-            add_stu.setText("Finish");
-            preview_stu.setEnabled(false);
+            _bt_add_student.setText("Cancel");
+            _bt_student_details.setEnabled(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
