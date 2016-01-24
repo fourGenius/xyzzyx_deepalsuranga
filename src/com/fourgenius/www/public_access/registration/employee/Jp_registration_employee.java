@@ -217,22 +217,15 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         try {
             Jp_registration_employee_informations_add view_employee = new Jp_registration_employee_informations_add();
 
-            if (view_employee == null) {
-                view_employee = new Jp_registration_employee_informations_add();
-                Jp_registraion_employee_main_panel.removeAll();
-                Jp_registraion_employee_main_panel.repaint();
-                Jp_registraion_employee_main_panel.revalidate();
-                Jp_registraion_employee_main_panel.add(view_employee);
-                Jp_registraion_employee_main_panel.repaint();
-                Jp_registraion_employee_main_panel.revalidate();
-            } else {
-                Jp_registraion_employee_main_panel.removeAll();
-                Jp_registraion_employee_main_panel.repaint();
-                Jp_registraion_employee_main_panel.revalidate();
-                Jp_registraion_employee_main_panel.add(view_employee);
-                Jp_registraion_employee_main_panel.repaint();
-                Jp_registraion_employee_main_panel.revalidate();
-            }
+           Jp_registraion_employee_main_panel.removeAll();
+        GroupLayout layout = new GroupLayout(Jp_registraion_employee_main_panel);
+        Jp_registraion_employee_main_panel.setLayout(layout);
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        
+        System.gc();
         } catch (Exception e) {
             e.printStackTrace();
         }
