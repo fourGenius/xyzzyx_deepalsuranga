@@ -5,6 +5,8 @@
  */
 package com.fourgenius.www.admin_BackEnd;
 
+
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._lb_registration_student_preview_studentID;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -25,6 +27,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
      * Creates new form _jp_admin_user
      */
     String user_id;
+    String id;
     public Jp_admin_user() {
         initComponents();
         set_email_Comb();
@@ -451,8 +454,8 @@ DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Adminis
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         try {
            String fullname=tf_fname.getText()+" "+tf_lname.getText();
-           
-            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into (user_id,user_email,user_password,user_status,user_name,user_nic) values(,'"+user_email.getSelectedItem().toString()+"','"+pf_password.getText()+"','1','"+fullname+"','"+tf_nic.getText()+"'");
+           generate_user_id();
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into (user_id,user_email,user_password,user_status,user_name,user_nic) values('"+id+"','"+user_email.getSelectedItem().toString()+"','"+pf_password.getText()+"','1','"+fullname+"','"+tf_nic.getText()+"'");
       
         load_allData();
         } catch (Exception e) {
@@ -571,6 +574,43 @@ DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Adminis
             e.printStackTrace();
         }
     }
+    
+     private void generate_user_id() {
+         try {
+             String id_type = "ID";
+        String st = "US";
+
+       ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT COUNT(user_id) AS x FROM user");
+        
+        int idcount = rs.getInt("x");
+        int id_no = ++idcount;
+
+        String a = Integer.toString(id_no);
+        int length = a.length();
+        System.out.println(length);
+
+        String idn = Integer.toString(id_no);
+        String zeros;
+        if (length == 1) {
+            zeros = "00000";
+        } else if (length == 2) {
+            zeros = "0000";
+        } else if (length == 3) {
+            zeros = "000";
+        } else if (length == 4) {
+            zeros = "00";
+        } else if (length == 5) {
+            zeros = "0";
+        } else {
+            zeros = "";
+        }
+    id = id_type + "-" + st + "-" + zeros + idn;
+       
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+       
 
     
+}
 }

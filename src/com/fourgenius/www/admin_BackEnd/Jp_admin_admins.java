@@ -23,6 +23,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     /*
      * Creates new form _jp_admin_admins
      */
+    String id;
     public Jp_admin_admins() {
         initComponents();
         set_admin_email_Comb();
@@ -581,17 +582,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
             if (!fname.isEmpty() & !lname.isEmpty()) {
                
-                        MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("INSERT INTO admin_info(admin_firstName,admin_lastName,admin_email,admin_nic,admin_security_qu,admin_security_answer,admin_type) VALUES('" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + qu + "','" + answer + "','" + type + "')");
-//                try {
-//                    rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from admin_info where admin_info_id='" + id + "'");
-//                    if (rs.next()) {
-//                        //resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("UPDATE admin_info SET admin_firstName='"+fname+"' ");
-//                                //executeUpdate("UPDATE customer_details SET customer_title='" + txt + "');
-//                    } else {
-//                        //resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("INSERT INTO admin_info VALUES('" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + password + "')");
-//                    }
-//                } catch (Exception e) {
-//                }
+                        MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("INSERT INTO admin_info(admin_id,admin_firstName,admin_lastName,admin_email,admin_nic,admin_security_qu,admin_security_answer,admin_type,admin_password) VALUES('"+id+"','" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + qu + "','" + answer + "','" + type + "')");
+               load_allData();
 
             } else {
                 tf_fname.setBackground(new Color(244, 67, 54));
@@ -601,16 +593,13 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         } catch (Exception e) {
         }
 
-//        changeBtnsss.setVisible(true);
-//        changeBtnsss.setText("Add Administrator");
-        //INSERT INTO `g4_2015_java_se_management_ramanifernando`.`admin` (`idadmin`, `admin_email`, `admin_password`, `admin_status`) VALUES ('3', 'a', 'a', '1');
+
 
     }//GEN-LAST:event_bt_add_adminActionPerformed
 
     private void bt_update_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_update_adminActionPerformed
 
-//        changeBtnsss.setVisible(true);
-//        changeBtnsss.setText("Update Administrator");
+
 
     }//GEN-LAST:event_bt_update_adminActionPerformed
 
@@ -640,7 +629,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     private void admin_emailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admin_emailMouseClicked
         try {
             ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from admin_info where admin_email='"+admin_email.getSelectedItem().toString()+"'");
-            while (rs.next()) {                
+            while (rs.next()) { 
+                
                 tf_fname.setText(rs.getString("admin_firstName"));
                 tf_lname.setText(rs.getString("admin_lastName"));
                 tf_nic.setText("admin_nic");
@@ -734,8 +724,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             rs.close();
            
  //////////////////////////////////////////////////////Fill Manager///////////////////////////////////////////           
-            DefaultTableModel tableModel_manager_active = (DefaultTableModel) tbl_admin_Administrators1.getModel(); 
-            tableModel_manager_active.setRowCount(0);
+//            DefaultTableModel tableModel_manager_active = (DefaultTableModel) tbl_admin_Administrators1.getModel(); 
+//            tableModel_manager_active.setRowCount(0);
 
            
 
@@ -750,7 +740,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                 v.add(rs_manager.getString("admin_nic"));
                 v.add(rs_manager.getString("admin_security_qu"));
                
-                tableModel_manager_active.addRow(v);
+//                tableModel_manager_active.addRow(v);
 
             }
             rs_manager.close();
@@ -789,5 +779,44 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
+        
+        private void generate_admin_id() {
+         try {
+             String id_type = "ID";
+        String st = "AD";
+
+       ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT COUNT(admin_id) AS x FROM admin_info");
+        
+        int idcount = rs.getInt("x");
+        int id_no = ++idcount;
+
+        String a = Integer.toString(id_no);
+        int length = a.length();
+        System.out.println(length);
+
+        String idn = Integer.toString(id_no);
+        String zeros;
+        if (length == 1) {
+            zeros = "00000";
+        } else if (length == 2) {
+            zeros = "0000";
+        } else if (length == 3) {
+            zeros = "000";
+        } else if (length == 4) {
+            zeros = "00";
+        } else if (length == 5) {
+            zeros = "0";
+        } else {
+            zeros = "";
+        }
+    id = id_type + "-" + st + "-" + zeros + idn;
+       
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+       
+
+    
+}
 }
 //
