@@ -404,7 +404,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
                 Jp_registraion_lecture_main_panel.add(register_lecture);
                 revalidate();
             }
-            _bt_registraion_lecture_buttons_add_lecture.setText("Finish");
+            _bt_registraion_lecture_buttons_add_lecture.setText("Cancel");
             _bt_registraion_lecture_buttons_preview_lecture.setEnabled(false);
         } catch (Exception e) {
             e.printStackTrace();

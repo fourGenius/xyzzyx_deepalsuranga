@@ -5,6 +5,10 @@
  */
 package com.fourgenius.www.public_access.registration.lecture;
 
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture.Jp_registraion_lecture_main_panel;
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_add_lecture;
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_preview_lecture;
+import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.sql.Connection;
@@ -12,7 +16,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 import public_access.MC_JavaDataBaseConnection;
 
@@ -22,6 +28,7 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class Jp_registration_lecture_preview extends javax.swing.JPanel {
 
+    Border border = BorderFactory.createLineBorder(Color.white, 1);
     /**
      * Creates new form Jp_registration_lecture_privew
      */
@@ -83,6 +90,7 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         _tb_al_result_table = new javax.swing.JTable();
+        _bt_registraion_lecture_buttons_update_lecture = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(117, 117, 117));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -301,6 +309,34 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("A/L Result", jPanel3);
 
+        _bt_registraion_lecture_buttons_update_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_registraion_lecture_buttons_update_lecture.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_registraion_lecture_buttons_update_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_registraion_lecture_buttons_update_lecture.setText("Update Lecture");
+        _bt_registraion_lecture_buttons_update_lecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_registraion_lecture_buttons_update_lecture.setFocusPainted(false);
+        _bt_registraion_lecture_buttons_update_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_registraion_lecture_buttons_update_lecture.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_registraion_lecture_buttons_update_lecture.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_registraion_lecture_buttons_update_lectureMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_registraion_lecture_buttons_update_lectureMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_registraion_lecture_buttons_update_lectureMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_registraion_lecture_buttons_update_lectureMouseReleased(evt);
+            }
+        });
+        _bt_registraion_lecture_buttons_update_lecture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_registraion_lecture_buttons_update_lectureActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -308,22 +344,18 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(_bt_registraion_lecture_buttons_update_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
                             .addComponent(jLabel19))
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(_lb_email, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(_lb_land, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(_lb_mobile, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(_lb_email, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(_lb_land, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -333,18 +365,28 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(_lb_branch, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(_lb_address_line, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(_lb_id, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(_lb_name, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                        .addComponent(_lb_gender, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                        .addComponent(_lb_dob, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(_lb_nic, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel17)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_lb_dob, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(_lb_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(_lb_nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(_lb_gender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(_lb_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(_lb_branch, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(_lb_address_line, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(_lb_city, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(_lb_cuntry, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(_lb_cuntry, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(_lb_mobile, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(_lb_city, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
@@ -355,7 +397,9 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(_bt_registraion_lecture_buttons_update_lecture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -407,8 +451,29 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void _bt_registraion_lecture_buttons_update_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMouseEntered
+        _bt_registraion_lecture_buttons_update_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureMouseEntered
+
+    private void _bt_registraion_lecture_buttons_update_lectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMouseExited
+        _bt_registraion_lecture_buttons_update_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureMouseExited
+
+    private void _bt_registraion_lecture_buttons_update_lectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMousePressed
+        _bt_registraion_lecture_buttons_update_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureMousePressed
+
+    private void _bt_registraion_lecture_buttons_update_lectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureMouseReleased
+        _bt_registraion_lecture_buttons_update_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureMouseReleased
+
+    private void _bt_registraion_lecture_buttons_update_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registraion_lecture_buttons_update_lectureActionPerformed
+        update_selected_lecture();
+    }//GEN-LAST:event__bt_registraion_lecture_buttons_update_lectureActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton _bt_registraion_lecture_buttons_update_lecture;
     private javax.swing.JLabel _lb_address_line;
     private javax.swing.JLabel _lb_branch;
     private javax.swing.JLabel _lb_city;
@@ -599,6 +664,32 @@ public class Jp_registration_lecture_preview extends javax.swing.JPanel {
                 dtmal.addRow(v);
             }
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void update_selected_lecture() {
+        try {
+            String lec_id = _lb_id.getText();
+
+            Jp_registration_lecture_informations register_lecture = new Jp_registration_lecture_informations(lec_id);
+            if (register_lecture == null) {
+                Jp_registraion_lecture_main_panel.removeAll();
+                revalidate();
+                register_lecture = new Jp_registration_lecture_informations(lec_id);
+                register_lecture.setVisible(true);
+                Jp_registraion_lecture_main_panel.add(register_lecture);
+                revalidate();
+            } else {
+                Jp_registraion_lecture_main_panel.removeAll();
+                revalidate();
+                register_lecture.setVisible(true);
+                Jp_registraion_lecture_main_panel.add(register_lecture);
+                revalidate();
+            }
+            _bt_registraion_lecture_buttons_add_lecture.setText("Cancel");
+            _bt_registraion_lecture_buttons_preview_lecture.setEnabled(false);
         } catch (Exception e) {
             e.printStackTrace();
         }

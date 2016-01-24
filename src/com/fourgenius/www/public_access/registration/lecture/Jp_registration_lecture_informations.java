@@ -70,8 +70,8 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         Date d = Calendar.getInstance().getTime();
         _dc_registration_lecture_information_form_dob.setMaxSelectableDate(d);
         _bt_registration_lecture_preview_register_lecture.setEnabled(false);
-        Open_Camera.setEnabled(false);
-        Capture_photo.setEnabled(false);
+        Open_Camera.setVisible(false);
+        Capture_photo.setVisible(false);
     }
 
     public Jp_registration_lecture_informations(String lec_id) {
@@ -84,8 +84,8 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         _bt_registration_lecture_preview_register_lecture.setText("Update Lecture");
         _bt_registration_lecture_personalInformation_preview.setText("Preview Update");
         _bt_registration_lecture_preview_register_lecture.setEnabled(false);
-        Open_Camera.setEnabled(false);
-        Capture_photo.setEnabled(false);
+        Open_Camera.setVisible(false);
+        Capture_photo.setVisible(false);
 
     }
 
@@ -1465,13 +1465,33 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         int idcount = Integer.parseInt(countid);
         id_no = ++idcount;
 
+        String a = Integer.toString(id_no);
+        int length = a.length();
+        System.out.println(length);
+        
+        String idn = Integer.toString(id_no);
+        String zeros;
+        if (length == 1) {
+            zeros = "00000";
+        } else if (length == 2) {
+            zeros = "0000";
+        } else if (length == 3) {
+            zeros = "000";
+        } else if (length == 4) {
+            zeros = "00";
+        } else if (length == 5) {
+            zeros = "0";
+        } else {
+            zeros = "";
+        }
+        
         if (_rb_registration_lecture_information_form_colombo.isSelected()) {
             branch_name = "COL";
         } else {
             branch_name = "KAN";
         }
 
-        lecture_id = id + "-" + lc + "-" +branch_name+"-"+ "0000" + id_no;
+        lecture_id = id + "-" + lc + "-" +branch_name+"-"+ zeros + id_no;
         _lb_registration_lecture_preview_lectureID.setText(lecture_id);
 
     }

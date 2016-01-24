@@ -8,6 +8,9 @@ package com.fourgenius.www.public_access.registration.lecture;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_al_results;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_ol_results;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_qulifications;
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture.Jp_registraion_lecture_main_panel;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.Jp_registraion_stu_main_panel;
+import com.fourgenius.www.public_access.registration.student.Jp_registration_student_c_layout;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.sql.Connection;
@@ -53,8 +56,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
         branch_name = branch;
         full_name = name;
 
-        lecture_file_no = branch_name + "-" + "0000" + id_no + "-" + full_name;
-        _tf_registration_lecture_informations_qulifications_file_no.setText(lecture_file_no);
+        generate_lectrue_file_no();
 
         _tf_registration_lecture_informations_qulifications_name.grabFocus();
 
@@ -692,30 +694,40 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
     }//GEN-LAST:event__bt_registration_lecture_informations_qulifications_updateMouseReleased
 
     private void _tf_registration_lecture_informations_qulifications_resultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_informations_qulifications_resultActionPerformed
-        if (_bt_registration_lecture_informations_qulifications_ol_al_add.getText().equals("Add")) {
-            if (_rb_registration_lecture_informations_qulifications_ol_results.isSelected()) {
-                add_to_ol_table();
-                clear_ol_form();
-            } else {
-                add_to_al_table();
-                clear_al_form();
-            }
+
+        if (_tf_registration_lecture_informations_qulifications_result.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Enter Result");
         } else {
-            if (_rb_registration_lecture_informations_qulifications_ol_results.isSelected()) {
-                update_ol_table_data();
-                clear_ol_form();
-                _bt_registration_lecture_informations_qulifications_ol_al_add.setText("Add");
+            if (_bt_registration_lecture_informations_qulifications_ol_al_add.getText().equals("Add")) {
+                if (_rb_registration_lecture_informations_qulifications_ol_results.isSelected()) {
+                    add_to_ol_table();
+                    clear_ol_form();
+                } else {
+                    add_to_al_table();
+                    clear_al_form();
+                }
             } else {
-                update_al_table_data();
-                clear_al_form();
-                _bt_registration_lecture_informations_qulifications_ol_al_add.setText("Add");
+                if (_rb_registration_lecture_informations_qulifications_ol_results.isSelected()) {
+                    update_ol_table_data();
+                    clear_ol_form();
+                    _bt_registration_lecture_informations_qulifications_ol_al_add.setText("Add");
+                } else {
+                    update_al_table_data();
+                    clear_al_form();
+                    _bt_registration_lecture_informations_qulifications_ol_al_add.setText("Add");
+                }
             }
         }
+
     }//GEN-LAST:event__tf_registration_lecture_informations_qulifications_resultActionPerformed
 
     private void _tf_registration_lecture_informations_qulifications_subjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_registration_lecture_informations_qulifications_subjectActionPerformed
-        _tf_registration_lecture_informations_qulifications_result.grabFocus();
-        _tf_registration_lecture_informations_qulifications_result.selectAll();
+        if (_tf_registration_lecture_informations_qulifications_subject.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Enter Subject");
+        } else {
+            _tf_registration_lecture_informations_qulifications_result.grabFocus();
+            _tf_registration_lecture_informations_qulifications_result.selectAll();
+        }
     }//GEN-LAST:event__tf_registration_lecture_informations_qulifications_subjectActionPerformed
 
     private void _bt_registration_lecture_informations_qulifications_addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_lecture_informations_qulifications_addMouseEntered
@@ -741,6 +753,7 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
                 if (option == JOptionPane.YES_OPTION) {
                     add_to_db();
                     clear_form();
+                    load_table_view();
                 }
             } else {
                 int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -1264,6 +1277,49 @@ public class Jp_registration_lecture_informations_qulifications_form extends jav
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private void generate_lectrue_file_no() {
+        String a = Integer.toString(id_no);
+        int length = a.length();
+        System.out.println(length);
+
+        String idn = Integer.toString(id_no);
+        String zeros;
+        if (length == 1) {
+            zeros = "00000";
+        } else if (length == 2) {
+            zeros = "0000";
+        } else if (length == 3) {
+            zeros = "000";
+        } else if (length == 4) {
+            zeros = "00";
+        } else if (length == 5) {
+            zeros = "0";
+        } else {
+            zeros = "";
+        }
+
+        lecture_file_no = branch_name + "-" + zeros + id_no + "-" + full_name;
+        _tf_registration_lecture_informations_qulifications_file_no.setText(lecture_file_no);
+    }
+
+    private void load_table_view() {
+        Jp_registration_lecture_table_view table_preview = new Jp_registration_lecture_table_view();
+        if (table_preview == null) {
+            Jp_registraion_lecture_main_panel.removeAll();
+            revalidate();
+            table_preview = new Jp_registration_lecture_table_view();
+            table_preview.setVisible(true);
+            Jp_registraion_lecture_main_panel.add(table_preview);
+            revalidate();
+        } else {
+            Jp_registraion_lecture_main_panel.removeAll();
+            revalidate();
+            table_preview.setVisible(true);
+            Jp_registraion_lecture_main_panel.add(table_preview);
+            revalidate();
         }
     }
 
