@@ -29,7 +29,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
         initComponents();
         set_email_Comb();
         load_allData();
-        disable.setVisible(false);
+//        disable.setVisible(false);
 //        update.setVisible(false);
         bt_finish.setVisible(false);
         try {
