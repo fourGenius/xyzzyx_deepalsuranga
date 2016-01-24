@@ -582,7 +582,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_bt_admin_bE_paymentsActionPerformed
-    Jp_admin_practical practicalPanel = new Jp_admin_practical();
+    Jp_admin_report practicalPanel = new Jp_admin_report();
     private void bt_admin_bE_practicalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_bE_practicalsActionPerformed
 
         if (!(practicalPanel == null)) {
