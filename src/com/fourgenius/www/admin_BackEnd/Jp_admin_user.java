@@ -24,12 +24,14 @@ public class Jp_admin_user extends javax.swing.JPanel {
     /**
      * Creates new form _jp_admin_user
      */
+    String user_id;
     public Jp_admin_user() {
         initComponents();
         set_email_Comb();
         load_allData();
         disable.setVisible(false);
         update.setVisible(false);
+        bt_finish.setVisible(false);
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
@@ -68,6 +70,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1 = new javax.swing.JLabel();
         pf_confrmPassword = new javax.swing.JTextField();
         user_email = new javax.swing.JComboBox();
+        bt_finish = new javax.swing.JButton();
         add = new javax.swing.JButton();
         disable = new javax.swing.JButton();
 
@@ -246,25 +249,30 @@ public class Jp_admin_user extends javax.swing.JPanel {
             }
         });
 
+        bt_finish.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_finish.setText("Finish");
+
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_lectureNameLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_lectureName);
         _pl_registration_lecture_personalInformation_lectureName.setLayout(_pl_registration_lecture_personalInformation_lectureNameLayout);
         _pl_registration_lecture_personalInformation_lectureNameLayout.setHorizontalGroup(
             _pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(user_email, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_lecture_personalInformation_lectureName_firstName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_lname, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_lb_registration_lecture_personalInformation_lectureName_lastName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_nicNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_nic, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pf_password, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_fname, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pf_confrmPassword, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bt_finish, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(user_email, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(_lb_registration_lecture_personalInformation_lectureName_firstName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tf_lname, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(_lb_registration_lecture_personalInformation_lectureName_lastName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(_lb_registration_lecture_personalInformation_idInformation_nicNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                        .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tf_nic, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pf_password, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(tf_fname, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pf_confrmPassword, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addContainerGap(107, Short.MAX_VALUE))
         );
         _pl_registration_lecture_personalInformation_lectureNameLayout.setVerticalGroup(
@@ -294,7 +302,9 @@ public class Jp_admin_user extends javax.swing.JPanel {
                 .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pf_confrmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(bt_finish, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         add.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -361,7 +371,24 @@ public class Jp_admin_user extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-       
+ DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Administrators.getModel();
+        try {
+            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from user where user_id='"+tableModel_user_active.getValueAt(tbl_admin_Administrators.getSelectedRow(), 0)+"'");
+            if (rs.next()) {
+               String name=rs.getString("user_name");
+                tf_fname.setText("");
+        tf_lname.setText(TOOL_TIP_TEXT_KEY);
+        user_email.addItem(rs);
+        tf_nic.setText(TOOL_TIP_TEXT_KEY);
+        pf_password.setText(TOOL_TIP_TEXT_KEY);
+        pf_confrmPassword.setText(TOOL_TIP_TEXT_KEY);
+       user_id=rs.getString("user_id");
+            }
+        bt_finish.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+ 
     }//GEN-LAST:event_updateActionPerformed
 
     private void tf_fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_fnameActionPerformed
@@ -398,7 +425,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
             while (rs.next()) {                
                 tf_fname.setText(rs.getString("employee_academic_user_info_name_first_name"));
                 tf_lname.setText(rs.getString("employee_academic_user_info_name_surName"));
-                tf_nic.setText("employee_academic_user_info_personal_nic");
+                tf_nic.setText(rs.getString("employee_academic_user_info_personal_nic"));
                
                 pf_password.grabFocus();
             }
@@ -410,9 +437,11 @@ public class Jp_admin_user extends javax.swing.JPanel {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         try {
-           String fullname=tf_fname.getText()+tf_lname.getText();
+           String fullname=tf_fname.getText()+" "+tf_lname.getText();
            
             MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into (user_id,user_email,user_password,user_status,user_name,user_nic) values(,'"+user_email.getSelectedItem().toString()+"','"+pf_password.getText()+"','1','"+fullname+"','"+tf_nic.getText()+"'");
+      
+        load_allData();
         } catch (Exception e) {
         }
         
@@ -428,6 +457,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_lectureName_sirName;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_lectureName;
     private javax.swing.JButton add;
+    private javax.swing.JButton bt_finish;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton disable;
@@ -450,15 +480,29 @@ public class Jp_admin_user extends javax.swing.JPanel {
     void set_email_Comb() {
 
         try {
-            ResultSet rs;
+            ResultSet rs,rs2;
             String sql = "SELECT * FROM employee_academic_user_info_contact";
+            
             rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql);
+            
 
             while (rs.next()) {
-                String name = rs.getString("employee_academic_user_info_contact_email");
-                user_email.addItem(name);
+                String academic_email = rs.getString("employee_academic_user_info_contact_email");
+                
+                user_email.addItem(academic_email);
+               
             }
             rs.close();
+            
+            String sql1 = "SELECT * FROM employee_nonAcademic_user_info_contact";
+            rs2 = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql1);
+             while (rs2.next()) {
+               
+                String nonAcademic_email=rs2.getString("employee_nonAcademic_user_info_contact_email");
+              
+                user_email.addItem(nonAcademic_email);
+            }
+            rs2.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -480,7 +524,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
                 v.add(rs.getString("user_id"));
                 v.add(rs.getString("user_name") );
                 v.add(rs.getString("user_email"));
-              v.add(rs.getString(" user_nic")); 
+              v.add(rs.getString("user_nic")); 
                 tableModel_user_active.addRow(v);
             }
         } catch (Exception e) {

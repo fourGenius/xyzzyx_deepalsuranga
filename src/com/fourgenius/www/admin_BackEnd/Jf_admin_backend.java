@@ -468,27 +468,29 @@ public class Jf_admin_backend extends javax.swing.JFrame {
 
     }//GEN-LAST:event_bt_admin_bE_examsActionPerformed
     Jp_admin_employee_ac employeePanel = new Jp_admin_employee_ac();
+    jf_pro_version pro = new jf_pro_version();
     private void bt_admin_bE_employeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_bE_employeesActionPerformed
-        if (!(employeePanel == null)) {
-
-            admin_mainPanel.removeAll();
-            admin_mainPanel.repaint();
-            admin_mainPanel.revalidate();
-            admin_mainPanel.add(employeePanel);
-            admin_mainPanel.repaint();
-            admin_mainPanel.revalidate();
-
-        } else if (employeePanel == null) {
-
-            employeePanel = new Jp_admin_employee_ac();
-            admin_mainPanel.removeAll();
-            admin_mainPanel.repaint();
-            admin_mainPanel.revalidate();
-            admin_mainPanel.add(employeePanel);
-            admin_mainPanel.repaint();
-            admin_mainPanel.revalidate();
-
-        }
+ pro.setVisible(true);
+//        if (!(employeePanel == null)) {
+//
+//            admin_mainPanel.removeAll();
+//            admin_mainPanel.repaint();
+//            admin_mainPanel.revalidate();
+//            admin_mainPanel.add(employeePanel);
+//            admin_mainPanel.repaint();
+//            admin_mainPanel.revalidate();
+//
+//        } else if (employeePanel == null) {
+//
+//            employeePanel = new Jp_admin_employee_ac();
+//            admin_mainPanel.removeAll();
+//            admin_mainPanel.repaint();
+//            admin_mainPanel.revalidate();
+//            admin_mainPanel.add(employeePanel);
+//            admin_mainPanel.repaint();
+//            admin_mainPanel.revalidate();
+//
+//        }
 
 
     }//GEN-LAST:event_bt_admin_bE_employeesActionPerformed
