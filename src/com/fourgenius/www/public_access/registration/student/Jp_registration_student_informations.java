@@ -28,12 +28,20 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperPrintManager;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -1181,6 +1189,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                     _bt_student_details.setEnabled(true);
                 }
             }
+           
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1492,6 +1501,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         stu_info_contact uc = new stu_info_contact(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_mobileNumber.getText(), _lb_registration_student_preview_homeNumber.getText(), _lb_registration_student_preview_eMail.getText());
         stu_info_personal upi = new stu_info_personal(_lb_registration_student_preview_studentID.getText(), newpath, _lb_registration_student_preview_branch.getText(), _lb_registration_student_preview_nic.getText(), _lb_registration_student_preview_dateOfBirth.getText(), _lb_registration_student_preview_gender.getText(), _lb_registration_student_preview_course.getText());
         stu_info_name un = new stu_info_name(_lb_registration_student_preview_studentID.getText(), _tf_registration_student_personalInformations_studentDetails_surName.getText(), _tf_registration_student_personalInformations_studentDetails_firstName.getText(), _tf_registration_student_personalInformations_studentDetails_lastName.getText());
+     print_report(_lb_registration_student_preview_studentID.getText());
     }
 
     private void check_empty_fields() {
@@ -1742,6 +1752,26 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
             table_preview.setVisible(true);
             Jp_registraion_stu_main_panel.add(table_preview);
             revalidate();
+        }
+    }
+
+    private void print_report(String id) {
+         try {
+           
+            String is = "src/reports/student_reg.jrxml";
+
+            JasperReport jr = JasperCompileManager.compileReport(is);
+            Map<String, Object> m = new HashMap<String, Object>();
+           
+            m.put("sid", id);
+          
+           
+            JasperPrint jp1 = JasperFillManager.fillReport(jr, m, MC_JavaDataBaseConnection.myConnection());
+                       
+            JasperViewer.viewReport(jp1, true);
+            JasperPrintManager.printReport(jp1, true);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

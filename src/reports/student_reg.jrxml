@@ -3,21 +3,54 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="course" class="java.lang.String"/>
-	<parameter name="name" class="java.lang.String"/>
-	<parameter name="address" class="java.lang.String"/>
-	<parameter name="telePhone" class="java.lang.String"/>
-	<parameter name="mobilePhone" class="java.lang.String"/>
-	<parameter name="email" class="java.lang.String"/>
-	<parameter name="dob" class="java.lang.String"/>
-	<parameter name="nic" class="java.lang.String"/>
 	<parameter name="sid" class="java.lang.String"/>
-	<parameter name="pic" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT a.stu_info_personal_nic,a.stu_info_personal_dob,a.stu_info_personal_course,b.stu_info_name_first_name,b.stu_info_name_last_name,
+b.stu_info_name_sirName,c.stu_info_telephone_mobile,c.stu_info_telephone_land,c.stu_info_contact_email,d.stu_info_address_lane1,d.stu_info_address_city,d.stu_info_address_cuntry
+from stu_info_personal a left join stu_info_name b on a.stu_user_info_id=b.stu_user_info_id left join stu_info_contact c on a.stu_user_info_id=c.stu_user_info_id left join stu_info_address d on a.stu_user_info_id=d.stu_user_info_id
+where a.stu_user_info_id=$P{sid}]]>
+	</queryString>
+	<field name="stu_info_personal_nic" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_personal_dob" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_personal_course" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_name_first_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_name_last_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_name_sirName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_telephone_mobile" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_telephone_land" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_contact_email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_address_lane1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_address_city" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stu_info_address_cuntry" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="185" splitType="Stretch">
+		<band height="187" splitType="Stretch">
 			<staticText>
 				<reportElement x="53" y="146" width="282" height="20" uuid="26b76cdb-0f3f-4fd0-adac-f256d0cb5349"/>
 				<textElement textAlignment="Center">
@@ -26,13 +59,12 @@
 				<text><![CDATA[STUDENT ENROLLMENT FORM]]></text>
 			</staticText>
 			<image>
-				<reportElement x="401" y="4" width="150" height="178" uuid="6647a854-a91a-47f3-bde0-8ccf18229ea2"/>
-				<imageExpression><![CDATA[$P{pic}]]></imageExpression>
-			</image>
-			<image>
 				<reportElement x="66" y="4" width="289" height="134" uuid="9d21fc8f-86f2-41c7-8e75-8f6618ebb674"/>
 				<imageExpression><![CDATA["D:\\Final_Pro\\xyzzyx_deepalsuranga\\src\\reports\\images\\r_logo_350x178.png"]]></imageExpression>
 			</image>
+			<rectangle>
+				<reportElement x="414" y="2" width="138" height="181" uuid="8e7e1d57-406a-4855-83d7-9776b889394a"/>
+			</rectangle>
 		</band>
 	</pageHeader>
 	<columnHeader>
@@ -52,179 +84,195 @@
 				<text><![CDATA[Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="58" width="100" height="20" uuid="bcc34161-f643-45e5-9795-c0349359eafb"/>
+				<reportElement x="4" y="117" width="100" height="20" uuid="bcc34161-f643-45e5-9795-c0349359eafb"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Address]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="116" width="100" height="20" uuid="84b2ad77-6128-4542-837c-8a9f4fe8c27d"/>
+				<reportElement x="4" y="199" width="100" height="20" uuid="84b2ad77-6128-4542-837c-8a9f4fe8c27d"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Mobile Phone]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="87" width="100" height="20" uuid="7f615172-9be2-4a3d-91f5-196a0e186191"/>
+				<reportElement x="4" y="170" width="100" height="20" uuid="7f615172-9be2-4a3d-91f5-196a0e186191"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Tele Phone]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="146" width="100" height="20" uuid="108312a2-fd66-4c85-8eec-480cd4c56c2c"/>
+				<reportElement x="4" y="229" width="100" height="20" uuid="108312a2-fd66-4c85-8eec-480cd4c56c2c"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Email]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="176" width="100" height="20" uuid="a0ca0538-bee2-4426-be11-cfe8a95bc98e"/>
+				<reportElement x="4" y="87" width="100" height="20" uuid="a0ca0538-bee2-4426-be11-cfe8a95bc98e"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Date of Birth]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="208" width="100" height="20" uuid="68aa2fa0-1dbe-4eba-bb1f-74b046a72002"/>
+				<reportElement x="4" y="58" width="100" height="20" uuid="68aa2fa0-1dbe-4eba-bb1f-74b046a72002"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[National ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="266" width="551" height="35" uuid="b01b4023-83a0-4dfc-80ce-711dfddd0404"/>
+				<reportElement x="2" y="266" width="551" height="35" uuid="b01b4023-83a0-4dfc-80ce-711dfddd0404"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[I hereby agree that the payment made as the registration fee is not refundeble or transferable to any other course.]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="137" y="3" width="100" height="20" uuid="09c72830-9eea-4a03-a767-096b95120226"/>
-				<textFieldExpression><![CDATA[$P{course}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="137" y="30" width="100" height="20" uuid="e703974b-1d2c-4f73-b49a-6ab299b82982"/>
-				<textFieldExpression><![CDATA[$P{course}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="137" y="58" width="100" height="20" uuid="bc1d028b-ec75-41ba-a226-87632e4bc9e7"/>
-				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="137" y="87" width="100" height="20" uuid="d1cbba3e-8c47-41ea-a1bf-c99f527d96b8"/>
-				<textFieldExpression><![CDATA[$P{telePhone}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="137" y="116" width="100" height="20" uuid="2f0bec0c-52fb-4876-9f78-16762b5ae441"/>
-				<textFieldExpression><![CDATA[$P{mobilePhone}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="137" y="146" width="100" height="20" uuid="1977a334-ec63-4ded-9190-054cd9c040c3"/>
-				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="137" y="176" width="100" height="20" uuid="0593e6d6-a19c-4741-a8e3-2d22cb9c6a87"/>
-				<textFieldExpression><![CDATA[$P{dob}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="137" y="208" width="100" height="20" uuid="2c312635-3ce6-4c85-80d8-bfe1c9bc305b"/>
-				<textFieldExpression><![CDATA[$P{nic}]]></textFieldExpression>
-			</textField>
 			<rectangle>
-				<reportElement x="452" y="2" width="100" height="76" uuid="46e75508-954e-48b1-b0e5-c726aed3129c"/>
+				<reportElement x="452" y="17" width="100" height="76" uuid="46e75508-954e-48b1-b0e5-c726aed3129c"/>
 			</rectangle>
 			<line>
-				<reportElement x="452" y="30" width="100" height="1" uuid="f8df0914-cc52-410a-bdcc-e66b80cd8181"/>
+				<reportElement x="452" y="45" width="100" height="1" uuid="f8df0914-cc52-410a-bdcc-e66b80cd8181"/>
 			</line>
 			<staticText>
-				<reportElement x="455" y="2" width="46" height="28" uuid="77793038-73fa-498e-911d-f0afcc5ab03c"/>
+				<reportElement x="455" y="17" width="46" height="28" uuid="77793038-73fa-498e-911d-f0afcc5ab03c"/>
 				<textElement textAlignment="Center">
 					<font size="14"/>
 				</textElement>
 				<text><![CDATA[W/Day]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="506" y="2" width="46" height="28" uuid="4dbceb02-393b-43de-98ea-e242d95d8a1a"/>
+				<reportElement x="506" y="17" width="46" height="28" uuid="4dbceb02-393b-43de-98ea-e242d95d8a1a"/>
 				<textElement>
 					<font size="14"/>
 				</textElement>
 				<text><![CDATA[W/End]]></text>
 			</staticText>
 			<line>
-				<reportElement x="503" y="2" width="1" height="75" uuid="37b55484-99cc-4cfa-8a85-4c6419c3781d"/>
+				<reportElement x="503" y="17" width="1" height="75" uuid="37b55484-99cc-4cfa-8a85-4c6419c3781d"/>
 			</line>
+			<textField>
+				<reportElement x="104" y="3" width="336" height="20" uuid="8296326d-707b-4729-ab67-a5fe10d4f682"/>
+				<textFieldExpression><![CDATA[$F{stu_info_personal_course}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="31" width="100" height="20" uuid="44fe67cf-3855-4850-976b-ddbffdd580a4"/>
+				<textFieldExpression><![CDATA[$F{stu_info_name_first_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="30" width="100" height="20" uuid="dfa7a0ac-3cc6-47fa-8722-c473f86031e5"/>
+				<textFieldExpression><![CDATA[$F{stu_info_name_last_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="30" width="100" height="20" uuid="0c951c32-b9c1-4710-ab80-293694d1a9a4"/>
+				<textFieldExpression><![CDATA[$F{stu_info_name_sirName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="57" width="200" height="20" uuid="cf82ba22-6387-408f-a958-03754d62700e"/>
+				<textFieldExpression><![CDATA[$F{stu_info_personal_nic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="87" width="200" height="20" uuid="093d1bbd-eebc-4b49-ab83-504c60cae32a"/>
+				<textFieldExpression><![CDATA[$F{stu_info_personal_dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="117" width="300" height="20" uuid="32336a73-30e8-46bd-8c9b-a4d9f10b8a81"/>
+				<textFieldExpression><![CDATA[$F{stu_info_address_lane1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="139" width="100" height="20" uuid="b4450cd7-b89e-43fc-b498-451946abaab3"/>
+				<textFieldExpression><![CDATA[$F{stu_info_address_city}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="139" width="157" height="20" uuid="51f7fcc1-e637-4391-a589-03fd3688e64a"/>
+				<textFieldExpression><![CDATA[$F{stu_info_address_cuntry}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="170" width="168" height="20" uuid="33b59bc4-d23c-46b2-a114-c3d41c671115"/>
+				<textFieldExpression><![CDATA[$F{stu_info_telephone_land}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="199" width="168" height="20" uuid="7527f0af-c2c9-4921-abf2-f2d6ff512f0b"/>
+				<textFieldExpression><![CDATA[$F{stu_info_telephone_mobile}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="229" width="348" height="20" uuid="1117696d-1607-4f29-9830-7f028fc6db1f"/>
+				<textFieldExpression><![CDATA[$F{stu_info_contact_email}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnHeader>
 	<columnFooter>
-		<band height="164">
+		<band height="66">
 			<staticText>
-				<reportElement x="4" y="-114" width="100" height="20" uuid="73bf9fe6-9cbe-49b8-b1ce-9fac31b406e6"/>
+				<reportElement x="4" y="-123" width="100" height="20" uuid="73bf9fe6-9cbe-49b8-b1ce-9fac31b406e6"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Date]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="452" y="-114" width="100" height="20" uuid="3fc52a46-f7ed-475e-8a01-b4a465f19850"/>
+				<reportElement x="452" y="-123" width="100" height="20" uuid="3fc52a46-f7ed-475e-8a01-b4a465f19850"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Signature]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="-134" width="100" height="20" uuid="1a1072b3-ccfd-4e44-83a0-93a64679302d"/>
+				<reportElement x="4" y="-143" width="100" height="20" uuid="1a1072b3-ccfd-4e44-83a0-93a64679302d"/>
 				<text><![CDATA[...................................]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="452" y="-134" width="100" height="20" uuid="ef2fdf47-8ed4-4fc8-8db1-e9e32b024d2f"/>
+				<reportElement x="452" y="-143" width="100" height="20" uuid="ef2fdf47-8ed4-4fc8-8db1-e9e32b024d2f"/>
 				<text><![CDATA[...................................]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="-91" width="555" height="1" uuid="bc1634b6-a181-476d-8e14-81d1de0ca9ac"/>
+				<reportElement x="0" y="-99" width="555" height="1" uuid="bc1634b6-a181-476d-8e14-81d1de0ca9ac"/>
 			</line>
 			<staticText>
-				<reportElement x="4" y="-88" width="133" height="20" uuid="3ebfa4b3-3ae0-44a5-9129-2614435336e3"/>
+				<reportElement x="4" y="-96" width="133" height="20" uuid="3ebfa4b3-3ae0-44a5-9129-2614435336e3"/>
 				<textElement>
 					<font fontName="Tahoma" size="14" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[For Office use only]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="-58" width="100" height="20" uuid="08cba84e-34cc-43c4-83a9-7818890a4596"/>
+				<reportElement x="4" y="-66" width="100" height="20" uuid="08cba84e-34cc-43c4-83a9-7818890a4596"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Student No]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="-29" width="52" height="20" uuid="d40b03d7-7b15-49d8-93e9-b375096fdbb8"/>
+				<reportElement x="4" y="-37" width="52" height="20" uuid="d40b03d7-7b15-49d8-93e9-b375096fdbb8"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Date]]></text>
 			</staticText>
 			<textField pattern="MM/dd/yyyy">
-				<reportElement x="56" y="-29" width="100" height="20" uuid="4f80a70b-c052-4817-beb2-91553f58abda"/>
+				<reportElement x="56" y="-37" width="100" height="20" uuid="4f80a70b-c052-4817-beb2-91553f58abda"/>
 				<textElement>
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="428" y="-29" width="124" height="20" uuid="af9dc9d9-619b-4a3d-a256-a01c9fd5849e"/>
+				<reportElement x="428" y="-37" width="124" height="20" uuid="af9dc9d9-619b-4a3d-a256-a01c9fd5849e"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="14"/>
 				</textElement>
 				<text><![CDATA[Name / Signature]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="428" y="-49" width="124" height="20" uuid="370b2eb4-8037-496a-ae72-833abda5d7ac"/>
+				<reportElement x="428" y="-57" width="124" height="20" uuid="370b2eb4-8037-496a-ae72-833abda5d7ac"/>
 				<text><![CDATA[...................................................]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="104" y="-58" width="100" height="20" uuid="4c549619-3ceb-4fda-b5bd-6d167a3f3a23"/>
+				<reportElement x="104" y="-66" width="100" height="20" uuid="4c549619-3ceb-4fda-b5bd-6d167a3f3a23"/>
 				<textFieldExpression><![CDATA[$P{sid}]]></textFieldExpression>
 			</textField>
 		</band>
