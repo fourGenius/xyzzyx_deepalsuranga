@@ -1341,7 +1341,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     public javax.swing.JTextField _tf_registration_lecture_information_form_last_name;
     public javax.swing.JTextField _tf_registration_lecture_information_form_mobile_number;
     public javax.swing.JTextField _tf_registration_lecture_information_form_nic;
-    public javax.swing.JTextField _tf_registration_lecture_information_form_sur_name;
+    public static javax.swing.JTextField _tf_registration_lecture_information_form_sur_name;
     private javax.swing.JTextField _tf_registration_lecture_personalInformation_browsePhoto_browseFile;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;

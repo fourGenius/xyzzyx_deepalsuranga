@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.public_access.registration.lecture;
 
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_informations._tf_registration_lecture_information_form_sur_name;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -154,7 +155,7 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
             buttons_enable(_bt_registraion_lecture_buttons_add_lecture.getText());
             _bt_registraion_lecture_buttons_add_lecture.setText("Cancel");
         } else {
-            int option = JOptionPane.showConfirmDialog(this, "All you'r data you didn't save is lost", "Are You Sure?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int option = JOptionPane.showConfirmDialog(this, "All Data You Didn't Save is Lost", "Are You Sure?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (option == JOptionPane.YES_OPTION) {
                 load_table_lecture_view();
                 _bt_registraion_lecture_buttons_add_lecture.setText("Add Lecture");
@@ -162,7 +163,6 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
             }
 
         }
-
     }//GEN-LAST:event__bt_registraion_lecture_buttons_add_lectureActionPerformed
 
 
@@ -255,7 +255,7 @@ public class Jp_registration_lecture extends javax.swing.JPanel {
                 Jp_registraion_lecture_main_panel.repaint();
                 Jp_registraion_lecture_main_panel.revalidate();
             }
-            add_lecture._tf_registration_lecture_information_form_sur_name.grabFocus();
+            _tf_registration_lecture_information_form_sur_name.grabFocus();
         } catch (Exception e) {
             e.printStackTrace();
         }

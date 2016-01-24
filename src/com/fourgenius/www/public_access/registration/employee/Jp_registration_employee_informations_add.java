@@ -992,7 +992,7 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
     private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_firstName;
     private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_lastName;
     private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_nicNumber;
-    private javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_surName;
+    public static javax.swing.JTextField _tf_registration_employee_personalInformations_employeeDetails_surName;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;

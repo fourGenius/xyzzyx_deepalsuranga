@@ -5,7 +5,7 @@
  */
 package com.fourgenius.www.public_access.registration.employee;
 
-import com.fourgenius.www.public_access.registration.employee.Jp_registration_employee_informations_form_active_employee_table;
+
 import com.fourgenius.www.private_access.admin.method.*;
 import com.fourgenius.www.public_access.model.nonacademic_employee.*;
 import java.sql.Connection;
@@ -27,12 +27,8 @@ public class Jp_registration_employee_informations_view extends javax.swing.JPan
     public Jp_registration_employee_informations_view() {
         initComponents();
         _bt_registration_employee_informations_view_search.setVisible(false);
-_tf_registration_employee_informations_view_searchStudent.setVisible(false);
-_li_registration_employee_informations_view_searchStudent.setVisible(false);
-        Jp_registration_employee_informations_form_active_employee_table active_employee = new Jp_registration_employee_informations_form_active_employee_table();
-       
-//        jTabbedPane1.add("Active Employee", active_employee);
-        //jTabbedPane1.add("De-active Employee", deactive_employee);
+        _tf_registration_employee_informations_view_searchStudent.setVisible(false);
+        _li_registration_employee_informations_view_searchStudent.setVisible(false);
         jScrollPane1.setVisible(false);
     }
 
@@ -46,7 +42,8 @@ _li_registration_employee_informations_view_searchStudent.setVisible(false);
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         _tf_registration_employee_informations_view_searchStudent = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         _li_registration_employee_informations_view_searchStudent = new javax.swing.JList();
@@ -57,21 +54,33 @@ _li_registration_employee_informations_view_searchStudent.setVisible(false);
 
         jPanel1.setBackground(new java.awt.Color(61, 61, 61));
 
-        jLabel2.setBackground(new java.awt.Color(61, 61, 61));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("                                   Preview Not Available For This Version");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Employee ID", "Name", "Email", "Mobile Number"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 540));
@@ -110,10 +119,10 @@ _li_registration_employee_informations_view_searchStudent.setVisible(false);
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_employee_informations_view_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
- if (_tf_registration_employee_informations_view_searchStudent.getText().isEmpty()) {
-                jScrollPane1.setVisible(false);
+        if (_tf_registration_employee_informations_view_searchStudent.getText().isEmpty()) {
+            jScrollPane1.setVisible(false);
 
-            }
+        }
 
     }//GEN-LAST:event__tf_registration_employee_informations_view_searchStudentKeyReleased
 
@@ -188,8 +197,9 @@ _li_registration_employee_informations_view_searchStudent.setVisible(false);
     private javax.swing.JButton _bt_registration_employee_informations_view_search;
     private javax.swing.JList _li_registration_employee_informations_view_searchStudent;
     private javax.swing.JTextField _tf_registration_employee_informations_view_searchStudent;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }

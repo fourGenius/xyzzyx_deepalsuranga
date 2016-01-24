@@ -5,12 +5,20 @@
  */
 package com.fourgenius.www.public_access.registration.employee;
 
+import static com.fourgenius.www.public_access.registration.employee.Jp_registration_employee_informations_add._tf_registration_employee_personalInformations_employeeDetails_surName;
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture.Jp_registraion_lecture_main_panel;
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_add_lecture;
+import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_preview_lecture;
+import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_informations;
+import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_table_view;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author thilina
@@ -27,10 +35,9 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         initComponents();
         try {
             _bt_view_employee.doClick();
-          
+
         } catch (Exception ex) {
         }
-        _bt_update_employee.setVisible(false);
     }
 
     /**
@@ -43,11 +50,10 @@ public class Jp_registration_employee extends javax.swing.JPanel {
     private void initComponents() {
 
         _bg_registration_employee_personalInformations_employeeDetails_gender = new javax.swing.ButtonGroup();
-        main = new javax.swing.JPanel();
+        Jp_registraion_employee_main_panel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         _bt_view_employee = new javax.swing.JButton();
         _bt_add_employee = new javax.swing.JButton();
-        _bt_update_employee = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setMaximumSize(new java.awt.Dimension(1366, 718));
@@ -55,20 +61,20 @@ public class Jp_registration_employee extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1366, 718));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        main.setBackground(new java.awt.Color(66, 66, 66));
+        Jp_registraion_employee_main_panel.setBackground(new java.awt.Color(66, 66, 66));
 
-        javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
-        main.setLayout(mainLayout);
-        mainLayout.setHorizontalGroup(
-            mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Jp_registraion_employee_main_panelLayout = new javax.swing.GroupLayout(Jp_registraion_employee_main_panel);
+        Jp_registraion_employee_main_panel.setLayout(Jp_registraion_employee_main_panelLayout);
+        Jp_registraion_employee_main_panelLayout.setHorizontalGroup(
+            Jp_registraion_employee_main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1360, Short.MAX_VALUE)
         );
-        mainLayout.setVerticalGroup(
-            mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Jp_registraion_employee_main_panelLayout.setVerticalGroup(
+            Jp_registraion_employee_main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 630, Short.MAX_VALUE)
         );
 
-        add(main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 630));
+        add(Jp_registraion_employee_main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 630));
 
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -119,22 +125,6 @@ public class Jp_registration_employee extends javax.swing.JPanel {
             }
         });
 
-        _bt_update_employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_update_employee.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_update_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
-        _bt_update_employee.setText("Update Employee");
-        _bt_update_employee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_update_employee.setFocusPainted(false);
-        _bt_update_employee.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_update_employee.setMaximumSize(new java.awt.Dimension(200, 50));
-        _bt_update_employee.setMinimumSize(new java.awt.Dimension(200, 50));
-        _bt_update_employee.setPreferredSize(new java.awt.Dimension(200, 50));
-        _bt_update_employee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_update_employeeActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -144,9 +134,7 @@ public class Jp_registration_employee extends javax.swing.JPanel {
                 .addComponent(_bt_view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(_bt_update_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 710, Short.MAX_VALUE))
+                .addGap(0, 920, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,29 +142,27 @@ public class Jp_registration_employee extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(_bt_view_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_update_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_bt_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 1340, 70));
     }// </editor-fold>//GEN-END:initComponents
 
-    
+
     private void _bt_view_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_view_employeeActionPerformed
 
-      
-        main.removeAll();
-            GroupLayout layout = new GroupLayout(main);
-            main.setLayout(layout);
+        Jp_registraion_employee_main_panel.removeAll();
+        GroupLayout layout = new GroupLayout(Jp_registraion_employee_main_panel);
+        Jp_registraion_employee_main_panel.setLayout(layout);
 
-              Jp_registration_employee_informations_view view_employee = new Jp_registration_employee_informations_view();
-            layout.setHorizontalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-            layout.setVerticalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        Jp_registration_employee_informations_view view_employee = new Jp_registration_employee_informations_view();
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(view_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
-            System.gc();
+        System.gc();
     }//GEN-LAST:event__bt_view_employeeActionPerformed
 
     private void _bt_view_employeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_view_employeeMouseEntered
@@ -188,34 +174,26 @@ public class Jp_registration_employee extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_view_employeeMouseExited
 
     private void _bt_add_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_employeeActionPerformed
-        
-        try {
-            
-           
-            main.removeAll();
-            GroupLayout layout = new GroupLayout(main);
-            main.setLayout(layout);
+        String button_name = _bt_add_employee.getText();
+        if (button_name.equals("Add Employee")) {
+            load_employee_information_form();
+            buttons_enable(_bt_add_employee.getText());
+            _bt_add_employee.setText("Cancel");
+        } else {
+            int option = JOptionPane.showConfirmDialog(this, "All Data You Didn't Save is Lost", "Are You Sure?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (option == JOptionPane.YES_OPTION) {
+                load_table_employee_view();
+                _bt_add_employee.setText("Add Employee");
+                _bt_view_employee.setEnabled(true);
+            }
 
-            Jp_registration_employee_informations_add add_employee = new Jp_registration_employee_informations_add();
-           
-            layout.setHorizontalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-            layout.setVerticalGroup(
-                    layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_employee, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-
-            System.gc();
-
-            
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-        
     }//GEN-LAST:event__bt_add_employeeActionPerformed
 
     private void _bt_add_employeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_employeeMouseEntered
-       
+
         _bt_add_employee.setBorder(border);
-        
+
     }//GEN-LAST:event__bt_add_employeeMouseEntered
 
     private void _bt_add_employeeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_employeeMouseExited
@@ -223,41 +201,80 @@ public class Jp_registration_employee extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_add_employeeMouseExited
 
     private void _bt_add_employeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_employeeMouseClicked
-        
-        
-        
-         if (_bt_add_employee.getText().equals("Finish")) {
-                _bt_view_employee.setEnabled(true);
-                _bt_add_employee.setText("Add Employee");
-             _bt_view_employee.doClick();
-             Jp_registration_employee_informations_form_active_employee_table active_emp_table=new Jp_registration_employee_informations_form_active_employee_table();
-             active_emp_table.addToTable();
-            System.gc();
-             System.out.println("okkkkkk");
-            }else{_bt_add_employee.setText("Finish");
-         _bt_view_employee.setEnabled(false);}
-    }//GEN-LAST:event__bt_add_employeeMouseClicked
 
-    private void _bt_update_employeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_update_employeeActionPerformed
-        
-//          Jp_registration_employee_informations_view active_employee=new Jp_registration_employee_informations_view();
-//       DefaultTableModel dtm=(DefaultTableModel)active_employee.jTable1.getModel();
-//      active_employee.jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//       int rof=active_employee.jTable1.getSelectedRow();
-//            System.out.println(rof+"   jtjhij");
-//       String id=dtm.getValueAt(0,0).toString();
-//            System.out.println(id);
-        
-        
-    }//GEN-LAST:event__bt_update_employeeActionPerformed
+    }//GEN-LAST:event__bt_add_employeeMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Jp_registraion_employee_main_panel;
     private javax.swing.ButtonGroup _bg_registration_employee_personalInformations_employeeDetails_gender;
     private javax.swing.JButton _bt_add_employee;
-    private javax.swing.JButton _bt_update_employee;
     private javax.swing.JButton _bt_view_employee;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel main;
     // End of variables declaration//GEN-END:variables
+
+    private void load_employee_information_form() {
+        try {
+            Jp_registration_employee_informations_add view_employee = new Jp_registration_employee_informations_add();
+
+            if (view_employee == null) {
+                view_employee = new Jp_registration_employee_informations_add();
+                Jp_registraion_employee_main_panel.removeAll();
+                Jp_registraion_employee_main_panel.repaint();
+                Jp_registraion_employee_main_panel.revalidate();
+                Jp_registraion_employee_main_panel.add(view_employee);
+                Jp_registraion_employee_main_panel.repaint();
+                Jp_registraion_employee_main_panel.revalidate();
+            } else {
+                Jp_registraion_employee_main_panel.removeAll();
+                Jp_registraion_employee_main_panel.repaint();
+                Jp_registraion_employee_main_panel.revalidate();
+                Jp_registraion_employee_main_panel.add(view_employee);
+                Jp_registraion_employee_main_panel.repaint();
+                Jp_registraion_employee_main_panel.revalidate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void buttons_enable(String button_name) {
+        try {
+            if (button_name.equals(_bt_view_employee.getText())) {
+                _bt_add_employee.setEnabled(true);
+            } else if (button_name.equals(_bt_add_employee.getText())) {
+                _bt_view_employee.setEnabled(false);
+            } else {
+                _bt_view_employee.setEnabled(false);
+                _bt_add_employee.setEnabled(false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void load_table_employee_view() {
+        try {
+            Jp_registration_employee_informations_view view_employee_table = new Jp_registration_employee_informations_view();
+
+            if (view_employee_table == null) {
+                view_employee_table = new Jp_registration_employee_informations_view();
+                Jp_registraion_employee_main_panel.removeAll();
+                Jp_registraion_employee_main_panel.repaint();
+                Jp_registraion_employee_main_panel.revalidate();
+                Jp_registraion_employee_main_panel.add(view_employee_table);
+                Jp_registraion_employee_main_panel.repaint();
+                Jp_registraion_employee_main_panel.revalidate();
+            } else {
+                Jp_registraion_employee_main_panel.removeAll();
+                Jp_registraion_employee_main_panel.repaint();
+                Jp_registraion_employee_main_panel.revalidate();
+                Jp_registraion_employee_main_panel.add(view_employee_table);
+                Jp_registraion_employee_main_panel.repaint();
+                Jp_registraion_employee_main_panel.revalidate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
