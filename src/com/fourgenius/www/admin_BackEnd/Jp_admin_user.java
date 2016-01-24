@@ -30,7 +30,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
         set_email_Comb();
         load_allData();
         disable.setVisible(false);
-        update.setVisible(false);
+//        update.setVisible(false);
         bt_finish.setVisible(false);
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -56,7 +56,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_admin_Administrators = new javax.swing.JTable();
         jScrollPane6 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators5 = new javax.swing.JTable();
+        tbl_admin_Administrators_deactive = new javax.swing.JTable();
         _pl_registration_lecture_personalInformation_lectureName = new javax.swing.JPanel();
         _lb_registration_lecture_personalInformation_lectureName_sirName = new javax.swing.JLabel();
         tf_fname = new javax.swing.JTextField();
@@ -139,47 +139,47 @@ public class Jp_admin_user extends javax.swing.JPanel {
 
         jTabbedPane3.addTab("Active Users", jScrollPane1);
 
-        tbl_admin_Administrators5.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators5.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_admin_Administrators_deactive.setBackground(new java.awt.Color(207, 216, 220));
+        tbl_admin_Administrators_deactive.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_Administrators_deactive.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tbl_admin_Administrators_deactive.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "User ID", "Name", "Email", "NIC No", "Password"
+                "ID", "Name", "Email", "NIC No"
             }
         ));
-        jScrollPane6.setViewportView(tbl_admin_Administrators5);
+        jScrollPane6.setViewportView(tbl_admin_Administrators_deactive);
 
         jTabbedPane3.addTab("De-active User", jScrollPane6);
 
@@ -251,6 +251,12 @@ public class Jp_admin_user extends javax.swing.JPanel {
 
         bt_finish.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bt_finish.setText("Finish");
+        bt_finish.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_finish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_finishActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_lectureNameLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_lectureName);
         _pl_registration_lecture_personalInformation_lectureName.setLayout(_pl_registration_lecture_personalInformation_lectureNameLayout);
@@ -375,13 +381,14 @@ public class Jp_admin_user extends javax.swing.JPanel {
         try {
             ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from user where user_id='"+tableModel_user_active.getValueAt(tbl_admin_Administrators.getSelectedRow(), 0)+"'");
             if (rs.next()) {
-               String name=rs.getString("user_name");
-                tf_fname.setText("");
-        tf_lname.setText(TOOL_TIP_TEXT_KEY);
-        user_email.addItem(rs);
-        tf_nic.setText(TOOL_TIP_TEXT_KEY);
-        pf_password.setText(TOOL_TIP_TEXT_KEY);
-        pf_confrmPassword.setText(TOOL_TIP_TEXT_KEY);
+               String name_full=rs.getString("user_name");
+               String[] name=name_full.split(" ");
+               tf_fname.setText(name[0]);
+        tf_lname.setText(name[1]);
+        user_email.addItem(rs.getString("user_email"));
+        tf_nic.setText(rs.getString("user_nic"));
+        pf_password.setText(rs.getString("user_password"));
+        pf_confrmPassword.setText(rs.getString("user_password"));
        user_id=rs.getString("user_id");
             }
         bt_finish.setVisible(true);
@@ -412,8 +419,14 @@ public class Jp_admin_user extends javax.swing.JPanel {
     }//GEN-LAST:event_pf_confrmPasswordActionPerformed
 
     private void disableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disableActionPerformed
-
+DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Administrators.getModel();
         
+        try {
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update user set user_status='0' where='"+tableModel_user_active.getValueAt(tbl_admin_Administrators.getSelectedRow(), 0)+"'");
+        load_allData();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }//GEN-LAST:event_disableActionPerformed
 
@@ -447,6 +460,19 @@ public class Jp_admin_user extends javax.swing.JPanel {
         
     }//GEN-LAST:event_addActionPerformed
 
+    private void bt_finishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_finishActionPerformed
+        try {
+           String fullName=tf_fname.getText()+" "+tf_lname.getText();
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update user set user_email='"+user_email.getSelectedItem()+"',user_password='"+pf_confrmPassword.getText()+"',user_name='"+fullName+"',user_nic='"+tf_nic.getText()+"'");
+            JOptionPane.showMessageDialog(this, "Success Fully Updated!");
+            load_allData();
+            set_email_Comb();
+            bt_finish.setVisible(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_bt_finishActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_idInformation_dateOfBirth;
@@ -469,7 +495,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
     private javax.swing.JTextField pf_confrmPassword;
     private javax.swing.JTextField pf_password;
     private javax.swing.JTable tbl_admin_Administrators;
-    private javax.swing.JTable tbl_admin_Administrators5;
+    private javax.swing.JTable tbl_admin_Administrators_deactive;
     private javax.swing.JTextField tf_fname;
     private javax.swing.JTextField tf_lname;
     private javax.swing.JTextField tf_nic;
@@ -517,7 +543,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
 
-            String sql = "select * from user";
+            String sql = "select * from user where user_status='1'";
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 Vector v = new Vector();
@@ -525,6 +551,20 @@ public class Jp_admin_user extends javax.swing.JPanel {
                 v.add(rs.getString("user_name") );
                 v.add(rs.getString("user_email"));
               v.add(rs.getString("user_nic")); 
+                tableModel_user_active.addRow(v);
+            }
+            
+            
+            DefaultTableModel tableModel_user_deactive = (DefaultTableModel) tbl_admin_Administrators_deactive.getModel();
+            tableModel_user_deactive.setRowCount(0);
+             String sql1 = "select * from user where user_status='0'";
+            ResultSet rs1 = statement.executeQuery(sql1);
+            while (rs1.next()) {
+                Vector v = new Vector();
+                v.add(rs1.getString("user_id"));
+                v.add(rs1.getString("user_name") );
+                v.add(rs1.getString("user_email"));
+              v.add(rs1.getString("user_nic")); 
                 tableModel_user_active.addRow(v);
             }
         } catch (Exception e) {
