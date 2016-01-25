@@ -5,15 +5,15 @@
  */
 package com.fourgenius.www.admin_BackEnd;
 
-
-import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._lb_registration_student_preview_studentID;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.table.DefaultTableModel;
 import public_access.MC_JavaDataBaseConnection;
 
@@ -23,11 +23,12 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class Jp_admin_user extends javax.swing.JPanel {
 
-    /**
+    /*
      * Creates new form _jp_admin_user
      */
     String user_id;
     String id;
+
     public Jp_admin_user() {
         initComponents();
         set_email_Comb();
@@ -37,7 +38,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
         bt_finish.setVisible(false);
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
         }
     }
 
@@ -380,25 +381,27 @@ public class Jp_admin_user extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
- DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Administrators.getModel();
+        DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Administrators.getModel();
         try {
-            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from user where user_id='"+tableModel_user_active.getValueAt(tbl_admin_Administrators.getSelectedRow(), 0)+"'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from user where user_id='" + tableModel_user_active.getValueAt(tbl_admin_Administrators.getSelectedRow(), 0) + "'");
             if (rs.next()) {
-               String name_full=rs.getString("user_name");
-               String[] name=name_full.split(" ");
-               tf_fname.setText(name[0]);
-        tf_lname.setText(name[1]);
-        user_email.addItem(rs.getString("user_email"));
-        tf_nic.setText(rs.getString("user_nic"));
-        pf_password.setText(rs.getString("user_password"));
-        pf_confrmPassword.setText(rs.getString("user_password"));
-       user_id=rs.getString("user_id");
+                String name_full = rs.getString("user_name");
+                String[] name = name_full.split(" ");
+                tf_fname.setText(name[0]);
+                tf_lname.setText(name[1]);
+                user_email.addItem(rs.getString("user_email"));
+                tf_nic.setText(rs.getString("user_nic"));
+                pf_password.setText(rs.getString("user_password"));
+                pf_confrmPassword.setText(rs.getString("user_password"));
+                user_id = rs.getString("user_id");
             }
-        bt_finish.setVisible(true);
+            rs.close();
+            bt_finish.setVisible(true);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
- 
+
     }//GEN-LAST:event_updateActionPerformed
 
     private void tf_fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_fnameActionPerformed
@@ -422,11 +425,11 @@ public class Jp_admin_user extends javax.swing.JPanel {
     }//GEN-LAST:event_pf_confrmPasswordActionPerformed
 
     private void disableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disableActionPerformed
-DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Administrators.getModel();
-        
+        DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Administrators.getModel();
+
         try {
-            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update user set user_status='0' where='"+tableModel_user_active.getValueAt(tbl_admin_Administrators.getSelectedRow(), 0)+"'");
-        load_allData();
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update user set user_status='0' where='" + tableModel_user_active.getValueAt(tbl_admin_Administrators.getSelectedRow(), 0) + "'");
+            load_allData();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -435,38 +438,47 @@ DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Adminis
 
     private void user_emailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_user_emailMouseClicked
         try {
-            
-            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select a.employee_academic_user_info_personal_nic,b.employee_academic_user_info_name_first_name,b.employee_academic_user_info_name_surName from employee_academic_user_info_personal a left join employee_academic_user_info_name b on a.employee_academic_user_id=b.employee_academic_user_id left join employee_academic_user_info_contact c on a.employee_academic_user_id=c.employee_academic_user_id where c.employee_academic_user_info_contact_email='"+user_email.getSelectedItem().toString()+"'");
-            
-            while (rs.next()) {                
+
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select a.employee_academic_user_info_personal_nic,b.employee_academic_user_info_name_first_name,b.employee_academic_user_info_name_surName from employee_academic_user_info_personal a left join employee_academic_user_info_name b on a.employee_academic_user_id=b.employee_academic_user_id left join employee_academic_user_info_contact c on a.employee_academic_user_id=c.employee_academic_user_id where c.employee_academic_user_info_contact_email='" + user_email.getSelectedItem().toString() + "'");
+
+            while (rs.next()) {
                 tf_fname.setText(rs.getString("employee_academic_user_info_name_first_name"));
                 tf_lname.setText(rs.getString("employee_academic_user_info_name_surName"));
                 tf_nic.setText(rs.getString("employee_academic_user_info_personal_nic"));
-               
+
                 pf_password.grabFocus();
             }
+            rs.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-       
+
     }//GEN-LAST:event_user_emailMouseClicked
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        Statement SS = null;
         try {
-           String fullname=tf_fname.getText()+" "+tf_lname.getText();
-           generate_user_id();
-            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into (user_id,user_email,user_password,user_status,user_name,user_nic) values('"+id+"','"+user_email.getSelectedItem().toString()+"','"+pf_password.getText()+"','1','"+fullname+"','"+tf_nic.getText()+"'");
-      
-        load_allData();
+            String fullname = tf_fname.getText() + " " + tf_lname.getText();
+            generate_user_id();
+            Connection cc = MC_JavaDataBaseConnection.myConnection();
+            SS = cc.createStatement();
+            SS.executeUpdate("insert into (user_id,user_email,user_password,user_status,user_name,user_nic) values('" + id + "','" + user_email.getSelectedItem().toString() + "','" + pf_password.getText() + "','1','" + fullname + "','" + tf_nic.getText() + "'");
+
+            load_allData();
         } catch (Exception e) {
+            try {
+                SS.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Jp_admin_user.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        
+
     }//GEN-LAST:event_addActionPerformed
 
     private void bt_finishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_finishActionPerformed
         try {
-           String fullName=tf_fname.getText()+" "+tf_lname.getText();
-            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update user set user_email='"+user_email.getSelectedItem()+"',user_password='"+pf_confrmPassword.getText()+"',user_name='"+fullName+"',user_nic='"+tf_nic.getText()+"'");
+            String fullName = tf_fname.getText() + " " + tf_lname.getText();
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update user set user_email='" + user_email.getSelectedItem() + "',user_password='" + pf_confrmPassword.getText() + "',user_name='" + fullName + "',user_nic='" + tf_nic.getText() + "'");
             JOptionPane.showMessageDialog(this, "Success Fully Updated!");
             load_allData();
             set_email_Comb();
@@ -509,28 +521,28 @@ DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Adminis
     void set_email_Comb() {
 
         try {
-            ResultSet rs,rs2;
+            ResultSet rs, rs2;
             String sql = "SELECT * FROM employee_academic_user_info_contact";
-            
+
             rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql);
-            
 
             while (rs.next()) {
                 String academic_email = rs.getString("employee_academic_user_info_contact_email");
-                
+
                 user_email.addItem(academic_email);
-               
+
             }
             rs.close();
-            
+
             String sql1 = "SELECT * FROM employee_nonAcademic_user_info_contact";
             rs2 = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql1);
-             while (rs2.next()) {
-               
-                String nonAcademic_email=rs2.getString("employee_nonAcademic_user_info_contact_email");
-              
+            while (rs2.next()) {
+
+                String nonAcademic_email = rs2.getString("employee_nonAcademic_user_info_contact_email");
+
                 user_email.addItem(nonAcademic_email);
             }
+            rs.close();
             rs2.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -551,66 +563,67 @@ DefaultTableModel tableModel_user_active = (DefaultTableModel) tbl_admin_Adminis
             while (rs.next()) {
                 Vector v = new Vector();
                 v.add(rs.getString("user_id"));
-                v.add(rs.getString("user_name") );
+                v.add(rs.getString("user_name"));
                 v.add(rs.getString("user_email"));
-              v.add(rs.getString("user_nic")); 
+                v.add(rs.getString("user_nic"));
                 tableModel_user_active.addRow(v);
             }
-            
-            
+
             DefaultTableModel tableModel_user_deactive = (DefaultTableModel) tbl_admin_Administrators_deactive.getModel();
             tableModel_user_deactive.setRowCount(0);
-             String sql1 = "select * from user where user_status='0'";
+            String sql1 = "select * from user where user_status='0'";
             ResultSet rs1 = statement.executeQuery(sql1);
             while (rs1.next()) {
                 Vector v = new Vector();
                 v.add(rs1.getString("user_id"));
-                v.add(rs1.getString("user_name") );
+                v.add(rs1.getString("user_name"));
                 v.add(rs1.getString("user_email"));
-              v.add(rs1.getString("user_nic")); 
+                v.add(rs1.getString("user_nic"));
                 tableModel_user_active.addRow(v);
             }
+            rs.close();
+            rs1.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-     private void generate_user_id() {
-         try {
-             String id_type = "ID";
-        String st = "US";
 
-       ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT COUNT(user_id) AS x FROM user");
-        
-        int idcount = rs.getInt("x");
-        int id_no = ++idcount;
+    private void generate_user_id() {
+        try {
+            String id_type = "ID";
+            String st = "US";
 
-        String a = Integer.toString(id_no);
-        int length = a.length();
-        System.out.println(length);
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT COUNT(user_id) AS x FROM user");
 
-        String idn = Integer.toString(id_no);
-        String zeros;
-        if (length == 1) {
-            zeros = "00000";
-        } else if (length == 2) {
-            zeros = "0000";
-        } else if (length == 3) {
-            zeros = "000";
-        } else if (length == 4) {
-            zeros = "00";
-        } else if (length == 5) {
-            zeros = "0";
-        } else {
-            zeros = "";
+            int idcount = rs.getInt("x");
+            int id_no = ++idcount;
+
+            String a = Integer.toString(id_no);
+            int length = a.length();
+            System.out.println(length);
+
+            String idn = Integer.toString(id_no);
+            String zeros;
+            if (length == 1) {
+                zeros = "00000";
+            } else if (length == 2) {
+                zeros = "0000";
+            } else if (length == 3) {
+                zeros = "000";
+            } else if (length == 4) {
+                zeros = "00";
+            } else if (length == 5) {
+                zeros = "0";
+            } else {
+                zeros = "";
+            }
+            id = id_type + "-" + st + "-" + zeros + idn;
+
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    id = id_type + "-" + st + "-" + zeros + idn;
-       
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-       
+        
 
-    
-}
+    }
 }

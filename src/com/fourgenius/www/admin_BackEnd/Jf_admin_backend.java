@@ -34,15 +34,8 @@ public class Jf_admin_backend extends javax.swing.JFrame {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
-        
-        md_setvisible_false(bt_admin_bE_home);
-        md_setvisible_false(bt_admin_bE_students);
-        md_setvisible_false(bt_admin_bE_users);
-        md_setvisible_false(bt_admin_bE_employees);
-        md_setvisible_false(bt_admin_bE_exams);
-        md_setvisible_false(bt_admin_bE_payments);
-        md_setvisible_false(bt_admin_bE_practicals);
-        md_setvisible_false(bt_admin_bE_administrator);
+
+        all_hide();
         Jp_admin_mainManu_in manu = new Jp_admin_mainManu_in();
 //        Jp_admin_in_menu manu=new Jp_admin_mainManu_in();
 //
@@ -93,7 +86,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
         bt_admin_bE_employees = new javax.swing.JButton();
         bt_admin_bE_exams = new javax.swing.JButton();
         bt_admin_bE_payments = new javax.swing.JButton();
-        bt_admin_bE_practicals = new javax.swing.JButton();
+        bt_admin_bE_viewReports = new javax.swing.JButton();
         bt_admin_bE_administrator = new javax.swing.JButton();
         bt_admin_bE_home = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -307,11 +300,11 @@ public class Jf_admin_backend extends javax.swing.JFrame {
             }
         });
 
-        bt_admin_bE_practicals.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        bt_admin_bE_practicals.setText("Practicals");
-        bt_admin_bE_practicals.addActionListener(new java.awt.event.ActionListener() {
+        bt_admin_bE_viewReports.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_admin_bE_viewReports.setText("View Reports");
+        bt_admin_bE_viewReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_admin_bE_practicalsActionPerformed(evt);
+                bt_admin_bE_viewReportsActionPerformed(evt);
             }
         });
 
@@ -371,7 +364,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bt_admin_bE_payments, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bt_admin_bE_practicals, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_admin_bE_viewReports, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bt_admin_bE_administrator, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -385,7 +378,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bt_admin_bE_payments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_admin_bE_practicals, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bt_admin_bE_viewReports, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bt_admin_bE_students, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bt_admin_bE_home, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt_admin_bE_users, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -469,7 +462,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
     Jp_admin_employee_ac employeePanel = new Jp_admin_employee_ac();
     jf_pro_version pro = new jf_pro_version();
     private void bt_admin_bE_employeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_bE_employeesActionPerformed
- pro.setVisible(true);
+        pro.setVisible(true);
 //        if (!(employeePanel == null)) {
 //
 //            admin_mainPanel.removeAll();
@@ -582,35 +575,35 @@ public class Jf_admin_backend extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_bt_admin_bE_paymentsActionPerformed
-    Jp_admin_report practicalPanel = new Jp_admin_report();
-    private void bt_admin_bE_practicalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_bE_practicalsActionPerformed
+    Jp_admin_report reportPanel = new Jp_admin_report();
+    private void bt_admin_bE_viewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_bE_viewReportsActionPerformed
 
-        if (!(practicalPanel == null)) {
+        if (!(reportPanel == null)) {
             admin_mainPanel.removeAll();
             admin_mainPanel.repaint();
             admin_mainPanel.revalidate();
-            admin_mainPanel.add(practicalPanel);
+            admin_mainPanel.add(reportPanel);
             admin_mainPanel.repaint();
             admin_mainPanel.revalidate();
 
-        } else if (practicalPanel == null) {
+        } else if (reportPanel == null) {
 
             studentPanel = new Jp_admin_student();
             admin_mainPanel.removeAll();
             admin_mainPanel.repaint();
             admin_mainPanel.revalidate();
-            admin_mainPanel.add(practicalPanel);
+            admin_mainPanel.add(reportPanel);
             admin_mainPanel.repaint();
             admin_mainPanel.revalidate();
 
         }
 
-    }//GEN-LAST:event_bt_admin_bE_practicalsActionPerformed
+    }//GEN-LAST:event_bt_admin_bE_viewReportsActionPerformed
 
     Jp_admin_admins jp_admin_admins = new Jp_admin_admins();
     private void bt_admin_bE_administratorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_bE_administratorActionPerformed
 
-        if (!(practicalPanel == null)) {
+        if (!(jp_admin_admins == null)) {
             admin_mainPanel.removeAll();
             admin_mainPanel.repaint();
             admin_mainPanel.revalidate();
@@ -635,14 +628,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
 
     private void bt_admin_bE_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_admin_bE_homeActionPerformed
 
-        md_setvisible_false(bt_admin_bE_home);
-        md_setvisible_false(bt_admin_bE_students);
-        md_setvisible_false(bt_admin_bE_users);
-        md_setvisible_false(bt_admin_bE_employees);
-        md_setvisible_false(bt_admin_bE_exams);
-        md_setvisible_false(bt_admin_bE_payments);
-        md_setvisible_false(bt_admin_bE_practicals);
-        md_setvisible_false(bt_admin_bE_administrator);
+        all_hide();
 
         Jp_admin_mainManu_in manu = new Jp_admin_mainManu_in();
 
@@ -823,9 +809,9 @@ public class Jf_admin_backend extends javax.swing.JFrame {
     public static javax.swing.JButton bt_admin_bE_home;
     private javax.swing.JButton bt_admin_bE_logout;
     public static javax.swing.JButton bt_admin_bE_payments;
-    public static javax.swing.JButton bt_admin_bE_practicals;
     public static javax.swing.JButton bt_admin_bE_students;
     public static javax.swing.JButton bt_admin_bE_users;
+    public static javax.swing.JButton bt_admin_bE_viewReports;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
@@ -846,7 +832,7 @@ public class Jf_admin_backend extends javax.swing.JFrame {
     public static void md_setvisible_true(JButton bt) {
         bt.setVisible(true);
     }
-    
+
     void showTime(JLabel label) {
         new Timer(0, new ActionListener() {
 
@@ -860,5 +846,16 @@ public class Jf_admin_backend extends javax.swing.JFrame {
 
             }
         }).start();
+    }
+
+    private void all_hide() {
+        md_setvisible_false(bt_admin_bE_home);
+        md_setvisible_false(bt_admin_bE_students);
+        md_setvisible_false(bt_admin_bE_users);
+        md_setvisible_false(bt_admin_bE_employees);
+        md_setvisible_false(bt_admin_bE_exams);
+        md_setvisible_false(bt_admin_bE_payments);
+        md_setvisible_false(bt_admin_bE_viewReports);
+        md_setvisible_false(bt_admin_bE_administrator);
     }
 }

@@ -91,39 +91,39 @@ public class Jp_admin_student extends javax.swing.JPanel {
         tbl_admin_Student_active.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tbl_admin_Student_active.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Administrator ID", "Name", "Email", "NIC No", "Password"
+                "Student ID", "NIC", "DOB", "NIC No", "Phone Number", "Gender", "Course"
             }
         ));
         jScrollPane1.setViewportView(tbl_admin_Student_active);
@@ -167,7 +167,7 @@ public class Jp_admin_student extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "User ID", "Name", "Email", "NIC No", "Password"
+                "Student ID", "NIC", "Email", "DOB", "Course"
             }
         ));
         jScrollPane6.setViewportView(tbl_admin_Administrators5);
@@ -480,6 +480,7 @@ public class Jp_admin_student extends javax.swing.JPanel {
                 v.add(rs.getString("stu_user_info_id"));
                 v.add(rs.getString("stu_info_personal_nic"));
                 v.add(rs.getString("stu_info_personal_dob"));
+                v.add(rs.getString("stu_info_contact_idstu_info_telephone"));
                 v.add(rs.getString("stu_info_personal_gender"));
                 v.add(rs.getString("stu_info_personal_course"));
                 tableModel_student_active.addRow(v);

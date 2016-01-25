@@ -11,7 +11,7 @@ import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_empl
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_exams;
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_home;
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_payments;
-import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_practicals;
+import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_viewReports;
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_students;
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.bt_admin_bE_users;
 import static com.fourgenius.www.admin_BackEnd.Jf_admin_backend.md_setvisible_true;
@@ -206,9 +206,15 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
+        lb_time_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_time_date.setForeground(new java.awt.Color(255, 255, 255));
+
         lb_welcome_note.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_welcome_note.setForeground(new java.awt.Color(255, 255, 255));
-        lb_welcome_note.setText("deepalsuranga@live.com");
+        lb_welcome_note.setText("Welcome, BACK-END User,");
+
+        lb_date_view.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_date_view.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -291,6 +297,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
     private void lb_student_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_student_informationMouseClicked
 
         try {
+            
             md_setvisible_true(bt_admin_bE_home);
             md_setvisible_true(bt_admin_bE_students);
             md_setvisible_true(bt_admin_bE_users);
@@ -317,6 +324,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
                 revalidate();
             }
         } catch (Exception e) {
+            
         }
 
 
