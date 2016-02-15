@@ -310,6 +310,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
             //jLabel4.setBorder(borderC);
             Jp_admin_student studentPanelM = new Jp_admin_student();
             if (studentPanelM == null) {
+                
                 admin_mainPanel.removeAll();
                 revalidate();
                 studentPanelM = new Jp_admin_student();
