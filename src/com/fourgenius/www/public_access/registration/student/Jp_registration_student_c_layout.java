@@ -198,7 +198,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
                     Connection c = MC_JavaDataBaseConnection.myConnection();
                     Statement s = c.createStatement();
 
-                    ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE a.employee_academic_user_info_personal_nic like '" + _tf_registration_student_searchStudent.getText() + "' AND c.employee_academic_user_info_status>='1'");
+                    ResultSet rs = s.executeQuery("SELECT b.stu_info_name_first_name, b.stu_info_name_last_name FROM stu_info_personal a LEFT JOIN stu_info_name b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_user_info c ON a.stu_user_info_id=c.stu_user_info_id WHERE a.stu_info_personal_nic like '" + _tf_registration_student_searchStudent.getText() + "' AND c.stu_user_info_status>='1'");
                     Vector v = new Vector();
                     while (rs.next()) {
                         v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
