@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoice_sub" language="groovy" pageWidth="555" pageHeight="75" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="beacc802-f580-49b3-8237-8d84295e5fbf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="stu_id" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     student_payment.`course` AS student_payment_course,
+     student_payment.`course_fee` AS student_payment_course_fee,
+     student_payment.`payment` AS student_payment_payment,
+     student_payment.`due_payment` AS student_payment_due_payment
+FROM
+     `student_payment` student_payment
+WHERE
+     student_payment.`student_id` = $P{stu_id}
+     and student_payment.`date` = $P{date}]]>
+	</queryString>
+	<field name="student_payment_course" class="java.lang.String"/>
+	<field name="student_payment_course_fee" class="java.lang.Double"/>
+	<field name="student_payment_payment" class="java.lang.Double"/>
+	<field name="student_payment_due_payment" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="75">
+			<rectangle radius="10">
+				<reportElement x="4" y="7" width="541" height="68" uuid="00094abc-e587-473c-af18-1ceb87a8c486"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="7" width="303" height="20" uuid="fc15c6f1-3325-483f-ad0e-b92bcce9f5b3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Course]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="7" width="83" height="20" uuid="6cd2ce53-0d65-447b-aa21-fffe0c648e7d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Course Fee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="7" width="63" height="20" uuid="0089a9f7-cb45-4d1a-87ae-66764938f6ee"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="7" width="75" height="20" uuid="04059c88-2db8-4338-b2fd-b6aa43f963ba"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Due Payment]]></text>
+			</staticText>
+			<line>
+				<reportElement x="8" y="30" width="521" height="1" uuid="99d5e027-81e2-496f-9372-432b261aef63"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="10" y="39" width="303" height="20" uuid="f6920144-712b-4049-a6e8-b46b3eb89a03"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_payment_course}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="39" width="83" height="20" uuid="08646c67-b56b-4b9f-ab60-84263a48748c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_payment_course_fee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="39" width="63" height="20" uuid="541f1a4f-ed84-4a58-a34f-e7f881a0e497"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_payment_payment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="39" width="75" height="20" uuid="0c0c66fd-4238-4cf2-b90e-d0f43e6543ea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_payment_due_payment}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student_reg" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a7bdee31-6b19-4229-b142-08e2683c137f">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student_reg" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a7bdee31-6b19-4229-b142-08e2683c137f" >
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -63,7 +63,7 @@ where a.stu_user_info_id=$P{sid}]]>
 				<imageExpression><![CDATA["D:\\Final_Pro\\xyzzyx_deepalsuranga\\src\\reports\\images\\r_logo_350x178.png"]]></imageExpression>
 			</image>
 			<rectangle>
-				<reportElement x="414" y="2" width="138" height="181" uuid="8e7e1d57-406a-4855-83d7-9776b889394a"/>
+				<reportElement x="422" y="10" width="124" height="164" uuid="8e7e1d57-406a-4855-83d7-9776b889394a"/>
 			</rectangle>
 		</band>
 	</pageHeader>

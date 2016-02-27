@@ -12,7 +12,8 @@ import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
 import com.fourgenius.www.private_access.admin.method.Md_move_text;
-import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
+import com.fourgenius.www.user_FrontEnd.Jf_UserFront;
+import com.fourgenius.www.user_FrontEnd.Jf_UserRegistration;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -783,7 +784,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
                 Admin_SendMailSSL asmssl = new Admin_SendMailSSL();
                 asmssl.sendingSSL("User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
-                Jf_UserMain user_menu = new Jf_UserMain();
+                Jf_UserFront user_menu = new Jf_UserFront(_tf_user_loging_userName.getText());
                 user_menu.setVisible(true);
                 this.dispose();
                 System.gc();

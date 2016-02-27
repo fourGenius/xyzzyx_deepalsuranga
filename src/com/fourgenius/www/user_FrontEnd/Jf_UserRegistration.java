@@ -25,14 +25,14 @@ import javax.swing.border.Border;
  *
  * @author thilina_deepal
  */
-public class Jf_UserMain extends javax.swing.JFrame {
+public class Jf_UserRegistration extends javax.swing.JFrame {
 
     Border border = BorderFactory.createLineBorder(Color.white, 1);
 
     /**
      * Creates new form main_frame
      */
-    public Jf_UserMain() {
+    public Jf_UserRegistration() {
         initComponents();
         showTime();
         try {
@@ -63,6 +63,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lb_time_date = new javax.swing.JLabel();
+        _bt_UserMain_home = new javax.swing.JButton();
         Jp_userMain_main_panel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -232,14 +233,49 @@ public class Jf_UserMain extends javax.swing.JFrame {
         lb_time_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_time_date.setForeground(new java.awt.Color(255, 255, 255));
         lb_time_date.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lb_time_date.setText("jLabel2");
+
+        _bt_UserMain_home.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_UserMain_home.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_UserMain_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_LightBlue_200x50.png"))); // NOI18N
+        _bt_UserMain_home.setText("Home");
+        _bt_UserMain_home.setAutoscrolls(true);
+        _bt_UserMain_home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_UserMain_home.setFocusPainted(false);
+        _bt_UserMain_home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_UserMain_home.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_home.setMinimumSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_home.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_UserMain_home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_homeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_homeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_homeMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_homeMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_UserMain_homeMouseReleased(evt);
+            }
+        });
+        _bt_UserMain_home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_UserMain_homeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
+                .addContainerGap()
+                .addComponent(_bt_UserMain_home, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_bt_UserMain_StudentRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_bt_UserMain_LectureRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,7 +283,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
                 .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lb_time_date, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,9 +301,12 @@ public class Jf_UserMain extends javax.swing.JFrame {
                         .addComponent(_bt_UserMain_StudentRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lb_time_date))
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(_bt_UserMain_home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(lb_time_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, -1));
@@ -505,6 +544,33 @@ public class Jf_UserMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event__bt_UserMain_paymentsMouseClicked
 
+    private void _bt_UserMain_homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_homeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_UserMain_homeMouseClicked
+
+    private void _bt_UserMain_homeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_homeMouseEntered
+        _bt_UserMain_home.setBorder(border);
+    }//GEN-LAST:event__bt_UserMain_homeMouseEntered
+
+    private void _bt_UserMain_homeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_homeMouseExited
+  _bt_UserMain_home.setBorder(null);
+    }//GEN-LAST:event__bt_UserMain_homeMouseExited
+
+    private void _bt_UserMain_homeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_homeMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_UserMain_homeMousePressed
+
+    private void _bt_UserMain_homeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_UserMain_homeMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_UserMain_homeMouseReleased
+
+    private void _bt_UserMain_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_homeActionPerformed
+        
+        this.dispose();
+        new Jf_UserFront().setVisible(true);
+        
+    }//GEN-LAST:event__bt_UserMain_homeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -522,21 +588,23 @@ public class Jf_UserMain extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Jf_UserMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_UserRegistration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Jf_UserMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_UserRegistration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Jf_UserMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_UserRegistration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Jf_UserMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_UserRegistration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Jf_UserMain().setVisible(true);
+                new Jf_UserRegistration().setVisible(true);
 
             }
         });
@@ -547,6 +615,7 @@ public class Jf_UserMain extends javax.swing.JFrame {
     private javax.swing.JButton _bt_UserMain_EmployeeRegistration;
     public javax.swing.JButton _bt_UserMain_LectureRegistration;
     private javax.swing.JButton _bt_UserMain_StudentRegistration;
+    private javax.swing.JButton _bt_UserMain_home;
     private javax.swing.JButton _bt_UserMain_payments;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="grn" language="groovy" pageWidth="595" pageHeight="421" orientation="Landscape" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="9699e380-c55f-4174-b8f9-beef7b24423f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     grn.`id` AS grn_id,
+     grn.`date` AS grn_date,
+     grn.`total` AS grn_total,
+     grn.`time` AS grn_time,
+     grn.`discount` AS grn_discount,
+     grn.`nettot` AS grn_nettot,
+     grn.`supliername` AS grn_supliername,
+     grn.`bal` AS grn_bal,
+     grn.`payment` AS grn_payment,
+     grnreg.`itemid` AS grnreg_itemid,
+     grnreg.`item` AS grnreg_item,
+     grnreg.`itemprice` AS grnreg_itemprice,
+     grnreg.`qty` AS grnreg_qty,
+     grnreg.`subtot` AS grnreg_subtot
+FROM
+     `grn` grn INNER JOIN `grnreg` grnreg ON grn.`id` = grnreg.`grnid` where grn.id=$P{id}]]>
+	</queryString>
+	<field name="grn_id" class="java.lang.String"/>
+	<field name="grn_date" class="java.lang.String"/>
+	<field name="grn_total" class="java.lang.Double"/>
+	<field name="grn_time" class="java.lang.String"/>
+	<field name="grn_discount" class="java.lang.Double"/>
+	<field name="grn_nettot" class="java.lang.Double"/>
+	<field name="grn_supliername" class="java.lang.String"/>
+	<field name="grn_bal" class="java.lang.Double"/>
+	<field name="grn_payment" class="java.lang.Double"/>
+	<field name="grnreg_itemid" class="java.lang.String"/>
+	<field name="grnreg_item" class="java.lang.String"/>
+	<field name="grnreg_qty" class="java.lang.Integer"/>
+	<field name="grnreg_itemprice" class="java.lang.Double"/>
+	<field name="grnreg_subtot" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="99" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="0" width="455" height="79" uuid="807a8ea8-334f-4def-800d-e5ae7bd788a3"/>
+				<textElement textAlignment="Center">
+					<font size="44" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Goods Reserve Note]]></text>
+			</staticText>
+			<image>
+				<reportElement x="3" y="2" width="96" height="78" uuid="540812a2-f096-4c3c-b278-50b2803866c4"/>
+				<imageExpression><![CDATA["D:\\vaivar\\shop\\icon.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="53">
+			<textField>
+				<reportElement x="100" y="10" width="100" height="20" uuid="e6bdc0df-48c3-46e4-b4af-3b1621e78eaf"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grn_supliername}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="20" uuid="677a0466-5ba8-4ee6-bb67-6863829e2d74"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="20" uuid="eec54d16-0913-4fe1-b072-c77a947a0990"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRN ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="10" width="33" height="20" uuid="315bbe56-ed34-4d5f-9d47-33c5436ec54f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="30" width="33" height="20" uuid="b3f378bd-aee6-486f-8d54-769191e96299"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="10" width="100" height="20" uuid="3541aa52-9baf-492d-8bb4-78a340fb1a36"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grn_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="30" width="100" height="20" uuid="aaad4d76-d257-4b0f-89e9-1cc84cdc8bcf"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grn_time}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="51" width="555" height="1" uuid="5aa421ad-2c2f-46fd-8dd2-434fa5763346"/>
+			</line>
+			<textField>
+				<reportElement x="100" y="30" width="100" height="20" uuid="1f8df9cc-e335-4a62-841d-f3a371306012"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="20" uuid="071c7266-acb9-4864-9791-274f061eb165"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20" uuid="07d63538-cab6-4b42-aba9-7ba05f9ebda8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="20" uuid="20f9f13f-fa81-4dfd-b232-a43cb33af3f9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="20" uuid="1d7dc00f-61ba-4b0b-ba4d-4e97db6f8d1b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20" uuid="ee5b6b02-0690-4102-a9ce-f15581e4b38c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20" uuid="c7caf74f-fe80-40c4-920f-4f8d05618d5d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grnreg_itemid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="f352d97e-af14-4410-a489-df549a463819"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grnreg_item}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="20" uuid="50536d18-96be-4597-b4ad-3eb10f7e8654"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grnreg_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20" uuid="de8b0496-14de-4a9d-b9ba-c75cf4dc1d26"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grnreg_itemprice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20" uuid="a945cc90-ae99-4673-a68b-f45d0371f739"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grnreg_subtot}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="100" height="20" uuid="8f845017-dd64-4c6d-a6d8-c733e9a3af10"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="31" width="100" height="20" uuid="8070018b-30ac-48c5-8b3d-0058733e2c42"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="51" width="100" height="20" uuid="837037d1-beba-4194-ac19-a9e29750c171"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balence]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="31" width="62" height="20" uuid="7bb53a16-55de-4773-98bc-d7c0a393ece6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="11" width="62" height="20" uuid="089e5e2a-495e-487f-917e-c0ef123c4bc7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="a7b670c9-e2de-41d2-b1c5-ac552ac48908"/>
+			</line>
+			<textField>
+				<reportElement x="100" y="11" width="100" height="20" uuid="7a12e933-18b0-4976-9bd6-24981f2cf4ec"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grn_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="31" width="100" height="20" uuid="76f1b342-34d2-4baa-8c95-2b6dc7ae3d24"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grn_nettot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="51" width="100" height="20" uuid="5a189923-a578-4f5f-8c41-41a6854f8f1a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grn_bal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="11" width="100" height="20" uuid="bf937b1b-8da2-41e1-bdca-6823db44f698"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grn_discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="31" width="100" height="20" uuid="6baf703e-c1c6-4117-9b06-e3b99d9dd316"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grn_payment}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="455" y="24" width="100" height="20" uuid="0a71cbc2-2891-4104-b12b-b692afc3e1f2"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+			<line>
+				<reportElement x="455" y="23" width="100" height="1" uuid="56fe8427-fa50-40b8-83bf-33b60cc08253"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

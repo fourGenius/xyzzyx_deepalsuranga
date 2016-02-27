@@ -13,7 +13,7 @@ import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lec
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.Jp_registraion_stu_main_panel;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student._bt_add_student;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student._bt_student_details;
-import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
+import com.fourgenius.www.user_FrontEnd.Jf_UserRegistration;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;

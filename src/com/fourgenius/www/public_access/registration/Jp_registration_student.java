@@ -6,7 +6,7 @@
 package com.fourgenius.www.public_access.registration;
 
 import static com.fourgenius.www.private_access.admin.login.Jf_admin_login.main_panel;
-import com.fourgenius.www.user_FrontEnd.Jf_UserMain;
+import com.fourgenius.www.user_FrontEnd.Jf_UserRegistration;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;

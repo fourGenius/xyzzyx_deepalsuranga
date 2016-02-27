@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice_main" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f56744bc-8cb3-4b38-92c9-9bbd5c19e74b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="110"/>
+	<parameter name="Invoice_ID" class="java.lang.String"/>
+	<parameter name="stu_id" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Final_Pro\\xyzzyx_deepalsuranga\\src\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     student_payment.`student_name` AS student_payment_student_name
+FROM
+     `student_payment` student_payment
+WHERE
+     student_payment.`student_id` = $P{stu_id}]]>
+	</queryString>
+	<field name="student_payment_student_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" uuid="915396c9-789a-41d9-b43e-55664c5d22d3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Algerian" size="58" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="cb88a510-8cf6-465c-8c3d-d6e6bf48796a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="cf0a81c4-dac6-4476-ac0e-4921d0c05e5a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Invoice_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="21" width="242" height="20" uuid="e35d7539-a45f-4a3e-86c3-cedde3327c31"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{student_payment_student_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="325" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="325" uuid="17fbb871-68ae-4315-a64d-9f0baca23281"/>
+				<subreportParameter name="stu_id">
+					<subreportParameterExpression><![CDATA[$P{stu_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="date">
+					<subreportParameterExpression><![CDATA[$P{date}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "invoice_sub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="445" y="36" width="100" height="20" uuid="b33cfa13-6c78-48b0-8a21-320578e6026e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="16" width="100" height="20" uuid="11971292-ac2a-4155-9676-84313409532d"/>
+				<text><![CDATA[....................................]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>
