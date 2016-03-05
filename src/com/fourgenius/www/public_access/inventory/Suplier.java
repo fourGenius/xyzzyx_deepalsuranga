@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.fourgenius.www.public_access.inventory;
 
 import java.awt.Color;
@@ -109,9 +108,17 @@ public class Suplier extends javax.swing.JPanel {
             }
         });
 
+        address1.setMaximumSize(new java.awt.Dimension(423, 20));
+        address1.setMinimumSize(new java.awt.Dimension(423, 20));
+        address1.setPreferredSize(new java.awt.Dimension(423, 20));
         address1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 address1ActionPerformed(evt);
+            }
+        });
+        address1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                address1KeyTyped(evt);
             }
         });
 
@@ -119,9 +126,17 @@ public class Suplier extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Last Name");
 
+        address2.setMaximumSize(new java.awt.Dimension(423, 20));
+        address2.setMinimumSize(new java.awt.Dimension(423, 20));
+        address2.setPreferredSize(new java.awt.Dimension(423, 20));
         address2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 address2ActionPerformed(evt);
+            }
+        });
+        address2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                address2KeyTyped(evt);
             }
         });
 
@@ -129,9 +144,17 @@ public class Suplier extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("NIC");
 
+        address3.setMaximumSize(new java.awt.Dimension(423, 20));
+        address3.setMinimumSize(new java.awt.Dimension(423, 20));
+        address3.setPreferredSize(new java.awt.Dimension(423, 20));
         address3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 address3ActionPerformed(evt);
+            }
+        });
+        address3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                address3KeyTyped(evt);
             }
         });
 
@@ -139,6 +162,9 @@ public class Suplier extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Address");
 
+        Fax.setMaximumSize(new java.awt.Dimension(423, 20));
+        Fax.setMinimumSize(new java.awt.Dimension(423, 20));
+        Fax.setPreferredSize(new java.awt.Dimension(423, 20));
         Fax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FaxActionPerformed(evt);
@@ -150,6 +176,9 @@ public class Suplier extends javax.swing.JPanel {
             }
         });
 
+        email.setMaximumSize(new java.awt.Dimension(423, 20));
+        email.setMinimumSize(new java.awt.Dimension(423, 20));
+        email.setPreferredSize(new java.awt.Dimension(423, 20));
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
@@ -159,8 +188,15 @@ public class Suplier extends javax.swing.JPanel {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 emailKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                emailKeyTyped(evt);
+            }
         });
 
+        id.setEditable(false);
+        id.setMaximumSize(new java.awt.Dimension(423, 20));
+        id.setMinimumSize(new java.awt.Dimension(423, 20));
+        id.setPreferredSize(new java.awt.Dimension(423, 20));
         id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idActionPerformed(evt);
@@ -172,9 +208,17 @@ public class Suplier extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Suplier Informations......");
 
+        fname.setMaximumSize(new java.awt.Dimension(423, 20));
+        fname.setMinimumSize(new java.awt.Dimension(423, 20));
+        fname.setPreferredSize(new java.awt.Dimension(423, 20));
         fname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fnameActionPerformed(evt);
+            }
+        });
+        fname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fnameKeyTyped(evt);
             }
         });
 
@@ -182,9 +226,17 @@ public class Suplier extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Telephone Number");
 
+        lname.setMaximumSize(new java.awt.Dimension(423, 20));
+        lname.setMinimumSize(new java.awt.Dimension(423, 20));
+        lname.setPreferredSize(new java.awt.Dimension(423, 20));
         lname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lnameActionPerformed(evt);
+            }
+        });
+        lname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lnameKeyTyped(evt);
             }
         });
 
@@ -205,6 +257,9 @@ public class Suplier extends javax.swing.JPanel {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Fax");
 
+        nic.setMaximumSize(new java.awt.Dimension(423, 20));
+        nic.setMinimumSize(new java.awt.Dimension(423, 20));
+        nic.setPreferredSize(new java.awt.Dimension(423, 20));
         nic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nicActionPerformed(evt);
@@ -378,6 +433,9 @@ public class Suplier extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID");
 
+        tp.setMaximumSize(new java.awt.Dimension(423, 20));
+        tp.setMinimumSize(new java.awt.Dimension(423, 20));
+        tp.setPreferredSize(new java.awt.Dimension(423, 20));
         tp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tpActionPerformed(evt);
@@ -404,13 +462,6 @@ public class Suplier extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -423,23 +474,31 @@ public class Suplier extends javax.swing.JPanel {
                                     .addComponent(jLabel9))
                                 .addGap(76, 76, 76)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                                    .addComponent(lname)
-                                    .addComponent(fname)
-                                    .addComponent(nic)
-                                    .addComponent(address1)
-                                    .addComponent(address2)
-                                    .addComponent(address3)
-                                    .addComponent(email)))
+                                    .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(address1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(address2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(address3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel8))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tp)
-                                    .addComponent(Fax))))))
-                .addGap(117, 117, 117)
+                                    .addComponent(tp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Fax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(117, 117, 117))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(159, 159, 159)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
@@ -486,7 +545,7 @@ public class Suplier extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(Fax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45)
+                        .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -494,7 +553,7 @@ public class Suplier extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -507,8 +566,25 @@ public class Suplier extends javax.swing.JPanel {
     }//GEN-LAST:event_saveActionPerformed
 
     private void nicKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nicKeyTyped
-   
-       
+        char c = evt.getKeyChar();
+
+        if (nic.getText().length() == 9) {
+            if (nic.getText().length() == 10) {
+                evt.consume();
+            } else if (Character.isDigit(c) | !((c == 'v') || (c == 'x'))) {
+                evt.consume();
+            }
+
+        } else {
+            if (Character.isLetter(c)) {
+                evt.consume();
+            }
+        }
+
+     
+        if (100<=fname.getText().length()) {
+            evt.consume();
+        }
     }//GEN-LAST:event_nicKeyTyped
 
     private void tpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tpKeyTyped
@@ -526,9 +602,9 @@ public class Suplier extends javax.swing.JPanel {
     }//GEN-LAST:event_FaxKeyTyped
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-         try {
+        try {
             String addre = address1.getText() + "," + address2.getText() + "," + address3.getText();
-             MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_suplier set fname='" + fname.getText() + "',lname='" + lname.getText() + "',nic='" + nic.getText() + "',address='" + addre + "',addressl1='"+address1.getText()+"',addressl2='"+address2.getText()+"',addressl3='"+address3.getText()+"',tp='" + tp.getText() + "',fax='"+Fax.getText()+"',email='" + email.getText() + "',state='Active' where id='" + id.getText() + "'");
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_suplier set fname='" + fname.getText() + "',lname='" + lname.getText() + "',nic='" + nic.getText() + "',address='" + addre + "',addressl1='" + address1.getText() + "',addressl2='" + address2.getText() + "',addressl3='" + address3.getText() + "',tp='" + tp.getText() + "',fax='" + Fax.getText() + "',email='" + email.getText() + "',state='Active' where id='" + id.getText() + "'");
             JOptionPane.showMessageDialog(this, "Sucksesfully Update");
             clear();
         } catch (Exception e) {
@@ -537,14 +613,14 @@ public class Suplier extends javax.swing.JPanel {
     }//GEN-LAST:event_updateActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-          try {
+        try {
             int confo = JOptionPane.showConfirmDialog(this, "Are you sure????");
             if (confo == JOptionPane.YES_OPTION) {
                 MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_suplier set state='Diactive'");
-            loadCombo();
-            clear();
+                loadCombo();
+                clear();
             }
-             
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -559,7 +635,7 @@ public class Suplier extends javax.swing.JPanel {
                 snic.setText(rs.getString("nic"));
                 saddress.setText(rs.getString("address"));
                 stp.setText(rs.getString("tp"));
-               sfax.setText(rs.getString("fax"));
+                sfax.setText(rs.getString("fax"));
                 semail.setText(rs.getString("email"));
             }
         } catch (Exception e) {
@@ -568,7 +644,7 @@ public class Suplier extends javax.swing.JPanel {
         if (sfname.getSelectedItem() == null) {
             slname.setText(null);
             sid.setText(null);
-            snic.setText(null);          
+            snic.setText(null);
             saddress.setText(null);
             stp.setText(null);
             sfax.setText(null);
@@ -577,7 +653,7 @@ public class Suplier extends javax.swing.JPanel {
     }//GEN-LAST:event_sfnameActionPerformed
 
     private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
-       fname.grabFocus();
+        fname.grabFocus();
     }//GEN-LAST:event_idActionPerformed
 
     private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
@@ -585,15 +661,14 @@ public class Suplier extends javax.swing.JPanel {
     }//GEN-LAST:event_fnameActionPerformed
 
     private void nicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nicActionPerformed
-       if (nic.getText().length() == 10) {
-           address1.grabFocus();
-            
+        if (nic.getText().length() == 10) {
+            address1.grabFocus();
+
+        } else {
+            JOptionPane.showMessageDialog(this, "wrong NIC");
+
         }
-        else{
-        JOptionPane.showMessageDialog(this,"wrong NIC");
-        
-        }
-        
+
     }//GEN-LAST:event_nicActionPerformed
 
     private void address1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_address1ActionPerformed
@@ -601,7 +676,7 @@ public class Suplier extends javax.swing.JPanel {
     }//GEN-LAST:event_address1ActionPerformed
 
     private void address2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_address2ActionPerformed
-       address3.grabFocus();
+        address3.grabFocus();
     }//GEN-LAST:event_address2ActionPerformed
 
     private void address3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_address3ActionPerformed
@@ -613,14 +688,14 @@ public class Suplier extends javax.swing.JPanel {
     }//GEN-LAST:event_tpActionPerformed
 
     private void FaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FaxActionPerformed
-      
+
     }//GEN-LAST:event_FaxActionPerformed
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
         try {
-            ResultSet rs =MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select fname from inv_suplier where fname like '"+search.getText()+"%' and state='Active'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select fname from inv_suplier where fname like '" + search.getText() + "%' and state='Active'");
             sfname.removeAllItems();
-            while (rs.next()) {                
+            while (rs.next()) {
                 sfname.addItem(rs.getString("fname"));
             }
         } catch (Exception e) {
@@ -628,22 +703,20 @@ public class Suplier extends javax.swing.JPanel {
     }//GEN-LAST:event_searchKeyReleased
 
     private void nicKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nicKeyReleased
-  char c=evt.getKeyChar();
-        
-        if (nic.getText().length() == 9 ) {
-            if (nic.getText().length()==10 ) {
+        char c = evt.getKeyChar();
+
+        if (nic.getText().length() == 9) {
+            if (nic.getText().length() == 10) {
+                evt.consume();
+            } else if (Character.isDigit(c) | !((c == 'v') || (c == 'x'))) {
                 evt.consume();
             }
-            else if (Character.isDigit(c) | !((c=='v')||(c=='x')) ) {
-                evt.consume();
-            }
-            
-        }
-        else{
+
+        } else {
             if (Character.isLetter(c)) {
                 evt.consume();
             }
-        }        
+        }
     }//GEN-LAST:event_nicKeyReleased
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
@@ -651,40 +724,94 @@ public class Suplier extends javax.swing.JPanel {
         boolean b = email.getText().matches(emailreg);
         if (b == false) {
             System.out.println("Your E-mail Address is Not Valid");
-           JOptionPane.showMessageDialog(this, "Your E-mail Address is Not Valid", "Error", JOptionPane.ERROR_MESSAGE);
-           email.setBackground(Color.red);
-           email.grabFocus();
-           email.setText(null);
+            JOptionPane.showMessageDialog(this, "Your E-mail Address is Not Valid", "Error", JOptionPane.ERROR_MESSAGE);
+            email.setBackground(Color.red);
+            email.grabFocus();
+            email.setText(null);
         } else {
-           tp.grabFocus();
+            tp.grabFocus();
         }
     }//GEN-LAST:event_emailActionPerformed
 
     private void emailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailKeyReleased
-         email.setBackground(Color.white);
+        email.setBackground(Color.white);
     }//GEN-LAST:event_emailKeyReleased
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
-         id.setText(sid.getText());
+
+        id.setText(sid.getText());
         fname.setText(sfname.getSelectedItem().toString());
         lname.setText(slname.getText());
         nic.setText(snic.getText());
         tp.setText(stp.getText());
         email.setText(semail.getText());
-       Fax.setText(sfax.getText());
+        Fax.setText(sfax.getText());
         try {
-            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select addressl1,addressl2,addressl3 from inv_suplier where fname='"+sfname.getSelectedItem()+"'");
-            if(rs.next()){
-            address1.setText(rs.getString("addressl1"));
-            address2.setText(rs.getString("addressl2"));
-            address3.setText(rs.getString("addressl3"));
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select addressl1,addressl2,addressl3 from inv_suplier where fname='" + sfname.getSelectedItem() + "'");
+            if (rs.next()) {
+                address1.setText(rs.getString("addressl1"));
+                address2.setText(rs.getString("addressl2"));
+                address3.setText(rs.getString("addressl3"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void fnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fnameKeyTyped
+        
+        if (100<=fname.getText().length()) {
+            evt.consume();
+          JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+          
+    }//GEN-LAST:event_fnameKeyTyped
+
+    private void lnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lnameKeyTyped
+        
+        if (100<=lname.getText().length()) {
+            evt.consume();
+           JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_lnameKeyTyped
+
+    private void address1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address1KeyTyped
+        
+        if (100<=address1.getText().length()) {
+            evt.consume();
+           JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_address1KeyTyped
+
+    private void address2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address2KeyTyped
+       
+        if (100<=address2.getText().length()) {
+            evt.consume();
+           JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_address2KeyTyped
+
+    private void address3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address3KeyTyped
+        
+        if (100<=address3.getText().length()) {
+            evt.consume();
+           JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_address3KeyTyped
+
+    private void emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailKeyTyped
+        
+        if (100<=email.getText().length()) {
+            evt.consume();
+           JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_emailKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -733,7 +860,7 @@ public class Suplier extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void check() {
-         boolean flag = false;
+        boolean flag = false;
         JTextField temTf = null;
         for (JTextField tf : getTf()) {
             if (tf.getText().toString().trim().equals("")) {
@@ -750,10 +877,10 @@ public class Suplier extends javax.swing.JPanel {
         } else {
             try {
                 String addre = address1.getText() + "," + address2.getText() + "," + address3.getText();
-                MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("insert into inv_suplier values('" + id.getText() + "','" + fname.getText() + "','" + lname.getText() + "','" + nic.getText() + "','" + addre + "','"+address1.getText()+"','"+address2.getText()+"','"+address3.getText()+"','" + tp.getText() + "','"+Fax.getText()+"','" + email.getText() + "','Active')");
+                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_suplier(id,fname,lname,nic,address,addressl1,addressl2,addressl3,tp,fax,email,state) values('" + id.getText() + "','" + fname.getText() + "','" + lname.getText() + "','" + nic.getText() + "','" + addre + "','" + address1.getText() + "','" + address2.getText() + "','" + address3.getText() + "','" + tp.getText() + "','" + Fax.getText() + "','" + email.getText() + "','Active')");
                 JOptionPane.showMessageDialog(this, "Successfully Save");
                 loadCombo();
-                
+
                 clear();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -763,12 +890,12 @@ public class Suplier extends javax.swing.JPanel {
     }
 
     private JTextField[] getTf() {
-         JTextField arr[] = {id, fname, lname, nic, address1, address2, address3, tp,Fax, email};
+        JTextField arr[] = {id, fname, lname, nic, address1, address2, address3, tp, Fax, email};
         return arr;
     }
 
     private void loadCombo() {
-          try{  
+        try {
             ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select fname from inv_suplier where state='Active' order by fname asc ");
 
             sfname.removeAllItems();
@@ -779,7 +906,7 @@ public class Suplier extends javax.swing.JPanel {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }  
+        }
     }
 
     private void clear() {
@@ -798,7 +925,7 @@ public class Suplier extends javax.swing.JPanel {
     }
 
     private void loadId() {
-         try {
+        try {
             ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select count(id)as x from inv_suplier");
             if (rs.next()) {
                 int i = Integer.parseInt(rs.getString("x"));

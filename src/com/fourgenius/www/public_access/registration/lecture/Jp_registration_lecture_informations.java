@@ -913,10 +913,10 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
     private void _bt_registration_lecture_personalInformation_previewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_lecture_personalInformation_previewActionPerformed
         if (_bt_registration_lecture_personalInformation_preview.getText().equals("Preview")) {
-            
+
             check_empty_fields();
         } else {
-            
+
             check_update_empty_fields();
         }
     }//GEN-LAST:event__bt_registration_lecture_personalInformation_previewActionPerformed
@@ -1011,22 +1011,63 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__rb_registration_lecture_information_form_maleMouseClicked
 
     private void _tf_registration_lecture_information_form_nicKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_nicKeyTyped
+//        try {
+//
+//            char c = evt.getKeyChar();
+//
+//            if (_tf_registration_lecture_information_form_nic.getText().length() == 9) {
+//                if (_tf_registration_lecture_information_form_nic.getText().length() == 10) {
+//                    evt.consume();
+//                } else if (Character.isDigit(c) | !((c == 'v') || (c == 'x'))) {
+//                    evt.consume();
+//                }
+//
+//            } else {
+//                if (Character.isLetter(c)) {
+//                    evt.consume();
+//                }
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
         try {
 
             char c = evt.getKeyChar();
+            System.out.println(String.valueOf(c));
+            System.out.println(_tf_registration_lecture_information_form_nic.getText().length());
+            if (_tf_registration_lecture_information_form_nic.getText().length() < 10) {
+                System.out.println("ooooooooo");
+                if (Character.isDigit(c)) {
+                    System.out.println("ok1");
+                    if (Character.isLetter(c)) {
+                        System.out.println("ok2");
+                        evt.consume();
+                    }
 
-            if (_tf_registration_lecture_information_form_nic.getText().length() == 9) {
-                if (_tf_registration_lecture_information_form_nic.getText().length() == 10) {
-                    evt.consume();
-                } else if (Character.isDigit(c) | !((c == 'v') || (c == 'x'))) {
-                    evt.consume();
-                }
-
-            } else {
-                if (Character.isLetter(c)) {
-                    evt.consume();
                 }
             }
+            if (_tf_registration_lecture_information_form_nic.getText().length() == 10) {
+                System.out.println("ok4");
+                if (!((c == 'v') || (c == 'x')) || !Character.isDigit(c)) {
+                    evt.consume();
+                } else {
+                    if (Character.isDigit(c)) {
+
+                    }
+                }
+            }
+            if (_tf_registration_lecture_information_form_nic.getText().length() == 12) {
+                System.out.println("ok3");
+                evt.consume();
+            }
+//            } else {
+//                if (Character.isLetter(c)) {
+//                    System.out.println("ok5");
+//                    evt.consume();
+//                }
+//            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -1046,6 +1087,11 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         if (!(Character.isLetter(c)) && !(Character.isSpaceChar(c))) {
             evt.consume();
         }
+
+        if (100 <= _tf_registration_lecture_information_form_last_name.getText().length()) {
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
     }//GEN-LAST:event__tf_registration_lecture_information_form_last_nameKeyTyped
 
     private void _tf_registration_lecture_information_form_last_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_last_nameKeyReleased
@@ -1061,6 +1107,11 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         if (!(Character.isLetter(c)) && !(Character.isSpaceChar(c))) {
             evt.consume();
         }
+        if (100 <= _tf_registration_lecture_information_form_first_name.getText().length()) {
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+
     }//GEN-LAST:event__tf_registration_lecture_information_form_first_nameKeyTyped
 
     private void _tf_registration_lecture_information_form_first_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_information_form_first_nameKeyReleased
@@ -1075,6 +1126,10 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         char c = evt.getKeyChar();
         if (!(Character.isLetter(c)) && !(Character.isSpaceChar(c))) {
             evt.consume();
+        }
+        if (100 <= _tf_registration_lecture_information_form_sur_name.getText().length()) {
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
         }
     }//GEN-LAST:event__tf_registration_lecture_information_form_sur_nameKeyTyped
 
@@ -1174,7 +1229,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__tf_registration_lecture_personalInformation_browsePhoto_browseFileActionPerformed
 
     private void Open_CameraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open_CameraActionPerformed
-        
+
         try {
             Thread webcam = new Thread() {
                 public void run() {
@@ -1393,7 +1448,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
 
         try {
             try {
-                
+
                 Date d = _dc_registration_lecture_information_form_dob.getDate();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String date = sdf.format(d);
@@ -1456,7 +1511,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
     }
 
     private void generate_lecture_id() {
-        
+
         String id = "ID";
         String lc = "LE";
 
@@ -1468,7 +1523,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         String a = Integer.toString(id_no);
         int length = a.length();
         System.out.println(length);
-        
+
         String idn = Integer.toString(id_no);
         String zeros;
         if (length == 1) {
@@ -1484,14 +1539,14 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
         } else {
             zeros = "";
         }
-        
+
         if (_rb_registration_lecture_information_form_colombo.isSelected()) {
             branch_name = "COL";
         } else {
             branch_name = "KAN";
         }
 
-        lecture_id = id + "-" + lc + "-" +branch_name+"-"+ zeros + id_no;
+        lecture_id = id + "-" + lc + "-" + branch_name + "-" + zeros + id_no;
         _lb_registration_lecture_preview_lectureID.setText(lecture_id);
 
     }
@@ -1552,7 +1607,7 @@ public class Jp_registration_lecture_informations extends javax.swing.JPanel {
                             String email1 = _tf_registration_lecture_information_form_email.getText();
                             Boolean result = email1.matches(EMAIL_REGEX);
                             if (result) {
-                                
+
                                 add_to_preview_form();
                             } else {
                                 JOptionPane.showMessageDialog(this, "Please Enter Valid Email.", "WARNING!", JOptionPane.WARNING_MESSAGE);

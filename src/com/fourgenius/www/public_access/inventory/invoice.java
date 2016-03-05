@@ -95,6 +95,9 @@ public class invoice extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bal.setEditable(false);
+        bal.setMaximumSize(new java.awt.Dimension(308, 20));
+        bal.setMinimumSize(new java.awt.Dimension(308, 20));
+        bal.setPreferredSize(new java.awt.Dimension(308, 20));
         bal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 balActionPerformed(evt);
@@ -102,6 +105,9 @@ public class invoice extends javax.swing.JPanel {
         });
         add(bal, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 569, 308, -1));
 
+        Dis.setMaximumSize(new java.awt.Dimension(210, 20));
+        Dis.setMinimumSize(new java.awt.Dimension(210, 20));
+        Dis.setPreferredSize(new java.awt.Dimension(210, 20));
         Dis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DisActionPerformed(evt);
@@ -114,6 +120,9 @@ public class invoice extends javax.swing.JPanel {
         });
         add(Dis, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 485, 210, -1));
 
+        pay.setMaximumSize(new java.awt.Dimension(210, 20));
+        pay.setMinimumSize(new java.awt.Dimension(210, 20));
+        pay.setPreferredSize(new java.awt.Dimension(210, 20));
         pay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 payActionPerformed(evt);
@@ -159,6 +168,9 @@ public class invoice extends javax.swing.JPanel {
 
         jPanel3.add(SinvoiceId, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 150, 80));
 
+        sInvoiceIdSearch.setMaximumSize(new java.awt.Dimension(230, 20));
+        sInvoiceIdSearch.setMinimumSize(new java.awt.Dimension(230, 20));
+        sInvoiceIdSearch.setPreferredSize(new java.awt.Dimension(230, 20));
         sInvoiceIdSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 sInvoiceIdSearchKeyReleased(evt);
@@ -208,6 +220,9 @@ public class invoice extends javax.swing.JPanel {
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 481, -1, -1));
 
         customerId.setEditable(false);
+        customerId.setMaximumSize(new java.awt.Dimension(150, 20));
+        customerId.setMinimumSize(new java.awt.Dimension(150, 20));
+        customerId.setPreferredSize(new java.awt.Dimension(150, 20));
         add(customerId, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 41, 150, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -241,8 +256,14 @@ public class invoice extends javax.swing.JPanel {
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 523, -1, -1));
 
         lb_date_view.setEditable(false);
+        lb_date_view.setMaximumSize(new java.awt.Dimension(260, 20));
+        lb_date_view.setMinimumSize(new java.awt.Dimension(260, 20));
+        lb_date_view.setPreferredSize(new java.awt.Dimension(260, 20));
         add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 50, 260, -1));
 
+        customername.setMaximumSize(new java.awt.Dimension(170, 20));
+        customername.setMinimumSize(new java.awt.Dimension(170, 20));
+        customername.setPreferredSize(new java.awt.Dimension(170, 20));
         customername.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 customernameFocusLost(evt);
@@ -283,9 +304,15 @@ public class invoice extends javax.swing.JPanel {
         add(customerNameSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 66, 120, 50));
 
         id.setEditable(false);
+        id.setMaximumSize(new java.awt.Dimension(170, 20));
+        id.setMinimumSize(new java.awt.Dimension(170, 20));
+        id.setPreferredSize(new java.awt.Dimension(170, 20));
         add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 86, 170, -1));
 
         net.setEditable(false);
+        net.setMaximumSize(new java.awt.Dimension(308, 20));
+        net.setMinimumSize(new java.awt.Dimension(308, 20));
+        net.setPreferredSize(new java.awt.Dimension(308, 20));
         add(net, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 527, 308, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -294,9 +321,15 @@ public class invoice extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(946, 88, -1, -1));
 
         sub.setEditable(false);
+        sub.setMaximumSize(new java.awt.Dimension(308, 20));
+        sub.setMinimumSize(new java.awt.Dimension(308, 20));
+        sub.setPreferredSize(new java.awt.Dimension(308, 20));
         add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 485, 308, -1));
 
         lb_time_date.setEditable(false);
+        lb_time_date.setMaximumSize(new java.awt.Dimension(260, 20));
+        lb_time_date.setMinimumSize(new java.awt.Dimension(260, 20));
+        lb_time_date.setPreferredSize(new java.awt.Dimension(260, 20));
         add(lb_time_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(1081, 92, 259, -1));
 
         jPanel1.setBackground(new java.awt.Color(2, 119, 189));
@@ -309,6 +342,9 @@ public class invoice extends javax.swing.JPanel {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 30, -1, -1));
 
         code.setEditable(false);
+        code.setMaximumSize(new java.awt.Dimension(319, 20));
+        code.setMinimumSize(new java.awt.Dimension(319, 20));
+        code.setPreferredSize(new java.awt.Dimension(319, 20));
         code.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 codeActionPerformed(evt);
@@ -321,6 +357,9 @@ public class invoice extends javax.swing.JPanel {
         });
         jPanel1.add(code, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 53, 319, -1));
 
+        description.setMaximumSize(new java.awt.Dimension(493, 20));
+        description.setMinimumSize(new java.awt.Dimension(493, 20));
+        description.setPreferredSize(new java.awt.Dimension(493, 20));
         description.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 descriptionActionPerformed(evt);
@@ -338,6 +377,9 @@ public class invoice extends javax.swing.JPanel {
         jLabel7.setText("Price");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(944, 30, -1, -1));
 
+        price.setMaximumSize(new java.awt.Dimension(156, 20));
+        price.setMinimumSize(new java.awt.Dimension(156, 20));
+        price.setPreferredSize(new java.awt.Dimension(156, 20));
         price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 priceActionPerformed(evt);

@@ -1,8 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Atendence" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6ed3114-5924-41c1-a92d-d39fd283aed9">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.zoom" value="3.4522712143931047"/>
+	<property name="ireport.x" value="21"/>
+	<property name="ireport.y" value="243"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="New Dataset 1" uuid="ee92754a-3bd5-48a7-86c0-38a8da3c1ef8">
+		<parameter name="course" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT
+     atendence.`student_id` AS atendence_student_id,
+     atendence.`student_nic` AS atendence_student_nic,
+     atendence.`student_name` AS atendence_student_name,
+     atendence.`status` AS atendence_status
+FROM
+     `atendence` atendence
+where course=$P{course}]]>
+		</queryString>
+		<field name="atendence_student_id" class="java.lang.String"/>
+		<field name="atendence_student_nic" class="java.lang.String"/>
+		<field name="atendence_student_name" class="java.lang.String"/>
+		<field name="atendence_status" class="java.lang.String"/>
+		<group name="atendence_student_id">
+			<groupExpression><![CDATA[$F{atendence_student_id}]]></groupExpression>
+		</group>
+		<group name="atendence_student_nic">
+			<groupExpression><![CDATA[$F{atendence_student_nic}]]></groupExpression>
+		</group>
+		<group name="atendence_student_name">
+			<groupExpression><![CDATA[$F{atendence_student_name}]]></groupExpression>
+		</group>
+		<group name="atendence_status">
+			<groupExpression><![CDATA[$F{atendence_status}]]></groupExpression>
+		</group>
+	</subDataset>
 	<parameter name="course" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT student_id,student_nic, student_name,status FROM atendence where course=$P{course}]]>
@@ -41,67 +111,106 @@
 		</band>
 	</title>
 	<columnHeader>
-		<band height="21" splitType="Stretch">
+		<band height="23">
 			<staticText>
-				<reportElement x="0" y="0" width="138" height="20" uuid="2fc01db8-eb7e-4b70-85b6-1f1213f76dd3"/>
-				<textElement>
-					<font fontName="Arial" size="12"/>
+				<reportElement x="0" y="2" width="102" height="20" uuid="e58a1b4c-795d-4acc-8220-b8b952ae238d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[student_id]]></text>
+				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="138" y="0" width="138" height="20" uuid="e3cfb249-32ee-49b7-a5e6-8874213bbad3"/>
-				<textElement>
-					<font fontName="Arial" size="12"/>
+				<reportElement x="102" y="2" width="138" height="20" uuid="1ec5d650-7adc-4ac5-8041-77c5912d102e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[student_nic]]></text>
+				<text><![CDATA[NIC]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="276" y="0" width="138" height="20" uuid="2d4b25f2-e19d-4f5d-bd0b-d26fa0682055"/>
-				<textElement>
-					<font fontName="Arial" size="12"/>
+				<reportElement x="240" y="2" width="197" height="20" uuid="79eba333-ec88-444e-b058-75e4f1ec597e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[student_name]]></text>
+				<text><![CDATA[Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="414" y="0" width="138" height="20" uuid="84631501-28fa-44ea-8246-66ae5c4f5796"/>
-				<textElement>
-					<font fontName="Arial" size="12"/>
+				<reportElement x="437" y="2" width="118" height="20" uuid="42337474-bf92-4bd5-92e5-cc0834155b5c"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[status]]></text>
+				<text><![CDATA[Participation]]></text>
 			</staticText>
+			<line>
+				<reportElement x="1" y="22" width="553" height="1" uuid="c6533015-6763-4d6e-9f6d-daae6288b2fe"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="c7b74c00-d63e-4fd9-9e03-5956210f04eb"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="23" uuid="f2876e86-415a-432e-ad8c-73dd90273451"/>
+			</line>
+			<line>
+				<reportElement x="102" y="0" width="1" height="23" uuid="4d75f59e-19e8-49f4-97ec-7594e056fea9"/>
+			</line>
+			<line>
+				<reportElement x="240" y="0" width="1" height="23" uuid="f79b0293-61ed-4455-b4ca-a235aae6e187"/>
+			</line>
+			<line>
+				<reportElement x="437" y="0" width="1" height="23" uuid="8169ae33-3694-4a7e-8c34-2d5a0391d9f9"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="23" uuid="61160893-3030-496c-8606-f2b26e36cd1f"/>
+			</line>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="166" splitType="Stretch">
+		<band height="22">
 			<textField>
-				<reportElement x="0" y="0" width="138" height="20" uuid="0f089684-1a8e-4af9-81ae-453dd3169097"/>
+				<reportElement x="1" y="0" width="101" height="20" uuid="5fb591bd-d20d-4dde-8055-c3c1e2eeaa35"/>
 				<textElement>
-					<font fontName="Arial" size="12"/>
+					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{student_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="138" y="0" width="138" height="20" uuid="30deb627-492c-4223-a3e9-46821d7d5b18"/>
+				<reportElement x="103" y="0" width="137" height="20" uuid="08ee7e9d-2037-4adf-967e-5ce0bfe9a7a5"/>
 				<textElement>
-					<font fontName="Arial" size="12"/>
+					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{student_nic}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="276" y="0" width="138" height="20" uuid="7e280198-21f9-449d-b7bf-c502f7ae58f3"/>
+				<reportElement x="241" y="0" width="196" height="20" uuid="2977aa54-0f1f-4e33-ade6-df61d591b27a"/>
 				<textElement>
-					<font fontName="Arial" size="12"/>
+					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{student_name}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="414" y="0" width="138" height="20" uuid="65577ba2-ad7c-4d27-8c0b-f317cc3bfbb3"/>
+				<reportElement x="438" y="0" width="117" height="20" uuid="9734dc52-762c-4fbd-85d2-612b8fe2ed9e"/>
 				<textElement>
-					<font fontName="Arial" size="12"/>
+					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
 			</textField>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="dbb800e1-17ec-4e3b-adfb-99488b340afa"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="21" uuid="9f9c8aa2-1c27-44ec-9cee-3890dc22522d"/>
+			</line>
+			<line>
+				<reportElement x="102" y="-1" width="1" height="21" uuid="671bb72b-5b05-4f58-b06b-0cf4fce42940"/>
+			</line>
+			<line>
+				<reportElement x="240" y="-1" width="1" height="21" uuid="1e656a1d-052b-44de-82a1-41f1034537d4"/>
+			</line>
+			<line>
+				<reportElement x="437" y="-1" width="1" height="21" uuid="a9b1dbc3-7c6c-487c-a7df-39f005fea29e"/>
+			</line>
+			<line>
+				<reportElement x="554" y="-1" width="1" height="21" uuid="4607ddd4-cf7d-4102-9e6d-256e735f9f1d"/>
+			</line>
 		</band>
 	</detail>
 </jasperReport>

@@ -9,6 +9,7 @@ import com.fourgenius.www.public_access.inventory.Suplier;
 import com.fourgenius.www.public_access.inventory.customer;
 import com.fourgenius.www.public_access.inventory.grn;
 import com.fourgenius.www.public_access.inventory.invoice;
+import com.fourgenius.www.public_access.inventory.stock;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import com.fourgenius.www.user_FrontEnd.Jf_UserFront;
 import java.awt.Color;
@@ -72,6 +73,7 @@ public class Inventory_home extends javax.swing.JFrame {
         grn = new javax.swing.JButton();
         invoice = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        stock = new javax.swing.JButton();
         base = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Dis = new javax.swing.JLabel();
@@ -92,7 +94,7 @@ public class Inventory_home extends javax.swing.JFrame {
 
         home.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         home.setForeground(new java.awt.Color(255, 255, 255));
-        home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_150x50.png"))); // NOI18N
         home.setText("Home");
         home.setBorderPainted(false);
         home.setContentAreaFilled(false);
@@ -115,7 +117,7 @@ public class Inventory_home extends javax.swing.JFrame {
 
         customer.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         customer.setForeground(new java.awt.Color(255, 255, 255));
-        customer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        customer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_150x50.png"))); // NOI18N
         customer.setText("Customer");
         customer.setBorderPainted(false);
         customer.setContentAreaFilled(false);
@@ -133,7 +135,7 @@ public class Inventory_home extends javax.swing.JFrame {
 
         suplier.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         suplier.setForeground(new java.awt.Color(255, 255, 255));
-        suplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        suplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_150x50.png"))); // NOI18N
         suplier.setText("Suplier");
         suplier.setBorderPainted(false);
         suplier.setContentAreaFilled(false);
@@ -151,7 +153,7 @@ public class Inventory_home extends javax.swing.JFrame {
 
         grn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         grn.setForeground(new java.awt.Color(255, 255, 255));
-        grn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        grn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_150x50.png"))); // NOI18N
         grn.setText("GRN");
         grn.setBorderPainted(false);
         grn.setContentAreaFilled(false);
@@ -169,7 +171,7 @@ public class Inventory_home extends javax.swing.JFrame {
 
         invoice.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         invoice.setForeground(new java.awt.Color(255, 255, 255));
-        invoice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        invoice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_150x50.png"))); // NOI18N
         invoice.setText("Invoice");
         invoice.setBorderPainted(false);
         invoice.setContentAreaFilled(false);
@@ -196,22 +198,42 @@ public class Inventory_home extends javax.swing.JFrame {
             }
         });
 
+        stock.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        stock.setForeground(new java.awt.Color(255, 255, 255));
+        stock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_150x50.png"))); // NOI18N
+        stock.setText("Stock");
+        stock.setBorderPainted(false);
+        stock.setContentAreaFilled(false);
+        stock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        stock.setFocusPainted(false);
+        stock.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        stock.setMaximumSize(new java.awt.Dimension(200, 50));
+        stock.setMinimumSize(new java.awt.Dimension(200, 50));
+        stock.setPreferredSize(new java.awt.Dimension(200, 50));
+        stock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stockActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(suplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(grn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(invoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addContainerGap()
+                .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(customer, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(suplier, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(grn, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(140, 140, 140)
                 .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton5)
@@ -228,7 +250,8 @@ public class Inventory_home extends javax.swing.JFrame {
                             .addComponent(customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(suplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(grn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(invoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(invoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -431,6 +454,36 @@ Jf_user_login jf_user_login = new Jf_user_login();
        home.setBorder(border);
     }//GEN-LAST:event_homeMouseEntered
 
+    private void stockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockActionPerformed
+        
+                customer.setSelected(false);
+        suplier.setSelected(false);
+        invoice.setSelected(true);
+        grn.setSelected(false);
+      
+        Dis.setVisible(true);
+        addp.setVisible(true);
+        removeSelectedItem.setVisible(true);
+        Payments.setVisible(true);
+
+        base.removeAll();
+
+        base.removeAll();
+        GroupLayout layout = new GroupLayout(base);
+
+        base.setLayout(layout);
+
+        stock st=new stock();
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(st, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(st, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        st.id.grabFocus();
+        System.gc();
+        
+    }//GEN-LAST:event_stockActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -486,6 +539,7 @@ Jf_user_login jf_user_login = new Jf_user_login();
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel removeSelectedItem;
+    private javax.swing.JButton stock;
     private javax.swing.JButton suplier;
     public static javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables

@@ -100,6 +100,9 @@ public class grn extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bal.setEditable(false);
+        bal.setMaximumSize(new java.awt.Dimension(308, 20));
+        bal.setMinimumSize(new java.awt.Dimension(308, 20));
+        bal.setPreferredSize(new java.awt.Dimension(308, 20));
         bal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 balActionPerformed(evt);
@@ -107,6 +110,9 @@ public class grn extends javax.swing.JPanel {
         });
         add(bal, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 553, 308, -1));
 
+        Dis.setMaximumSize(new java.awt.Dimension(210, 20));
+        Dis.setMinimumSize(new java.awt.Dimension(210, 20));
+        Dis.setPreferredSize(new java.awt.Dimension(210, 20));
         Dis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DisActionPerformed(evt);
@@ -119,6 +125,9 @@ public class grn extends javax.swing.JPanel {
         });
         add(Dis, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 469, 210, -1));
 
+        pay.setMaximumSize(new java.awt.Dimension(210, 20));
+        pay.setMinimumSize(new java.awt.Dimension(210, 20));
+        pay.setPreferredSize(new java.awt.Dimension(210, 20));
         pay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 payActionPerformed(evt);
@@ -164,6 +173,9 @@ public class grn extends javax.swing.JPanel {
 
         jPanel3.add(SGrnId, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 150, 80));
 
+        sGgrnIdSearch.setMaximumSize(new java.awt.Dimension(230, 20));
+        sGgrnIdSearch.setMinimumSize(new java.awt.Dimension(230, 20));
+        sGgrnIdSearch.setPreferredSize(new java.awt.Dimension(230, 20));
         sGgrnIdSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 sGgrnIdSearchKeyReleased(evt);
@@ -250,6 +262,9 @@ public class grn extends javax.swing.JPanel {
         lb_date_view.setEditable(false);
         add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1063, 34, 260, -1));
 
+        supliername.setMaximumSize(new java.awt.Dimension(170, 20));
+        supliername.setMinimumSize(new java.awt.Dimension(170, 20));
+        supliername.setPreferredSize(new java.awt.Dimension(170, 20));
         supliername.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 supliernameFocusLost(evt);
@@ -288,9 +303,16 @@ public class grn extends javax.swing.JPanel {
         suplierNameSearch.setViewportView(SuplierNameSearch);
 
         add(suplierNameSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 120, 50));
+
+        id.setMaximumSize(new java.awt.Dimension(170, 20));
+        id.setMinimumSize(new java.awt.Dimension(170, 20));
+        id.setPreferredSize(new java.awt.Dimension(170, 20));
         add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 170, -1));
 
         net.setEditable(false);
+        net.setMaximumSize(new java.awt.Dimension(308, 20));
+        net.setMinimumSize(new java.awt.Dimension(308, 20));
+        net.setPreferredSize(new java.awt.Dimension(308, 20));
         add(net, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 511, 308, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -299,6 +321,9 @@ public class grn extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(929, 72, -1, -1));
 
         sub.setEditable(false);
+        sub.setMaximumSize(new java.awt.Dimension(308, 20));
+        sub.setMinimumSize(new java.awt.Dimension(308, 20));
+        sub.setPreferredSize(new java.awt.Dimension(308, 20));
         add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 469, 308, -1));
 
         lb_time_date.setEditable(false);
@@ -311,6 +336,9 @@ public class grn extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Item No");
 
+        itemNo.setMaximumSize(new java.awt.Dimension(171, 20));
+        itemNo.setMinimumSize(new java.awt.Dimension(171, 20));
+        itemNo.setPreferredSize(new java.awt.Dimension(171, 20));
         itemNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemNoActionPerformed(evt);
@@ -322,6 +350,9 @@ public class grn extends javax.swing.JPanel {
             }
         });
 
+        ItemName.setMaximumSize(new java.awt.Dimension(483, 20));
+        ItemName.setMinimumSize(new java.awt.Dimension(483, 20));
+        ItemName.setPreferredSize(new java.awt.Dimension(483, 20));
         ItemName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ItemNameActionPerformed(evt);
@@ -332,6 +363,9 @@ public class grn extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Price");
 
+        price.setMaximumSize(new java.awt.Dimension(156, 20));
+        price.setMinimumSize(new java.awt.Dimension(156, 20));
+        price.setPreferredSize(new java.awt.Dimension(156, 20));
         price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 priceActionPerformed(evt);
@@ -350,6 +384,9 @@ public class grn extends javax.swing.JPanel {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("QTY");
 
+        qty.setMaximumSize(new java.awt.Dimension(168, 20));
+        qty.setMinimumSize(new java.awt.Dimension(168, 20));
+        qty.setPreferredSize(new java.awt.Dimension(168, 20));
         qty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 qtyActionPerformed(evt);
@@ -698,14 +735,14 @@ public class grn extends javax.swing.JPanel {
     private void balActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balActionPerformed
         try {
             DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
-            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_grn values('" + id.getText() + "','" + lb_date_view.getText() + "','" + sub.getText() + "','" + lb_time_date.getText() + "','" + Dis.getText() + "','" + net.getText() + "','" + supliername.getText() + "','" + suplierId.getText() + "','" + bal.getText() + "','" + pay.getText() + "')");
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_grn(id,date,total,time,discount,nettot,supliername,suplierid,bal,payment) values('" + id.getText() + "','" + lb_date_view.getText() + "','" + sub.getText() + "','" + lb_time_date.getText() + "','" + Dis.getText() + "','" + net.getText() + "','" + supliername.getText() + "','" + suplierId.getText() + "','" + bal.getText() + "','" + pay.getText() + "')");
             String grnId = id.getText();
             for (int i = 0; i < dtm.getRowCount(); i++) {
 
                 ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from inv_stock where itemid='" + dtm.getValueAt(i, 0) + "'");
 //                if (rs.next()) {
 
-                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set qty=qty+'" + dtm.getValueAt(i, 5) + "' where itemid='" + dtm.getValueAt(i, 0) + "'");
+                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set qty=qty+'" + dtm.getValueAt(i, 3) + "' where itemid='" + dtm.getValueAt(i, 0) + "'");
 //                    DB.idu("update stock set qty=qty+'" + dtm.getValueAt(i, 5) + "' where itemid='" + dtm.getValueAt(i, 0) + "'");
 //                } else {
                 System.out.println("else");

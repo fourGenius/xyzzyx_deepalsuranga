@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ramani_rep1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2fea2f61-c4a2-43cc-b881-555e541ce4d2">
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     stu_info_address.`idstu_info_address` AS stu_info_address_idstu_info_address,
+     stu_info_address.`stu_user_info_id` AS stu_info_address_stu_user_info_id,
+     stu_info_address.`stu_info_address_lane1` AS stu_info_address_stu_info_address_lane1,
+     stu_info_address.`stu_info_address_city` AS stu_info_address_stu_info_address_city,
+     stu_info_address.`stu_info_address_cuntry` AS stu_info_address_stu_info_address_cuntry,
+     stu_info_contact.`idstu_info_telephone` AS stu_info_contact_idstu_info_telephone,
+     stu_info_contact.`stu_user_info_id` AS stu_info_contact_stu_user_info_id,
+     stu_info_contact.`stu_info_telephone_mobile` AS stu_info_contact_stu_info_telephone_mobile,
+     stu_info_contact.`stu_info_telephone_land` AS stu_info_contact_stu_info_telephone_land,
+     stu_info_contact.`stu_info_contact_email` AS stu_info_contact_stu_info_contact_email,
+     stu_info_name.`idstu_info_name` AS stu_info_name_idstu_info_name,
+     stu_info_name.`stu_user_info_id` AS stu_info_name_stu_user_info_id,
+     stu_info_name.`stu_info_name_sirName` AS stu_info_name_stu_info_name_sirName,
+     stu_info_name.`stu_info_name_first_name` AS stu_info_name_stu_info_name_first_name,
+     stu_info_name.`stu_info_name_last_name` AS stu_info_name_stu_info_name_last_name,
+     stu_info_personal.`idstu_info_personal` AS stu_info_personal_idstu_info_personal,
+     stu_info_personal.`stu_user_info_id` AS stu_info_personal_stu_user_info_id,
+     stu_info_personal.`stu_info_personal_profile_image` AS stu_info_personal_stu_info_personal_profile_image,
+     stu_info_personal.`stu_info_personal_nic` AS stu_info_personal_stu_info_personal_nic,
+     stu_info_personal.`stu_info_personal_dob` AS stu_info_personal_stu_info_personal_dob,
+     stu_info_personal.`stu_info_personal_branch` AS stu_info_personal_stu_info_personal_branch,
+     stu_info_personal.`stu_info_personal_gender` AS stu_info_personal_stu_info_personal_gender,
+     stu_info_personal.`stu_info_personal_course` AS stu_info_personal_stu_info_personal_course,
+     stu_user_info.`idstu_user_info` AS stu_user_info_idstu_user_info,
+     stu_user_info.`stu_user_info_id` AS stu_user_info_stu_user_info_id,
+     stu_user_info.`stu_user_info_email` AS stu_user_info_stu_user_info_email,
+     stu_user_info.`stu_user_info_password` AS stu_user_info_stu_user_info_password,
+     stu_user_info.`stu_user_info_status` AS stu_user_info_stu_user_info_status,
+     stu_user_status.`idstu_user_status` AS stu_user_status_idstu_user_status,
+     stu_user_status.`stu_user_status_code` AS stu_user_status_stu_user_status_code,
+     stu_user_status.`stu_user_status_name` AS stu_user_status_stu_user_status_name,
+     stu_user_status.`stu_user_info_id` AS stu_user_status_stu_user_info_id,
+     student_payment.`idstudent_payment` AS student_payment_idstudent_payment,
+     student_payment.`date` AS student_payment_date,
+     student_payment.`student_id` AS student_payment_student_id,
+     student_payment.`student_name` AS student_payment_student_name,
+     student_payment.`course` AS student_payment_course,
+     student_payment.`course_fee` AS student_payment_course_fee,
+     student_payment.`payment` AS student_payment_payment,
+     student_payment.`due_payment` AS student_payment_due_payment,
+     student_payment.`status` AS student_payment_status,
+     stu_exams_info.`idstu_exams_info` AS stu_exams_info_idstu_exams_info,
+     stu_exams_info.`stu_user_info_id` AS stu_exams_info_stu_user_info_id,
+     stu_exams_info.`stu_exams_info_id` AS stu_exams_info_stu_exams_info_id,
+     stu_exams_info.`stu_exams_info_name` AS stu_exams_info_stu_exams_info_name,
+     stu_exam_result_type.`idstu_exam_result_type` AS stu_exam_result_type_idstu_exam_result_type,
+     stu_exam_result_type.`stu_user_info_id` AS stu_exam_result_type_stu_user_info_id,
+     stu_exam_result_type.`stu_exam_result_type_id` AS stu_exam_result_type_stu_exam_result_type_id,
+     stu_exam_result_theory.`idstu_exam_result_theory` AS stu_exam_result_theory_idstu_exam_result_theory,
+     stu_exam_result_theory.`stu_exam_result_theory_id` AS stu_exam_result_theory_stu_exam_result_theory_id,
+     stu_exam_result_theory.`stu_user_info_id` AS stu_exam_result_theory_stu_user_info_id,
+     stu_exam_result_theory.`stu_exam_result_theory_name` AS stu_exam_result_theory_stu_exam_result_theory_name,
+     stu_exam_result_theory.`stu_exam_result_theory_mark` AS stu_exam_result_theory_stu_exam_result_theory_mark,
+     stu_exam_result_practical.`idstu_exam_result_practical` AS stu_exam_result_practical_idstu_exam_result_practical,
+     stu_exam_result_practical.`stu_exam_result_practical_id` AS stu_exam_result_practical_stu_exam_result_practical_id,
+     stu_exam_result_practical.`stu_user_info_id` AS stu_exam_result_practical_stu_user_info_id,
+     stu_exam_result_practical.`stu_exam_result_practical_name` AS stu_exam_result_practical_stu_exam_result_practical_name,
+     stu_exam_result_practical.`stu_exam_result_practical_mark` AS stu_exam_result_practical_stu_exam_result_practical_mark,
+     stu_exam_courses_info.`idstu_exam_courses_info` AS stu_exam_courses_info_idstu_exam_courses_info,
+     stu_exam_courses_info.`stu_exam_courses_info_id` AS stu_exam_courses_info_stu_exam_courses_info_id,
+     stu_exam_courses_info.`stu_exam_courses_info_name` AS stu_exam_courses_info_stu_exam_courses_info_name
+FROM
+     `stu_info_address` stu_info_address,
+     `stu_info_contact` stu_info_contact,
+     `stu_info_name` stu_info_name,
+     `stu_info_personal` stu_info_personal,
+     `stu_user_info` stu_user_info,
+     `stu_user_status` stu_user_status,
+     `student_payment` student_payment,
+     `stu_exams_info` stu_exams_info,
+     `stu_exam_result_type` stu_exam_result_type,
+     `stu_exam_result_theory` stu_exam_result_theory,
+     `stu_exam_result_practical` stu_exam_result_practical,
+     `stu_exam_courses_info` stu_exam_courses_info where ]]>
+	</queryString>
+	<field name="stu_info_address_idstu_info_address" class="java.lang.Integer"/>
+	<field name="stu_info_address_stu_user_info_id" class="java.lang.String"/>
+	<field name="stu_info_address_stu_info_address_lane1" class="java.lang.String"/>
+	<field name="stu_info_address_stu_info_address_city" class="java.lang.String"/>
+	<field name="stu_info_address_stu_info_address_cuntry" class="java.lang.String"/>
+	<field name="stu_info_contact_idstu_info_telephone" class="java.lang.Integer"/>
+	<field name="stu_info_contact_stu_user_info_id" class="java.lang.String"/>
+	<field name="stu_info_contact_stu_info_telephone_mobile" class="java.lang.String"/>
+	<field name="stu_info_contact_stu_info_telephone_land" class="java.lang.String"/>
+	<field name="stu_info_contact_stu_info_contact_email" class="java.lang.String"/>
+	<field name="stu_info_name_idstu_info_name" class="java.lang.Integer"/>
+	<field name="stu_info_name_stu_user_info_id" class="java.lang.String"/>
+	<field name="stu_info_name_stu_info_name_sirName" class="java.lang.String"/>
+	<field name="stu_info_name_stu_info_name_first_name" class="java.lang.String"/>
+	<field name="stu_info_name_stu_info_name_last_name" class="java.lang.String"/>
+	<field name="stu_info_personal_idstu_info_personal" class="java.lang.Integer"/>
+	<field name="stu_info_personal_stu_user_info_id" class="java.lang.String"/>
+	<field name="stu_info_personal_stu_info_personal_profile_image" class="java.lang.String"/>
+	<field name="stu_info_personal_stu_info_personal_nic" class="java.lang.String"/>
+	<field name="stu_info_personal_stu_info_personal_dob" class="java.sql.Date"/>
+	<field name="stu_info_personal_stu_info_personal_branch" class="java.lang.String"/>
+	<field name="stu_info_personal_stu_info_personal_gender" class="java.lang.String"/>
+	<field name="stu_info_personal_stu_info_personal_course" class="java.lang.String"/>
+	<field name="stu_user_info_idstu_user_info" class="java.lang.Integer"/>
+	<field name="stu_user_info_stu_user_info_id" class="java.lang.String"/>
+	<field name="stu_user_info_stu_user_info_email" class="java.lang.String"/>
+	<field name="stu_user_info_stu_user_info_password" class="java.lang.String"/>
+	<field name="stu_user_info_stu_user_info_status" class="java.lang.String"/>
+	<field name="stu_user_status_idstu_user_status" class="java.lang.Integer"/>
+	<field name="stu_user_status_stu_user_status_code" class="java.lang.Integer"/>
+	<field name="stu_user_status_stu_user_status_name" class="java.lang.String"/>
+	<field name="stu_user_status_stu_user_info_id" class="java.lang.String"/>
+	<field name="student_payment_idstudent_payment" class="java.lang.Long"/>
+	<field name="student_payment_date" class="java.lang.String"/>
+	<field name="student_payment_student_id" class="java.lang.String"/>
+	<field name="student_payment_student_name" class="java.lang.String"/>
+	<field name="student_payment_course" class="java.lang.String"/>
+	<field name="student_payment_course_fee" class="java.lang.Double"/>
+	<field name="student_payment_payment" class="java.lang.Double"/>
+	<field name="student_payment_due_payment" class="java.lang.Double"/>
+	<field name="student_payment_status" class="java.lang.String"/>
+	<field name="stu_exams_info_idstu_exams_info" class="java.lang.Integer"/>
+	<field name="stu_exams_info_stu_user_info_id" class="java.lang.String"/>
+	<field name="stu_exams_info_stu_exams_info_id" class="java.lang.String"/>
+	<field name="stu_exams_info_stu_exams_info_name" class="java.lang.String"/>
+	<field name="stu_exam_result_type_idstu_exam_result_type" class="java.lang.Integer"/>
+	<field name="stu_exam_result_type_stu_user_info_id" class="java.lang.String"/>
+	<field name="stu_exam_result_type_stu_exam_result_type_id" class="java.lang.String"/>
+	<field name="stu_exam_result_theory_idstu_exam_result_theory" class="java.lang.Integer"/>
+	<field name="stu_exam_result_theory_stu_exam_result_theory_id" class="java.lang.String"/>
+	<field name="stu_exam_result_theory_stu_user_info_id" class="java.lang.String"/>
+	<field name="stu_exam_result_theory_stu_exam_result_theory_name" class="java.lang.String"/>
+	<field name="stu_exam_result_theory_stu_exam_result_theory_mark" class="java.lang.Double"/>
+	<field name="stu_exam_result_practical_idstu_exam_result_practical" class="java.lang.Integer"/>
+	<field name="stu_exam_result_practical_stu_exam_result_practical_id" class="java.lang.String"/>
+	<field name="stu_exam_result_practical_stu_user_info_id" class="java.lang.String"/>
+	<field name="stu_exam_result_practical_stu_exam_result_practical_name" class="java.lang.String"/>
+	<field name="stu_exam_result_practical_stu_exam_result_practical_mark" class="java.lang.Double"/>
+	<field name="stu_exam_courses_info_idstu_exam_courses_info" class="java.lang.Integer"/>
+	<field name="stu_exam_courses_info_stu_exam_courses_info_id" class="java.lang.String"/>
+	<field name="stu_exam_courses_info_stu_exam_courses_info_name" class="java.lang.String"/>
+	<group name="stu_info_name_idstu_info_name">
+		<groupExpression><![CDATA[$F{stu_info_name_idstu_info_name}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="5d3d288e-2088-4641-8f00-f737fd3cd124"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" isPrintRepeatedValues="false" x="2" y="0" width="479" height="24" forecolor="#FFFFFF" uuid="c1d6838c-3664-4863-b775-11fbef900634"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{stu_info_name_idstu_info_name}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<group name="stu_info_contact_stu_user_info_id">
+		<groupExpression><![CDATA[$F{stu_info_contact_stu_user_info_id}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement positionType="Float" x="0" y="4" width="555" height="26" forecolor="#000000" uuid="0205a1aa-3c9d-45f3-a35a-abdbac04f029"/>
+					<textElement>
+						<font fontName="Times New Roman" size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_contact_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="stu_info_contact_stu_info_contact_email">
+		<groupExpression><![CDATA[$F{stu_info_contact_stu_info_contact_email}]]></groupExpression>
+	</group>
+	<group name="stu_info_name_stu_info_name_first_name">
+		<groupExpression><![CDATA[$F{stu_info_name_stu_info_name_first_name}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="456" y="0" width="99" height="132" uuid="6b24e200-3bc2-4c4f-8b7f-a92d7ad39475"/>
+				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="c14437b4-7348-48ba-9470-6152daa7618f"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="dabd9695-8391-4338-9922-1053a9a23c14"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry Title]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="e2b018dd-8aca-4bfe-a818-e55962de0879"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry SubTitle]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="3ad98e2c-e930-4edf-bf90-32e73d9b2e15"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="e9af9f95-4be0-4d47-a39c-caf0200627bc"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="9" height="18" forecolor="#000000" uuid="00bd3804-df46-40a4-b6e0-dee42bdfeed0"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_address_idstu_info_address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="9" y="7" width="9" height="18" forecolor="#000000" uuid="bf95080b-c2da-4345-a34e-7ca9b962dbc4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_address_stu_user_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="18" y="7" width="9" height="18" forecolor="#000000" uuid="236a69b6-2fa2-4d94-9459-9aeced8f9848"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_address_stu_info_address_lane1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="27" y="7" width="9" height="18" forecolor="#000000" uuid="8f7e1285-a803-40f8-b6fc-2f2a23fef1c4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_address_stu_info_address_city]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="36" y="7" width="9" height="18" forecolor="#000000" uuid="55f674df-4092-4316-a533-ce3f75dc4c99"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_address_stu_info_address_cuntry]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="45" y="7" width="9" height="18" forecolor="#000000" uuid="91237964-ff66-46c6-a9a7-d563677d3fc6"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_contact_idstu_info_telephone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="54" y="7" width="9" height="18" forecolor="#000000" uuid="72548a91-f951-4241-8251-d3be887f9ede"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_contact_stu_info_telephone_mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="63" y="7" width="9" height="18" forecolor="#000000" uuid="cf532534-df0d-4a73-adb0-a854801fd9dd"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_contact_stu_info_telephone_land]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="72" y="7" width="9" height="18" forecolor="#000000" uuid="18431aea-2be6-43a3-b7b7-b9c0c5c2ae95"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_name_stu_user_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="81" y="7" width="9" height="18" forecolor="#000000" uuid="5cdef169-c02c-4e26-9d5d-cfb90d554725"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_name_stu_info_name_sirName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="90" y="7" width="9" height="18" forecolor="#000000" uuid="a6d5054a-1a0f-4442-ad9d-81177c46c96b"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_name_stu_info_name_last_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="99" y="7" width="9" height="18" forecolor="#000000" uuid="cd5de44a-69ed-4814-9002-ee5f7289b59c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_personal_idstu_info_personal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="108" y="7" width="9" height="18" forecolor="#000000" uuid="ceb7467f-6b52-4e5f-aaf3-6d2cfe89a4d0"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_personal_stu_user_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="117" y="7" width="9" height="18" forecolor="#000000" uuid="2ec5e300-3f0f-45d6-b961-dda3618d194d"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_personal_stu_info_personal_profile_image]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="126" y="7" width="9" height="18" forecolor="#000000" uuid="8194e73c-5fdb-4c8e-a7c1-8c139947ac11"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_personal_stu_info_personal_nic]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="135" y="7" width="9" height="18" forecolor="#000000" uuid="b3e47bc7-ea48-49e4-ae98-8a85945ef0bc"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_personal_stu_info_personal_dob]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="144" y="7" width="9" height="18" forecolor="#000000" uuid="ba510ac4-6f4f-4d9d-9ab4-9f667686c165"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_personal_stu_info_personal_branch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="153" y="7" width="9" height="18" forecolor="#000000" uuid="b4179ed0-972b-497f-8c13-8be2b125b3e5"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_personal_stu_info_personal_gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="162" y="7" width="9" height="18" forecolor="#000000" uuid="5cf21be3-c03d-422e-9614-b631fec443af"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_info_personal_stu_info_personal_course]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="171" y="7" width="9" height="18" forecolor="#000000" uuid="277ff8ab-003a-4647-b8e1-046f7bbc4daa"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_user_info_idstu_user_info]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="180" y="7" width="9" height="18" forecolor="#000000" uuid="9126be9c-84d1-4e11-aeed-b67df413c719"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_user_info_stu_user_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="189" y="7" width="9" height="18" forecolor="#000000" uuid="127edc44-88a3-4bff-b69a-c916907bcbd2"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_user_info_stu_user_info_email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="198" y="7" width="9" height="18" forecolor="#000000" uuid="a17f43f2-b8b6-4368-adb4-39cba9cb7d6e"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_user_info_stu_user_info_password]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="207" y="7" width="9" height="18" forecolor="#000000" uuid="de8a9b4a-6ae0-4c28-a7b7-21f018298f23"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_user_info_stu_user_info_status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="216" y="7" width="9" height="18" forecolor="#000000" uuid="cbdb518e-d000-4e53-b518-50ee2b2b4cc3"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_user_status_idstu_user_status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="225" y="7" width="9" height="18" forecolor="#000000" uuid="90cb962d-c238-46a3-bb79-b209718212dc"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_user_status_stu_user_status_code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="234" y="7" width="9" height="18" forecolor="#000000" uuid="b3ac6bb8-1520-4e73-93fa-c35c84d07877"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_user_status_stu_user_status_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="243" y="7" width="9" height="18" forecolor="#000000" uuid="bdb189c9-d6ab-44f3-b8ed-5b9db76ca132"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_user_status_stu_user_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="252" y="7" width="9" height="18" forecolor="#000000" uuid="a1fd6996-7237-471b-bc86-af638e3c6f9b"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[student_payment_idstudent_payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="261" y="7" width="9" height="18" forecolor="#000000" uuid="3bbc3323-a2a7-4f76-808d-8f55c68bf850"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[student_payment_date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="270" y="7" width="9" height="18" forecolor="#000000" uuid="0fc86a31-6770-41db-8475-55a143632a76"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[student_payment_student_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="279" y="7" width="9" height="18" forecolor="#000000" uuid="737e47ee-bcd1-437b-8855-da79f528c523"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[student_payment_student_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="288" y="7" width="9" height="18" forecolor="#000000" uuid="a8cea737-5b5b-4b80-8981-abbc84515fbe"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[student_payment_course]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="297" y="7" width="9" height="18" forecolor="#000000" uuid="d896f6e5-fd78-4f30-9aff-7dca48cf2510"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[student_payment_course_fee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="306" y="7" width="9" height="18" forecolor="#000000" uuid="1fe531cc-336b-455e-8986-0abadb61a126"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[student_payment_payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="315" y="7" width="9" height="18" forecolor="#000000" uuid="aed725da-edc2-4aba-87f7-57b0c2ba12e8"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[student_payment_due_payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="324" y="7" width="9" height="18" forecolor="#000000" uuid="75f29365-df94-461c-8010-32c33516bf0e"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[student_payment_status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="333" y="7" width="9" height="18" forecolor="#000000" uuid="d024ccd2-3aa4-4870-80e7-de5e9c827001"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exams_info_idstu_exams_info]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="342" y="7" width="9" height="18" forecolor="#000000" uuid="645712dc-c445-45ae-b2f0-8dbdf61ff4f3"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exams_info_stu_user_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="351" y="7" width="9" height="18" forecolor="#000000" uuid="87189181-3b73-456c-b16f-d5c961baa14c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exams_info_stu_exams_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="360" y="7" width="9" height="18" forecolor="#000000" uuid="8201dbbc-c73a-4789-b08d-0c804488064c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exams_info_stu_exams_info_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="369" y="7" width="9" height="18" forecolor="#000000" uuid="e2d138c0-848f-4891-8e40-4f68b8acc95e"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_type_idstu_exam_result_type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="378" y="7" width="9" height="18" forecolor="#000000" uuid="9e6c7c23-f9f2-4fd3-827a-9654e9c4c388"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_type_stu_user_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="387" y="7" width="9" height="18" forecolor="#000000" uuid="ead91640-64e6-4124-beb7-c1705dfa70de"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_type_stu_exam_result_type_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="396" y="7" width="9" height="18" forecolor="#000000" uuid="07d46692-55cb-4c41-8bfa-11357105b920"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_theory_idstu_exam_result_theory]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="405" y="7" width="9" height="18" forecolor="#000000" uuid="996dc45d-9189-4595-af61-60dedcc5a662"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_theory_stu_exam_result_theory_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="7" width="9" height="18" forecolor="#000000" uuid="9ad09bf9-37c7-4d77-a431-fb5b0ced12db"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_theory_stu_user_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="423" y="7" width="9" height="18" forecolor="#000000" uuid="c1859783-13b6-42bc-bcd3-61b4b5a48bcd"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_theory_stu_exam_result_theory_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="432" y="7" width="9" height="18" forecolor="#000000" uuid="82427aed-0dac-4cb4-ac9a-83ca0a808504"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_theory_stu_exam_result_theory_mark]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="441" y="7" width="9" height="18" forecolor="#000000" uuid="a9b3dfa8-5922-4bda-bc2e-ec5deaef0a57"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_practical_idstu_exam_result_practical]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="450" y="7" width="9" height="18" forecolor="#000000" uuid="49a19802-c023-46cd-ab93-4bba6ae2b7a4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_practical_stu_exam_result_practical_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="459" y="7" width="9" height="18" forecolor="#000000" uuid="84d32dfb-6126-48f4-926b-2388ec43cf53"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_practical_stu_user_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="468" y="7" width="9" height="18" forecolor="#000000" uuid="a29e4375-14db-4a87-8dd5-55d72be428bf"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_practical_stu_exam_result_practical_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="477" y="7" width="9" height="18" forecolor="#000000" uuid="9a32cfd4-d6f9-4758-9e05-d1033ae1e996"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_result_practical_stu_exam_result_practical_mark]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="486" y="7" width="9" height="18" forecolor="#000000" uuid="770d9a19-21a9-4a22-b83f-181b181d19bf"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_courses_info_idstu_exam_courses_info]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="495" y="7" width="9" height="18" forecolor="#000000" uuid="0ca886b9-f8a5-484d-8636-f80889dc325b"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_courses_info_stu_exam_courses_info_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="504" y="7" width="9" height="18" forecolor="#000000" uuid="19fe8a9f-c6be-4fad-b91e-5464917dc157"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[stu_exam_courses_info_stu_exam_courses_info_name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="df999f08-0f82-4667-995e-784908f15605"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="9" height="18" uuid="5ce026a1-1f3b-406f-846c-5a8df8c7fa94"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_address_idstu_info_address}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="9" y="0" width="9" height="18" uuid="1f93838a-ea54-41ca-8058-c3b242fbcd45"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_address_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="18" y="0" width="9" height="18" uuid="b48f8f0a-0001-4371-9b23-806d61c8adc8"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_address_stu_info_address_lane1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="27" y="0" width="9" height="18" uuid="02f76312-1105-4cb7-aeaa-aac7a70ad000"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_address_stu_info_address_city}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="36" y="0" width="9" height="18" uuid="54f0252f-132e-45c4-bdca-c89bb988d63d"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_address_stu_info_address_cuntry}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="45" y="0" width="9" height="18" uuid="dad3d177-1500-48cc-99f2-c75206098145"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_contact_idstu_info_telephone}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="54" y="0" width="9" height="18" uuid="b5b1fda0-9e64-4402-9552-d31295678c28"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_contact_stu_info_telephone_mobile}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="63" y="0" width="9" height="18" uuid="be1b5b61-319b-4bba-be9d-45539366c2c1"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_contact_stu_info_telephone_land}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="72" y="0" width="9" height="18" uuid="a771145b-94d4-4017-9bbe-8e5e95777998"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_name_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="81" y="0" width="9" height="18" uuid="13b8e1ba-22b7-4096-981d-bd83dc192472"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_name_stu_info_name_sirName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="90" y="0" width="9" height="18" uuid="a34706cd-dd0a-4fb7-98d7-183e78667167"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_name_stu_info_name_last_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="99" y="0" width="9" height="18" uuid="923acb40-87d6-408d-8ac4-fe47d52252a0"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_personal_idstu_info_personal}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="108" y="0" width="9" height="18" uuid="57b6e7e1-6e2a-4536-a848-3b713a5fb0ff"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_personal_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="117" y="0" width="9" height="18" uuid="31ee3447-feb3-4968-908f-f65e4fd8b0b1"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_personal_stu_info_personal_profile_image}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="126" y="0" width="9" height="18" uuid="cea548d2-cd7e-4620-8e8f-17d1d66a5a14"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_personal_stu_info_personal_nic}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="135" y="0" width="9" height="18" uuid="61bcf147-a465-4107-891f-6f13ef65b660"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_personal_stu_info_personal_dob}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="144" y="0" width="9" height="18" uuid="e0ebf855-fccf-406a-a135-e6d67156fa66"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_personal_stu_info_personal_branch}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="153" y="0" width="9" height="18" uuid="5dcc91ae-73d8-4c52-ac20-e64cd3fe6711"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_personal_stu_info_personal_gender}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="162" y="0" width="9" height="18" uuid="e101e9b3-f1de-4aeb-9d6a-4e516e988187"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_info_personal_stu_info_personal_course}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="171" y="0" width="9" height="18" uuid="80aa2602-1275-441a-a2c8-dc2ea557b122"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_user_info_idstu_user_info}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="180" y="0" width="9" height="18" uuid="96c9d2da-a738-4293-aeca-33ade90f64b2"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_user_info_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="189" y="0" width="9" height="18" uuid="c7361f81-19db-4131-b55a-17f417d69236"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_user_info_stu_user_info_email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="198" y="0" width="9" height="18" uuid="f60017ee-3c75-4bb0-a4af-37a68ee32bd3"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_user_info_stu_user_info_password}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="207" y="0" width="9" height="18" uuid="9683d83d-fafe-49a6-94a4-c22dda081745"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_user_info_stu_user_info_status}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="216" y="0" width="9" height="18" uuid="78731b4d-1353-424e-9810-9677bd81828f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_user_status_idstu_user_status}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="225" y="0" width="9" height="18" uuid="0f88b398-6d7f-4641-8d2e-8c2cd091e068"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_user_status_stu_user_status_code}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="234" y="0" width="9" height="18" uuid="40d82e5a-3d1b-41ae-bc70-addbbe2a2801"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_user_status_stu_user_status_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="243" y="0" width="9" height="18" uuid="46f71ff7-49c4-4dfe-a3aa-192882b91ef5"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_user_status_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="252" y="0" width="9" height="18" uuid="0e709548-56b3-4d9f-962d-e8397b2c903f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{student_payment_idstudent_payment}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="261" y="0" width="9" height="18" uuid="48ae716f-13fd-4d64-97f9-f8c0738ea437"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{student_payment_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="270" y="0" width="9" height="18" uuid="641f6bf7-0e65-4b47-a67f-a8c231108eeb"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{student_payment_student_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="279" y="0" width="9" height="18" uuid="b186e622-7b92-40c1-8cd2-fed5888bc5e1"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{student_payment_student_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="288" y="0" width="9" height="18" uuid="f3cf8af1-f2a2-429e-a432-bd41c4c86b71"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{student_payment_course}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="297" y="0" width="9" height="18" uuid="34af2eb7-2d88-45bb-aa97-5d614d9fd96f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{student_payment_course_fee}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="306" y="0" width="9" height="18" uuid="8100777c-767d-438c-8091-6591642e1b80"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{student_payment_payment}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="315" y="0" width="9" height="18" uuid="51af9c54-9a3a-4ae9-b63f-b3281f01198e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{student_payment_due_payment}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="324" y="0" width="9" height="18" uuid="56a27e0d-d549-44b6-b15b-7f8983f80456"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{student_payment_status}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="333" y="0" width="9" height="18" uuid="a9141e76-0e1b-44d1-9158-114e84c79911"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exams_info_idstu_exams_info}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="342" y="0" width="9" height="18" uuid="8d9e9b02-5d3e-40fa-a2a4-c5e2996aee80"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exams_info_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="351" y="0" width="9" height="18" uuid="fa25b0f1-3ade-4472-bc36-1492ef4a0428"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exams_info_stu_exams_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="360" y="0" width="9" height="18" uuid="ea4cce1a-833a-485e-a60a-076c3c876312"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exams_info_stu_exams_info_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="369" y="0" width="9" height="18" uuid="5adc79c5-a02e-4648-89b2-08b95987ee3e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_type_idstu_exam_result_type}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="378" y="0" width="9" height="18" uuid="da1dcafc-61a7-472e-9aaf-a095a023b8c5"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_type_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="387" y="0" width="9" height="18" uuid="997c6470-6267-4597-907e-b915ef19598f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_type_stu_exam_result_type_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="396" y="0" width="9" height="18" uuid="9a168ed8-e425-49cc-9ccc-2159318ad62e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_theory_idstu_exam_result_theory}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="405" y="0" width="9" height="18" uuid="bbf5a10f-d80c-4243-aa6c-89b23cdaeee1"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_theory_stu_exam_result_theory_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="414" y="0" width="9" height="18" uuid="e6da865e-6ac8-4e51-b3d2-deda4bf3a56c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_theory_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="423" y="0" width="9" height="18" uuid="28da6111-5262-4d2f-930e-3ff57f9f5514"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_theory_stu_exam_result_theory_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="432" y="0" width="9" height="18" uuid="7074d7b7-30ca-4a4c-aadf-a7690d31662b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_theory_stu_exam_result_theory_mark}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="441" y="0" width="9" height="18" uuid="cbe9ad17-bf92-4352-a5cf-5bd679b532ce"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_practical_idstu_exam_result_practical}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="450" y="0" width="9" height="18" uuid="d3435817-52e6-468a-870d-bbceb6b48e72"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_practical_stu_exam_result_practical_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="459" y="0" width="9" height="18" uuid="cf15de43-f26f-40ab-9c7d-c67a4ff746ad"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_practical_stu_user_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="468" y="0" width="9" height="18" uuid="37a46c95-361f-484c-88b9-8452791518d4"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_practical_stu_exam_result_practical_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="477" y="0" width="9" height="18" uuid="a7636566-9793-4875-99a4-dc0c6158c3a6"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_result_practical_stu_exam_result_practical_mark}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="486" y="0" width="9" height="18" uuid="035e5886-2c04-4a5c-be86-2de494c52c30"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_courses_info_idstu_exam_courses_info}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="495" y="0" width="9" height="18" uuid="90e7f18c-0fd2-45d1-b298-8eabb301ccf8"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_courses_info_stu_exam_courses_info_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="504" y="0" width="9" height="18" uuid="4b4322df-430c-4f2d-9772-e8230d71d3fd"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stu_exam_courses_info_stu_exam_courses_info_name}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7587cf6f-de5f-41c7-948a-410043c1fca0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="1b51425e-8814-41c3-9a1e-64007f06a208"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="25ff934c-70bb-4e7e-97ad-8b50d9164ee6"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="be9e33ec-5013-4804-bb56-913b608fa17f"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="7317a4c0-f65e-4094-9506-5203d435aa61"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

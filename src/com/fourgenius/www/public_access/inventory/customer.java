@@ -117,48 +117,103 @@ public class customer extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("E-Mail");
 
+        address1.setMaximumSize(new java.awt.Dimension(423, 20));
+        address1.setMinimumSize(new java.awt.Dimension(423, 20));
+        address1.setPreferredSize(new java.awt.Dimension(423, 20));
         address1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 address1ActionPerformed(evt);
             }
         });
+        address1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                address1KeyTyped(evt);
+            }
+        });
 
+        address2.setMaximumSize(new java.awt.Dimension(423, 20));
+        address2.setMinimumSize(new java.awt.Dimension(423, 20));
+        address2.setPreferredSize(new java.awt.Dimension(423, 20));
         address2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 address2ActionPerformed(evt);
             }
         });
+        address2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                address2KeyTyped(evt);
+            }
+        });
 
+        address3.setMaximumSize(new java.awt.Dimension(423, 20));
+        address3.setMinimumSize(new java.awt.Dimension(423, 20));
+        address3.setPreferredSize(new java.awt.Dimension(423, 20));
         address3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 address3ActionPerformed(evt);
             }
         });
+        address3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                address3KeyTyped(evt);
+            }
+        });
 
+        email.setMaximumSize(new java.awt.Dimension(423, 20));
+        email.setMinimumSize(new java.awt.Dimension(423, 20));
+        email.setPreferredSize(new java.awt.Dimension(423, 20));
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
             }
         });
+        email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                emailKeyTyped(evt);
+            }
+        });
 
+        id.setEditable(false);
+        id.setMaximumSize(new java.awt.Dimension(423, 20));
+        id.setMinimumSize(new java.awt.Dimension(423, 20));
+        id.setPreferredSize(new java.awt.Dimension(423, 20));
         id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idActionPerformed(evt);
             }
         });
 
+        fname.setMaximumSize(new java.awt.Dimension(423, 20));
+        fname.setMinimumSize(new java.awt.Dimension(423, 20));
+        fname.setPreferredSize(new java.awt.Dimension(423, 20));
         fname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fnameActionPerformed(evt);
             }
         });
+        fname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fnameKeyTyped(evt);
+            }
+        });
 
+        lname.setMaximumSize(new java.awt.Dimension(423, 20));
+        lname.setMinimumSize(new java.awt.Dimension(423, 20));
+        lname.setPreferredSize(new java.awt.Dimension(423, 20));
         lname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lnameActionPerformed(evt);
             }
         });
+        lname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lnameKeyTyped(evt);
+            }
+        });
 
+        nic.setMaximumSize(new java.awt.Dimension(423, 20));
+        nic.setMinimumSize(new java.awt.Dimension(423, 20));
+        nic.setPreferredSize(new java.awt.Dimension(423, 20));
         nic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nicActionPerformed(evt);
@@ -340,6 +395,9 @@ public class customer extends javax.swing.JPanel {
             }
         });
 
+        tp.setMaximumSize(new java.awt.Dimension(423, 20));
+        tp.setMinimumSize(new java.awt.Dimension(423, 20));
+        tp.setPreferredSize(new java.awt.Dimension(423, 20));
         tp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tpActionPerformed(evt);
@@ -351,6 +409,9 @@ public class customer extends javax.swing.JPanel {
             }
         });
 
+        Fax.setMaximumSize(new java.awt.Dimension(423, 20));
+        Fax.setMinimumSize(new java.awt.Dimension(423, 20));
+        Fax.setPreferredSize(new java.awt.Dimension(423, 20));
         Fax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FaxActionPerformed(evt);
@@ -411,30 +472,31 @@ public class customer extends javax.swing.JPanel {
                                     .addComponent(jLabel9))
                                 .addGap(76, 76, 76)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(email)
-                                    .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
-                                    .addComponent(lname)
-                                    .addComponent(fname)
-                                    .addComponent(nic)
-                                    .addComponent(address1)
-                                    .addComponent(address2)
-                                    .addComponent(address3)))
+                                    .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(address1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(address2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(address3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel8))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tp)
-                                    .addComponent(Fax)))))
-                    .addGroup(layout.createSequentialGroup()
+                                    .addComponent(tp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Fax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(117, 117, 117))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(117, 117, 117)
+                        .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(167, 167, 167)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -481,7 +543,7 @@ public class customer extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(Fax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -515,6 +577,10 @@ public class customer extends javax.swing.JPanel {
             if (Character.isLetter(c)) {
                 evt.consume();
             }
+        }
+        
+         if (100<=fname.getText().length()) {
+            evt.consume();
         }
     }//GEN-LAST:event_nicKeyTyped
 
@@ -696,6 +762,60 @@ public class customer extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void fnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fnameKeyTyped
+        
+        if (100<=fname.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_fnameKeyTyped
+
+    private void lnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lnameKeyTyped
+        
+         if (100<=lname.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_lnameKeyTyped
+
+    private void address1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address1KeyTyped
+     
+         if (100<=address1.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_address1KeyTyped
+
+    private void address2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address2KeyTyped
+       
+         if (100<=address2.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_address2KeyTyped
+
+    private void address3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address3KeyTyped
+        
+         if (100<=address3.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_address3KeyTyped
+
+    private void emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailKeyTyped
+        
+           if (100<=email.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_emailKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Delete;
@@ -793,7 +913,7 @@ public class customer extends javax.swing.JPanel {
         } else {
             try {
                 String addre = address1.getText() + "," + address2.getText() + "," + address3.getText();
-                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_customer values('" + id.getText() + "','" + fname.getText() + "','" + lname.getText() + "','" + nic.getText() + "','" + addre + "','" + address1.getText() + "','" + address2.getText() + "','" + address3.getText() + "','" + tp.getText() + "','" + Fax.getText() + "','" + email.getText() + "','Active')");
+                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_customer (id,fname,lname,nic,address,addressl1,addressl2,addressl3,tp,fax,email,state) values('" + id.getText() + "','" + fname.getText() + "','" + lname.getText() + "','" + nic.getText() + "','" + addre + "','" + address1.getText() + "','" + address2.getText() + "','" + address3.getText() + "','" + tp.getText() + "','" + Fax.getText() + "','" + email.getText() + "','Active')");
                 JOptionPane.showMessageDialog(this, "Successfully Save");
                 loadCombo();
                 clear();

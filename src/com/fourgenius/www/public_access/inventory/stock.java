@@ -39,10 +39,8 @@ public class stock extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         id = new javax.swing.JTextField();
-        price = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -71,30 +69,31 @@ public class stock extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Item Name");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Price");
-
+        name.setMaximumSize(new java.awt.Dimension(314, 20));
+        name.setMinimumSize(new java.awt.Dimension(314, 20));
+        name.setPreferredSize(new java.awt.Dimension(314, 20));
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
             }
         });
+        name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nameKeyTyped(evt);
+            }
+        });
 
+        id.setMaximumSize(new java.awt.Dimension(314, 20));
+        id.setMinimumSize(new java.awt.Dimension(314, 20));
+        id.setPreferredSize(new java.awt.Dimension(314, 20));
         id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idActionPerformed(evt);
             }
         });
-
-        price.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priceActionPerformed(evt);
-            }
-        });
-        price.addKeyListener(new java.awt.event.KeyAdapter() {
+        id.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                priceKeyTyped(evt);
+                idKeyTyped(evt);
             }
         });
 
@@ -233,17 +232,14 @@ public class stock extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(69, 69, 69)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4))
-                                .addGap(63, 63, 63))
+                                .addComponent(jLabel2)
+                                .addGap(79, 79, 79))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(217, 217, 217)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -256,20 +252,13 @@ public class stock extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(82, 82, 82)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))
-                                .addGap(18, 18, 18)
-                                .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -284,17 +273,6 @@ public class stock extends javax.swing.JPanel {
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         check();
     }//GEN-LAST:event_SaveActionPerformed
-
-    private void priceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_priceKeyTyped
-         char c = evt.getKeyChar();
-         if (!(c=='1'||c=='2'||c=='3'||c=='4'||c=='5'||c=='6'||c=='7'||c=='8'||c=='9'||c=='0')) {
-            evt.consume();
-        }
-        
-        if (Character.isLetter(c)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_priceKeyTyped
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
      int i= JOptionPane.showConfirmDialog(this, "Are you sure??");
@@ -313,12 +291,8 @@ public class stock extends javax.swing.JPanel {
     }//GEN-LAST:event_idActionPerformed
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-        price.grabFocus();
+      
     }//GEN-LAST:event_nameActionPerformed
-
-    private void priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceActionPerformed
-        
-    }//GEN-LAST:event_priceActionPerformed
 
     private void sidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sidActionPerformed
         try {
@@ -340,9 +314,25 @@ public class stock extends javax.swing.JPanel {
     private void setActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setActionPerformed
         id.setText(sid.getSelectedItem().toString());
         name.setText(sname.getText());
-        price.setText(sprice.getText());
+      
         
     }//GEN-LAST:event_setActionPerformed
+
+    private void idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idKeyTyped
+       
+           if (100<=id.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+        
+    }//GEN-LAST:event_idKeyTyped
+
+    private void nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameKeyTyped
+           if (100<=name.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+    }//GEN-LAST:event_nameKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -356,10 +346,8 @@ public class stock extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField name;
-    private javax.swing.JTextField price;
     private javax.swing.JButton set;
     private javax.swing.JComboBox sid;
     private javax.swing.JTextField sname;
@@ -388,10 +376,10 @@ public class stock extends javax.swing.JPanel {
                 ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select qty from inv_stock where itemid='" + id.getText() + "'");
                 if (rs.next()) {
                     
-                   MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set itemprice='" + price.getText() + "' where itemid='" + id.getText() + "'");
+//                   MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set  where itemid='" + id.getText() + "'");
                 } else {
                    
-                    MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_stock (itemid,itemname,itemprice,state) values('" + id.getText() + "','" + name.getText() + "','" + price.getText() + "','Active') ");
+                    MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_stock (itemid,itemname,state) values('" + id.getText() + "','" + name.getText() + "','Active') ");
                 }
                 loadCombo();
                 clear();
@@ -403,7 +391,7 @@ public class stock extends javax.swing.JPanel {
     }
 
     private JTextField[] getTf() {
-        JTextField arr[] = {id, name, price};
+        JTextField arr[] = {id, name};
         return arr;
     }
 
@@ -411,7 +399,7 @@ public class stock extends javax.swing.JPanel {
 
     private void clear() {
         name.setText(null);
-        price.setText(null);
+       
         id.setText(null);
     }
 

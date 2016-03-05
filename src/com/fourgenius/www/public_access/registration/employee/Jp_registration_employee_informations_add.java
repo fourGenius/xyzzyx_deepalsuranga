@@ -206,6 +206,9 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyTyped(evt);
+            }
         });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -399,6 +402,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
                 _tf_registration_employee_personalInformations_contactDetails_eMailActionPerformed(evt);
             }
         });
+        _tf_registration_employee_personalInformations_contactDetails_eMail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_contactDetails_eMailKeyTyped(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -411,6 +419,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         _tf_registration_employee_personalInformations_contactDetails_1stLine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _tf_registration_employee_personalInformations_contactDetails_1stLineActionPerformed(evt);
+            }
+        });
+        _tf_registration_employee_personalInformations_contactDetails_1stLine.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                _tf_registration_employee_personalInformations_contactDetails_1stLineKeyTyped(evt);
             }
         });
 
@@ -893,7 +906,11 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         if (!(Character.isLetter(c)) && !(Character.isSpaceChar(c))) {
             evt.consume();
         }
-
+   if (100<=_tf_registration_employee_personalInformations_employeeDetails_surName.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+   
     }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_surNameKeyTyped
 
     private void _tf_registration_employee_personalInformations_employeeDetails_firstNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameKeyTyped
@@ -907,6 +924,10 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             e.printStackTrace();
         }
 
+           if (100<=_tf_registration_employee_personalInformations_employeeDetails_firstName.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
     }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_firstNameKeyTyped
 
     private void _tf_registration_employee_personalInformations_employeeDetails_lastNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_lastNameKeyTyped
@@ -931,6 +952,10 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
         } catch (Exception e) {
             e.printStackTrace();
         }
+           if (100<=_tf_registration_employee_personalInformations_contactDetails_city.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
     }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_cityKeyTyped
 
     private void _tf_registration_employee_personalInformations_contactDetails_cuntryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_cuntryKeyTyped
@@ -941,6 +966,10 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+           if (100<=_tf_registration_employee_personalInformations_contactDetails_cuntry.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
         }
     }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_cuntryKeyTyped
 
@@ -990,6 +1019,45 @@ public class Jp_registration_employee_informations_add extends javax.swing.JPane
     private void _bt_registration_employee_personalInformation_addMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_employee_personalInformation_addMouseReleased
         _bt_registration_employee_personalInformation_add.setBorder(border);
     }//GEN-LAST:event__bt_registration_employee_personalInformation_addMouseReleased
+
+    private void _tf_registration_employee_personalInformations_contactDetails_eMailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_eMailKeyTyped
+           if (100<=_tf_registration_employee_personalInformations_contactDetails_eMail.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_eMailKeyTyped
+
+    private void _tf_registration_employee_personalInformations_contactDetails_1stLineKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_contactDetails_1stLineKeyTyped
+           if (100<=_tf_registration_employee_personalInformations_contactDetails_1stLine.getText().length()) {
+            evt.consume();
+               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+        }
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_contactDetails_1stLineKeyTyped
+
+    private void _tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyTyped
+        
+                try {
+
+            char c = evt.getKeyChar();
+
+            if (_tf_registration_employee_personalInformations_employeeDetails_nicNumber.getText().length() == 9) {
+                if (_tf_registration_employee_personalInformations_employeeDetails_nicNumber.getText().length() == 10) {
+                    evt.consume();
+                } else if (Character.isDigit(c) | !((c == 'v') || (c == 'x'))) {
+                    evt.consume();
+                }
+
+            } else {
+                if (Character.isLetter(c)) {
+                    evt.consume();
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event__tf_registration_employee_personalInformations_employeeDetails_nicNumberKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
