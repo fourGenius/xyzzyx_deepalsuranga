@@ -64,7 +64,6 @@ public class grn extends javax.swing.JPanel {
         clear = new javax.swing.JButton();
         find = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        suplierId = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -93,16 +92,20 @@ public class grn extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel15 = new javax.swing.JLabel();
+        suplierId = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(2, 119, 189));
-        setMaximumSize(new java.awt.Dimension(1366, 768));
-        setMinimumSize(new java.awt.Dimension(1366, 768));
+        setMaximumSize(new java.awt.Dimension(1276, 651));
+        setMinimumSize(new java.awt.Dimension(1276, 651));
+        setPreferredSize(new java.awt.Dimension(1276, 651));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bal.setEditable(false);
         bal.setMaximumSize(new java.awt.Dimension(308, 20));
         bal.setMinimumSize(new java.awt.Dimension(308, 20));
-        bal.setPreferredSize(new java.awt.Dimension(308, 20));
+        bal.setPreferredSize(new java.awt.Dimension(200, 30));
         bal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 balActionPerformed(evt);
@@ -112,7 +115,7 @@ public class grn extends javax.swing.JPanel {
 
         Dis.setMaximumSize(new java.awt.Dimension(210, 20));
         Dis.setMinimumSize(new java.awt.Dimension(210, 20));
-        Dis.setPreferredSize(new java.awt.Dimension(210, 20));
+        Dis.setPreferredSize(new java.awt.Dimension(200, 30));
         Dis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DisActionPerformed(evt);
@@ -123,11 +126,11 @@ public class grn extends javax.swing.JPanel {
                 DisKeyTyped(evt);
             }
         });
-        add(Dis, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 469, 210, -1));
+        add(Dis, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 210, -1));
 
         pay.setMaximumSize(new java.awt.Dimension(210, 20));
         pay.setMinimumSize(new java.awt.Dimension(210, 20));
-        pay.setPreferredSize(new java.awt.Dimension(210, 20));
+        pay.setPreferredSize(new java.awt.Dimension(200, 30));
         pay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 payActionPerformed(evt);
@@ -138,18 +141,18 @@ public class grn extends javax.swing.JPanel {
                 payKeyTyped(evt);
             }
         });
-        add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 511, 210, -1));
+        add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, 210, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Supplier's Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 23, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Find GRN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Schoolbook", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "FIND GRN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("GRN ID");
         jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
@@ -171,7 +174,7 @@ public class grn extends javax.swing.JPanel {
         });
         SGrnId.setViewportView(sGrnId);
 
-        jPanel3.add(SGrnId, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 150, 80));
+        jPanel3.add(SGrnId, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 230, 80));
 
         sGgrnIdSearch.setMaximumSize(new java.awt.Dimension(230, 20));
         sGgrnIdSearch.setMinimumSize(new java.awt.Dimension(230, 20));
@@ -181,7 +184,7 @@ public class grn extends javax.swing.JPanel {
                 sGgrnIdSearchKeyReleased(evt);
             }
         });
-        jPanel3.add(sGgrnIdSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 230, -1));
+        jPanel3.add(sGgrnIdSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 230, 30));
 
         clear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         clear.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,7 +202,7 @@ public class grn extends javax.swing.JPanel {
                 clearActionPerformed(evt);
             }
         });
-        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
 
         find.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         find.setForeground(new java.awt.Color(255, 255, 255));
@@ -217,54 +220,52 @@ public class grn extends javax.swing.JPanel {
                 findActionPerformed(evt);
             }
         });
-        jPanel3.add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
+        jPanel3.add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 430, 430, 160));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 430, 400, 160));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Sub Total");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 465, -1, -1));
 
-        suplierId.setEditable(false);
-        add(suplierId, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 25, 150, -1));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Net Amount");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 507, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("GRN ID");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 63, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Balance");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 549, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Discount");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 465, -1, -1));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 510, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("GRN Date");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(929, 30, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 40, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Payment");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 507, -1, -1));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, -1, -1));
 
         lb_date_view.setEditable(false);
-        add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1063, 34, 260, -1));
+        lb_date_view.setPreferredSize(new java.awt.Dimension(100, 30));
+        add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 40, 260, -1));
 
         supliername.setMaximumSize(new java.awt.Dimension(170, 20));
         supliername.setMinimumSize(new java.awt.Dimension(170, 20));
-        supliername.setPreferredSize(new java.awt.Dimension(170, 20));
+        supliername.setPreferredSize(new java.awt.Dimension(100, 30));
         supliername.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 supliernameFocusLost(evt);
@@ -283,12 +284,13 @@ public class grn extends javax.swing.JPanel {
                 supliernameKeyTyped(evt);
             }
         });
-        add(supliername, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 25, 170, -1));
+        add(supliername, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 330, -1));
 
         SuplierNameSearch.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         SuplierNameSearch.setAlignmentY(2.0F);
         SuplierNameSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SuplierNameSearch.setLayoutOrientation(javax.swing.JList.HORIZONTAL_WRAP);
+        SuplierNameSearch.setPreferredSize(new java.awt.Dimension(100, 30));
         SuplierNameSearch.setVisibleRowCount(0);
         SuplierNameSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -302,43 +304,45 @@ public class grn extends javax.swing.JPanel {
         });
         suplierNameSearch.setViewportView(SuplierNameSearch);
 
-        add(suplierNameSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 120, 50));
+        add(suplierNameSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 330, 70));
 
         id.setMaximumSize(new java.awt.Dimension(170, 20));
         id.setMinimumSize(new java.awt.Dimension(170, 20));
-        id.setPreferredSize(new java.awt.Dimension(170, 20));
-        add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 170, -1));
+        id.setPreferredSize(new java.awt.Dimension(200, 30));
+        add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 330, -1));
 
         net.setEditable(false);
         net.setMaximumSize(new java.awt.Dimension(308, 20));
         net.setMinimumSize(new java.awt.Dimension(308, 20));
-        net.setPreferredSize(new java.awt.Dimension(308, 20));
+        net.setPreferredSize(new java.awt.Dimension(200, 30));
         add(net, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 511, 308, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("GRN Time");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(929, 72, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 90, -1, -1));
 
         sub.setEditable(false);
         sub.setMaximumSize(new java.awt.Dimension(308, 20));
         sub.setMinimumSize(new java.awt.Dimension(308, 20));
-        sub.setPreferredSize(new java.awt.Dimension(308, 20));
+        sub.setPreferredSize(new java.awt.Dimension(200, 30));
         add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 469, 308, -1));
 
         lb_time_date.setEditable(false);
-        add(lb_time_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(1064, 76, 259, -1));
+        lb_time_date.setPreferredSize(new java.awt.Dimension(100, 30));
+        add(lb_time_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 80, 259, -1));
 
         jPanel1.setBackground(new java.awt.Color(2, 119, 189));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Item Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Item No");
 
+        itemNo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         itemNo.setMaximumSize(new java.awt.Dimension(171, 20));
         itemNo.setMinimumSize(new java.awt.Dimension(171, 20));
-        itemNo.setPreferredSize(new java.awt.Dimension(171, 20));
+        itemNo.setPreferredSize(null);
         itemNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemNoActionPerformed(evt);
@@ -350,22 +354,24 @@ public class grn extends javax.swing.JPanel {
             }
         });
 
+        ItemName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ItemName.setMaximumSize(new java.awt.Dimension(483, 20));
         ItemName.setMinimumSize(new java.awt.Dimension(483, 20));
-        ItemName.setPreferredSize(new java.awt.Dimension(483, 20));
+        ItemName.setPreferredSize(null);
         ItemName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ItemNameActionPerformed(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Price");
 
+        price.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         price.setMaximumSize(new java.awt.Dimension(156, 20));
         price.setMinimumSize(new java.awt.Dimension(156, 20));
-        price.setPreferredSize(new java.awt.Dimension(156, 20));
+        price.setPreferredSize(null);
         price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 priceActionPerformed(evt);
@@ -380,13 +386,14 @@ public class grn extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("QTY");
 
+        qty.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         qty.setMaximumSize(new java.awt.Dimension(168, 20));
         qty.setMinimumSize(new java.awt.Dimension(168, 20));
-        qty.setPreferredSize(new java.awt.Dimension(168, 20));
+        qty.setPreferredSize(null);
         qty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 qtyActionPerformed(evt);
@@ -401,11 +408,13 @@ public class grn extends javax.swing.JPanel {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Total");
 
         total.setEditable(false);
+        total.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        total.setPreferredSize(null);
         total.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 totalActionPerformed(evt);
@@ -442,7 +451,7 @@ public class grn extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Item Name");
 
@@ -498,17 +507,46 @@ public class grn extends javax.swing.JPanel {
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(itemNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ItemName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(qty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(itemNo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ItemName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(qty, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 113, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 113, -1, 320));
+
+        suplierId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        suplierId.setForeground(new java.awt.Color(255, 255, 255));
+        suplierId.setText("suplier_Id");
+        add(suplierId, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 120, 20));
+
+        jPanel2.setBackground(new java.awt.Color(13, 71, 161));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Good Recive Note");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1096, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void supliernameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_supliernameKeyReleased
@@ -958,10 +996,12 @@ public class grn extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
@@ -974,7 +1014,7 @@ public class grn extends javax.swing.JPanel {
     private javax.swing.JTextField sGgrnIdSearch;
     private javax.swing.JList sGrnId;
     private javax.swing.JTextField sub;
-    private javax.swing.JTextField suplierId;
+    private javax.swing.JLabel suplierId;
     private javax.swing.JScrollPane suplierNameSearch;
     public javax.swing.JTextField supliername;
     private javax.swing.JTextField total;

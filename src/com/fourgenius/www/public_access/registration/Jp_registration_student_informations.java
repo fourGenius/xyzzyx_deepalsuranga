@@ -96,6 +96,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         _lb_registration_student_preview_homeNumber = new javax.swing.JLabel();
         _lb_registration_student_preview_eMail = new javax.swing.JLabel();
         _lb_registration_student_preview_address = new javax.swing.JLabel();
+        cb_batchSelected = new javax.swing.JComboBox();
 
         _pl_registration_user_personalInformations.setBackground(new java.awt.Color(2, 119, 189));
         _pl_registration_user_personalInformations.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Personal Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -516,6 +517,8 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
 
         _lb_registration_student_preview_address.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
+        cb_batchSelected.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Batch 1", "Batch 2" }));
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -525,7 +528,8 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 343, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                        .addComponent(cb_batchSelected, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -555,8 +559,11 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_batchSelected, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -840,6 +847,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_nicNumber;
     private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_surName;
     private javax.swing.JPanel add_update_delete_Panel;
+    private javax.swing.JComboBox cb_batchSelected;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
