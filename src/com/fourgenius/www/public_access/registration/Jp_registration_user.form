@@ -134,20 +134,20 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_name_sirName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_user_personal_name_sirName" min="-2" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_user_personal_name_sirName" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_name_firstName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_user_personal_name_firstName" min="-2" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_user_personal_name_firstName" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_name_secondName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_user_personal_name_secondName" min="-2" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_user_personal_name_secondName" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_name_lastName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_user_personal_name_lastName" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="220" max="32767" attributes="0"/>
+                      <Component id="_tf_registration_user_personal_name_lastName" min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace pref="240" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -273,15 +273,15 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_contact_mobile" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_user_personal_contact_mobile" min="-2" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_user_personal_contact_mobile" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_contact_land" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_user_personal_contact_land" min="-2" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_user_personal_contact_land" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="_lb_registration_user_personal_contact_email" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="_tf_registration_user_personal_contact_email" min="-2" max="-2" attributes="0"/>
+                      <Component id="_tf_registration_user_personal_contact_email" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>

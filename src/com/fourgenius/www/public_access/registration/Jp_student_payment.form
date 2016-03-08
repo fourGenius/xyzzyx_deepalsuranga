@@ -108,34 +108,34 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="_lb_registration_lecture_personalInformation_contactDetails_mobileNumber1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="_tf_student_payment_paymentDatails_date" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="_tf_student_payment_paymentDatails_date" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="_lb_registration_lecture_personalInformation_contactDetails_mobileNumber" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="_tf_student_payment_paymentDatails_invoiceID" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="_tf_student_payment_paymentDatails_invoiceID" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="_lb_registration_lecture_personalInformation_contactDetails_landNumber" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="_tf_student_payment_paymentDatails_studentName" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="_tf_student_payment_paymentDatails_studentName" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="_lb_registration_lecture_personalInformation_contactDetails_eMail" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="_tf_student_payment_paymentDatails_course" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="_tf_student_payment_paymentDatails_course" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="_lb_registration_lecture_personalInformation_address_1stLine" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="_tf_student_payment_paymentDatails_courseFee" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="_tf_student_payment_paymentDatails_courseFee" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="_lb_registration_lecture_personalInformation_address_2ndLine" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="_tf_student_payment_paymentDatails_payement" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="_tf_student_payment_paymentDatails_payement" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="_lb_registration_lecture_personalInformation_address_city" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="_tf_registration_lecture_personalInformations_contactDetails_duePayment" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="_tf_registration_lecture_personalInformations_contactDetails_duePayment" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="_bt_student_payment_submit" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace pref="120" max="32767" attributes="0"/>
+                  <EmptySpace pref="155" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
