@@ -7,6 +7,7 @@ package com.fourgenius.www.public_access.registration.student;
 
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
 import com.fourgenius.www.public_access.model.student.stu_info_address;
+import com.fourgenius.www.public_access.model.student.stu_info_batch;
 import com.fourgenius.www.public_access.model.student.stu_info_contact;
 import com.fourgenius.www.public_access.model.student.stu_info_name;
 import com.fourgenius.www.public_access.model.student.stu_info_personal;
@@ -57,7 +58,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     String path, newpath;
     public String sur_name, first_name, last_name;
     public String student_id;
-
+    public String batch,year;
     public Jp_registration_student_informations() {
         initComponents();
         set_data_to_Combo_box();
@@ -118,6 +119,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         _rb_registration_student_information_form_colombo = new javax.swing.JRadioButton();
         _rb_registration_student_information_form_kandy = new javax.swing.JRadioButton();
+        jC_batch = new javax.swing.JComboBox();
         _pl_registration_user_personalInformations_contactDetails = new javax.swing.JPanel();
         _tf_registration_student_personalInformations_contactDetails_mobileNumber = new javax.swing.JTextField();
         _lb_registration_user_personalInformations_contactDetails_mobileNumber = new javax.swing.JLabel();
@@ -325,15 +327,18 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         _rb_registration_student_information_form_kandy.setContentAreaFilled(false);
         _rb_registration_student_information_form_kandy.setFocusPainted(false);
 
+        jC_batch.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Batch1", "Batch 2" }));
+
         javax.swing.GroupLayout _pl_registration_user_personalInformations_studentNameLayout = new javax.swing.GroupLayout(_pl_registration_user_personalInformations_studentName);
         _pl_registration_user_personalInformations_studentName.setLayout(_pl_registration_user_personalInformations_studentNameLayout);
         _pl_registration_user_personalInformations_studentNameLayout.setHorizontalGroup(
             _pl_registration_user_personalInformations_studentNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_user_personalInformations_studentNameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(_pl_registration_user_personalInformations_studentNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_cb_registration_student_personalInformations_studentDetails_course, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_user_personalInformations_studentNameLayout.createSequentialGroup()
+                .addGroup(_pl_registration_user_personalInformations_studentNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jC_batch, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(_cb_registration_student_personalInformations_studentDetails_course, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(_pl_registration_user_personalInformations_studentNameLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(_pl_registration_user_personalInformations_studentNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(_lb_registration_user_personalInformations_studentName_sirName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -345,11 +350,11 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                             .addComponent(_lb_registration_user_personalInformations_idInformations_nicNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_registration_user_personalInformations_idInformations_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_tf_registration_student_personalInformations_studentDetails_nicNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_dc_registration_student_personalInformations_studentDetails_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)))
-                    .addComponent(_lb_registration_user_personalInformations_studentName_sirName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(_pl_registration_user_personalInformations_studentNameLayout.createSequentialGroup()
+                            .addComponent(_dc_registration_student_personalInformations_studentDetails_dateOfBirth, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)))
+                    .addComponent(_lb_registration_user_personalInformations_studentName_sirName1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, _pl_registration_user_personalInformations_studentNameLayout.createSequentialGroup()
                         .addGroup(_pl_registration_user_personalInformations_studentNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(_pl_registration_user_personalInformations_studentNameLayout.createSequentialGroup()
                                 .addComponent(_rb_registration_student_information_form_male)
@@ -360,35 +365,37 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                                 .addGap(28, 28, 28)
                                 .addComponent(_rb_registration_student_information_form_kandy)))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(14, 14, 14))
         );
         _pl_registration_user_personalInformations_studentNameLayout.setVerticalGroup(
             _pl_registration_user_personalInformations_studentNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_user_personalInformations_studentNameLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jC_batch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_user_personalInformations_studentName_sirName1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_cb_registration_student_personalInformations_studentDetails_course, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_cb_registration_student_personalInformations_studentDetails_course, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_user_personalInformations_studentName_sirName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_student_personalInformations_studentDetails_surName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_tf_registration_student_personalInformations_studentDetails_surName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_user_personalInformations_studentName_firstName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_student_personalInformations_studentDetails_firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_tf_registration_student_personalInformations_studentDetails_firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_user_personalInformations_studentName_lastName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_student_personalInformations_studentDetails_lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_tf_registration_student_personalInformations_studentDetails_lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_user_personalInformations_idInformations_nicNumber)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_tf_registration_student_personalInformations_studentDetails_nicNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_tf_registration_student_personalInformations_studentDetails_nicNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_user_personalInformations_idInformations_dateOfBirth)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_dc_registration_student_personalInformations_studentDetails_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_dc_registration_student_personalInformations_studentDetails_dateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -400,8 +407,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_registration_user_personalInformations_studentNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(_rb_registration_student_information_form_colombo)
-                    .addComponent(_rb_registration_student_information_form_kandy))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(_rb_registration_student_information_form_kandy)))
         );
 
         _pl_registration_user_personalInformations_contactDetails.setBackground(new java.awt.Color(2, 119, 189));
@@ -672,6 +678,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
             .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(_pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(_pl_registration_user_personalInformations_studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(_pl_registration_user_personalInformationsLayout.createSequentialGroup()
                         .addComponent(_pl_registration_user_personalInformations_contactDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -679,8 +686,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                             .addComponent(_bt_registration_student_personal_Information_previwestudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(_pl_registration_user_personalInformationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(Capture_photo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Open_Camera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addComponent(_pl_registration_user_personalInformations_studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Open_Camera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1363,6 +1369,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_nicNumber;
     public static javax.swing.JTextField _tf_registration_student_personalInformations_studentDetails_surName;
     private javax.swing.JPanel add_update_delete_Panel;
+    private javax.swing.JComboBox jC_batch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1408,7 +1415,10 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                 _lb_registration_student_preview_dateOfBirth.setText(date);
 
                 generate_student_id();
-
+                
+                
+                select_batch_and_year();
+                
                 _lb_registration_student_preview_course.setText((String) _cb_registration_student_personalInformations_studentDetails_course.getSelectedItem());
                 sur_name = _tf_registration_student_personalInformations_studentDetails_surName.getText();
                 first_name = _tf_registration_student_personalInformations_studentDetails_firstName.getText();
@@ -1501,7 +1511,8 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         stu_info_contact uc = new stu_info_contact(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_mobileNumber.getText(), _lb_registration_student_preview_homeNumber.getText(), _lb_registration_student_preview_eMail.getText());
         stu_info_personal upi = new stu_info_personal(_lb_registration_student_preview_studentID.getText(), newpath, _lb_registration_student_preview_branch.getText(), _lb_registration_student_preview_nic.getText(), _lb_registration_student_preview_dateOfBirth.getText(), _lb_registration_student_preview_gender.getText(), _lb_registration_student_preview_course.getText());
         stu_info_name un = new stu_info_name(_lb_registration_student_preview_studentID.getText(), _tf_registration_student_personalInformations_studentDetails_surName.getText(), _tf_registration_student_personalInformations_studentDetails_firstName.getText(), _tf_registration_student_personalInformations_studentDetails_lastName.getText());
-     print_report(_lb_registration_student_preview_studentID.getText());
+        stu_info_batch bat=new stu_info_batch(_lb_registration_student_preview_studentID.getText(), batch, year, _lb_registration_student_preview_course.getText());
+        print_report(_lb_registration_student_preview_studentID.getText());
     }
 
     private void check_empty_fields() {
@@ -1773,5 +1784,21 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void select_batch_and_year() {
+        
+        if (jC_batch.getSelectedItem().toString().equals("Batch1")) {
+            batch="1";
+        } else {
+            batch="2";
+        }
+          Date d = _dc_registration_student_personalInformations_studentDetails_dateOfBirth.getDate();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+                String date = sdf.format(d);
+                year=date;
+        
+        
+        
     }
 }

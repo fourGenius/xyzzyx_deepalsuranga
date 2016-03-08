@@ -123,7 +123,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Component id="_pl_registration_user_personalInformations_studentName" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Component id="_pl_registration_user_personalInformations_contactDetails" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -134,7 +135,6 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="_pl_registration_user_personalInformations_studentName" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -165,9 +165,10 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jC_batch" max="32767" attributes="0"/>
                               <Component id="_cb_registration_student_personalInformations_studentDetails_course" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -181,7 +182,7 @@
                                       <Component id="_lb_registration_user_personalInformations_idInformations_nicNumber" alignment="0" max="32767" attributes="0"/>
                                       <Component id="_lb_registration_user_personalInformations_idInformations_dateOfBirth" alignment="0" max="32767" attributes="0"/>
                                       <Component id="_tf_registration_student_personalInformations_studentDetails_nicNumber" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_dc_registration_student_personalInformations_studentDetails_dateOfBirth" alignment="0" pref="333" max="32767" attributes="0"/>
+                                      <Component id="_dc_registration_student_personalInformations_studentDetails_dateOfBirth" alignment="1" pref="333" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Component id="_lb_registration_user_personalInformations_studentName_sirName1" alignment="0" max="32767" attributes="0"/>
@@ -203,37 +204,39 @@
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jC_batch" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_studentName_sirName1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_cb_registration_student_personalInformations_studentDetails_course" min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="_cb_registration_student_personalInformations_studentDetails_course" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_studentName_sirName" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_studentDetails_surName" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="_tf_registration_student_personalInformations_studentDetails_surName" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_studentName_firstName" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_studentDetails_firstName" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="_tf_registration_student_personalInformations_studentDetails_firstName" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_studentName_lastName" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_studentDetails_lastName" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="_tf_registration_student_personalInformations_studentDetails_lastName" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_idInformations_nicNumber" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_studentDetails_nicNumber" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="_tf_registration_student_personalInformations_studentDetails_nicNumber" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_idInformations_dateOfBirth" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_dc_registration_student_personalInformations_studentDetails_dateOfBirth" min="-2" max="-2" attributes="0"/>
+                          <Component id="_dc_registration_student_personalInformations_studentDetails_dateOfBirth" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -248,7 +251,6 @@
                               <Component id="_rb_registration_student_information_form_colombo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="_rb_registration_student_information_form_kandy" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="17" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -501,6 +503,16 @@
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="focusPainted" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jC_batch">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="2">
+                        <StringItem index="0" value="Batch1"/>
+                        <StringItem index="1" value="Batch 2"/>
+                      </StringArray>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>
