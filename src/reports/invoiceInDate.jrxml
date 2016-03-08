@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoiceInDate" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="7c4d5327-4de2-41a2-a40c-f1d5174d930d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="67"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="date2" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["E:\\NetBeans Projects\\shop\\src\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     invoice.`id` AS invoice_id,
+     invoice.`date` AS invoice_date,
+     invoice.`total` AS invoice_total,
+     invoice.`time` AS invoice_time,
+     invoice.`discount` AS invoice_discount,
+     invoice.`username` AS invoice_username,
+     invoice.`nettot` AS invoice_nettot,
+     invoice.`customername` AS invoice_customername,
+     invoice.`bal` AS invoice_bal,
+     invoice.`payment` AS invoice_payment
+FROM
+     `invoice` invoice
+where invoice.date between $P{date} and $P{date2}]]>
+	</queryString>
+	<field name="invoice_id" class="java.lang.String"/>
+	<field name="invoice_date" class="java.lang.String"/>
+	<field name="invoice_total" class="java.lang.Double"/>
+	<field name="invoice_time" class="java.lang.String"/>
+	<field name="invoice_discount" class="java.lang.Double"/>
+	<field name="invoice_username" class="java.lang.String"/>
+	<field name="invoice_nettot" class="java.lang.Double"/>
+	<field name="invoice_customername" class="java.lang.String"/>
+	<field name="invoice_bal" class="java.lang.Double"/>
+	<field name="invoice_payment" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="370" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="301" width="100" height="20" uuid="6a95839d-7da8-4a87-98b7-1200eb5f05c8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="321" width="100" height="20" uuid="0b26abad-929e-4490-896b-7c5440596dec"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="341" width="100" height="20" uuid="034ba8b8-90e8-4771-9eae-b190221bade3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balence]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="696" y="301" width="100" height="20" uuid="25b9a185-c1b8-4d0e-9970-dcd05e161efa"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="696" y="321" width="100" height="20" uuid="ecc05de1-df8a-4fd3-9de6-586cea5a1e82"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_payment}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="596" y="301" width="100" height="20" uuid="41f96ac8-1b7a-4610-9ec0-2b4d0a7cd9d6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="596" y="321" width="100" height="20" uuid="da951efd-8381-4a22-a6ba-8e5d8999bdf8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="104" y="301" width="100" height="20" uuid="4dd61630-3cea-4357-8ce2-d9502a7370d0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="321" width="100" height="20" uuid="5c2921be-684a-4249-b42b-69393f8d7220"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_nettot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="341" width="100" height="20" uuid="3e033adf-ede9-4e9a-b1b4-532fa2e95afa"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_bal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="5" y="160" width="799" height="1" uuid="f1c29a9c-b8f7-49ba-8640-866dec2a15a7"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="361" width="794" height="1" uuid="b76265ff-8883-4d92-9425-a195455cfca6"/>
+			</line>
+			<textField>
+				<reportElement x="687" y="119" width="100" height="20" uuid="485d67fb-061f-4ab1-8053-a8836b2350b5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_time}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="587" y="119" width="100" height="20" uuid="9788e927-6ab3-4bae-8e4e-517940c60781"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice Time]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="687" y="98" width="100" height="20" uuid="52ac6494-8841-4565-bfb9-dae378e5a33c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="587" y="98" width="100" height="20" uuid="ab60af0a-46d9-44db-999f-5f19b688e868"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="104" y="97" width="100" height="20" uuid="78ce5844-9f6a-44b3-8640-16be2000672a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_customername}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="116" width="100" height="20" uuid="53d6a955-7a50-4920-b852-bb43a04b8362"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoice_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="97" width="100" height="20" uuid="dd4c8a4c-c7bf-432d-959a-119d907857de"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="117" width="100" height="20" uuid="8ba68fde-93ef-4c8b-86d2-0fe0c0940c0f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="2" width="800" height="79" backcolor="#FFCC33" uuid="1eabc31e-a920-4005-96e0-d983a911ac1b"/>
+				<textElement textAlignment="Center">
+					<font size="62" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="5" y="167" width="791" height="129" uuid="7f9d064e-5682-48f5-ae60-1127e4b51944"/>
+				<subreportParameter name="invoid">
+					<subreportParameterExpression><![CDATA[$F{invoice_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:\\Users\\Dineth Jayasekera\\OneDrive\\NetBeans Projects\\shop\\src\\reports\\invoiceInDateSub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>
