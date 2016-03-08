@@ -5,9 +5,8 @@
 	<property name="ireport.y" value="0"/>
 	<parameter name="course" class="java.lang.String"/>
 	<parameter name="date1" class="java.lang.String"/>
-	<parameter name="date2" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select *, sum(payment) as total from student_payment where course=$P{course} and date between $P{date1} and $P{date2}]]>
+		<![CDATA[select *, sum(payment) as total from student_payment where course=$P{course} and date=$P{date1}]]>
 	</queryString>
 	<field name="idstudent_payment" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>

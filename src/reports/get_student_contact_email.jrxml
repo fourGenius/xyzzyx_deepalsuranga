@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-06T15:05:06 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="get_student_selected_contact" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7dcef867-2a09-41b1-8aa9-b9885436e5a8">
+	<property name="ireport.zoom" value="1.3310000000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="course" class="java.lang.String"/>
+	<parameter name="batch" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT CONCAT(a.`stu_info_name_first_name`, a.`stu_info_name_last_name`, a.`stu_info_name_sirName`) AS NAME ,c.`stu_info_contact_email` FROM `stu_info_name` a LEFT JOIN `stu_info_contact` c ON a.`stu_user_info_id`=c.`stu_user_info_id` LEFT JOIN `stu_info_personal` b ON a.`stu_user_info_id`=b.`stu_user_info_id` WHERE b.`stu_info_personal_course`= $P{course} and b.stu_info_personal_batch= $P{batch} ]]>
+	</queryString>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="stu_info_contact_email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="45" width="554" height="34" uuid="b4b09ba4-7c8c-4fac-ac0a-8019f001c164"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student contact Details]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="554" height="45" uuid="af72e7ca-0800-4759-9396-b00da83baa03"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{course}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement x="1" y="0" width="276" height="20" uuid="62b086af-bc30-42c1-a33d-beca2f27c9c8"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="0" width="276" height="20" uuid="6eaa7f82-f10b-47c2-a69b-ba2010853949"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="554" height="1" uuid="6f206c64-96a5-46c6-b47c-78d552101654"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="554" height="1" uuid="09c90b6e-e9e2-437e-b5e9-f495e97da0a0"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="1" height="19" uuid="21869d57-e85e-427e-a6b3-bb125e8d1213"/>
+			</line>
+			<line>
+				<reportElement x="277" y="1" width="1" height="19" uuid="25d2ff17-6f56-4d38-9470-143a7f91fae8"/>
+			</line>
+			<line>
+				<reportElement x="553" y="1" width="1" height="19" uuid="e1599309-6aaf-401e-86fb-54b00b34c8fd"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="276" height="20" uuid="1d092d3b-74ce-483d-bbfe-08121119f0ef"/>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="554" height="1" uuid="e220edf1-43e3-4641-8b79-fb856d9d884e"/>
+			</line>
+			<line>
+				<reportElement x="553" y="0" width="1" height="21" uuid="2fdb6479-cf96-41b7-974d-3d3c99fb539b"/>
+			</line>
+			<line>
+				<reportElement x="277" y="-1" width="1" height="21" uuid="ef8ee219-9eb9-444f-8c2b-ebc5e79a73e6"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="21" uuid="0fa266f0-b234-4536-b0be-30a7187d9382"/>
+			</line>
+			<textField>
+				<reportElement x="278" y="0" width="275" height="20" uuid="065c9860-a729-4bd6-a63c-a09048466d38"/>
+				<textFieldExpression><![CDATA[$F{stu_info_contact_email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
