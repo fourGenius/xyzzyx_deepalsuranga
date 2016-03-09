@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-06T15:05:05 -->
+<!-- 2016-03-08T19:09:07 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="get_student_selected_contact" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7dcef867-2a09-41b1-8aa9-b9885436e5a8">
 	<property name="ireport.zoom" value="2.143588810000002"/>
 	<property name="ireport.x" value="0"/>
@@ -9,8 +9,9 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ramani"/>
 	<parameter name="course" class="java.lang.String"/>
 	<parameter name="batch" class="java.lang.String"/>
+	<parameter name="year" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[SELECT CONCAT(a.`stu_info_name_first_name`, a.`stu_info_name_last_name`, a.`stu_info_name_sirName`) AS NAME ,c.`stu_info_contact_email`,c.`stu_info_telephone_mobile`,COUNT(b.`stu_user_info_id`) AS stuCount FROM `stu_info_name` a LEFT JOIN `stu_info_contact` c ON a.`stu_user_info_id`=c.`stu_user_info_id` LEFT JOIN `stu_info_personal` b ON a.`stu_user_info_id`=b.`stu_user_info_id` WHERE b.`stu_info_personal_course`=$P{course} AND b.stu_info_personal_batch= $P{batch}]]>
+		<![CDATA[SELECT CONCAT(a.`stu_info_name_first_name`, a.`stu_info_name_last_name`, a.`stu_info_name_sirName`) AS NAME ,c.`stu_info_contact_email`,c.`stu_info_telephone_mobile`,COUNT(b.`stu_user_info_id`) AS stuCount FROM `stu_info_name` a LEFT JOIN `stu_info_contact` c ON a.`stu_user_info_id`=c.`stu_user_info_id` LEFT JOIN `stu_info_personal` b ON a.`stu_user_info_id`=b.`stu_user_info_id` LEFT JOIN `stu_info_batch` d ON a.`stu_user_info_id`=d.`stu_user_info_id` WHERE b.`stu_info_personal_course`=$P{course} AND d.batch= $P{batch} AND d.`year`= $P{year} ]]>
 	</queryString>
 	<field name="NAME" class="java.lang.String"/>
 	<field name="stu_info_contact_email" class="java.lang.String">
@@ -89,6 +90,13 @@
 					<font size="20"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{batch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="39" width="60" height="30" uuid="3cda0bc8-b0fa-487c-b8cf-f4c4218827a9"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{year}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
