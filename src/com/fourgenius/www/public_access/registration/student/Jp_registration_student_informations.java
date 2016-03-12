@@ -1506,6 +1506,9 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
 
     private void add_to_database() {
 
+        String path=_tf_registration_student_personalInformation_browsePhoto_browseFile.getText();
+        JOptionPane.showMessageDialog(this, path);
+        //_lb_registration_student_preview_image
         stu_user_info ui = new stu_user_info(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_eMail.getText(), "1");
         stu_info_address ua = new stu_info_address(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_lane1.getText(), _lb_registration_student_preview_city.getText(), _lb_registration_student_preview_country.getText());
         stu_info_contact uc = new stu_info_contact(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_mobileNumber.getText(), _lb_registration_student_preview_homeNumber.getText(), _lb_registration_student_preview_eMail.getText());
