@@ -262,6 +262,9 @@ public class Inventory_home extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        base.setMaximumSize(new java.awt.Dimension(1366, 650));
+        base.setMinimumSize(new java.awt.Dimension(1366, 650));
+
         javax.swing.GroupLayout baseLayout = new javax.swing.GroupLayout(base);
         base.setLayout(baseLayout);
         baseLayout.setHorizontalGroup(
