@@ -291,7 +291,7 @@
                       <EmptySpace pref="232" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="lb_inventory_reports" alignment="1" min="-2" pref="221" max="-2" attributes="0"/>
-                          <Component id="lb_student_reports" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb_student_reports" alignment="1" min="-2" pref="221" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="233" max="32767" attributes="0"/>
                   </Group>
@@ -308,7 +308,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images/student_report_icon.png"/>
+                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images/report_icon_student.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Student Reports"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -327,7 +327,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images/Inventory_report_icon.png"/>
+                  <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images/report_icon_inventory.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Inventory Reports"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>

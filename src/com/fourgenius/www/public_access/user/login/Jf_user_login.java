@@ -38,11 +38,12 @@ public class Jf_user_login extends javax.swing.JFrame {
      */
     Md_move_text setLableValuesNullAndAdd = new Md_move_text();
     Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
-
+    boolean flag;
     public Jf_user_login() {
         initComponents();
         showDate();;
         showTime();
+       _pf_user_login_password.setEditable(false);
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
@@ -557,21 +558,37 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         try {
 
-//            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "'");
-            _pf_user_login_password.grabFocus();
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "'");
+            if (!rs.next()) {
+                _tf_user_loging_userName.setBackground(Color.red);
+                JOptionPane.showMessageDialog(this,"User name is Invalide","Warning",2);
+            _tf_user_loging_userName.grabFocus();
+            flag=false;
+            }
+            else{
+           _tf_user_loging_userName.setBackground(Color.WHITE);
+          flag=true;
+           _pf_user_login_password.setEditable(true);     
+           _pf_user_login_password.grabFocus();
+                
+            }
         } catch (Exception e) {
         }
     }//GEN-LAST:event__tf_user_loging_userNameActionPerformed
 
     private void _pf_user_login_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__pf_user_login_passwordMouseClicked
 
-        setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password, _lb_user_login_password, "Password");
+        if (flag) {
+              setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password, _lb_user_login_password, "Password");
         _pf_user_login_password.setEchoChar('*');
+        }
 
     }//GEN-LAST:event__pf_user_login_passwordMouseClicked
     int x = 0;
     private void _pf_user_login_passwordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__pf_user_login_passwordKeyTyped
-
+        if (_pf_user_login_password.getText().length()==100) {
+            evt.consume();
+        }
         if (x < 1) {
 
             if (!(_pf_user_login_password.getPassword().equals(""))) {

@@ -311,6 +311,8 @@ public class stock extends javax.swing.JPanel {
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         check();
+        SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
+        
     }//GEN-LAST:event_SaveActionPerformed
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
@@ -420,7 +422,7 @@ public class stock extends javax.swing.JPanel {
 //                   MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set  where itemid='" + id.getText() + "'");
                 } else {
                    
-                    MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_stock (itemid,itemname,state) values('" + id.getText() + "','" + name.getText() + "','Active') ");
+                    MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_stock (itemid,itemname,state,date) values('" + id.getText() + "','" + name.getText() + "','Active') ");
                 }
                 loadCombo();
                 clear();

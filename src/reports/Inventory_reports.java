@@ -5,6 +5,9 @@
  */
 package reports;
 
+import java.sql.ResultSet;
+import public_access.MC_JavaDataBaseConnection;
+
 /**
  *
  * @author Dineth Jayasekera
@@ -16,6 +19,8 @@ public class Inventory_reports extends javax.swing.JPanel {
      */
     public Inventory_reports() {
         initComponents();
+        loadToCombo();
+
     }
 
     /**
@@ -29,34 +34,34 @@ public class Inventory_reports extends javax.swing.JPanel {
 
         jp_Check_monthly_Income_In_Course = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        jc_Check_monthly_Income_In_Course = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         jMonthChooser1 = new com.toedter.calendar.JMonthChooser();
         bt_Check_monthly_Income_In_Course = new javax.swing.JButton();
         jp_Check_Daily_Income_In_Course = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        jc_Check_Daily_Income_In_Course = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         bt_Check_Daily_Income_In_Course = new javax.swing.JButton();
-        jp_Check_Daily_Income_In_Course1 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jp_Check_monthly_cost = new javax.swing.JPanel();
         bt_Check_Daily_Income_In_Course1 = new javax.swing.JButton();
-        jp_Check_Daily_Income_In_Course2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jMonthChooser2 = new com.toedter.calendar.JMonthChooser();
+        jp_invoice_in_customer_name = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         bt_Check_Daily_Income_In_Course2 = new javax.swing.JButton();
-        jComboBox3 = new javax.swing.JComboBox();
-        jp_Check_Daily_Income_In_Course3 = new javax.swing.JPanel();
+        jc_invoice_in_customer_name = new javax.swing.JComboBox();
+        jp_invoice_in_dates = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         bt_Check_Daily_Income_In_Course3 = new javax.swing.JButton();
         jDateChooser3 = new com.toedter.calendar.JDateChooser();
         jLabel9 = new javax.swing.JLabel();
         jDateChooser4 = new com.toedter.calendar.JDateChooser();
-        jp_Check_Daily_Income_In_Course4 = new javax.swing.JPanel();
+        jp_invoice_in_id = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         bt_Check_Daily_Income_In_Course4 = new javax.swing.JButton();
-        jComboBox4 = new javax.swing.JComboBox();
+        jc_invoice_in_id = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(2, 119, 189));
         setMaximumSize(new java.awt.Dimension(719, 686));
@@ -93,7 +98,7 @@ public class Inventory_reports extends javax.swing.JPanel {
             .addGroup(jp_Check_monthly_Income_In_CourseLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jp_Check_monthly_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jc_Check_monthly_Income_In_Course, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jp_Check_monthly_Income_In_CourseLayout.createSequentialGroup()
                         .addGroup(jp_Check_monthly_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -111,7 +116,7 @@ public class Inventory_reports extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jc_Check_monthly_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -151,7 +156,7 @@ public class Inventory_reports extends javax.swing.JPanel {
             .addGroup(jp_Check_Daily_Income_In_CourseLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jp_Check_Daily_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jc_Check_Daily_Income_In_Course, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jp_Check_Daily_Income_In_CourseLayout.createSequentialGroup()
                         .addGroup(jp_Check_Daily_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -169,7 +174,7 @@ public class Inventory_reports extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jc_Check_Daily_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -179,15 +184,11 @@ public class Inventory_reports extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jp_Check_Daily_Income_In_Course1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Check Monthly Cost ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jp_Check_Daily_Income_In_Course1.setMaximumSize(new java.awt.Dimension(337, 164));
-        jp_Check_Daily_Income_In_Course1.setMinimumSize(new java.awt.Dimension(337, 164));
-        jp_Check_Daily_Income_In_Course1.setOpaque(false);
-        jp_Check_Daily_Income_In_Course1.setPreferredSize(new java.awt.Dimension(337, 164));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Date");
+        jp_Check_monthly_cost.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Check Monthly Cost ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jp_Check_monthly_cost.setMaximumSize(new java.awt.Dimension(337, 164));
+        jp_Check_monthly_cost.setMinimumSize(new java.awt.Dimension(337, 164));
+        jp_Check_monthly_cost.setOpaque(false);
+        jp_Check_monthly_cost.setPreferredSize(new java.awt.Dimension(337, 164));
 
         bt_Check_Daily_Income_In_Course1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bt_Check_Daily_Income_In_Course1.setForeground(new java.awt.Color(255, 255, 255));
@@ -198,38 +199,41 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_Daily_Income_In_Course1.setMinimumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course1.setPreferredSize(new java.awt.Dimension(100, 50));
 
-        javax.swing.GroupLayout jp_Check_Daily_Income_In_Course1Layout = new javax.swing.GroupLayout(jp_Check_Daily_Income_In_Course1);
-        jp_Check_Daily_Income_In_Course1.setLayout(jp_Check_Daily_Income_In_Course1Layout);
-        jp_Check_Daily_Income_In_Course1Layout.setHorizontalGroup(
-            jp_Check_Daily_Income_In_Course1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_Check_Daily_Income_In_Course1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jp_Check_Daily_Income_In_Course1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_Check_Daily_Income_In_Course1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_Check_Daily_Income_In_Course1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(bt_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Month");
+
+        javax.swing.GroupLayout jp_Check_monthly_costLayout = new javax.swing.GroupLayout(jp_Check_monthly_cost);
+        jp_Check_monthly_cost.setLayout(jp_Check_monthly_costLayout);
+        jp_Check_monthly_costLayout.setHorizontalGroup(
+            jp_Check_monthly_costLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_Check_monthly_costLayout.createSequentialGroup()
+                .addContainerGap(215, Short.MAX_VALUE)
+                .addComponent(bt_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-        );
-        jp_Check_Daily_Income_In_Course1Layout.setVerticalGroup(
-            jp_Check_Daily_Income_In_Course1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_Check_Daily_Income_In_Course1Layout.createSequentialGroup()
+            .addGroup(jp_Check_monthly_costLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addGroup(jp_Check_monthly_costLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jMonthChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jp_Check_monthly_costLayout.setVerticalGroup(
+            jp_Check_monthly_costLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_Check_monthly_costLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jMonthChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bt_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jp_Check_Daily_Income_In_Course2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Invoice In Customer Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jp_Check_Daily_Income_In_Course2.setMaximumSize(new java.awt.Dimension(337, 164));
-        jp_Check_Daily_Income_In_Course2.setMinimumSize(new java.awt.Dimension(337, 164));
-        jp_Check_Daily_Income_In_Course2.setOpaque(false);
+        jp_invoice_in_customer_name.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Invoice In Customer Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jp_invoice_in_customer_name.setMaximumSize(new java.awt.Dimension(337, 164));
+        jp_invoice_in_customer_name.setMinimumSize(new java.awt.Dimension(337, 164));
+        jp_invoice_in_customer_name.setOpaque(false);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -244,38 +248,38 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_Daily_Income_In_Course2.setMinimumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course2.setPreferredSize(new java.awt.Dimension(100, 50));
 
-        javax.swing.GroupLayout jp_Check_Daily_Income_In_Course2Layout = new javax.swing.GroupLayout(jp_Check_Daily_Income_In_Course2);
-        jp_Check_Daily_Income_In_Course2.setLayout(jp_Check_Daily_Income_In_Course2Layout);
-        jp_Check_Daily_Income_In_Course2Layout.setHorizontalGroup(
-            jp_Check_Daily_Income_In_Course2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_Check_Daily_Income_In_Course2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jp_invoice_in_customer_nameLayout = new javax.swing.GroupLayout(jp_invoice_in_customer_name);
+        jp_invoice_in_customer_name.setLayout(jp_invoice_in_customer_nameLayout);
+        jp_invoice_in_customer_nameLayout.setHorizontalGroup(
+            jp_invoice_in_customer_nameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_invoice_in_customer_nameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jp_Check_Daily_Income_In_Course2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_Check_Daily_Income_In_Course2Layout.createSequentialGroup()
+                .addGroup(jp_invoice_in_customer_nameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_invoice_in_customer_nameLayout.createSequentialGroup()
                         .addGap(0, 205, Short.MAX_VALUE)
                         .addComponent(bt_Check_Daily_Income_In_Course2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jp_Check_Daily_Income_In_Course2Layout.createSequentialGroup()
+                    .addGroup(jp_invoice_in_customer_nameLayout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jc_invoice_in_customer_name, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jp_Check_Daily_Income_In_Course2Layout.setVerticalGroup(
-            jp_Check_Daily_Income_In_Course2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_Check_Daily_Income_In_Course2Layout.createSequentialGroup()
+        jp_invoice_in_customer_nameLayout.setVerticalGroup(
+            jp_invoice_in_customer_nameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_invoice_in_customer_nameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jc_invoice_in_customer_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bt_Check_Daily_Income_In_Course2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jp_Check_Daily_Income_In_Course3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Invoice In Dates", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jp_Check_Daily_Income_In_Course3.setMaximumSize(new java.awt.Dimension(337, 218));
-        jp_Check_Daily_Income_In_Course3.setMinimumSize(new java.awt.Dimension(337, 218));
-        jp_Check_Daily_Income_In_Course3.setOpaque(false);
+        jp_invoice_in_dates.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Invoice In Dates", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jp_invoice_in_dates.setMaximumSize(new java.awt.Dimension(337, 218));
+        jp_invoice_in_dates.setMinimumSize(new java.awt.Dimension(337, 218));
+        jp_invoice_in_dates.setOpaque(false);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -294,28 +298,28 @@ public class Inventory_reports extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("To");
 
-        javax.swing.GroupLayout jp_Check_Daily_Income_In_Course3Layout = new javax.swing.GroupLayout(jp_Check_Daily_Income_In_Course3);
-        jp_Check_Daily_Income_In_Course3.setLayout(jp_Check_Daily_Income_In_Course3Layout);
-        jp_Check_Daily_Income_In_Course3Layout.setHorizontalGroup(
-            jp_Check_Daily_Income_In_Course3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_Check_Daily_Income_In_Course3Layout.createSequentialGroup()
+        javax.swing.GroupLayout jp_invoice_in_datesLayout = new javax.swing.GroupLayout(jp_invoice_in_dates);
+        jp_invoice_in_dates.setLayout(jp_invoice_in_datesLayout);
+        jp_invoice_in_datesLayout.setHorizontalGroup(
+            jp_invoice_in_datesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_invoice_in_datesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jp_Check_Daily_Income_In_Course3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jp_invoice_in_datesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDateChooser4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_Check_Daily_Income_In_Course3Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_invoice_in_datesLayout.createSequentialGroup()
                         .addGap(0, 205, Short.MAX_VALUE)
                         .addComponent(bt_Check_Daily_Income_In_Course3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jDateChooser3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jp_Check_Daily_Income_In_Course3Layout.createSequentialGroup()
-                        .addGroup(jp_Check_Daily_Income_In_Course3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_invoice_in_datesLayout.createSequentialGroup()
+                        .addGroup(jp_invoice_in_datesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(jLabel9))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jp_Check_Daily_Income_In_Course3Layout.setVerticalGroup(
-            jp_Check_Daily_Income_In_Course3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_Check_Daily_Income_In_Course3Layout.createSequentialGroup()
+        jp_invoice_in_datesLayout.setVerticalGroup(
+            jp_invoice_in_datesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_invoice_in_datesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -329,10 +333,10 @@ public class Inventory_reports extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jp_Check_Daily_Income_In_Course4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Invoice In ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jp_Check_Daily_Income_In_Course4.setMaximumSize(new java.awt.Dimension(337, 218));
-        jp_Check_Daily_Income_In_Course4.setMinimumSize(new java.awt.Dimension(337, 218));
-        jp_Check_Daily_Income_In_Course4.setOpaque(false);
+        jp_invoice_in_id.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Invoice In ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jp_invoice_in_id.setMaximumSize(new java.awt.Dimension(337, 218));
+        jp_invoice_in_id.setMinimumSize(new java.awt.Dimension(337, 218));
+        jp_invoice_in_id.setOpaque(false);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -347,29 +351,29 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_Daily_Income_In_Course4.setMinimumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course4.setPreferredSize(new java.awt.Dimension(100, 50));
 
-        javax.swing.GroupLayout jp_Check_Daily_Income_In_Course4Layout = new javax.swing.GroupLayout(jp_Check_Daily_Income_In_Course4);
-        jp_Check_Daily_Income_In_Course4.setLayout(jp_Check_Daily_Income_In_Course4Layout);
-        jp_Check_Daily_Income_In_Course4Layout.setHorizontalGroup(
-            jp_Check_Daily_Income_In_Course4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_Check_Daily_Income_In_Course4Layout.createSequentialGroup()
+        javax.swing.GroupLayout jp_invoice_in_idLayout = new javax.swing.GroupLayout(jp_invoice_in_id);
+        jp_invoice_in_id.setLayout(jp_invoice_in_idLayout);
+        jp_invoice_in_idLayout.setHorizontalGroup(
+            jp_invoice_in_idLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_invoice_in_idLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jp_Check_Daily_Income_In_Course4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_Check_Daily_Income_In_Course4Layout.createSequentialGroup()
+                .addGroup(jp_invoice_in_idLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_invoice_in_idLayout.createSequentialGroup()
                         .addGap(0, 205, Short.MAX_VALUE)
                         .addComponent(bt_Check_Daily_Income_In_Course4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jp_Check_Daily_Income_In_Course4Layout.createSequentialGroup()
+                    .addGroup(jp_invoice_in_idLayout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jc_invoice_in_id, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jp_Check_Daily_Income_In_Course4Layout.setVerticalGroup(
-            jp_Check_Daily_Income_In_Course4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_Check_Daily_Income_In_Course4Layout.createSequentialGroup()
+        jp_invoice_in_idLayout.setVerticalGroup(
+            jp_invoice_in_idLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_invoice_in_idLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jc_invoice_in_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(bt_Check_Daily_Income_In_Course4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -384,7 +388,7 @@ public class Inventory_reports extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jp_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jp_Check_monthly_cost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jp_Check_Daily_Income_In_Course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -392,11 +396,11 @@ public class Inventory_reports extends javax.swing.JPanel {
                                 .addComponent(jp_Check_monthly_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jp_Check_Daily_Income_In_Course2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jp_invoice_in_customer_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jp_Check_Daily_Income_In_Course3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jp_invoice_in_dates, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jp_Check_Daily_Income_In_Course4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jp_invoice_in_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -408,12 +412,12 @@ public class Inventory_reports extends javax.swing.JPanel {
                     .addComponent(jp_Check_monthly_Income_In_Course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jp_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jp_Check_Daily_Income_In_Course2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jp_Check_monthly_cost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jp_invoice_in_customer_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jp_Check_Daily_Income_In_Course3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jp_Check_Daily_Income_In_Course4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jp_invoice_in_dates, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jp_invoice_in_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -426,12 +430,7 @@ public class Inventory_reports extends javax.swing.JPanel {
     private javax.swing.JButton bt_Check_Daily_Income_In_Course3;
     private javax.swing.JButton bt_Check_Daily_Income_In_Course4;
     private javax.swing.JButton bt_Check_monthly_Income_In_Course;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox4;
     private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private com.toedter.calendar.JDateChooser jDateChooser3;
     private com.toedter.calendar.JDateChooser jDateChooser4;
     private javax.swing.JLabel jLabel1;
@@ -439,16 +438,52 @@ public class Inventory_reports extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private com.toedter.calendar.JMonthChooser jMonthChooser1;
+    private com.toedter.calendar.JMonthChooser jMonthChooser2;
+    private javax.swing.JComboBox jc_Check_Daily_Income_In_Course;
+    private javax.swing.JComboBox jc_Check_monthly_Income_In_Course;
+    private javax.swing.JComboBox jc_invoice_in_customer_name;
+    private javax.swing.JComboBox jc_invoice_in_id;
     private javax.swing.JPanel jp_Check_Daily_Income_In_Course;
-    private javax.swing.JPanel jp_Check_Daily_Income_In_Course1;
-    private javax.swing.JPanel jp_Check_Daily_Income_In_Course2;
-    private javax.swing.JPanel jp_Check_Daily_Income_In_Course3;
-    private javax.swing.JPanel jp_Check_Daily_Income_In_Course4;
     private javax.swing.JPanel jp_Check_monthly_Income_In_Course;
+    private javax.swing.JPanel jp_Check_monthly_cost;
+    private javax.swing.JPanel jp_invoice_in_customer_name;
+    private javax.swing.JPanel jp_invoice_in_dates;
+    private javax.swing.JPanel jp_invoice_in_id;
     // End of variables declaration//GEN-END:variables
+
+    private void loadToCombo() {
+        try {
+            //////////////////////////Load Course Names///////////////////////
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT stu_exam_courses_info_name FROM stu_exam_courses_info ORDER BY stu_exam_courses_info_name ASC");
+            jc_Check_Daily_Income_In_Course.removeAllItems();
+            jc_Check_monthly_Income_In_Course.removeAllItems();
+            while (rs.next()) {
+                jc_Check_Daily_Income_In_Course.addItem(rs.getString("stu_exam_courses_info_name"));
+                jc_Check_monthly_Income_In_Course.addItem(rs.getString("stu_exam_courses_info_name"));
+            }
+            rs.close();
+            /////////////////////////Load Customer Name//////////////////////
+            ResultSet cusName = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT customername FROM inv_invoice ORDER BY ASC");
+            jc_invoice_in_customer_name.removeAllItems();
+            while (cusName.next()) {
+                jc_invoice_in_customer_name.addItem(rs.getString("customername"));
+            }
+            cusName.close();
+            /////////////////////////Load Invoice ID/////////////////////////
+            ResultSet id = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT id FROM inv_invoice");
+            jc_invoice_in_id.removeAllItems();
+            while (id.next()) {
+                jc_invoice_in_id.addItem(id.getString("id"));
+            }
+            id.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

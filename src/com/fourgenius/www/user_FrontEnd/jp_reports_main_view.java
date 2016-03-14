@@ -188,7 +188,7 @@ public class jp_reports_main_view extends javax.swing.JFrame {
 
         lb_student_reports.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_student_reports.setForeground(new java.awt.Color(255, 255, 255));
-        lb_student_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/student_report_icon.png"))); // NOI18N
+        lb_student_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/report_icon_student.png"))); // NOI18N
         lb_student_reports.setText("Student Reports");
         lb_student_reports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lb_student_reports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -200,7 +200,7 @@ public class jp_reports_main_view extends javax.swing.JFrame {
 
         lb_inventory_reports.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_inventory_reports.setForeground(new java.awt.Color(255, 255, 255));
-        lb_inventory_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/Inventory_report_icon.png"))); // NOI18N
+        lb_inventory_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/report_icon_inventory.png"))); // NOI18N
         lb_inventory_reports.setText("Inventory Reports");
         lb_inventory_reports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lb_inventory_reports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -227,7 +227,7 @@ public class jp_reports_main_view extends javax.swing.JFrame {
                 .addContainerGap(232, Short.MAX_VALUE)
                 .addGroup(jp_report_changeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lb_inventory_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_student_reports))
+                    .addComponent(lb_student_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(233, Short.MAX_VALUE))
         );
 

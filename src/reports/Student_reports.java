@@ -27,23 +27,125 @@ public class Student_reports extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jp_Check_Daily_Income_In_Course = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        bt_Check_Daily_Income_In_Course = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+
         setBackground(new java.awt.Color(2, 119, 189));
         setMaximumSize(new java.awt.Dimension(719, 686));
         setMinimumSize(new java.awt.Dimension(719, 686));
+
+        jp_Check_Daily_Income_In_Course.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Student Contact Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jp_Check_Daily_Income_In_Course.setMaximumSize(new java.awt.Dimension(337, 254));
+        jp_Check_Daily_Income_In_Course.setMinimumSize(new java.awt.Dimension(337, 254));
+        jp_Check_Daily_Income_In_Course.setOpaque(false);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Course");
+
+        bt_Check_Daily_Income_In_Course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_Check_Daily_Income_In_Course.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Check_Daily_Income_In_Course.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
+        bt_Check_Daily_Income_In_Course.setText("View");
+        bt_Check_Daily_Income_In_Course.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_Check_Daily_Income_In_Course.setMaximumSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course.setMinimumSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course.setPreferredSize(new java.awt.Dimension(100, 50));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Contacts");
+
+        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setText("Email");
+        jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCheckBox1.setOpaque(false);
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox2.setText("Mobile");
+        jCheckBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCheckBox2.setOpaque(false);
+
+        javax.swing.GroupLayout jp_Check_Daily_Income_In_CourseLayout = new javax.swing.GroupLayout(jp_Check_Daily_Income_In_Course);
+        jp_Check_Daily_Income_In_Course.setLayout(jp_Check_Daily_Income_In_CourseLayout);
+        jp_Check_Daily_Income_In_CourseLayout.setHorizontalGroup(
+            jp_Check_Daily_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_Check_Daily_Income_In_CourseLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_Check_Daily_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_Check_Daily_Income_In_CourseLayout.createSequentialGroup()
+                        .addGap(0, 205, Short.MAX_VALUE)
+                        .addComponent(bt_Check_Daily_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_Check_Daily_Income_In_CourseLayout.createSequentialGroup()
+                        .addGroup(jp_Check_Daily_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBox2)
+                            .addComponent(jCheckBox1)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jp_Check_Daily_Income_In_CourseLayout.setVerticalGroup(
+            jp_Check_Daily_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_Check_Daily_Income_In_CourseLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bt_Check_Daily_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 719, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jp_Check_Daily_Income_In_Course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(372, 372, 372))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 686, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jp_Check_Daily_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(436, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_Check_Daily_Income_In_Course;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jp_Check_Daily_Income_In_Course;
     // End of variables declaration//GEN-END:variables
 }
