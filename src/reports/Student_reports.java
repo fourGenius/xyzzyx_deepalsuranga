@@ -48,6 +48,8 @@ public class Student_reports extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Course");
 
+        jComboBox1.setPreferredSize(new java.awt.Dimension(28, 30));
+
         bt_Check_Daily_Income_In_Course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bt_Check_Daily_Income_In_Course.setForeground(new java.awt.Color(255, 255, 255));
         bt_Check_Daily_Income_In_Course.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
@@ -55,7 +57,7 @@ public class Student_reports extends javax.swing.JPanel {
         bt_Check_Daily_Income_In_Course.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bt_Check_Daily_Income_In_Course.setMaximumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course.setMinimumSize(new java.awt.Dimension(100, 50));
-        bt_Check_Daily_Income_In_Course.setPreferredSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course.setPreferredSize(new java.awt.Dimension(100, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,7 +114,7 @@ public class Student_reports extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bt_Check_Daily_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_Check_Daily_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
