@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-20T14:27:25 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="check_monthly_incom_in_courses" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13cf7b24-3a6b-44cb-bff6-10048ebbf585">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salon_test"/>
 	<parameter name="course" class="java.lang.String"/>
 	<parameter name="date1" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select *, sum(payment) as total from student_payment where course=$P{course} and date=$P{date1}]]>
+		<![CDATA[SELECT *,
+	sum( payment) AS total
+FROM student_payment
+WHERE 
+	 student_payment.course = $P{course} 
+	 AND student_payment.date = $P{date1}]]>
 	</queryString>
 	<field name="idstudent_payment" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -32,12 +41,7 @@
 	<field name="due_payment" class="java.lang.Double">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="status" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="total" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
+	<field name="total" class="java.lang.Double"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>

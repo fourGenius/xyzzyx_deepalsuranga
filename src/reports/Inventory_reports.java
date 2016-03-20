@@ -458,13 +458,13 @@ public class Inventory_reports extends javax.swing.JPanel {
 
         try {
             SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
-//            String ReportPath_daliyIncome = "src//reports//check_daily_incom_in_courses.jrxml";
-String ReportPath_daliyIncome = "src//reports//report1.jrxml";
+            String ReportPath_daliyIncome = "src//reports//check_daily_incom_in_courses.jrxml";
+//String ReportPath_daliyIncome = "src//reports//report2.jrxml";
             JasperReport compileReport = JasperCompileManager.compileReport(ReportPath_daliyIncome);
             Map<String, Object> dailyIncomeMap = new HashMap<String, Object>();
 
-//          dailyIncomeMap.put("course",jc_Check_Daily_Income_In_Course.getSelectedItem().toString());
-//          dailyIncomeMap.put("date1",sdf.format(jDateChooser1.getDate()));
+          dailyIncomeMap.put("course",jc_Check_Daily_Income_In_Course.getSelectedItem().toString());
+          dailyIncomeMap.put("date1",sdf.format(jDateChooser1.getDate()));
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, dailyIncomeMap, MC_JavaDataBaseConnection.myConnection());
             JasperViewer.viewReport(jasperPrint, false);

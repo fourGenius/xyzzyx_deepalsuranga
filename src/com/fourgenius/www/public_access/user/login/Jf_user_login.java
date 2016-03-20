@@ -39,11 +39,12 @@ public class Jf_user_login extends javax.swing.JFrame {
     Md_move_text setLableValuesNullAndAdd = new Md_move_text();
     Md_QrCodeGenarater code_Gen = new Md_QrCodeGenarater();
     boolean flag;
+
     public Jf_user_login() {
         initComponents();
         showDate();;
         showTime();
-       _pf_user_login_password.setEditable(false);
+        _pf_user_login_password.setEditable(false);
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
@@ -544,7 +545,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     int i = 0;
     private void _tf_user_loging_userNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameKeyTyped
-
+        _tf_user_loging_userName.setBackground(Color.WHITE);
         if (i < 1) {
             if (!(_tf_user_loging_userName.getText().isEmpty() & _tf_user_loging_userName.getText().equals("User Name"))) {
                 setLableValuesNullAndAdd._md_textFiledToLabel(_tf_user_loging_userName, _lb_user_login_userName, "User Name");
@@ -561,16 +562,17 @@ public class Jf_user_login extends javax.swing.JFrame {
             ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "'");
             if (!rs.next()) {
                 _tf_user_loging_userName.setBackground(Color.red);
-                JOptionPane.showMessageDialog(this,"User name is Invalide","Warning",2);
-            _tf_user_loging_userName.grabFocus();
-            flag=false;
-            }
-            else{
-           _tf_user_loging_userName.setBackground(Color.WHITE);
-          flag=true;
-           _pf_user_login_password.setEditable(true);     
-           _pf_user_login_password.grabFocus();
-                
+                JOptionPane.showMessageDialog(this, "User name is Invalide", "Warning", 2);
+                _tf_user_loging_userName.grabFocus();
+                _tf_user_loging_userName.selectAll();
+
+                flag = false;
+            } else {
+                _tf_user_loging_userName.setBackground(Color.WHITE);
+                flag = true;
+                _pf_user_login_password.setEditable(true);
+                _pf_user_login_password.grabFocus();
+
             }
         } catch (Exception e) {
         }
@@ -579,14 +581,15 @@ public class Jf_user_login extends javax.swing.JFrame {
     private void _pf_user_login_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__pf_user_login_passwordMouseClicked
 
         if (flag) {
-              setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password, _lb_user_login_password, "Password");
-        _pf_user_login_password.setEchoChar('*');
+            setLableValuesNullAndAdd._md_passwordFiledToLabel(_pf_user_login_password, _lb_user_login_password, "Password");
+            _pf_user_login_password.setEchoChar('*');
         }
 
     }//GEN-LAST:event__pf_user_login_passwordMouseClicked
     int x = 0;
     private void _pf_user_login_passwordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__pf_user_login_passwordKeyTyped
-        if (_pf_user_login_password.getText().length()==100) {
+        _pf_user_login_password.setBackground(Color.WHITE);
+        if (_pf_user_login_password.getText().length() == 100) {
             evt.consume();
         }
         if (x < 1) {
@@ -603,9 +606,23 @@ public class Jf_user_login extends javax.swing.JFrame {
 
 
     private void _pf_user_login_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__pf_user_login_passwordActionPerformed
+        try {
+            String pass = new String(_pf_user_login_password.getPassword());
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM user WHERE user_email='" + _tf_user_loging_userName.getText() + "' AND user_password='" + pass + "'");
+            if (!rs.next()) {
+                _pf_user_login_password.setBackground(Color.red);
+                JOptionPane.showMessageDialog(this, "Password is Invalide", "Warning", 2);
+                _pf_user_login_password.grabFocus();
+                _pf_user_login_password.selectAll();
 
-        _bt_Jf_user_login_Login.doClick();
+            } else {
 
+                _bt_Jf_user_login_Login.doClick();
+
+            }
+
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event__pf_user_login_passwordActionPerformed
 
     private void _lb_user_login_closeMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseMoved
@@ -807,6 +824,7 @@ public class Jf_user_login extends javax.swing.JFrame {
                 System.gc();
 
             }
+
             rs.close();
         } catch (Exception e) {
             e.printStackTrace();
