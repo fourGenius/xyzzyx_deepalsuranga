@@ -6,6 +6,17 @@
 package reports;
 
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -92,6 +103,11 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_monthly_Income_In_Course.setMaximumSize(new java.awt.Dimension(100, 50));
         bt_Check_monthly_Income_In_Course.setMinimumSize(new java.awt.Dimension(100, 50));
         bt_Check_monthly_Income_In_Course.setPreferredSize(new java.awt.Dimension(100, 50));
+        bt_Check_monthly_Income_In_Course.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Check_monthly_Income_In_CourseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp_Check_monthly_Income_In_CourseLayout = new javax.swing.GroupLayout(jp_Check_monthly_Income_In_Course);
         jp_Check_monthly_Income_In_Course.setLayout(jp_Check_monthly_Income_In_CourseLayout);
@@ -151,6 +167,11 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_Daily_Income_In_Course.setMaximumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course.setMinimumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course.setPreferredSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Check_Daily_Income_In_CourseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp_Check_Daily_Income_In_CourseLayout = new javax.swing.GroupLayout(jp_Check_Daily_Income_In_Course);
         jp_Check_Daily_Income_In_Course.setLayout(jp_Check_Daily_Income_In_CourseLayout);
@@ -200,6 +221,11 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_Daily_Income_In_Course1.setMaximumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course1.setMinimumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course1.setPreferredSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Check_Daily_Income_In_Course1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -427,6 +453,51 @@ public class Inventory_reports extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_Check_Daily_Income_In_CourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_Daily_Income_In_CourseActionPerformed
+
+        try {
+            SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
+//            String ReportPath_daliyIncome = "src//reports//check_daily_incom_in_courses.jrxml";
+String ReportPath_daliyIncome = "src//reports//report1.jrxml";
+            JasperReport compileReport = JasperCompileManager.compileReport(ReportPath_daliyIncome);
+            Map<String, Object> dailyIncomeMap = new HashMap<String, Object>();
+
+//          dailyIncomeMap.put("course",jc_Check_Daily_Income_In_Course.getSelectedItem().toString());
+//          dailyIncomeMap.put("date1",sdf.format(jDateChooser1.getDate()));
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, dailyIncomeMap, MC_JavaDataBaseConnection.myConnection());
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (JRException ex) {
+            Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_bt_Check_Daily_Income_In_CourseActionPerformed
+
+    private void bt_Check_monthly_Income_In_CourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_monthly_Income_In_CourseActionPerformed
+
+        try {
+            String ReportPath_2 = "src//reports//check_monthly_incom_in_courses.jrxml";
+            JasperReport jasperReport2 = JasperCompileManager.compileReport(ReportPath_2);
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            
+            
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport2, map);
+            JasperViewer.viewReport(jasperPrint,false);
+
+        } catch (Exception e) {
+            Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+    }//GEN-LAST:event_bt_Check_monthly_Income_In_CourseActionPerformed
+
+    private void bt_Check_Daily_Income_In_Course1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_Daily_Income_In_Course1ActionPerformed
+    
+        
+        
+    }//GEN-LAST:event_bt_Check_Daily_Income_In_Course1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

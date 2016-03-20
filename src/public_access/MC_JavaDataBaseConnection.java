@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /*
@@ -100,6 +102,22 @@ public class MC_JavaDataBaseConnection {
             JOptionPane.showMessageDialog(null, "Failed to make connection!");
         }
         return connection;
+    }
+
+    public static String add_data(String table_name) {
+        try {
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("INSERT INTO "+table_name+" VALUES (100, 'Zara', 'Ali', 18)");
+//            if (rs != null) {
+//                rs.close();
+//            }else if (st != null) {
+//                st.close();
+//            }else if (con != null) {
+//                con.close();
+//            }
+        } catch (SQLException ex) {
+            Logger.getLogger(MC_JavaDataBaseConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
 }

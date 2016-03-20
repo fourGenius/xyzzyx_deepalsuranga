@@ -207,6 +207,9 @@
               <Dimension value="[100, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_monthly_Income_In_CourseActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -331,6 +334,9 @@
               <Dimension value="[100, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_Daily_Income_In_CourseActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -412,6 +418,9 @@
               <Dimension value="[100, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_Daily_Income_In_Course1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>

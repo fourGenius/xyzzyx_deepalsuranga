@@ -174,7 +174,7 @@ public class grn extends javax.swing.JPanel {
         });
         SGrnId.setViewportView(sGrnId);
 
-        jPanel3.add(SGrnId, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 230, 80));
+        jPanel3.add(SGrnId, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 230, 60));
 
         sGgrnIdSearch.setMaximumSize(new java.awt.Dimension(230, 20));
         sGgrnIdSearch.setMinimumSize(new java.awt.Dimension(230, 20));
