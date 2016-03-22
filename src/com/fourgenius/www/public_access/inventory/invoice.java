@@ -136,7 +136,7 @@ public class invoice extends javax.swing.JPanel {
                 payKeyTyped(evt);
             }
         });
-        add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 530, 300, 40));
+        add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 540, 300, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(java.awt.Color.white);
@@ -256,13 +256,13 @@ public class invoice extends javax.swing.JPanel {
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(java.awt.Color.white);
         jLabel14.setText("Payment");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, -1, -1));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, -1, -1));
 
         lb_date_view.setEditable(false);
         lb_date_view.setMaximumSize(new java.awt.Dimension(260, 20));
         lb_date_view.setMinimumSize(new java.awt.Dimension(260, 20));
         lb_date_view.setPreferredSize(new java.awt.Dimension(100, 40));
-        add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 50, 260, -1));
+        add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 43, 260, -1));
 
         customername.setMaximumSize(new java.awt.Dimension(170, 20));
         customername.setMinimumSize(new java.awt.Dimension(170, 20));
@@ -285,7 +285,7 @@ public class invoice extends javax.swing.JPanel {
                 customernameKeyTyped(evt);
             }
         });
-        add(customername, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 270, -1));
+        add(customername, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 270, -1));
 
         CustomerNameSearch.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         CustomerNameSearch.setAlignmentY(2.0F);
@@ -316,7 +316,7 @@ public class invoice extends javax.swing.JPanel {
         net.setMaximumSize(new java.awt.Dimension(308, 20));
         net.setMinimumSize(new java.awt.Dimension(308, 20));
         net.setPreferredSize(new java.awt.Dimension(300, 40));
-        add(net, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 300, 40));
+        add(net, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 524, 300, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(java.awt.Color.white);
@@ -327,7 +327,7 @@ public class invoice extends javax.swing.JPanel {
         sub.setMaximumSize(new java.awt.Dimension(308, 20));
         sub.setMinimumSize(new java.awt.Dimension(308, 20));
         sub.setPreferredSize(new java.awt.Dimension(300, 40));
-        add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 300, 40));
+        add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 300, 40));
 
         lb_time_date.setEditable(false);
         lb_time_date.setMaximumSize(new java.awt.Dimension(260, 20));
@@ -358,7 +358,7 @@ public class invoice extends javax.swing.JPanel {
                 codeKeyReleased(evt);
             }
         });
-        jPanel1.add(code, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 319, 40));
+        jPanel1.add(code, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 319, 40));
 
         description.setMaximumSize(new java.awt.Dimension(493, 20));
         description.setMinimumSize(new java.awt.Dimension(493, 20));
@@ -411,6 +411,11 @@ public class invoice extends javax.swing.JPanel {
         });
         jPanel1.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 50, 250, 40));
 
+        li_description_search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                li_description_searchMouseClicked(evt);
+            }
+        });
         sp_description_search.setViewportView(li_description_search);
 
         jPanel1.add(sp_description_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 93, 490, 110));
@@ -481,7 +486,7 @@ public class invoice extends javax.swing.JPanel {
     private void balActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balActionPerformed
         try {
             DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
-            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_invoice values('" + id.getText() + "','" + lb_date_view.getText() + "','" + sub.getText() + "','" + lb_time_date.getText() + "','" + Dis.getText() + "','" + net.getText() + "','" + customername.getText() + "','" + customerId.getText() + "','" + bal.getText() + "','" + pay.getText() + "')");
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_invoice (id,date,total,time,discount,nettot,customername,customerid,bal,payment) values('" + id.getText() + "','" + lb_date_view.getText() + "','" + sub.getText() + "','" + lb_time_date.getText() + "','" + Dis.getText() + "','" + net.getText() + "','" + customername.getText() + "','" + customerId.getText() + "','" + bal.getText() + "','" + pay.getText() + "')");
             String invoiceId = id.getText();
             for (int i = 0; i < dtm.getRowCount(); i++) {
 
@@ -490,10 +495,10 @@ public class invoice extends javax.swing.JPanel {
                     MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set qty=qty-'" + dtm.getValueAt(i, 3) + "' where itemid='" + dtm.getValueAt(i, 0) + "'");
                 }
                 rs.close();
-               MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_invoicereg (itemid,item,itemprice,qty,subtot,invoiceid) values('" + dtm.getValueAt(i, 0) + "','" + dtm.getValueAt(i, 1) + "','" + dtm.getValueAt(i, 2) + "','" + dtm.getValueAt(i, 3) + "','" + dtm.getValueAt(i, 4) + "','" + invoiceId + "')");
+               MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_invoicereg (itemid,item,itemprice,subtot,invoiceid) values('" + dtm.getValueAt(i, 0) + "','" + dtm.getValueAt(i, 1) + "','" + dtm.getValueAt(i, 2) + "','" + dtm.getValueAt(i, 3) + "','"+invoiceId+"')");
 
             }
-            String path = "src/reports/bil.jrxml";
+            String path = "src\reports\bil.jrxml";
             JasperReport compileReport = JasperCompileManager.compileReport(path);
             Map<String, Object> m = new HashMap<String, Object>();
 
@@ -796,7 +801,7 @@ public class invoice extends javax.swing.JPanel {
     }//GEN-LAST:event_descriptionActionPerformed
 
     private void priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceActionPerformed
-    
+    total.setText(price.getText());
     }//GEN-LAST:event_priceActionPerformed
 
     private void priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_priceKeyReleased
@@ -883,6 +888,23 @@ public class invoice extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_descriptionKeyReleased
 
+    private void li_description_searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_li_description_searchMouseClicked
+
+        try {
+            description.setText(li_description_search.getSelectedValue().toString());
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select code,price from inv_saloon_jobs where description='" + li_description_search.getSelectedValue().toString() + "'");
+            if (rs.next()) {
+                 code.setText(rs.getString("code"));
+                price.setText(rs.getString("price"));
+                sp_description_search.setVisible(false);
+                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event_li_description_searchMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList CustomerNameSearch;
@@ -950,6 +972,25 @@ public class invoice extends javax.swing.JPanel {
                 }
 
             }
+             if (flag) {
+//                System.out.println(item);
+////                Double qun = Double.parseDouble(qt) + Double.parseDouble(qty.getText());
+//                Double tot1 = qun * Double.parseDouble(price.getText());
+//                dtm.setValueAt(qun, i, 3);
+//                dtm.setValueAt(tot1, i, 4);
+                clear();
+                caltot();
+            } else {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                v.add(code.getText());
+                v.add(description.getText());
+                v.add(price.getText());
+                v.add(total.getText());
+                dtm.addRow(v);
+
+                clear();
+                caltot();
+            }
 
             
 
@@ -1016,7 +1057,7 @@ public class invoice extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
         double tot = 0;
         for (int i = 0; i < dtm.getRowCount(); i++) {
-            tot += Double.parseDouble(dtm.getValueAt(i, 4).toString());
+            tot += Double.parseDouble(dtm.getValueAt(i, 3).toString());
         }
         sub.setText("" + tot);
     }

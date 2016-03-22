@@ -5,18 +5,23 @@
  */
 package reports;
 
+import com.fourgenius.www.user_FrontEnd.jp_reports_main_view;
+import java.awt.Dimension;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JScrollPane;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.swing.JRViewer;
 import net.sf.jasperreports.view.JasperViewer;
+import org.codehaus.groovy.tools.shell.util.SimpleCompletor;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -33,6 +38,8 @@ public class Inventory_reports extends javax.swing.JPanel {
         loadToCombo();
 
     }
+    int monthValue;
+    int year;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,8 +54,9 @@ public class Inventory_reports extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jc_Check_monthly_Income_In_Course = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
-        jMonthChooser1 = new com.toedter.calendar.JMonthChooser();
+        mc_Check_monthly_Income_In_Course = new com.toedter.calendar.JMonthChooser();
         bt_Check_monthly_Income_In_Course = new javax.swing.JButton();
+        yc_Check_monthly_Income_In_Course = new com.toedter.calendar.JYearChooser();
         jp_Check_Daily_Income_In_Course = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jc_Check_Daily_Income_In_Course = new javax.swing.JComboBox();
@@ -56,19 +64,20 @@ public class Inventory_reports extends javax.swing.JPanel {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         bt_Check_Daily_Income_In_Course = new javax.swing.JButton();
         jp_Check_monthly_cost = new javax.swing.JPanel();
-        bt_Check_Daily_Income_In_Course1 = new javax.swing.JButton();
+        bt_Check_Monthly_Cost = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jMonthChooser2 = new com.toedter.calendar.JMonthChooser();
+        mc_Check_Monthly_Cost = new com.toedter.calendar.JMonthChooser();
+        yc_Check_Monthly_Cost = new com.toedter.calendar.JYearChooser();
         jp_invoice_in_customer_name = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         bt_Check_Daily_Income_In_Course2 = new javax.swing.JButton();
         jc_invoice_in_customer_name = new javax.swing.JComboBox();
         jp_invoice_in_dates = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        bt_Check_Daily_Income_In_Course3 = new javax.swing.JButton();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        bt_Invoice_In_Dates = new javax.swing.JButton();
+        dc_invoice_in_dates_first = new com.toedter.calendar.JDateChooser();
         jLabel9 = new javax.swing.JLabel();
-        jDateChooser4 = new com.toedter.calendar.JDateChooser();
+        dc_invoice_in_dates_last = new com.toedter.calendar.JDateChooser();
         jp_invoice_in_id = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         bt_Check_Daily_Income_In_Course4 = new javax.swing.JButton();
@@ -95,10 +104,18 @@ public class Inventory_reports extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Month");
 
+        mc_Check_monthly_Income_In_Course.setRequestFocusEnabled(false);
+        mc_Check_monthly_Income_In_Course.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                mc_Check_monthly_Income_In_CoursePropertyChange(evt);
+            }
+        });
+
         bt_Check_monthly_Income_In_Course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bt_Check_monthly_Income_In_Course.setForeground(new java.awt.Color(255, 255, 255));
         bt_Check_monthly_Income_In_Course.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
         bt_Check_monthly_Income_In_Course.setText("View");
+        bt_Check_monthly_Income_In_Course.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bt_Check_monthly_Income_In_Course.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bt_Check_monthly_Income_In_Course.setMaximumSize(new java.awt.Dimension(100, 50));
         bt_Check_monthly_Income_In_Course.setMinimumSize(new java.awt.Dimension(100, 50));
@@ -106,6 +123,13 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_monthly_Income_In_Course.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_Check_monthly_Income_In_CourseActionPerformed(evt);
+            }
+        });
+
+        yc_Check_monthly_Income_In_Course.setRequestFocusEnabled(false);
+        yc_Check_monthly_Income_In_Course.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                yc_Check_monthly_Income_In_CoursePropertyChange(evt);
             }
         });
 
@@ -117,15 +141,18 @@ public class Inventory_reports extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jp_Check_monthly_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jc_Check_monthly_Income_In_Course, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_Check_monthly_Income_In_CourseLayout.createSequentialGroup()
+                        .addGap(0, 205, Short.MAX_VALUE)
+                        .addComponent(bt_Check_monthly_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jp_Check_monthly_Income_In_CourseLayout.createSequentialGroup()
                         .addGroup(jp_Check_monthly_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jMonthChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_Check_monthly_Income_In_CourseLayout.createSequentialGroup()
-                        .addGap(0, 205, Short.MAX_VALUE)
-                        .addComponent(bt_Check_monthly_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jp_Check_monthly_Income_In_CourseLayout.createSequentialGroup()
+                                .addComponent(mc_Check_monthly_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(yc_Check_monthly_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jp_Check_monthly_Income_In_CourseLayout.setVerticalGroup(
@@ -137,7 +164,9 @@ public class Inventory_reports extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jMonthChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jp_Check_monthly_Income_In_CourseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(yc_Check_monthly_Income_In_Course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mc_Check_monthly_Income_In_Course, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bt_Check_monthly_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -163,6 +192,7 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_Daily_Income_In_Course.setForeground(new java.awt.Color(255, 255, 255));
         bt_Check_Daily_Income_In_Course.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
         bt_Check_Daily_Income_In_Course.setText("View");
+        bt_Check_Daily_Income_In_Course.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bt_Check_Daily_Income_In_Course.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bt_Check_Daily_Income_In_Course.setMaximumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course.setMinimumSize(new java.awt.Dimension(100, 50));
@@ -213,17 +243,18 @@ public class Inventory_reports extends javax.swing.JPanel {
         jp_Check_monthly_cost.setOpaque(false);
         jp_Check_monthly_cost.setPreferredSize(new java.awt.Dimension(337, 164));
 
-        bt_Check_Daily_Income_In_Course1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        bt_Check_Daily_Income_In_Course1.setForeground(new java.awt.Color(255, 255, 255));
-        bt_Check_Daily_Income_In_Course1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
-        bt_Check_Daily_Income_In_Course1.setText("View");
-        bt_Check_Daily_Income_In_Course1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bt_Check_Daily_Income_In_Course1.setMaximumSize(new java.awt.Dimension(100, 50));
-        bt_Check_Daily_Income_In_Course1.setMinimumSize(new java.awt.Dimension(100, 50));
-        bt_Check_Daily_Income_In_Course1.setPreferredSize(new java.awt.Dimension(100, 50));
-        bt_Check_Daily_Income_In_Course1.addActionListener(new java.awt.event.ActionListener() {
+        bt_Check_Monthly_Cost.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_Check_Monthly_Cost.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Check_Monthly_Cost.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
+        bt_Check_Monthly_Cost.setText("View");
+        bt_Check_Monthly_Cost.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_Check_Monthly_Cost.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_Check_Monthly_Cost.setMaximumSize(new java.awt.Dimension(100, 50));
+        bt_Check_Monthly_Cost.setMinimumSize(new java.awt.Dimension(100, 50));
+        bt_Check_Monthly_Cost.setPreferredSize(new java.awt.Dimension(100, 50));
+        bt_Check_Monthly_Cost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_Check_Daily_Income_In_Course1ActionPerformed(evt);
+                bt_Check_Monthly_CostActionPerformed(evt);
             }
         });
 
@@ -231,20 +262,35 @@ public class Inventory_reports extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Month");
 
+        mc_Check_Monthly_Cost.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                mc_Check_Monthly_CostPropertyChange(evt);
+            }
+        });
+
+        yc_Check_Monthly_Cost.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                yc_Check_Monthly_CostPropertyChange(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp_Check_monthly_costLayout = new javax.swing.GroupLayout(jp_Check_monthly_cost);
         jp_Check_monthly_cost.setLayout(jp_Check_monthly_costLayout);
         jp_Check_monthly_costLayout.setHorizontalGroup(
             jp_Check_monthly_costLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_Check_monthly_costLayout.createSequentialGroup()
                 .addContainerGap(215, Short.MAX_VALUE)
-                .addComponent(bt_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_Check_Monthly_Cost, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jp_Check_monthly_costLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jp_Check_monthly_costLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jMonthChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jp_Check_monthly_costLayout.createSequentialGroup()
+                        .addComponent(mc_Check_Monthly_Cost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(yc_Check_Monthly_Cost, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         jp_Check_monthly_costLayout.setVerticalGroup(
             jp_Check_monthly_costLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,9 +298,11 @@ public class Inventory_reports extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jMonthChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jp_Check_monthly_costLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(yc_Check_Monthly_Cost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mc_Check_Monthly_Cost, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(bt_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_Check_Monthly_Cost, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -271,10 +319,16 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_Daily_Income_In_Course2.setForeground(new java.awt.Color(255, 255, 255));
         bt_Check_Daily_Income_In_Course2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
         bt_Check_Daily_Income_In_Course2.setText("View");
+        bt_Check_Daily_Income_In_Course2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bt_Check_Daily_Income_In_Course2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bt_Check_Daily_Income_In_Course2.setMaximumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course2.setMinimumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course2.setPreferredSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Check_Daily_Income_In_Course2ActionPerformed(evt);
+            }
+        });
 
         jc_invoice_in_customer_name.setPreferredSize(new java.awt.Dimension(100, 30));
 
@@ -315,14 +369,20 @@ public class Inventory_reports extends javax.swing.JPanel {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Date");
 
-        bt_Check_Daily_Income_In_Course3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        bt_Check_Daily_Income_In_Course3.setForeground(new java.awt.Color(255, 255, 255));
-        bt_Check_Daily_Income_In_Course3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
-        bt_Check_Daily_Income_In_Course3.setText("View");
-        bt_Check_Daily_Income_In_Course3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bt_Check_Daily_Income_In_Course3.setMaximumSize(new java.awt.Dimension(100, 50));
-        bt_Check_Daily_Income_In_Course3.setMinimumSize(new java.awt.Dimension(100, 50));
-        bt_Check_Daily_Income_In_Course3.setPreferredSize(new java.awt.Dimension(100, 50));
+        bt_Invoice_In_Dates.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_Invoice_In_Dates.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Invoice_In_Dates.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
+        bt_Invoice_In_Dates.setText("View");
+        bt_Invoice_In_Dates.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_Invoice_In_Dates.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_Invoice_In_Dates.setMaximumSize(new java.awt.Dimension(100, 50));
+        bt_Invoice_In_Dates.setMinimumSize(new java.awt.Dimension(100, 50));
+        bt_Invoice_In_Dates.setPreferredSize(new java.awt.Dimension(100, 50));
+        bt_Invoice_In_Dates.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Invoice_In_DatesActionPerformed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -335,11 +395,11 @@ public class Inventory_reports extends javax.swing.JPanel {
             .addGroup(jp_invoice_in_datesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jp_invoice_in_datesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooser4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dc_invoice_in_dates_last, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_invoice_in_datesLayout.createSequentialGroup()
                         .addGap(0, 205, Short.MAX_VALUE)
-                        .addComponent(bt_Check_Daily_Income_In_Course3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jDateChooser3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bt_Invoice_In_Dates, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dc_invoice_in_dates_first, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jp_invoice_in_datesLayout.createSequentialGroup()
                         .addGroup(jp_invoice_in_datesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
@@ -352,13 +412,13 @@ public class Inventory_reports extends javax.swing.JPanel {
             .addGroup(jp_invoice_in_datesLayout.createSequentialGroup()
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dc_invoice_in_dates_first, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dc_invoice_in_dates_last, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(bt_Check_Daily_Income_In_Course3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_Invoice_In_Dates, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -375,10 +435,16 @@ public class Inventory_reports extends javax.swing.JPanel {
         bt_Check_Daily_Income_In_Course4.setForeground(new java.awt.Color(255, 255, 255));
         bt_Check_Daily_Income_In_Course4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
         bt_Check_Daily_Income_In_Course4.setText("View");
+        bt_Check_Daily_Income_In_Course4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         bt_Check_Daily_Income_In_Course4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bt_Check_Daily_Income_In_Course4.setMaximumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course4.setMinimumSize(new java.awt.Dimension(100, 50));
         bt_Check_Daily_Income_In_Course4.setPreferredSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Check_Daily_Income_In_Course4ActionPerformed(evt);
+            }
+        });
 
         jc_invoice_in_id.setPreferredSize(new java.awt.Dimension(100, 30));
 
@@ -457,35 +523,53 @@ public class Inventory_reports extends javax.swing.JPanel {
     private void bt_Check_Daily_Income_In_CourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_Daily_Income_In_CourseActionPerformed
 
         try {
-            SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
             String ReportPath_daliyIncome = "src//reports//check_daily_incom_in_courses.jrxml";
 //String ReportPath_daliyIncome = "src//reports//report2.jrxml";
             JasperReport compileReport = JasperCompileManager.compileReport(ReportPath_daliyIncome);
             Map<String, Object> dailyIncomeMap = new HashMap<String, Object>();
 
-          dailyIncomeMap.put("course",jc_Check_Daily_Income_In_Course.getSelectedItem().toString());
-          dailyIncomeMap.put("date1",sdf.format(jDateChooser1.getDate()));
+            dailyIncomeMap.put("course", jc_Check_Daily_Income_In_Course.getSelectedItem().toString());
+            dailyIncomeMap.put("date1", sdf.format(jDateChooser1.getDate()));
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, dailyIncomeMap, MC_JavaDataBaseConnection.myConnection());
             JasperViewer.viewReport(jasperPrint, false);
+//            JasperViewer v = new JasperViewer(jasperPrint);
+////            v.setVisible(true);
+//            JasperViewer.setDefaultLookAndFeelDecorated(true);
+//            JRViewer jrv = new JRViewer(jasperPrint);
+//            jrv.setPreferredSize(new Dimension(getSize()));
+//            JScrollPane reportScroll = new JScrollPane(jrv);
+//            new jp_reports_main_view().jp_view_reports.add(jrv);
 
         } catch (JRException ex) {
-            Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
     }//GEN-LAST:event_bt_Check_Daily_Income_In_CourseActionPerformed
 
     private void bt_Check_monthly_Income_In_CourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_monthly_Income_In_CourseActionPerformed
+        String date1, date2;
+        if (monthValue < 10) {
+            date1 = "01-0" + monthValue + "-" + year;
+            date2 = "31-0" + monthValue + "-" + year;
 
+        } else {
+
+            date1 = "01-" + monthValue + "-" + year;
+            date2 = "31-" + monthValue + "-" + year;
+        }
         try {
             String ReportPath_2 = "src//reports//check_monthly_incom_in_courses.jrxml";
             JasperReport jasperReport2 = JasperCompileManager.compileReport(ReportPath_2);
             Map<String, Object> map = new HashMap<String, Object>();
 
-            
-            
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport2, map);
-            JasperViewer.viewReport(jasperPrint,false);
+            map.put("course", jc_Check_monthly_Income_In_Course.getSelectedItem().toString());
+            map.put("date1", date1);
+            map.put("date2", date2);
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport2, map, MC_JavaDataBaseConnection.myConnection());
+            JasperViewer.viewReport(jasperPrint, false);
 
         } catch (Exception e) {
             Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, e);
@@ -493,23 +577,208 @@ public class Inventory_reports extends javax.swing.JPanel {
 
     }//GEN-LAST:event_bt_Check_monthly_Income_In_CourseActionPerformed
 
-    private void bt_Check_Daily_Income_In_Course1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_Daily_Income_In_Course1ActionPerformed
-    
+    private void bt_Check_Monthly_CostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_Monthly_CostActionPerformed
+
+        String date1, date2;
+        if (monthValue < 10) {
+            date1 = year+"-0" + monthValue + "-01" ;
+            date2 = year+"-0" + monthValue + "-31" ;
+
+        } else {
+
+            date1 = year+"-" + monthValue + "-01";
+            date2 = year+"-" + monthValue + "-31";
+        }
+        try {
+            String ReportPath_2 = "src//reports//check_monthly_cost.jrxml";
+            JasperReport jasperReport2 = JasperCompileManager.compileReport(ReportPath_2);
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("date1", date1);
+            map.put("date2", date2);
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport2, map, MC_JavaDataBaseConnection.myConnection());
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (Exception e) {
+            Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+    }//GEN-LAST:event_bt_Check_Monthly_CostActionPerformed
+
+    private void mc_Check_monthly_Income_In_CoursePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_mc_Check_monthly_Income_In_CoursePropertyChange
+
+        int month = mc_Check_monthly_Income_In_Course.getMonth();
+
+        switch (month) {
+            case 0:
+                monthValue = 1;
+                break;
+            case 1:
+                monthValue = 2;
+                break;
+            case 2:
+                monthValue = 3;
+                break;
+            case 3:
+                monthValue = 4;
+                break;
+            case 4:
+                monthValue = 5;
+                break;
+            case 5:
+                monthValue = 6;
+                break;
+            case 6:
+                monthValue = 7;
+                break;
+            case 7:
+                monthValue = 8;
+                break;
+            case 8:
+                monthValue = 9;
+                break;
+            case 9:
+                monthValue = 10;
+                break;
+            case 10:
+                monthValue = 11;
+                break;
+            case 11:
+                monthValue = 12;
+                break;
+
+        }
+
+    }//GEN-LAST:event_mc_Check_monthly_Income_In_CoursePropertyChange
+
+    private void yc_Check_monthly_Income_In_CoursePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_yc_Check_monthly_Income_In_CoursePropertyChange
+
+        year = yc_Check_monthly_Income_In_Course.getYear();
+
+    }//GEN-LAST:event_yc_Check_monthly_Income_In_CoursePropertyChange
+
+    private void mc_Check_Monthly_CostPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_mc_Check_Monthly_CostPropertyChange
+
         
+        int month = mc_Check_Monthly_Cost.getMonth();
+
+        switch (month) {
+            case 0:
+                monthValue = 1;
+                break;
+            case 1:
+                monthValue = 2;
+                break;
+            case 2:
+                monthValue = 3;
+                break;
+            case 3:
+                monthValue = 4;
+                break;
+            case 4:
+                monthValue = 5;
+                break;
+            case 5:
+                monthValue = 6;
+                break;
+            case 6:
+                monthValue = 7;
+                break;
+            case 7:
+                monthValue = 8;
+                break;
+            case 8:
+                monthValue = 9;
+                break;
+            case 9:
+                monthValue = 10;
+                break;
+            case 10:
+                monthValue = 11;
+                break;
+            case 11:
+                monthValue = 12;
+                break;
+
+        }
+
         
-    }//GEN-LAST:event_bt_Check_Daily_Income_In_Course1ActionPerformed
+    }//GEN-LAST:event_mc_Check_Monthly_CostPropertyChange
+
+    private void yc_Check_Monthly_CostPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_yc_Check_Monthly_CostPropertyChange
+
+        year = yc_Check_Monthly_Cost.getYear();
+        
+    }//GEN-LAST:event_yc_Check_Monthly_CostPropertyChange
+
+    private void bt_Check_Daily_Income_In_Course2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_Daily_Income_In_Course2ActionPerformed
+
+        try {
+            String ReportPath_2 = "src//reports//invoiceInCusName.jrxml";
+            JasperReport jasperReport2 = JasperCompileManager.compileReport(ReportPath_2);
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("customer",jc_invoice_in_customer_name.getSelectedItem().toString() );
+           
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport2, map, MC_JavaDataBaseConnection.myConnection());
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (Exception e) {
+            Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
+    }//GEN-LAST:event_bt_Check_Daily_Income_In_Course2ActionPerformed
+
+    private void bt_Invoice_In_DatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Invoice_In_DatesActionPerformed
+
+        try {
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            String ReportPath_2 = "src//reports//invoiceInDate.jrxml";
+            JasperReport jasperReport2 = JasperCompileManager.compileReport(ReportPath_2);
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("date1", sdf.format(dc_invoice_in_dates_first.getDate()));
+            map.put("date2", sdf.format(dc_invoice_in_dates_last.getDate()));
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport2, map, MC_JavaDataBaseConnection.myConnection());
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (Exception e) {
+            Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
+    }//GEN-LAST:event_bt_Invoice_In_DatesActionPerformed
+
+    private void bt_Check_Daily_Income_In_Course4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_Daily_Income_In_Course4ActionPerformed
+
+        try {
+            String ReportPath_2 = "src//reports//invoiceInInvoId.jrxml";
+            JasperReport jasperReport2 = JasperCompileManager.compileReport(ReportPath_2);
+            Map<String, Object> map = new HashMap<String, Object>();
+
+            map.put("invoId",jc_invoice_in_id.getSelectedItem().toString());
+  
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport2, map, MC_JavaDataBaseConnection.myConnection());
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (Exception e) {
+            Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
+    }//GEN-LAST:event_bt_Check_Daily_Income_In_Course4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_Check_Daily_Income_In_Course;
-    private javax.swing.JButton bt_Check_Daily_Income_In_Course1;
     private javax.swing.JButton bt_Check_Daily_Income_In_Course2;
-    private javax.swing.JButton bt_Check_Daily_Income_In_Course3;
     private javax.swing.JButton bt_Check_Daily_Income_In_Course4;
+    private javax.swing.JButton bt_Check_Monthly_Cost;
     private javax.swing.JButton bt_Check_monthly_Income_In_Course;
+    private javax.swing.JButton bt_Invoice_In_Dates;
+    private com.toedter.calendar.JDateChooser dc_invoice_in_dates_first;
+    private com.toedter.calendar.JDateChooser dc_invoice_in_dates_last;
     private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
-    private com.toedter.calendar.JDateChooser jDateChooser4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -519,8 +788,6 @@ public class Inventory_reports extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private com.toedter.calendar.JMonthChooser jMonthChooser1;
-    private com.toedter.calendar.JMonthChooser jMonthChooser2;
     private javax.swing.JComboBox jc_Check_Daily_Income_In_Course;
     private javax.swing.JComboBox jc_Check_monthly_Income_In_Course;
     private javax.swing.JComboBox jc_invoice_in_customer_name;
@@ -531,6 +798,10 @@ public class Inventory_reports extends javax.swing.JPanel {
     private javax.swing.JPanel jp_invoice_in_customer_name;
     private javax.swing.JPanel jp_invoice_in_dates;
     private javax.swing.JPanel jp_invoice_in_id;
+    private com.toedter.calendar.JMonthChooser mc_Check_Monthly_Cost;
+    private com.toedter.calendar.JMonthChooser mc_Check_monthly_Income_In_Course;
+    private com.toedter.calendar.JYearChooser yc_Check_Monthly_Cost;
+    private com.toedter.calendar.JYearChooser yc_Check_monthly_Income_In_Course;
     // End of variables declaration//GEN-END:variables
 
     private void loadToCombo() {
@@ -545,10 +816,10 @@ public class Inventory_reports extends javax.swing.JPanel {
             }
             rs.close();
             /////////////////////////Load Customer Name//////////////////////
-            ResultSet cusName = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT customername FROM inv_invoice ORDER BY ASC");
+            ResultSet cusName = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT customername FROM inv_invoice ORDER BY customername ASC");
             jc_invoice_in_customer_name.removeAllItems();
             while (cusName.next()) {
-                jc_invoice_in_customer_name.addItem(rs.getString("customername"));
+                jc_invoice_in_customer_name.addItem(cusName.getString("customername"));
             }
             cusName.close();
             /////////////////////////Load Invoice ID/////////////////////////

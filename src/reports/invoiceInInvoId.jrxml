@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-22T22:14:49 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoiceInCusName" language="groovy" pageWidth="842" pageHeight="338" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="5dce6292-a7f2-4349-b372-50cd5ed331b3">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salon_test"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="invoId" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT
 
-     invoice.`id` AS invoice_id,
-     invoice.`date` AS invoice_date,
-     invoice.`total` AS invoice_total,
-     invoice.`time` AS invoice_time,
-     invoice.`discount` AS invoice_discount,
-     invoice.`username` AS invoice_username,
-     invoice.`nettot` AS invoice_nettot,
-     invoice.`customername` AS invoice_customername,
-     invoice.`customerid` AS invoice_customerid,
-     invoice.`bal` AS invoice_bal,
-     invoice.`payment` AS invoice_payment,
-     invoicereg.`itemid` AS invoicereg_itemid,
-     invoicereg.`item` AS invoicereg_item,
-     invoicereg.`itemprice` AS invoicereg_itemprice,
-     invoicereg.`qty` AS invoicereg_qty,
-     invoicereg.`subtot` AS invoicereg_subtot,
-     invoicereg.`invoiceid` AS invoicereg_invoiceid
+     inv_invoice.`id` AS invoice_id,
+     inv_invoice.`date` AS invoice_date,
+     inv_invoice.`total` AS invoice_total,
+     inv_invoice.`time` AS invoice_time,
+     inv_invoice.`discount` AS invoice_discount,
+     inv_invoice.`nettot` AS invoice_nettot,
+     inv_invoice.`customername` AS invoice_customername,
+     inv_invoice.`customerid` AS invoice_customerid,
+     inv_invoice.`bal` AS invoice_bal,
+     inv_invoice.`payment` AS invoice_payment,
+     inv_invoicereg.`itemid` AS invoicereg_itemid,
+     inv_invoicereg.`item` AS invoicereg_item,
+     inv_invoicereg.`itemprice` AS invoicereg_itemprice,
+     inv_invoicereg.`subtot` AS invoicereg_subtot,
+     inv_invoicereg.`invoiceid` AS invoicereg_invoiceid
 FROM
-     `invoice` invoice INNER JOIN `invoicereg` invoicereg ON invoice.`id` = invoicereg.`invoiceid`
+      inv_invoice INNER JOIN inv_invoicereg ON inv_invoice.`id` = inv_invoicereg.`invoiceid`
 WHERE
-     invoice.id=$P{invoId}]]>
+     inv_invoice.id=$P{invoId}]]>
 	</queryString>
 	<field name="invoice_id" class="java.lang.String"/>
 	<field name="invoice_date" class="java.lang.String"/>
 	<field name="invoice_total" class="java.lang.Double"/>
 	<field name="invoice_time" class="java.lang.String"/>
 	<field name="invoice_discount" class="java.lang.Double"/>
-	<field name="invoice_username" class="java.lang.String"/>
 	<field name="invoice_nettot" class="java.lang.Double"/>
 	<field name="invoice_customername" class="java.lang.String"/>
 	<field name="invoice_customerid" class="java.lang.String"/>
@@ -43,7 +44,6 @@ WHERE
 	<field name="invoicereg_itemid" class="java.lang.String"/>
 	<field name="invoicereg_item" class="java.lang.String"/>
 	<field name="invoicereg_itemprice" class="java.lang.Double"/>
-	<field name="invoicereg_qty" class="java.lang.Integer"/>
 	<field name="invoicereg_subtot" class="java.lang.Double"/>
 	<field name="invoicereg_invoiceid" class="java.lang.String"/>
 	<background>

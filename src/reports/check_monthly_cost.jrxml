@@ -1,46 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-12T17:39:26 -->
+<!-- 2016-03-22T19:59:17 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="check_monthly_incom_in_courses" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13cf7b24-3a6b-44cb-bff6-10048ebbf585">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="course" class="java.lang.String"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salon_test"/>
 	<parameter name="date1" class="java.lang.String"/>
 	<parameter name="date2" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select *, sum(payment) as total from student_payment where course=$P{course} and date between $P{date1} and $P{date2}]]>
+		<![CDATA[SELECT date,nettot FROM inv_grn where  date between $P{date1} and $P{date2}]]>
 	</queryString>
-	<field name="idstudent_payment" class="java.lang.Long">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
 	<field name="date" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="student_id" class="java.lang.String">
+	<field name="nettot" class="java.lang.Double">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="student_name" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="course" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="course_fee" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="payment" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="due_payment" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="status" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="total" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
+	<variable name="total" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{nettot}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -56,12 +36,97 @@
 		</band>
 	</title>
 	<columnHeader>
-		<band height="44" splitType="Stretch"/>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="278" height="40" uuid="047c8ba9-547c-4b5f-af18-dfb2c7347eb2"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="0" width="277" height="40" uuid="bdc419d0-5f9b-433a-b931-fe9950349404"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="278" y="0" width="1" height="43" uuid="3f9b2430-b0af-435e-9d97-9595dac696c2"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="42" uuid="bbc193b6-d2d0-4a4a-9895-7f07c31f3508"/>
+			</line>
+			<line>
+				<reportElement x="0" y="42" width="554" height="1" uuid="756f16f2-6619-4bcf-be9a-c5c4a1dd3988"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="42" uuid="9c8c3a5c-3d0f-4ff4-9a0f-4017244c28ab"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="554" height="1" uuid="e2051724-f1e5-4388-a11a-14cb4cbb4a2d"/>
+			</line>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="40" splitType="Stretch"/>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="278" height="30" uuid="5030d3b2-09cb-4b75-8eb4-3a327cf91669"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="276" height="30" uuid="12d81969-0de5-4895-b7d1-460fba98f187"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nettot}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="278" y="-1" width="1" height="33" uuid="53256e83-2bc2-44c9-b929-6128b261ec23"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="33" uuid="a2e4bf9a-6320-43e2-b5ea-08cb72e1f873"/>
+			</line>
+			<line>
+				<reportElement x="554" y="-1" width="1" height="33" uuid="3e36e9c4-510a-4b3d-b8fc-b29c3e7cc501"/>
+			</line>
+			<line>
+				<reportElement x="0" y="32" width="555" height="1" uuid="6e18fa3b-4906-44b2-954a-6d079339cb9b"/>
+			</line>
+		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="72" splitType="Stretch">
+			<textField>
+				<reportElement x="490" y="-1" width="34" height="30" uuid="10fce7a3-071e-44ec-a780-cc2228107443"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="524" y="0" width="30" height="29" uuid="be08aea0-a43f-4b08-9771-549406ca98c1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[.00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="-1" width="100" height="30" uuid="ce93bbef-2137-4ddf-b1ce-cdc74255c208"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="488" y="28" width="67" height="1" uuid="4f67a8f3-f31b-459f-b538-77d7da758063"/>
+			</line>
+			<line>
+				<reportElement x="488" y="30" width="67" height="1" uuid="2e7e9be4-a45b-4a9b-b2a6-97b9fe061ae6"/>
+			</line>
+		</band>
 	</columnFooter>
 </jasperReport>

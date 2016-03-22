@@ -115,17 +115,21 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jc_Check_monthly_Income_In_Course" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="205" max="32767" attributes="0"/>
+                          <Component id="bt_Check_monthly_Income_In_Course" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jMonthChooser1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="mc_Check_monthly_Income_In_Course" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="yc_Check_monthly_Income_In_Course" min="-2" pref="67" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="205" max="32767" attributes="0"/>
-                          <Component id="bt_Check_monthly_Income_In_Course" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -141,7 +145,10 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jMonthChooser1" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="yc_Check_monthly_Income_In_Course" max="32767" attributes="0"/>
+                      <Component id="mc_Check_monthly_Income_In_Course" pref="30" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="bt_Check_monthly_Income_In_Course" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -182,7 +189,13 @@
             <Property name="text" type="java.lang.String" value="Month"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JMonthChooser" name="jMonthChooser1">
+        <Component class="com.toedter.calendar.JMonthChooser" name="mc_Check_monthly_Income_In_Course">
+          <Properties>
+            <Property name="requestFocusEnabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="mc_Check_monthly_Income_In_CoursePropertyChange"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bt_Check_monthly_Income_In_Course">
           <Properties>
@@ -196,6 +209,9 @@
               <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="View"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[100, 50]"/>
@@ -209,6 +225,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_monthly_Income_In_CourseActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="com.toedter.calendar.JYearChooser" name="yc_Check_monthly_Income_In_Course">
+          <Properties>
+            <Property name="requestFocusEnabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="yc_Check_monthly_Income_In_CoursePropertyChange"/>
           </Events>
         </Component>
       </SubComponents>
@@ -323,6 +347,9 @@
               <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="View"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[100, 50]"/>
@@ -367,16 +394,20 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace pref="215" max="32767" attributes="0"/>
-                  <Component id="bt_Check_Daily_Income_In_Course1" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="bt_Check_Monthly_Cost" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jMonthChooser2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="mc_Check_Monthly_Cost" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="yc_Check_Monthly_Cost" min="-2" pref="63" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="144" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -386,16 +417,19 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jMonthChooser2" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="yc_Check_Monthly_Cost" max="32767" attributes="0"/>
+                      <Component id="mc_Check_Monthly_Cost" pref="30" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace pref="38" max="32767" attributes="0"/>
-                  <Component id="bt_Check_Daily_Income_In_Course1" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="bt_Check_Monthly_Cost" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="bt_Check_Daily_Income_In_Course1">
+        <Component class="javax.swing.JButton" name="bt_Check_Monthly_Cost">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -407,6 +441,9 @@
               <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="View"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[100, 50]"/>
@@ -419,7 +456,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_Daily_Income_In_Course1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_Monthly_CostActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -433,7 +470,15 @@
             <Property name="text" type="java.lang.String" value="Month"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JMonthChooser" name="jMonthChooser2">
+        <Component class="com.toedter.calendar.JMonthChooser" name="mc_Check_Monthly_Cost">
+          <Events>
+            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="mc_Check_Monthly_CostPropertyChange"/>
+          </Events>
+        </Component>
+        <Component class="com.toedter.calendar.JYearChooser" name="yc_Check_Monthly_Cost">
+          <Events>
+            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="yc_Check_Monthly_CostPropertyChange"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -514,6 +559,9 @@
               <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="View"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[100, 50]"/>
@@ -525,6 +573,9 @@
               <Dimension value="[100, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_Daily_Income_In_Course2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="jc_invoice_in_customer_name">
           <Properties>
@@ -563,12 +614,12 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jDateChooser4" max="32767" attributes="0"/>
+                      <Component id="dc_invoice_in_dates_last" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="205" max="32767" attributes="0"/>
-                          <Component id="bt_Check_Daily_Income_In_Course3" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="bt_Invoice_In_Dates" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jDateChooser3" max="32767" attributes="0"/>
+                      <Component id="dc_invoice_in_dates_first" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -586,13 +637,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jDateChooser3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="dc_invoice_in_dates_first" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jDateChooser4" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="dc_invoice_in_dates_last" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace pref="24" max="32767" attributes="0"/>
-                  <Component id="bt_Check_Daily_Income_In_Course3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="bt_Invoice_In_Dates" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -610,7 +661,7 @@
             <Property name="text" type="java.lang.String" value="Date"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="bt_Check_Daily_Income_In_Course3">
+        <Component class="javax.swing.JButton" name="bt_Invoice_In_Dates">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -622,6 +673,9 @@
               <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="View"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[100, 50]"/>
@@ -633,8 +687,11 @@
               <Dimension value="[100, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Invoice_In_DatesActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser3">
+        <Component class="com.toedter.calendar.JDateChooser" name="dc_invoice_in_dates_first">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
@@ -647,7 +704,7 @@
             <Property name="text" type="java.lang.String" value="To"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser4">
+        <Component class="com.toedter.calendar.JDateChooser" name="dc_invoice_in_dates_last">
         </Component>
       </SubComponents>
     </Container>
@@ -727,6 +784,9 @@
               <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="View"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[100, 50]"/>
@@ -738,6 +798,9 @@
               <Dimension value="[100, 50]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_Daily_Income_In_Course4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="jc_invoice_in_id">
           <Properties>

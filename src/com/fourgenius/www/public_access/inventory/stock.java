@@ -45,6 +45,7 @@ public class stock extends javax.swing.JPanel {
         sid = new javax.swing.JComboBox();
         sname = new javax.swing.JTextField();
         sprice = new javax.swing.JTextField();
+        set = new javax.swing.JButton();
         Delete = new javax.swing.JButton();
         Save = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -54,7 +55,6 @@ public class stock extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        set = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(2, 119, 189));
 
@@ -94,6 +94,18 @@ public class stock extends javax.swing.JPanel {
         sprice.setEditable(false);
         sprice.setPreferredSize(new java.awt.Dimension(200, 40));
 
+        set.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/inventory/arrow-left1.png"))); // NOI18N
+        set.setBorderPainted(false);
+        set.setContentAreaFilled(false);
+        set.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        set.setFocusPainted(false);
+        set.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/inventory/arrow-left1sel.png"))); // NOI18N
+        set.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -112,6 +124,10 @@ public class stock extends javax.swing.JPanel {
                     .addComponent(sname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sprice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(set, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(194, 194, 194))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +148,9 @@ public class stock extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(sqty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                .addComponent(set, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
         );
 
         Delete.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -255,18 +273,6 @@ public class stock extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        set.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/inventory/arrow-left1.png"))); // NOI18N
-        set.setBorderPainted(false);
-        set.setContentAreaFilled(false);
-        set.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        set.setFocusPainted(false);
-        set.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/arrow-left1sel.png"))); // NOI18N
-        set.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                setActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -274,19 +280,14 @@ public class stock extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(set, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -303,9 +304,7 @@ public class stock extends javax.swing.JPanel {
                             .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(set, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(55, 55, 55))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -422,7 +421,7 @@ public class stock extends javax.swing.JPanel {
 //                   MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set  where itemid='" + id.getText() + "'");
                 } else {
                    
-                    MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_stock (itemid,itemname,state,date) values('" + id.getText() + "','" + name.getText() + "','Active') ");
+                    MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_stock (itemid,itemname,state) values('" + id.getText() + "','" + name.getText() + "','Active') ");
                 }
                 loadCombo();
                 clear();

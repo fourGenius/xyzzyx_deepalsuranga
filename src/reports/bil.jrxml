@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bil" language="groovy" pageWidth="230" pageHeight="325" columnWidth="190" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="de5dd6fb-bcb2-420a-adc0-40ba62e9febd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Invoid" class="java.lang.String"/>
+	<parameter name="user" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     invoicereg.`id` AS invoicereg_id,
+     invoicereg.`itemid` AS invoicereg_itemid,
+     invoicereg.`item` AS invoicereg_item,
+     invoicereg.`itemprice` AS invoicereg_itemprice,
+     invoicereg.`qty` AS invoicereg_qty,
+     invoicereg.`subtot` AS invoicereg_subtot,
+     invoicereg.`invoiceid` AS invoicereg_invoiceid,
+     invoice.`id` AS invoice_id,
+     invoice.`date` AS invoice_date,
+     invoice.`total` AS invoice_total,
+     invoice.`time` AS invoice_time,
+     invoice.`discount` AS invoice_discount,
+     invoice.`username` AS invoice_username,
+     invoice.`nettot` AS invoice_nettot,
+     invoice.`customername` AS invoice_customername,
+     invoice.`customerid` AS invoice_customerid,
+     invoice.`userid` AS invoice_userid
+FROM
+     `invoice` invoice INNER JOIN `invoicereg` invoicereg ON invoice.`id` = invoicereg.`invoiceid`]]>
+	</queryString>
+	<field name="invoicereg_id" class="java.lang.Integer"/>
+	<field name="invoicereg_itemid" class="java.lang.String"/>
+	<field name="invoicereg_item" class="java.lang.String"/>
+	<field name="invoicereg_itemprice" class="java.lang.Double"/>
+	<field name="invoicereg_qty" class="java.lang.Integer"/>
+	<field name="invoicereg_subtot" class="java.lang.Double"/>
+	<field name="invoicereg_invoiceid" class="java.lang.String"/>
+	<field name="invoice_id" class="java.lang.String"/>
+	<field name="invoice_date" class="java.lang.String"/>
+	<field name="invoice_total" class="java.lang.Double"/>
+	<field name="invoice_time" class="java.lang.String"/>
+	<field name="invoice_discount" class="java.lang.Double"/>
+	<field name="invoice_username" class="java.lang.String"/>
+	<field name="invoice_nettot" class="java.lang.Double"/>
+	<field name="invoice_customername" class="java.lang.String"/>
+	<field name="invoice_customerid" class="java.lang.String"/>
+	<field name="invoice_userid" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="180" height="34" uuid="e2febfe6-007c-4f3f-bd82-f281bdfecd6e"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WasanJay Super]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="44" width="180" height="20" uuid="9becb1a2-2067-4a72-a3c2-ae8e3eedbb1c"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[19/26 Wata Mw, Maharagama]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="64" width="190" height="1" uuid="f9262fcc-65c4-4bd6-b907-d810f04d9adb"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="41" height="20" uuid="4f92afcd-830d-4fa8-ae14-04afc5c4eca8"/>
+				<text><![CDATA[Rec No :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="0" width="35" height="20" uuid="2f034b20-51f2-4b4d-949e-3944d0e8036d"/>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="125" y="0" width="55" height="20" uuid="8713dc58-6147-4fdc-9aaf-ceb5d8b96914"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="90" y="20" width="35" height="20" uuid="82649077-6dc8-4ea6-a4e2-58fa4c2367d3"/>
+				<text><![CDATA[Time :]]></text>
+			</staticText>
+			<textField pattern="h.mm.ss a">
+				<reportElement x="125" y="20" width="65" height="20" uuid="6083b7da-8ebc-4010-a8c3-217e4296f9d6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="29" height="20" uuid="8d83797b-5de1-41c6-ba49-72921f6ecf23"/>
+				<text><![CDATA[User :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="41" y="0" width="38" height="20" uuid="dffaa69a-6339-4418-a984-f85717bafad3"/>
+				<textFieldExpression><![CDATA[$P{Invoid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="20" width="50" height="20" uuid="bbcf0d80-451b-49dc-a1fa-515a0cd61255"/>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="45" width="190" height="1" uuid="e9489ffd-576e-4308-932c-36ad52c4e894"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="610e4178-5429-40be-8cf8-dddaac5600f4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="1" width="35" height="20" uuid="81dca17e-49a9-4143-9d10-ac25f21ef1ed"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="5ba39f30-d028-4ac8-9d88-b57b155c4e0d"/>
+				<textFieldExpression><![CDATA[$F{invoicereg_item}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="0" width="65" height="20" uuid="537ff276-20e1-4d98-bc0c-1b31daf9eb57"/>
+				<textFieldExpression><![CDATA[$F{invoicereg_itemprice}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="41" height="20" uuid="0654dcbb-eb9b-458b-b8aa-501e9dbad653"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="41" height="20" uuid="7e79c919-4217-4dca-a23b-e6bb1f80bee5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cash]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="190" height="1" uuid="5b0f5f99-bb2a-4dc5-94ab-1e749e91b58d"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="40" width="41" height="20" uuid="01e9b371-8f2a-4af2-a317-cae9ae0a7625"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="52" height="20" uuid="174d0071-ebd1-42ca-b383-836dea316524"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="59" width="190" height="1" uuid="127d77d7-59ac-4f85-8897-0d23432bdf21"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="79" width="190" height="1" uuid="ea780dfc-5dc4-4eb7-8190-377e0b13528f"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="190" height="30" uuid="acfdb7fe-9136-4e39-80e7-92586d1ec619"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thank You! Come Agaiin.....]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

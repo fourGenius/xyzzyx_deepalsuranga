@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-22T22:04:28 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoiceInDate" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="7c4d5327-4de2-41a2-a40c-f1d5174d930d">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="67"/>
-	<parameter name="date" class="java.lang.String"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salon_test"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="date1" class="java.lang.String"/>
 	<parameter name="date2" class="java.lang.String"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["E:\\NetBeans Projects\\shop\\src\\reports\\"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT
-     invoice.`id` AS invoice_id,
-     invoice.`date` AS invoice_date,
-     invoice.`total` AS invoice_total,
-     invoice.`time` AS invoice_time,
-     invoice.`discount` AS invoice_discount,
-     invoice.`username` AS invoice_username,
-     invoice.`nettot` AS invoice_nettot,
-     invoice.`customername` AS invoice_customername,
-     invoice.`bal` AS invoice_bal,
-     invoice.`payment` AS invoice_payment
+     inv_invoice.`id` AS invoice_id,
+     inv_invoice.`date` AS invoice_date,
+     inv_invoice.`total` AS invoice_total,
+     inv_invoice.`time` AS invoice_time,
+     inv_invoice.`discount` AS invoice_discount,
+     inv_invoice.`username` AS invoice_username,
+     inv_invoice.`nettot` AS invoice_nettot,
+     inv_invoice.`customername` AS invoice_customername,
+     inv_invoice.`bal` AS invoice_bal,
+     inv_invoice.`payment` AS invoice_payment
 FROM
-     `invoice` invoice
-where invoice.date between $P{date} and $P{date2}]]>
+    inv_invoice
+where date between $P{date1} and $P{date2}]]>
 	</queryString>
 	<field name="invoice_id" class="java.lang.String"/>
 	<field name="invoice_date" class="java.lang.String"/>

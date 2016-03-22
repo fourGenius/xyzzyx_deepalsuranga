@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-21T22:46:53 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="grn" language="groovy" pageWidth="595" pageHeight="421" orientation="Landscape" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="9699e380-c55f-4174-b8f9-beef7b24423f">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salon_test"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="id" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT
-     grn.`id` AS grn_id,
-     grn.`date` AS grn_date,
-     grn.`total` AS grn_total,
-     grn.`time` AS grn_time,
-     grn.`discount` AS grn_discount,
-     grn.`nettot` AS grn_nettot,
-     grn.`supliername` AS grn_supliername,
-     grn.`bal` AS grn_bal,
-     grn.`payment` AS grn_payment,
-     grnreg.`itemid` AS grnreg_itemid,
-     grnreg.`item` AS grnreg_item,
-     grnreg.`itemprice` AS grnreg_itemprice,
-     grnreg.`qty` AS grnreg_qty,
-     grnreg.`subtot` AS grnreg_subtot
+     inv_grn.`id` AS grn_id,
+     inv_grn.`date` AS grn_date,
+     inv_grn.`total` AS grn_total,
+     inv_grn.`time` AS grn_time,
+     inv_grn.`discount` AS grn_discount,
+     inv_grn.`nettot` AS grn_nettot,
+     inv_grn.`supliername` AS grn_supliername,
+     inv_grn.`bal` AS grn_bal,
+     inv_grn.`payment` AS grn_payment,
+     inv_grnreg.`itemid` AS grnreg_itemid,
+     inv_grnreg.`item` AS grnreg_item,
+     inv_grnreg.`itemprice` AS grnreg_itemprice,
+     inv_grnreg.`qty` AS grnreg_qty,
+     inv_grnreg.`subtot` AS grnreg_subtot
 FROM
-     `grn` grn INNER JOIN `grnreg` grnreg ON grn.`id` = grnreg.`grnid` where grn.id=$P{id}]]>
+     inv_grn INNER JOIN inv_grnreg ON inv_grn.`id` = inv_grnreg.`grnid` where inv_grn.id=$P{id}]]>
 	</queryString>
 	<field name="grn_id" class="java.lang.String"/>
 	<field name="grn_date" class="java.lang.String"/>
@@ -34,8 +38,8 @@ FROM
 	<field name="grn_payment" class="java.lang.Double"/>
 	<field name="grnreg_itemid" class="java.lang.String"/>
 	<field name="grnreg_item" class="java.lang.String"/>
-	<field name="grnreg_qty" class="java.lang.Integer"/>
 	<field name="grnreg_itemprice" class="java.lang.Double"/>
+	<field name="grnreg_qty" class="java.lang.Integer"/>
 	<field name="grnreg_subtot" class="java.lang.Double"/>
 	<background>
 		<band splitType="Stretch"/>
@@ -49,10 +53,6 @@ FROM
 				</textElement>
 				<text><![CDATA[Goods Reserve Note]]></text>
 			</staticText>
-			<image>
-				<reportElement x="3" y="2" width="96" height="78" uuid="540812a2-f096-4c3c-b278-50b2803866c4"/>
-				<imageExpression><![CDATA["D:\\vaivar\\shop\\icon.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>

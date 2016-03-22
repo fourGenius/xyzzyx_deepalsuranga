@@ -774,24 +774,27 @@ public class grn extends javax.swing.JPanel {
         try {
             DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
             MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_grn(id,date,total,time,discount,nettot,supliername,suplierid,bal,payment) values('" + id.getText() + "','" + lb_date_view.getText() + "','" + sub.getText() + "','" + lb_time_date.getText() + "','" + Dis.getText() + "','" + net.getText() + "','" + supliername.getText() + "','" + suplierId.getText() + "','" + bal.getText() + "','" + pay.getText() + "')");
+            Date d=new Date();
+            SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
             String grnId = id.getText();
+            String date=sdf.format(d);
             for (int i = 0; i < dtm.getRowCount(); i++) {
 
                 ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from inv_stock where itemid='" + dtm.getValueAt(i, 0) + "'");
-//                if (rs.next()) {
+                if (rs.next()) {
 
-                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set qty=qty+'" + dtm.getValueAt(i, 3) + "' where itemid='" + dtm.getValueAt(i, 0) + "'");
-//                    DB.idu("update stock set qty=qty+'" + dtm.getValueAt(i, 5) + "' where itemid='" + dtm.getValueAt(i, 0) + "'");
-//                } else {
+                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set qty=qty+'" + dtm.getValueAt(i, 3) + "',itemprice='"+dtm.getValueAt(i, 2)+"',date='"+date+"' where itemid='" + dtm.getValueAt(i, 0) + "'");
+                    
+                } else {
                 System.out.println("else");
-//                    DB.idu("insert into stock(qty,madedate,expdate) values('" + dtm.getValueAt(i, 5) + "','" + dtm.getValueAt(i, 2) + "','" + dtm.getValueAt(i, 3) + "')");
+                     MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_stock(qty,itemprice) values('" + dtm.getValueAt(i, 3) + "','" + dtm.getValueAt(i, 2) + "')");
 
-//                }
+                }
                 rs.close();
                 MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_grnreg (itemid,item,itemprice,qty,subtot,grnid) values('" + dtm.getValueAt(i, 0) + "','" + dtm.getValueAt(i, 1) + "','" + dtm.getValueAt(i, 2) + "','" + dtm.getValueAt(i, 3) + "','" + dtm.getValueAt(i, 4) + "','" + grnId + "')");
 
             }
-            String path = "src/reports/grn.jrxml";
+            String path = "src//reports//grn.jrxml";
             JasperReport compileReport = JasperCompileManager.compileReport(path);
             Map<String, Object> m = new HashMap<String, Object>();
 
