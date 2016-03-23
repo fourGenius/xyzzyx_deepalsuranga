@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -106,7 +107,8 @@ public class MC_JavaDataBaseConnection {
 
     public static String add_data(String table_name) {
         try {
-            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("INSERT INTO "+table_name+" VALUES (100, 'Zara', 'Ali', 18)");
+            Statement statement = MC_JavaDataBaseConnection.myConnection().createStatement();
+            statement.executeUpdate("INSERT INTO "+table_name+" VALUES (100, 'Zara', 'Ali', 18)");
 //            if (rs != null) {
 //                rs.close();
 //            }else if (st != null) {
@@ -115,7 +117,7 @@ public class MC_JavaDataBaseConnection {
 //                con.close();
 //            }
         } catch (SQLException ex) {
-            Logger.getLogger(MC_JavaDataBaseConnection.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         return null;
     }
