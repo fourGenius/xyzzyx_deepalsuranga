@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-22T22:14:49 -->
+<!-- 2016-03-23T00:11:37 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoiceInCusName" language="groovy" pageWidth="842" pageHeight="338" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="5dce6292-a7f2-4349-b372-50cd5ed331b3">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -147,13 +147,6 @@ WHERE
 				<text><![CDATA[Price]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="480" y="0" width="160" height="20" uuid="3139b269-ec67-4fbd-bf76-7488249d1467"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Qty]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="640" y="0" width="160" height="20" uuid="4d2b40f2-041a-44d5-b679-0b613a04d22e"/>
 				<textElement>
 					<font size="12" isBold="true"/>
@@ -184,13 +177,6 @@ WHERE
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{invoicereg_itemprice}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="480" y="0" width="160" height="20" uuid="3e4d5e46-105a-40ba-8d9a-f3b37520146c"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{invoicereg_qty}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="640" y="0" width="160" height="20" uuid="9c1f5ee4-6e28-4d25-abc2-29b225101b09"/>

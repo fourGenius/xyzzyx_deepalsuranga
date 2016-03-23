@@ -10,6 +10,7 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.border.Border;
+import public_access.MC_JavaDataBaseConnection;
 import reports.*;
 
 /**
@@ -25,6 +26,7 @@ public class jp_reports_main_view extends javax.swing.JFrame {
 
     public jp_reports_main_view() {
         initComponents();
+       
     }
 
     /**
@@ -47,6 +49,7 @@ public class jp_reports_main_view extends javax.swing.JFrame {
         lb_inventory_reports = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(2, 119, 189));
@@ -184,6 +187,7 @@ public class jp_reports_main_view extends javax.swing.JFrame {
             }
         });
 
+        jp_report_change.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jp_report_change.setMaximumSize(new java.awt.Dimension(719, 686));
         jp_report_change.setMinimumSize(new java.awt.Dimension(719, 686));
         jp_report_change.setOpaque(false);
@@ -193,6 +197,7 @@ public class jp_reports_main_view extends javax.swing.JFrame {
         lb_student_reports.setForeground(new java.awt.Color(255, 255, 255));
         lb_student_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/report_icon_student.png"))); // NOI18N
         lb_student_reports.setText("Student Reports");
+        lb_student_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_student_reports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lb_student_reports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lb_student_reports.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -205,6 +210,7 @@ public class jp_reports_main_view extends javax.swing.JFrame {
         lb_inventory_reports.setForeground(new java.awt.Color(255, 255, 255));
         lb_inventory_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/report_icon_inventory.png"))); // NOI18N
         lb_inventory_reports.setText("Inventory Reports");
+        lb_inventory_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_inventory_reports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lb_inventory_reports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lb_inventory_reports.addMouseListener(new java.awt.event.MouseAdapter() {

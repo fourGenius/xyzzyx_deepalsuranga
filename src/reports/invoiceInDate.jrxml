@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-22T22:04:28 -->
+<!-- 2016-03-23T00:14:26 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoiceInDate" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="7c4d5327-4de2-41a2-a40c-f1d5174d930d">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -19,7 +19,6 @@
      inv_invoice.`total` AS invoice_total,
      inv_invoice.`time` AS invoice_time,
      inv_invoice.`discount` AS invoice_discount,
-     inv_invoice.`username` AS invoice_username,
      inv_invoice.`nettot` AS invoice_nettot,
      inv_invoice.`customername` AS invoice_customername,
      inv_invoice.`bal` AS invoice_bal,
@@ -33,7 +32,6 @@ where date between $P{date1} and $P{date2}]]>
 	<field name="invoice_total" class="java.lang.Double"/>
 	<field name="invoice_time" class="java.lang.String"/>
 	<field name="invoice_discount" class="java.lang.Double"/>
-	<field name="invoice_username" class="java.lang.String"/>
 	<field name="invoice_nettot" class="java.lang.Double"/>
 	<field name="invoice_customername" class="java.lang.String"/>
 	<field name="invoice_bal" class="java.lang.Double"/>
