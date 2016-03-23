@@ -11,6 +11,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import jdk.nashorn.internal.codegen.CompilerConstants;
 
 /*
  @author : deepal_suranga
@@ -105,21 +106,31 @@ public class MC_JavaDataBaseConnection {
         return connection;
     }
 
-    public static String add_data(String table_name) {
+    public static String add_data_NoColumns(String table_name, String dataWithComa) {
         try {
             Statement statement = MC_JavaDataBaseConnection.myConnection().createStatement();
-            statement.executeUpdate("INSERT INTO "+table_name+" VALUES (100, 'Zara', 'Ali', 18)");
-//            if (rs != null) {
-//                rs.close();
-//            }else if (st != null) {
-//                st.close();
-//            }else if (con != null) {
-//                con.close();
-//            }
+            String querySql = "INSERT INTO " + table_name + " VALUES (" + dataWithComa + ")".trim();
+            statement.executeUpdate(querySql);
+
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "MC_database:add_data_NoColumns::" + ex);
         }
         return null;
     }
+
+    public static String add_data_WithColumns(String table_name, String ColumnsWithComa, String dataWithComa) {
+        try {
+            Statement statement = MC_JavaDataBaseConnection.myConnection().createStatement();
+            String querySql = "INSERT INTO " + table_name + "(" + ColumnsWithComa + ") VALUES (" + dataWithComa + ")".trim();
+            statement.executeUpdate(querySql);
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "MC_database:add_data_WithColumns::" + ex);
+        }
+        return null;
+    }
+//    public static void main(String[] args) {
+//        MC_JavaDataBaseConnection.add_data("test", "200, 'Aara', 'Zli', 21");
+//    }
 
 }
