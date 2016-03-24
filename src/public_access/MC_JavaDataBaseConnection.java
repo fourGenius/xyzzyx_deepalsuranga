@@ -1,17 +1,11 @@
 package public_access;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.DriverManager;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.*;
+import java.sql.*;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import jdk.nashorn.internal.codegen.CompilerConstants;
 
 /*
  @author : deepal_suranga
@@ -56,14 +50,14 @@ public class MC_JavaDataBaseConnection {
             USER = prop.getProperty("username");
             PASS = prop.getProperty("password");
 
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        } catch (IOException ex1) {
+            JOptionPane.showMessageDialog(null, "ex1: " + ex1);
         } finally {
             if (input != null) {
                 try {
                     input.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "e: " + e);
                 }
             }
         }
@@ -77,9 +71,9 @@ public class MC_JavaDataBaseConnection {
 
         try {
             Class.forName(JDBC_DRIVER);
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException ex2) {
             System.out.println("Where is your MySQL JDBC Driver?");
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "ex2: " + ex2);
             return null;
         }
 
@@ -90,10 +84,10 @@ public class MC_JavaDataBaseConnection {
             connection = DriverManager
                     .getConnection(DB_URL, USER, PASS);
 
-        } catch (SQLException e) {
+        } catch (SQLException ex3) {
             System.out.println("Connection Failed! Check output console");
             JOptionPane.showMessageDialog(null, "Connection Failed!Please Check Your Internet Connection");
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "ex3: " + ex3);
             return connection;
         }
 
@@ -122,6 +116,7 @@ public class MC_JavaDataBaseConnection {
         try {
             Statement statement = MC_JavaDataBaseConnection.myConnection().createStatement();
             String querySql = "INSERT INTO " + table_name + "(" + ColumnsWithComa + ") VALUES (" + dataWithComa + ")".trim();
+            //System.out.println("Query is: "+querySql);
             statement.executeUpdate(querySql);
 
         } catch (SQLException ex) {
@@ -129,8 +124,19 @@ public class MC_JavaDataBaseConnection {
         }
         return null;
     }
-//    public static void main(String[] args) {
-//        MC_JavaDataBaseConnection.add_data("test", "200, 'Aara', 'Zli', 21");
-//    }
 
+    public static void update_data(String SqlQuery) {
+
+        try {
+            Statement statement=MC_JavaDataBaseConnection.myConnection().createStatement();
+            statement.executeUpdate(SqlQuery);
+        } catch (SQLException ex) {
+            Logger.getLogger(MC_JavaDataBaseConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+//    public static void main(String[] args) {
+//        MC_JavaDataBaseConnection.add_data_WithColumns("test","id,fname,lname,age", "5,'deeA','surA',10");
+//    }
 }
