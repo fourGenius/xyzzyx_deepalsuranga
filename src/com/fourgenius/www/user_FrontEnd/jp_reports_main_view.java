@@ -19,7 +19,7 @@ import reports.*;
  */
 public class jp_reports_main_view extends javax.swing.JFrame {
 
-    /**
+    /*
      * Creates new form jp_reports_main_view
      */
     Border border = BorderFactory.createLineBorder(Color.white, 1);
@@ -58,6 +58,7 @@ public class jp_reports_main_view extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
 
         jp_view_reports.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "View Reports", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jp_view_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jp_view_reports.setMaximumSize(new java.awt.Dimension(609, 686));
         jp_view_reports.setMinimumSize(new java.awt.Dimension(609, 686));
         jp_view_reports.setOpaque(false);

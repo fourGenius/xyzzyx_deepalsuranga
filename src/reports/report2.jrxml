@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-21T10:14:45 -->
+<!-- 2016-03-23T16:27:54 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4611fe49-ab4d-41fe-a57a-d49bfe6a93b6">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salon_test"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -31,7 +31,7 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="10" width="550" height="57" uuid="1f8abe03-60bd-40c0-9e6d-88a470e525bf"/>
+				<reportElement x="0" y="10" width="555" height="57" uuid="1f8abe03-60bd-40c0-9e6d-88a470e525bf"/>
 				<textElement textAlignment="Center">
 					<font size="37" isBold="true"/>
 				</textElement>
@@ -57,10 +57,6 @@
 				<text><![CDATA[itemprice]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="333" y="0" width="111" height="30" uuid="25a173eb-71b2-413d-811c-c991e5ecb951"/>
-				<text><![CDATA[qty]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="444" y="0" width="111" height="30" uuid="23914350-d57a-45e6-ac0e-ed963fe8cb8a"/>
 				<text><![CDATA[date]]></text>
 			</staticText>
@@ -79,10 +75,6 @@
 			<textField>
 				<reportElement x="222" y="42" width="111" height="30" uuid="2d5d6bfc-3182-4676-95e9-9526881567fa"/>
 				<textFieldExpression><![CDATA[$F{itemprice}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="333" y="42" width="111" height="30" uuid="45c254c2-fdae-4557-aad6-e6e053b2e1ac"/>
-				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="444" y="42" width="111" height="30" uuid="2f8eaa71-a593-4ad5-9491-55c41b77e0d9"/>

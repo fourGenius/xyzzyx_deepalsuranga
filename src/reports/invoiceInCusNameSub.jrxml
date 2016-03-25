@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-23T16:39:44 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoiceInDateSub" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="225b3fb2-383b-40f9-a7ee-013cc41726da">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="92"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salon_test"/>
 	<parameter name="invoid" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT
-     invoice.`id` AS invoice_id,
-     invoicereg.`id` AS invoicereg_id,
-     invoicereg.`itemid` AS invoicereg_itemid,
-     invoicereg.`item` AS invoicereg_item,
-     invoicereg.`itemprice` AS invoicereg_itemprice,
-     invoicereg.`qty` AS invoicereg_qty,
-     invoicereg.`subtot` AS invoicereg_subtot,
-     invoicereg.`invoiceid` AS invoicereg_invoiceid
+     inv_invoice.`id` AS invoice_id,
+     inv_invoicereg.`id` AS invoicereg_id,
+     inv_invoicereg.`itemid` AS invoicereg_itemid,
+     inv_invoicereg.`item` AS invoicereg_item,
+     inv_invoicereg.`itemprice` AS invoicereg_itemprice,
+     inv_invoicereg.`subtot` AS invoicereg_subtot,
+     inv_invoicereg.`invoiceid` AS invoicereg_invoiceid
 FROM
-     `invoice` invoice INNER JOIN `invoicereg` invoicereg ON invoice.`id` = invoicereg.`invoiceid`
+   inv_invoice INNER JOIN inv_invoicereg ON inv_invoice.`id` = inv_invoicereg.`invoiceid`
 WHERE
-     invoice.`id` = $P{invoid}]]>
+     inv_invoice.`id` = $P{invoid}]]>
 	</queryString>
 	<field name="invoice_id" class="java.lang.String"/>
-	<field name="invoicereg_id" class="java.lang.Integer"/>
+	<field name="invoicereg_id" class="java.lang.Long"/>
 	<field name="invoicereg_itemid" class="java.lang.String"/>
 	<field name="invoicereg_item" class="java.lang.String"/>
 	<field name="invoicereg_itemprice" class="java.lang.Double"/>
-	<field name="invoicereg_qty" class="java.lang.Integer"/>
 	<field name="invoicereg_subtot" class="java.lang.Double"/>
 	<field name="invoicereg_invoiceid" class="java.lang.String"/>
 	<background>
@@ -47,21 +49,14 @@ WHERE
 				<text><![CDATA[Item ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="320" y="0" width="160" height="20" uuid="601aa2d1-00e8-4db7-a450-fc243acf6b3d"/>
+				<reportElement x="478" y="0" width="160" height="20" uuid="601aa2d1-00e8-4db7-a450-fc243acf6b3d"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Price]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="480" y="0" width="160" height="20" uuid="01c2be72-8d8b-4232-9f5e-2b9eec9c25ca"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Qty]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="160" y="0" width="160" height="20" uuid="0ef329b1-53e3-4581-aae9-1e1da8330aef"/>
+				<reportElement x="160" y="0" width="318" height="20" uuid="0ef329b1-53e3-4581-aae9-1e1da8330aef"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -86,21 +81,14 @@ WHERE
 				<textFieldExpression><![CDATA[$F{invoicereg_itemid}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="480" y="0" width="160" height="20" uuid="a6384cf9-941d-4ebb-9b90-4002308f8e68"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{invoicereg_qty}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="318" y="0" width="160" height="20" uuid="3d71e9eb-c18f-4f49-9a62-d5d149b3e481"/>
+				<reportElement x="480" y="0" width="160" height="20" uuid="3d71e9eb-c18f-4f49-9a62-d5d149b3e481"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{invoicereg_itemprice}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="160" y="0" width="160" height="20" uuid="82a7cdc4-a165-43ae-baf9-9c1488776766"/>
+				<reportElement x="160" y="0" width="318" height="20" uuid="82a7cdc4-a165-43ae-baf9-9c1488776766"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>

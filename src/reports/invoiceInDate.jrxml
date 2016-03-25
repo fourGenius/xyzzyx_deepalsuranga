@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-23T00:14:26 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoiceInDate" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="7c4d5327-4de2-41a2-a40c-f1d5174d930d">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="67"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salon_test"/>
+	<property name="ireport.y" value="66"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="salon_test"/>
 	<parameter name="date1" class="java.lang.String"/>
 	<parameter name="date2" class="java.lang.String"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
@@ -184,12 +182,12 @@ where date between $P{date1} and $P{date2}]]>
 				<text><![CDATA[INVOICE]]></text>
 			</staticText>
 			<subreport>
-				<reportElement x="5" y="167" width="791" height="129" uuid="7f9d064e-5682-48f5-ae60-1127e4b51944"/>
+				<reportElement x="5" y="166" width="791" height="128" uuid="d6bc8779-1c92-4a9d-bace-54a8aa6a798a"/>
 				<subreportParameter name="invoid">
 					<subreportParameterExpression><![CDATA[$F{invoice_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA["C:\\Users\\Dineth Jayasekera\\OneDrive\\NetBeans Projects\\shop\\src\\reports\\invoiceInDateSub.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA["D:\\Final_Pro\\xyzzyx_deepalsuranga\\src\\reports\\invoiceInDateSub.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

@@ -34,6 +34,14 @@ public class Student_reports extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
+        jp_Check_Daily_Income_In_Course1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
+        bt_Check_Daily_Income_In_Course1 = new javax.swing.JButton();
+        jp_Check_Daily_Income_In_Course2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox();
+        bt_Check_Daily_Income_In_Course2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(2, 119, 189));
         setMaximumSize(new java.awt.Dimension(719, 686));
@@ -118,21 +126,125 @@ public class Student_reports extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jp_Check_Daily_Income_In_Course1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Attendence", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jp_Check_Daily_Income_In_Course1.setMaximumSize(new java.awt.Dimension(337, 254));
+        jp_Check_Daily_Income_In_Course1.setMinimumSize(new java.awt.Dimension(337, 254));
+        jp_Check_Daily_Income_In_Course1.setOpaque(false);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Course");
+
+        jComboBox2.setPreferredSize(new java.awt.Dimension(28, 30));
+
+        bt_Check_Daily_Income_In_Course1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_Check_Daily_Income_In_Course1.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Check_Daily_Income_In_Course1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
+        bt_Check_Daily_Income_In_Course1.setText("View");
+        bt_Check_Daily_Income_In_Course1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_Check_Daily_Income_In_Course1.setMaximumSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course1.setMinimumSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course1.setPreferredSize(new java.awt.Dimension(100, 40));
+
+        javax.swing.GroupLayout jp_Check_Daily_Income_In_Course1Layout = new javax.swing.GroupLayout(jp_Check_Daily_Income_In_Course1);
+        jp_Check_Daily_Income_In_Course1.setLayout(jp_Check_Daily_Income_In_Course1Layout);
+        jp_Check_Daily_Income_In_Course1Layout.setHorizontalGroup(
+            jp_Check_Daily_Income_In_Course1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_Check_Daily_Income_In_Course1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_Check_Daily_Income_In_Course1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_Check_Daily_Income_In_Course1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(bt_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_Check_Daily_Income_In_Course1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jp_Check_Daily_Income_In_Course1Layout.setVerticalGroup(
+            jp_Check_Daily_Income_In_Course1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_Check_Daily_Income_In_Course1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addComponent(bt_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jp_Check_Daily_Income_In_Course2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Attendence", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jp_Check_Daily_Income_In_Course2.setMaximumSize(new java.awt.Dimension(337, 254));
+        jp_Check_Daily_Income_In_Course2.setMinimumSize(new java.awt.Dimension(337, 254));
+        jp_Check_Daily_Income_In_Course2.setOpaque(false);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Course");
+
+        jComboBox3.setPreferredSize(new java.awt.Dimension(28, 30));
+
+        bt_Check_Daily_Income_In_Course2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_Check_Daily_Income_In_Course2.setForeground(new java.awt.Color(255, 255, 255));
+        bt_Check_Daily_Income_In_Course2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
+        bt_Check_Daily_Income_In_Course2.setText("View");
+        bt_Check_Daily_Income_In_Course2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_Check_Daily_Income_In_Course2.setMaximumSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course2.setMinimumSize(new java.awt.Dimension(100, 50));
+        bt_Check_Daily_Income_In_Course2.setPreferredSize(new java.awt.Dimension(100, 40));
+
+        javax.swing.GroupLayout jp_Check_Daily_Income_In_Course2Layout = new javax.swing.GroupLayout(jp_Check_Daily_Income_In_Course2);
+        jp_Check_Daily_Income_In_Course2.setLayout(jp_Check_Daily_Income_In_Course2Layout);
+        jp_Check_Daily_Income_In_Course2Layout.setHorizontalGroup(
+            jp_Check_Daily_Income_In_Course2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_Check_Daily_Income_In_Course2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_Check_Daily_Income_In_Course2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_Check_Daily_Income_In_Course2Layout.createSequentialGroup()
+                        .addGap(0, 205, Short.MAX_VALUE)
+                        .addComponent(bt_Check_Daily_Income_In_Course2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_Check_Daily_Income_In_Course2Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jp_Check_Daily_Income_In_Course2Layout.setVerticalGroup(
+            jp_Check_Daily_Income_In_Course2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_Check_Daily_Income_In_Course2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bt_Check_Daily_Income_In_Course2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jp_Check_Daily_Income_In_Course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(372, 372, 372))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jp_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jp_Check_Daily_Income_In_Course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jp_Check_Daily_Income_In_Course2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jp_Check_Daily_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(436, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jp_Check_Daily_Income_In_Course, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jp_Check_Daily_Income_In_Course2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addComponent(jp_Check_Daily_Income_In_Course1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -143,11 +255,19 @@ public class Student_reports extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_Check_Daily_Income_In_Course;
+    private javax.swing.JButton bt_Check_Daily_Income_In_Course1;
+    private javax.swing.JButton bt_Check_Daily_Income_In_Course2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jp_Check_Daily_Income_In_Course;
+    private javax.swing.JPanel jp_Check_Daily_Income_In_Course1;
+    private javax.swing.JPanel jp_Check_Daily_Income_In_Course2;
     // End of variables declaration//GEN-END:variables
 }
