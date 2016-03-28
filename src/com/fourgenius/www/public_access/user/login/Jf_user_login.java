@@ -74,8 +74,6 @@ public class Jf_user_login extends javax.swing.JFrame {
         _lb_user_login_seperator = new javax.swing.JLabel();
         _lb_user_login_logo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        lb_time_date = new javax.swing.JLabel();
-        lb_date_view = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         _lb_user_login_password = new javax.swing.JLabel();
         _bt_Jf_user_login_Login = new javax.swing.JButton();
@@ -87,12 +85,18 @@ public class Jf_user_login extends javax.swing.JFrame {
         _lb_user_login_dis_username = new javax.swing.JLabel();
         _lb_user_login_userName = new javax.swing.JLabel();
         _tf_user_loging_userName = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lb_time_date = new javax.swing.JLabel();
+        lb_date_view = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Middle.setBackground(new java.awt.Color(48, 79, 254));
+        Middle.setBackground(new java.awt.Color(0, 153, 204));
         Middle.setPreferredSize(new java.awt.Dimension(1370, 770));
 
         Top.setBackground(new java.awt.Color(97, 97, 97));
@@ -179,43 +183,22 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(97, 97, 97));
 
-        lb_time_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lb_time_date.setForeground(new java.awt.Color(255, 255, 255));
-        lb_time_date.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lb_time_date.setText("Time View");
-
-        lb_date_view.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lb_date_view.setForeground(new java.awt.Color(255, 255, 255));
-        lb_date_view.setText("Date View");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lb_date_view, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lb_time_date, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGap(0, 1380, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lb_time_date)
-                    .addComponent(lb_date_view))
-                .addContainerGap())
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(97, 97, 97));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         _lb_user_login_password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_user_login_password.setForeground(new java.awt.Color(240, 240, 240));
         _lb_user_login_password.setText("Password");
-        jPanel2.add(_lb_user_login_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 279, 270, -1));
 
         _bt_Jf_user_login_Login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_Jf_user_login_Login.setForeground(new java.awt.Color(255, 255, 255));
@@ -247,7 +230,6 @@ public class Jf_user_login extends javax.swing.JFrame {
                 _bt_Jf_user_login_LoginActionPerformed(evt);
             }
         });
-        jPanel2.add(_bt_Jf_user_login_Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 354, 290, 50));
 
         _bt_Jf_user_login_Cancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_Jf_user_login_Cancel.setForeground(new java.awt.Color(255, 255, 255));
@@ -274,7 +256,6 @@ public class Jf_user_login extends javax.swing.JFrame {
                 _bt_Jf_user_login_CancelMouseReleased(evt);
             }
         });
-        jPanel2.add(_bt_Jf_user_login_Cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 290, 50));
 
         _lb_user_login_forgotPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_user_login_forgotPassword.setForeground(new java.awt.Color(255, 255, 255));
@@ -293,7 +274,6 @@ public class Jf_user_login extends javax.swing.JFrame {
                 _lb_user_login_forgotPasswordMouseExited(evt);
             }
         });
-        jPanel2.add(_lb_user_login_forgotPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 466, 290, -1));
 
         _lb_user_login_showPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         _lb_user_login_showPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_ShowPassword.png"))); // NOI18N
@@ -306,11 +286,9 @@ public class Jf_user_login extends javax.swing.JFrame {
                 _lb_user_login_showPasswordMouseReleased(evt);
             }
         });
-        jPanel2.add(_lb_user_login_showPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 279, -1, -1));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_AccountCircleWhite192x192.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 290, -1));
 
         _pf_user_login_password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _pf_user_login_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -336,7 +314,6 @@ public class Jf_user_login extends javax.swing.JFrame {
                 _pf_user_login_passwordKeyTyped(evt);
             }
         });
-        jPanel2.add(_pf_user_login_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 303, 290, -1));
 
         _lb_user_login_dis_username.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         _lb_user_login_dis_username.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/img_UsernameInformation.png"))); // NOI18N
@@ -352,12 +329,10 @@ public class Jf_user_login extends javax.swing.JFrame {
                 _lb_user_login_dis_usernameMouseReleased(evt);
             }
         });
-        jPanel2.add(_lb_user_login_dis_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 209, -1, -1));
 
         _lb_user_login_userName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_user_login_userName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_user_login_userName.setText("User Name");
-        jPanel2.add(_lb_user_login_userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 209, 270, -1));
 
         _tf_user_loging_userName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _tf_user_loging_userName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -380,41 +355,146 @@ public class Jf_user_login extends javax.swing.JFrame {
                 _tf_user_loging_userNameKeyTyped(evt);
             }
         });
-        jPanel2.add(_tf_user_loging_userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 233, 290, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(_lb_user_login_userName, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(_lb_user_login_dis_username))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(_tf_user_loging_userName, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(_lb_user_login_password, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(_lb_user_login_showPassword))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(_pf_user_login_password, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(_bt_Jf_user_login_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(_bt_Jf_user_login_Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(_lb_user_login_forgotPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(_lb_user_login_userName)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(_lb_user_login_dis_username)))
+                .addGap(5, 5, 5)
+                .addComponent(_tf_user_loging_userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(_lb_user_login_password)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(_lb_user_login_showPassword)))
+                .addGap(5, 5, 5)
+                .addComponent(_pf_user_login_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(_bt_Jf_user_login_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(_bt_Jf_user_login_Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(_lb_user_login_forgotPassword))
+        );
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/lms.jpg"))); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("MANAGMENT");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("System");
+
+        lb_time_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_time_date.setForeground(new java.awt.Color(255, 255, 255));
+        lb_time_date.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_time_date.setText("Time View");
+
+        lb_date_view.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lb_date_view.setForeground(new java.awt.Color(255, 255, 255));
+        lb_date_view.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_date_view.setText("Date View");
+
+        jLabel5.setText("Version 2.73504");
 
         javax.swing.GroupLayout MiddleLayout = new javax.swing.GroupLayout(Middle);
         Middle.setLayout(MiddleLayout);
         MiddleLayout.setHorizontalGroup(
             MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Top, javax.swing.GroupLayout.DEFAULT_SIZE, 1380, Short.MAX_VALUE)
             .addGroup(MiddleLayout.createSequentialGroup()
-                .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Top, javax.swing.GroupLayout.DEFAULT_SIZE, 1370, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiddleLayout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(_lb_user_login_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(_lb_user_login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 261, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(MiddleLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(_lb_user_login_logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MiddleLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lb_time_date, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lb_date_view, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(_lb_user_login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         MiddleLayout.setVerticalGroup(
             MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MiddleLayout.createSequentialGroup()
                 .addComponent(Top, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(MiddleLayout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(_lb_user_login_logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_user_login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE))
+                        .addGap(138, 138, 138)
+                        .addComponent(_lb_user_login_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(MiddleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(MiddleLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lb_date_view, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lb_time_date))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiddleLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(136, 136, 136)))
+                        .addComponent(_lb_user_login_seperator, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(201, 201, 201)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -734,6 +814,10 @@ public class Jf_user_login extends javax.swing.JFrame {
     private javax.swing.JPasswordField _pf_user_login_password;
     private javax.swing.JTextField _tf_user_loging_userName;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lb_date_view;

@@ -58,21 +58,32 @@ public class Jf_UserFront extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        lb_date_view = new javax.swing.JLabel();
-        lb_time_date = new javax.swing.JLabel();
+        lb_branch1 = new javax.swing.JLabel();
+        lb_branch2 = new javax.swing.JLabel();
+        lb_dhas = new javax.swing.JLabel();
+        lb_main_pic = new javax.swing.JLabel();
+        lb_h2 = new javax.swing.JLabel();
+        bt_homeAutomation = new javax.swing.JButton();
+        bt_libray = new javax.swing.JButton();
+        bt_practicals = new javax.swing.JButton();
+        bt_exam = new javax.swing.JButton();
+        bt_onlineExam = new javax.swing.JButton();
         bt_inventory = new javax.swing.JButton();
         bt_registration = new javax.swing.JButton();
         bt_viewReport = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lb_welcome_note = new javax.swing.JLabel();
         bt_logout = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        lb_time_date = new javax.swing.JLabel();
+        lb_date_view = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(66, 66, 66));
@@ -80,25 +91,150 @@ public class Jf_UserFront extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setForeground(new java.awt.Color(66, 66, 66));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1237, 481));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Colombo");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 620, -1, -1));
+        lb_branch1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_branch1.setForeground(new java.awt.Color(255, 255, 255));
+        lb_branch1.setText("Colombo");
+        jPanel1.add(lb_branch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 620, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Kandy");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 640, -1, -1));
+        lb_branch2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_branch2.setForeground(new java.awt.Color(255, 255, 255));
+        lb_branch2.setText("Kandy");
+        jPanel1.add(lb_branch2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 640, -1, -1));
 
-        lb_date_view.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lb_date_view.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1126, 56, 111, 27));
+        lb_dhas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lb_dhas.setForeground(new java.awt.Color(255, 255, 255));
+        lb_dhas.setText("Managmet System");
+        jPanel1.add(lb_dhas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 490, 50));
 
-        lb_time_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lb_time_date.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lb_time_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(1126, 0, 111, 50));
+        lb_main_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/management-System.png"))); // NOI18N
+        jPanel1.add(lb_main_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 540, 480));
+
+        lb_h2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lb_h2.setForeground(new java.awt.Color(255, 255, 255));
+        lb_h2.setText("Ramani Fernando Sunsilik Academy");
+        jPanel1.add(lb_h2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 640, 290, -1));
+
+        bt_homeAutomation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/homeAutomation.png"))); // NOI18N
+        bt_homeAutomation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_homeAutomation.setContentAreaFilled(false);
+        bt_homeAutomation.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_homeAutomation.setFocusPainted(false);
+        bt_homeAutomation.setMaximumSize(new java.awt.Dimension(230, 150));
+        bt_homeAutomation.setMinimumSize(new java.awt.Dimension(230, 150));
+        bt_homeAutomation.setPreferredSize(new java.awt.Dimension(230, 150));
+        bt_homeAutomation.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/autoMationR.png"))); // NOI18N
+        bt_homeAutomation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bt_homeAutomationMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bt_homeAutomationMouseExited(evt);
+            }
+        });
+        bt_homeAutomation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_homeAutomationActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt_homeAutomation, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 490, -1, -1));
+
+        bt_libray.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/libray.png"))); // NOI18N
+        bt_libray.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_libray.setContentAreaFilled(false);
+        bt_libray.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_libray.setFocusPainted(false);
+        bt_libray.setMaximumSize(new java.awt.Dimension(230, 150));
+        bt_libray.setMinimumSize(new java.awt.Dimension(230, 150));
+        bt_libray.setPreferredSize(new java.awt.Dimension(230, 150));
+        bt_libray.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bt_librayMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bt_librayMouseExited(evt);
+            }
+        });
+        bt_libray.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_librayActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt_libray, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 330, -1, -1));
+
+        bt_practicals.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/practical.png"))); // NOI18N
+        bt_practicals.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_practicals.setContentAreaFilled(false);
+        bt_practicals.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_practicals.setFocusPainted(false);
+        bt_practicals.setMaximumSize(new java.awt.Dimension(230, 150));
+        bt_practicals.setMinimumSize(new java.awt.Dimension(230, 150));
+        bt_practicals.setPreferredSize(new java.awt.Dimension(230, 150));
+        bt_practicals.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bt_practicalsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bt_practicalsMouseExited(evt);
+            }
+        });
+        bt_practicals.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_practicalsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt_practicals, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 170, -1, -1));
+
+        bt_exam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/exam.png"))); // NOI18N
+        bt_exam.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_exam.setContentAreaFilled(false);
+        bt_exam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_exam.setFocusPainted(false);
+        bt_exam.setMaximumSize(new java.awt.Dimension(230, 150));
+        bt_exam.setMinimumSize(new java.awt.Dimension(230, 150));
+        bt_exam.setPreferredSize(new java.awt.Dimension(230, 150));
+        bt_exam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bt_examMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bt_examMouseExited(evt);
+            }
+        });
+        bt_exam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_examActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt_exam, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 330, -1, -1));
+
+        bt_onlineExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/onlineExam.png"))); // NOI18N
+        bt_onlineExam.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_onlineExam.setContentAreaFilled(false);
+        bt_onlineExam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_onlineExam.setFocusPainted(false);
+        bt_onlineExam.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_onlineExam.setMaximumSize(new java.awt.Dimension(230, 150));
+        bt_onlineExam.setMinimumSize(new java.awt.Dimension(230, 150));
+        bt_onlineExam.setPreferredSize(new java.awt.Dimension(230, 150));
+        bt_onlineExam.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bt_onlineExam.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bt_onlineExam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bt_onlineExamMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bt_onlineExamMouseExited(evt);
+            }
+        });
+        bt_onlineExam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_onlineExamActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bt_onlineExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 490, -1, -1));
 
         bt_inventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/INVENTORY.PNG"))); // NOI18N
         bt_inventory.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -173,7 +309,7 @@ public class Jf_UserFront extends javax.swing.JFrame {
 
         lb_welcome_note.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_welcome_note.setForeground(new java.awt.Color(255, 255, 255));
-        lb_welcome_note.setText("Welcome, FRONT-END User,");
+        lb_welcome_note.setText("Welcome, FRONT-END USER:");
 
         bt_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PowerLock.png"))); // NOI18N
         bt_logout.setContentAreaFilled(false);
@@ -193,8 +329,8 @@ public class Jf_UserFront extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lb_welcome_note, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1082, Short.MAX_VALUE)
+                .addComponent(lb_welcome_note)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1127, Short.MAX_VALUE)
                 .addComponent(bt_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -210,44 +346,103 @@ public class Jf_UserFront extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 50));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Managmet System");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 490, 50));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/management-System.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 540, 450));
-
         jPanel3.setBackground(new java.awt.Color(0, 153, 204));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/logoA.png"))); // NOI18N
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/Sunsilk-Logo mini.png"))); // NOI18N
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/unilever-logo-500x500.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1370, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 811, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 810, 1370, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Ramani Fernando Sunsilik Academy");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 640, 290, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 1370, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("|");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 600, -1, -1));
 
+        jPanel4.setBackground(new java.awt.Color(0, 102, 102));
+
+        lb_time_date.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lb_time_date.setForeground(new java.awt.Color(255, 255, 255));
+        lb_time_date.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_time_date.setText("Date:");
+
+        lb_date_view.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_date_view.setForeground(new java.awt.Color(255, 255, 255));
+        lb_date_view.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_date_view.setText("Time:");
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/Feedbin-Icon-clock.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lb_date_view, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(lb_time_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(11, 11, 11))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb_time_date, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lb_date_view, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(52, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 170, 230, 150));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1370, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,6 +505,66 @@ bt_inventory.setBorder(borderE);
         this.dispose();
     }//GEN-LAST:event_bt_registrationActionPerformed
 
+    private void bt_homeAutomationMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_homeAutomationMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_homeAutomationMouseEntered
+
+    private void bt_homeAutomationMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_homeAutomationMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_homeAutomationMouseExited
+
+    private void bt_homeAutomationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_homeAutomationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_homeAutomationActionPerformed
+
+    private void bt_onlineExamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_onlineExamMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_onlineExamMouseEntered
+
+    private void bt_onlineExamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_onlineExamMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_onlineExamMouseExited
+
+    private void bt_onlineExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_onlineExamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_onlineExamActionPerformed
+
+    private void bt_examMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_examMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_examMouseEntered
+
+    private void bt_examMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_examMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_examMouseExited
+
+    private void bt_examActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_examActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_examActionPerformed
+
+    private void bt_practicalsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_practicalsMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_practicalsMouseEntered
+
+    private void bt_practicalsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_practicalsMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_practicalsMouseExited
+
+    private void bt_practicalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_practicalsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_practicalsActionPerformed
+
+    private void bt_librayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_librayMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_librayMouseEntered
+
+    private void bt_librayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_librayMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_librayMouseExited
+
+    private void bt_librayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_librayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_librayActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -369,20 +624,31 @@ bt_inventory.setBorder(borderE);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_exam;
+    private javax.swing.JButton bt_homeAutomation;
     private javax.swing.JButton bt_inventory;
+    private javax.swing.JButton bt_libray;
     private javax.swing.JButton bt_logout;
+    private javax.swing.JButton bt_onlineExam;
+    private javax.swing.JButton bt_practicals;
     private javax.swing.JButton bt_registration;
     private javax.swing.JButton bt_viewReport;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lb_branch1;
+    private javax.swing.JLabel lb_branch2;
     private javax.swing.JLabel lb_date_view;
+    private javax.swing.JLabel lb_dhas;
+    private javax.swing.JLabel lb_h2;
+    private javax.swing.JLabel lb_main_pic;
     private javax.swing.JLabel lb_time_date;
     public static javax.swing.JLabel lb_welcome_note;
     // End of variables declaration//GEN-END:variables
