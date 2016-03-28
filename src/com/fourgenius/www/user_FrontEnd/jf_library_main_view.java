@@ -69,11 +69,12 @@ public class jf_library_main_view extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1366, 50));
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 50));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/power off.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PowerLock.png"))); // NOI18N
         jButton5.setContentAreaFilled(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.setFocusPainted(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/PowerLockR.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
