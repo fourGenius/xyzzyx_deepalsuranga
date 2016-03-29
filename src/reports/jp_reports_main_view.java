@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.user_FrontEnd;
+package reports;
 
+import com.fourgenius.www.user_FrontEnd.*;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
 import javax.swing.BorderFactory;
@@ -473,6 +474,7 @@ Jf_user_login jf_user_login = new Jf_user_login();
             java.util.logging.Logger.getLogger(jp_reports_main_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -490,7 +492,7 @@ Jf_user_login jf_user_login = new Jf_user_login();
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JPanel jp_report_change;
-    private javax.swing.JPanel jp_view_reports;
+    public static javax.swing.JPanel jp_view_reports;
     private javax.swing.JLabel lb_inventory_reports;
     private javax.swing.JLabel lb_student_reports;
     // End of variables declaration//GEN-END:variables

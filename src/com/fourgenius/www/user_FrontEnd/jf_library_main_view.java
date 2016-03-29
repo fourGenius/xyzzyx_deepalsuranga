@@ -5,9 +5,12 @@
  */
 package com.fourgenius.www.user_FrontEnd;
 
+import com.fourgenius.www.public_access.library.jp_burrow_books;
+import com.fourgenius.www.public_access.library.jp_return_books;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.GroupLayout;
 import javax.swing.border.Border;
 
 /**
@@ -21,8 +24,14 @@ public class jf_library_main_view extends javax.swing.JFrame {
      */
     public jf_library_main_view() {
         initComponents();
+        jp_book_subMenu.setVisible(false);
+        jp_finance_subMenu.setVisible(false);
+        jp_member_subMenu.setVisible(false);
+        jb_books.setVisible(false);
+        jb_finance.setVisible(false);
+        jb__member.setVisible(false);
     }
-    Border borderE = BorderFactory.createLineBorder(new Color(0,153,153), 1);
+    Border borderE = BorderFactory.createLineBorder(new Color(0, 153, 153), 1);
     Border borderC = BorderFactory.createLineBorder(new Color(240, 240, 240), 1);
 
     /**
@@ -36,24 +45,41 @@ public class jf_library_main_view extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jp_book_subMenu = new javax.swing.JPanel();
+        jb_burrow_books = new javax.swing.JButton();
+        jb_return_books = new javax.swing.JButton();
+        jb_add_books = new javax.swing.JButton();
+        jb_edit_books = new javax.swing.JButton();
+        jb_search_books = new javax.swing.JButton();
+        jp_finance_subMenu = new javax.swing.JPanel();
+        jb_payments = new javax.swing.JButton();
+        jb_reports = new javax.swing.JButton();
+        jp_member_subMenu = new javax.swing.JPanel();
+        jb_member = new javax.swing.JButton();
+        jb_Active_member = new javax.swing.JButton();
+        jb_student = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        jb_books = new javax.swing.JButton();
+        jb__member = new javax.swing.JButton();
+        jb_finance = new javax.swing.JButton();
+        jp_library_main = new javax.swing.JPanel();
         lb_burrow_books = new javax.swing.JLabel();
         lb_return_books = new javax.swing.JLabel();
-        lb_manage_books = new javax.swing.JLabel();
+        lb_add_books = new javax.swing.JLabel();
         lb_members = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lb_edit_books = new javax.swing.JLabel();
+        lb_search_books = new javax.swing.JLabel();
+        lb_active_members = new javax.swing.JLabel();
+        lb_students = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lb_payment = new javax.swing.JLabel();
+        lb_reports = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,6 +94,319 @@ public class jf_library_main_view extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(1366, 50));
         jPanel1.setMinimumSize(new java.awt.Dimension(1366, 50));
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 50));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/home.png"))); // NOI18N
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jp_book_subMenu.setBackground(new java.awt.Color(0, 153, 153));
+        jp_book_subMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jp_book_subMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jp_book_subMenuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jp_book_subMenuMouseExited(evt);
+            }
+        });
+
+        jb_burrow_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_burrow_books.setForeground(new java.awt.Color(255, 255, 255));
+        jb_burrow_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_burrow_books.setText("Burrow Books");
+        jb_burrow_books.setContentAreaFilled(false);
+        jb_burrow_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_burrow_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_burrow_books.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_burrow_books.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_burrow_books.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_burrow_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_burrow_booksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_burrow_booksMouseExited(evt);
+            }
+        });
+        jb_burrow_books.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_burrow_booksActionPerformed(evt);
+            }
+        });
+
+        jb_return_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_return_books.setForeground(new java.awt.Color(255, 255, 255));
+        jb_return_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_return_books.setText("Return Books");
+        jb_return_books.setContentAreaFilled(false);
+        jb_return_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_return_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_return_books.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_return_books.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_return_books.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_return_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_return_booksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_return_booksMouseExited(evt);
+            }
+        });
+
+        jb_add_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_add_books.setForeground(new java.awt.Color(255, 255, 255));
+        jb_add_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_add_books.setText("Add Books");
+        jb_add_books.setContentAreaFilled(false);
+        jb_add_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_add_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_add_books.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_add_books.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_add_books.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_add_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_add_booksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_add_booksMouseExited(evt);
+            }
+        });
+
+        jb_edit_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_edit_books.setForeground(new java.awt.Color(255, 255, 255));
+        jb_edit_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_edit_books.setText("Edit Books");
+        jb_edit_books.setContentAreaFilled(false);
+        jb_edit_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_edit_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_edit_books.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_edit_books.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_edit_books.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_edit_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_edit_booksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_edit_booksMouseExited(evt);
+            }
+        });
+
+        jb_search_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_search_books.setForeground(new java.awt.Color(255, 255, 255));
+        jb_search_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_search_books.setText("Search Books");
+        jb_search_books.setContentAreaFilled(false);
+        jb_search_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_search_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_search_books.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_search_books.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_search_books.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_search_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_search_booksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_search_booksMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jp_book_subMenuLayout = new javax.swing.GroupLayout(jp_book_subMenu);
+        jp_book_subMenu.setLayout(jp_book_subMenuLayout);
+        jp_book_subMenuLayout.setHorizontalGroup(
+            jp_book_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_book_subMenuLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jb_burrow_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_return_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_add_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_edit_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_search_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(152, Short.MAX_VALUE))
+        );
+        jp_book_subMenuLayout.setVerticalGroup(
+            jp_book_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_book_subMenuLayout.createSequentialGroup()
+                .addGroup(jp_book_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_burrow_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_return_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_add_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_edit_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_search_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jp_book_subMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 1000, -1));
+
+        jp_finance_subMenu.setBackground(new java.awt.Color(0, 153, 153));
+        jp_finance_subMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jp_finance_subMenu.setPreferredSize(new java.awt.Dimension(739, 50));
+        jp_finance_subMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jp_finance_subMenuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jp_finance_subMenuMouseExited(evt);
+            }
+        });
+
+        jb_payments.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_payments.setForeground(new java.awt.Color(255, 255, 255));
+        jb_payments.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_payments.setText("Payments");
+        jb_payments.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_payments.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_payments.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_payments.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_payments.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_payments.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_paymentsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_paymentsMouseExited(evt);
+            }
+        });
+
+        jb_reports.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_reports.setForeground(new java.awt.Color(255, 255, 255));
+        jb_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_reports.setText("Reports");
+        jb_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_reports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_reports.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_reports.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_reports.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_reports.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_reportsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_reportsMouseExited(evt);
+            }
+        });
+        jb_reports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_reportsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jp_finance_subMenuLayout = new javax.swing.GroupLayout(jp_finance_subMenu);
+        jp_finance_subMenu.setLayout(jp_finance_subMenuLayout);
+        jp_finance_subMenuLayout.setHorizontalGroup(
+            jp_finance_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_finance_subMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jb_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_reports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(411, Short.MAX_VALUE))
+        );
+        jp_finance_subMenuLayout.setVerticalGroup(
+            jp_finance_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_finance_subMenuLayout.createSequentialGroup()
+                .addGroup(jp_finance_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_reports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jp_finance_subMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(821, 0, 490, -1));
+
+        jp_member_subMenu.setBackground(new java.awt.Color(0, 153, 153));
+        jp_member_subMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jp_member_subMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jp_member_subMenuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jp_member_subMenuMouseExited(evt);
+            }
+        });
+
+        jb_member.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_member.setForeground(new java.awt.Color(255, 255, 255));
+        jb_member.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_member.setText("Member");
+        jb_member.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_member.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_member.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_member.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_member.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_member.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_memberMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_memberMouseExited(evt);
+            }
+        });
+
+        jb_Active_member.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_Active_member.setForeground(new java.awt.Color(255, 255, 255));
+        jb_Active_member.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_Active_member.setText("Active Member");
+        jb_Active_member.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_Active_member.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_Active_member.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_Active_member.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_Active_member.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_Active_member.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_Active_memberMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_Active_memberMouseExited(evt);
+            }
+        });
+
+        jb_student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_student.setForeground(new java.awt.Color(255, 255, 255));
+        jb_student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_LightGreen_150x50.png"))); // NOI18N
+        jb_student.setText("Students");
+        jb_student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_student.setMaximumSize(new java.awt.Dimension(150, 50));
+        jb_student.setMinimumSize(new java.awt.Dimension(150, 50));
+        jb_student.setPreferredSize(new java.awt.Dimension(150, 50));
+        jb_student.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_studentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_studentMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jp_member_subMenuLayout = new javax.swing.GroupLayout(jp_member_subMenu);
+        jp_member_subMenu.setLayout(jp_member_subMenuLayout);
+        jp_member_subMenuLayout.setHorizontalGroup(
+            jp_member_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_member_subMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jb_member, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_Active_member, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(244, Short.MAX_VALUE))
+        );
+        jp_member_subMenuLayout.setVerticalGroup(
+            jp_member_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_member_subMenuLayout.createSequentialGroup()
+                .addGroup(jp_member_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_member, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jp_member_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jb_Active_member, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jb_student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jp_member_subMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 740, -1));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PowerLock.png"))); // NOI18N
         jButton5.setContentAreaFilled(false);
@@ -80,27 +419,72 @@ public class jf_library_main_view extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 0, 50, 50));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jb_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_books.setForeground(new java.awt.Color(255, 255, 255));
+        jb_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
+        jb_books.setText("Books");
+        jb_books.setContentAreaFilled(false);
+        jb_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_books.setMaximumSize(new java.awt.Dimension(250, 50));
+        jb_books.setMinimumSize(new java.awt.Dimension(250, 50));
+        jb_books.setPreferredSize(new java.awt.Dimension(250, 50));
+        jb_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_booksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_booksMouseExited(evt);
+            }
+        });
+        jPanel1.add(jb_books, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 0, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(2, 119, 189));
-        jPanel3.setMaximumSize(new java.awt.Dimension(1113, 701));
-        jPanel3.setMinimumSize(new java.awt.Dimension(1113, 701));
-        jPanel3.setPreferredSize(new java.awt.Dimension(1113, 701));
+        jb__member.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb__member.setForeground(new java.awt.Color(255, 255, 255));
+        jb__member.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
+        jb__member.setText("Member");
+        jb__member.setContentAreaFilled(false);
+        jb__member.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb__member.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb__member.setMaximumSize(new java.awt.Dimension(250, 50));
+        jb__member.setMinimumSize(new java.awt.Dimension(250, 50));
+        jb__member.setPreferredSize(new java.awt.Dimension(250, 50));
+        jb__member.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb__memberMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb__memberMouseExited(evt);
+            }
+        });
+        jPanel1.add(jb__member, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 0, -1, -1));
+
+        jb_finance.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_finance.setForeground(new java.awt.Color(255, 255, 255));
+        jb_finance.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
+        jb_finance.setText("Finance");
+        jb_finance.setContentAreaFilled(false);
+        jb_finance.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jb_finance.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_finance.setMaximumSize(new java.awt.Dimension(250, 50));
+        jb_finance.setMinimumSize(new java.awt.Dimension(250, 50));
+        jb_finance.setPreferredSize(new java.awt.Dimension(250, 50));
+        jb_finance.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_financeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jb_financeMouseExited(evt);
+            }
+        });
+        jPanel1.add(jb_finance, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, -1, -1));
+
+        jp_library_main.setBackground(new java.awt.Color(2, 119, 189));
+        jp_library_main.setMaximumSize(new java.awt.Dimension(1113, 701));
+        jp_library_main.setMinimumSize(new java.awt.Dimension(1113, 701));
+        jp_library_main.setPreferredSize(new java.awt.Dimension(1113, 701));
 
         lb_burrow_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_burrow_books.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,28 +536,28 @@ public class jf_library_main_view extends javax.swing.JFrame {
             }
         });
 
-        lb_manage_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lb_manage_books.setForeground(new java.awt.Color(255, 255, 255));
-        lb_manage_books.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_manage_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/add_book.png"))); // NOI18N
-        lb_manage_books.setText("Add Books");
-        lb_manage_books.setToolTipText("");
-        lb_manage_books.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        lb_manage_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lb_manage_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lb_manage_books.setMaximumSize(new java.awt.Dimension(100, 126));
-        lb_manage_books.setMinimumSize(new java.awt.Dimension(100, 126));
-        lb_manage_books.setPreferredSize(new java.awt.Dimension(100, 126));
-        lb_manage_books.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        lb_manage_books.addMouseListener(new java.awt.event.MouseAdapter() {
+        lb_add_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_add_books.setForeground(new java.awt.Color(255, 255, 255));
+        lb_add_books.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_add_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/add_book.png"))); // NOI18N
+        lb_add_books.setText("Add Books");
+        lb_add_books.setToolTipText("");
+        lb_add_books.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        lb_add_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_add_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_add_books.setMaximumSize(new java.awt.Dimension(100, 126));
+        lb_add_books.setMinimumSize(new java.awt.Dimension(100, 126));
+        lb_add_books.setPreferredSize(new java.awt.Dimension(100, 126));
+        lb_add_books.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_add_books.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lb_manage_booksMouseClicked(evt);
+                lb_add_booksMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lb_manage_booksMouseEntered(evt);
+                lb_add_booksMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lb_manage_booksMouseExited(evt);
+                lb_add_booksMouseExited(evt);
             }
         });
 
@@ -215,12 +599,11 @@ public class jf_library_main_view extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1252, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel5.setBackground(new java.awt.Color(0, 153, 153));
@@ -244,54 +627,90 @@ public class jf_library_main_view extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/update_book.png"))); // NOI18N
-        jLabel3.setText("Edit Books");
-        jLabel3.setToolTipText("");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel3.setMaximumSize(new java.awt.Dimension(100, 126));
-        jLabel3.setMinimumSize(new java.awt.Dimension(100, 126));
-        jLabel3.setPreferredSize(new java.awt.Dimension(100, 126));
-        jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_edit_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_edit_books.setForeground(new java.awt.Color(255, 255, 255));
+        lb_edit_books.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_edit_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/update_book.png"))); // NOI18N
+        lb_edit_books.setText("Edit Books");
+        lb_edit_books.setToolTipText("");
+        lb_edit_books.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        lb_edit_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_edit_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_edit_books.setMaximumSize(new java.awt.Dimension(100, 126));
+        lb_edit_books.setMinimumSize(new java.awt.Dimension(100, 126));
+        lb_edit_books.setPreferredSize(new java.awt.Dimension(100, 126));
+        lb_edit_books.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_edit_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_edit_booksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lb_edit_booksMouseExited(evt);
+            }
+        });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/sreach_book.png"))); // NOI18N
-        jLabel4.setText("Search Books");
-        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel4.setMaximumSize(new java.awt.Dimension(100, 126));
-        jLabel4.setMinimumSize(new java.awt.Dimension(100, 126));
-        jLabel4.setPreferredSize(new java.awt.Dimension(100, 126));
-        jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_search_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_search_books.setForeground(new java.awt.Color(255, 255, 255));
+        lb_search_books.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_search_books.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/sreach_book.png"))); // NOI18N
+        lb_search_books.setText("Search Books");
+        lb_search_books.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        lb_search_books.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_search_books.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_search_books.setMaximumSize(new java.awt.Dimension(100, 126));
+        lb_search_books.setMinimumSize(new java.awt.Dimension(100, 126));
+        lb_search_books.setPreferredSize(new java.awt.Dimension(100, 126));
+        lb_search_books.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_search_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_search_booksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lb_search_booksMouseExited(evt);
+            }
+        });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/active_member.png"))); // NOI18N
-        jLabel5.setText("Active Members");
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel5.setMaximumSize(new java.awt.Dimension(100, 126));
-        jLabel5.setMinimumSize(new java.awt.Dimension(100, 126));
-        jLabel5.setPreferredSize(new java.awt.Dimension(100, 126));
-        jLabel5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_active_members.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_active_members.setForeground(new java.awt.Color(255, 255, 255));
+        lb_active_members.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_active_members.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/active_member.png"))); // NOI18N
+        lb_active_members.setText("Active Members");
+        lb_active_members.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        lb_active_members.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_active_members.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_active_members.setMaximumSize(new java.awt.Dimension(100, 126));
+        lb_active_members.setMinimumSize(new java.awt.Dimension(100, 126));
+        lb_active_members.setPreferredSize(new java.awt.Dimension(100, 126));
+        lb_active_members.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_active_members.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_active_membersMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lb_active_membersMouseExited(evt);
+            }
+        });
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/student_list.png"))); // NOI18N
-        jLabel6.setText("Students");
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel6.setMaximumSize(new java.awt.Dimension(100, 126));
-        jLabel6.setMinimumSize(new java.awt.Dimension(100, 126));
-        jLabel6.setPreferredSize(new java.awt.Dimension(100, 126));
-        jLabel6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_students.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_students.setForeground(new java.awt.Color(255, 255, 255));
+        lb_students.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/student_list.png"))); // NOI18N
+        lb_students.setText("Students");
+        lb_students.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        lb_students.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_students.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_students.setMaximumSize(new java.awt.Dimension(100, 126));
+        lb_students.setMinimumSize(new java.awt.Dimension(100, 126));
+        lb_students.setPreferredSize(new java.awt.Dimension(100, 126));
+        lb_students.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_students.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_studentsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lb_studentsMouseExited(evt);
+            }
+        });
 
         jPanel6.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -313,29 +732,47 @@ public class jf_library_main_view extends javax.swing.JFrame {
             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/payment.png"))); // NOI18N
-        jLabel8.setText("Payments");
-        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel8.setMaximumSize(new java.awt.Dimension(100, 126));
-        jLabel8.setMinimumSize(new java.awt.Dimension(100, 126));
-        jLabel8.setPreferredSize(new java.awt.Dimension(100, 126));
-        jLabel8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_payment.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_payment.setForeground(new java.awt.Color(255, 255, 255));
+        lb_payment.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_payment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/payment.png"))); // NOI18N
+        lb_payment.setText("Payments");
+        lb_payment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        lb_payment.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_payment.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_payment.setMaximumSize(new java.awt.Dimension(100, 126));
+        lb_payment.setMinimumSize(new java.awt.Dimension(100, 126));
+        lb_payment.setPreferredSize(new java.awt.Dimension(100, 126));
+        lb_payment.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_payment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_paymentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lb_paymentMouseExited(evt);
+            }
+        });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/view_report.png"))); // NOI18N
-        jLabel9.setText("Reports");
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jLabel9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel9.setMaximumSize(new java.awt.Dimension(100, 126));
-        jLabel9.setMinimumSize(new java.awt.Dimension(100, 126));
-        jLabel9.setPreferredSize(new java.awt.Dimension(100, 126));
-        jLabel9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_reports.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_reports.setForeground(new java.awt.Color(255, 255, 255));
+        lb_reports.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/library/images/view_report.png"))); // NOI18N
+        lb_reports.setText("Reports");
+        lb_reports.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        lb_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_reports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_reports.setMaximumSize(new java.awt.Dimension(100, 126));
+        lb_reports.setMinimumSize(new java.awt.Dimension(100, 126));
+        lb_reports.setPreferredSize(new java.awt.Dimension(100, 126));
+        lb_reports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_reports.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_reportsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lb_reportsMouseExited(evt);
+            }
+        });
 
         jPanel7.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -350,66 +787,67 @@ public class jf_library_main_view extends javax.swing.JFrame {
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(lb_burrow_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_return_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lb_manage_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(lb_members, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jp_library_mainLayout = new javax.swing.GroupLayout(jp_library_main);
+        jp_library_main.setLayout(jp_library_mainLayout);
+        jp_library_mainLayout.setHorizontalGroup(
+            jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_library_mainLayout.createSequentialGroup()
+                .addGroup(jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jp_library_mainLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jp_library_mainLayout.createSequentialGroup()
+                                .addComponent(lb_burrow_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(lb_return_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(lb_add_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(lb_edit_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(lb_search_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jp_library_mainLayout.createSequentialGroup()
+                                .addComponent(lb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(lb_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jp_library_mainLayout.createSequentialGroup()
+                                .addComponent(lb_members, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(lb_active_members, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8)
+                                .addComponent(lb_students, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        jp_library_mainLayout.setVerticalGroup(
+            jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_library_mainLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lb_return_books, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lb_burrow_books, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_manage_books, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(lb_return_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_add_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_edit_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_search_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_members, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
+                .addGroup(jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lb_members, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_active_members, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_students, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addGroup(jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_reports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -419,8 +857,10 @@ public class jf_library_main_view extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1370, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1370, Short.MAX_VALUE))
+                    .addComponent(jp_library_main, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1855, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(489, 489, 489)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -428,7 +868,7 @@ public class jf_library_main_view extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE))
+                .addComponent(jp_library_main, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -448,75 +888,99 @@ public class jf_library_main_view extends javax.swing.JFrame {
     private void lb_burrow_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_burrow_booksMouseEntered
 
         lb_burrow_books.setBorder(borderE);
-        
+
     }//GEN-LAST:event_lb_burrow_booksMouseEntered
 
     private void lb_burrow_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_burrow_booksMouseExited
 
         lb_burrow_books.setBorder(borderC);
-        
+
     }//GEN-LAST:event_lb_burrow_booksMouseExited
+
 
     private void lb_burrow_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_burrow_booksMouseClicked
 
-        
-        
+        jp_burrow_books burrow_books = new jp_burrow_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(burrow_books, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(burrow_books, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+
+        System.gc();
+
     }//GEN-LAST:event_lb_burrow_booksMouseClicked
 
     private void lb_return_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_return_booksMouseEntered
-       
+
         lb_return_books.setBorder(borderE);
-        
+
     }//GEN-LAST:event_lb_return_booksMouseEntered
 
     private void lb_return_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_return_booksMouseExited
 
         lb_return_books.setBorder(borderC);
-        
+
     }//GEN-LAST:event_lb_return_booksMouseExited
 
     private void lb_return_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_return_booksMouseClicked
-       
-        
-        
+
+        jp_return_books return_books = new jp_return_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(return_books, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(return_books, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+        System.gc();
+
     }//GEN-LAST:event_lb_return_booksMouseClicked
 
-    private void lb_manage_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_manage_booksMouseEntered
+    private void lb_add_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_add_booksMouseEntered
 
-        lb_manage_books.setBorder(borderE);
-        
-    }//GEN-LAST:event_lb_manage_booksMouseEntered
+        lb_add_books.setBorder(borderE);
 
-    private void lb_manage_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_manage_booksMouseExited
+    }//GEN-LAST:event_lb_add_booksMouseEntered
 
-        lb_manage_books.setBorder(borderC);
-        
-    }//GEN-LAST:event_lb_manage_booksMouseExited
+    private void lb_add_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_add_booksMouseExited
 
-    private void lb_manage_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_manage_booksMouseClicked
+        lb_add_books.setBorder(borderC);
 
-        
-        
-    }//GEN-LAST:event_lb_manage_booksMouseClicked
+    }//GEN-LAST:event_lb_add_booksMouseExited
+
+    private void lb_add_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_add_booksMouseClicked
+
+
+    }//GEN-LAST:event_lb_add_booksMouseClicked
 
     private void lb_membersMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_membersMouseEntered
 
         lb_members.setBorder(borderE);
-        
+
     }//GEN-LAST:event_lb_membersMouseEntered
 
     private void lb_membersMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_membersMouseExited
 
         lb_members.setBorder(borderC);
-        
+
     }//GEN-LAST:event_lb_membersMouseExited
 
     private void lb_membersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_membersMouseClicked
 
-        
-        
+
     }//GEN-LAST:event_lb_membersMouseClicked
-Jf_user_login jf_user_login = new Jf_user_login();
+    Jf_user_login jf_user_login = new Jf_user_login();
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
         if (jf_user_login == null) {
@@ -528,6 +992,279 @@ Jf_user_login jf_user_login = new Jf_user_login();
             this.dispose();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+float f=50;
+    private void jb_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_booksMouseEntered
+
+        jp_book_subMenu.setVisible(true);
+     
+        
+    }//GEN-LAST:event_jb_booksMouseEntered
+
+    private void jb_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_booksMouseExited
+
+        jp_book_subMenu.setVisible(false);
+
+    }//GEN-LAST:event_jb_booksMouseExited
+
+    private void jp_book_subMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jp_book_subMenuMouseEntered
+
+        jp_book_subMenu.setVisible(true);
+
+    }//GEN-LAST:event_jp_book_subMenuMouseEntered
+
+    private void jp_book_subMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jp_book_subMenuMouseExited
+
+        jp_book_subMenu.setVisible(false);
+
+    }//GEN-LAST:event_jp_book_subMenuMouseExited
+
+    private void jb__memberMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb__memberMouseEntered
+
+        jp_member_subMenu.setVisible(true);
+
+    }//GEN-LAST:event_jb__memberMouseEntered
+
+    private void jb__memberMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb__memberMouseExited
+
+        jp_member_subMenu.setVisible(false);
+
+    }//GEN-LAST:event_jb__memberMouseExited
+
+    private void jp_member_subMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jp_member_subMenuMouseEntered
+
+        jp_member_subMenu.setVisible(true);
+
+    }//GEN-LAST:event_jp_member_subMenuMouseEntered
+
+    private void jp_member_subMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jp_member_subMenuMouseExited
+
+        jp_member_subMenu.setVisible(false);
+
+    }//GEN-LAST:event_jp_member_subMenuMouseExited
+
+    private void jb_financeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_financeMouseEntered
+
+        jp_finance_subMenu.setVisible(true);
+
+    }//GEN-LAST:event_jb_financeMouseEntered
+
+    private void jb_financeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_financeMouseExited
+
+        jp_finance_subMenu.setVisible(false);
+
+    }//GEN-LAST:event_jb_financeMouseExited
+
+    private void jp_finance_subMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jp_finance_subMenuMouseEntered
+
+        jp_finance_subMenu.setVisible(true);
+
+    }//GEN-LAST:event_jp_finance_subMenuMouseEntered
+
+    private void jp_finance_subMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jp_finance_subMenuMouseExited
+
+        jp_finance_subMenu.setVisible(false);
+
+    }//GEN-LAST:event_jp_finance_subMenuMouseExited
+
+    private void jb_burrow_booksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_burrow_booksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_burrow_booksActionPerformed
+
+    private void jb_burrow_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_burrow_booksMouseEntered
+        
+        jp_book_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_burrow_booksMouseEntered
+
+    private void jb_return_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_return_booksMouseEntered
+
+        jp_book_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_return_booksMouseEntered
+
+    private void jb_add_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_add_booksMouseEntered
+
+        jp_book_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_add_booksMouseEntered
+
+    private void jb_edit_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_edit_booksMouseEntered
+
+        jp_book_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_edit_booksMouseEntered
+
+    private void jb_search_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_search_booksMouseEntered
+
+        jp_book_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_search_booksMouseEntered
+
+    private void jb_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_reportsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_reportsActionPerformed
+
+    private void jb_paymentsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_paymentsMouseEntered
+
+        jp_finance_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_paymentsMouseEntered
+
+    private void jb_reportsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_reportsMouseEntered
+
+        jp_finance_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_reportsMouseEntered
+
+    private void jb_memberMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_memberMouseEntered
+
+        jp_member_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_memberMouseEntered
+
+    private void jb_Active_memberMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_Active_memberMouseEntered
+
+        jp_member_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_Active_memberMouseEntered
+
+    private void jb_studentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_studentMouseEntered
+
+        jp_member_subMenu.setVisible(true);
+        
+    }//GEN-LAST:event_jb_studentMouseEntered
+
+    private void lb_edit_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_edit_booksMouseEntered
+
+        lb_edit_books.setBorder(borderE);
+        
+    }//GEN-LAST:event_lb_edit_booksMouseEntered
+
+    private void lb_edit_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_edit_booksMouseExited
+
+        lb_edit_books.setBorder(borderC);
+        
+    }//GEN-LAST:event_lb_edit_booksMouseExited
+
+    private void lb_search_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_search_booksMouseEntered
+
+        lb_search_books.setBorder(borderE);
+        
+    }//GEN-LAST:event_lb_search_booksMouseEntered
+
+    private void lb_search_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_search_booksMouseExited
+
+        lb_search_books.setBorder(borderC);
+        
+    }//GEN-LAST:event_lb_search_booksMouseExited
+
+    private void lb_active_membersMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_active_membersMouseEntered
+
+        lb_active_members.setBorder(borderE);
+        
+    }//GEN-LAST:event_lb_active_membersMouseEntered
+
+    private void lb_active_membersMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_active_membersMouseExited
+
+        lb_active_members.setBorder(borderC);
+        
+    }//GEN-LAST:event_lb_active_membersMouseExited
+
+    private void lb_studentsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_studentsMouseEntered
+
+        lb_students.setBorder(borderE);
+        
+    }//GEN-LAST:event_lb_studentsMouseEntered
+
+    private void lb_studentsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_studentsMouseExited
+
+        lb_students.setBorder(borderC);
+        
+    }//GEN-LAST:event_lb_studentsMouseExited
+
+    private void lb_paymentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_paymentMouseEntered
+
+        lb_payment.setBorder(borderE);
+        
+    }//GEN-LAST:event_lb_paymentMouseEntered
+
+    private void lb_paymentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_paymentMouseExited
+
+         lb_payment.setBorder(borderC);
+        
+    }//GEN-LAST:event_lb_paymentMouseExited
+
+    private void lb_reportsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_reportsMouseEntered
+
+        lb_reports.setBorder(borderE);
+        
+    }//GEN-LAST:event_lb_reportsMouseEntered
+
+    private void lb_reportsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_reportsMouseExited
+
+         lb_reports.setBorder(borderC);
+        
+    }//GEN-LAST:event_lb_reportsMouseExited
+
+    private void jb_burrow_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_burrow_booksMouseExited
+
+      jp_book_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_burrow_booksMouseExited
+
+    private void jb_return_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_return_booksMouseExited
+
+         jp_book_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_return_booksMouseExited
+
+    private void jb_add_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_add_booksMouseExited
+
+         jp_book_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_add_booksMouseExited
+
+    private void jb_edit_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_edit_booksMouseExited
+
+         jp_book_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_edit_booksMouseExited
+
+    private void jb_search_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_search_booksMouseExited
+
+         jp_book_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_search_booksMouseExited
+
+    private void jb_paymentsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_paymentsMouseExited
+
+        jp_finance_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_paymentsMouseExited
+
+    private void jb_reportsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_reportsMouseExited
+
+        jp_finance_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_reportsMouseExited
+
+    private void jb_memberMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_memberMouseExited
+
+        jp_member_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_memberMouseExited
+
+    private void jb_Active_memberMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_Active_memberMouseExited
+
+        jp_member_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_Active_memberMouseExited
+
+    private void jb_studentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_studentMouseExited
+
+        jp_member_subMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jb_studentMouseExited
 
     /**
      * @param args the command line arguments
@@ -567,24 +1304,41 @@ Jf_user_login jf_user_login = new Jf_user_login();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JButton jb_Active_member;
+    public javax.swing.JButton jb__member;
+    private javax.swing.JButton jb_add_books;
+    public javax.swing.JButton jb_books;
+    private javax.swing.JButton jb_burrow_books;
+    private javax.swing.JButton jb_edit_books;
+    public javax.swing.JButton jb_finance;
+    private javax.swing.JButton jb_member;
+    private javax.swing.JButton jb_payments;
+    private javax.swing.JButton jb_reports;
+    private javax.swing.JButton jb_return_books;
+    private javax.swing.JButton jb_search_books;
+    private javax.swing.JButton jb_student;
+    private javax.swing.JPanel jp_book_subMenu;
+    private javax.swing.JPanel jp_finance_subMenu;
+    private javax.swing.JPanel jp_library_main;
+    private javax.swing.JPanel jp_member_subMenu;
+    private javax.swing.JLabel lb_active_members;
+    private javax.swing.JLabel lb_add_books;
     private javax.swing.JLabel lb_burrow_books;
-    private javax.swing.JLabel lb_manage_books;
+    private javax.swing.JLabel lb_edit_books;
     private javax.swing.JLabel lb_members;
+    private javax.swing.JLabel lb_payment;
+    private javax.swing.JLabel lb_reports;
     private javax.swing.JLabel lb_return_books;
+    private javax.swing.JLabel lb_search_books;
+    private javax.swing.JLabel lb_students;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,7 +23,7 @@ import net.sf.jasperreports.swing.JRViewer;
 import net.sf.jasperreports.view.JasperViewer;
 import org.codehaus.groovy.tools.shell.util.SimpleCompletor;
 import public_access.MC_JavaDataBaseConnection;
-
+import com.fourgenius.www.user_FrontEnd.Jf_UserFront;
 /**
  *
  * @author Dineth Jayasekera
@@ -40,6 +40,7 @@ public class Inventory_reports extends javax.swing.JPanel {
     }
     int monthValue;
     int year;
+    jp_reports_main_view reportView = new jp_reports_main_view();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -533,15 +534,14 @@ public class Inventory_reports extends javax.swing.JPanel {
             dailyIncomeMap.put("date1", sdf.format(jDateChooser1.getDate()));
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, dailyIncomeMap, MC_JavaDataBaseConnection.myConnection());
-            JasperViewer.viewReport(jasperPrint, false);
+//            JasperViewer.viewReport(jasperPrint, false);
 //            JasperViewer v = new JasperViewer(jasperPrint);
-////            v.setVisible(true);
-//            JasperViewer.setDefaultLookAndFeelDecorated(true);
-//            JRViewer jrv = new JRViewer(jasperPrint);
-//            jrv.setPreferredSize(new Dimension(getSize()));
-//            JScrollPane reportScroll = new JScrollPane(jrv);
-//            new jp_reports_main_view().jp_view_reports.add(jrv);
-
+System.out.println("llll");
+            JRViewer v = new JRViewer(jasperPrint);
+//           reportView.view_reports.addTab(sdf.format(jDateChooser1.getDate())+"Income In"+jc_Check_Daily_Income_In_Course.getSelectedItem().toString(), v);
+            System.out.println("ddddddddfgbbgv");
+            reportView.jTabbedPane2.addTab("Date Range", v);
+            System.out.println(";;;;;;");
         } catch (JRException ex) {
             ex.printStackTrace();
         }
@@ -581,13 +581,13 @@ public class Inventory_reports extends javax.swing.JPanel {
 
         String date1, date2;
         if (monthValue < 10) {
-            date1 = year+"-0" + monthValue + "-01" ;
-            date2 = year+"-0" + monthValue + "-31" ;
+            date1 = year + "-0" + monthValue + "-01";
+            date2 = year + "-0" + monthValue + "-31";
 
         } else {
 
-            date1 = year+"-" + monthValue + "-01";
-            date2 = year+"-" + monthValue + "-31";
+            date1 = year + "-" + monthValue + "-01";
+            date2 = year + "-" + monthValue + "-31";
         }
         try {
             String ReportPath_2 = "src//reports//check_monthly_cost.jrxml";
@@ -660,7 +660,6 @@ public class Inventory_reports extends javax.swing.JPanel {
 
     private void mc_Check_Monthly_CostPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_mc_Check_Monthly_CostPropertyChange
 
-        
         int month = mc_Check_Monthly_Cost.getMonth();
 
         switch (month) {
@@ -703,13 +702,13 @@ public class Inventory_reports extends javax.swing.JPanel {
 
         }
 
-        
+
     }//GEN-LAST:event_mc_Check_Monthly_CostPropertyChange
 
     private void yc_Check_Monthly_CostPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_yc_Check_Monthly_CostPropertyChange
 
         year = yc_Check_Monthly_Cost.getYear();
-        
+
     }//GEN-LAST:event_yc_Check_Monthly_CostPropertyChange
 
     private void bt_Check_Daily_Income_In_Course2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_Daily_Income_In_Course2ActionPerformed
@@ -719,21 +718,21 @@ public class Inventory_reports extends javax.swing.JPanel {
             JasperReport jasperReport2 = JasperCompileManager.compileReport(ReportPath_2);
             Map<String, Object> map = new HashMap<String, Object>();
 
-            map.put("customer",jc_invoice_in_customer_name.getSelectedItem().toString() );
-           
+            map.put("customer", jc_invoice_in_customer_name.getSelectedItem().toString());
+
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport2, map, MC_JavaDataBaseConnection.myConnection());
             JasperViewer.viewReport(jasperPrint, false);
 
         } catch (Exception e) {
             Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, e);
         }
-        
+
     }//GEN-LAST:event_bt_Check_Daily_Income_In_Course2ActionPerformed
 
     private void bt_Invoice_In_DatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Invoice_In_DatesActionPerformed
 
         try {
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String ReportPath_2 = "src//reports//invoiceInDate.jrxml";
             JasperReport jasperReport2 = JasperCompileManager.compileReport(ReportPath_2);
             Map<String, Object> map = new HashMap<String, Object>();
@@ -747,7 +746,7 @@ public class Inventory_reports extends javax.swing.JPanel {
         } catch (Exception e) {
             Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, e);
         }
-        
+
     }//GEN-LAST:event_bt_Invoice_In_DatesActionPerformed
 
     private void bt_Check_Daily_Income_In_Course4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Check_Daily_Income_In_Course4ActionPerformed
@@ -757,15 +756,15 @@ public class Inventory_reports extends javax.swing.JPanel {
             JasperReport jasperReport2 = JasperCompileManager.compileReport(ReportPath_2);
             Map<String, Object> map = new HashMap<String, Object>();
 
-            map.put("invoId",jc_invoice_in_id.getSelectedItem().toString());
-  
+            map.put("invoId", jc_invoice_in_id.getSelectedItem().toString());
+
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport2, map, MC_JavaDataBaseConnection.myConnection());
             JasperViewer.viewReport(jasperPrint, false);
 
         } catch (Exception e) {
             Logger.getLogger(Inventory_reports.class.getName()).log(Level.SEVERE, null, e);
         }
-        
+
     }//GEN-LAST:event_bt_Check_Daily_Income_In_Course4ActionPerformed
 
 

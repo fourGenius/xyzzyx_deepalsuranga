@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-20T14:27:25 -->
+<!-- 2016-03-30T00:43:58 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="check_monthly_incom_in_courses" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13cf7b24-3a6b-44cb-bff6-10048ebbf585">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -10,8 +10,7 @@
 	<parameter name="course" class="java.lang.String"/>
 	<parameter name="date1" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[SELECT *,
-	sum( payment) AS total
+		<![CDATA[SELECT *
 FROM student_payment
 WHERE 
 	 student_payment.course = $P{course} 
@@ -41,7 +40,12 @@ WHERE
 	<field name="due_payment" class="java.lang.Double">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="total" class="java.lang.Double"/>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="Total" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{payment}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -96,21 +100,25 @@ WHERE
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch">
+		<band height="46" splitType="Stretch">
 			<staticText>
-				<reportElement x="355" y="17" width="100" height="20" uuid="a910858d-b8a8-4f5c-9bf3-be1a0b78f548"/>
+				<reportElement x="440" y="17" width="40" height="20" uuid="a910858d-b8a8-4f5c-9bf3-be1a0b78f548"/>
 				<text><![CDATA[Total]]></text>
 			</staticText>
+			<line>
+				<reportElement x="490" y="38" width="63" height="1" uuid="0fe6c671-1cf2-4378-b6dd-9dc3e1b27c07"/>
+			</line>
+			<line>
+				<reportElement x="490" y="41" width="63" height="1" uuid="1bd96c0d-a96d-4a6a-920d-e6a94378bdee"/>
+			</line>
 			<textField>
-				<reportElement x="455" y="17" width="100" height="20" uuid="a87abef6-c283-4c71-8661-5f5e63e3cf0e"/>
-				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+				<reportElement x="491" y="17" width="30" height="21" uuid="8864ccba-4462-489e-844d-ba4f24d38210"/>
+				<textFieldExpression><![CDATA[$V{Total}]]></textFieldExpression>
 			</textField>
-			<line>
-				<reportElement x="453" y="38" width="100" height="1" uuid="0fe6c671-1cf2-4378-b6dd-9dc3e1b27c07"/>
-			</line>
-			<line>
-				<reportElement x="453" y="41" width="100" height="1" uuid="1bd96c0d-a96d-4a6a-920d-e6a94378bdee"/>
-			</line>
+			<staticText>
+				<reportElement x="521" y="17" width="33" height="20" uuid="72e53c29-5472-42d1-b768-c5b979250650"/>
+				<text><![CDATA[.00]]></text>
+			</staticText>
 		</band>
 	</columnFooter>
 </jasperReport>

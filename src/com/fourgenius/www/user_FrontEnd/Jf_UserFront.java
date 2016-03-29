@@ -502,11 +502,15 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_registrationActionPerformed
 
     private void bt_homeAutomationMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_homeAutomationMouseEntered
-        // TODO add your handling code here:
+       
+        bt_homeAutomation.setBorder(borderE);
+        
     }//GEN-LAST:event_bt_homeAutomationMouseEntered
 
     private void bt_homeAutomationMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_homeAutomationMouseExited
-        // TODO add your handling code here:
+       
+        bt_homeAutomation.setBorder(borderC);
+        
     }//GEN-LAST:event_bt_homeAutomationMouseExited
 
     private void bt_homeAutomationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_homeAutomationActionPerformed
@@ -514,11 +518,15 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_homeAutomationActionPerformed
 
     private void bt_onlineExamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_onlineExamMouseEntered
-        // TODO add your handling code here:
+       
+        bt_onlineExam.setBorder(borderE);
+        
     }//GEN-LAST:event_bt_onlineExamMouseEntered
 
     private void bt_onlineExamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_onlineExamMouseExited
-        // TODO add your handling code here:
+       
+        bt_onlineExam.setBorder(borderC);
+        
     }//GEN-LAST:event_bt_onlineExamMouseExited
 
     private void bt_onlineExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_onlineExamActionPerformed
@@ -526,11 +534,15 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_onlineExamActionPerformed
 
     private void bt_examMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_examMouseEntered
-        // TODO add your handling code here:
+      
+        bt_exam.setBorder(borderE);
+        
     }//GEN-LAST:event_bt_examMouseEntered
 
     private void bt_examMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_examMouseExited
-        // TODO add your handling code here:
+       
+        bt_exam.setBorder(borderC);
+        
     }//GEN-LAST:event_bt_examMouseExited
 
     private void bt_examActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_examActionPerformed
@@ -538,11 +550,15 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_examActionPerformed
 
     private void bt_practicalsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_practicalsMouseEntered
-        // TODO add your handling code here:
+        
+        bt_practicals.setBorder(borderE);
+        
     }//GEN-LAST:event_bt_practicalsMouseEntered
 
     private void bt_practicalsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_practicalsMouseExited
-        // TODO add your handling code here:
+        
+        bt_practicals.setBorder(borderC);
+        
     }//GEN-LAST:event_bt_practicalsMouseExited
 
     private void bt_practicalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_practicalsActionPerformed
@@ -550,15 +566,22 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_practicalsActionPerformed
 
     private void bt_librayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_librayMouseEntered
-        // TODO add your handling code here:
+
+        bt_libray.setBorder(borderE);
+        
     }//GEN-LAST:event_bt_librayMouseEntered
 
     private void bt_librayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_librayMouseExited
-        // TODO add your handling code here:
+       
+        bt_libray.setBorder(borderC);
+        
     }//GEN-LAST:event_bt_librayMouseExited
 
     private void bt_librayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_librayActionPerformed
-        // TODO add your handling code here:
+
+       new jf_library_main_view().setVisible(true);
+       this.dispose();
+        
     }//GEN-LAST:event_bt_librayActionPerformed
 
     /**
