@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.user_FrontEnd;
 
+import com.fourgenius.www.public_access.library.jp_add_books;
 import com.fourgenius.www.public_access.library.jp_burrow_books;
 import com.fourgenius.www.public_access.library.jp_return_books;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
@@ -98,6 +99,11 @@ public class jf_library_main_view extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/home.png"))); // NOI18N
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jp_book_subMenu.setBackground(new java.awt.Color(0, 153, 153));
@@ -153,6 +159,11 @@ public class jf_library_main_view extends javax.swing.JFrame {
                 jb_return_booksMouseExited(evt);
             }
         });
+        jb_return_books.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_return_booksActionPerformed(evt);
+            }
+        });
 
         jb_add_books.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jb_add_books.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,6 +176,9 @@ public class jf_library_main_view extends javax.swing.JFrame {
         jb_add_books.setMinimumSize(new java.awt.Dimension(150, 50));
         jb_add_books.setPreferredSize(new java.awt.Dimension(150, 50));
         jb_add_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_add_booksMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jb_add_booksMouseEntered(evt);
             }
@@ -304,7 +318,7 @@ public class jf_library_main_view extends javax.swing.JFrame {
                 .addComponent(jb_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jb_reports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(411, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         jp_finance_subMenuLayout.setVerticalGroup(
             jp_finance_subMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -641,6 +655,9 @@ public class jf_library_main_view extends javax.swing.JFrame {
         lb_edit_books.setPreferredSize(new java.awt.Dimension(100, 126));
         lb_edit_books.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lb_edit_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_edit_booksMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_edit_booksMouseEntered(evt);
             }
@@ -662,6 +679,9 @@ public class jf_library_main_view extends javax.swing.JFrame {
         lb_search_books.setPreferredSize(new java.awt.Dimension(100, 126));
         lb_search_books.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lb_search_books.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_search_booksMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_search_booksMouseEntered(evt);
             }
@@ -683,6 +703,9 @@ public class jf_library_main_view extends javax.swing.JFrame {
         lb_active_members.setPreferredSize(new java.awt.Dimension(100, 126));
         lb_active_members.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lb_active_members.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_active_membersMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_active_membersMouseEntered(evt);
             }
@@ -704,6 +727,9 @@ public class jf_library_main_view extends javax.swing.JFrame {
         lb_students.setPreferredSize(new java.awt.Dimension(100, 126));
         lb_students.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lb_students.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_studentsMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_studentsMouseEntered(evt);
             }
@@ -745,6 +771,9 @@ public class jf_library_main_view extends javax.swing.JFrame {
         lb_payment.setPreferredSize(new java.awt.Dimension(100, 126));
         lb_payment.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lb_payment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_paymentMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_paymentMouseEntered(evt);
             }
@@ -766,6 +795,9 @@ public class jf_library_main_view extends javax.swing.JFrame {
         lb_reports.setPreferredSize(new java.awt.Dimension(100, 126));
         lb_reports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lb_reports.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_reportsMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lb_reportsMouseEntered(evt);
             }
@@ -857,10 +889,8 @@ public class jf_library_main_view extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jp_library_main, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1855, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(489, 489, 489)))
+                    .addComponent(jp_library_main, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -943,6 +973,10 @@ public class jf_library_main_view extends javax.swing.JFrame {
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(return_books, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+        
         System.gc();
 
     }//GEN-LAST:event_lb_return_booksMouseClicked
@@ -961,6 +995,22 @@ public class jf_library_main_view extends javax.swing.JFrame {
 
     private void lb_add_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_add_booksMouseClicked
 
+        jp_add_books add_book=new jp_add_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+        
+        System.gc();
 
     }//GEN-LAST:event_lb_add_booksMouseClicked
 
@@ -978,6 +1028,9 @@ public class jf_library_main_view extends javax.swing.JFrame {
 
     private void lb_membersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_membersMouseClicked
 
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
 
     }//GEN-LAST:event_lb_membersMouseClicked
     Jf_user_login jf_user_login = new Jf_user_login();
@@ -1067,7 +1120,25 @@ float f=50;
     }//GEN-LAST:event_jp_finance_subMenuMouseExited
 
     private void jb_burrow_booksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_burrow_booksActionPerformed
-        // TODO add your handling code here:
+
+        
+        jp_burrow_books burrow_books = new jp_burrow_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(burrow_books, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(burrow_books, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+
+        System.gc();
+
+        
     }//GEN-LAST:event_jb_burrow_booksActionPerformed
 
     private void jb_burrow_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_burrow_booksMouseEntered
@@ -1265,6 +1336,95 @@ float f=50;
         jp_member_subMenu.setVisible(false);
         
     }//GEN-LAST:event_jb_studentMouseExited
+
+    private void jb_return_booksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_return_booksActionPerformed
+
+          jp_return_books return_books = new jp_return_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(return_books, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(return_books, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+        System.gc();
+        
+    }//GEN-LAST:event_jb_return_booksActionPerformed
+
+    private void jb_add_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_add_booksMouseClicked
+
+        jp_add_books add_book=new jp_add_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+        System.gc();
+        
+    }//GEN-LAST:event_jb_add_booksMouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+
+        new Jf_UserFront().setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void lb_edit_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_edit_booksMouseClicked
+
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+        
+    }//GEN-LAST:event_lb_edit_booksMouseClicked
+
+    private void lb_search_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_search_booksMouseClicked
+
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+        
+    }//GEN-LAST:event_lb_search_booksMouseClicked
+
+    private void lb_active_membersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_active_membersMouseClicked
+
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+        
+    }//GEN-LAST:event_lb_active_membersMouseClicked
+
+    private void lb_studentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_studentsMouseClicked
+
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+        
+    }//GEN-LAST:event_lb_studentsMouseClicked
+
+    private void lb_paymentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_paymentMouseClicked
+
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+        
+    }//GEN-LAST:event_lb_paymentMouseClicked
+
+    private void lb_reportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_reportsMouseClicked
+
+        jb_books.setVisible(true);
+        jb_finance.setVisible(true);
+        jb__member.setVisible(true);
+        
+    }//GEN-LAST:event_lb_reportsMouseClicked
 
     /**
      * @param args the command line arguments
