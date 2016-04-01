@@ -730,7 +730,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
             if (!fname.isEmpty() & !lname.isEmpty()) {
                
-                        MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("INSERT INTO admin_info(admin_id,admin_firstName,admin_lastName,admin_email,admin_nic,admin_security_qu,admin_security_answer,admin_type,admin_password) VALUES('"+id+"','" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + qu + "','" + answer + "','" + type + "')");
+                        MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("INSERT INTO admin_info(admin_firstName,admin_lastName,admin_email,admin_id,admin_nic,admin_security_qu,admin_security_answer,admin_type,admin_password) VALUES('"+id+"','" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + qu + "','" + answer + "','" + type + "')");
                load_allData();
 
             } else {

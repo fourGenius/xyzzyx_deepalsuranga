@@ -278,7 +278,7 @@ public class Inventory_home extends javax.swing.JFrame {
             .addGap(0, 650, Short.MAX_VALUE)
         );
 
-        getContentPane().add(base, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1366, 650));
+        getContentPane().add(base, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1366, 650));
 
         jPanel2.setBackground(new java.awt.Color(2, 119, 189));
 
