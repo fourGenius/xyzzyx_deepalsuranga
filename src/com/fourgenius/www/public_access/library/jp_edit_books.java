@@ -5,6 +5,17 @@
  */
 package com.fourgenius.www.public_access.library;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import public_access.MC_JavaDataBaseConnection;
+
 /**
  *
  * @author Dineth Jayasekera
@@ -16,7 +27,7 @@ public class jp_edit_books extends javax.swing.JPanel {
      */
     public jp_edit_books() {
         initComponents();
-        
+        Boock_View_All();
     }
 
     /**
@@ -28,21 +39,324 @@ public class jp_edit_books extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        tf_id = new javax.swing.JTextField();
+        tf_name = new javax.swing.JTextField();
+        tf_author = new javax.swing.JTextField();
+        tf_isbn = new javax.swing.JTextField();
+        tf_availability = new javax.swing.JTextField();
+        tf_shelf_no = new javax.swing.JTextField();
+        jc_catogory = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        view_books = new javax.swing.JTable();
+        bt_update = new javax.swing.JButton();
+
         setBackground(new java.awt.Color(2, 119, 189));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Book ID");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Name");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Author");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("ISBN");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Category");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Availability");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Shelf No");
+
+        tf_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_idActionPerformed(evt);
+            }
+        });
+
+        tf_availability.setEditable(false);
+
+        jc_catogory.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Action", "Military", "Spy", "& Thriller Novels", "Adventure & Fantasy Novels", "African-American Interest", "Arts", "Literature", "& Philosophy", "Best-Sellers", "Business", "Economy", "Finance & Investing", "Childrens Books", "Comics", "Humor", "& Satire", "Computers", "Engineering", "& Technology", "Crafts", "Hobbies", "& Home Living", "Do-It-Yourself", "How-To", "& Self-Help", "Families", "Parenting", "& Psychology", "General Fiction", "Health", "Fitness", "Food & Cooking", "Hispanic/Latino Interest", "Historical Fiction (Includes Westerns)", "Horror & Supernatural Novels", "Local Industries", "Local Interest", "Mystery", "Crime", "Drama", "& Suspense Novels", "People", "Politics", "& The World", "New Releases", "Religion", "Spirituality", "& Mysticism", "Romance Novels", "Science & Mathematics", "Science Fiction", "Sports", "Games", "& Leisure", "Travel & Languages" }));
+
+        jPanel1.setBackground(new java.awt.Color(2, 119, 189));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Books", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+
+        view_books.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Boock ID", "Title", "Author", "Category", "ISBN", "Shelf Number", "Date Add", "Availability"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(view_books);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
+        );
+
+        bt_update.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        bt_update.setForeground(new java.awt.Color(255, 255, 255));
+        bt_update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
+        bt_update.setText("Update");
+        bt_update.setContentAreaFilled(false);
+        bt_update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bt_update.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_updateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1113, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(50, 50, 50))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_shelf_no, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_id, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tf_name)
+                                .addComponent(tf_author, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tf_isbn, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jc_catogory, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tf_availability, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(bt_update, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(181, 181, 181)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 701, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(tf_id, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(tf_name, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(tf_author, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tf_isbn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jc_catogory, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(tf_availability, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(tf_shelf_no, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addComponent(bt_update, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tf_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_idActionPerformed
+
+                // TODO add your handling code here:
+        String id = tf_id.getText();
+
+        try {
+            //check if fields are empty
+            if (id.equals("")) {
+                JOptionPane.showMessageDialog(this, "Please enter a Book ID!!", "", JOptionPane.ERROR_MESSAGE);
+            } 
+            else {
+               
+                //get book details
+                ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM lib_book WHERE BID= '" + id + "' ");
+                if (rs.next()) {
+                   tf_name.setText(rs.getString("title"));
+                    tf_author.setText(rs.getString("author"));
+                    jc_catogory.setSelectedItem(rs.getString("Category"));
+                    tf_shelf_no.setText(rs.getString("Shelf"));
+
+                    tf_isbn.setText(rs.getString("ISBN"));
+                    String date =  rs.getString("Date");
+                    tf_availability.setText(rs.getString("Availability"));
+                } 
+                else {
+                    JOptionPane.showMessageDialog(this, "Book ID is invalid", "", JOptionPane.ERROR_MESSAGE);
+                }
+                MC_JavaDataBaseConnection.myConnection().close();
+            }
+        } 
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "" + e.getMessage() + " Error, Book details not found!", "", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_tf_idActionPerformed
+
+    private void bt_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_updateActionPerformed
+
+                // TODO add your handling code here:
+        //check if user really wants to update
+        int b = JOptionPane.showConfirmDialog(null, "Do you want to Update this book's details?", "Confirm", JOptionPane.YES_NO_OPTION);
+        if (b == 0) {
+            String id = tf_id.getText();
+            Date date = new Date();
+            DateFormat dateformat = new SimpleDateFormat("yyyy/MM/dd");
+
+            String category = (String) jc_catogory.getSelectedItem();
+            
+
+            try {
+                //check if all details are empty
+                if (tf_name.getText().equals("") || tf_author.getText().equals("") || tf_isbn.getText().equals("") || tf_shelf_no.getText().equals("") || category.equals("String") ) {
+                    JOptionPane.showMessageDialog(null, "Please fill in all fields ", "Update Record", JOptionPane.WARNING_MESSAGE);
+                }
+                //check if shelf is not negative
+                else if (Integer.parseInt(tf_shelf_no.getText()) < 0) {
+                    JOptionPane.showMessageDialog(null, "Invalid Shelf number has been entered", "Update record", JOptionPane.WARNING_MESSAGE);
+                }
+                else {
+                    String title = tf_name.getText();
+                    String writer = tf_author.getText();
+                    String ISBN = tf_isbn.getText();
+                    String able= tf_availability.getText();
+                    int shelfno = Integer.parseInt(tf_shelf_no.getText());
+
+                   
+                    //update the details of the book
+                    String query1 = "UPDATE book SET title='" + title + "', author='" + writer + "', Category='" + category + "', ISBN='" + ISBN + "', Shelf='" + shelfno + "', Date='" + dateformat.format(date) + "', Availability='"+able+"' WHERE BID='" + id + "' ";
+                    MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate(query1);
+                    JOptionPane.showMessageDialog(null, "Book Details were updated Successfully", "", JOptionPane.INFORMATION_MESSAGE);
+                    MC_JavaDataBaseConnection.myConnection().close();
+                Boock_View_All();
+                }
+            } 
+            catch (NumberFormatException n) {
+                JOptionPane.showMessageDialog(this, " Only Enter Numbers to the shelf  field!", "", JOptionPane.ERROR_MESSAGE);
+            }
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "" + e.getMessage() + " Error,  Book Details Not Updated!", "", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+    }//GEN-LAST:event_bt_updateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_update;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox jc_catogory;
+    private javax.swing.JTextField tf_author;
+    private javax.swing.JTextField tf_availability;
+    private javax.swing.JTextField tf_id;
+    private javax.swing.JTextField tf_isbn;
+    private javax.swing.JTextField tf_name;
+    private javax.swing.JTextField tf_shelf_no;
+    private javax.swing.JTable view_books;
     // End of variables declaration//GEN-END:variables
+
+    private void Boock_View_All() {
+        
+                // TODO add your handling code here:
+        try {
+            
+            DefaultTableModel tb = (DefaultTableModel) view_books.getModel();
+            //zero rows in table
+            tb.setRowCount(0);
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM lib_book");
+            //view all the records in book table
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString("BID"));
+                v.add(rs.getString("title"));
+                v.add(rs.getString("author"));
+                v.add(rs.getString("Category"));
+                v.add(rs.getString("ISBN"));
+                v.add(rs.getString("shelf"));
+                v.add(rs.getDate("Date"));
+                v.add(rs.getString("Availability"));
+
+                tb.addRow(v);
+            }
+            MC_JavaDataBaseConnection.myConnection().close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Database Error!!", "", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }
 }

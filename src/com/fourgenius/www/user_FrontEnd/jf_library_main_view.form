@@ -53,10 +53,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jp_library_main" pref="1366" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jPanel1" max="32767" attributes="0"/>
+                      <Component id="jp_library_main" pref="1366" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -258,9 +258,9 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_add_booksMouseClicked"/>
                     <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_add_booksMouseEntered"/>
                     <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_add_booksMouseExited"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_add_booksActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jb_edit_books">
@@ -293,6 +293,7 @@
                   <Events>
                     <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_edit_booksMouseEntered"/>
                     <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_edit_booksMouseExited"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_edit_booksActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jb_search_books">
@@ -750,42 +751,37 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel4" min="-2" pref="1370" max="-2" attributes="0"/>
+                  <Component id="jPanel5" alignment="0" min="-2" pref="1370" max="-2" attributes="0"/>
+                  <Component id="jPanel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
+                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel4" min="-2" pref="1370" max="-2" attributes="0"/>
-                          <Component id="jPanel5" alignment="0" min="-2" pref="1370" max="-2" attributes="0"/>
-                          <Component id="jPanel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lb_burrow_books" min="-2" pref="192" max="-2" attributes="0"/>
-                                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                                      <Component id="lb_return_books" min="-2" pref="192" max="-2" attributes="0"/>
-                                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                                      <Component id="lb_add_books" min="-2" pref="192" max="-2" attributes="0"/>
-                                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                                      <Component id="lb_edit_books" min="-2" pref="192" max="-2" attributes="0"/>
-                                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                                      <Component id="lb_search_books" min="-2" pref="192" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="lb_payment" min="-2" pref="192" max="-2" attributes="0"/>
-                                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                                      <Component id="lb_reports" min="-2" pref="192" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lb_members" min="-2" pref="192" max="-2" attributes="0"/>
-                                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                                      <Component id="lb_active_members" min="-2" pref="192" max="-2" attributes="0"/>
-                                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                                      <Component id="lb_students" min="-2" pref="192" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="lb_burrow_books" min="-2" pref="192" max="-2" attributes="0"/>
+                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                              <Component id="lb_return_books" min="-2" pref="192" max="-2" attributes="0"/>
+                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                              <Component id="lb_add_books" min="-2" pref="192" max="-2" attributes="0"/>
+                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                              <Component id="lb_edit_books" min="-2" pref="192" max="-2" attributes="0"/>
+                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                              <Component id="lb_search_books" min="-2" pref="192" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="lb_payment" min="-2" pref="192" max="-2" attributes="0"/>
+                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                              <Component id="lb_reports" min="-2" pref="192" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lb_members" min="-2" pref="192" max="-2" attributes="0"/>
+                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                              <Component id="lb_active_members" min="-2" pref="192" max="-2" attributes="0"/>
+                              <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                              <Component id="lb_students" min="-2" pref="192" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

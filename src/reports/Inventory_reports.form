@@ -6,13 +6,13 @@
       <Color blue="bd" green="77" red="2" type="rgb"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[719, 686]"/>
+      <Dimension value="[1346, 678]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[719, 686]"/>
+      <Dimension value="[1346, 678]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[719, 686]"/>
+      <Dimension value="[1346, 678]"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -55,7 +55,9 @@
                       <Component id="jp_invoice_in_id" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,22 +65,27 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jp_Check_Daily_Income_In_Course" min="-2" max="-2" attributes="0"/>
-                  <Component id="jp_Check_monthly_Income_In_Course" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jp_Check_monthly_cost" pref="184" max="32767" attributes="0"/>
-                  <Component id="jp_invoice_in_customer_name" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jp_invoice_in_dates" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jp_Check_Daily_Income_In_Course" min="-2" max="-2" attributes="0"/>
+                          <Component id="jp_Check_monthly_Income_In_Course" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jp_Check_monthly_cost" pref="184" max="32767" attributes="0"/>
+                          <Component id="jp_invoice_in_customer_name" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jp_invoice_in_dates" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jp_invoice_in_id" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Component id="jp_invoice_in_id" max="32767" attributes="0"/>
+                  <Component id="jPanel1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -509,7 +516,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="205" max="32767" attributes="0"/>
-                          <Component id="bt_Check_Daily_Income_In_Course2" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="bt_Invoice_In_Customer_name" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -529,7 +536,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jc_invoice_in_customer_name" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="bt_Check_Daily_Income_In_Course2" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="bt_Invoice_In_Customer_name" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -547,7 +554,7 @@
             <Property name="text" type="java.lang.String" value="Customer Name"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="bt_Check_Daily_Income_In_Course2">
+        <Component class="javax.swing.JButton" name="bt_Invoice_In_Customer_name">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -574,7 +581,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_Daily_Income_In_Course2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Invoice_In_Customer_nameActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="jc_invoice_in_customer_name">
@@ -735,7 +742,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="205" max="32767" attributes="0"/>
-                          <Component id="bt_Check_Daily_Income_In_Course4" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="bt_Invoice_In_Id" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
@@ -754,7 +761,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jc_invoice_in_id" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="bt_Check_Daily_Income_In_Course4" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="bt_Invoice_In_Id" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -772,7 +779,7 @@
             <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="bt_Check_Daily_Income_In_Course4">
+        <Component class="javax.swing.JButton" name="bt_Invoice_In_Id">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -799,7 +806,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Check_Daily_Income_In_Course4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Invoice_In_IdActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="jc_invoice_in_id">
@@ -812,6 +819,38 @@
             </Property>
           </Properties>
         </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="View Reports">
+              <Font PropertyName="font" name="Tahoma" size="14" style="0"/>
+              <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+        <Property name="opaque" type="boolean" value="false"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jTabbedPane1" alignment="0" pref="612" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

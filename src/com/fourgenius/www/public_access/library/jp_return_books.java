@@ -98,6 +98,7 @@ public class jp_return_books extends javax.swing.JPanel {
         jb_return.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
         jb_return.setText("Return");
         jb_return.setContentAreaFilled(false);
+        jb_return.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jb_return.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jb_return.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

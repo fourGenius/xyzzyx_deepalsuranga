@@ -7,7 +7,9 @@ package com.fourgenius.www.user_FrontEnd;
 
 import com.fourgenius.www.public_access.library.jp_add_books;
 import com.fourgenius.www.public_access.library.jp_burrow_books;
+import com.fourgenius.www.public_access.library.jp_edit_books;
 import com.fourgenius.www.public_access.library.jp_return_books;
+import com.fourgenius.www.public_access.library.jp_search_books;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
 import javax.swing.BorderFactory;
@@ -176,14 +178,16 @@ public class jf_library_main_view extends javax.swing.JFrame {
         jb_add_books.setMinimumSize(new java.awt.Dimension(150, 50));
         jb_add_books.setPreferredSize(new java.awt.Dimension(150, 50));
         jb_add_books.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_add_booksMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jb_add_booksMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jb_add_booksMouseExited(evt);
+            }
+        });
+        jb_add_books.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_add_booksActionPerformed(evt);
             }
         });
 
@@ -203,6 +207,11 @@ public class jf_library_main_view extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jb_edit_booksMouseExited(evt);
+            }
+        });
+        jb_edit_books.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_edit_booksActionPerformed(evt);
             }
         });
 
@@ -823,36 +832,33 @@ public class jf_library_main_view extends javax.swing.JFrame {
         jp_library_main.setLayout(jp_library_mainLayout);
         jp_library_mainLayout.setHorizontalGroup(
             jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(jp_library_mainLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jp_library_mainLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jp_library_mainLayout.createSequentialGroup()
-                                .addComponent(lb_burrow_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(lb_return_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(lb_add_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(lb_edit_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(lb_search_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jp_library_mainLayout.createSequentialGroup()
-                                .addComponent(lb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(lb_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jp_library_mainLayout.createSequentialGroup()
-                                .addComponent(lb_members, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(lb_active_members, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(lb_students, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(lb_burrow_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(lb_return_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(lb_add_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(lb_edit_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(lb_search_books, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_library_mainLayout.createSequentialGroup()
+                        .addComponent(lb_payment, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(lb_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp_library_mainLayout.createSequentialGroup()
+                        .addComponent(lb_members, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(lb_active_members, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(lb_students, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jp_library_mainLayout.setVerticalGroup(
             jp_library_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -888,9 +894,9 @@ public class jf_library_main_view extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jp_library_main, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jp_library_main, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -1354,23 +1360,6 @@ float f=50;
         
     }//GEN-LAST:event_jb_return_booksActionPerformed
 
-    private void jb_add_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_add_booksMouseClicked
-
-        jp_add_books add_book=new jp_add_books();
-
-        jp_library_main.removeAll();
-        GroupLayout layout = new GroupLayout(jp_library_main);
-        jp_library_main.setLayout(layout);
-
-        layout.setHorizontalGroup(
-                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-        layout.setVerticalGroup(
-                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-
-        System.gc();
-        
-    }//GEN-LAST:event_jb_add_booksMouseClicked
-
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
 
         new Jf_UserFront().setVisible(true);
@@ -1380,6 +1369,19 @@ float f=50;
 
     private void lb_edit_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_edit_booksMouseClicked
 
+        jp_edit_books edit_book=new jp_edit_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(edit_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(edit_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+        System.gc();
+        
         jb_books.setVisible(true);
         jb_finance.setVisible(true);
         jb__member.setVisible(true);
@@ -1388,6 +1390,19 @@ float f=50;
 
     private void lb_search_booksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_search_booksMouseClicked
 
+         jp_search_books search_book=new jp_search_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(search_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(search_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+        System.gc();
+        
         jb_books.setVisible(true);
         jb_finance.setVisible(true);
         jb__member.setVisible(true);
@@ -1425,6 +1440,40 @@ float f=50;
         jb__member.setVisible(true);
         
     }//GEN-LAST:event_lb_reportsMouseClicked
+
+    private void jb_edit_booksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_edit_booksActionPerformed
+
+         jp_edit_books edit_book=new jp_edit_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(edit_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(edit_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+        System.gc();
+        
+    }//GEN-LAST:event_jb_edit_booksActionPerformed
+
+    private void jb_add_booksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_add_booksActionPerformed
+
+        jp_add_books add_book=new jp_add_books();
+
+        jp_library_main.removeAll();
+        GroupLayout layout = new GroupLayout(jp_library_main);
+        jp_library_main.setLayout(layout);
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(add_book, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+
+        System.gc();
+        
+    }//GEN-LAST:event_jb_add_booksActionPerformed
 
     /**
      * @param args the command line arguments

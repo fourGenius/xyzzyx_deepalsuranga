@@ -599,7 +599,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         try {
 
-            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "' and user_status='1'");
             if (!rs.next()) {
                 _tf_user_loging_userName.setBackground(Color.red);
                 JOptionPane.showMessageDialog(this, "User name is Invalide", "Warning", 2);

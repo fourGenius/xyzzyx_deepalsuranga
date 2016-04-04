@@ -76,6 +76,10 @@ public class Jp_student_payment extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_contactDetails_mobileNumber1 = new javax.swing.JLabel();
         _bt_student_payment_submit = new javax.swing.JButton();
         _lb_date = new javax.swing.JLabel();
+        _lb_registration_lecture_personalInformation_address_1stLine1 = new javax.swing.JLabel();
+        _tf_student_payment_paymentDatails_batch = new javax.swing.JTextField();
+        _lb_registration_lecture_personalInformation_address_1stLine2 = new javax.swing.JLabel();
+        _tf_student_payment_paymentDatails_year = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -200,33 +204,75 @@ public class Jp_student_payment extends javax.swing.JPanel {
         _lb_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_date.setForeground(new java.awt.Color(255, 255, 255));
 
+        _lb_registration_lecture_personalInformation_address_1stLine1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_personalInformation_address_1stLine1.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_personalInformation_address_1stLine1.setText("Batch");
+
+        _tf_student_payment_paymentDatails_batch.setEditable(false);
+        _tf_student_payment_paymentDatails_batch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_student_payment_paymentDatails_batch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_student_payment_paymentDatails_batchActionPerformed(evt);
+            }
+        });
+        _tf_student_payment_paymentDatails_batch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_student_payment_paymentDatails_batchKeyReleased(evt);
+            }
+        });
+
+        _lb_registration_lecture_personalInformation_address_1stLine2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_registration_lecture_personalInformation_address_1stLine2.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_registration_lecture_personalInformation_address_1stLine2.setText("Year");
+
+        _tf_student_payment_paymentDatails_year.setEditable(false);
+        _tf_student_payment_paymentDatails_year.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_student_payment_paymentDatails_year.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _tf_student_payment_paymentDatails_yearActionPerformed(evt);
+            }
+        });
+        _tf_student_payment_paymentDatails_year.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                _tf_student_payment_paymentDatails_yearKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_contactDetailsLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_contactDetails);
         _pl_registration_lecture_personalInformation_contactDetails.setLayout(_pl_registration_lecture_personalInformation_contactDetailsLayout);
         _pl_registration_lecture_personalInformation_contactDetailsLayout.setHorizontalGroup(
             _pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(_lb_registration_lecture_personalInformation_address_1stLine, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_lb_registration_lecture_personalInformation_contactDetails_mobileNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                    .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(_bt_student_payment_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(_tf_student_payment_paymentDatails_payement)
-                            .addComponent(_tf_student_payment_paymentDatails_courseFee)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(_lb_registration_lecture_personalInformation_contactDetails_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                                    .addComponent(_tf_student_payment_paymentDatails_studentId)
-                                    .addComponent(_lb_registration_lecture_personalInformation_contactDetails_landNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(_tf_student_payment_paymentDatails_studentName)
-                                    .addComponent(_lb_registration_lecture_personalInformation_contactDetails_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(_tf_student_payment_paymentDatails_course))
-                                .addComponent(_lb_registration_lecture_personalInformation_address_2ndLine, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(_lb_registration_lecture_personalInformation_address_city, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(_tf_registration_lecture_personalInformations_contactDetails_duePayment)))
-                    .addComponent(_lb_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(_tf_registration_lecture_personalInformations_contactDetails_duePayment)
+                    .addComponent(_tf_student_payment_paymentDatails_batch)
+                    .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createSequentialGroup()
+                        .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(_lb_registration_lecture_personalInformation_contactDetails_mobileNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                                .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(_bt_student_payment_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(_lb_registration_lecture_personalInformation_contactDetails_mobileNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                                        .addComponent(_tf_student_payment_paymentDatails_studentId)
+                                        .addComponent(_lb_registration_lecture_personalInformation_contactDetails_landNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(_tf_student_payment_paymentDatails_studentName)
+                                        .addComponent(_lb_registration_lecture_personalInformation_contactDetails_eMail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(_tf_student_payment_paymentDatails_course)))
+                                .addComponent(_lb_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(_lb_registration_lecture_personalInformation_address_1stLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(_lb_registration_lecture_personalInformation_address_1stLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(_pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(_lb_registration_lecture_personalInformation_address_1stLine, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(_lb_registration_lecture_personalInformation_address_2ndLine, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(_lb_registration_lecture_personalInformation_address_city, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(_tf_student_payment_paymentDatails_courseFee)
+                    .addComponent(_tf_student_payment_paymentDatails_payement)
+                    .addComponent(_tf_student_payment_paymentDatails_year, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         _pl_registration_lecture_personalInformation_contactDetailsLayout.setVerticalGroup(
             _pl_registration_lecture_personalInformation_contactDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,10 +294,18 @@ public class Jp_student_payment extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_student_payment_paymentDatails_course, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_personalInformation_address_1stLine1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_tf_student_payment_paymentDatails_batch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_lb_registration_lecture_personalInformation_address_1stLine2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(_tf_student_payment_paymentDatails_year, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_lecture_personalInformation_address_1stLine)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_student_payment_paymentDatails_courseFee, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_lecture_personalInformation_address_2ndLine)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_student_payment_paymentDatails_payement, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,9 +313,9 @@ public class Jp_student_payment extends javax.swing.JPanel {
                 .addComponent(_lb_registration_lecture_personalInformation_address_city)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_tf_registration_lecture_personalInformations_contactDetails_duePayment, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(_bt_student_payment_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -322,6 +376,8 @@ Double due_payment=0.0;
                 System.out.println(rs1.getString("course"));
                 _tf_student_payment_paymentDatails_courseFee.setText(rs1.getDouble("course_fee")+"");
                 System.out.println(rs1.getDouble("course_fee"));
+                _tf_student_payment_paymentDatails_batch.setText(rs1.getString("batch"));
+                _tf_student_payment_paymentDatails_year.setText(rs1.getString("year"));
             _tf_student_payment_paymentDatails_payement.grabFocus();
             }
             }
@@ -397,6 +453,9 @@ Double due_payment=0.0;
             _tf_student_payment_paymentDatails_payement.setText(null);
             _tf_student_payment_paymentDatails_studentId.setText(null);
             _tf_student_payment_paymentDatails_studentName.setText(null);
+            _tf_student_payment_paymentDatails_batch.setText(null);
+            _tf_student_payment_paymentDatails_year.setText(null);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -436,11 +495,29 @@ Double due_payment=0.0;
         
     }//GEN-LAST:event__tf_registration_lecture_personalInformations_contactDetails_duePaymentKeyReleased
 
+    private void _tf_student_payment_paymentDatails_batchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_batchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tf_student_payment_paymentDatails_batchActionPerformed
+
+    private void _tf_student_payment_paymentDatails_batchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_batchKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tf_student_payment_paymentDatails_batchKeyReleased
+
+    private void _tf_student_payment_paymentDatails_yearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_yearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tf_student_payment_paymentDatails_yearActionPerformed
+
+    private void _tf_student_payment_paymentDatails_yearKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_student_payment_paymentDatails_yearKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tf_student_payment_paymentDatails_yearKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton _bt_student_payment_submit;
     private javax.swing.JLabel _lb_date;
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_address_1stLine;
+    private javax.swing.JLabel _lb_registration_lecture_personalInformation_address_1stLine1;
+    private javax.swing.JLabel _lb_registration_lecture_personalInformation_address_1stLine2;
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_address_2ndLine;
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_address_city;
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_contactDetails_eMail;
@@ -449,11 +526,13 @@ Double due_payment=0.0;
     private javax.swing.JLabel _lb_registration_lecture_personalInformation_contactDetails_mobileNumber1;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_contactDetails;
     private javax.swing.JTextField _tf_registration_lecture_personalInformations_contactDetails_duePayment;
+    public static javax.swing.JTextField _tf_student_payment_paymentDatails_batch;
     public static javax.swing.JTextField _tf_student_payment_paymentDatails_course;
     public static javax.swing.JTextField _tf_student_payment_paymentDatails_courseFee;
     private javax.swing.JTextField _tf_student_payment_paymentDatails_payement;
     public static javax.swing.JTextField _tf_student_payment_paymentDatails_studentId;
     public static javax.swing.JTextField _tf_student_payment_paymentDatails_studentName;
+    public static javax.swing.JTextField _tf_student_payment_paymentDatails_year;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

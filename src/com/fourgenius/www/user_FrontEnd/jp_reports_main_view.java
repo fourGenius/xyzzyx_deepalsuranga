@@ -39,8 +39,6 @@ public class jp_reports_main_view extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jp_view_reports = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
         jButton5 = new javax.swing.JButton();
         _bt_UserMain_home = new javax.swing.JButton();
         _bt_UserMain_inventory = new javax.swing.JButton();
@@ -57,25 +55,6 @@ public class jp_reports_main_view extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(1366, 768));
         jPanel1.setMinimumSize(new java.awt.Dimension(1366, 768));
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
-
-        jp_view_reports.setBackground(new java.awt.Color(2, 119, 189));
-        jp_view_reports.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "View Reports", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
-        jp_view_reports.setForeground(new java.awt.Color(2, 119, 189));
-        jp_view_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jp_view_reports.setMaximumSize(new java.awt.Dimension(609, 686));
-        jp_view_reports.setMinimumSize(new java.awt.Dimension(609, 686));
-        jp_view_reports.setPreferredSize(new java.awt.Dimension(609, 686));
-
-        javax.swing.GroupLayout jp_view_reportsLayout = new javax.swing.GroupLayout(jp_view_reports);
-        jp_view_reports.setLayout(jp_view_reportsLayout);
-        jp_view_reportsLayout.setHorizontalGroup(
-            jp_view_reportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
-        );
-        jp_view_reportsLayout.setVerticalGroup(
-            jp_view_reportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
-        );
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/power off.png"))); // NOI18N
         jButton5.setContentAreaFilled(false);
@@ -191,10 +170,10 @@ public class jp_reports_main_view extends javax.swing.JFrame {
         });
 
         jp_report_change.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jp_report_change.setMaximumSize(new java.awt.Dimension(719, 686));
-        jp_report_change.setMinimumSize(new java.awt.Dimension(719, 686));
+        jp_report_change.setMaximumSize(new java.awt.Dimension(1346, 678));
+        jp_report_change.setMinimumSize(new java.awt.Dimension(1346, 678));
         jp_report_change.setOpaque(false);
-        jp_report_change.setPreferredSize(new java.awt.Dimension(719, 686));
+        jp_report_change.setPreferredSize(new java.awt.Dimension(1346, 678));
 
         lb_student_reports.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_student_reports.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,20 +206,20 @@ public class jp_reports_main_view extends javax.swing.JFrame {
         jp_report_changeLayout.setHorizontalGroup(
             jp_report_changeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_report_changeLayout.createSequentialGroup()
-                .addContainerGap(123, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lb_inventory_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72)
                 .addComponent(lb_student_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124))
+                .addGap(375, 375, 375))
         );
         jp_report_changeLayout.setVerticalGroup(
             jp_report_changeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_report_changeLayout.createSequentialGroup()
-                .addContainerGap(232, Short.MAX_VALUE)
+                .addGap(209, 209, 209)
                 .addGroup(jp_report_changeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lb_inventory_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lb_student_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -251,18 +230,16 @@ public class jp_reports_main_view extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jp_report_change, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(_bt_UserMain_home, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(_bt_UserMain_inventory, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(_bt_UserMain_student, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jp_report_change, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jp_view_reports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 670, Short.MAX_VALUE)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,10 +253,8 @@ public class jp_reports_main_view extends javax.swing.JFrame {
                             .addComponent(_bt_UserMain_student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jp_report_change, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jp_view_reports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(3, 3, 3))
+                .addComponent(jp_report_change, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -488,9 +463,7 @@ Jf_user_login jf_user_login = new Jf_user_login();
     private javax.swing.JButton _bt_UserMain_student;
     private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JPanel jp_report_change;
-    private javax.swing.JPanel jp_view_reports;
     private javax.swing.JLabel lb_inventory_reports;
     private javax.swing.JLabel lb_student_reports;
     // End of variables declaration//GEN-END:variables

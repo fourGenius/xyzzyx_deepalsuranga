@@ -84,6 +84,7 @@ public class jp_add_books extends javax.swing.JPanel {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
         jButton1.setText("Add");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setMaximumSize(new java.awt.Dimension(100, 50));
         jButton1.setMinimumSize(new java.awt.Dimension(100, 50));
