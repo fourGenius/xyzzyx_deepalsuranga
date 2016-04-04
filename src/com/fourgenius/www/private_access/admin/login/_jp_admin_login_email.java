@@ -8,6 +8,8 @@ package com.fourgenius.www.private_access.admin.login;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
@@ -21,13 +23,14 @@ import public_access.MC_JavaDataBaseConnection;
 public class _jp_admin_login_email extends javax.swing.JPanel {
 
     Border border = BorderFactory.createLineBorder(Color.white, 1);
+
     /*
      * Creates new form _jp_admin_login_email
      */
-
     public _jp_admin_login_email() {
 
         initComponents();
+
         tf_username.grabFocus();
 
     }
@@ -43,6 +46,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
         _jp_admin_login_email = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         bt_next = new javax.swing.JButton();
         bt_cancel = new javax.swing.JButton();
         tf_username = new javax.swing.JTextField();
@@ -61,6 +65,10 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(320, 399));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 300, 10));
 
         bt_next.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bt_next.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,6 +121,11 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         tf_username.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tf_usernameMouseClicked(evt);
+            }
+        });
+        tf_username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_usernameActionPerformed(evt);
             }
         });
         tf_username.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -191,14 +204,14 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                 .addComponent(_lb_admin_login_close, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _jp_admin_login_emailLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(518, 518, 518))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _jp_admin_login_emailLayout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _jp_admin_login_emailLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(518, 518, 518))
         );
         _jp_admin_login_emailLayout.setVerticalGroup(
             _jp_admin_login_emailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,9 +253,11 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
 
     private void bt_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_nextActionPerformed
-
+        
+        
+        
         tf_username.grabFocus();
-        //bt_next.setText("Loading...");
+        
         next_method();
 
     }//GEN-LAST:event_bt_nextActionPerformed
@@ -325,10 +340,16 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             evt.consume();
             tf_username.selectAll();
         }
-        int key = evt.getKeyCode();
-        System.out.println("Key is:" + key);
+//        int key = evt.getKeyCode();
+//        System.out.println("Key is:" + key);
 
     }//GEN-LAST:event_tf_usernameKeyReleased
+
+    private void tf_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_usernameActionPerformed
+
+        
+
+    }//GEN-LAST:event_tf_usernameActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel _jp_admin_login_email;
@@ -342,6 +363,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
@@ -352,12 +374,48 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         String email1 = email;
         Boolean result = email1.matches(EMAIL_REGEX);
         System.out.println("is e-mail: " + email1 + " :Valid = " + result);
+        
         return result;
 
     }
 
     private void next_method() {
+        
+        try {
+            jLabel7.setText("Loading...");
+            Thread.sleep(5);
+            jLabel7.setText(null);
+        } catch (InterruptedException ex) {
+        }
         if (!tf_username.getText().isEmpty()) {
+
+            if ("RE_Administrator".equals(tf_username.getText())) {
+                System.out.println("Recovry Mode is ON");
+                _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
+
+                if (adminLoginPassword == null) {
+                    adminLoginPassword = new _jp_admin_login_password();
+                    Jf_admin_login.main_panel.removeAll();
+                    Jf_admin_login.main_panel.repaint();
+                    Jf_admin_login.main_panel.revalidate();
+                    Jf_admin_login.main_panel.add(adminLoginPassword);
+                    Jf_admin_login.main_panel.repaint();
+                    Jf_admin_login.main_panel.revalidate();
+                } else {
+                    Jf_admin_login.main_panel.removeAll();
+                    Jf_admin_login.main_panel.repaint();
+                    Jf_admin_login.main_panel.revalidate();
+                    Jf_admin_login.main_panel.add(adminLoginPassword);
+                    Jf_admin_login.main_panel.repaint();
+                    Jf_admin_login.main_panel.revalidate();
+                }
+                String ss = tf_username.getText();
+
+                System.out.println("emailllllllllllllllllll:" + ss);
+               
+
+            }
+
             try {
                 String email = tf_username.getText().trim().toLowerCase();
                 _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
@@ -367,7 +425,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     ////////////////////////Database base to///////////////////////
                     try {
                         ResultSet rs;
-                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='" + email + "'");
+                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin_info WHERE admin_email='" + email + "'");
                         if (rs.next()) {
                             System.out.println("query is OK!");
                             //start-load panel
@@ -406,4 +464,5 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Administrator email is not valid!", "WARNING!", JOptionPane.WARNING_MESSAGE);
         }
     }
+
 }

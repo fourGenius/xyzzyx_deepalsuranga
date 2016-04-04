@@ -6,14 +6,23 @@
 package com.fourgenius.www.admin_BackEnd;
 
 import java.awt.Color;
+import java.awt.FileDialog;
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
@@ -29,6 +38,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
      * Creates new form _jp_admin_admins
      */
     String id;
+
     public Jp_admin_admins() {
         initComponents();
         set_admin_email_Comb();
@@ -78,7 +88,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_lectureName_lastName = new javax.swing.JLabel();
         tf_email = new javax.swing.JTextField();
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth = new javax.swing.JLabel();
-        tf_nic = new javax.swing.JTextField();
+        tf_image = new javax.swing.JTextField();
         _lb_registration_lecture_personalInformation_idInformation_nicNumber = new javax.swing.JLabel();
         pf_conPassword = new javax.swing.JPasswordField();
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1 = new javax.swing.JLabel();
@@ -99,7 +109,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         tbl_admin_Administrators3 = new javax.swing.JTable();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tbl_admin_Administrators1 = new javax.swing.JTable();
+        tbl_admin_Manager = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
         tbl_admin_Administrators4 = new javax.swing.JTable();
         bt_disable_admin = new javax.swing.JButton();
@@ -214,6 +224,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_lectureName_sirName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_sirName.setText("First Name");
 
+        tf_fname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tf_fname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_fnameActionPerformed(evt);
@@ -224,6 +235,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_lectureName_firstName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_firstName.setText("Last Name");
 
+        tf_lname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tf_lname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_lnameActionPerformed(evt);
@@ -234,6 +246,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_lectureName_lastName.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_lectureName_lastName.setText("Email");
 
+        tf_email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tf_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_emailActionPerformed(evt);
@@ -244,15 +257,16 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth.setText("Password");
 
-        tf_nic.setEditable(false);
-        tf_nic.addMouseListener(new java.awt.event.MouseAdapter() {
+        tf_image.setEditable(false);
+        tf_image.setText("Browse Image");
+        tf_image.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tf_nicMouseClicked(evt);
+                tf_imageMouseClicked(evt);
             }
         });
-        tf_nic.addActionListener(new java.awt.event.ActionListener() {
+        tf_image.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_nicActionPerformed(evt);
+                tf_imageActionPerformed(evt);
             }
         });
 
@@ -260,6 +274,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_nicNumber.setText("Image");
 
+        pf_conPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         pf_conPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pf_conPasswordActionPerformed(evt);
@@ -270,6 +285,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth1.setText("Security Question");
 
+        pf_password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         pf_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pf_passwordActionPerformed(evt);
@@ -306,6 +322,8 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth3.setForeground(new java.awt.Color(255, 255, 255));
         _lb_registration_lecture_personalInformation_idInformation_dateOfBirth3.setText("Security Answer");
 
+        tf_securityAnswer.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout _pl_registration_lecture_personalInformation_lectureNameLayout = new javax.swing.GroupLayout(_pl_registration_lecture_personalInformation_lectureName);
         _pl_registration_lecture_personalInformation_lectureName.setLayout(_pl_registration_lecture_personalInformation_lectureNameLayout);
         _pl_registration_lecture_personalInformation_lectureNameLayout.setHorizontalGroup(
@@ -313,35 +331,35 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_lb_registration_lecture_personalInformation_lectureName_lastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
                         .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tf_fname)
-                            .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(_lb_registration_lecture_personalInformation_lectureName_sirName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tf_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_lname)
-                            .addComponent(_lb_registration_lecture_personalInformation_lectureName_firstName, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)))
-                    .addComponent(tf_email)
-                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_nicNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_nic)
-                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pf_password)
-                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pf_conPassword)
-                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(co_securityQu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
                         .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
+                            .addComponent(_lb_registration_lecture_personalInformation_lectureName_firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_lname, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24))
+                    .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
+                        .addGroup(_pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(tf_securityAnswer, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(co_securityQu, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pf_conPassword, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
+                            .addComponent(pf_password, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, _pl_registration_lecture_personalInformation_lectureNameLayout.createSequentialGroup()
                                 .addComponent(rb_admin)
                                 .addGap(18, 18, 18)
                                 .addComponent(rb_manager))
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 216, Short.MAX_VALUE))
-                    .addComponent(tf_securityAnswer))
-                .addContainerGap())
+                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_email, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_image, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(_lb_registration_lecture_personalInformation_idInformation_nicNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(_lb_registration_lecture_personalInformation_lectureName_lastName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         _pl_registration_lecture_personalInformation_lectureNameLayout.setVerticalGroup(
             _pl_registration_lecture_personalInformation_lectureNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +384,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_lecture_personalInformation_idInformation_nicNumber)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tf_nic, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tf_image, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_lecture_personalInformation_idInformation_dateOfBirth)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -392,7 +410,7 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             Add_AdministatorsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Add_AdministatorsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+                .addComponent(_pl_registration_lecture_personalInformation_lectureName, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
                 .addContainerGap())
         );
         Add_AdministatorsLayout.setVerticalGroup(
@@ -429,21 +447,17 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
                 "Administrator ID", "Name", "Email", "NIC No", "Security Qu:"
             }
         ));
+        tbl_admin_administrators_active.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbl_admin_administrators_activeMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tbl_admin_administrators_active);
 
         jTabbedPane4.addTab("Active Administrator", jScrollPane3);
@@ -453,15 +467,6 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         tbl_admin_Administrators3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tbl_admin_Administrators3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -490,47 +495,51 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
         jTabbedPane2.addTab("Administrators", jTabbedPane4);
 
-        tbl_admin_Administrators1.setBackground(new java.awt.Color(207, 216, 220));
-        tbl_admin_Administrators1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tbl_admin_Administrators1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        tbl_admin_Administrators1.setModel(new javax.swing.table.DefaultTableModel(
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        tbl_admin_Manager.setBackground(new java.awt.Color(207, 216, 220));
+        tbl_admin_Manager.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        tbl_admin_Manager.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tbl_admin_Manager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Manager ID", "Name", "Email", "NIC No", "Security Qu:"
+                "Manager ID", "Name", "Email", "Security Qu:"
             }
-        ));
-        jScrollPane2.setViewportView(tbl_admin_Administrators1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbl_admin_Manager.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tbl_admin_Manager);
+        if (tbl_admin_Manager.getColumnModel().getColumnCount() > 0) {
+            tbl_admin_Manager.getColumnModel().getColumn(0).setResizable(false);
+            tbl_admin_Manager.getColumnModel().getColumn(1).setResizable(false);
+            tbl_admin_Manager.getColumnModel().getColumn(2).setResizable(false);
+            tbl_admin_Manager.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jTabbedPane1.addTab("Active Managers", jScrollPane2);
 
@@ -539,42 +548,44 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         tbl_admin_Administrators4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tbl_admin_Administrators4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Administrator ID", "Name", "Email", "NIC No", "Password"
+                "Administrator ID", "Name", "Email", "Security Qu:"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbl_admin_Administrators4.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(tbl_admin_Administrators4);
+        if (tbl_admin_Administrators4.getColumnModel().getColumnCount() > 0) {
+            tbl_admin_Administrators4.getColumnModel().getColumn(0).setResizable(false);
+            tbl_admin_Administrators4.getColumnModel().getColumn(1).setResizable(false);
+            tbl_admin_Administrators4.getColumnModel().getColumn(2).setResizable(false);
+            tbl_admin_Administrators4.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jTabbedPane1.addTab("De-active Managers", jScrollPane5);
 
@@ -674,10 +685,9 @@ public class Jp_admin_admins extends javax.swing.JPanel {
                 .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(lb_admin_id, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
-                        .addComponent(admin_email, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lb_admin_id, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(admin_email, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Add_Administators, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
@@ -716,22 +726,48 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             } else {
                 type_p = "Manager";
             }
+            System.out.println("Type is :" + type_p);
 
             String type = type_p;
             String fname = tf_fname.getText().trim();
             String lname = tf_lname.getText().trim();
             String emai = tf_email.getText().trim();
-            String nic = tf_nic.getText().trim();
-            String password = new String(pf_conPassword.getPassword()).trim();
-            String id = lb_admin_id.getText().trim();
-            String qu = co_securityQu.getSelectedIndex() + "";
-            String answer = tf_securityAnswer.getText().trim();
-            System.out.println("co_securityQu index is" + qu);
+            String image = tf_image.getText().trim();
+            String password = new String(pf_password.getPassword()).trim();
+            String passwordC = new String(pf_conPassword.getPassword()).trim();
 
-            if (!fname.isEmpty() & !lname.isEmpty()) {
-               
-                        MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("INSERT INTO admin_info(admin_firstName,admin_lastName,admin_email,admin_id,admin_nic,admin_security_qu,admin_security_answer,admin_type,admin_password) VALUES('"+id+"','" + fname + "','" + lname + "','" + emai + "','" + nic + "','" + qu + "','" + answer + "','" + type + "')");
-               load_allData();
+            String admin_info_id = lb_admin_id.getText().trim();
+            String qu = co_securityQu.getSelectedItem().toString() + "";
+            String answer = tf_securityAnswer.getText();
+            FileInputStream is = new FileInputStream(new File(s));
+
+            if (!fname.isEmpty() & !lname.isEmpty() & password.equals(passwordC)) {
+
+                Connection c = MC_JavaDataBaseConnection.myConnection();
+                PreparedStatement ps = c.prepareStatement("INSERT INTO admin_info(admin_info_id,admin_firstName,admin_lastName,admin_email,admin_security_qu,admin_security_an,admin_image,admin_type,admin_password) VALUES(?,?,?,?,?,?,?,?,?)");
+
+                ps.setString(1, admin_info_id);
+                ps.setString(2, fname);
+                ps.setString(3, lname);
+                ps.setString(4, emai);
+                ps.setString(5, qu);
+                ps.setString(6, answer);
+                ps.setBlob(7, is);
+                ps.setString(8, type);
+                ps.setString(9, password);
+                ps.executeUpdate();
+
+                // MC_JavaDataBaseConnection.add_data_WithColumns("admin_info", "admin_info_id,admin_firstName,admin_lastName,admin_email,admin_security_qu,admin_security_an,admin_image,admin_type,admin_password", admin_info_id + "," + fname + "," + lname + "," + emai + "," + qu + "," + answer + "," + fis + "," + type + "," + password);
+                JOptionPane.showMessageDialog(this, "Administortor successfly added!");
+
+                c.close();
+                ps.close();
+                load_allData();
+
+            } else if (!password.equals(passwordC)) {
+
+                pf_password.setBackground(new Color(244, 67, 54));
+                pf_conPassword.setBackground(new Color(244, 67, 54));
 
             } else {
                 tf_fname.setBackground(new Color(244, 67, 54));
@@ -739,14 +775,13 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             }
 
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
         }
-
 
 
     }//GEN-LAST:event_bt_add_adminActionPerformed
 
     private void bt_update_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_update_adminActionPerformed
-
 
 
     }//GEN-LAST:event_bt_update_adminActionPerformed
@@ -763,9 +798,9 @@ public class Jp_admin_admins extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_emailActionPerformed
 
-    private void tf_nicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nicActionPerformed
+    private void tf_imageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_imageActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nicActionPerformed
+    }//GEN-LAST:event_tf_imageActionPerformed
 
     private void bt_disable_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_disable_adminActionPerformed
 
@@ -776,12 +811,12 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
     private void admin_emailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admin_emailMouseClicked
         try {
-            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from admin_info where admin_email='"+admin_email.getSelectedItem().toString()+"'");
-            while (rs.next()) { 
-                
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from admin_info where admin_email='" + admin_email.getSelectedItem().toString() + "'");
+            while (rs.next()) {
+
                 tf_fname.setText(rs.getString("admin_firstName"));
                 tf_lname.setText(rs.getString("admin_lastName"));
-                tf_nic.setText("admin_nic");
+                tf_image.setText("admin_nic");
                 tf_email.setText(admin_email.getSelectedItem().toString());
                 pf_password.grabFocus();
             }
@@ -803,7 +838,17 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     }//GEN-LAST:event_co_securityQuActionPerformed
 
     String s;
-    private void tf_nicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_nicMouseClicked
+    private void tf_imageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_imageMouseClicked
+
+        FileDialog fd = new FileDialog(new JFrame(), "choose", FileDialog.LOAD);
+        fd.setVisible(true);
+        fd.setDirectory("C:\\");
+
+        String fn = fd.getFile();
+        String tt = fd.getDirectory();
+        
+        String file = fd.getFile();
+        String fullPath = tt + fn;
 
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
@@ -815,13 +860,23 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             String path = selectedFile.getAbsolutePath();
             lb_loadImage.setIcon(ResizeImage(path));
             s = path;
-            tf_nic.setText(s);
+            tf_image.setText(s);
         } else if (result == JFileChooser.CANCEL_OPTION) {
             System.out.println("No Data");
         }
-        
-        
-    }//GEN-LAST:event_tf_nicMouseClicked
+
+
+    }//GEN-LAST:event_tf_imageMouseClicked
+
+    private void tbl_admin_administrators_activeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_admin_administrators_activeMouseClicked
+
+        int gsr=tbl_admin_administrators_active.getSelectedRow();
+        int gsc=tbl_admin_administrators_active.getSelectedColumn();
+        String string = (String) tbl_admin_administrators_active.getValueAt(gsr, 0);
+        System.out.println("Value is :" + string);
+
+
+    }//GEN-LAST:event_tbl_admin_administrators_activeMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -868,24 +923,25 @@ public class Jp_admin_admins extends javax.swing.JPanel {
     private javax.swing.JPasswordField pf_password;
     private javax.swing.JRadioButton rb_admin;
     private javax.swing.JRadioButton rb_manager;
-    private javax.swing.JTable tbl_admin_Administrators1;
     private javax.swing.JTable tbl_admin_Administrators3;
     private javax.swing.JTable tbl_admin_Administrators4;
+    private javax.swing.JTable tbl_admin_Manager;
     private javax.swing.JTable tbl_admin_administrators_active;
     private javax.swing.JTextField tf_email;
     private javax.swing.JTextField tf_fname;
+    private javax.swing.JTextField tf_image;
     private javax.swing.JTextField tf_lname;
-    private javax.swing.JTextField tf_nic;
     private javax.swing.JTextField tf_securityAnswer;
     // End of variables declaration//GEN-END:variables
 
     private void load_allData() {
+
+        Connection connection = MC_JavaDataBaseConnection.myConnection();
         try {
 
             DefaultTableModel tableModel_administrator_active = (DefaultTableModel) tbl_admin_administrators_active.getModel();
             tableModel_administrator_active.setRowCount(0);
 
-            Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
 
             String query = "SELECT * FROM admin_info WHERE admin_type='Administrator'";
@@ -893,59 +949,71 @@ public class Jp_admin_admins extends javax.swing.JPanel {
 
             while (rs.next()) {
                 Vector v = new Vector();
-                v.add(rs.getString("admin_id"));
-                v.add(rs.getString("admin_firstName")+" "+rs.getString("admin_lastName"));
-                 v.add(rs.getString("admin_email"));
-                v.add(rs.getString("admin_nic"));
+                v.add(rs.getString("admin_info_id"));
+                v.add(rs.getString("admin_firstName") + " " + rs.getString("admin_lastName"));
+                v.add(rs.getString("admin_email"));
+                v.add(rs.getString("admin_image"));
                 v.add(rs.getString("admin_security_qu"));
-               
+
                 tableModel_administrator_active.addRow(v);
 
             }
             rs.close();
-           
- //////////////////////////////////////////////////////Fill Manager///////////////////////////////////////////           
-//            DefaultTableModel tableModel_manager_active = (DefaultTableModel) tbl_admin_Administrators1.getModel(); 
-//            tableModel_manager_active.setRowCount(0);
 
-           
-
-            String query_manager = "SELECT * FROM admin_info WHERE admin_type='Manager'";
+            //////////////////////////////////////////////////////Fill Manager///////////////////////////////////////////           
+            DefaultTableModel tableModel_manager_active = (DefaultTableModel) tbl_admin_Manager.getModel();
+            tableModel_manager_active.setRowCount(0);
+            String query_manager = "SELECT * FROM admin_info WHERE admin_type='Manager' and admin_status='1'";
             ResultSet rs_manager = statement.executeQuery(query_manager);
 
             while (rs_manager.next()) {
                 Vector v = new Vector();
-                v.add(rs_manager.getString("admin_id"));
-                v.add(rs_manager.getString("admin_firstName")+" "+rs.getString("admin_lastName"));
-                 v.add(rs_manager.getString("admin_email"));
-                v.add(rs_manager.getString("admin_nic"));
+                v.add(rs_manager.getString("admin_info_id"));
+                v.add(rs_manager.getString("admin_firstName") + " " + rs_manager.getString("admin_lastName"));
+                v.add(rs_manager.getString("admin_email"));
                 v.add(rs_manager.getString("admin_security_qu"));
-               
-//                tableModel_manager_active.addRow(v);
 
+                tableModel_manager_active.addRow(v);
             }
             rs_manager.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        try {
+            DefaultTableModel tableModel_Manager_deactive = (DefaultTableModel) tbl_admin_Manager.getModel();
+            tableModel_Manager_deactive.setRowCount(0);
+            String query_deactiveManager = "SELECT * FROM admin_info WHERE admin_type='Manager' & admin_status='deactive'";
+            ResultSet rs_de_Manager;
+            Statement s_de_Manager = connection.createStatement();
+
+            rs_de_Manager = s_de_Manager.executeQuery(query_deactiveManager);
+
+            while (rs_de_Manager.next()) {
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Jp_admin_admins.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+
     void set_admin_email_Comb() {
 
         try {
-            ResultSet rs;
-            String sql = "SELECT * FROM admin";
-            rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql);
+            ResultSet rs1;
+            String sql = "SELECT * FROM admin_info";
+            rs1 = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql);
 
-            while (rs.next()) {
-                String name = rs.getString("admin_email");
+            while (rs1.next()) {
+                String name = rs1.getString("admin_email");
                 admin_email.addItem(name);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-        void set_admin_ans_Comb() {
+
+    void set_admin_ans_Comb() {
 
         try {
             ResultSet rs;
@@ -960,54 +1028,58 @@ public class Jp_admin_admins extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
-        
-        private void generate_admin_id() {
-         try {
-             String id_type = "ID";
-        String st = "AD";
 
-       ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT COUNT(admin_id) AS x FROM admin_info");
-        
-        int idcount = rs.getInt("x");
-        int id_no = ++idcount;
+    private void generate_admin_info_id() {
+        try {
+            String id_type = "ID";
+            String st = "AD";
 
-        String a = Integer.toString(id_no);
-        int length = a.length();
-        System.out.println(length);
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT COUNT(admin_info_id) AS x FROM admin_info");
 
-        String idn = Integer.toString(id_no);
-        String zeros;
-        if (length == 1) {
-            zeros = "00000";
-        } else if (length == 2) {
-            zeros = "0000";
-        } else if (length == 3) {
-            zeros = "000";
-        } else if (length == 4) {
-            zeros = "00";
-        } else if (length == 5) {
-            zeros = "0";
-        } else {
-            zeros = "";
+            int idcount = rs.getInt("x");
+            int id_no = ++idcount;
+
+            String a = Integer.toString(id_no);
+            int length = a.length();
+            System.out.println(length);
+
+            String idn = Integer.toString(id_no);
+            String zeros;
+            switch (length) {
+                case 1:
+                    zeros = "00000";
+                    break;
+                case 2:
+                    zeros = "0000";
+                    break;
+                case 3:
+                    zeros = "000";
+                    break;
+                case 4:
+                    zeros = "00";
+                    break;
+                case 5:
+                    zeros = "0";
+                    break;
+                default:
+                    zeros = "";
+                    break;
+            }
+            id = id_type + "-" + st + "-" + zeros + idn;
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    id = id_type + "-" + st + "-" + zeros + idn;
-       
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-       
 
-    
-}
-        
-        
-        public ImageIcon ResizeImage(String imgPath) {
+    }
+
+    public ImageIcon ResizeImage(String imgPath) {
         ImageIcon MyImage = new ImageIcon(imgPath);
         Image img = MyImage.getImage();
         Image newImage = img.getScaledInstance(lb_loadImage.getWidth(), lb_loadImage.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon image = new ImageIcon(newImage);
         return image;
     }
-        
+
 }
 //
