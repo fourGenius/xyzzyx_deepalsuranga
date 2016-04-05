@@ -11,6 +11,8 @@ import com.fourgenius.www.public_access.model.academic_employee.employee_academi
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_contact;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_personal;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._lb_registration_student_preview_course;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._lb_registration_student_preview_dateOfBirth;
 import com.fourgenius.www.public_access.registration.student.user_image_copy;
 import com.googlecode.javacv.CanvasFrame;
 import com.googlecode.javacv.OpenCVFrameGrabber;
@@ -69,9 +71,9 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         } catch (Exception ex) {
         }
         set_data_to_Combo_box();
-//      Set max selectable date for validate date of birth
+//      Set min selectable date for validate date of birth
         Date d = Calendar.getInstance().getTime();
-        _dc_add_exam_examDate.setMaxSelectableDate(d);
+        _dc_add_exam_examDate.setMinSelectableDate(d);
         _bt_add_exam_preview_addExam.setEnabled(false);
     }
 
@@ -465,14 +467,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__dc_add_exam_examDateMouseClicked
 
     private void _tf_add_exam_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_exam_nameKeyTyped
-        char c = evt.getKeyChar();
-        if (!(Character.isLetter(c)) && !(Character.isSpaceChar(c))) {
-            evt.consume();
-        }
-        if (100 <= _tf_add_exam_name.getText().length()) {
-            evt.consume();
-            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
-        }
+        
     }//GEN-LAST:event__tf_add_exam_nameKeyTyped
 
     private void _tf_add_exam_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_exam_nameKeyReleased
@@ -480,7 +475,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__tf_add_exam_nameKeyReleased
 
     private void _tf_add_exam_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_add_exam_nameActionPerformed
-//        _tf_add_exam_course_name.grabFocus();
+
     }//GEN-LAST:event__tf_add_exam_nameActionPerformed
 
 
@@ -507,7 +502,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_browsePhoto1;
     public javax.swing.JRadioButton _rb_add_exam_colombo;
     public javax.swing.JRadioButton _rb_add_exam_kandy;
-    public static javax.swing.JTextField _tf_add_exam_name;
+    private static javax.swing.JTextField _tf_add_exam_name;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -550,9 +545,24 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     }
 
     private void add_to_preview_form() {
+        Date d = _dc_add_exam_examDate.getDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String date = sdf.format(d);
+        _lb_add_exam_preview_date.setText(date);
+        
         generate_exam_id();
         _lb_add_exam_preview_name.setText(_tf_add_exam_name.getText());
+        _lb_add_exam_preview_course.setText((String) _cb_add_exam_course.getSelectedItem());
         
+        String branch;
+        if (_rb_add_exam_colombo.isSelected()) {
+            branch="Colombo";
+        }else{
+            branch="Kandy";
+        }
+        _lb_add_exam_preview_branch.setText(branch);
+        
+        _bt_add_exam_preview_addExam.setEnabled(true);
     }
 
     private void generate_exam_id() {

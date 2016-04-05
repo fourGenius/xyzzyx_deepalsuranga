@@ -26,7 +26,7 @@ public class Jp_add_exams extends javax.swing.JPanel {
     public Jp_add_exams() {
         initComponents();
 
-        load_table_lecture_view();
+        load_table_exams_view();
     }
 
     /**
@@ -151,14 +151,14 @@ public class Jp_add_exams extends javax.swing.JPanel {
 
     private void _bt_add_exam_AddExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_exam_AddExamActionPerformed
         String button_name = _bt_add_exam_AddExam.getText();
-        if (button_name.equals("Add Lecture")) {
-            load_lecture_information_form();
+        if (button_name.equals("Add Exam")) {
+            load_exam_information_form();
             buttons_enable(_bt_add_exam_AddExam.getText());
             _bt_add_exam_AddExam.setText("Cancel");
         } else {
             int option = JOptionPane.showConfirmDialog(this, "All Data You Didn't Save is Lost", "Are You Sure?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (option == JOptionPane.YES_OPTION) {
-                load_table_lecture_view();
+                load_table_exams_view();
                 _bt_add_exam_AddExam.setText("Add Lecture");
                 _bt_add_exam_ExamsDetails.setEnabled(true);
             }
@@ -184,7 +184,7 @@ public class Jp_add_exams extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_add_exam_ExamsDetailsMouseReleased
 
     private void _bt_add_exam_ExamsDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_exam_ExamsDetailsActionPerformed
-        load_table_lecture_view();
+        load_table_exams_view();
 
         buttons_enable(_bt_add_exam_ExamsDetails.getText());
     }//GEN-LAST:event__bt_add_exam_ExamsDetailsActionPerformed
@@ -197,23 +197,23 @@ public class Jp_add_exams extends javax.swing.JPanel {
     public static javax.swing.JButton _bt_add_exam_ExamsDetails;
     // End of variables declaration//GEN-END:variables
 
-    private void load_table_lecture_view() {
+    private void load_table_exams_view() {
         try {
-            Jp_registration_lecture_table_view view_lecture_table = new Jp_registration_lecture_table_view();
+            Jp_add_exams_table_view view_exams_table = new Jp_add_exams_table_view();
 
-            if (view_lecture_table == null) {
-                view_lecture_table = new Jp_registration_lecture_table_view();
+            if (view_exams_table == null) {
+                view_exams_table = new Jp_add_exams_table_view();
                 Jp_add_exams_main_panel.removeAll();
                 Jp_add_exams_main_panel.repaint();
                 Jp_add_exams_main_panel.revalidate();
-                Jp_add_exams_main_panel.add(view_lecture_table);
+                Jp_add_exams_main_panel.add(view_exams_table);
                 Jp_add_exams_main_panel.repaint();
                 Jp_add_exams_main_panel.revalidate();
             } else {
                 Jp_add_exams_main_panel.removeAll();
                 Jp_add_exams_main_panel.repaint();
                 Jp_add_exams_main_panel.revalidate();
-                Jp_add_exams_main_panel.add(view_lecture_table);
+                Jp_add_exams_main_panel.add(view_exams_table);
                 Jp_add_exams_main_panel.repaint();
                 Jp_add_exams_main_panel.revalidate();
             }
@@ -237,26 +237,25 @@ public class Jp_add_exams extends javax.swing.JPanel {
         }
     }
 
-    private void load_lecture_information_form() {
+    private void load_exam_information_form() {
         try {
-            Jp_registration_lecture_informations add_lecture = new Jp_registration_lecture_informations();
-            if (add_lecture == null) {
-                add_lecture = new Jp_registration_lecture_informations();
+            Jp_add_exams_informations add_exam = new Jp_add_exams_informations();
+            if (add_exam == null) {
+                add_exam = new Jp_add_exams_informations();
                 Jp_add_exams_main_panel.removeAll();
                 Jp_add_exams_main_panel.repaint();
                 Jp_add_exams_main_panel.revalidate();
-                Jp_add_exams_main_panel.add(add_lecture);
+                Jp_add_exams_main_panel.add(add_exam);
                 Jp_add_exams_main_panel.repaint();
                 Jp_add_exams_main_panel.revalidate();
             } else {
                 Jp_add_exams_main_panel.removeAll();
                 Jp_add_exams_main_panel.repaint();
                 Jp_add_exams_main_panel.revalidate();
-                Jp_add_exams_main_panel.add(add_lecture);
+                Jp_add_exams_main_panel.add(add_exam);
                 Jp_add_exams_main_panel.repaint();
                 Jp_add_exams_main_panel.revalidate();
             }
-            _tf_registration_lecture_information_form_sur_name.grabFocus();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -264,6 +263,6 @@ public class Jp_add_exams extends javax.swing.JPanel {
 
     public void call_action() {
 
-        load_table_lecture_view();
+        load_table_exams_view();
     }
 }

@@ -5,6 +5,8 @@
  */
 package com.fourgenius.www.user_FrontEnd;
 
+import com.fourgenius.www.public_access.exams.Jf_Exams;
+import com.fourgenius.www.public_access.registration.student.Jp_registration_student;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -546,7 +548,8 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_examMouseExited
 
     private void bt_examActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_examActionPerformed
-        // TODO add your handling code here:
+        new Jf_Exams().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_bt_examActionPerformed
 
     private void bt_practicalsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_practicalsMouseEntered
