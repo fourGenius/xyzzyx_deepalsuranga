@@ -112,6 +112,11 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
 
         add(student_mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 540));
 
+        _li_registration_student_searchStudent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _li_registration_student_searchStudentMouseClicked(evt);
+            }
+        });
         _sp_registration_student_searchStudent.setViewportView(_li_registration_student_searchStudent);
 
         add(_sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 310, 490));
@@ -201,7 +206,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
                     ResultSet rs = s.executeQuery("SELECT b.stu_info_name_first_name, b.stu_info_name_last_name FROM stu_info_personal a LEFT JOIN stu_info_name b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_user_info c ON a.stu_user_info_id=c.stu_user_info_id WHERE a.stu_info_personal_nic like '" + _tf_registration_student_searchStudent.getText() + "' AND c.stu_user_info_status>='1'");
                     Vector v = new Vector();
                     while (rs.next()) {
-                        v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
+                        v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
                     }
                     rs.close();
                     _li_registration_student_searchStudent.setListData(v);
@@ -223,10 +228,10 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
                             Connection c = MC_JavaDataBaseConnection.myConnection();
                             Statement s = c.createStatement();
 
-                            ResultSet rs = s.executeQuery("SELECT b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name FROM employee_academic_user_info_personal a LEFT JOIN employee_academic_user_info_name b ON a.employee_academic_user_id=b.employee_academic_user_id LEFT JOIN employee_academic_user_info c ON a.employee_academic_user_id=c.employee_academic_user_id WHERE CONCAT (b.employee_academic_user_info_name_first_name, ' ', b.employee_academic_user_info_name_last_name) like '%" + _tf_registration_student_searchStudent.getText() + "%' AND c.employee_academic_user_info_status>='1'");
+                            ResultSet rs = s.executeQuery("SELECT b.stu_info_name_first_name, b.stu_info_name_last_name FROM stu_info_personal a LEFT JOIN stu_info_name b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_user_info c ON a.stu_user_info_id=c.stu_user_info_id WHERE CONCAT (b.stu_info_name_first_name, ' ', b.stu_info_name_last_name) like '%" + _tf_registration_student_searchStudent.getText() + "%' AND c.stu_user_info_status>='1'");
                             Vector v = new Vector();
                             while (rs.next()) {
-                                v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
+                                v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
                             }
                             rs.close();
                             _li_registration_student_searchStudent.setListData(v);
@@ -299,6 +304,19 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
         _bt_preview_table_student_buttons_preview_student.setEnabled(true);
         _bt_registraion_student_buttons_update_student.setEnabled(true);
     }//GEN-LAST:event__tb_registration_student_view_activeMouseClicked
+
+    private void _li_registration_student_searchStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__li_registration_student_searchStudentMouseClicked
+        DefaultTableModel dtm = (DefaultTableModel) _tb_registration_student_view_active.getModel();
+        _tf_registration_student_searchStudent.setText(_li_registration_student_searchStudent.getSelectedValue().toString());
+        _sp_registration_student_searchStudent.setVisible(false);
+        String name = _li_registration_student_searchStudent.getSelectedValue().toString();
+        for (int row = 0; row < _tb_registration_student_view_active.getRowCount(); row++) {
+            String next = _tb_registration_student_view_active.getValueAt(row, 2).toString();
+            if (next.equals(name)) {
+                _tb_registration_student_view_active.setRowSelectionInterval(row, row);
+            }
+        }
+    }//GEN-LAST:event__li_registration_student_searchStudentMouseClicked
     int i = 0;
 
     Jp_registration_student_informations rsi = new Jp_registration_student_informations();

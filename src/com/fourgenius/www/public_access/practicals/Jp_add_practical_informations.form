@@ -83,7 +83,7 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="_lb_add_exam_name">
+            <Component class="javax.swing.JLabel" name="_lb_add_practical_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -91,7 +91,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Exam Name"/>
+                <Property name="text" type="java.lang.String" value="Practical Name"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -99,7 +99,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_add_exam_name">
+            <Component class="javax.swing.JTextField" name="_tf_add_practical_name">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -112,9 +112,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_add_exam_nameActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_add_exam_nameKeyReleased"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_add_exam_nameKeyTyped"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_add_practical_nameActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_add_practical_nameKeyReleased"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_add_practical_nameKeyTyped"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
@@ -156,7 +156,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_add_exam_examDate">
+            <Component class="javax.swing.JLabel" name="_lb_add_practical_practicalDate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -172,7 +172,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="com.toedter.calendar.JDateChooser" name="_dc_add_exam_examDate">
+            <Component class="com.toedter.calendar.JDateChooser" name="_dc_add_practical_practicalDate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -182,7 +182,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_dc_add_exam_examDateMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_dc_add_practical_practicalDateMouseClicked"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -193,7 +193,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_add_exam_branch">
+            <Component class="javax.swing.JLabel" name="_lb_add_practical_branch">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -209,7 +209,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="_rb_add_exam_colombo">
+            <Component class="javax.swing.JRadioButton" name="_rb_add_practical_colombo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
@@ -235,7 +235,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="_rb_add_exam_kandy">
+            <Component class="javax.swing.JRadioButton" name="_rb_add_practical_kandy">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="77" red="2" type="rgb"/>
@@ -252,7 +252,7 @@
                 <Property name="text" type="java.lang.String" value="Kandy"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_rb_add_exam_kandyActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_rb_add_practical_kandyActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -263,7 +263,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JButton" name="_bt_add_exam_preview">
+            <Component class="javax.swing.JButton" name="_bt_add_practical_preview">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -285,12 +285,12 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_exam_previewMouseClicked"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_exam_previewMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_exam_previewMouseExited"/>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_exam_previewMousePressed"/>
-                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_exam_previewMouseReleased"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_add_exam_previewActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_practical_previewMouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_practical_previewMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_practical_previewMouseExited"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_practical_previewMousePressed"/>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_practical_previewMouseReleased"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_add_practical_previewActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -298,7 +298,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="_tf_add_batch_number">
+            <Component class="javax.swing.JTextField" name="_tf_add_practical_batch_number">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -311,9 +311,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_add_batch_numberActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_add_batch_numberKeyReleased"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_add_batch_numberKeyTyped"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_add_practical_batch_numberActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_add_practical_batch_numberKeyReleased"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_add_practical_batch_numberKeyTyped"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
@@ -324,7 +324,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="_lb_add_batch_number">
+            <Component class="javax.swing.JLabel" name="_lb_add_practical_batch_number">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -372,7 +372,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="_bt_add_exam_preview_addExam" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="_bt_add_practical_preview_addPractical" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -385,12 +385,12 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="_lb_add_exam_preview_examID" alignment="0" pref="386" max="32767" attributes="0"/>
-                              <Component id="_lb_add_exam_preview_name" alignment="0" max="32767" attributes="0"/>
-                              <Component id="_lb_add_exam_preview_course" alignment="0" max="32767" attributes="0"/>
-                              <Component id="_lb_add_exam_preview_date" alignment="0" max="32767" attributes="0"/>
-                              <Component id="_lb_add_exam_preview_branch" alignment="0" max="32767" attributes="0"/>
-                              <Component id="_lb_add_exam_preview_batach_number" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_lb_add_practical_preview_practicalID" alignment="0" pref="386" max="32767" attributes="0"/>
+                              <Component id="_lb_add_practical_preview_name" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_lb_add_practical_preview_course" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_lb_add_practical_preview_date" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_lb_add_practical_preview_branch" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_lb_add_practical_preview_batach_number" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -403,35 +403,35 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
-                      <Component id="_lb_add_exam_preview_examID" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="_lb_add_practical_preview_practicalID" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
-                      <Component id="_lb_add_exam_preview_name" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="_lb_add_practical_preview_name" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                      <Component id="_lb_add_exam_preview_batach_number" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="_lb_add_practical_preview_batach_number" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
-                      <Component id="_lb_add_exam_preview_course" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="_lb_add_practical_preview_course" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
-                      <Component id="_lb_add_exam_preview_date" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="_lb_add_practical_preview_date" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
-                      <Component id="_lb_add_exam_preview_branch" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="_lb_add_practical_preview_branch" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="392" max="-2" attributes="0"/>
-                  <Component id="_bt_add_exam_preview_addExam" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="_bt_add_practical_preview_addPractical" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -446,10 +446,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Exam ID"/>
+            <Property name="text" type="java.lang.String" value="Practical ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="_lb_add_exam_preview_examID">
+        <Component class="javax.swing.JLabel" name="_lb_add_practical_preview_practicalID">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -464,10 +464,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Exam Name"/>
+            <Property name="text" type="java.lang.String" value="Practical Name"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="_lb_add_exam_preview_name">
+        <Component class="javax.swing.JLabel" name="_lb_add_practical_preview_name">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -488,7 +488,7 @@
             <Property name="text" type="java.lang.String" value="Course"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="_lb_add_exam_preview_course">
+        <Component class="javax.swing.JLabel" name="_lb_add_practical_preview_course">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -503,10 +503,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Exam Date"/>
+            <Property name="text" type="java.lang.String" value="Practical Date"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="_lb_add_exam_preview_date">
+        <Component class="javax.swing.JLabel" name="_lb_add_practical_preview_date">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -524,14 +524,14 @@
             <Property name="text" type="java.lang.String" value="Branch"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="_lb_add_exam_preview_branch">
+        <Component class="javax.swing.JLabel" name="_lb_add_practical_preview_branch">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="_bt_add_exam_preview_addExam">
+        <Component class="javax.swing.JButton" name="_bt_add_practical_preview_addPractical">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>
@@ -542,7 +542,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/com/fourgenius/www/public_access/user/login/images_butons/buton_DarkGreen_200x50.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Add Exam"/>
+            <Property name="text" type="java.lang.String" value="Add Practical"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
@@ -554,11 +554,11 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_exam_preview_addExamMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_exam_preview_addExamMouseExited"/>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_exam_preview_addExamMousePressed"/>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_exam_preview_addExamMouseReleased"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_add_exam_preview_addExamActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_practical_preview_addPracticalMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_practical_preview_addPracticalMouseExited"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_practical_preview_addPracticalMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_add_practical_preview_addPracticalMouseReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_bt_add_practical_preview_addPracticalActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel20">
@@ -572,7 +572,7 @@
             <Property name="text" type="java.lang.String" value="Batch Number"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="_lb_add_exam_preview_batach_number">
+        <Component class="javax.swing.JLabel" name="_lb_add_practical_preview_batach_number">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="14" style="0"/>

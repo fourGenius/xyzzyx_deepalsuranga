@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fourgenius.www.public_access.exams;
+package com.fourgenius.www.public_access.practicals;
 
+import com.fourgenius.www.public_access.exams.*;
 import com.fourgenius.www.public_access.registration.lecture.*;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_address;
@@ -41,7 +42,7 @@ import public_access.MC_JavaDataBaseConnection;
  *
  * @author thilina
  */
-public class Jp_add_exams_informations extends javax.swing.JPanel {
+public class Jp_add_practical_informations extends javax.swing.JPanel {
 
 //  Set Button Border Collor
     Border border = BorderFactory.createLineBorder(Color.white, 1);
@@ -62,7 +63,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
      * d
      * Creates new form registration_lecture
      */
-    public Jp_add_exams_informations() {
+    public Jp_add_practical_informations() {
         initComponents();
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -71,8 +72,8 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         set_data_to_Combo_box();
 //      Set min selectable date for validate date of birth
         Date d = Calendar.getInstance().getTime();
-        _dc_add_exam_examDate.setMinSelectableDate(d);
-        _bt_add_exam_preview_addExam.setEnabled(false);
+        _dc_add_practical_practicalDate.setMinSelectableDate(d);
+        _bt_add_practical_preview_addPractical.setEnabled(false);
     }
 
     /**
@@ -89,32 +90,32 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         _bg_registration_lecture_personalInformation_employeeDetails_branch = new javax.swing.ButtonGroup();
         _pl_add_exams_examInformation_main_panel = new javax.swing.JPanel();
         _pl_add_exam_examInformation = new javax.swing.JPanel();
-        _lb_add_exam_name = new javax.swing.JLabel();
-        _tf_add_exam_name = new javax.swing.JTextField();
+        _lb_add_practical_name = new javax.swing.JLabel();
+        _tf_add_practical_name = new javax.swing.JTextField();
         _lb_add_exam_course_name = new javax.swing.JLabel();
         _cb_add_exam_course = new javax.swing.JComboBox();
-        _lb_add_exam_examDate = new javax.swing.JLabel();
-        _dc_add_exam_examDate = new com.toedter.calendar.JDateChooser();
-        _lb_add_exam_branch = new javax.swing.JLabel();
-        _rb_add_exam_colombo = new javax.swing.JRadioButton();
-        _rb_add_exam_kandy = new javax.swing.JRadioButton();
-        _bt_add_exam_preview = new javax.swing.JButton();
-        _tf_add_batch_number = new javax.swing.JTextField();
-        _lb_add_batch_number = new javax.swing.JLabel();
+        _lb_add_practical_practicalDate = new javax.swing.JLabel();
+        _dc_add_practical_practicalDate = new com.toedter.calendar.JDateChooser();
+        _lb_add_practical_branch = new javax.swing.JLabel();
+        _rb_add_practical_colombo = new javax.swing.JRadioButton();
+        _rb_add_practical_kandy = new javax.swing.JRadioButton();
+        _bt_add_practical_preview = new javax.swing.JButton();
+        _tf_add_practical_batch_number = new javax.swing.JTextField();
+        _lb_add_practical_batch_number = new javax.swing.JLabel();
         _pl_add_exam_examInformation_preview = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        _lb_add_exam_preview_examID = new javax.swing.JLabel();
+        _lb_add_practical_preview_practicalID = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        _lb_add_exam_preview_name = new javax.swing.JLabel();
+        _lb_add_practical_preview_name = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        _lb_add_exam_preview_course = new javax.swing.JLabel();
+        _lb_add_practical_preview_course = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        _lb_add_exam_preview_date = new javax.swing.JLabel();
+        _lb_add_practical_preview_date = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        _lb_add_exam_preview_branch = new javax.swing.JLabel();
-        _bt_add_exam_preview_addExam = new javax.swing.JButton();
+        _lb_add_practical_preview_branch = new javax.swing.JLabel();
+        _bt_add_practical_preview_addPractical = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        _lb_add_exam_preview_batach_number = new javax.swing.JLabel();
+        _lb_add_practical_preview_batach_number = new javax.swing.JLabel();
         _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(66, 66, 66));
@@ -132,28 +133,28 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         _pl_add_exam_examInformation.setBackground(new java.awt.Color(2, 119, 189));
         _pl_add_exam_examInformation.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        _lb_add_exam_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _lb_add_exam_name.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_add_exam_name.setText("Exam Name");
-        _pl_add_exam_examInformation.add(_lb_add_exam_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 333, -1));
+        _lb_add_practical_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_name.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_add_practical_name.setText("Practical Name");
+        _pl_add_exam_examInformation.add(_lb_add_practical_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 333, -1));
 
-        _tf_add_exam_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_add_exam_name.setMaximumSize(new java.awt.Dimension(300, 40));
-        _tf_add_exam_name.setPreferredSize(new java.awt.Dimension(300, 40));
-        _tf_add_exam_name.addActionListener(new java.awt.event.ActionListener() {
+        _tf_add_practical_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_add_practical_name.setMaximumSize(new java.awt.Dimension(300, 40));
+        _tf_add_practical_name.setPreferredSize(new java.awt.Dimension(300, 40));
+        _tf_add_practical_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_add_exam_nameActionPerformed(evt);
+                _tf_add_practical_nameActionPerformed(evt);
             }
         });
-        _tf_add_exam_name.addKeyListener(new java.awt.event.KeyAdapter() {
+        _tf_add_practical_name.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_add_exam_nameKeyReleased(evt);
+                _tf_add_practical_nameKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                _tf_add_exam_nameKeyTyped(evt);
+                _tf_add_practical_nameKeyTyped(evt);
             }
         });
-        _pl_add_exam_examInformation.add(_tf_add_exam_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 333, -1));
+        _pl_add_exam_examInformation.add(_tf_add_practical_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 333, -1));
 
         _lb_add_exam_course_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_add_exam_course_name.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,99 +164,99 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         _cb_add_exam_course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _pl_add_exam_examInformation.add(_cb_add_exam_course, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 333, 40));
 
-        _lb_add_exam_examDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _lb_add_exam_examDate.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_add_exam_examDate.setText("Exam Date");
-        _pl_add_exam_examInformation.add(_lb_add_exam_examDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 333, -1));
+        _lb_add_practical_practicalDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_practicalDate.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_add_practical_practicalDate.setText("Exam Date");
+        _pl_add_exam_examInformation.add(_lb_add_practical_practicalDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 333, -1));
 
-        _dc_add_exam_examDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _dc_add_exam_examDate.setPreferredSize(new java.awt.Dimension(91, 40));
-        _dc_add_exam_examDate.addMouseListener(new java.awt.event.MouseAdapter() {
+        _dc_add_practical_practicalDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _dc_add_practical_practicalDate.setPreferredSize(new java.awt.Dimension(91, 40));
+        _dc_add_practical_practicalDate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _dc_add_exam_examDateMouseClicked(evt);
+                _dc_add_practical_practicalDateMouseClicked(evt);
             }
         });
-        _pl_add_exam_examInformation.add(_dc_add_exam_examDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 333, -1));
+        _pl_add_exam_examInformation.add(_dc_add_practical_practicalDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 333, -1));
 
-        _lb_add_exam_branch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _lb_add_exam_branch.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_add_exam_branch.setText("Branch");
-        _pl_add_exam_examInformation.add(_lb_add_exam_branch, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+        _lb_add_practical_branch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_branch.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_add_practical_branch.setText("Branch");
+        _pl_add_exam_examInformation.add(_lb_add_practical_branch, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
-        _rb_add_exam_colombo.setBackground(new java.awt.Color(2, 119, 189));
-        _bg_registration_lecture_personalInformation_employeeDetails_branch.add(_rb_add_exam_colombo);
-        _rb_add_exam_colombo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _rb_add_exam_colombo.setForeground(new java.awt.Color(255, 255, 255));
-        _rb_add_exam_colombo.setSelected(true);
-        _rb_add_exam_colombo.setText("Colombo");
-        _pl_add_exam_examInformation.add(_rb_add_exam_colombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
+        _rb_add_practical_colombo.setBackground(new java.awt.Color(2, 119, 189));
+        _bg_registration_lecture_personalInformation_employeeDetails_branch.add(_rb_add_practical_colombo);
+        _rb_add_practical_colombo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _rb_add_practical_colombo.setForeground(new java.awt.Color(255, 255, 255));
+        _rb_add_practical_colombo.setSelected(true);
+        _rb_add_practical_colombo.setText("Colombo");
+        _pl_add_exam_examInformation.add(_rb_add_practical_colombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
-        _rb_add_exam_kandy.setBackground(new java.awt.Color(2, 119, 189));
-        _bg_registration_lecture_personalInformation_employeeDetails_branch.add(_rb_add_exam_kandy);
-        _rb_add_exam_kandy.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _rb_add_exam_kandy.setForeground(new java.awt.Color(255, 255, 255));
-        _rb_add_exam_kandy.setText("Kandy");
-        _rb_add_exam_kandy.addActionListener(new java.awt.event.ActionListener() {
+        _rb_add_practical_kandy.setBackground(new java.awt.Color(2, 119, 189));
+        _bg_registration_lecture_personalInformation_employeeDetails_branch.add(_rb_add_practical_kandy);
+        _rb_add_practical_kandy.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _rb_add_practical_kandy.setForeground(new java.awt.Color(255, 255, 255));
+        _rb_add_practical_kandy.setText("Kandy");
+        _rb_add_practical_kandy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _rb_add_exam_kandyActionPerformed(evt);
+                _rb_add_practical_kandyActionPerformed(evt);
             }
         });
-        _pl_add_exam_examInformation.add(_rb_add_exam_kandy, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+        _pl_add_exam_examInformation.add(_rb_add_practical_kandy, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
 
-        _bt_add_exam_preview.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_add_exam_preview.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_add_exam_preview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
-        _bt_add_exam_preview.setText("Preview");
-        _bt_add_exam_preview.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_add_exam_preview.setFocusPainted(false);
-        _bt_add_exam_preview.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_add_exam_preview.setPreferredSize(new java.awt.Dimension(300, 50));
-        _bt_add_exam_preview.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_add_practical_preview.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_add_practical_preview.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_add_practical_preview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_250x50.png"))); // NOI18N
+        _bt_add_practical_preview.setText("Preview");
+        _bt_add_practical_preview.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_add_practical_preview.setFocusPainted(false);
+        _bt_add_practical_preview.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_add_practical_preview.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_add_practical_preview.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_previewMouseClicked(evt);
+                _bt_add_practical_previewMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_previewMouseEntered(evt);
+                _bt_add_practical_previewMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_previewMouseExited(evt);
+                _bt_add_practical_previewMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_previewMousePressed(evt);
+                _bt_add_practical_previewMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_previewMouseReleased(evt);
+                _bt_add_practical_previewMouseReleased(evt);
             }
         });
-        _bt_add_exam_preview.addActionListener(new java.awt.event.ActionListener() {
+        _bt_add_practical_preview.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_add_exam_previewActionPerformed(evt);
+                _bt_add_practical_previewActionPerformed(evt);
             }
         });
-        _pl_add_exam_examInformation.add(_bt_add_exam_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 244, -1));
+        _pl_add_exam_examInformation.add(_bt_add_practical_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 244, -1));
 
-        _tf_add_batch_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_add_batch_number.setMaximumSize(new java.awt.Dimension(300, 40));
-        _tf_add_batch_number.setPreferredSize(new java.awt.Dimension(300, 40));
-        _tf_add_batch_number.addActionListener(new java.awt.event.ActionListener() {
+        _tf_add_practical_batch_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _tf_add_practical_batch_number.setMaximumSize(new java.awt.Dimension(300, 40));
+        _tf_add_practical_batch_number.setPreferredSize(new java.awt.Dimension(300, 40));
+        _tf_add_practical_batch_number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_add_batch_numberActionPerformed(evt);
+                _tf_add_practical_batch_numberActionPerformed(evt);
             }
         });
-        _tf_add_batch_number.addKeyListener(new java.awt.event.KeyAdapter() {
+        _tf_add_practical_batch_number.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_add_batch_numberKeyReleased(evt);
+                _tf_add_practical_batch_numberKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                _tf_add_batch_numberKeyTyped(evt);
+                _tf_add_practical_batch_numberKeyTyped(evt);
             }
         });
-        _pl_add_exam_examInformation.add(_tf_add_batch_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 333, -1));
+        _pl_add_exam_examInformation.add(_tf_add_practical_batch_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 333, -1));
 
-        _lb_add_batch_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _lb_add_batch_number.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_add_batch_number.setText("Batch Number");
-        _pl_add_exam_examInformation.add(_lb_add_batch_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 333, -1));
+        _lb_add_practical_batch_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_batch_number.setForeground(new java.awt.Color(255, 255, 255));
+        _lb_add_practical_batch_number.setText("Batch Number");
+        _pl_add_exam_examInformation.add(_lb_add_practical_batch_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 333, -1));
 
         _pl_add_exams_examInformation_main_panel.add(_pl_add_exam_examInformation, "card2");
 
@@ -266,60 +267,60 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Exam ID");
+        jLabel12.setText("Practical ID");
 
-        _lb_add_exam_preview_examID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_preview_practicalID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Exam Name");
+        jLabel16.setText("Practical Name");
 
-        _lb_add_exam_preview_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_preview_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Course");
 
-        _lb_add_exam_preview_course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_preview_course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Exam Date");
+        jLabel18.setText("Practical Date");
 
-        _lb_add_exam_preview_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_preview_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Branch");
 
-        _lb_add_exam_preview_branch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_preview_branch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        _bt_add_exam_preview_addExam.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_add_exam_preview_addExam.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_add_exam_preview_addExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_DarkGreen_200x50.png"))); // NOI18N
-        _bt_add_exam_preview_addExam.setText("Add Exam");
-        _bt_add_exam_preview_addExam.setContentAreaFilled(false);
-        _bt_add_exam_preview_addExam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_add_exam_preview_addExam.setFocusPainted(false);
-        _bt_add_exam_preview_addExam.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_add_exam_preview_addExam.setPreferredSize(new java.awt.Dimension(100, 50));
-        _bt_add_exam_preview_addExam.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_add_practical_preview_addPractical.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_add_practical_preview_addPractical.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_add_practical_preview_addPractical.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_DarkGreen_200x50.png"))); // NOI18N
+        _bt_add_practical_preview_addPractical.setText("Add Practical");
+        _bt_add_practical_preview_addPractical.setContentAreaFilled(false);
+        _bt_add_practical_preview_addPractical.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_add_practical_preview_addPractical.setFocusPainted(false);
+        _bt_add_practical_preview_addPractical.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_add_practical_preview_addPractical.setPreferredSize(new java.awt.Dimension(100, 50));
+        _bt_add_practical_preview_addPractical.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_preview_addExamMouseEntered(evt);
+                _bt_add_practical_preview_addPracticalMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_preview_addExamMouseExited(evt);
+                _bt_add_practical_preview_addPracticalMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_preview_addExamMousePressed(evt);
+                _bt_add_practical_preview_addPracticalMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_preview_addExamMouseReleased(evt);
+                _bt_add_practical_preview_addPracticalMouseReleased(evt);
             }
         });
-        _bt_add_exam_preview_addExam.addActionListener(new java.awt.event.ActionListener() {
+        _bt_add_practical_preview_addPractical.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_add_exam_preview_addExamActionPerformed(evt);
+                _bt_add_practical_preview_addPracticalActionPerformed(evt);
             }
         });
 
@@ -327,7 +328,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Batch Number");
 
-        _lb_add_exam_preview_batach_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_preview_batach_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout _pl_add_exam_examInformation_previewLayout = new javax.swing.GroupLayout(_pl_add_exam_examInformation_preview);
         _pl_add_exam_examInformation_preview.setLayout(_pl_add_exam_examInformation_previewLayout);
@@ -338,7 +339,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_add_exam_examInformation_previewLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(_bt_add_exam_preview_addExam, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(_bt_add_practical_preview_addPractical, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(_pl_add_exam_examInformation_previewLayout.createSequentialGroup()
                         .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -349,12 +350,12 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_lb_add_exam_preview_examID, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_batach_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(_lb_add_practical_preview_practicalID, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+                            .addComponent(_lb_add_practical_preview_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_add_practical_preview_course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_add_practical_preview_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_add_practical_preview_branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_add_practical_preview_batach_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         _pl_add_exam_examInformation_previewLayout.setVerticalGroup(
@@ -362,29 +363,29 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
             .addGroup(_pl_add_exam_examInformation_previewLayout.createSequentialGroup()
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_examID, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_add_practical_preview_practicalID, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_name, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_add_practical_preview_name, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20)
-                    .addComponent(_lb_add_exam_preview_batach_number, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_add_practical_preview_batach_number, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_course, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_add_practical_preview_course, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_date, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_add_practical_preview_date, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_branch, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_add_practical_preview_branch, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(392, 392, 392)
-                .addComponent(_bt_add_exam_preview_addExam, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(_bt_add_practical_preview_addPractical, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -408,46 +409,46 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void _bt_add_exam_previewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_previewMouseEntered
-        _bt_add_exam_preview.setBorder(border);
-    }//GEN-LAST:event__bt_add_exam_previewMouseEntered
+    private void _bt_add_practical_previewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_previewMouseEntered
+        _bt_add_practical_preview.setBorder(border);
+    }//GEN-LAST:event__bt_add_practical_previewMouseEntered
 
-    private void _bt_add_exam_previewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_previewMouseExited
-        _bt_add_exam_preview.setBorder(null);
-    }//GEN-LAST:event__bt_add_exam_previewMouseExited
+    private void _bt_add_practical_previewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_previewMouseExited
+        _bt_add_practical_preview.setBorder(null);
+    }//GEN-LAST:event__bt_add_practical_previewMouseExited
 
-    private void _bt_add_exam_previewMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_previewMousePressed
-        _bt_add_exam_preview.setBorder(null);
-    }//GEN-LAST:event__bt_add_exam_previewMousePressed
+    private void _bt_add_practical_previewMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_previewMousePressed
+        _bt_add_practical_preview.setBorder(null);
+    }//GEN-LAST:event__bt_add_practical_previewMousePressed
 
-    private void _bt_add_exam_previewMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_previewMouseReleased
-        _bt_add_exam_preview.setBorder(border);
-    }//GEN-LAST:event__bt_add_exam_previewMouseReleased
+    private void _bt_add_practical_previewMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_previewMouseReleased
+        _bt_add_practical_preview.setBorder(border);
+    }//GEN-LAST:event__bt_add_practical_previewMouseReleased
 
-    private void _bt_add_exam_previewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_exam_previewActionPerformed
-        if (_bt_add_exam_preview.getText().equals("Preview")) {
+    private void _bt_add_practical_previewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_practical_previewActionPerformed
+        if (_bt_add_practical_preview.getText().equals("Preview")) {
 
             check_empty_fields();
         } else {
 
             check_update_empty_fields();
         }
-    }//GEN-LAST:event__bt_add_exam_previewActionPerformed
+    }//GEN-LAST:event__bt_add_practical_previewActionPerformed
 
-    private void _bt_add_exam_previewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_previewMouseClicked
+    private void _bt_add_practical_previewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_previewMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event__bt_add_exam_previewMouseClicked
+    }//GEN-LAST:event__bt_add_practical_previewMouseClicked
 
-    private void _bt_add_exam_preview_addExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamActionPerformed
+    private void _bt_add_practical_preview_addPracticalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_practical_preview_addPracticalActionPerformed
 
         try {
-            if (_bt_add_exam_preview_addExam.getText().equals("Add Exam")) {
+            if (_bt_add_practical_preview_addPractical.getText().equals("Add Exam")) {
                 int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (option == JOptionPane.YES_OPTION) {
                     add_to_database();
                     clear_personal_information_form();
                     clear_preview_form();
-                    _bt_add_exam_preview.setEnabled(false);
+                    _bt_add_practical_preview.setEnabled(false);
                 }
             } else {
                 int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -462,8 +463,8 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
                     if (rs_fileid.next()) {
                         String fileid = rs_fileid.getString("employee_academic_user_info_qulifications_file_id");
                         load_information_qulifications_update_form(fileid);
-                        _bt_add_exam_preview.setVisible(false);
-                        _bt_add_exam_preview_addExam.setEnabled(false);
+                        _bt_add_practical_preview.setVisible(false);
+                        _bt_add_practical_preview_addPractical.setEnabled(false);
                     }
                 }
             }
@@ -472,84 +473,84 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         }
 
 
-    }//GEN-LAST:event__bt_add_exam_preview_addExamActionPerformed
+    }//GEN-LAST:event__bt_add_practical_preview_addPracticalActionPerformed
 
-    private void _bt_add_exam_preview_addExamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamMouseEntered
-        _bt_add_exam_preview_addExam.setBorder(border);
-    }//GEN-LAST:event__bt_add_exam_preview_addExamMouseEntered
+    private void _bt_add_practical_preview_addPracticalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_preview_addPracticalMouseEntered
+        _bt_add_practical_preview_addPractical.setBorder(border);
+    }//GEN-LAST:event__bt_add_practical_preview_addPracticalMouseEntered
 
-    private void _bt_add_exam_preview_addExamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamMouseExited
-        _bt_add_exam_preview_addExam.setBorder(null);
-    }//GEN-LAST:event__bt_add_exam_preview_addExamMouseExited
+    private void _bt_add_practical_preview_addPracticalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_preview_addPracticalMouseExited
+        _bt_add_practical_preview_addPractical.setBorder(null);
+    }//GEN-LAST:event__bt_add_practical_preview_addPracticalMouseExited
 
-    private void _bt_add_exam_preview_addExamMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamMousePressed
-        _bt_add_exam_preview_addExam.setBorder(null);
-    }//GEN-LAST:event__bt_add_exam_preview_addExamMousePressed
+    private void _bt_add_practical_preview_addPracticalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_preview_addPracticalMousePressed
+        _bt_add_practical_preview_addPractical.setBorder(null);
+    }//GEN-LAST:event__bt_add_practical_preview_addPracticalMousePressed
 
-    private void _bt_add_exam_preview_addExamMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamMouseReleased
-        _bt_add_exam_preview_addExam.setBorder(border);
-    }//GEN-LAST:event__bt_add_exam_preview_addExamMouseReleased
+    private void _bt_add_practical_preview_addPracticalMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_preview_addPracticalMouseReleased
+        _bt_add_practical_preview_addPractical.setBorder(border);
+    }//GEN-LAST:event__bt_add_practical_preview_addPracticalMouseReleased
 
-    private void _rb_add_exam_kandyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__rb_add_exam_kandyActionPerformed
+    private void _rb_add_practical_kandyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__rb_add_practical_kandyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event__rb_add_exam_kandyActionPerformed
+    }//GEN-LAST:event__rb_add_practical_kandyActionPerformed
 
-    private void _dc_add_exam_examDateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__dc_add_exam_examDateMouseClicked
+    private void _dc_add_practical_practicalDateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__dc_add_practical_practicalDateMouseClicked
 
-    }//GEN-LAST:event__dc_add_exam_examDateMouseClicked
+    }//GEN-LAST:event__dc_add_practical_practicalDateMouseClicked
 
-    private void _tf_add_exam_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_exam_nameKeyTyped
+    private void _tf_add_practical_nameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_practical_nameKeyTyped
 
-    }//GEN-LAST:event__tf_add_exam_nameKeyTyped
+    }//GEN-LAST:event__tf_add_practical_nameKeyTyped
 
-    private void _tf_add_exam_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_exam_nameKeyReleased
+    private void _tf_add_practical_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_practical_nameKeyReleased
 
-    }//GEN-LAST:event__tf_add_exam_nameKeyReleased
+    }//GEN-LAST:event__tf_add_practical_nameKeyReleased
 
-    private void _tf_add_exam_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_add_exam_nameActionPerformed
-        _tf_add_batch_number.grabFocus();
-    }//GEN-LAST:event__tf_add_exam_nameActionPerformed
+    private void _tf_add_practical_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_add_practical_nameActionPerformed
 
-    private void _tf_add_batch_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_add_batch_numberActionPerformed
+    }//GEN-LAST:event__tf_add_practical_nameActionPerformed
+
+    private void _tf_add_practical_batch_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_add_practical_batch_numberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event__tf_add_batch_numberActionPerformed
+    }//GEN-LAST:event__tf_add_practical_batch_numberActionPerformed
 
-    private void _tf_add_batch_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_batch_numberKeyReleased
+    private void _tf_add_practical_batch_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_practical_batch_numberKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event__tf_add_batch_numberKeyReleased
+    }//GEN-LAST:event__tf_add_practical_batch_numberKeyReleased
 
-    private void _tf_add_batch_numberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_batch_numberKeyTyped
+    private void _tf_add_practical_batch_numberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_practical_batch_numberKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event__tf_add_batch_numberKeyTyped
+    }//GEN-LAST:event__tf_add_practical_batch_numberKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformation_employeeDetails_branch;
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_acadamy;
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_gender;
-    private javax.swing.JButton _bt_add_exam_preview;
-    private javax.swing.JButton _bt_add_exam_preview_addExam;
+    private javax.swing.JButton _bt_add_practical_preview;
+    private javax.swing.JButton _bt_add_practical_preview_addPractical;
     private javax.swing.JComboBox _cb_add_exam_course;
-    public com.toedter.calendar.JDateChooser _dc_add_exam_examDate;
-    private javax.swing.JLabel _lb_add_batch_number;
-    private javax.swing.JLabel _lb_add_exam_branch;
+    public com.toedter.calendar.JDateChooser _dc_add_practical_practicalDate;
     private javax.swing.JLabel _lb_add_exam_course_name;
-    private javax.swing.JLabel _lb_add_exam_examDate;
-    private javax.swing.JLabel _lb_add_exam_name;
-    private javax.swing.JLabel _lb_add_exam_preview_batach_number;
-    private javax.swing.JLabel _lb_add_exam_preview_branch;
-    private javax.swing.JLabel _lb_add_exam_preview_course;
-    private javax.swing.JLabel _lb_add_exam_preview_date;
-    private javax.swing.JLabel _lb_add_exam_preview_examID;
-    public javax.swing.JLabel _lb_add_exam_preview_name;
+    private javax.swing.JLabel _lb_add_practical_batch_number;
+    private javax.swing.JLabel _lb_add_practical_branch;
+    private javax.swing.JLabel _lb_add_practical_name;
+    private javax.swing.JLabel _lb_add_practical_practicalDate;
+    private javax.swing.JLabel _lb_add_practical_preview_batach_number;
+    private javax.swing.JLabel _lb_add_practical_preview_branch;
+    private javax.swing.JLabel _lb_add_practical_preview_course;
+    private javax.swing.JLabel _lb_add_practical_preview_date;
+    public javax.swing.JLabel _lb_add_practical_preview_name;
+    private javax.swing.JLabel _lb_add_practical_preview_practicalID;
     private javax.swing.JPanel _pl_add_exam_examInformation;
     private javax.swing.JPanel _pl_add_exam_examInformation_preview;
     private javax.swing.JPanel _pl_add_exams_examInformation_main_panel;
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_browsePhoto1;
-    public javax.swing.JRadioButton _rb_add_exam_colombo;
-    public javax.swing.JRadioButton _rb_add_exam_kandy;
-    private static javax.swing.JTextField _tf_add_batch_number;
-    private static javax.swing.JTextField _tf_add_exam_name;
+    public javax.swing.JRadioButton _rb_add_practical_colombo;
+    public javax.swing.JRadioButton _rb_add_practical_kandy;
+    private static javax.swing.JTextField _tf_add_practical_batch_number;
+    private static javax.swing.JTextField _tf_add_practical_name;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -570,23 +571,23 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         try {
             try {
                 generate_exam_id();
-                _lb_add_exam_preview_name.setText(_tf_add_exam_name.getText());
-                _lb_add_exam_preview_batach_number.setText(_tf_add_batch_number.getText());
-                _lb_add_exam_preview_course.setText((String) _cb_add_exam_course.getSelectedItem());
-                Date d = _dc_add_exam_examDate.getDate();
+                _lb_add_practical_preview_name.setText(_tf_add_practical_name.getText());
+                _lb_add_practical_preview_batach_number.setText(_tf_add_practical_batch_number.getText());
+                _lb_add_practical_preview_course.setText((String) _cb_add_exam_course.getSelectedItem());
+                Date d = _dc_add_practical_practicalDate.getDate();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String date = sdf.format(d);
-                _lb_add_exam_preview_date.setText(date);
+                _lb_add_practical_preview_date.setText(date);
 
                 String branch;
-                if (_rb_add_exam_colombo.isSelected()) {
+                if (_rb_add_practical_colombo.isSelected()) {
                     branch = "Colombo";
                 } else {
                     branch = "Kandy";
                 }
-                _lb_add_exam_preview_branch.setText(branch);
+                _lb_add_practical_preview_branch.setText(branch);
 
-                _bt_add_exam_preview_addExam.setEnabled(true);
+                _bt_add_practical_preview_addPractical.setEnabled(true);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Birthday is Empty");
             }
@@ -626,14 +627,14 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
             zeros = "";
         }
 
-        if (_rb_add_exam_colombo.isSelected()) {
+        if (_rb_add_practical_colombo.isSelected()) {
             branch_name = "COL";
         } else {
             branch_name = "KAN";
         }
 
         lecture_id = id + "-" + lc + "-" + branch_name + "-" + zeros + id_no;
-        _lb_add_exam_preview_examID.setText(lecture_id);
+        _lb_add_practical_preview_practicalID.setText(lecture_id);
 
     }
 
@@ -840,8 +841,8 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     }
 
     private void check_empty_fields() {
-        if (!_tf_add_exam_name.getText().isEmpty()) {
-            if (!_tf_add_batch_number.getText().isEmpty()) {
+        if (!_tf_add_practical_name.getText().isEmpty()) {
+            if (!_tf_add_practical_batch_number.getText().isEmpty()) {
                 add_to_preview_form();
             } else {
                 JOptionPane.showMessageDialog(this, "Batch Number is Empty");
