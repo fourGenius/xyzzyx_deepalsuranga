@@ -59,6 +59,8 @@ public class Jf_admin_login extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
+        main_panel.setBackground(new java.awt.Color(153, 153, 153));
+        main_panel.setMaximumSize(new java.awt.Dimension(1366, 768));
         main_panel.setMinimumSize(new java.awt.Dimension(1366, 768));
         main_panel.setPreferredSize(new java.awt.Dimension(1366, 768));
         main_panel.setLayout(new java.awt.CardLayout());
@@ -67,11 +69,11 @@ public class Jf_admin_login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(main_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 1366, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(main_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setSize(new java.awt.Dimension(1366, 768));

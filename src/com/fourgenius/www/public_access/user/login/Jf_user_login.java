@@ -597,25 +597,28 @@ public class Jf_user_login extends javax.swing.JFrame {
 
     private void _tf_user_loging_userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_user_loging_userNameActionPerformed
 
-        try {
+        new Thread(() -> {
 
-            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT `user_image` FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "' and user_status='1'");
-            if (!rs.next()) {
-                _tf_user_loging_userName.setBackground(Color.red);
-                JOptionPane.showMessageDialog(this, "User name is Invalide", "Warning", 2);
-                _tf_user_loging_userName.grabFocus();
-                _tf_user_loging_userName.selectAll();
+            try {
 
-                flag = false;
-            } else {
-                _tf_user_loging_userName.setBackground(Color.WHITE);
-                flag = true;
-                _pf_user_login_password.setEditable(true);
-                _pf_user_login_password.grabFocus();
+                ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM `user` WHERE `user_email`='" + _tf_user_loging_userName.getText() + "' and user_status='1'");
+                if (!rs.next()) {
+                    _tf_user_loging_userName.setBackground(Color.red);
+                    JOptionPane.showMessageDialog(this, "User name is Invalide", "Warning", 2);
+                    _tf_user_loging_userName.grabFocus();
+                    _tf_user_loging_userName.selectAll();
 
+                    flag = false;
+                } else {
+                    _tf_user_loging_userName.setBackground(Color.WHITE);
+                    flag = true;
+                    _pf_user_login_password.setEditable(true);
+                    _pf_user_login_password.grabFocus();
+
+                }
+            } catch (Exception e) {
             }
-        } catch (Exception e) {
-        }
+        }).start();
     }//GEN-LAST:event__tf_user_loging_userNameActionPerformed
 
     private void _pf_user_login_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__pf_user_login_passwordMouseClicked
@@ -724,7 +727,13 @@ public class Jf_user_login extends javax.swing.JFrame {
     }//GEN-LAST:event__bt_Jf_user_login_CancelMouseReleased
 
     private void _bt_Jf_user_login_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_Jf_user_login_LoginActionPerformed
-        login_user_method();
+
+        new Thread(() -> {
+
+            login_user_method();
+
+        }).start();
+
     }//GEN-LAST:event__bt_Jf_user_login_LoginActionPerformed
 
     private void _lb_user_login_dis_usernameMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_dis_usernameMouseEntered
@@ -737,7 +746,12 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         int key = evt.getKeyChar();
         if (key == KeyEvent.VK_ENTER) {
-            login_user_method();
+            new Thread(() -> {
+
+                login_user_method();
+
+            }).start();
+
             System.gc();
         }
 
@@ -857,13 +871,16 @@ public class Jf_user_login extends javax.swing.JFrame {
             if (rs.next()) {
                 System.out.println("User Quer ok!");
 
-                User_SendMailSSL usmssl = new User_SendMailSSL();
-                usmssl.sendingSSL(_tf_user_loging_userName.getText().trim(), "User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
-
-                Admin_SendMailSSL asmssl = new Admin_SendMailSSL();
-                asmssl.sendingSSL("User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
                 Jf_UserFront user_menu = new Jf_UserFront(_tf_user_loging_userName.getText());
                 user_menu.setVisible(true);
+                new Thread(() -> {
+                    User_SendMailSSL usmssl = new User_SendMailSSL();
+                    usmssl.sendingSSL(_tf_user_loging_userName.getText().trim(), "User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+
+                    Admin_SendMailSSL asmssl = new Admin_SendMailSSL();
+                    asmssl.sendingSSL("User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+                }).start();
+
                 this.dispose();
                 System.gc();
 

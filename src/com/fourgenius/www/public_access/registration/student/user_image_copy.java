@@ -18,6 +18,11 @@ import java.io.FileOutputStream;
  * @author deepal_suranga
  */
 public class user_image_copy {
+    
+//    public static void main(String[] args) {
+//        user_image_copy aa=new user_image_copy();
+//        aa.copyImage("C://Users//deepa//Documents//FourGenius//xyzzyx_deepalsuranga//943341583v-Weerasinghe-capture.jpg");
+//    }
 
     public void copyImage(String fullname) {
         String user_dir = System.getProperty("user.home");
@@ -31,10 +36,10 @@ public class user_image_copy {
 //            
 //            
 
-            FileInputStream from = new FileInputStream("C:\\Program Files\\Four Genius\\" + fullname + ".jpg");
-            FileOutputStream to = new FileOutputStream(user_dir + "\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
-            System.out.println("File Upload path : " + user_dir + "\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
-            Jp_registration_student_informations pic = new Jp_registration_student_informations(user_dir + "\\Google Drive\\4_Genius_Creations\\FourGenius\\Images\\" + fullname + ".jpg");
+            FileInputStream from = new FileInputStream(user_dir+"\\Documents\\FourGenius\\xyzzyx_deepalsuranga\\"+fullname+".jpg");
+            FileOutputStream to = new FileOutputStream(user_dir+"\\FourGenius\\Images\\"+fullname+".jpg");
+            System.out.println("File Upload path : " + user_dir+"\\FourGenius\\Images\\"+fullname+".jpg");
+            Jp_registration_student_informations pic = new Jp_registration_student_informations(user_dir + "\\FourGenius\\Images\\" + fullname + ".jpg");
             byte[] buffer = new byte[4096];
             int byteRead;
             while ((byteRead = from.read(buffer)) != -1) {

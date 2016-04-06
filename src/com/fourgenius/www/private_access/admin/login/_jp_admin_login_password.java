@@ -8,6 +8,7 @@ package com.fourgenius.www.private_access.admin.login;
 import com.fourgenius.www.admin_BackEnd.Jf_admin_backend;
 import com.fourgenius.www.private_access.admin.method.Md_move_text;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
+import com.javav.fsc.zone.PasswordValidator;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -18,8 +19,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -48,6 +47,7 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
 
     public _jp_admin_login_password() {
         initComponents();
+
         //load_image("firstepzcreation@outlook.com");
         showTime();
         showDate();
@@ -56,10 +56,8 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
 
         code_Gen.load_qr(_lb_user_login_qrCode);
         System.out.println("QR Code is" + code_Gen.getRandom_pin());
-        
-        tf_admin_login_pin.grabFocus();
 
-        
+        tf_admin_login_pin.grabFocus();
 
     }
 
@@ -396,7 +394,12 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
 //        System.out.println(eml);
 //        lb_welcome_note.setText(eml + "");
 //        System.out.println(eml + "no null");
-        login_method();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                login_method();
+            }
+        }).start();
 
         System.gc();
 
@@ -483,7 +486,7 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
         if (key == KeyEvent.VK_ENTER) {
 
             pf_admin_login_password.grabFocus();
-            load_image(_lb_admi_login_email.getText().trim());
+
             System.out.println("pin after : " + emails);
 
         }
@@ -507,8 +510,7 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
     private void pf_admin_login_passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pf_admin_login_passwordMouseClicked
 
         pf_admin_login_password.selectAll();
-        load_image(_lb_admi_login_email.getText().trim());
-            System.out.println("pin after click : " + emails);
+
         try {
             bt_admin_login.setText("Login");
         } catch (Exception e) {
@@ -545,20 +547,20 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
     }//GEN-LAST:event_lb_password_infoMouseClicked
 
     private void tf_admin_login_pinFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_admin_login_pinFocusLost
-        String pin = tf_admin_login_pin.getText();
-        if (pin.equals(code_Gen.getRandom_pin())) {
-            load_image(_lb_admi_login_email.getText().trim());
-            System.out.println("pin forus out :"+emails);
-        }
-        
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                load_image(_lb_admi_login_email.getText().trim());
+
+            }
+        }).start();
+
     }//GEN-LAST:event_tf_admin_login_pinFocusLost
 
     private void tf_admin_login_pinFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tf_admin_login_pinFocusGained
 
-        
-        load_image(_lb_admi_login_email.getText().trim());
-        
-        
+
     }//GEN-LAST:event_tf_admin_login_pinFocusGained
 
 
@@ -594,6 +596,9 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
         String emails;
         try {
             String admin_password = new String(pf_admin_login_password.getPassword());
+
+            PasswordValidator pv = new PasswordValidator();
+
             System.out.println("Admin password: " + admin_password);
 //            if (pf_admin_login_password.equals("")) {
 
@@ -605,30 +610,35 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
 
             if (pin.equals(code_Gen.getRandom_pin())) {
 
-                ResultSet resultSet;
-                resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin_info WHERE admin_password='" + admin_password + "'");
-                if (resultSet.next()) {
+                if (pv.validate(admin_password)) {
+                    ResultSet resultSet;
+                    resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin_info WHERE admin_password='" + admin_password + "'");
+                    if (resultSet.next()) {
 
-                    //////// email send/////////////////////////////////////////
-                    Admin_SendMailSSL sslsend = new Admin_SendMailSSL();
-                    //admin Alert
-                    sslsend.sendingSSL("Administrator", "Login Status:System Entered!\n\n" + "Username:" + _lb_admi_login_email.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+                        //////// email send/////////////////////////////////////////
+                        Admin_SendMailSSL sslsend = new Admin_SendMailSSL();
+                        //admin Alert
+                        sslsend.sendingSSL("Administrator", "Login Status:System Entered!\n\n" + "Username:" + _lb_admi_login_email.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
 
-                    ////////////////////////////////////////////////////////////
-                    Jf_admin_backend jf_admin_backend = new Jf_admin_backend();
-                    jf_admin_backend.setVisible(true);
+                        ////////////////////////////////////////////////////////////
+                        Jf_admin_backend jf_admin_backend = new Jf_admin_backend();
+                        jf_admin_backend.setVisible(true);
 
 //                    jf_admin_mainFrame frame=new jf_admin_mainFrame();
 //                    frame.setVisible(true);
-                } else {
-                    pf_admin_login_password.setBackground(new Color(244, 67, 54));
-                    JOptionPane.showMessageDialog(this, "Password is Incorrect!");
-                    pf_admin_login_password.selectAll();
+                    } else {
+                        pf_admin_login_password.setBackground(new Color(244, 67, 54));
+                        JOptionPane.showMessageDialog(this, "Password is Incorrect!");
+                        pf_admin_login_password.selectAll();
+
+                        resultSet.close();
+                    }
 
                     resultSet.close();
+                } else{
+                JOptionPane.showMessageDialog(this, pv);
                 }
 
-                resultSet.close();
             } else {
                 pf_admin_login_password.setBackground(new Color(244, 67, 54));
                 tf_admin_login_pin.setBackground(new Color(244, 67, 54));
@@ -671,8 +681,6 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
     }
 
     public void load_image(String email) {
-
-        System.out.println("======##Emais is a pass image: " + email + "  ======");
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://166.62.27.145:3306/salon_test", "deepalsuranga", "WelComeDB1129");
             Statement st = con.createStatement();

@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.private_access.admin.login;
 
+import com.fourgenius.www.admin_BackEnd.Jp_RestroeDataBase;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
@@ -46,7 +47,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
         _jp_admin_login_email = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        lb_loading = new javax.swing.JLabel();
         bt_next = new javax.swing.JButton();
         bt_cancel = new javax.swing.JButton();
         tf_username = new javax.swing.JTextField();
@@ -66,9 +67,9 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(320, 399));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 300, 10));
+        lb_loading.setForeground(new java.awt.Color(255, 255, 255));
+        lb_loading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(lb_loading, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 300, 10));
 
         bt_next.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bt_next.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,12 +254,16 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
 
     private void bt_nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_nextActionPerformed
-        
-        
-        
+
         tf_username.grabFocus();
-        
-        next_method();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                next_method();
+            }
+        }).start();
+
 
     }//GEN-LAST:event_bt_nextActionPerformed
 
@@ -308,7 +313,29 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
         int key = evt.getKeyChar();
         if (key == KeyEvent.VK_ENTER) {
-            next_method();
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    try {
+                        lb_loading.setText("Loading...");
+                        Thread.sleep(2);
+                        lb_loading.setText(null);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+
+                }
+            }).start();
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    next_method();
+                }
+            }).start();
+
         }
         tf_username.setBackground(new Color(255, 255, 255));
 
@@ -347,7 +374,6 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
 
     private void tf_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_usernameActionPerformed
 
-        
 
     }//GEN-LAST:event_tf_usernameActionPerformed
 
@@ -363,8 +389,8 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lb_loading;
     public static javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
 
@@ -374,45 +400,38 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
         String email1 = email;
         Boolean result = email1.matches(EMAIL_REGEX);
         System.out.println("is e-mail: " + email1 + " :Valid = " + result);
-        
+
         return result;
 
     }
 
     private void next_method() {
-        
-        try {
-            jLabel7.setText("Loading...");
-            Thread.sleep(5);
-            jLabel7.setText(null);
-        } catch (InterruptedException ex) {
-        }
+
         if (!tf_username.getText().isEmpty()) {
 
             if ("RE_Administrator".equals(tf_username.getText())) {
                 System.out.println("Recovry Mode is ON");
-                _jp_admin_login_password adminLoginPassword = new _jp_admin_login_password();
+                Jp_RestroeDataBase Restroejp = new Jp_RestroeDataBase();
 
-                if (adminLoginPassword == null) {
-                    adminLoginPassword = new _jp_admin_login_password();
+                if (Restroejp == null) {
+                    Restroejp = new Jp_RestroeDataBase();
                     Jf_admin_login.main_panel.removeAll();
                     Jf_admin_login.main_panel.repaint();
                     Jf_admin_login.main_panel.revalidate();
-                    Jf_admin_login.main_panel.add(adminLoginPassword);
+                    Jf_admin_login.main_panel.add(Restroejp);
                     Jf_admin_login.main_panel.repaint();
                     Jf_admin_login.main_panel.revalidate();
                 } else {
                     Jf_admin_login.main_panel.removeAll();
                     Jf_admin_login.main_panel.repaint();
                     Jf_admin_login.main_panel.revalidate();
-                    Jf_admin_login.main_panel.add(adminLoginPassword);
+                    Jf_admin_login.main_panel.add(Restroejp);
                     Jf_admin_login.main_panel.repaint();
                     Jf_admin_login.main_panel.revalidate();
                 }
                 String ss = tf_username.getText();
 
-                System.out.println("emailllllllllllllllllll:" + ss);
-               
+                System.out.println("Restore Mode : ON");
 
             }
 

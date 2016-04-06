@@ -5,7 +5,6 @@
  */
 package com.fourgenius.www.public_access.registration.student;
 
-import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
 import com.fourgenius.www.public_access.model.student.stu_info_address;
 import com.fourgenius.www.public_access.model.student.stu_info_batch;
 import com.fourgenius.www.public_access.model.student.stu_info_contact;
@@ -68,8 +67,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
 
         _bt_registration_student_preview_register_student.setEnabled(false);
         _tf_registration_student_personalInformation_browsePhoto_browseFile.setEnabled(false);
-        Open_Camera.setVisible(false);
-        Capture_photo.setVisible(false);
+        
     }
 
     public Jp_registration_student_informations(String stu_id) {
@@ -165,6 +163,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         _bt_registration_student_preview_register_student = new javax.swing.JButton();
         _lb_registration_student_preview_city = new javax.swing.JLabel();
         _lb_registration_student_preview_country = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
 
         add_update_delete_Panel.setBackground(new java.awt.Color(66, 66, 66));
         add_update_delete_Panel.setPreferredSize(new java.awt.Dimension(1366, 718));
@@ -808,7 +807,10 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                         .addGroup(jPanel6Layout.createSequentialGroup()
                             .addGap(10, 10, 10)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(49, 49, 49)
+                                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel6Layout.createSequentialGroup()
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
@@ -865,7 +867,9 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(_lb_registration_student_preview_image, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -1208,6 +1212,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private void Open_CameraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Open_CameraActionPerformed
 
         Thread webcam = new Thread() {
+            @Override
             public void run() {
 
                 opencv_highgui.CvCapture capture = opencv_highgui.cvCreateCameraCapture(0);
@@ -1385,6 +1390,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.ButtonGroup stu_info_branch;
     private javax.swing.ButtonGroup stu_info_gender;
     // End of variables declaration//GEN-END:variables
