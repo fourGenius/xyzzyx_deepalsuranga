@@ -746,11 +746,8 @@ public class Jf_user_login extends javax.swing.JFrame {
 
         int key = evt.getKeyChar();
         if (key == KeyEvent.VK_ENTER) {
-            new Thread(() -> {
 
-                login_user_method();
-
-            }).start();
+            login_user_method();
 
             System.gc();
         }
@@ -873,6 +870,7 @@ public class Jf_user_login extends javax.swing.JFrame {
 
                 Jf_UserFront user_menu = new Jf_UserFront(_tf_user_loging_userName.getText());
                 user_menu.setVisible(true);
+
                 new Thread(() -> {
                     User_SendMailSSL usmssl = new User_SendMailSSL();
                     usmssl.sendingSSL(_tf_user_loging_userName.getText().trim(), "User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
@@ -888,7 +886,9 @@ public class Jf_user_login extends javax.swing.JFrame {
 
             rs.close();
         } catch (Exception e) {
+
             e.printStackTrace();
+
         }
 
     }
