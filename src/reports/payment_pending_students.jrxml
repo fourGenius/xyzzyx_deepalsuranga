@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-27T11:40:24 -->
+<!-- 2016-04-04T22:49:06 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="payment_complite_students" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e64fae7f-deb5-4dcf-a9c3-72f1dbec2dcb">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -15,13 +15,18 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NEW_DATAADAPTER.xml"/>
 	<parameter name="course_name" class="java.lang.String"/>
+	<parameter name="batch" class="java.lang.String"/>
+	<parameter name="year" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT student_id,
 	student_name
 FROM student_payment
 WHERE 
 	course = $P{course_name} 
+	and batch= $P{batch} 
+	and `year`= $P{year} 
 	 AND status != 'complete']]>
 	</queryString>
 	<field name="student_id" class="java.lang.String">

@@ -1522,6 +1522,13 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         stu_info_name un = new stu_info_name(_lb_registration_student_preview_studentID.getText(), _tf_registration_student_personalInformations_studentDetails_surName.getText(), _tf_registration_student_personalInformations_studentDetails_firstName.getText(), _tf_registration_student_personalInformations_studentDetails_lastName.getText());
         stu_info_batch bat=new stu_info_batch(_lb_registration_student_preview_studentID.getText(), batch, year, _lb_registration_student_preview_course.getText());
         print_report(_lb_registration_student_preview_studentID.getText());
+    
+        //add library member
+        String addres= _lb_registration_student_preview_lane1.getText()+","+ _lb_registration_student_preview_city.getText()+","+ _lb_registration_student_preview_country.getText();
+        try {
+            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("INSERT INTO lib_member (MID,fName,lName,telephone,address,status) VALUES('"+_lb_registration_student_preview_studentID.getText()+"','"+_tf_registration_student_personalInformations_studentDetails_firstName.getText()+"','"+_tf_registration_student_personalInformations_studentDetails_surName.getText()+"','"+ _lb_registration_student_preview_mobileNumber.getText()+"','"+addres+"','Deactive')");
+        } catch (Exception e) {
+        }
     }
 
     private void check_empty_fields() {

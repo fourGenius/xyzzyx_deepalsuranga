@@ -771,7 +771,7 @@ public class grn extends javax.swing.JPanel {
     }//GEN-LAST:event_payActionPerformed
 
     private void balActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balActionPerformed
-        try {
+         try {
             DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
             MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_grn(id,date,total,time,discount,nettot,supliername,suplierid,bal,payment) values('" + id.getText() + "','" + lb_date_view.getText() + "','" + sub.getText() + "','" + lb_time_date.getText() + "','" + Dis.getText() + "','" + net.getText() + "','" + supliername.getText() + "','" + suplierId.getText() + "','" + bal.getText() + "','" + pay.getText() + "')");
             Date d=new Date();
