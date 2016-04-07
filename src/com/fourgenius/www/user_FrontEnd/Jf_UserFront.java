@@ -517,7 +517,10 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_homeAutomationMouseExited
 
     private void bt_homeAutomationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_homeAutomationActionPerformed
-        // TODO add your handling code here:
+    
+        new Jf_autoMation().setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_bt_homeAutomationActionPerformed
 
     private void bt_onlineExamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_onlineExamMouseEntered

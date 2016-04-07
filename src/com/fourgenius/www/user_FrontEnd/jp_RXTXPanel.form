@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel6" alignment="1" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel6" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel6">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="bd" green="77" red="2" type="rgb"/>
+        </Property>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Default Cursor"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanel3" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jPanel4" max="32767" attributes="0"/>
+                              <Component id="jPanel5" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanel7" pref="540" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel4" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="jPanel7" pref="665" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel3">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cf" green="55" red="2" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Communication Status">
+                  <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jL" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="Jcombo" min="-2" pref="164" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="connect" min="-2" pref="127" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="status" min="-2" pref="74" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="disconnect" min="-2" pref="126" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Sys_sd" min="-2" pref="114" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jL" min="-2" max="-2" attributes="0"/>
+                          <Component id="Sys_sd" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Jcombo" linkSize="6" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="connect" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="status" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="disconnect" linkSize="6" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JComboBox" name="Jcombo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JcomboActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="connect">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Connect"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="connectActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="disconnect">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Disconnect"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="disconnectActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Com Port :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="Sys_sd">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Shut Down"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Sys_sdActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="status">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="port is offline"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel5">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Light Control System">
+                  <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="jL_1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jL_4" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_3" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_6" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_5" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_8" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_7" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec1_led1_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_led1_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec1_led2_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_led2_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec1_led3_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_led3_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec1_led4_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_led4_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec1_led5_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_led5_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec1_led6_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_led6_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jB_sec1_lcs_sd" min="-2" pref="156" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jL_2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jL_10" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_9" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_12" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_11" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_14" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_13" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led1_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led1_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led2_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led2_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led3_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led3_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led4_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led4_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led5_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led5_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led6_on" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led6_off" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jB_sec2_lcs_sd" min="-2" pref="156" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jL_27" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jL_29" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_28" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_31" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_30" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_33" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jL_32" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led1_on1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led1_off1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led2_on1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led2_off1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led3_on1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led3_off1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led4_on1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led4_off1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led5_on1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led5_off1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jB_sec2_led6_on1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led6_off1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jB_sec2_lcs_sd1" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jB_sec1_lcs_sd" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jB_sec1_led1_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jB_sec1_led1_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jB_sec1_led2_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jB_sec1_led2_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jB_sec1_led3_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jB_sec1_led3_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jB_sec1_led4_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jB_sec1_led4_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jL_6" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jB_sec1_led5_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jB_sec1_led5_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jL_3" min="-2" pref="25" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jL_4" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jL_5" min="-2" pref="25" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jB_sec1_led6_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jB_sec1_led6_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
+                                          <Component id="jL_8" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jL_7" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jL_1" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jL_2" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jB_sec2_lcs_sd1" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jB_sec2_led1_on1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jB_sec2_led1_off1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jL_28" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jB_sec2_led2_on1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jB_sec2_led2_off1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jL_29" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jB_sec2_led3_on1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jB_sec2_led3_off1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jL_30" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jB_sec2_led4_on1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jB_sec2_led4_off1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jL_31" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jB_sec2_led5_on1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jB_sec2_led5_off1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jL_32" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jB_sec2_led6_on1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jB_sec2_led6_off1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jL_33" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jL_27" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jB_sec2_lcs_sd" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jB_sec2_led1_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led1_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jL_9" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jB_sec2_led2_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led2_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jL_10" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jB_sec2_led3_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led3_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jL_11" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jB_sec2_led4_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led4_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jL_12" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jB_sec2_led5_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led5_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jL_13" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jB_sec2_led6_on" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jB_sec2_led6_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jL_14" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="jB_sec1_led1_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led1_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led2_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led2_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led3_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led3_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led6_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led6_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led5_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led4_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led4_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_led5_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led1_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led1_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led2_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led2_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led3_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led3_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led4_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led4_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led5_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led5_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led6_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led6_on">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #3"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #4"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #5"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #6"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_12">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #4"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_13">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #5"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_14">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #6"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_11">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #3"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_10">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_9">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_lcs_sd">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LCS Shutdown"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Section 01 :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_lcs_sd">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LCS Shutdown"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_2">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Section 02 :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_lcs_sd1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LCS Shutdown"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_27">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Section 03 :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_28">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_29">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_30">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #3"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_31">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #4"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_32">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #5"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_33">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LED #6"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led6_on1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led6_off1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led5_off1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led5_on1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led4_off1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led4_on1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led3_off1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led3_on1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led2_off1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led2_on1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led1_off1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_led1_on1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Fan Control System">
+                  <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="jL_15" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_fcs_sd" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jL_19" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_fan1_on_off" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                      <Component id="jSlider_sec1_fan1" linkSize="5" min="-2" pref="182" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jL_20" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_fan2_on_off" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jSlider_sec1_fan2" linkSize="5" min="-2" pref="130" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jL_21" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_fan3_on_off" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                                      <Component id="jSlider_sec1_fan3" linkSize="5" min="-2" pref="130" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jL_22" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_fan4_on_off" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                                      <Component id="jSlider_sec1_fan4" linkSize="5" min="-2" pref="130" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
+                              <Component id="jL_17" min="-2" pref="111" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jL_23" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jB_sec2_fan1_on_off" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jSlider_sec2_fan1" linkSize="5" min="-2" pref="160" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                  <Component id="jL_24" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                                  <Component id="jB_sec2_fan2_on_off" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                                  <Component id="jSlider_sec2_fan2" linkSize="5" min="-2" pref="160" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                  <Component id="jL_25" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                                  <Component id="jB_sec2_fan3_on_off" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                                  <Component id="jSlider_sec2_fan3" linkSize="5" min="-2" pref="160" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                  <Component id="jL_26" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                                  <Component id="jB_sec2_fan4_on_off" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                                  <Component id="jSlider_sec2_fan4" linkSize="5" min="-2" pref="160" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="jL_16" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jB_sec2_fcs_sd" min="-2" pref="186" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jL_18" min="-2" pref="95" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jL_16" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jB_sec2_fcs_sd" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="jL_18" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jSlider_sec2_fan1" linkSize="4" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jL_24" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Component id="jB_sec2_fan2_on_off" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jSlider_sec2_fan2" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jL_25" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Component id="jB_sec2_fan3_on_off" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jSlider_sec2_fan3" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jL_26" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Component id="jB_sec2_fan4_on_off" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jSlider_sec2_fan4" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="jB_sec2_fan1_on_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jL_23" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jL_15" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jB_sec1_fcs_sd" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="jL_17" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jSlider_sec1_fan1" linkSize="4" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="jB_sec1_fan1_on_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jL_19" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="jL_20" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jB_sec1_fan2_on_off" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jSlider_sec1_fan2" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jL_21" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="jB_sec1_fan3_on_off" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSlider_sec1_fan3" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jL_22" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="jB_sec1_fan4_on_off" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSlider_sec1_fan4" linkSize="4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jL_19">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fan #1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_21">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fan #3"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_20">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fan #2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_22">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fan #4"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSlider_sec1_fan1">
+              <Properties>
+                <Property name="majorTickSpacing" type="int" value="1"/>
+                <Property name="maximum" type="int" value="5"/>
+                <Property name="paintLabels" type="boolean" value="true"/>
+                <Property name="paintTicks" type="boolean" value="true"/>
+                <Property name="value" type="int" value="0"/>
+                <Property name="valueIsAdjusting" type="boolean" value="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSlider_sec1_fan2">
+              <Properties>
+                <Property name="majorTickSpacing" type="int" value="1"/>
+                <Property name="maximum" type="int" value="5"/>
+                <Property name="paintLabels" type="boolean" value="true"/>
+                <Property name="paintTicks" type="boolean" value="true"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSlider_sec1_fan4">
+              <Properties>
+                <Property name="majorTickSpacing" type="int" value="1"/>
+                <Property name="maximum" type="int" value="5"/>
+                <Property name="paintLabels" type="boolean" value="true"/>
+                <Property name="paintTicks" type="boolean" value="true"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSlider_sec1_fan3">
+              <Properties>
+                <Property name="majorTickSpacing" type="int" value="1"/>
+                <Property name="maximum" type="int" value="5"/>
+                <Property name="paintLabels" type="boolean" value="true"/>
+                <Property name="paintTicks" type="boolean" value="true"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_fan1_on_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON/OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_fan2_on_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON/OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_fan3_on_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON/OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_fan4_on_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON/OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_17">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Speed Controllers"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_23">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fan #1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_fan1_on_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON/OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSlider_sec2_fan1">
+              <Properties>
+                <Property name="majorTickSpacing" type="int" value="1"/>
+                <Property name="maximum" type="int" value="5"/>
+                <Property name="paintLabels" type="boolean" value="true"/>
+                <Property name="paintTicks" type="boolean" value="true"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_18">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Speed Controllers"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSlider_sec2_fan2">
+              <Properties>
+                <Property name="majorTickSpacing" type="int" value="1"/>
+                <Property name="maximum" type="int" value="5"/>
+                <Property name="paintLabels" type="boolean" value="true"/>
+                <Property name="paintTicks" type="boolean" value="true"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSlider_sec2_fan3">
+              <Properties>
+                <Property name="majorTickSpacing" type="int" value="1"/>
+                <Property name="maximum" type="int" value="5"/>
+                <Property name="paintLabels" type="boolean" value="true"/>
+                <Property name="paintTicks" type="boolean" value="true"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSlider_sec2_fan4">
+              <Properties>
+                <Property name="majorTickSpacing" type="int" value="1"/>
+                <Property name="maximum" type="int" value="5"/>
+                <Property name="paintLabels" type="boolean" value="true"/>
+                <Property name="paintTicks" type="boolean" value="true"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_fan4_on_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON/OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_fan3_on_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON/OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_fan2_on_off">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ON/OFF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_24">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fan #2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_25">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fan #3"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_26">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fan #4"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_15">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Section 01 :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec1_fcs_sd">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="FCS Shutdown"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jL_16">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Section 02 :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jB_sec2_fcs_sd">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="FCS Shutdown"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel7">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Camera Viwes">
+                  <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="previwe">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="20" y="60" width="260" height="200"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="previwe2">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="280" y="460" width="250" height="200"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JButton" name="btt_camset">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Trun On CCTV"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btt_camsetActionPerformed"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="410" y="20" width="121" height="31"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cameras">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="0"/>
+                </Property>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="390" y="20" width="10" height="10"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="previwe3">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="280" y="60" width="250" height="200"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="previwe4">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="20" y="260" width="260" height="200"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="previwe5">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="280" y="260" width="250" height="200"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="previwe6">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="20" y="460" width="260" height="200"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
