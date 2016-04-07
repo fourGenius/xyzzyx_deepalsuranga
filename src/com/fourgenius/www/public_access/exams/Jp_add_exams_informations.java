@@ -680,69 +680,6 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         }
     }
 
-    private void add_to_preview_form_update() {
-//        try {
-//            try {
-//                Date d = _dc_registration_lecture_information_form_dob.getDate();
-//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//                String date = sdf.format(d);
-//                _lb_registration_lecture_preview_dateOfBirth.setText(date);
-//
-//                _lb_registration_lecture_preview_lectureID.setText(lecture_id);
-//
-//                try {
-//                    newpath = _tf_registration_lecture_personalInformation_browsePhoto_browseFile.getText().replace("\\", "/");
-//                    File f = new File(newpath);
-//                    Image img = ImageIO.read(f);
-//                    img = img.getScaledInstance(_lb_registration_lecture_preview_image.getWidth(), _lb_registration_lecture_preview_image.getHeight(), Image.SCALE_SMOOTH);
-//                    _lb_registration_lecture_preview_image.setIcon(new ImageIcon(img));
-//                } catch (Exception e) {
-//                    _lb_registration_lecture_preview_image.setIcon(null);
-//                }
-//
-//                sur_name = _tf_add_exam_name.getText();
-//                first_name = _tf_add_exam_course_name.getText();
-//                last_name = _tf_registration_lecture_information_form_last_name.getText();
-//
-//                full_name = first_name + "_" + last_name;
-//
-//                _lb_registration_lecture_preview_name.setText(sur_name + " " + first_name + " " + last_name);
-//
-//                _lb_registration_lecture_preview_nic.setText(_tf_registration_lecture_information_form_nic.getText());
-//
-//                String gender;
-//                if (_rb_registration_lecture_information_form_male.isSelected()) {
-//                    gender = "Male";
-//                } else {
-//                    gender = "Female";
-//                }
-//                _lb_registration_lecture_preview_gender.setText(gender);
-//
-//                String branch;
-//                if (_rb_registration_lecture_information_form_colombo.isSelected()) {
-//                    branch = "Colombo";
-//                } else {
-//                    branch = "Kandy";
-//                }
-//                _lb_registration_lecture_preview_branch.setText(branch);
-//
-//                _lb_registration_lecture_preview_mobileNumber.setText(_tf_registration_lecture_information_form_mobile_number.getText());
-//                _lb_registration_lecture_preview_homeNumber.setText(_tf_registration_lecture_information_form_home_number.getText());
-//                _lb_registration_lecture_preview_eMail.setText(_tf_registration_lecture_information_form_email.getText());
-//                _lb_registration_lecture_preview_address_address_line.setText(_tf_registration_lecture_information_form_address_line.getText());
-//                _lb_registration_lecture_preview_address_city.setText(_tf_registration_lecture_information_form_city.getText());
-//                _lb_registration_lecture_preview_address_country.setText(_tf_registration_lecture_information_form_country.getText());
-//
-//                _bt_registration_lecture_preview_register_lecture.setEnabled(true);
-//            } catch (Exception e) {
-//                JOptionPane.showMessageDialog(this, "Birthday is Empty");
-//            }
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-    }
-
     private void set_data_to_Combo_box() {
         try {
             ResultSet rs;

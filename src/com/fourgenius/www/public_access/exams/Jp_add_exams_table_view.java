@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.public_access.exams;
 
+import static com.fourgenius.www.public_access.exams.Jf_Exams._bt_UserMain_home;
 import static com.fourgenius.www.public_access.exams.Jp_add_exams.Jp_add_exams_main_panel;
 import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_AddExam;
 import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_ExamsDetails;
@@ -45,6 +46,7 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         initComponents();
         _sp_registration_student_searchStudent.setVisible(false);
         _bt_update_exam.setEnabled(false);
+        _bt_update_add_marks.setEnabled(false);
         add_active_table_data();
         add_past_exam_data();
 
@@ -70,6 +72,7 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         _tb_add_exams_view_past_exam_table = new javax.swing.JTable();
         _bt_update_exam = new javax.swing.JButton();
+        _bt_update_add_marks = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -193,6 +196,35 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
             }
         });
         add(_bt_update_exam, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 200, -1));
+
+        _bt_update_add_marks.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_update_add_marks.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_update_add_marks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_update_add_marks.setText("Add Marks");
+        _bt_update_add_marks.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_update_add_marks.setFocusPainted(false);
+        _bt_update_add_marks.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_update_add_marks.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_update_add_marks.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_update_add_marksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_update_add_marksMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_update_add_marksMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_update_add_marksMouseReleased(evt);
+            }
+        });
+        _bt_update_add_marks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_update_add_marksActionPerformed(evt);
+            }
+        });
+        add(_bt_update_add_marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_add_exams_searchExamsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_exams_searchExamsKeyReleased
@@ -306,10 +338,12 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
 
     private void _bt_update_examActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_update_examActionPerformed
         update_selected_lecture();
+        _bt_UserMain_home.setEnabled(false);
     }//GEN-LAST:event__bt_update_examActionPerformed
 
     private void _tb_add_exams_view_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_exams_view_tableMouseClicked
         _bt_update_exam.setEnabled(true);
+        _bt_update_add_marks.setEnabled(true);
     }//GEN-LAST:event__tb_add_exams_view_tableMouseClicked
 
     private void _tb_add_exams_view_past_exam_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_exams_view_past_exam_tableMouseClicked
@@ -327,8 +361,29 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         }
     }//GEN-LAST:event__tp_exams_previewMouseClicked
 
+    private void _bt_update_add_marksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_add_marksMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_update_add_marksMouseEntered
+
+    private void _bt_update_add_marksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_add_marksMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_update_add_marksMouseExited
+
+    private void _bt_update_add_marksMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_add_marksMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_update_add_marksMousePressed
+
+    private void _bt_update_add_marksMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_add_marksMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_update_add_marksMouseReleased
+
+    private void _bt_update_add_marksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_update_add_marksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_update_add_marksActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton _bt_update_add_marks;
     private javax.swing.JButton _bt_update_exam;
     private javax.swing.JList _li_add_exams_searchExams;
     private javax.swing.JScrollPane _sp_registration_student_searchStudent;

@@ -246,7 +246,7 @@ public class Jf_Exams extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jp_userMain_main_panel;
-    private javax.swing.JButton _bt_UserMain_home;
+    public static javax.swing.JButton _bt_UserMain_home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;

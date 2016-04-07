@@ -34,7 +34,7 @@ public class stu_exams_info {
             Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();            
             ResultSet rs = statement.executeQuery("select * from stu_exams_info where stu_exams_info_id='" + stu_exams_info_id + "'");
-            if (rs.next()) {
+            if (rs.next()) {;
                 statement.executeUpdate("update stu_exams_info set stu_exams_info_name='" + stu_exams_info_name + "', stu_exams_info_date='" + stu_exams_info_date + "', stu_exams_info_type='" + stu_exams_info_type + "', stu_exams_info_branch='" + stu_exams_info_branch + "', stu_exams_info_batch='" + stu_exams_info_batch + "', stu_exams_info_course='" + stu_exams_info_course + "' where stu_exams_info_id='" + stu_exams_info_id + "'");
             } else {
                 statement.executeUpdate("insert stu_exams_info(stu_exams_info_id, stu_exams_info_name, stu_exams_info_date, stu_exams_info_type, stu_exams_info_branch, stu_exams_info_batch, stu_exams_info_course) values ('" + stu_exams_info_id + "','" + stu_exams_info_name + "','" + stu_exams_info_date + "','" + stu_exams_info_type + "','" + stu_exams_info_branch + "','" + stu_exams_info_batch + "','" + stu_exams_info_course + "')");

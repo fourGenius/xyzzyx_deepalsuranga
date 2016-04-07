@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.public_access.exams;
 
+import static com.fourgenius.www.public_access.exams.Jf_Exams._bt_UserMain_home;
 import com.fourgenius.www.public_access.registration.lecture.*;
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_informations._tf_registration_lecture_information_form_sur_name;
 import java.awt.Color;
@@ -155,12 +156,14 @@ public class Jp_add_exams extends javax.swing.JPanel {
             load_exam_information_form();
             buttons_enable(_bt_add_exam_AddExam.getText());
             _bt_add_exam_AddExam.setText("Cancel");
+            _bt_UserMain_home.setEnabled(false);
         } else {
             int option = JOptionPane.showConfirmDialog(this, "All Data You Didn't Save is Lost", "Are You Sure?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (option == JOptionPane.YES_OPTION) {
                 load_table_exams_view();
                 _bt_add_exam_AddExam.setText("Add Lecture");
                 _bt_add_exam_ExamsDetails.setEnabled(true);
+                _bt_UserMain_home.setEnabled(true);
             }
 
         }
@@ -262,7 +265,6 @@ public class Jp_add_exams extends javax.swing.JPanel {
     }
 
     public void call_action() {
-
         load_table_exams_view();
     }
 }
