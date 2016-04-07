@@ -6,6 +6,7 @@
 package com.fourgenius.www.public_access.model.student;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -17,21 +18,49 @@ import public_access.MC_JavaDataBaseConnection;
  * @author Dineth Jayasekera
  */
 public class stu_exams_info {
-    private String stu_exams_info_id,stu_exams_info_name;
 
-    public stu_exams_info(String stu_exams_info_id, String stu_exams_info_name) {
+    private String idstu_exams_info,stu_exams_info_id, stu_exams_info_name, stu_exams_info_date, stu_exams_info_type, stu_exams_info_branch, stu_exams_info_batch, stu_exams_info_course;
+
+    public stu_exams_info(String stu_exams_info_id, String stu_exams_info_name, String stu_exams_info_date, String stu_exams_info_type, String stu_exams_info_branch, String stu_exams_info_batch, String stu_exams_info_course) {
         this.stu_exams_info_id = stu_exams_info_id;
         this.stu_exams_info_name = stu_exams_info_name;
-          
+        this.stu_exams_info_date = stu_exams_info_date;
+        this.stu_exams_info_type = stu_exams_info_type;
+        this.stu_exams_info_branch = stu_exams_info_branch;
+        this.stu_exams_info_batch = stu_exams_info_batch;
+        this.stu_exams_info_course = stu_exams_info_course;
+
         try {
-             Connection connection=MC_JavaDataBaseConnection.myConnection();
-            Statement statement = connection.createStatement();
-            statement.executeQuery("insert into stu_exams_info(stu_exams_info_id,stu_exams_info_name) values ('" +stu_exams_info_id + "','" + stu_exams_info_name + "')");
+            Connection connection = MC_JavaDataBaseConnection.myConnection();
+            Statement statement = connection.createStatement();            
+            ResultSet rs = statement.executeQuery("select * from stu_exams_info where stu_exams_info_id='" + stu_exams_info_id + "'");
+            if (rs.next()) {
+                statement.executeUpdate("update stu_exams_info set stu_exams_info_name='" + stu_exams_info_name + "', stu_exams_info_date='" + stu_exams_info_date + "', stu_exams_info_type='" + stu_exams_info_type + "', stu_exams_info_branch='" + stu_exams_info_branch + "', stu_exams_info_batch='" + stu_exams_info_batch + "', stu_exams_info_course='" + stu_exams_info_course + "' where stu_exams_info_id='" + stu_exams_info_id + "'");
+            } else {
+                statement.executeUpdate("insert stu_exams_info(stu_exams_info_id, stu_exams_info_name, stu_exams_info_date, stu_exams_info_type, stu_exams_info_branch, stu_exams_info_batch, stu_exams_info_course) values ('" + stu_exams_info_id + "','" + stu_exams_info_name + "','" + stu_exams_info_date + "','" + stu_exams_info_type + "','" + stu_exams_info_branch + "','" + stu_exams_info_batch + "','" + stu_exams_info_course + "')");
+            }
+            rs.close();
         } catch (SQLException ex) {
             Logger.getLogger(stu_exams_info.class.getName()).log(Level.SEVERE, null, ex);
-        }   
+        }
     }
 
+    public stu_exams_info() {
+    }
+
+    public String getidstu_exams_info(){
+        try {
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            ResultSet rs = s.executeQuery("SELECT COUNT(idstu_exams_info) AS x FROM stu_exams_info");
+            if (rs.next()) {
+                idstu_exams_info = rs.getString("x");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return idstu_exams_info;
+    }
     public String getStu_exams_info_id() {
         return stu_exams_info_id;
     }
@@ -47,5 +76,5 @@ public class stu_exams_info {
     public void setStu_exams_info_name(String stu_exams_info_name) {
         this.stu_exams_info_name = stu_exams_info_name;
     }
-    
+
 }

@@ -5,6 +5,9 @@
  */
 package com.fourgenius.www.public_access.exams;
 
+import static com.fourgenius.www.public_access.exams.Jp_add_exams.Jp_add_exams_main_panel;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_AddExam;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_ExamsDetails;
 import com.fourgenius.www.public_access.registration.lecture.*;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture.Jp_registraion_lecture_main_panel;
@@ -42,8 +45,8 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         initComponents();
         _sp_registration_student_searchStudent.setVisible(false);
         _bt_update_exam.setEnabled(false);
-        _bt_exam_preview.setEnabled(false);
         add_active_table_data();
+        add_past_exam_data();
 
     }
 
@@ -61,9 +64,11 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         _li_add_exams_searchExams = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        _tp_exams_preview = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         _tb_add_exams_view_table = new javax.swing.JTable();
-        _bt_exam_preview = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        _tb_add_exams_view_past_exam_table = new javax.swing.JTable();
         _bt_update_exam = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
@@ -100,6 +105,12 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.CardLayout());
 
+        _tp_exams_preview.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tp_exams_previewMouseClicked(evt);
+            }
+        });
+
         _tb_add_exams_view_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -123,39 +134,36 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(_tb_add_exams_view_table);
 
-        jPanel1.add(jScrollPane1, "card2");
+        _tp_exams_preview.addTab("Active Exams", jScrollPane1);
+
+        _tb_add_exams_view_past_exam_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Exam ID", "Exam Name", "Batch Number", "Course", "Date", "Branch"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        _tb_add_exams_view_past_exam_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tb_add_exams_view_past_exam_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(_tb_add_exams_view_past_exam_table);
+
+        _tp_exams_preview.addTab("Past Exams", jScrollPane2);
+
+        jPanel1.add(_tp_exams_preview, "card2");
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 540));
-
-        _bt_exam_preview.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_exam_preview.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_exam_preview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        _bt_exam_preview.setText("Preview");
-        _bt_exam_preview.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_exam_preview.setFocusPainted(false);
-        _bt_exam_preview.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_exam_preview.setMaximumSize(new java.awt.Dimension(200, 50));
-        _bt_exam_preview.setPreferredSize(new java.awt.Dimension(200, 50));
-        _bt_exam_preview.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_exam_previewMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_exam_previewMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_exam_previewMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_exam_previewMouseReleased(evt);
-            }
-        });
-        _bt_exam_preview.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_exam_previewActionPerformed(evt);
-            }
-        });
-        add(_bt_exam_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, -1, -1));
 
         _bt_update_exam.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_update_exam.setForeground(new java.awt.Color(255, 255, 255));
@@ -189,71 +197,71 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
 
     private void _tf_add_exams_searchExamsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_exams_searchExamsKeyReleased
 
-        try {
-            if (_tf_add_exams_searchExams.getText().isEmpty()) {
-                _sp_registration_student_searchStudent.setVisible(false);
-            } else {
-                String text = _tf_add_exams_searchExams.getText();
-                char first = text.charAt(0);
-                if (Character.isDigit(first)) {
-                    Connection c = MC_JavaDataBaseConnection.myConnection();
-                    Statement s = c.createStatement();
-
-                    ResultSet rs = s.executeQuery("SELECT b.stu_info_name_first_name, b.stu_info_name_last_name FROM stu_info_personal a LEFT JOIN stu_info_name b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_user_info c ON a.stu_user_info_id=c.stu_user_info_id WHERE a.stu_info_personal_nic like '" + _tf_add_exams_searchExams.getText() + "' AND c.stu_user_info_status='1'");
-                    Vector v = new Vector();
-                    while (rs.next()) {
-                        v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
-                    }
-                    rs.close();
-                    _li_add_exams_searchExams.setListData(v);
-                    _sp_registration_student_searchStudent.setVisible(false);
-                    if (_li_add_exams_searchExams.getModel().getSize() == 0) {
-                        _sp_registration_student_searchStudent.setVisible(false);
-                    } else {
-                        _sp_registration_student_searchStudent.setVisible(true);
-                    }
-                    if (evt.getKeyCode() == 40) {
-                        _sp_registration_student_searchStudent.setVisible(true);
-                        _li_add_exams_searchExams.grabFocus();
-                    }
-                } else {
-                    try {
-
-                        if (_tf_add_exams_searchExams.getText().isEmpty()) {
-                            _sp_registration_student_searchStudent.setVisible(false);
-                        } else {
-                            Connection c = MC_JavaDataBaseConnection.myConnection();
-                            Statement s = c.createStatement();
-
-                            ResultSet rs = s.executeQuery("SELECT b.stu_info_name_first_name, b.stu_info_name_last_name FROM stu_info_personal a LEFT JOIN stu_info_name b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_user_info c ON a.stu_user_info_id=c.stu_user_info_id WHERE CONCAT (b.stu_info_name_first_name, ' ', b.stu_info_name_last_name) like '" + _tf_add_exams_searchExams.getText() + "%' AND c.stu_user_info_status='1'");
-                            Vector v = new Vector();
-                            while (rs.next()) {
-                                v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
-                            }
-                            rs.close();
-                            _li_add_exams_searchExams.setListData(v);
-                            _sp_registration_student_searchStudent.setVisible(false);
-                            if (_li_add_exams_searchExams.getModel().getSize() == 0) {
-                                _sp_registration_student_searchStudent.setVisible(false);
-                            } else {
-                                _sp_registration_student_searchStudent.setVisible(true);
-                            }
-                        }
-                        if (evt.getKeyCode() == 40) {
-                            _sp_registration_student_searchStudent.setVisible(true);
-                            _li_add_exams_searchExams.grabFocus();
-                        }
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            if (_tf_add_exams_searchExams.getText().isEmpty()) {
+//                _sp_registration_student_searchStudent.setVisible(false);
+//            } else {
+//                String text = _tf_add_exams_searchExams.getText();
+//                char first = text.charAt(0);
+//                if (Character.isDigit(first)) {
+//                    Connection c = MC_JavaDataBaseConnection.myConnection();
+//                    Statement s = c.createStatement();
+//
+//                    ResultSet rs = s.executeQuery("SELECT b.stu_info_name_first_name, b.stu_info_name_last_name FROM stu_info_personal a LEFT JOIN stu_info_name b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_user_info c ON a.stu_user_info_id=c.stu_user_info_id WHERE a.stu_info_personal_nic like '" + _tf_add_exams_searchExams.getText() + "' AND c.stu_user_info_status='1'");
+//                    Vector v = new Vector();
+//                    while (rs.next()) {
+//                        v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
+//                    }
+//                    rs.close();
+//                    _li_add_exams_searchExams.setListData(v);
+//                    _sp_registration_student_searchStudent.setVisible(false);
+//                    if (_li_add_exams_searchExams.getModel().getSize() == 0) {
+//                        _sp_registration_student_searchStudent.setVisible(false);
+//                    } else {
+//                        _sp_registration_student_searchStudent.setVisible(true);
+//                    }
+//                    if (evt.getKeyCode() == 40) {
+//                        _sp_registration_student_searchStudent.setVisible(true);
+//                        _li_add_exams_searchExams.grabFocus();
+//                    }
+//                } else {
+//                    try {
+//
+//                        if (_tf_add_exams_searchExams.getText().isEmpty()) {
+//                            _sp_registration_student_searchStudent.setVisible(false);
+//                        } else {
+//                            Connection c = MC_JavaDataBaseConnection.myConnection();
+//                            Statement s = c.createStatement();
+//
+//                            ResultSet rs = s.executeQuery("SELECT b.stu_info_name_first_name, b.stu_info_name_last_name FROM stu_info_personal a LEFT JOIN stu_info_name b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_user_info c ON a.stu_user_info_id=c.stu_user_info_id WHERE CONCAT (b.stu_info_name_first_name, ' ', b.stu_info_name_last_name) like '" + _tf_add_exams_searchExams.getText() + "%' AND c.stu_user_info_status='1'");
+//                            Vector v = new Vector();
+//                            while (rs.next()) {
+//                                v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
+//                            }
+//                            rs.close();
+//                            _li_add_exams_searchExams.setListData(v);
+//                            _sp_registration_student_searchStudent.setVisible(false);
+//                            if (_li_add_exams_searchExams.getModel().getSize() == 0) {
+//                                _sp_registration_student_searchStudent.setVisible(false);
+//                            } else {
+//                                _sp_registration_student_searchStudent.setVisible(true);
+//                            }
+//                        }
+//                        if (evt.getKeyCode() == 40) {
+//                            _sp_registration_student_searchStudent.setVisible(true);
+//                            _li_add_exams_searchExams.grabFocus();
+//                        }
+//
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
     }//GEN-LAST:event__tf_add_exams_searchExamsKeyReleased
@@ -280,26 +288,6 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         search_lecture();
     }//GEN-LAST:event__li_add_exams_searchExamsMouseClicked
 
-    private void _bt_exam_previewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_exam_previewMouseEntered
-        _bt_exam_preview.setBorder(border);
-    }//GEN-LAST:event__bt_exam_previewMouseEntered
-
-    private void _bt_exam_previewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_exam_previewMouseExited
-        _bt_exam_preview.setBorder(null);
-    }//GEN-LAST:event__bt_exam_previewMouseExited
-
-    private void _bt_exam_previewMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_exam_previewMousePressed
-        _bt_exam_preview.setBorder(null);
-    }//GEN-LAST:event__bt_exam_previewMousePressed
-
-    private void _bt_exam_previewMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_exam_previewMouseReleased
-        _bt_exam_preview.setBorder(border);
-    }//GEN-LAST:event__bt_exam_previewMouseReleased
-
-    private void _bt_exam_previewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_exam_previewActionPerformed
-        add_preview_form();
-    }//GEN-LAST:event__bt_exam_previewActionPerformed
-
     private void _bt_update_examMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_examMouseEntered
         _bt_update_exam.setBorder(border);
     }//GEN-LAST:event__bt_update_examMouseEntered
@@ -322,42 +310,59 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
 
     private void _tb_add_exams_view_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_exams_view_tableMouseClicked
         _bt_update_exam.setEnabled(true);
-        _bt_exam_preview.setEnabled(true);
     }//GEN-LAST:event__tb_add_exams_view_tableMouseClicked
+
+    private void _tb_add_exams_view_past_exam_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_exams_view_past_exam_tableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tb_add_exams_view_past_exam_tableMouseClicked
+
+    private void _tp_exams_previewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tp_exams_previewMouseClicked
+        int index=_tp_exams_preview.getSelectedIndex();
+        if (index==1) {
+            _bt_update_exam.setEnabled(false);
+            _tb_add_exams_view_table.setSelectionMode(0);
+        }else{
+            _bt_update_exam.setEnabled(false);
+            _tb_add_exams_view_past_exam_table.setSelectionMode(0);
+        }
+    }//GEN-LAST:event__tp_exams_previewMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton _bt_exam_preview;
     private javax.swing.JButton _bt_update_exam;
     private javax.swing.JList _li_add_exams_searchExams;
     private javax.swing.JScrollPane _sp_registration_student_searchStudent;
+    private javax.swing.JTable _tb_add_exams_view_past_exam_table;
     private javax.swing.JTable _tb_add_exams_view_table;
     private javax.swing.JTextField _tf_add_exams_searchExams;
+    private javax.swing.JTabbedPane _tp_exams_preview;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
     private void add_active_table_data() {
-//        try {
-//            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_lecture_view_active.getModel();
-//
-//            Connection c = MC_JavaDataBaseConnection.myConnection();
-//            Statement s = c.createStatement();
-//            String search_query = "SELECT a.employee_academic_user_id, a.employee_academic_user_email, b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name, c.employee_academic_user_info_personal_nic, d.employee_academic_user_info_contact_mobile FROM employee_academic_user_info a,   employee_academic_user_info_name b, employee_academic_user_info_personal c, employee_academic_user_info_contact d WHERE a.employee_academic_user_id=b.employee_academic_user_id AND a.employee_academic_user_id=c.employee_academic_user_id AND a.employee_academic_user_id=d.employee_academic_user_id AND a.employee_academic_user_info_status >= '1'";
-//            ResultSet rs = s.executeQuery(search_query);
-//            while (rs.next()) {
-//                Vector v = new Vector();
-//                v.add(rs.getString("employee_academic_user_id"));
-//                v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
-//                v.add(rs.getString("employee_academic_user_info_personal_nic"));
-//                v.add(rs.getString("employee_academic_user_email"));
-//                v.add(rs.getString("employee_academic_user_info_contact_mobile"));
-//                dtm.addRow(v);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_exams_view_table.getModel();
+
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            String search_query = "SELECT stu_exams_info_id,stu_exams_info_name,stu_exams_info_date,stu_exams_info_branch,stu_exams_info_batch,stu_exams_info_course FROM stu_exams_info WHERE stu_exams_info_type = '1'";
+            ResultSet rs = s.executeQuery(search_query);
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString("stu_exams_info_id"));
+                v.add(rs.getString("stu_exams_info_name"));
+                v.add(rs.getString("stu_exams_info_batch"));
+                v.add(rs.getString("stu_exams_info_course"));
+                v.add(rs.getString("stu_exams_info_date"));
+                v.add(rs.getString("stu_exams_info_branch"));
+                dtm.addRow(v);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void search_lecture() {
@@ -385,57 +390,54 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
     }
 
     private void update_selected_lecture() {
-//        try {
-//            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_lecture_view_active.getModel();
-//            int row = _tb_registration_lecture_view_active.getSelectedRow();
-//            String lec_id = dtm.getValueAt(row, 0).toString();
-//
-//            Jp_registration_lecture_informations register_lecture = new Jp_registration_lecture_informations(lec_id);
-//            if (register_lecture == null) {
-//                Jp_registraion_lecture_main_panel.removeAll();
-//                revalidate();
-//                register_lecture = new Jp_registration_lecture_informations(lec_id);
-//                register_lecture.setVisible(true);
-//                Jp_registraion_lecture_main_panel.add(register_lecture);
-//                revalidate();
-//            } else {
-//                Jp_registraion_lecture_main_panel.removeAll();
-//                revalidate();
-//                register_lecture.setVisible(true);
-//                Jp_registraion_lecture_main_panel.add(register_lecture);
-//                revalidate();
-//            }
-//            _bt_registraion_lecture_buttons_add_lecture.setText("Cancel");
-//            _bt_registraion_lecture_buttons_preview_lecture.setEnabled(false);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_exams_view_table.getModel();
+            int row = _tb_add_exams_view_table.getSelectedRow();
+            String exm_id = dtm.getValueAt(row, 0).toString();
+
+            Jp_add_exams_informations update_exam = new Jp_add_exams_informations(exm_id);
+            if (update_exam == null) {
+                Jp_add_exams_main_panel.removeAll();
+                revalidate();
+                update_exam = new Jp_add_exams_informations(exm_id);
+                update_exam.setVisible(true);
+                Jp_add_exams_main_panel.add(update_exam);
+                revalidate();
+            } else {
+                Jp_add_exams_main_panel.removeAll();
+                revalidate();
+                update_exam.setVisible(true);
+                Jp_add_exams_main_panel.add(update_exam);
+                revalidate();
+            }
+            _bt_add_exam_AddExam.setText("Cancel");
+            _bt_add_exam_ExamsDetails.setEnabled(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    private void add_preview_form() {
-//        try {
-//            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_lecture_view_active.getModel();
-//            int row = _tb_registration_lecture_view_active.getSelectedRow();
-//            String lec_id = dtm.getValueAt(row, 0).toString();
-//
-//            Jp_registration_lecture_preview lecture_preview = new Jp_registration_lecture_preview(lec_id);
-//            if (lecture_preview == null) {
-//                Jp_registraion_lecture_main_panel.removeAll();
-//                revalidate();
-//                lecture_preview = new Jp_registration_lecture_preview(lec_id);
-//                lecture_preview.setVisible(true);
-//                Jp_registraion_lecture_main_panel.add(lecture_preview);
-//                revalidate();
-//            } else {
-//                Jp_registraion_lecture_main_panel.removeAll();
-//                revalidate();
-//                lecture_preview.setVisible(true);
-//                Jp_registraion_lecture_main_panel.add(lecture_preview);
-//                revalidate();
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+    private void add_past_exam_data() {
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_exams_view_past_exam_table.getModel();
+
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            String search_query = "SELECT stu_exams_info_id,stu_exams_info_name,stu_exams_info_date,stu_exams_info_branch,stu_exams_info_batch,stu_exams_info_course FROM stu_exams_info WHERE stu_exams_info_type = '0'";
+            ResultSet rs = s.executeQuery(search_query);
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString("stu_exams_info_id"));
+                v.add(rs.getString("stu_exams_info_name"));
+                v.add(rs.getString("stu_exams_info_batch"));
+                v.add(rs.getString("stu_exams_info_course"));
+                v.add(rs.getString("stu_exams_info_date"));
+                v.add(rs.getString("stu_exams_info_branch"));
+                dtm.addRow(v);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

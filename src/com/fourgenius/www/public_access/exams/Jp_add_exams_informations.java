@@ -5,12 +5,20 @@
  */
 package com.fourgenius.www.public_access.exams;
 
+import static com.fourgenius.www.public_access.exams.Jp_add_exams.Jp_add_exams_main_panel;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_AddExam;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_ExamsDetails;
 import com.fourgenius.www.public_access.registration.lecture.*;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_address;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_contact;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_personal;
+import com.fourgenius.www.public_access.model.student.stu_exams_info;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.Jp_registraion_stu_main_panel;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student._bt_add_student;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student._bt_student_details;
+import com.fourgenius.www.public_access.registration.student.Jp_registration_student_c_layout;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._lb_registration_student_preview_course;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._lb_registration_student_preview_dateOfBirth;
 import com.fourgenius.www.public_access.registration.student.user_image_copy;
@@ -53,7 +61,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     public String sur_name, first_name, last_name;
 
 //  Create variable for pass to qulification form
-    public String lecture_id;
+    public String exam_id;
     public int id_no;
     public String branch_name;
     public String full_name;
@@ -72,6 +80,18 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
 //      Set min selectable date for validate date of birth
         Date d = Calendar.getInstance().getTime();
         _dc_add_exam_examDate.setMinSelectableDate(d);
+        _bt_add_exam_preview_addExam.setEnabled(false);
+    }
+
+    public Jp_add_exams_informations(String ex_id) {
+        initComponents();
+        set_data_to_Combo_box();
+        exam_id = ex_id;
+        load_form_data(ex_id);
+        Date d = Calendar.getInstance().getTime();
+        _dc_add_exam_examDate.setMinSelectableDate(d);
+        _bt_add_exam_preview_addExam.setText("Update Exam");
+        _bt_add_exam_preview.setText("Preview Update");
         _bt_add_exam_preview_addExam.setEnabled(false);
     }
 
@@ -445,26 +465,17 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
                 int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (option == JOptionPane.YES_OPTION) {
                     add_to_database();
-                    clear_personal_information_form();
-                    clear_preview_form();
-                    _bt_add_exam_preview.setEnabled(false);
+                    load_table_view();
+                    _bt_add_exam_AddExam.setText("Add Student");
+                    _bt_add_exam_ExamsDetails.setEnabled(true);
                 }
             } else {
                 int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (option == JOptionPane.YES_OPTION) {
                     add_to_database();
-                    clear_personal_information_form();
-                    clear_preview_form();
-
-                    Connection c = MC_JavaDataBaseConnection.myConnection();
-                    Statement s = c.createStatement();
-                    ResultSet rs_fileid = s.executeQuery("SELECT employee_academic_user_info_qulifications_file_id FROM employee_academic_user_info_qulifications WHERE employee_academic_user_id='" + lecture_id + "'");
-                    if (rs_fileid.next()) {
-                        String fileid = rs_fileid.getString("employee_academic_user_info_qulifications_file_id");
-                        load_information_qulifications_update_form(fileid);
-                        _bt_add_exam_preview.setVisible(false);
-                        _bt_add_exam_preview_addExam.setEnabled(false);
-                    }
+                    load_table_view();
+                    _bt_add_exam_AddExam.setText("Add Student");
+                    _bt_add_exam_ExamsDetails.setEnabled(true);
                 }
             }
         } catch (Exception e) {
@@ -599,10 +610,10 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     private void generate_exam_id() {
 
         String id = "ID";
-        String lc = "EXM";
+        String ex = "EXM";
 
-        employee_academic_user_info user_info = new employee_academic_user_info();
-        String countid = user_info.getIdemployee_academic_user();
+        stu_exams_info exam_info = new stu_exams_info();
+        String countid = exam_info.getidstu_exams_info();
         int idcount = Integer.parseInt(countid);
         id_no = ++idcount;
 
@@ -632,112 +643,41 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
             branch_name = "KAN";
         }
 
-        lecture_id = id + "-" + lc + "-" + branch_name + "-" + zeros + id_no;
-        _lb_add_exam_preview_examID.setText(lecture_id);
+        exam_id = id + "-" + ex + "-" + branch_name + "-" + zeros + id_no;
+        _lb_add_exam_preview_examID.setText(exam_id);
 
     }
 
     private void add_to_database() {
-//        employee_academic_user_info user_info = new employee_academic_user_info(_lb_add_exam_preview_examID.getText(), _lb_registration_lecture_preview_eMail.getText(), "1");
-//
-//        employee_academic_user_info_address user_info_address = new employee_academic_user_info_address(_lb_add_exam_preview_examID.getText(), _lb_registration_lecture_preview_address_address_line.getText(), _lb_registration_lecture_preview_address_city.getText(), _lb_registration_lecture_preview_address_country.getText());
-//
-//        employee_academic_user_info_contact user_info_contact = new employee_academic_user_info_contact(_lb_add_exam_preview_examID.getText(), _lb_registration_lecture_preview_mobileNumber.getText(), _lb_registration_lecture_preview_homeNumber.getText(), _lb_registration_lecture_preview_eMail.getText());
-//
-//        employee_academic_user_info_name user_info_name = new employee_academic_user_info_name(_lb_add_exam_preview_examID.getText(), sur_name, first_name, last_name);
-//
-//        employee_academic_user_info_personal user_info_personal = new employee_academic_user_info_personal(_lb_add_exam_preview_examID.getText(), newpath, _lb_registration_lecture_preview_dateOfBirth.getText(), _lb_registration_lecture_preview_gender.getText(), _lb_registration_lecture_preview_nic.getText(), _lb_registration_lecture_preview_branch.getText());
-    }
-
-    private void clear_personal_information_form() {
-//        _tf_add_exam_name.setText(null);
-//        _tf_add_exam_course_name.setText(null);
-//        _tf_registration_lecture_information_form_last_name.setText(null);
-//        _tf_registration_lecture_information_form_nic.setText(null);
-//        _dc_registration_lecture_information_form_dob.setDate(null);
-//        _rb_registration_lecture_information_form_male.setSelected(true);
-//        _rb_registration_lecture_information_form_colombo.setSelected(true);
-//        _tf_registration_lecture_information_form_mobile_number.setText(null);
-//        _tf_registration_lecture_information_form_home_number.setText(null);
-//        _tf_registration_lecture_information_form_email.setText(null);
-//        _tf_registration_lecture_information_form_address_line.setText(null);
-//        _tf_registration_lecture_information_form_city.setText(null);
-//        _tf_registration_lecture_information_form_country.setText(null);
-//        _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText("Browse Photo");
-
-    }
-
-    private void clear_preview_form() {
-//        _lb_add_exam_preview_examID.setText(null);
-//        _lb_registration_lecture_preview_name.setText(null);
-//        _lb_registration_lecture_preview_nic.setText(null);
-//        _lb_registration_lecture_preview_dateOfBirth.setText(null);
-//        _lb_registration_lecture_preview_gender.setText(null);
-//        _lb_registration_lecture_preview_branch.setText(null);
-//        _lb_registration_lecture_preview_mobileNumber.setText(null);
-//        _lb_registration_lecture_preview_homeNumber.setText(null);
-//        _lb_registration_lecture_preview_eMail.setText(null);
-//        _lb_registration_lecture_preview_address_address_line.setText(null);
-//        _lb_registration_lecture_preview_address_city.setText(null);
-//        _lb_registration_lecture_preview_address_country.setText(null);
-//        _lb_registration_lecture_preview_image.setIcon(null);
+        stu_exams_info exam_info = new stu_exams_info(_lb_add_exam_preview_examID.getText(), _lb_add_exam_preview_name.getText(), _lb_add_exam_preview_date.getText(), "1", _lb_add_exam_preview_branch.getText(), _lb_add_exam_preview_batach_number.getText(), _lb_add_exam_preview_course.getText());
     }
 
     private void load_form_data(String id) {
-//        try {
-//            Connection c = MC_JavaDataBaseConnection.myConnection();
-//            Statement s = c.createStatement();
-//
-//            ResultSet rs_name = s.executeQuery("SELECT * FROM employee_academic_user_info_name WHERE employee_academic_user_id='" + id + "'");
-//            if (rs_name.next()) {
-//                _tf_add_exam_name.setText(rs_name.getString("employee_academic_user_info_name_surName"));
-//                _tf_add_exam_course_name.setText(rs_name.getString("employee_academic_user_info_name_first_name"));
-//                _tf_registration_lecture_information_form_last_name.setText(rs_name.getString("employee_academic_user_info_name_last_name"));
-//            }
-//
-//            ResultSet rs_personal = s.executeQuery("SELECT * FROM employee_academic_user_info_personal WHERE employee_academic_user_id='" + id + "'");
-//            if (rs_personal.next()) {
-//                _tf_registration_lecture_information_form_nic.setText(rs_personal.getString("employee_academic_user_info_personal_nic"));
-//                _dc_registration_lecture_information_form_dob.setDate(rs_personal.getDate("employee_academic_user_info_personal_dob"));
-//
-//                String gender = rs_personal.getString("employee_academic_user_info_personal_gender");
-//                if (gender.equals("Male")) {
-//                    _rb_registration_lecture_information_form_male.setSelected(true);
-//                } else {
-//                    _rb_registration_lecture_information_form_female.setSelected(true);
-//                }
-//
-//                String branch = rs_personal.getString("employee_academic_user_info_personal_branch");
-//                if (branch.equals("Colombo")) {
-//                    _rb_registration_lecture_information_form_colombo.setSelected(true);
-//                } else {
-//                    _rb_registration_lecture_information_form_kandy.setSelected(true);
-//                }
-//
-////                _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText(rs_personal.getString("employee_academic_user_info_personal_profile_image"));
-//                String pic = rs_personal.getString("employee_academic_user_info_personal_profile_image");
-//                String picpath = pic.replace("/", "\\");
-//                _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText(picpath);
-//
-//            }
-//
-//            ResultSet rs_contact = s.executeQuery("SELECT * FROM employee_academic_user_info_contact WHERE employee_academic_user_id='" + id + "'");
-//            if (rs_contact.next()) {
-//                _tf_registration_lecture_information_form_mobile_number.setText(rs_contact.getString("employee_academic_user_info_contact_mobile"));
-//                _tf_registration_lecture_information_form_home_number.setText(rs_contact.getString("employee_academic_user_info_contact_land"));
-//                _tf_registration_lecture_information_form_email.setText(rs_contact.getString("employee_academic_user_info_contact_email"));
-//            }
-//
-//            ResultSet rs_address = s.executeQuery("SELECT * FROM employee_academic_user_info_address WHERE employee_academic_user_id='" + id + "'");
-//            if (rs_address.next()) {
-//                _tf_registration_lecture_information_form_address_line.setText(rs_address.getString("employee_academic_user_info_address_lane1"));
-//                _tf_registration_lecture_information_form_city.setText(rs_address.getString("employee_academic_user_info_address_city"));
-//                _tf_registration_lecture_information_form_country.setText(rs_address.getString("employee_academic_user_info_address_cuntry"));
-//            }
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+
+            ResultSet rs_info = s.executeQuery("SELECT * FROM stu_exams_info WHERE stu_exams_info_id='" + id + "'");
+            if (rs_info.next()) {
+                _tf_add_exam_name.setText(rs_info.getString("stu_exams_info_name"));
+                _tf_add_batch_number.setText(rs_info.getString("stu_exams_info_batch"));
+
+                String course = rs_info.getString("stu_exams_info_course");
+                _cb_add_exam_course.setSelectedItem(course);
+
+                _dc_add_exam_examDate.setDate(rs_info.getDate("stu_exams_info_date"));
+
+                String branch = rs_info.getString("stu_exams_info_branch");
+                if (branch.equals("Colombo")) {
+                    _rb_add_exam_colombo.setSelected(true);
+                } else {
+                    _rb_add_exam_kandy.setSelected(true);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void add_to_preview_form_update() {
@@ -803,27 +743,6 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
 //        }
     }
 
-    private void load_information_qulifications_update_form(String file_id) {
-        Jp_registration_lecture_informations_qulifications_form qform = new Jp_registration_lecture_informations_qulifications_form(file_id, lecture_id);
-
-        if (qform == null) {
-            qform = new Jp_registration_lecture_informations_qulifications_form(file_id, lecture_id);
-            _pl_add_exams_examInformation_main_panel.removeAll();
-            _pl_add_exams_examInformation_main_panel.repaint();
-            _pl_add_exams_examInformation_main_panel.revalidate();
-            _pl_add_exams_examInformation_main_panel.add(qform);
-            _pl_add_exams_examInformation_main_panel.repaint();
-            _pl_add_exams_examInformation_main_panel.revalidate();
-        } else {
-            _pl_add_exams_examInformation_main_panel.removeAll();
-            _pl_add_exams_examInformation_main_panel.repaint();
-            _pl_add_exams_examInformation_main_panel.revalidate();
-            _pl_add_exams_examInformation_main_panel.add(qform);
-            _pl_add_exams_examInformation_main_panel.repaint();
-            _pl_add_exams_examInformation_main_panel.revalidate();
-        }
-    }
-
     private void set_data_to_Combo_box() {
         try {
             ResultSet rs;
@@ -852,6 +771,62 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     }
 
     private void check_update_empty_fields() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (!_tf_add_exam_name.getText().isEmpty()) {
+            if (!_tf_add_batch_number.getText().isEmpty()) {
+                add_to_update_preview_form();
+            } else {
+                JOptionPane.showMessageDialog(this, "Batch Number is Empty");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Exam Name is Empty!");
+        }
+    }
+
+    private void load_table_view() {
+        Jp_add_exams_table_view table_preview = new Jp_add_exams_table_view();
+        if (table_preview == null) {
+            Jp_add_exams_main_panel.removeAll();
+            revalidate();
+            table_preview = new Jp_add_exams_table_view();
+            table_preview.setVisible(true);
+            Jp_add_exams_main_panel.add(table_preview);
+            revalidate();
+        } else {
+            Jp_add_exams_main_panel.removeAll();
+            revalidate();
+            table_preview.setVisible(true);
+            Jp_add_exams_main_panel.add(table_preview);
+            revalidate();
+        }
+    }
+
+    private void add_to_update_preview_form() {
+        try {
+            try {
+                _lb_add_exam_preview_examID.setText(exam_id);
+                _lb_add_exam_preview_name.setText(_tf_add_exam_name.getText());
+                _lb_add_exam_preview_batach_number.setText(_tf_add_batch_number.getText());
+                _lb_add_exam_preview_course.setText((String) _cb_add_exam_course.getSelectedItem());
+                Date d = _dc_add_exam_examDate.getDate();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                String date = sdf.format(d);
+                _lb_add_exam_preview_date.setText(date);
+
+                String branch;
+                if (_rb_add_exam_colombo.isSelected()) {
+                    branch = "Colombo";
+                } else {
+                    branch = "Kandy";
+                }
+                _lb_add_exam_preview_branch.setText(branch);
+
+                _bt_add_exam_preview_addExam.setEnabled(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Birthday is Empty");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
