@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.public_access.exams;
 
+import static com.fourgenius.www.public_access.exams.Jf_Exams._bt_UserMain_home;
 import static com.fourgenius.www.public_access.exams.Jp_add_exams.Jp_add_exams_main_panel;
 import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_AddExam;
 import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_ExamsDetails;
@@ -14,6 +15,7 @@ import com.fourgenius.www.public_access.model.academic_employee.employee_academi
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_contact;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_personal;
+import com.fourgenius.www.public_access.model.student.stu_exam_result;
 import com.fourgenius.www.public_access.model.student.stu_exams_info;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student.Jp_registraion_stu_main_panel;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student._bt_add_student;
@@ -36,6 +38,7 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Vector;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -43,6 +46,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -54,6 +58,7 @@ public class Jp_add_exams_student_marks extends javax.swing.JPanel {
 //  Set Button Border Collor
     Border border = BorderFactory.createLineBorder(Color.white, 1);
 
+    String batch, course, branch;
     /**
      * d
      * Creates new form registration_lecture
@@ -64,9 +69,26 @@ public class Jp_add_exams_student_marks extends javax.swing.JPanel {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
+        _bt_student_marks_add_marks.setEnabled(false);
 //      Set min selectable date for validate date of birth
         Date d = Calendar.getInstance().getTime();
-        _bt_add_exam_preview_addExam.setEnabled(false);
+        _bt_save.setEnabled(false);
+    }
+
+    public Jp_add_exams_student_marks(String bat, String cour, String bran, String exam_id, String exam_name) {
+        batch = bat;
+        course = cour;
+        branch = bran;
+        initComponents();
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (Exception ex) {
+        }
+        _lb_set_exam_ID.setText(exam_id);
+        _lb_set_exam_name.setText(exam_name);
+        _bt_student_marks_add_marks.setEnabled(false);
+        _bt_save.setEnabled(false);
+        add_table_data(bat, cour, bran);
     }
 
     /**
@@ -81,45 +103,48 @@ public class Jp_add_exams_student_marks extends javax.swing.JPanel {
         _bg_registration_lecture_personalInformations_employeeDetails_acadamy = new javax.swing.ButtonGroup();
         _bg_registration_lecture_personalInformations_employeeDetails_gender = new javax.swing.ButtonGroup();
         _bg_registration_lecture_personalInformation_employeeDetails_branch = new javax.swing.ButtonGroup();
-        _pl_add_exams_examInformation_main_panel = new javax.swing.JPanel();
+        _pl_student_details = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         _tb_add_marks_students = new javax.swing.JTable();
         _pl_add_exam_examInformation_preview = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        _lb_add_exam_preview_examID = new javax.swing.JLabel();
+        _lb_marks_student_id = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        _lb_add_exam_preview_name = new javax.swing.JLabel();
+        _lb_marks_student_name = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        _lb_add_exam_preview_course = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        _lb_add_exam_preview_date = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        _lb_add_exam_preview_branch = new javax.swing.JLabel();
-        _bt_add_exam_preview_addExam = new javax.swing.JButton();
+        _lb_marks_result = new javax.swing.JLabel();
+        _bt_save = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        _lb_add_exam_preview_batach_number = new javax.swing.JLabel();
+        _lb_marks_marks = new javax.swing.JLabel();
+        _bt_student_marks_add_marks = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        _lb_set_exam_name = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        _lb_set_exam_ID = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setMinimumSize(new java.awt.Dimension(1366, 718));
         setPreferredSize(new java.awt.Dimension(1366, 718));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        _pl_add_exams_examInformation_main_panel.setBorder(javax.swing.BorderFactory.createTitledBorder("Students"));
-        _pl_add_exams_examInformation_main_panel.setMaximumSize(new java.awt.Dimension(32767, 695));
-        _pl_add_exams_examInformation_main_panel.setMinimumSize(new java.awt.Dimension(0, 695));
-        _pl_add_exams_examInformation_main_panel.setPreferredSize(new java.awt.Dimension(815, 695));
-        _pl_add_exams_examInformation_main_panel.setLayout(new java.awt.CardLayout());
+        _pl_student_details.setBorder(javax.swing.BorderFactory.createTitledBorder("Students"));
+        _pl_student_details.setMaximumSize(new java.awt.Dimension(32767, 695));
+        _pl_student_details.setMinimumSize(new java.awt.Dimension(0, 695));
+        _pl_student_details.setPreferredSize(new java.awt.Dimension(815, 695));
+        _pl_student_details.setLayout(new java.awt.CardLayout());
 
         _tb_add_marks_students.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Student ID", "Student Name", "Batch", "Course", "Branch"
+                "Student ID", "Student Name", "Batch", "Course", "Mark"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -133,9 +158,9 @@ public class Jp_add_exams_student_marks extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(_tb_add_marks_students);
 
-        _pl_add_exams_examInformation_main_panel.add(jScrollPane1, "card2");
+        _pl_student_details.add(jScrollPane1, "card2");
 
-        add(_pl_add_exams_examInformation_main_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 810, 610));
+        add(_pl_student_details, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 810, 550));
 
         _pl_add_exam_examInformation_preview.setBackground(new java.awt.Color(117, 117, 117));
         _pl_add_exam_examInformation_preview.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Preview", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -144,58 +169,46 @@ public class Jp_add_exams_student_marks extends javax.swing.JPanel {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Student ID");
 
-        _lb_add_exam_preview_examID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_marks_student_id.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Student Name");
 
-        _lb_add_exam_preview_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_marks_student_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Result");
 
-        _lb_add_exam_preview_course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_marks_result.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Exam Date");
-
-        _lb_add_exam_preview_date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Branch");
-
-        _lb_add_exam_preview_branch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        _bt_add_exam_preview_addExam.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_add_exam_preview_addExam.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_add_exam_preview_addExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_DarkGreen_200x50.png"))); // NOI18N
-        _bt_add_exam_preview_addExam.setText("Add Exam");
-        _bt_add_exam_preview_addExam.setContentAreaFilled(false);
-        _bt_add_exam_preview_addExam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_add_exam_preview_addExam.setFocusPainted(false);
-        _bt_add_exam_preview_addExam.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_add_exam_preview_addExam.setPreferredSize(new java.awt.Dimension(100, 50));
-        _bt_add_exam_preview_addExam.addMouseListener(new java.awt.event.MouseAdapter() {
+        _bt_save.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_save.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_DarkGreen_200x50.png"))); // NOI18N
+        _bt_save.setText("Save");
+        _bt_save.setContentAreaFilled(false);
+        _bt_save.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_save.setFocusPainted(false);
+        _bt_save.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_save.setPreferredSize(new java.awt.Dimension(100, 50));
+        _bt_save.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_preview_addExamMouseEntered(evt);
+                _bt_saveMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_preview_addExamMouseExited(evt);
+                _bt_saveMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_preview_addExamMousePressed(evt);
+                _bt_saveMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_add_exam_preview_addExamMouseReleased(evt);
+                _bt_saveMouseReleased(evt);
             }
         });
-        _bt_add_exam_preview_addExam.addActionListener(new java.awt.event.ActionListener() {
+        _bt_save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_add_exam_preview_addExamActionPerformed(evt);
+                _bt_saveActionPerformed(evt);
             }
         });
 
@@ -203,7 +216,7 @@ public class Jp_add_exams_student_marks extends javax.swing.JPanel {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Marks");
 
-        _lb_add_exam_preview_batach_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_marks_marks.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout _pl_add_exam_examInformation_previewLayout = new javax.swing.GroupLayout(_pl_add_exam_examInformation_preview);
         _pl_add_exam_examInformation_preview.setLayout(_pl_add_exam_examInformation_previewLayout);
@@ -214,23 +227,19 @@ public class Jp_add_exams_student_marks extends javax.swing.JPanel {
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, _pl_add_exam_examInformation_previewLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(_bt_add_exam_preview_addExam, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(_bt_save, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(_pl_add_exam_examInformation_previewLayout.createSequentialGroup()
                         .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_lb_add_exam_preview_examID, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_batach_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(_lb_marks_student_id, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+                            .addComponent(_lb_marks_student_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_marks_result, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(_lb_marks_marks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         _pl_add_exam_examInformation_previewLayout.setVerticalGroup(
@@ -238,84 +247,252 @@ public class Jp_add_exams_student_marks extends javax.swing.JPanel {
             .addGroup(_pl_add_exam_examInformation_previewLayout.createSequentialGroup()
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_examID, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_marks_student_id, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_name, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_marks_student_name, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20)
-                    .addComponent(_lb_add_exam_preview_batach_number, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_marks_marks, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_course, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_date, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(_lb_add_exam_preview_branch, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 385, Short.MAX_VALUE)
-                .addComponent(_bt_add_exam_preview_addExam, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_marks_result, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 441, Short.MAX_VALUE)
+                .addComponent(_bt_save, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         add(_pl_add_exam_examInformation_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 526, 610));
+
+        _bt_student_marks_add_marks.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_student_marks_add_marks.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_student_marks_add_marks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/button_blue_300x50.png"))); // NOI18N
+        _bt_student_marks_add_marks.setText("Add Mark");
+        _bt_student_marks_add_marks.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_student_marks_add_marks.setFocusPainted(false);
+        _bt_student_marks_add_marks.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_student_marks_add_marks.setPreferredSize(new java.awt.Dimension(300, 50));
+        _bt_student_marks_add_marks.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_student_marks_add_marksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_student_marks_add_marksMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_student_marks_add_marksMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_student_marks_add_marksMouseReleased(evt);
+            }
+        });
+        _bt_student_marks_add_marks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_student_marks_add_marksActionPerformed(evt);
+            }
+        });
+        add(_bt_student_marks_add_marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Exam Name");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 90, 20));
+
+        _lb_set_exam_name.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        _lb_set_exam_name.setForeground(new java.awt.Color(255, 255, 255));
+        add(_lb_set_exam_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 390, 20));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText(":");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 10, 20));
+
+        _lb_set_exam_ID.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        _lb_set_exam_ID.setForeground(new java.awt.Color(255, 255, 255));
+        add(_lb_set_exam_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 390, 20));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Exam ID");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 20));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText(":");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 10, 20));
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void _bt_add_exam_preview_addExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamActionPerformed
-
-        
-
-
-    }//GEN-LAST:event__bt_add_exam_preview_addExamActionPerformed
-
-    private void _bt_add_exam_preview_addExamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamMouseEntered
-        _bt_add_exam_preview_addExam.setBorder(border);
-    }//GEN-LAST:event__bt_add_exam_preview_addExamMouseEntered
-
-    private void _bt_add_exam_preview_addExamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamMouseExited
-        _bt_add_exam_preview_addExam.setBorder(null);
-    }//GEN-LAST:event__bt_add_exam_preview_addExamMouseExited
-
-    private void _bt_add_exam_preview_addExamMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamMousePressed
-        _bt_add_exam_preview_addExam.setBorder(null);
-    }//GEN-LAST:event__bt_add_exam_preview_addExamMousePressed
-
-    private void _bt_add_exam_preview_addExamMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_exam_preview_addExamMouseReleased
-        _bt_add_exam_preview_addExam.setBorder(border);
-    }//GEN-LAST:event__bt_add_exam_preview_addExamMouseReleased
-
     private void _tb_add_marks_studentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_marks_studentsMouseClicked
-
+        _bt_student_marks_add_marks.setEnabled(true);
+        check_db_data();
     }//GEN-LAST:event__tb_add_marks_studentsMouseClicked
+
+    private void _bt_student_marks_add_marksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_marks_add_marksMouseEntered
+        _bt_student_marks_add_marks.setBorder(border);
+    }//GEN-LAST:event__bt_student_marks_add_marksMouseEntered
+
+    private void _bt_student_marks_add_marksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_marks_add_marksMouseExited
+        _bt_student_marks_add_marks.setBorder(null);
+    }//GEN-LAST:event__bt_student_marks_add_marksMouseExited
+
+    private void _bt_student_marks_add_marksMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_marks_add_marksMousePressed
+        _bt_student_marks_add_marks.setBorder(null);
+    }//GEN-LAST:event__bt_student_marks_add_marksMousePressed
+
+    private void _bt_student_marks_add_marksMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_student_marks_add_marksMouseReleased
+        _bt_student_marks_add_marks.setBorder(border);
+    }//GEN-LAST:event__bt_student_marks_add_marksMouseReleased
+
+    private void _bt_student_marks_add_marksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_student_marks_add_marksActionPerformed
+        String m = JOptionPane.showInputDialog("Enter Student Marks");
+        int mark = Integer.parseInt(m);
+        String result;
+        if (mark < 50) {
+            result = "Fail";
+        } else {
+            result = "Pass";
+        }
+
+        int row = _tb_add_marks_students.getSelectedRow();
+        String sid = _tb_add_marks_students.getValueAt(row, 0).toString();
+        String sname = _tb_add_marks_students.getValueAt(row, 1).toString();
+
+        _lb_marks_student_id.setText(sid);
+        _lb_marks_student_name.setText(sname);
+        _lb_marks_marks.setText(m);
+        _lb_marks_result.setText(result);
+
+        _bt_save.setEnabled(true);
+    }//GEN-LAST:event__bt_student_marks_add_marksActionPerformed
+
+    private void _bt_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_saveActionPerformed
+        DefaultTableModel dtm=(DefaultTableModel)_tb_add_marks_students.getModel();
+        
+        stu_exam_result exam_result = new stu_exam_result(_lb_marks_student_id.getText(), _lb_marks_marks.getText(), _lb_marks_result.getText(), _lb_set_exam_ID.getText());
+        
+        _lb_marks_student_id.setText(null);
+        _lb_marks_student_name.setText(null);
+        _lb_marks_marks.setText(null);
+        _lb_marks_result.setText(null);
+        
+        _tb_add_marks_students.setSelectionMode(0);
+        _bt_student_marks_add_marks.setText("Add Mark");
+        _bt_student_marks_add_marks.setEnabled(false);
+        _bt_save.setEnabled(false);
+        
+        dtm.setRowCount(0);
+        add_table_data(batch, course, branch);
+    }//GEN-LAST:event__bt_saveActionPerformed
+
+    private void _bt_saveMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_saveMouseReleased
+        _bt_save.setBorder(border);
+    }//GEN-LAST:event__bt_saveMouseReleased
+
+    private void _bt_saveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_saveMousePressed
+        _bt_save.setBorder(null);
+    }//GEN-LAST:event__bt_saveMousePressed
+
+    private void _bt_saveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_saveMouseExited
+        _bt_save.setBorder(null);
+    }//GEN-LAST:event__bt_saveMouseExited
+
+    private void _bt_saveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_saveMouseEntered
+        _bt_save.setBorder(border);
+    }//GEN-LAST:event__bt_saveMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformation_employeeDetails_branch;
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_acadamy;
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_gender;
-    private javax.swing.JButton _bt_add_exam_preview_addExam;
-    private javax.swing.JLabel _lb_add_exam_preview_batach_number;
-    private javax.swing.JLabel _lb_add_exam_preview_branch;
-    private javax.swing.JLabel _lb_add_exam_preview_course;
-    private javax.swing.JLabel _lb_add_exam_preview_date;
-    private javax.swing.JLabel _lb_add_exam_preview_examID;
-    private javax.swing.JLabel _lb_add_exam_preview_name;
+    private javax.swing.JButton _bt_save;
+    private javax.swing.JButton _bt_student_marks_add_marks;
+    private javax.swing.JLabel _lb_marks_marks;
+    private javax.swing.JLabel _lb_marks_result;
+    private javax.swing.JLabel _lb_marks_student_id;
+    public javax.swing.JLabel _lb_marks_student_name;
+    private javax.swing.JLabel _lb_set_exam_ID;
+    private javax.swing.JLabel _lb_set_exam_name;
     private javax.swing.JPanel _pl_add_exam_examInformation_preview;
-    private javax.swing.JPanel _pl_add_exams_examInformation_main_panel;
+    private javax.swing.JPanel _pl_student_details;
     private javax.swing.JTable _tb_add_marks_students;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void add_table_data(String batch, String course, String branch) {
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_marks_students.getModel();
+
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            String search_query = "SELECT a.stu_user_info_id, b.stu_info_batch, b.stu_info_year, b.stu_info_course, c.stu_info_name_first_name, c.stu_info_name_last_name, d.stu_info_personal_branch, e.stu_exam_mark FROM stu_user_info a LEFT JOIN stu_info_batch b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_info_name c ON a.stu_user_info_id=c.stu_user_info_id LEFT JOIN stu_info_personal d ON a.stu_user_info_id=d.stu_user_info_id LEFT JOIN stu_exam_result e ON a.stu_user_info_id=e.stu_user_info_id WHERE b.stu_info_batch='" + batch + "' AND b.stu_info_course='" + course + "' AND d.stu_info_personal_branch='" + branch + "' AND a.stu_user_info_status='1';";
+            ResultSet rs = s.executeQuery(search_query);
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString("stu_user_info_id"));
+                v.add(rs.getString("stu_info_name_first_name") + " " + (rs.getString("stu_info_name_last_name")));
+                v.add(rs.getString("stu_info_batch"));
+                v.add(rs.getString("stu_info_course"));
+                v.add(rs.getString("stu_exam_mark"));
+                dtm.addRow(v);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void load_table_view() {
+        Jp_add_exams_table_view table_preview = new Jp_add_exams_table_view();
+        if (table_preview == null) {
+            Jp_add_exams_main_panel.removeAll();
+            revalidate();
+            table_preview = new Jp_add_exams_table_view();
+            table_preview.setVisible(true);
+            Jp_add_exams_main_panel.add(table_preview);
+            revalidate();
+        } else {
+            Jp_add_exams_main_panel.removeAll();
+            revalidate();
+            table_preview.setVisible(true);
+            Jp_add_exams_main_panel.add(table_preview);
+            revalidate();
+        }
+    }
+
+    private void check_db_data() {
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_marks_students.getModel();
+            
+            int raw=_tb_add_marks_students.getSelectedRow();
+            String stu_id=_tb_add_marks_students.getValueAt(raw, 0).toString();
+            
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            String search_query = "SELECT * FROM stu_exam_result WHERE stu_user_info_id='"+stu_id+"';";
+            ResultSet rs = s.executeQuery(search_query);
+            if (rs.next()) {
+                _lb_marks_student_id.setText(stu_id);
+                _lb_marks_student_name.setText(_tb_add_marks_students.getValueAt(raw, 1).toString());
+                _lb_marks_marks.setText(rs.getString("stu_exam_mark"));
+                _lb_marks_result.setText(rs.getString("stu_exam_result"));
+                _bt_student_marks_add_marks.setText("Update Mark");
+            }else{
+                _bt_student_marks_add_marks.setText("Add Mark");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

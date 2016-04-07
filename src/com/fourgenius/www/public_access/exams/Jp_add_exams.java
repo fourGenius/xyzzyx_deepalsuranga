@@ -161,7 +161,7 @@ public class Jp_add_exams extends javax.swing.JPanel {
             int option = JOptionPane.showConfirmDialog(this, "All Data You Didn't Save is Lost", "Are You Sure?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (option == JOptionPane.YES_OPTION) {
                 load_table_exams_view();
-                _bt_add_exam_AddExam.setText("Add Lecture");
+                _bt_add_exam_AddExam.setText("Add Exam");
                 _bt_add_exam_ExamsDetails.setEnabled(true);
                 _bt_UserMain_home.setEnabled(true);
             }

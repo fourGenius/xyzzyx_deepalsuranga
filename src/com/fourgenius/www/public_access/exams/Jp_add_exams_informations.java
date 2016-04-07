@@ -85,6 +85,10 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
 
     public Jp_add_exams_informations(String ex_id) {
         initComponents();
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (Exception ex) {
+        }
         set_data_to_Combo_box();
         exam_id = ex_id;
         load_form_data(ex_id);

@@ -123,7 +123,7 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -206,6 +206,9 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         _bt_update_add_marks.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         _bt_update_add_marks.setPreferredSize(new java.awt.Dimension(200, 50));
         _bt_update_add_marks.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _bt_update_add_marksMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 _bt_update_add_marksMouseEntered(evt);
             }
@@ -295,7 +298,6 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
 //            e.printStackTrace();
 //        }
 
-
     }//GEN-LAST:event__tf_add_exams_searchExamsKeyReleased
 
     private void _tf_add_exams_searchExamsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_exams_searchExamsKeyPressed
@@ -337,7 +339,7 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_update_examMouseReleased
 
     private void _bt_update_examActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_update_examActionPerformed
-        update_selected_lecture();
+        update_selected_exam();
         _bt_UserMain_home.setEnabled(false);
     }//GEN-LAST:event__bt_update_examActionPerformed
 
@@ -351,35 +353,70 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
     }//GEN-LAST:event__tb_add_exams_view_past_exam_tableMouseClicked
 
     private void _tp_exams_previewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tp_exams_previewMouseClicked
-        int index=_tp_exams_preview.getSelectedIndex();
-        if (index==1) {
+        int index = _tp_exams_preview.getSelectedIndex();
+        if (index == 1) {
             _bt_update_exam.setEnabled(false);
+            _bt_update_add_marks.setEnabled(false);
             _tb_add_exams_view_table.setSelectionMode(0);
-        }else{
+        } else {
             _bt_update_exam.setEnabled(false);
+            _bt_update_add_marks.setEnabled(false);
             _tb_add_exams_view_past_exam_table.setSelectionMode(0);
         }
     }//GEN-LAST:event__tp_exams_previewMouseClicked
 
     private void _bt_update_add_marksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_add_marksMouseEntered
-        // TODO add your handling code here:
+        _bt_update_add_marks.setBorder(border);
     }//GEN-LAST:event__bt_update_add_marksMouseEntered
 
     private void _bt_update_add_marksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_add_marksMouseExited
-        // TODO add your handling code here:
+        _bt_update_add_marks.setBorder(null);
     }//GEN-LAST:event__bt_update_add_marksMouseExited
 
     private void _bt_update_add_marksMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_add_marksMousePressed
-        // TODO add your handling code here:
+        _bt_update_add_marks.setBorder(null);
     }//GEN-LAST:event__bt_update_add_marksMousePressed
 
     private void _bt_update_add_marksMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_add_marksMouseReleased
-        // TODO add your handling code here:
+        _bt_update_add_marks.setBorder(border);
     }//GEN-LAST:event__bt_update_add_marksMouseReleased
 
     private void _bt_update_add_marksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_update_add_marksActionPerformed
-        // TODO add your handling code here:
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_exams_view_table.getModel();
+            int row = _tb_add_exams_view_table.getSelectedRow();
+            String batch = dtm.getValueAt(row, 2).toString();
+            String course = dtm.getValueAt(row, 3).toString();
+            String branch = dtm.getValueAt(row, 5).toString();
+            String id = dtm.getValueAt(row, 0).toString();
+            String name = dtm.getValueAt(row, 1).toString();
+
+            Jp_add_exams_student_marks add_marks = new Jp_add_exams_student_marks(batch, course, branch, id, name);
+            if (add_marks == null) {
+                Jp_add_exams_main_panel.removeAll();
+                revalidate();
+                add_marks = new Jp_add_exams_student_marks(batch, course, branch, id, name);
+                add_marks.setVisible(true);
+                Jp_add_exams_main_panel.add(add_marks);
+                revalidate();
+            } else {
+                Jp_add_exams_main_panel.removeAll();
+                revalidate();
+                add_marks.setVisible(true);
+                Jp_add_exams_main_panel.add(add_marks);
+                revalidate();
+            }
+            _bt_add_exam_AddExam.setText("Cancel");
+            _bt_UserMain_home.setEnabled(false);
+            _bt_add_exam_ExamsDetails.setEnabled(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event__bt_update_add_marksActionPerformed
+
+    private void _bt_update_add_marksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_add_marksMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_update_add_marksMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -444,7 +481,7 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         }
     }
 
-    private void update_selected_lecture() {
+    private void update_selected_exam() {
         try {
             DefaultTableModel dtm = (DefaultTableModel) _tb_add_exams_view_table.getModel();
             int row = _tb_add_exams_view_table.getSelectedRow();

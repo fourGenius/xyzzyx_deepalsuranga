@@ -123,7 +123,7 @@
                         <Column editable="false" title="Batch Number" type="java.lang.Object"/>
                         <Column editable="false" title="Course" type="java.lang.Object"/>
                         <Column editable="false" title="Date" type="java.lang.Object"/>
-                        <Column editable="true" title="Branch" type="java.lang.Object"/>
+                        <Column editable="false" title="Branch" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -300,6 +300,7 @@
         </Property>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_update_add_marksMouseClicked"/>
         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_update_add_marksMouseEntered"/>
         <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_update_add_marksMouseExited"/>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_bt_update_add_marksMousePressed"/>

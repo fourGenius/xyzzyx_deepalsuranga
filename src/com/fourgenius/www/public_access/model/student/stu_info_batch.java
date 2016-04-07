@@ -6,6 +6,7 @@
 package com.fourgenius.www.public_access.model.student;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import public_access.MC_JavaDataBaseConnection;
 
@@ -14,7 +15,7 @@ import public_access.MC_JavaDataBaseConnection;
  * @author Dineth Jayasekera
  */
 public class stu_info_batch {
-    private String stu_user_info_id,batch,year,course;
+    private String stu_user_info_id,year,batch,course;
 
     public stu_info_batch(String stu_user_info_id, String batch, String year, String course) {
         this.stu_user_info_id = stu_user_info_id;
@@ -24,7 +25,12 @@ public class stu_info_batch {
         try {
              Connection connection = MC_JavaDataBaseConnection.myConnection();
             Statement statement = connection.createStatement();
-            statement.executeQuery("insert stu_info_batch(stu_user_info_id,batch,year,course,) values ('" + stu_user_info_id + "','" + batch + "','"+ year +"','"+ course+"')");
+            ResultSet rs = statement.executeQuery("select * from stu_info_batch where stu_user_info_id='" + stu_user_info_id + "'");
+            if (rs.next()) {
+                statement.executeUpdate("update stu_info_batch set batch='" + batch + "', year='" + year + "', course='" + course + "' where stu_user_info_id='" + stu_user_info_id + "'");
+            } else {
+                statement.executeUpdate("insert stu_info_batch(stu_user_info_id, batch, year, course) values ('" + stu_user_info_id + "','" + batch + "','" + year + "','" + course + "')");
+            }
         } catch (Exception e) {
         }
     }
