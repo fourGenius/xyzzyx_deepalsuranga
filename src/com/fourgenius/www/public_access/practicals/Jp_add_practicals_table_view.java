@@ -90,7 +90,7 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Exam ID", "Exam Name", "Batch Number", "Course", "Date", "Branch"
+                "Practical ID", "Practical Name", "Batch Number", "Course", "Date", "Branch"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -115,7 +115,7 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Exam ID", "Exam Name", "Batch Number", "Course", "Date", "Branch"
+                "Practical ID", "Practical Name", "Batch Number", "Course", "Date", "Branch"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -277,7 +277,37 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_view_marksMouseReleased
 
     private void _bt_view_marksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_view_marksActionPerformed
-        
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_active_practicals_table.getModel();
+            int row = _tb_add_practicals_view_active_practicals_table.getSelectedRow();
+            String batch = dtm.getValueAt(row, 2).toString();
+            String course = dtm.getValueAt(row, 3).toString();
+            String branch = dtm.getValueAt(row, 5).toString();
+            String id = dtm.getValueAt(row, 0).toString();
+            String name = dtm.getValueAt(row, 1).toString();
+            String date = dtm.getValueAt(row, 4).toString();
+
+            Jp_view_practical_result view_marks = new Jp_view_practical_result(batch, course, branch, id, name, date);
+            if (view_marks == null) {
+                Jp_add_practical_main_panel.removeAll();
+                revalidate();
+                view_marks = new Jp_view_practical_result(batch, course, branch, id, name, date);
+                view_marks.setVisible(true);
+                Jp_add_practical_main_panel.add(view_marks);
+                revalidate();
+            } else {
+                Jp_add_practical_main_panel.removeAll();
+                revalidate();
+                view_marks.setVisible(true);
+                Jp_add_practical_main_panel.add(view_marks);
+                revalidate();
+            }
+            _bt_add_practical_AddPractical.setText("Cancel");
+            _bt_UserMain_home.setEnabled(false);
+            _bt_add_practical_practicalDetails.setEnabled(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event__bt_view_marksActionPerformed
 
     private void _bt_add_marksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_marksMouseClicked
@@ -301,7 +331,36 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_add_marksMouseReleased
 
     private void _bt_add_marksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_marksActionPerformed
-        
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_active_practicals_table.getModel();
+            int row = _tb_add_practicals_view_active_practicals_table.getSelectedRow();
+            String batch = dtm.getValueAt(row, 2).toString();
+            String course = dtm.getValueAt(row, 3).toString();
+            String branch = dtm.getValueAt(row, 5).toString();
+            String id = dtm.getValueAt(row, 0).toString();
+            String name = dtm.getValueAt(row, 1).toString();
+
+            Jp_add_practical_student_marks add_marks = new Jp_add_practical_student_marks(batch, course, branch, id, name);
+            if (add_marks == null) {
+                Jp_add_practical_main_panel.removeAll();
+                revalidate();
+                add_marks = new Jp_add_practical_student_marks(batch, course, branch, id, name);
+                add_marks.setVisible(true);
+                Jp_add_practical_main_panel.add(add_marks);
+                revalidate();
+            } else {
+                Jp_add_practical_main_panel.removeAll();
+                revalidate();
+                add_marks.setVisible(true);
+                Jp_add_practical_main_panel.add(add_marks);
+                revalidate();
+            }
+            _bt_add_practical_AddPractical.setText("Cancel");
+            _bt_UserMain_home.setEnabled(false);
+            _bt_add_practical_practicalDetails.setEnabled(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event__bt_add_marksActionPerformed
 
     private void _bt_update_practicalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_practicalMouseEntered
