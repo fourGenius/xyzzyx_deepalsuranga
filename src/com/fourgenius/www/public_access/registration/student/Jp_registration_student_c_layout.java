@@ -30,6 +30,7 @@ import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
@@ -54,7 +55,8 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
         _sp_registration_student_searchStudent.setVisible(false);
         _bt_preview_table_student_buttons_preview_student.setEnabled(false);
         _bt_registraion_student_buttons_update_student.setEnabled(false);
-        
+        _bt_preview_table_student_buttons_delete_student.setEnabled(false);
+
         addToTable();
     }
 
@@ -76,6 +78,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         _bt_preview_table_student_buttons_preview_student = new javax.swing.JButton();
         _bt_registraion_student_buttons_update_student = new javax.swing.JButton();
+        _bt_preview_table_student_buttons_delete_student = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setForeground(new java.awt.Color(66, 66, 66));
@@ -189,6 +192,36 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
             }
         });
         add(_bt_registraion_student_buttons_update_student, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 200, -1));
+
+        _bt_preview_table_student_buttons_delete_student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_preview_table_student_buttons_delete_student.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_preview_table_student_buttons_delete_student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_preview_table_student_buttons_delete_student.setText("Delete");
+        _bt_preview_table_student_buttons_delete_student.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_preview_table_student_buttons_delete_student.setFocusPainted(false);
+        _bt_preview_table_student_buttons_delete_student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_preview_table_student_buttons_delete_student.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_preview_table_student_buttons_delete_student.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_preview_table_student_buttons_delete_student.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_student_buttons_delete_studentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_student_buttons_delete_studentMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_student_buttons_delete_studentMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_student_buttons_delete_studentMouseReleased(evt);
+            }
+        });
+        _bt_preview_table_student_buttons_delete_student.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_preview_table_student_buttons_delete_studentActionPerformed(evt);
+            }
+        });
+        add(_bt_preview_table_student_buttons_delete_student, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_student_searchStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_student_searchStudentKeyReleased
@@ -303,6 +336,7 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
     private void _tb_registration_student_view_activeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_registration_student_view_activeMouseClicked
         _bt_preview_table_student_buttons_preview_student.setEnabled(true);
         _bt_registraion_student_buttons_update_student.setEnabled(true);
+        _bt_preview_table_student_buttons_delete_student.setEnabled(true);
     }//GEN-LAST:event__tb_registration_student_view_activeMouseClicked
 
     private void _li_registration_student_searchStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__li_registration_student_searchStudentMouseClicked
@@ -317,11 +351,52 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event__li_registration_student_searchStudentMouseClicked
+
+    private void _bt_preview_table_student_buttons_delete_studentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_delete_studentMouseEntered
+        _bt_preview_table_student_buttons_delete_student.setBorder(border);
+    }//GEN-LAST:event__bt_preview_table_student_buttons_delete_studentMouseEntered
+
+    private void _bt_preview_table_student_buttons_delete_studentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_delete_studentMouseExited
+        _bt_preview_table_student_buttons_delete_student.setBorder(null);
+    }//GEN-LAST:event__bt_preview_table_student_buttons_delete_studentMouseExited
+
+    private void _bt_preview_table_student_buttons_delete_studentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_delete_studentMousePressed
+        _bt_preview_table_student_buttons_delete_student.setBorder(border);
+    }//GEN-LAST:event__bt_preview_table_student_buttons_delete_studentMousePressed
+
+    private void _bt_preview_table_student_buttons_delete_studentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_delete_studentMouseReleased
+        _bt_preview_table_student_buttons_delete_student.setBorder(null);
+    }//GEN-LAST:event__bt_preview_table_student_buttons_delete_studentMouseReleased
+
+    private void _bt_preview_table_student_buttons_delete_studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_preview_table_student_buttons_delete_studentActionPerformed
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_student_view_active.getModel();
+            int raw = _tb_registration_student_view_active.getSelectedRow();
+            String stu_id = dtm.getValueAt(raw, 0).toString();
+
+            int i = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (i == JOptionPane.YES_OPTION) {
+                Connection connection = MC_JavaDataBaseConnection.myConnection();
+                Statement statement = connection.createStatement();
+                statement.executeUpdate("UPDATE stu_user_info SET stu_user_info_status='0' WHERE stu_user_info_id='" + stu_id + "'");
+                dtm.setRowCount(0);
+                addToTable();
+                _bt_preview_table_student_buttons_preview_student.setEnabled(false);
+                _bt_registraion_student_buttons_update_student.setEnabled(false);
+                _bt_preview_table_student_buttons_delete_student.setEnabled(false);
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event__bt_preview_table_student_buttons_delete_studentActionPerformed
     int i = 0;
 
     Jp_registration_student_informations rsi = new Jp_registration_student_informations();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton _bt_preview_table_student_buttons_delete_student;
     private javax.swing.JButton _bt_preview_table_student_buttons_preview_student;
     private javax.swing.JButton _bt_registraion_student_buttons_update_student;
     private javax.swing.JList _li_registration_student_searchStudent;
@@ -385,8 +460,6 @@ public class Jp_registration_student_c_layout extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
-
-    
 
     private void update_selected_student() {
         try {

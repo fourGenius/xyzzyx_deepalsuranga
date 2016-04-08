@@ -88,7 +88,6 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
         _lb_land = new javax.swing.JLabel();
         _lb_email = new javax.swing.JLabel();
         _lb_picture = new javax.swing.JLabel();
-        print_report = new javax.swing.JButton();
         _bt_registraion_student_buttons_update_student = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(117, 117, 117));
@@ -213,36 +212,6 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
         _lb_picture.setMinimumSize(new java.awt.Dimension(178, 150));
         _lb_picture.setPreferredSize(new java.awt.Dimension(178, 150));
 
-        print_report.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        print_report.setForeground(new java.awt.Color(255, 255, 255));
-        print_report.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        print_report.setText("Print Report");
-        print_report.setContentAreaFilled(false);
-        print_report.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        print_report.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        print_report.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                print_reportMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                print_reportMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                print_reportMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                print_reportMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                print_reportMouseReleased(evt);
-            }
-        });
-        print_report.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                print_reportActionPerformed(evt);
-            }
-        });
-
         _bt_registraion_student_buttons_update_student.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_registraion_student_buttons_update_student.setForeground(new java.awt.Color(255, 255, 255));
         _bt_registraion_student_buttons_update_student.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
@@ -281,9 +250,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_bt_registraion_student_buttons_update_student, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(print_report, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(_bt_registraion_student_buttons_update_student, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -326,10 +293,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(print_report, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(_bt_registraion_student_buttons_update_student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(_bt_registraion_student_buttons_update_student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -378,44 +342,6 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void print_reportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_print_reportActionPerformed
-        try {
-
-            String is = "src/reports/student_reg.jrxml";
-            JasperReport jr = JasperCompileManager.compileReport(is);
-            Jp_registration_student_informations info = new Jp_registration_student_informations();
-
-            System.out.println("ok2");
-            m.put("pic", path);
-
-            JasperPrint jp1 = JasperFillManager.fillReport(jr, m, MC_JavaDataBaseConnection.myConnection());
-            JasperViewer.viewReport(jp1, false);
-            JasperPrintManager.printReport(jp1, false);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_print_reportActionPerformed
-
-    private void print_reportMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMouseEntered
-        print_report.setBorder(border);
-    }//GEN-LAST:event_print_reportMouseEntered
-
-    private void print_reportMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMouseExited
-        print_report.setBorder(null);
-    }//GEN-LAST:event_print_reportMouseExited
-
-    private void print_reportMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMousePressed
-        print_report.setBorder(null);
-    }//GEN-LAST:event_print_reportMousePressed
-
-    private void print_reportMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMouseReleased
-        print_report.setBorder(border);
-    }//GEN-LAST:event_print_reportMouseReleased
-
-    private void print_reportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_print_reportMouseClicked
-
-    }//GEN-LAST:event_print_reportMouseClicked
-
     private void _bt_registraion_student_buttons_update_studentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registraion_student_buttons_update_studentMouseEntered
         _bt_registraion_student_buttons_update_student.setBorder(border);
     }//GEN-LAST:event__bt_registraion_student_buttons_update_studentMouseEntered
@@ -462,7 +388,6 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JButton print_report;
     // End of variables declaration//GEN-END:variables
 
     private void load_details(String id) {

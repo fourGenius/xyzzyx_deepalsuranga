@@ -42,6 +42,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         _sp_registration_lecture_searchLecture.setVisible(false);
         _bt_registraion_lecture_buttons_update_lecture.setEnabled(false);
         _bt_preview_table_lecture_buttons_preview_lecture.setEnabled(false);
+        _bt_preview_table_lecture_buttons_delete_lecture.setEnabled(false);
         add_active_table_data();
 
     }
@@ -64,6 +65,7 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
         _tb_registration_lecture_view_active = new javax.swing.JTable();
         _bt_preview_table_lecture_buttons_preview_lecture = new javax.swing.JButton();
         _bt_registraion_lecture_buttons_update_lecture = new javax.swing.JButton();
+        _bt_preview_table_lecture_buttons_delete_lecture = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -184,6 +186,36 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
             }
         });
         add(_bt_registraion_lecture_buttons_update_lecture, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 200, -1));
+
+        _bt_preview_table_lecture_buttons_delete_lecture.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_preview_table_lecture_buttons_delete_lecture.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_preview_table_lecture_buttons_delete_lecture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_preview_table_lecture_buttons_delete_lecture.setText("Delete");
+        _bt_preview_table_lecture_buttons_delete_lecture.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_preview_table_lecture_buttons_delete_lecture.setFocusPainted(false);
+        _bt_preview_table_lecture_buttons_delete_lecture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_preview_table_lecture_buttons_delete_lecture.setMaximumSize(new java.awt.Dimension(200, 50));
+        _bt_preview_table_lecture_buttons_delete_lecture.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_preview_table_lecture_buttons_delete_lecture.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_lecture_buttons_delete_lectureMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_lecture_buttons_delete_lectureMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_lecture_buttons_delete_lectureMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_preview_table_lecture_buttons_delete_lectureMouseReleased(evt);
+            }
+        });
+        _bt_preview_table_lecture_buttons_delete_lecture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_preview_table_lecture_buttons_delete_lectureActionPerformed(evt);
+            }
+        });
+        add(_bt_preview_table_lecture_buttons_delete_lecture, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tf_registration_lecture_searchLectureKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_registration_lecture_searchLectureKeyReleased
@@ -322,10 +354,51 @@ public class Jp_registration_lecture_table_view extends javax.swing.JPanel {
     private void _tb_registration_lecture_view_activeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_registration_lecture_view_activeMouseClicked
         _bt_registraion_lecture_buttons_update_lecture.setEnabled(true);
         _bt_preview_table_lecture_buttons_preview_lecture.setEnabled(true);
+        _bt_preview_table_lecture_buttons_delete_lecture.setEnabled(true);
     }//GEN-LAST:event__tb_registration_lecture_view_activeMouseClicked
+
+    private void _bt_preview_table_lecture_buttons_delete_lectureMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_delete_lectureMouseEntered
+        _bt_preview_table_lecture_buttons_delete_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_delete_lectureMouseEntered
+
+    private void _bt_preview_table_lecture_buttons_delete_lectureMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_delete_lectureMouseExited
+        _bt_preview_table_lecture_buttons_delete_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_delete_lectureMouseExited
+
+    private void _bt_preview_table_lecture_buttons_delete_lectureMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_delete_lectureMousePressed
+        _bt_preview_table_lecture_buttons_delete_lecture.setBorder(border);
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_delete_lectureMousePressed
+
+    private void _bt_preview_table_lecture_buttons_delete_lectureMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_delete_lectureMouseReleased
+        _bt_preview_table_lecture_buttons_delete_lecture.setBorder(null);
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_delete_lectureMouseReleased
+
+    private void _bt_preview_table_lecture_buttons_delete_lectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_preview_table_lecture_buttons_delete_lectureActionPerformed
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_lecture_view_active.getModel();
+            int raw = _tb_registration_lecture_view_active.getSelectedRow();
+            String lec_id = dtm.getValueAt(raw, 0).toString();
+
+            int i = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (i == JOptionPane.YES_OPTION) {
+                Connection connection = MC_JavaDataBaseConnection.myConnection();
+                Statement statement = connection.createStatement();
+                statement.executeUpdate("UPDATE employee_academic_user_info SET employee_academic_user_info_status='0' WHERE employee_academic_user_id='" + lec_id + "'");
+                dtm.setRowCount(0);
+                add_active_table_data();
+                _bt_preview_table_lecture_buttons_preview_lecture.setEnabled(false);
+                _bt_registraion_lecture_buttons_update_lecture.setEnabled(false);
+                _bt_preview_table_lecture_buttons_delete_lecture.setEnabled(false);
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event__bt_preview_table_lecture_buttons_delete_lectureActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton _bt_preview_table_lecture_buttons_delete_lecture;
     private javax.swing.JButton _bt_preview_table_lecture_buttons_preview_lecture;
     private javax.swing.JButton _bt_registraion_lecture_buttons_update_lecture;
     private javax.swing.JList _li_registration_lecture_searchLecture;

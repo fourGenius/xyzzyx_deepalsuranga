@@ -421,29 +421,31 @@ public class Jf_UserRegistration extends javax.swing.JFrame {
 
     
     private void _bt_UserMain_paymentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsActionPerformed
-        Jp_student_payment payment = new Jp_student_payment();
-        
-        _bt_UserMain_StudentRegistration.setEnabled(true);
-        _bt_UserMain_EmployeeRegistration.setEnabled(true);
-        _bt_UserMain_LectureRegistration.setEnabled(true);
-        _bt_UserMain_payments.setEnabled(false);
-
-        if (payment == null) {
-            payment = new Jp_student_payment();
-            Jp_userMain_main_panel.removeAll();
-            Jp_userMain_main_panel.repaint();
-            Jp_userMain_main_panel.revalidate();
-            Jp_userMain_main_panel.add(payment);
-            Jp_userMain_main_panel.repaint();
-            Jp_userMain_main_panel.revalidate();
-        } else {
-            Jp_userMain_main_panel.removeAll();
-            Jp_userMain_main_panel.repaint();
-            Jp_userMain_main_panel.revalidate();
-            Jp_userMain_main_panel.add(payment);
-            Jp_userMain_main_panel.repaint();
-            Jp_userMain_main_panel.revalidate();
-        }
+        jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
+//        Jp_student_payment payment = new Jp_student_payment();
+//        
+//        _bt_UserMain_StudentRegistration.setEnabled(true);
+//        _bt_UserMain_EmployeeRegistration.setEnabled(true);
+//        _bt_UserMain_LectureRegistration.setEnabled(true);
+//        _bt_UserMain_payments.setEnabled(false);
+//
+//        if (payment == null) {
+//            payment = new Jp_student_payment();
+//            Jp_userMain_main_panel.removeAll();
+//            Jp_userMain_main_panel.repaint();
+//            Jp_userMain_main_panel.revalidate();
+//            Jp_userMain_main_panel.add(payment);
+//            Jp_userMain_main_panel.repaint();
+//            Jp_userMain_main_panel.revalidate();
+//        } else {
+//            Jp_userMain_main_panel.removeAll();
+//            Jp_userMain_main_panel.repaint();
+//            Jp_userMain_main_panel.revalidate();
+//            Jp_userMain_main_panel.add(payment);
+//            Jp_userMain_main_panel.repaint();
+//            Jp_userMain_main_panel.revalidate();
+//        }
 
     }//GEN-LAST:event__bt_UserMain_paymentsActionPerformed
 
