@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.public_access.exams;
 
+import static com.fourgenius.www.public_access.exams.Jf_Exams._bt_UserMain_home;
 import static com.fourgenius.www.public_access.exams.Jp_add_exams.Jp_add_exams_main_panel;
 import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_AddExam;
 import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_ExamsDetails;
@@ -123,8 +124,8 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         _rb_add_exam_colombo = new javax.swing.JRadioButton();
         _rb_add_exam_kandy = new javax.swing.JRadioButton();
         _bt_add_exam_preview = new javax.swing.JButton();
-        _tf_add_batch_number = new javax.swing.JTextField();
         _lb_add_batch_number = new javax.swing.JLabel();
+        _cb_add_exam_batch = new javax.swing.JComboBox();
         _pl_add_exam_examInformation_preview = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         _lb_add_exam_preview_examID = new javax.swing.JLabel();
@@ -138,7 +139,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         _lb_add_exam_preview_branch = new javax.swing.JLabel();
         _bt_add_exam_preview_addExam = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        _lb_add_exam_preview_batach_number = new javax.swing.JLabel();
+        _lb_add_exam_preview_btach_number = new javax.swing.JLabel();
         _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(66, 66, 66));
@@ -258,28 +259,13 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         });
         _pl_add_exam_examInformation.add(_bt_add_exam_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 244, -1));
 
-        _tf_add_batch_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_add_batch_number.setMaximumSize(new java.awt.Dimension(300, 40));
-        _tf_add_batch_number.setPreferredSize(new java.awt.Dimension(300, 40));
-        _tf_add_batch_number.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_add_batch_numberActionPerformed(evt);
-            }
-        });
-        _tf_add_batch_number.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_add_batch_numberKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                _tf_add_batch_numberKeyTyped(evt);
-            }
-        });
-        _pl_add_exam_examInformation.add(_tf_add_batch_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 333, -1));
-
         _lb_add_batch_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_add_batch_number.setForeground(new java.awt.Color(255, 255, 255));
         _lb_add_batch_number.setText("Batch Number");
         _pl_add_exam_examInformation.add(_lb_add_batch_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 333, -1));
+
+        _cb_add_exam_batch.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02" }));
+        _pl_add_exam_examInformation.add(_cb_add_exam_batch, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 330, 40));
 
         _pl_add_exams_examInformation_main_panel.add(_pl_add_exam_examInformation, "card2");
 
@@ -351,7 +337,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Batch Number");
 
-        _lb_add_exam_preview_batach_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_exam_preview_btach_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout _pl_add_exam_examInformation_previewLayout = new javax.swing.GroupLayout(_pl_add_exam_examInformation_preview);
         _pl_add_exam_examInformation_preview.setLayout(_pl_add_exam_examInformation_previewLayout);
@@ -378,7 +364,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
                             .addComponent(_lb_add_exam_preview_course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_add_exam_preview_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_add_exam_preview_branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_exam_preview_batach_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(_lb_add_exam_preview_btach_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         _pl_add_exam_examInformation_previewLayout.setVerticalGroup(
@@ -394,7 +380,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20)
-                    .addComponent(_lb_add_exam_preview_batach_number, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_add_exam_preview_btach_number, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -470,16 +456,18 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
                 if (option == JOptionPane.YES_OPTION) {
                     add_to_database();
                     load_table_view();
-                    _bt_add_exam_AddExam.setText("Add Student");
+                    _bt_add_exam_AddExam.setText("Add Exam");
                     _bt_add_exam_ExamsDetails.setEnabled(true);
+                    _bt_UserMain_home.setEnabled(true);
                 }
             } else {
                 int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (option == JOptionPane.YES_OPTION) {
                     add_to_database();
                     load_table_view();
-                    _bt_add_exam_AddExam.setText("Add Student");
+                    _bt_add_exam_AddExam.setText("Add Exam");
                     _bt_add_exam_ExamsDetails.setEnabled(true);
+                    _bt_UserMain_home.setEnabled(true);
                 }
             }
         } catch (Exception e) {
@@ -522,20 +510,8 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__tf_add_exam_nameKeyReleased
 
     private void _tf_add_exam_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_add_exam_nameActionPerformed
-        _tf_add_batch_number.grabFocus();
+
     }//GEN-LAST:event__tf_add_exam_nameActionPerformed
-
-    private void _tf_add_batch_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_add_batch_numberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event__tf_add_batch_numberActionPerformed
-
-    private void _tf_add_batch_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_batch_numberKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event__tf_add_batch_numberKeyReleased
-
-    private void _tf_add_batch_numberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_batch_numberKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event__tf_add_batch_numberKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -544,6 +520,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_gender;
     private javax.swing.JButton _bt_add_exam_preview;
     private javax.swing.JButton _bt_add_exam_preview_addExam;
+    private javax.swing.JComboBox _cb_add_exam_batch;
     private javax.swing.JComboBox _cb_add_exam_course;
     public com.toedter.calendar.JDateChooser _dc_add_exam_examDate;
     private javax.swing.JLabel _lb_add_batch_number;
@@ -551,8 +528,8 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     private javax.swing.JLabel _lb_add_exam_course_name;
     private javax.swing.JLabel _lb_add_exam_examDate;
     private javax.swing.JLabel _lb_add_exam_name;
-    private javax.swing.JLabel _lb_add_exam_preview_batach_number;
     private javax.swing.JLabel _lb_add_exam_preview_branch;
+    private javax.swing.JLabel _lb_add_exam_preview_btach_number;
     private javax.swing.JLabel _lb_add_exam_preview_course;
     private javax.swing.JLabel _lb_add_exam_preview_date;
     private javax.swing.JLabel _lb_add_exam_preview_examID;
@@ -563,7 +540,6 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_browsePhoto1;
     public javax.swing.JRadioButton _rb_add_exam_colombo;
     public javax.swing.JRadioButton _rb_add_exam_kandy;
-    private static javax.swing.JTextField _tf_add_batch_number;
     private static javax.swing.JTextField _tf_add_exam_name;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
@@ -583,28 +559,24 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
 
     private void add_to_preview_form() {
         try {
-            try {
-                generate_exam_id();
-                _lb_add_exam_preview_name.setText(_tf_add_exam_name.getText());
-                _lb_add_exam_preview_batach_number.setText(_tf_add_batch_number.getText());
-                _lb_add_exam_preview_course.setText((String) _cb_add_exam_course.getSelectedItem());
-                Date d = _dc_add_exam_examDate.getDate();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                String date = sdf.format(d);
-                _lb_add_exam_preview_date.setText(date);
+            generate_exam_id();
+            _lb_add_exam_preview_name.setText(_tf_add_exam_name.getText());
+            _lb_add_exam_preview_btach_number.setText((String) _cb_add_exam_batch.getSelectedItem());
+            _lb_add_exam_preview_course.setText((String) _cb_add_exam_course.getSelectedItem());
+            Date d = _dc_add_exam_examDate.getDate();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String date = sdf.format(d);
+            _lb_add_exam_preview_date.setText(date);
 
-                String branch;
-                if (_rb_add_exam_colombo.isSelected()) {
-                    branch = "Colombo";
-                } else {
-                    branch = "Kandy";
-                }
-                _lb_add_exam_preview_branch.setText(branch);
-
-                _bt_add_exam_preview_addExam.setEnabled(true);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Birthday is Empty");
+            String branch;
+            if (_rb_add_exam_colombo.isSelected()) {
+                branch = "Colombo";
+            } else {
+                branch = "Kandy";
             }
+            _lb_add_exam_preview_branch.setText(branch);
+
+            _bt_add_exam_preview_addExam.setEnabled(true);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -653,7 +625,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
     }
 
     private void add_to_database() {
-        stu_exams_info exam_info = new stu_exams_info(_lb_add_exam_preview_examID.getText(), _lb_add_exam_preview_name.getText(), _lb_add_exam_preview_date.getText(), "1", _lb_add_exam_preview_branch.getText(), _lb_add_exam_preview_batach_number.getText(), _lb_add_exam_preview_course.getText());
+        stu_exams_info exam_info = new stu_exams_info(_lb_add_exam_preview_examID.getText(), _lb_add_exam_preview_name.getText(), _lb_add_exam_preview_date.getText(), "1", _lb_add_exam_preview_branch.getText(), _lb_add_exam_preview_btach_number.getText(), _lb_add_exam_preview_course.getText());
     }
 
     private void load_form_data(String id) {
@@ -664,7 +636,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
             ResultSet rs_info = s.executeQuery("SELECT * FROM stu_exams_info WHERE stu_exams_info_id='" + id + "'");
             if (rs_info.next()) {
                 _tf_add_exam_name.setText(rs_info.getString("stu_exams_info_name"));
-                _tf_add_batch_number.setText(rs_info.getString("stu_exams_info_batch"));
+                _cb_add_exam_batch.setSelectedItem(rs_info.getString("stu_exams_info_batch"));
 
                 String course = rs_info.getString("stu_exams_info_course");
                 _cb_add_exam_course.setSelectedItem(course);
@@ -701,11 +673,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
 
     private void check_empty_fields() {
         if (!_tf_add_exam_name.getText().isEmpty()) {
-            if (!_tf_add_batch_number.getText().isEmpty()) {
-                add_to_preview_form();
-            } else {
-                JOptionPane.showMessageDialog(this, "Batch Number is Empty");
-            }
+            add_to_preview_form();
         } else {
             JOptionPane.showMessageDialog(this, "Exam Name is Empty!");
         }
@@ -713,11 +681,7 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
 
     private void check_update_empty_fields() {
         if (!_tf_add_exam_name.getText().isEmpty()) {
-            if (!_tf_add_batch_number.getText().isEmpty()) {
-                add_to_update_preview_form();
-            } else {
-                JOptionPane.showMessageDialog(this, "Batch Number is Empty");
-            }
+            add_to_update_preview_form();
         } else {
             JOptionPane.showMessageDialog(this, "Exam Name is Empty!");
         }
@@ -743,28 +707,24 @@ public class Jp_add_exams_informations extends javax.swing.JPanel {
 
     private void add_to_update_preview_form() {
         try {
-            try {
-                _lb_add_exam_preview_examID.setText(exam_id);
-                _lb_add_exam_preview_name.setText(_tf_add_exam_name.getText());
-                _lb_add_exam_preview_batach_number.setText(_tf_add_batch_number.getText());
-                _lb_add_exam_preview_course.setText((String) _cb_add_exam_course.getSelectedItem());
-                Date d = _dc_add_exam_examDate.getDate();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                String date = sdf.format(d);
-                _lb_add_exam_preview_date.setText(date);
+            _lb_add_exam_preview_examID.setText(exam_id);
+            _lb_add_exam_preview_name.setText(_tf_add_exam_name.getText());
+            _lb_add_exam_preview_btach_number.setText((String) _cb_add_exam_batch.getSelectedItem());
+            _lb_add_exam_preview_course.setText((String) _cb_add_exam_course.getSelectedItem());
+            Date d = _dc_add_exam_examDate.getDate();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String date = sdf.format(d);
+            _lb_add_exam_preview_date.setText(date);
 
-                String branch;
-                if (_rb_add_exam_colombo.isSelected()) {
-                    branch = "Colombo";
-                } else {
-                    branch = "Kandy";
-                }
-                _lb_add_exam_preview_branch.setText(branch);
-
-                _bt_add_exam_preview_addExam.setEnabled(true);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Birthday is Empty");
+            String branch;
+            if (_rb_add_exam_colombo.isSelected()) {
+                branch = "Colombo";
+            } else {
+                branch = "Kandy";
             }
+            _lb_add_exam_preview_branch.setText(branch);
+
+            _bt_add_exam_preview_addExam.setEnabled(true);
 
         } catch (Exception e) {
             e.printStackTrace();

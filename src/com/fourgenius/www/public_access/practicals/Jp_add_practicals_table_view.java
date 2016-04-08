@@ -6,8 +6,15 @@
 package com.fourgenius.www.public_access.practicals;
 
 import com.fourgenius.www.public_access.exams.*;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams.Jp_add_exams_main_panel;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_AddExam;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_ExamsDetails;
 import com.fourgenius.www.public_access.registration.lecture.*;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
+import static com.fourgenius.www.public_access.practicals.Jf_practicals._bt_UserMain_home;
+import static com.fourgenius.www.public_access.practicals.Jp_add_practicals.Jp_add_practical_main_panel;
+import static com.fourgenius.www.public_access.practicals.Jp_add_practicals._bt_add_practical_AddPractical;
+import static com.fourgenius.www.public_access.practicals.Jp_add_practicals._bt_add_practical_practicalDetails;
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture.Jp_registraion_lecture_main_panel;
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_add_lecture;
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture._bt_registraion_lecture_buttons_preview_lecture;
@@ -32,8 +39,8 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class Jp_add_practicals_table_view extends javax.swing.JPanel {
 
-    DefaultTableModel dtm;
-    TableRowSorter<DefaultTableModel> sorter;
+//    DefaultTableModel dtm;
+//    TableRowSorter<DefaultTableModel> sorter;
     Border border = BorderFactory.createLineBorder(Color.white, 1);
 
     /**
@@ -41,11 +48,11 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
      */
     public Jp_add_practicals_table_view() {
         initComponents();
-        _sp_registration_student_searchStudent.setVisible(false);
         _bt_update_practical.setEnabled(false);
-        _bt_practical_preview.setEnabled(false);
+        _bt_add_marks.setEnabled(false);
+        _bt_view_marks.setEnabled(false);
         add_active_table_data();
-
+        add_past_exam_data();
     }
 
     /**
@@ -57,56 +64,58 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        _tf_add_practical_searchPractical = new javax.swing.JTextField();
-        _sp_registration_student_searchStudent = new javax.swing.JScrollPane();
-        _li_add_practicals_searchPracticals = new javax.swing.JList();
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        _tp_practical_preview = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        _tb_add_practical_view_table = new javax.swing.JTable();
-        _bt_practical_preview = new javax.swing.JButton();
+        _tb_add_practicals_view_active_practicals_table = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        _tb_add_practicals_view_past_practicals_table = new javax.swing.JTable();
+        _bt_view_marks = new javax.swing.JButton();
+        _bt_add_marks = new javax.swing.JButton();
         _bt_update_practical = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        _tf_add_practical_searchPractical.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_add_practical_searchPractical.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_add_practical_searchPracticalActionPerformed(evt);
-            }
-        });
-        _tf_add_practical_searchPractical.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                _tf_add_practical_searchPracticalKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_add_practical_searchPracticalKeyReleased(evt);
-            }
-        });
-        add(_tf_add_practical_searchPractical, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, 310, 50));
-
-        _li_add_practicals_searchPracticals.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _li_add_practicals_searchPracticals.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _li_add_practicals_searchPracticalsMouseClicked(evt);
-            }
-        });
-        _sp_registration_student_searchStudent.setViewportView(_li_add_practicals_searchPracticals);
-
-        add(_sp_registration_student_searchStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 60, 310, 490));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images/search_icon.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
-
         jPanel1.setLayout(new java.awt.CardLayout());
 
-        _tb_add_practical_view_table.setModel(new javax.swing.table.DefaultTableModel(
+        _tp_practical_preview.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tp_practical_previewMouseClicked(evt);
+            }
+        });
+
+        _tb_add_practicals_view_active_practicals_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Practical ID", "Practical Name", "Batch Number", "Course", "Date", "Branch"
+                "Exam ID", "Exam Name", "Batch Number", "Course", "Date", "Branch"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        _tb_add_practicals_view_active_practicals_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tb_add_practicals_view_active_practicals_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(_tb_add_practicals_view_active_practicals_table);
+
+        _tp_practical_preview.addTab("Active Practicals", jScrollPane1);
+
+        _tb_add_practicals_view_past_practicals_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Exam ID", "Exam Name", "Batch Number", "Course", "Date", "Branch"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -117,46 +126,82 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        _tb_add_practical_view_table.addMouseListener(new java.awt.event.MouseAdapter() {
+        _tb_add_practicals_view_past_practicals_table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                _tb_add_practical_view_tableMouseClicked(evt);
+                _tb_add_practicals_view_past_practicals_tableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(_tb_add_practical_view_table);
+        jScrollPane2.setViewportView(_tb_add_practicals_view_past_practicals_table);
 
-        jPanel1.add(jScrollPane1, "card2");
+        _tp_practical_preview.addTab("Past Practicals", jScrollPane2);
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 980, 540));
+        jPanel1.add(_tp_practical_preview, "card2");
 
-        _bt_practical_preview.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _bt_practical_preview.setForeground(new java.awt.Color(255, 255, 255));
-        _bt_practical_preview.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
-        _bt_practical_preview.setText("Preview");
-        _bt_practical_preview.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        _bt_practical_preview.setFocusPainted(false);
-        _bt_practical_preview.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        _bt_practical_preview.setMaximumSize(new java.awt.Dimension(200, 50));
-        _bt_practical_preview.setPreferredSize(new java.awt.Dimension(200, 50));
-        _bt_practical_preview.addMouseListener(new java.awt.event.MouseAdapter() {
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 1310, 540));
+
+        _bt_view_marks.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_view_marks.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_view_marks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_view_marks.setText("View Marks");
+        _bt_view_marks.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_view_marks.setFocusPainted(false);
+        _bt_view_marks.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_view_marks.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_view_marks.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _bt_view_marksMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                _bt_practical_previewMouseEntered(evt);
+                _bt_view_marksMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                _bt_practical_previewMouseExited(evt);
+                _bt_view_marksMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                _bt_practical_previewMousePressed(evt);
+                _bt_view_marksMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                _bt_practical_previewMouseReleased(evt);
+                _bt_view_marksMouseReleased(evt);
             }
         });
-        _bt_practical_preview.addActionListener(new java.awt.event.ActionListener() {
+        _bt_view_marks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _bt_practical_previewActionPerformed(evt);
+                _bt_view_marksActionPerformed(evt);
             }
         });
-        add(_bt_practical_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, -1, -1));
+        add(_bt_view_marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 560, 200, -1));
+
+        _bt_add_marks.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_add_marks.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_add_marks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_add_marks.setText("Add Marks");
+        _bt_add_marks.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_add_marks.setFocusPainted(false);
+        _bt_add_marks.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_add_marks.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_add_marks.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _bt_add_marksMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_add_marksMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_add_marksMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_add_marksMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_add_marksMouseReleased(evt);
+            }
+        });
+        _bt_add_marks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_add_marksActionPerformed(evt);
+            }
+        });
+        add(_bt_add_marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, 200, -1));
 
         _bt_update_practical.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_update_practical.setForeground(new java.awt.Color(255, 255, 255));
@@ -188,118 +233,76 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
         add(_bt_update_practical, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void _tf_add_practical_searchPracticalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_practical_searchPracticalKeyReleased
+    private void _tb_add_practicals_view_active_practicals_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_practicals_view_active_practicals_tableMouseClicked
+        _bt_update_practical.setEnabled(true);
+        _bt_add_marks.setEnabled(true);
+        _bt_view_marks.setEnabled(true);
+    }//GEN-LAST:event__tb_add_practicals_view_active_practicals_tableMouseClicked
 
-        try {
-            if (_tf_add_practical_searchPractical.getText().isEmpty()) {
-                _sp_registration_student_searchStudent.setVisible(false);
-            } else {
-                String text = _tf_add_practical_searchPractical.getText();
-                char first = text.charAt(0);
-                if (Character.isDigit(first)) {
-                    Connection c = MC_JavaDataBaseConnection.myConnection();
-                    Statement s = c.createStatement();
+    private void _tb_add_practicals_view_past_practicals_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_practicals_view_past_practicals_tableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tb_add_practicals_view_past_practicals_tableMouseClicked
 
-                    ResultSet rs = s.executeQuery("SELECT b.stu_info_name_first_name, b.stu_info_name_last_name FROM stu_info_personal a LEFT JOIN stu_info_name b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_user_info c ON a.stu_user_info_id=c.stu_user_info_id WHERE a.stu_info_personal_nic like '" + _tf_add_practical_searchPractical.getText() + "' AND c.stu_user_info_status='1'");
-                    Vector v = new Vector();
-                    while (rs.next()) {
-                        v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
-                    }
-                    rs.close();
-                    _li_add_practicals_searchPracticals.setListData(v);
-                    _sp_registration_student_searchStudent.setVisible(false);
-                    if (_li_add_practicals_searchPracticals.getModel().getSize() == 0) {
-                        _sp_registration_student_searchStudent.setVisible(false);
-                    } else {
-                        _sp_registration_student_searchStudent.setVisible(true);
-                    }
-                    if (evt.getKeyCode() == 40) {
-                        _sp_registration_student_searchStudent.setVisible(true);
-                        _li_add_practicals_searchPracticals.grabFocus();
-                    }
-                } else {
-                    try {
-
-                        if (_tf_add_practical_searchPractical.getText().isEmpty()) {
-                            _sp_registration_student_searchStudent.setVisible(false);
-                        } else {
-                            Connection c = MC_JavaDataBaseConnection.myConnection();
-                            Statement s = c.createStatement();
-
-                            ResultSet rs = s.executeQuery("SELECT b.stu_info_name_first_name, b.stu_info_name_last_name FROM stu_info_personal a LEFT JOIN stu_info_name b ON a.stu_user_info_id=b.stu_user_info_id LEFT JOIN stu_user_info c ON a.stu_user_info_id=c.stu_user_info_id WHERE CONCAT (b.stu_info_name_first_name, ' ', b.stu_info_name_last_name) like '" + _tf_add_practical_searchPractical.getText() + "%' AND c.stu_user_info_status='1'");
-                            Vector v = new Vector();
-                            while (rs.next()) {
-                                v.add(rs.getString("stu_info_name_first_name") + " " + rs.getString("stu_info_name_last_name"));
-                            }
-                            rs.close();
-                            _li_add_practicals_searchPracticals.setListData(v);
-                            _sp_registration_student_searchStudent.setVisible(false);
-                            if (_li_add_practicals_searchPracticals.getModel().getSize() == 0) {
-                                _sp_registration_student_searchStudent.setVisible(false);
-                            } else {
-                                _sp_registration_student_searchStudent.setVisible(true);
-                            }
-                        }
-                        if (evt.getKeyCode() == 40) {
-                            _sp_registration_student_searchStudent.setVisible(true);
-                            _li_add_practicals_searchPracticals.grabFocus();
-                        }
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+    private void _tp_practical_previewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tp_practical_previewMouseClicked
+        int index = _tp_practical_preview.getSelectedIndex();
+        if (index == 1) {
+            _bt_update_practical.setEnabled(false);
+            _bt_add_marks.setEnabled(false);
+            _tb_add_practicals_view_active_practicals_table.setSelectionMode(0);
+        } else {
+            _bt_update_practical.setEnabled(false);
+            _bt_add_marks.setEnabled(false);
+            _tb_add_practicals_view_past_practicals_table.setSelectionMode(0);
         }
+    }//GEN-LAST:event__tp_practical_previewMouseClicked
 
+    private void _bt_view_marksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_view_marksMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_view_marksMouseClicked
 
-    }//GEN-LAST:event__tf_add_practical_searchPracticalKeyReleased
+    private void _bt_view_marksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_view_marksMouseEntered
+        _bt_view_marks.setBorder(border);
+    }//GEN-LAST:event__bt_view_marksMouseEntered
 
-    private void _tf_add_practical_searchPracticalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_practical_searchPracticalKeyPressed
+    private void _bt_view_marksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_view_marksMouseExited
+        _bt_view_marks.setBorder(null);
+    }//GEN-LAST:event__bt_view_marksMouseExited
 
-    }//GEN-LAST:event__tf_add_practical_searchPracticalKeyPressed
+    private void _bt_view_marksMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_view_marksMousePressed
+        _bt_view_marks.setBorder(border);
+    }//GEN-LAST:event__bt_view_marksMousePressed
 
-    private void _tf_add_practical_searchPracticalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_add_practical_searchPracticalActionPerformed
+    private void _bt_view_marksMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_view_marksMouseReleased
+        _bt_view_marks.setBorder(null);
+    }//GEN-LAST:event__bt_view_marksMouseReleased
 
-    }//GEN-LAST:event__tf_add_practical_searchPracticalActionPerformed
+    private void _bt_view_marksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_view_marksActionPerformed
+        
+    }//GEN-LAST:event__bt_view_marksActionPerformed
 
-    private void _li_add_practicals_searchPracticalsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__li_add_practicals_searchPracticalsMouseClicked
-        DefaultTableModel dtm = (DefaultTableModel) _tb_add_practical_view_table.getModel();
-        _tf_add_practical_searchPractical.setText(_li_add_practicals_searchPracticals.getSelectedValue().toString());
-        _sp_registration_student_searchStudent.setVisible(false);
-        String name = _li_add_practicals_searchPracticals.getSelectedValue().toString();
-        for (int row = 0; row < _tb_add_practical_view_table.getRowCount(); row++) {
-            String next = _tb_add_practical_view_table.getValueAt(row, 1).toString();
-            if (next.equals(name)) {
-                _tb_add_practical_view_table.setRowSelectionInterval(row, row);
-            }
-        }
-        search_lecture();
-    }//GEN-LAST:event__li_add_practicals_searchPracticalsMouseClicked
+    private void _bt_add_marksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_marksMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_add_marksMouseClicked
 
-    private void _bt_practical_previewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_practical_previewMouseEntered
-        _bt_practical_preview.setBorder(border);
-    }//GEN-LAST:event__bt_practical_previewMouseEntered
+    private void _bt_add_marksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_marksMouseEntered
+        _bt_add_marks.setBorder(border);
+    }//GEN-LAST:event__bt_add_marksMouseEntered
 
-    private void _bt_practical_previewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_practical_previewMouseExited
-        _bt_practical_preview.setBorder(null);
-    }//GEN-LAST:event__bt_practical_previewMouseExited
+    private void _bt_add_marksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_marksMouseExited
+        _bt_add_marks.setBorder(null);
+    }//GEN-LAST:event__bt_add_marksMouseExited
 
-    private void _bt_practical_previewMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_practical_previewMousePressed
-        _bt_practical_preview.setBorder(null);
-    }//GEN-LAST:event__bt_practical_previewMousePressed
+    private void _bt_add_marksMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_marksMousePressed
+        _bt_add_marks.setBorder(null);
+    }//GEN-LAST:event__bt_add_marksMousePressed
 
-    private void _bt_practical_previewMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_practical_previewMouseReleased
-        _bt_practical_preview.setBorder(border);
-    }//GEN-LAST:event__bt_practical_previewMouseReleased
+    private void _bt_add_marksMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_marksMouseReleased
+        _bt_add_marks.setBorder(border);
+    }//GEN-LAST:event__bt_add_marksMouseReleased
 
-    private void _bt_practical_previewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_practical_previewActionPerformed
-        add_preview_form();
-    }//GEN-LAST:event__bt_practical_previewActionPerformed
+    private void _bt_add_marksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_marksActionPerformed
+        
+    }//GEN-LAST:event__bt_add_marksActionPerformed
 
     private void _bt_update_practicalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_update_practicalMouseEntered
         _bt_update_practical.setBorder(border);
@@ -318,125 +321,95 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_update_practicalMouseReleased
 
     private void _bt_update_practicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_update_practicalActionPerformed
-        update_selected_lecture();
+        update_selected_exam();
+        _bt_UserMain_home.setEnabled(false);
     }//GEN-LAST:event__bt_update_practicalActionPerformed
-
-    private void _tb_add_practical_view_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_practical_view_tableMouseClicked
-        _bt_update_practical.setEnabled(true);
-        _bt_practical_preview.setEnabled(true);
-    }//GEN-LAST:event__tb_add_practical_view_tableMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton _bt_practical_preview;
+    private javax.swing.JButton _bt_add_marks;
     private javax.swing.JButton _bt_update_practical;
-    private javax.swing.JList _li_add_practicals_searchPracticals;
-    private javax.swing.JScrollPane _sp_registration_student_searchStudent;
-    private javax.swing.JTable _tb_add_practical_view_table;
-    private javax.swing.JTextField _tf_add_practical_searchPractical;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton _bt_view_marks;
+    private javax.swing.JTable _tb_add_practicals_view_active_practicals_table;
+    private javax.swing.JTable _tb_add_practicals_view_past_practicals_table;
+    private javax.swing.JTabbedPane _tp_practical_preview;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
     private void add_active_table_data() {
-//        try {
-//            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_lecture_view_active.getModel();
-//
-//            Connection c = MC_JavaDataBaseConnection.myConnection();
-//            Statement s = c.createStatement();
-//            String search_query = "SELECT a.employee_academic_user_id, a.employee_academic_user_email, b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name, c.employee_academic_user_info_personal_nic, d.employee_academic_user_info_contact_mobile FROM employee_academic_user_info a,   employee_academic_user_info_name b, employee_academic_user_info_personal c, employee_academic_user_info_contact d WHERE a.employee_academic_user_id=b.employee_academic_user_id AND a.employee_academic_user_id=c.employee_academic_user_id AND a.employee_academic_user_id=d.employee_academic_user_id AND a.employee_academic_user_info_status >= '1'";
-//            ResultSet rs = s.executeQuery(search_query);
-//            while (rs.next()) {
-//                Vector v = new Vector();
-//                v.add(rs.getString("employee_academic_user_id"));
-//                v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
-//                v.add(rs.getString("employee_academic_user_info_personal_nic"));
-//                v.add(rs.getString("employee_academic_user_email"));
-//                v.add(rs.getString("employee_academic_user_info_contact_mobile"));
-//                dtm.addRow(v);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-    }
-
-    private void search_lecture() {
         try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_active_practicals_table.getModel();
 
-//            String fullname=_li_registration_student_searchStudent.getSelectedValue().toString();
-//            String[] splitname=fullname.split(" ");
-//            String fname=splitname[0];
-//            String lname=splitname[1];
-//            Connection c=MC_JavaDataBaseConnection.myConnection();
-//            Statement s=c.createStatement();
-//            ResultSet rs=s.executeQuery("SELECT a.employee_academic_user_id, a.employee_academic_user_email, b.employee_academic_user_info_name_first_name, b.employee_academic_user_info_name_last_name, c.employee_academic_user_info_personal_nic, d.employee_academic_user_info_contact_mobile FROM employee_academic_user_info a,   employee_academic_user_info_name b, employee_academic_user_info_personal c, employee_academic_user_info_contact d WHERE a.employee_academic_user_id=b.employee_academic_user_id AND a.employee_academic_user_id=c.employee_academic_user_id AND a.employee_academic_user_id=d.employee_academic_user_id AND a.employee_academic_user_info_status >= '1' AND b.employee_academic_user_info_name_first_name='"+fname+"' and b.employee_academic_user_info_name_last_name='"+lname+"'");
-//            while (rs.next()) {
-//                Vector v = new Vector();
-//                v.add(rs.getString("employee_academic_user_id"));
-//                v.add(rs.getString("employee_academic_user_info_name_first_name") + " " + rs.getString("employee_academic_user_info_name_last_name"));
-//                v.add(rs.getString("employee_academic_user_info_personal_nic"));
-//                v.add(rs.getString("employee_academic_user_email"));
-//                v.add(rs.getString("employee_academic_user_info_contact_mobile"));
-//                dtm.addRow(v);
-//            }
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            String search_query = "SELECT stu_practical_info_id,stu_practical_info_name,stu_practical_info_date,stu_practical_info_branch,stu_practical_info_batch,stu_practical_info_course FROM stu_practical_info WHERE stu_practical_info_type = '1'";
+            ResultSet rs = s.executeQuery(search_query);
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString("stu_practical_info_id"));
+                v.add(rs.getString("stu_practical_info_name"));
+                v.add(rs.getString("stu_practical_info_batch"));
+                v.add(rs.getString("stu_practical_info_course"));
+                v.add(rs.getString("stu_practical_info_date"));
+                v.add(rs.getString("stu_practical_info_branch"));
+                dtm.addRow(v);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void update_selected_lecture() {
-//        try {
-//            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_lecture_view_active.getModel();
-//            int row = _tb_registration_lecture_view_active.getSelectedRow();
-//            String lec_id = dtm.getValueAt(row, 0).toString();
-//
-//            Jp_registration_lecture_informations register_lecture = new Jp_registration_lecture_informations(lec_id);
-//            if (register_lecture == null) {
-//                Jp_registraion_lecture_main_panel.removeAll();
-//                revalidate();
-//                register_lecture = new Jp_registration_lecture_informations(lec_id);
-//                register_lecture.setVisible(true);
-//                Jp_registraion_lecture_main_panel.add(register_lecture);
-//                revalidate();
-//            } else {
-//                Jp_registraion_lecture_main_panel.removeAll();
-//                revalidate();
-//                register_lecture.setVisible(true);
-//                Jp_registraion_lecture_main_panel.add(register_lecture);
-//                revalidate();
-//            }
-//            _bt_registraion_lecture_buttons_add_lecture.setText("Cancel");
-//            _bt_registraion_lecture_buttons_preview_lecture.setEnabled(false);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+    private void add_past_exam_data() {
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_past_practicals_table.getModel();
+
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            String search_query = "SELECT stu_practical_info_id,stu_practical_info_name,stu_practical_info_date,stu_practical_info_branch,stu_practical_info_batch,stu_practical_info_course FROM stu_practical_info WHERE stu_practical_info_type = '0'";
+            ResultSet rs = s.executeQuery(search_query);
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString("stu_practical_info_id"));
+                v.add(rs.getString("stu_practical_info_name"));
+                v.add(rs.getString("stu_practical_info_batch"));
+                v.add(rs.getString("stu_practical_info_course"));
+                v.add(rs.getString("stu_practical_info_date"));
+                v.add(rs.getString("stu_practical_info_branch"));
+                dtm.addRow(v);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    private void add_preview_form() {
-//        try {
-//            DefaultTableModel dtm = (DefaultTableModel) _tb_registration_lecture_view_active.getModel();
-//            int row = _tb_registration_lecture_view_active.getSelectedRow();
-//            String lec_id = dtm.getValueAt(row, 0).toString();
-//
-//            Jp_registration_lecture_preview lecture_preview = new Jp_registration_lecture_preview(lec_id);
-//            if (lecture_preview == null) {
-//                Jp_registraion_lecture_main_panel.removeAll();
-//                revalidate();
-//                lecture_preview = new Jp_registration_lecture_preview(lec_id);
-//                lecture_preview.setVisible(true);
-//                Jp_registraion_lecture_main_panel.add(lecture_preview);
-//                revalidate();
-//            } else {
-//                Jp_registraion_lecture_main_panel.removeAll();
-//                revalidate();
-//                lecture_preview.setVisible(true);
-//                Jp_registraion_lecture_main_panel.add(lecture_preview);
-//                revalidate();
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+    private void update_selected_exam() {
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_active_practicals_table.getModel();
+            int row = _tb_add_practicals_view_active_practicals_table.getSelectedRow();
+            String prc_id = dtm.getValueAt(row, 0).toString();
+
+            Jp_add_practical_informations update_prc = new Jp_add_practical_informations(prc_id);
+            if (update_prc == null) {
+                Jp_add_practical_main_panel.removeAll();
+                revalidate();
+                update_prc = new Jp_add_practical_informations(prc_id);
+                update_prc.setVisible(true);
+                Jp_add_practical_main_panel.add(update_prc);
+                revalidate();
+            } else {
+                Jp_add_practical_main_panel.removeAll();
+                revalidate();
+                update_prc.setVisible(true);
+                Jp_add_practical_main_panel.add(update_prc);
+                revalidate();
+            }
+            _bt_add_practical_AddPractical.setText("Cancel");
+            _bt_add_practical_practicalDetails.setEnabled(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

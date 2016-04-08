@@ -6,6 +6,7 @@
 package com.fourgenius.www.public_access.practicals;
 
 import com.fourgenius.www.public_access.exams.*;
+import static com.fourgenius.www.public_access.practicals.Jf_practicals._bt_UserMain_home;
 import com.fourgenius.www.public_access.registration.lecture.*;
 import static com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture_informations._tf_registration_lecture_information_form_sur_name;
 import java.awt.Color;
@@ -152,16 +153,18 @@ public class Jp_add_practicals extends javax.swing.JPanel {
 
     private void _bt_add_practical_AddPracticalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_practical_AddPracticalActionPerformed
         String button_name = _bt_add_practical_AddPractical.getText();
-        if (button_name.equals("Add Exam")) {
+        if (button_name.equals("Add Practical")) {
             load_exam_information_form();
             buttons_enable(_bt_add_practical_AddPractical.getText());
             _bt_add_practical_AddPractical.setText("Cancel");
+            _bt_UserMain_home.setEnabled(false);
         } else {
             int option = JOptionPane.showConfirmDialog(this, "All Data You Didn't Save is Lost", "Are You Sure?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (option == JOptionPane.YES_OPTION) {
                 load_table_exams_view();
-                _bt_add_practical_AddPractical.setText("Add Lecture");
+                _bt_add_practical_AddPractical.setText("Add Practical");
                 _bt_add_practical_practicalDetails.setEnabled(true);
+                _bt_UserMain_home.setEnabled(true);
             }
 
         }

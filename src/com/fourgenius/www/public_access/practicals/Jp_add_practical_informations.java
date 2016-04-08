@@ -6,12 +6,21 @@
 package com.fourgenius.www.public_access.practicals;
 
 import com.fourgenius.www.public_access.exams.*;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams.Jp_add_exams_main_panel;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_AddExam;
+import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_ExamsDetails;
 import com.fourgenius.www.public_access.registration.lecture.*;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_address;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_contact;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_personal;
+import com.fourgenius.www.public_access.model.student.stu_exams_info;
+import com.fourgenius.www.public_access.model.student.stu_practical_info;
+import static com.fourgenius.www.public_access.practicals.Jf_practicals._bt_UserMain_home;
+import static com.fourgenius.www.public_access.practicals.Jp_add_practicals.Jp_add_practical_main_panel;
+import static com.fourgenius.www.public_access.practicals.Jp_add_practicals._bt_add_practical_AddPractical;
+import static com.fourgenius.www.public_access.practicals.Jp_add_practicals._bt_add_practical_practicalDetails;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._lb_registration_student_preview_course;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._lb_registration_student_preview_dateOfBirth;
 import com.fourgenius.www.public_access.registration.student.user_image_copy;
@@ -54,7 +63,7 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
     public String sur_name, first_name, last_name;
 
 //  Create variable for pass to qulification form
-    public String lecture_id;
+    public String practical_id;
     public int id_no;
     public String branch_name;
     public String full_name;
@@ -76,6 +85,22 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
         _bt_add_practical_preview_addPractical.setEnabled(false);
     }
 
+    public Jp_add_practical_informations(String prc_id) {
+        initComponents();
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (Exception ex) {
+        }
+        set_data_to_Combo_box();
+        practical_id = prc_id;
+        load_form_data(prc_id);
+        Date d = Calendar.getInstance().getTime();
+        _dc_add_practical_practicalDate.setMinSelectableDate(d);
+        _bt_add_practical_preview_addPractical.setText("Update Practical");
+        _bt_add_practical_preview.setText("Preview Update");
+        _bt_add_practical_preview_addPractical.setEnabled(false);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -93,15 +118,15 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
         _lb_add_practical_name = new javax.swing.JLabel();
         _tf_add_practical_name = new javax.swing.JTextField();
         _lb_add_exam_course_name = new javax.swing.JLabel();
-        _cb_add_exam_course = new javax.swing.JComboBox();
+        _cb_add_practical_course = new javax.swing.JComboBox();
         _lb_add_practical_practicalDate = new javax.swing.JLabel();
         _dc_add_practical_practicalDate = new com.toedter.calendar.JDateChooser();
         _lb_add_practical_branch = new javax.swing.JLabel();
         _rb_add_practical_colombo = new javax.swing.JRadioButton();
         _rb_add_practical_kandy = new javax.swing.JRadioButton();
         _bt_add_practical_preview = new javax.swing.JButton();
-        _tf_add_practical_batch_number = new javax.swing.JTextField();
         _lb_add_practical_batch_number = new javax.swing.JLabel();
+        _cb_add_practical_batch = new javax.swing.JComboBox();
         _pl_add_exam_examInformation_preview = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         _lb_add_practical_preview_practicalID = new javax.swing.JLabel();
@@ -115,7 +140,7 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
         _lb_add_practical_preview_branch = new javax.swing.JLabel();
         _bt_add_practical_preview_addPractical = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        _lb_add_practical_preview_batach_number = new javax.swing.JLabel();
+        _lb_add_practical_preview_batch_number = new javax.swing.JLabel();
         _pl_registration_lecture_personalInformation_browsePhoto1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(66, 66, 66));
@@ -124,7 +149,7 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         _pl_add_exams_examInformation_main_panel.setBackground(new java.awt.Color(2, 119, 189));
-        _pl_add_exams_examInformation_main_panel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Exam Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        _pl_add_exams_examInformation_main_panel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Practical Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         _pl_add_exams_examInformation_main_panel.setMaximumSize(new java.awt.Dimension(32767, 695));
         _pl_add_exams_examInformation_main_panel.setMinimumSize(new java.awt.Dimension(0, 695));
         _pl_add_exams_examInformation_main_panel.setPreferredSize(new java.awt.Dimension(815, 695));
@@ -161,12 +186,12 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
         _lb_add_exam_course_name.setText("Course");
         _pl_add_exam_examInformation.add(_lb_add_exam_course_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 333, -1));
 
-        _cb_add_exam_course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _pl_add_exam_examInformation.add(_cb_add_exam_course, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 333, 40));
+        _cb_add_practical_course.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _pl_add_exam_examInformation.add(_cb_add_practical_course, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 333, 40));
 
         _lb_add_practical_practicalDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_add_practical_practicalDate.setForeground(new java.awt.Color(255, 255, 255));
-        _lb_add_practical_practicalDate.setText("Exam Date");
+        _lb_add_practical_practicalDate.setText("Practical Date");
         _pl_add_exam_examInformation.add(_lb_add_practical_practicalDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 333, -1));
 
         _dc_add_practical_practicalDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -235,28 +260,13 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
         });
         _pl_add_exam_examInformation.add(_bt_add_practical_preview, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 244, -1));
 
-        _tf_add_practical_batch_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        _tf_add_practical_batch_number.setMaximumSize(new java.awt.Dimension(300, 40));
-        _tf_add_practical_batch_number.setPreferredSize(new java.awt.Dimension(300, 40));
-        _tf_add_practical_batch_number.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                _tf_add_practical_batch_numberActionPerformed(evt);
-            }
-        });
-        _tf_add_practical_batch_number.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                _tf_add_practical_batch_numberKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                _tf_add_practical_batch_numberKeyTyped(evt);
-            }
-        });
-        _pl_add_exam_examInformation.add(_tf_add_practical_batch_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 333, -1));
-
         _lb_add_practical_batch_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _lb_add_practical_batch_number.setForeground(new java.awt.Color(255, 255, 255));
         _lb_add_practical_batch_number.setText("Batch Number");
         _pl_add_exam_examInformation.add(_lb_add_practical_batch_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 333, -1));
+
+        _cb_add_practical_batch.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02" }));
+        _pl_add_exam_examInformation.add(_cb_add_practical_batch, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 330, 40));
 
         _pl_add_exams_examInformation_main_panel.add(_pl_add_exam_examInformation, "card2");
 
@@ -328,7 +338,7 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Batch Number");
 
-        _lb_add_practical_preview_batach_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _lb_add_practical_preview_batch_number.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout _pl_add_exam_examInformation_previewLayout = new javax.swing.GroupLayout(_pl_add_exam_examInformation_preview);
         _pl_add_exam_examInformation_preview.setLayout(_pl_add_exam_examInformation_previewLayout);
@@ -355,7 +365,7 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
                             .addComponent(_lb_add_practical_preview_course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_add_practical_preview_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(_lb_add_practical_preview_branch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(_lb_add_practical_preview_batach_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(_lb_add_practical_preview_batch_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         _pl_add_exam_examInformation_previewLayout.setVerticalGroup(
@@ -371,7 +381,7 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20)
-                    .addComponent(_lb_add_practical_preview_batach_number, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_lb_add_practical_preview_batch_number, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(_pl_add_exam_examInformation_previewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -440,39 +450,29 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
     }//GEN-LAST:event__bt_add_practical_previewMouseClicked
 
     private void _bt_add_practical_preview_addPracticalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_practical_preview_addPracticalActionPerformed
-
         try {
-            if (_bt_add_practical_preview_addPractical.getText().equals("Add Exam")) {
+            if (_bt_add_practical_preview_addPractical.getText().equals("Add Practical")) {
                 int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (option == JOptionPane.YES_OPTION) {
                     add_to_database();
-                    clear_personal_information_form();
-                    clear_preview_form();
-                    _bt_add_practical_preview.setEnabled(false);
+                    load_table_view();
+                    _bt_add_practical_AddPractical.setText("Add Practical");
+                    _bt_add_practical_practicalDetails.setEnabled(true);
+                    _bt_UserMain_home.setEnabled(true);
                 }
             } else {
                 int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (option == JOptionPane.YES_OPTION) {
                     add_to_database();
-                    clear_personal_information_form();
-                    clear_preview_form();
-
-                    Connection c = MC_JavaDataBaseConnection.myConnection();
-                    Statement s = c.createStatement();
-                    ResultSet rs_fileid = s.executeQuery("SELECT employee_academic_user_info_qulifications_file_id FROM employee_academic_user_info_qulifications WHERE employee_academic_user_id='" + lecture_id + "'");
-                    if (rs_fileid.next()) {
-                        String fileid = rs_fileid.getString("employee_academic_user_info_qulifications_file_id");
-                        load_information_qulifications_update_form(fileid);
-                        _bt_add_practical_preview.setVisible(false);
-                        _bt_add_practical_preview_addPractical.setEnabled(false);
-                    }
+                    load_table_view();
+                    _bt_add_practical_AddPractical.setText("Add Practical");
+                    _bt_add_practical_practicalDetails.setEnabled(true);
+                    _bt_UserMain_home.setEnabled(true);
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }//GEN-LAST:event__bt_add_practical_preview_addPracticalActionPerformed
 
     private void _bt_add_practical_preview_addPracticalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_add_practical_preview_addPracticalMouseEntered
@@ -511,18 +511,6 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
 
     }//GEN-LAST:event__tf_add_practical_nameActionPerformed
 
-    private void _tf_add_practical_batch_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__tf_add_practical_batch_numberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event__tf_add_practical_batch_numberActionPerformed
-
-    private void _tf_add_practical_batch_numberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_practical_batch_numberKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event__tf_add_practical_batch_numberKeyReleased
-
-    private void _tf_add_practical_batch_numberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event__tf_add_practical_batch_numberKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event__tf_add_practical_batch_numberKeyTyped
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformation_employeeDetails_branch;
@@ -530,14 +518,15 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
     private javax.swing.ButtonGroup _bg_registration_lecture_personalInformations_employeeDetails_gender;
     private javax.swing.JButton _bt_add_practical_preview;
     private javax.swing.JButton _bt_add_practical_preview_addPractical;
-    private javax.swing.JComboBox _cb_add_exam_course;
+    private javax.swing.JComboBox _cb_add_practical_batch;
+    private javax.swing.JComboBox _cb_add_practical_course;
     public com.toedter.calendar.JDateChooser _dc_add_practical_practicalDate;
     private javax.swing.JLabel _lb_add_exam_course_name;
     private javax.swing.JLabel _lb_add_practical_batch_number;
     private javax.swing.JLabel _lb_add_practical_branch;
     private javax.swing.JLabel _lb_add_practical_name;
     private javax.swing.JLabel _lb_add_practical_practicalDate;
-    private javax.swing.JLabel _lb_add_practical_preview_batach_number;
+    private javax.swing.JLabel _lb_add_practical_preview_batch_number;
     private javax.swing.JLabel _lb_add_practical_preview_branch;
     private javax.swing.JLabel _lb_add_practical_preview_course;
     private javax.swing.JLabel _lb_add_practical_preview_date;
@@ -549,7 +538,6 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
     private javax.swing.JPanel _pl_registration_lecture_personalInformation_browsePhoto1;
     public javax.swing.JRadioButton _rb_add_practical_colombo;
     public javax.swing.JRadioButton _rb_add_practical_kandy;
-    private static javax.swing.JTextField _tf_add_practical_batch_number;
     private static javax.swing.JTextField _tf_add_practical_name;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
@@ -559,51 +547,69 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel20;
     // End of variables declaration//GEN-END:variables
 
-    private void button_enable(String button_name) {
+    private void set_data_to_Combo_box() {
         try {
+            ResultSet rs;
+            String sql = "SELECT * FROM `stu_exam_courses_info";
+            rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql);
 
+            while (rs.next()) {
+                String name = rs.getString("stu_exam_courses_info_name");
+                _cb_add_practical_course.addItem(name);
+            }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private void check_empty_fields() {
+        if (!_tf_add_practical_name.getText().isEmpty()) {
+            add_to_preview_form();
+        } else {
+            JOptionPane.showMessageDialog(this, "Exam Name is Empty!");
+        }
+    }
+
+    private void check_update_empty_fields() {
+        if (!_tf_add_practical_name.getText().isEmpty()) {
+            add_to_update_preview_form();
+        } else {
+            JOptionPane.showMessageDialog(this, "Exam Name is Empty!");
         }
     }
 
     private void add_to_preview_form() {
         try {
-            try {
-                generate_exam_id();
-                _lb_add_practical_preview_name.setText(_tf_add_practical_name.getText());
-                _lb_add_practical_preview_batach_number.setText(_tf_add_practical_batch_number.getText());
-                _lb_add_practical_preview_course.setText((String) _cb_add_exam_course.getSelectedItem());
-                Date d = _dc_add_practical_practicalDate.getDate();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                String date = sdf.format(d);
-                _lb_add_practical_preview_date.setText(date);
+            generate_practical_id();
+            _lb_add_practical_preview_name.setText(_tf_add_practical_name.getText());
+            _lb_add_practical_preview_batch_number.setText((String) _cb_add_practical_batch.getSelectedItem());
+            _lb_add_practical_preview_course.setText((String) _cb_add_practical_course.getSelectedItem());
+            Date d = _dc_add_practical_practicalDate.getDate();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String date = sdf.format(d);
+            _lb_add_practical_preview_date.setText(date);
 
-                String branch;
-                if (_rb_add_practical_colombo.isSelected()) {
-                    branch = "Colombo";
-                } else {
-                    branch = "Kandy";
-                }
-                _lb_add_practical_preview_branch.setText(branch);
-
-                _bt_add_practical_preview_addPractical.setEnabled(true);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Birthday is Empty");
+            String branch;
+            if (_rb_add_practical_colombo.isSelected()) {
+                branch = "Colombo";
+            } else {
+                branch = "Kandy";
             }
+            _lb_add_practical_preview_branch.setText(branch);
+
+            _bt_add_practical_preview_addPractical.setEnabled(true);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void generate_exam_id() {
-
+    private void generate_practical_id() {
         String id = "ID";
-        String lc = "EXM";
+        String ex = "PRC";
 
-        employee_academic_user_info user_info = new employee_academic_user_info();
-        String countid = user_info.getIdemployee_academic_user();
+        stu_practical_info practical_info = new stu_practical_info();
+        String countid = practical_info.getidstu_practical_info();
         int idcount = Integer.parseInt(countid);
         id_no = ++idcount;
 
@@ -633,226 +639,84 @@ public class Jp_add_practical_informations extends javax.swing.JPanel {
             branch_name = "KAN";
         }
 
-        lecture_id = id + "-" + lc + "-" + branch_name + "-" + zeros + id_no;
-        _lb_add_practical_preview_practicalID.setText(lecture_id);
-
+        practical_id = id + "-" + ex + "-" + branch_name + "-" + zeros + id_no;
+        _lb_add_practical_preview_practicalID.setText(practical_id);
     }
 
-    private void add_to_database() {
-//        employee_academic_user_info user_info = new employee_academic_user_info(_lb_add_exam_preview_examID.getText(), _lb_registration_lecture_preview_eMail.getText(), "1");
-//
-//        employee_academic_user_info_address user_info_address = new employee_academic_user_info_address(_lb_add_exam_preview_examID.getText(), _lb_registration_lecture_preview_address_address_line.getText(), _lb_registration_lecture_preview_address_city.getText(), _lb_registration_lecture_preview_address_country.getText());
-//
-//        employee_academic_user_info_contact user_info_contact = new employee_academic_user_info_contact(_lb_add_exam_preview_examID.getText(), _lb_registration_lecture_preview_mobileNumber.getText(), _lb_registration_lecture_preview_homeNumber.getText(), _lb_registration_lecture_preview_eMail.getText());
-//
-//        employee_academic_user_info_name user_info_name = new employee_academic_user_info_name(_lb_add_exam_preview_examID.getText(), sur_name, first_name, last_name);
-//
-//        employee_academic_user_info_personal user_info_personal = new employee_academic_user_info_personal(_lb_add_exam_preview_examID.getText(), newpath, _lb_registration_lecture_preview_dateOfBirth.getText(), _lb_registration_lecture_preview_gender.getText(), _lb_registration_lecture_preview_nic.getText(), _lb_registration_lecture_preview_branch.getText());
-    }
-
-    private void clear_personal_information_form() {
-//        _tf_add_exam_name.setText(null);
-//        _tf_add_exam_course_name.setText(null);
-//        _tf_registration_lecture_information_form_last_name.setText(null);
-//        _tf_registration_lecture_information_form_nic.setText(null);
-//        _dc_registration_lecture_information_form_dob.setDate(null);
-//        _rb_registration_lecture_information_form_male.setSelected(true);
-//        _rb_registration_lecture_information_form_colombo.setSelected(true);
-//        _tf_registration_lecture_information_form_mobile_number.setText(null);
-//        _tf_registration_lecture_information_form_home_number.setText(null);
-//        _tf_registration_lecture_information_form_email.setText(null);
-//        _tf_registration_lecture_information_form_address_line.setText(null);
-//        _tf_registration_lecture_information_form_city.setText(null);
-//        _tf_registration_lecture_information_form_country.setText(null);
-//        _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText("Browse Photo");
-
-    }
-
-    private void clear_preview_form() {
-//        _lb_add_exam_preview_examID.setText(null);
-//        _lb_registration_lecture_preview_name.setText(null);
-//        _lb_registration_lecture_preview_nic.setText(null);
-//        _lb_registration_lecture_preview_dateOfBirth.setText(null);
-//        _lb_registration_lecture_preview_gender.setText(null);
-//        _lb_registration_lecture_preview_branch.setText(null);
-//        _lb_registration_lecture_preview_mobileNumber.setText(null);
-//        _lb_registration_lecture_preview_homeNumber.setText(null);
-//        _lb_registration_lecture_preview_eMail.setText(null);
-//        _lb_registration_lecture_preview_address_address_line.setText(null);
-//        _lb_registration_lecture_preview_address_city.setText(null);
-//        _lb_registration_lecture_preview_address_country.setText(null);
-//        _lb_registration_lecture_preview_image.setIcon(null);
-    }
-
-    private void load_form_data(String id) {
-//        try {
-//            Connection c = MC_JavaDataBaseConnection.myConnection();
-//            Statement s = c.createStatement();
-//
-//            ResultSet rs_name = s.executeQuery("SELECT * FROM employee_academic_user_info_name WHERE employee_academic_user_id='" + id + "'");
-//            if (rs_name.next()) {
-//                _tf_add_exam_name.setText(rs_name.getString("employee_academic_user_info_name_surName"));
-//                _tf_add_exam_course_name.setText(rs_name.getString("employee_academic_user_info_name_first_name"));
-//                _tf_registration_lecture_information_form_last_name.setText(rs_name.getString("employee_academic_user_info_name_last_name"));
-//            }
-//
-//            ResultSet rs_personal = s.executeQuery("SELECT * FROM employee_academic_user_info_personal WHERE employee_academic_user_id='" + id + "'");
-//            if (rs_personal.next()) {
-//                _tf_registration_lecture_information_form_nic.setText(rs_personal.getString("employee_academic_user_info_personal_nic"));
-//                _dc_registration_lecture_information_form_dob.setDate(rs_personal.getDate("employee_academic_user_info_personal_dob"));
-//
-//                String gender = rs_personal.getString("employee_academic_user_info_personal_gender");
-//                if (gender.equals("Male")) {
-//                    _rb_registration_lecture_information_form_male.setSelected(true);
-//                } else {
-//                    _rb_registration_lecture_information_form_female.setSelected(true);
-//                }
-//
-//                String branch = rs_personal.getString("employee_academic_user_info_personal_branch");
-//                if (branch.equals("Colombo")) {
-//                    _rb_registration_lecture_information_form_colombo.setSelected(true);
-//                } else {
-//                    _rb_registration_lecture_information_form_kandy.setSelected(true);
-//                }
-//
-////                _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText(rs_personal.getString("employee_academic_user_info_personal_profile_image"));
-//                String pic = rs_personal.getString("employee_academic_user_info_personal_profile_image");
-//                String picpath = pic.replace("/", "\\");
-//                _tf_registration_lecture_personalInformation_browsePhoto_browseFile.setText(picpath);
-//
-//            }
-//
-//            ResultSet rs_contact = s.executeQuery("SELECT * FROM employee_academic_user_info_contact WHERE employee_academic_user_id='" + id + "'");
-//            if (rs_contact.next()) {
-//                _tf_registration_lecture_information_form_mobile_number.setText(rs_contact.getString("employee_academic_user_info_contact_mobile"));
-//                _tf_registration_lecture_information_form_home_number.setText(rs_contact.getString("employee_academic_user_info_contact_land"));
-//                _tf_registration_lecture_information_form_email.setText(rs_contact.getString("employee_academic_user_info_contact_email"));
-//            }
-//
-//            ResultSet rs_address = s.executeQuery("SELECT * FROM employee_academic_user_info_address WHERE employee_academic_user_id='" + id + "'");
-//            if (rs_address.next()) {
-//                _tf_registration_lecture_information_form_address_line.setText(rs_address.getString("employee_academic_user_info_address_lane1"));
-//                _tf_registration_lecture_information_form_city.setText(rs_address.getString("employee_academic_user_info_address_city"));
-//                _tf_registration_lecture_information_form_country.setText(rs_address.getString("employee_academic_user_info_address_cuntry"));
-//            }
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-    }
-
-    private void add_to_preview_form_update() {
-//        try {
-//            try {
-//                Date d = _dc_registration_lecture_information_form_dob.getDate();
-//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//                String date = sdf.format(d);
-//                _lb_registration_lecture_preview_dateOfBirth.setText(date);
-//
-//                _lb_registration_lecture_preview_lectureID.setText(lecture_id);
-//
-//                try {
-//                    newpath = _tf_registration_lecture_personalInformation_browsePhoto_browseFile.getText().replace("\\", "/");
-//                    File f = new File(newpath);
-//                    Image img = ImageIO.read(f);
-//                    img = img.getScaledInstance(_lb_registration_lecture_preview_image.getWidth(), _lb_registration_lecture_preview_image.getHeight(), Image.SCALE_SMOOTH);
-//                    _lb_registration_lecture_preview_image.setIcon(new ImageIcon(img));
-//                } catch (Exception e) {
-//                    _lb_registration_lecture_preview_image.setIcon(null);
-//                }
-//
-//                sur_name = _tf_add_exam_name.getText();
-//                first_name = _tf_add_exam_course_name.getText();
-//                last_name = _tf_registration_lecture_information_form_last_name.getText();
-//
-//                full_name = first_name + "_" + last_name;
-//
-//                _lb_registration_lecture_preview_name.setText(sur_name + " " + first_name + " " + last_name);
-//
-//                _lb_registration_lecture_preview_nic.setText(_tf_registration_lecture_information_form_nic.getText());
-//
-//                String gender;
-//                if (_rb_registration_lecture_information_form_male.isSelected()) {
-//                    gender = "Male";
-//                } else {
-//                    gender = "Female";
-//                }
-//                _lb_registration_lecture_preview_gender.setText(gender);
-//
-//                String branch;
-//                if (_rb_registration_lecture_information_form_colombo.isSelected()) {
-//                    branch = "Colombo";
-//                } else {
-//                    branch = "Kandy";
-//                }
-//                _lb_registration_lecture_preview_branch.setText(branch);
-//
-//                _lb_registration_lecture_preview_mobileNumber.setText(_tf_registration_lecture_information_form_mobile_number.getText());
-//                _lb_registration_lecture_preview_homeNumber.setText(_tf_registration_lecture_information_form_home_number.getText());
-//                _lb_registration_lecture_preview_eMail.setText(_tf_registration_lecture_information_form_email.getText());
-//                _lb_registration_lecture_preview_address_address_line.setText(_tf_registration_lecture_information_form_address_line.getText());
-//                _lb_registration_lecture_preview_address_city.setText(_tf_registration_lecture_information_form_city.getText());
-//                _lb_registration_lecture_preview_address_country.setText(_tf_registration_lecture_information_form_country.getText());
-//
-//                _bt_registration_lecture_preview_register_lecture.setEnabled(true);
-//            } catch (Exception e) {
-//                JOptionPane.showMessageDialog(this, "Birthday is Empty");
-//            }
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-    }
-
-    private void load_information_qulifications_update_form(String file_id) {
-        Jp_registration_lecture_informations_qulifications_form qform = new Jp_registration_lecture_informations_qulifications_form(file_id, lecture_id);
-
-        if (qform == null) {
-            qform = new Jp_registration_lecture_informations_qulifications_form(file_id, lecture_id);
-            _pl_add_exams_examInformation_main_panel.removeAll();
-            _pl_add_exams_examInformation_main_panel.repaint();
-            _pl_add_exams_examInformation_main_panel.revalidate();
-            _pl_add_exams_examInformation_main_panel.add(qform);
-            _pl_add_exams_examInformation_main_panel.repaint();
-            _pl_add_exams_examInformation_main_panel.revalidate();
-        } else {
-            _pl_add_exams_examInformation_main_panel.removeAll();
-            _pl_add_exams_examInformation_main_panel.repaint();
-            _pl_add_exams_examInformation_main_panel.revalidate();
-            _pl_add_exams_examInformation_main_panel.add(qform);
-            _pl_add_exams_examInformation_main_panel.repaint();
-            _pl_add_exams_examInformation_main_panel.revalidate();
-        }
-    }
-
-    private void set_data_to_Combo_box() {
+    private void add_to_update_preview_form() {
         try {
-            ResultSet rs;
-            String sql = "SELECT * FROM `stu_exam_courses_info";
-            rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(sql);
+                _lb_add_practical_preview_practicalID.setText(practical_id);
+                _lb_add_practical_preview_name.setText(_tf_add_practical_name.getText());
+                _lb_add_practical_preview_batch_number.setText((String) _cb_add_practical_batch.getSelectedItem());
+                _lb_add_practical_preview_course.setText((String) _cb_add_practical_course.getSelectedItem());
+                Date d = _dc_add_practical_practicalDate.getDate();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                String date = sdf.format(d);
+                _lb_add_practical_preview_date.setText(date);
 
-            while (rs.next()) {
-                String name = rs.getString("stu_exam_courses_info_name");
-                _cb_add_exam_course.addItem(name);
-            }
+                String branch;
+                if (_rb_add_practical_colombo.isSelected()) {
+                    branch = "Colombo";
+                } else {
+                    branch = "Kandy";
+                }
+                _lb_add_practical_preview_branch.setText(branch);
+
+                _bt_add_practical_preview_addPractical.setEnabled(true);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void check_empty_fields() {
-        if (!_tf_add_practical_name.getText().isEmpty()) {
-            if (!_tf_add_practical_batch_number.getText().isEmpty()) {
-                add_to_preview_form();
-            } else {
-                JOptionPane.showMessageDialog(this, "Batch Number is Empty");
-            }
+    private void add_to_database() {
+        stu_practical_info practical_info = new stu_practical_info(_lb_add_practical_preview_practicalID.getText(), _lb_add_practical_preview_name.getText(), _lb_add_practical_preview_date.getText(), "1", _lb_add_practical_preview_branch.getText(), _lb_add_practical_preview_batch_number.getText(), _lb_add_practical_preview_course.getText());
+    }
+
+    private void load_table_view() {
+        Jp_add_practicals_table_view table_preview = new Jp_add_practicals_table_view();
+        if (table_preview == null) {
+            Jp_add_practical_main_panel.removeAll();
+            revalidate();
+            table_preview = new Jp_add_practicals_table_view();
+            table_preview.setVisible(true);
+            Jp_add_practical_main_panel.add(table_preview);
+            revalidate();
         } else {
-            JOptionPane.showMessageDialog(this, "Exam Name is Empty!");
+            Jp_add_practical_main_panel.removeAll();
+            revalidate();
+            table_preview.setVisible(true);
+            Jp_add_practical_main_panel.add(table_preview);
+            revalidate();
         }
     }
 
-    private void check_update_empty_fields() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void load_form_data(String id) {
+        try {
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+
+            ResultSet rs_info = s.executeQuery("SELECT * FROM stu_practical_info WHERE stu_practical_info_id='" + id + "'");
+            if (rs_info.next()) {
+                _tf_add_practical_name.setText(rs_info.getString("stu_practical_info_name"));
+                _cb_add_practical_batch.setSelectedItem(rs_info.getString("stu_practical_info_batch"));
+
+                String course = rs_info.getString("stu_practical_info_course");
+                _cb_add_practical_course.setSelectedItem(course);
+
+                _dc_add_practical_practicalDate.setDate(rs_info.getDate("stu_practical_info_date"));
+
+                String branch = rs_info.getString("stu_practical_info_branch");
+                if (branch.equals("Colombo")) {
+                    _rb_add_practical_colombo.setSelected(true);
+                } else {
+                    _rb_add_practical_kandy.setSelected(true);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
 }
