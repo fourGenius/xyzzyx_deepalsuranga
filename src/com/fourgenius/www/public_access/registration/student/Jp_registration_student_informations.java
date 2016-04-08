@@ -171,6 +171,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         _lb_registration_student_preview_batch = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         _lb_registration_student_preview_year = new javax.swing.JLabel();
+        lb_wait = new javax.swing.JLabel();
 
         add_update_delete_Panel.setBackground(new java.awt.Color(66, 66, 66));
         add_update_delete_Panel.setPreferredSize(new java.awt.Dimension(1366, 718));
@@ -837,12 +838,15 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
 
         _lb_registration_student_preview_year.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
+        lb_wait.setForeground(new java.awt.Color(255, 255, 255));
+        lb_wait.setText("Hello!");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -912,7 +916,11 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(_lb_registration_student_preview_country, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(_lb_registration_student_preview_city, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(_bt_registration_student_preview_register_student, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lb_wait)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(_bt_registration_student_preview_register_student, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -976,8 +984,13 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_lb_registration_student_preview_country, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(_bt_registration_student_preview_register_student, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(_bt_registration_student_preview_register_student, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(lb_wait)
+                        .addGap(77, 77, 77))))
         );
 
         javax.swing.GroupLayout add_update_delete_PanelLayout = new javax.swing.GroupLayout(add_update_delete_Panel);
@@ -1451,6 +1464,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel lb_wait;
     private javax.swing.ButtonGroup stu_info_branch;
     private javax.swing.ButtonGroup stu_info_gender;
     // End of variables declaration//GEN-END:variables
@@ -1593,6 +1607,64 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         }
         
          print_report(_lb_registration_student_preview_studentID.getText(),path);
+         
+         //////////////////////////////
+          String toMail = _lb_registration_student_preview_eMail.getText().toLowerCase().trim();
+        String ID = "Not Found ID";
+        String Password = "Not Found Password";
+        try {
+            String emailSQL = "SELECT * FROM stu_user_info where stu_user_info_email='" + toMail + "'";
+            ResultSet rs;
+            rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(emailSQL);
+            if (rs.next()) {
+                ID = rs.getString("stu_user_info_id");
+                Password = rs.getString("stu_user_info_password");
+
+                jLabel3.setText(ID);
+                System.out.println("ID: " + ID);
+            }
+            Student_SendMailSSL mailSSL = new Student_SendMailSSL();
+//
+            String message = "<img src=\"http://www.fourgenius.com/test_img/email_bar.gif\"><img><br><br/>";
+            message += "<h1>Wish you a Good Future!</h1><br>";
+            message += "<font color=red><h2>Student Portal Information<h2></font><br><br/>";
+            message +="Your Student ID         : " + ID + "<br><br/>"
+                    + "Student Portal Username : " + toMail + "<br><br/>"
+                    + "Student Portal Password : " + Password + "<br><br/>"
+                    + "Thank You Using <font color=blue>4Genius</font> (http://www.fourgenius.com) System.<br/>";
+            message += "<img src=\"http://www.fourgenius.com/test_img/footer_bar.gif\"><img>";
+
+            mailSSL.sendingSSL(toMail, toMail, message);
+
+            
+            
+            _bt_registration_student_preview_register_student.setText("Resend");
+            
+            try {
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            for (int i = 0; i < 101; i++) {
+                                if (i == 100) {
+                                    lb_wait.setText("Wait!");
+                                }
+                                Thread.sleep(50);
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                }).start();
+
+            } catch (Exception e) {
+
+            }
+            lb_wait.setText("");
+        } catch (Exception e) {
+        }
+
+         //////////////////////
     }
 
     private void check_empty_fields() {
