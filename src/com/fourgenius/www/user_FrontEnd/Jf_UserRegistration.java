@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.user_FrontEnd;
 
+import com.fourgenius.www.admin_BackEnd.jf_pro_version;
 import com.fourgenius.www.public_access.registration.employee.Jp_registration_employee;
 import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture;
 import com.fourgenius.www.public_access.registration.student.Jp_registration_student;
@@ -17,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
@@ -35,6 +37,7 @@ public class Jf_UserRegistration extends javax.swing.JFrame {
     public Jf_UserRegistration() {
         initComponents();
         showTime();
+        _bt_UserMain_EmployeeRegistration.setVisible(false);
         try {
             initComponents();
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -280,11 +283,11 @@ public class Jf_UserRegistration extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_bt_UserMain_LectureRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(_bt_UserMain_payments, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(_bt_UserMain_EmployeeRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lb_time_date, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -388,29 +391,31 @@ public class Jf_UserRegistration extends javax.swing.JFrame {
 
     
     private void _bt_UserMain_EmployeeRegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_EmployeeRegistrationActionPerformed
-        Jp_registration_employee add_employee = new Jp_registration_employee();
-        
-        _bt_UserMain_StudentRegistration.setEnabled(true);
-        _bt_UserMain_EmployeeRegistration.setEnabled(false);
-        _bt_UserMain_LectureRegistration.setEnabled(true);
-        _bt_UserMain_payments.setEnabled(true);
-
-        if (add_employee == null) {
-            add_employee = new Jp_registration_employee();
-            Jp_userMain_main_panel.removeAll();
-            Jp_userMain_main_panel.repaint();
-            Jp_userMain_main_panel.revalidate();
-            Jp_userMain_main_panel.add(add_employee);
-            Jp_userMain_main_panel.repaint();
-            Jp_userMain_main_panel.revalidate();
-        } else {
-            Jp_userMain_main_panel.removeAll();
-            Jp_userMain_main_panel.repaint();
-            Jp_userMain_main_panel.revalidate();
-            Jp_userMain_main_panel.add(add_employee);
-            Jp_userMain_main_panel.repaint();
-            Jp_userMain_main_panel.revalidate();
-        }
+        jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
+//        Jp_registration_employee add_employee = new Jp_registration_employee();
+//        
+//        _bt_UserMain_StudentRegistration.setEnabled(true);
+//        _bt_UserMain_EmployeeRegistration.setEnabled(false);
+//        _bt_UserMain_LectureRegistration.setEnabled(true);
+//        _bt_UserMain_payments.setEnabled(true);
+//
+//        if (add_employee == null) {
+//            add_employee = new Jp_registration_employee();
+//            Jp_userMain_main_panel.removeAll();
+//            Jp_userMain_main_panel.repaint();
+//            Jp_userMain_main_panel.revalidate();
+//            Jp_userMain_main_panel.add(add_employee);
+//            Jp_userMain_main_panel.repaint();
+//            Jp_userMain_main_panel.revalidate();
+//        } else {
+//            Jp_userMain_main_panel.removeAll();
+//            Jp_userMain_main_panel.repaint();
+//            Jp_userMain_main_panel.revalidate();
+//            Jp_userMain_main_panel.add(add_employee);
+//            Jp_userMain_main_panel.repaint();
+//            Jp_userMain_main_panel.revalidate();
+//        }
 
     }//GEN-LAST:event__bt_UserMain_EmployeeRegistrationActionPerformed
 
@@ -612,11 +617,11 @@ public class Jf_UserRegistration extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jp_userMain_main_panel;
-    private javax.swing.JButton _bt_UserMain_EmployeeRegistration;
-    public javax.swing.JButton _bt_UserMain_LectureRegistration;
-    private javax.swing.JButton _bt_UserMain_StudentRegistration;
-    private javax.swing.JButton _bt_UserMain_home;
-    private javax.swing.JButton _bt_UserMain_payments;
+    public static javax.swing.JButton _bt_UserMain_EmployeeRegistration;
+    public static javax.swing.JButton _bt_UserMain_LectureRegistration;
+    public static javax.swing.JButton _bt_UserMain_StudentRegistration;
+    public static javax.swing.JButton _bt_UserMain_home;
+    public static javax.swing.JButton _bt_UserMain_payments;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

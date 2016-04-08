@@ -179,6 +179,8 @@ public class Jp_registration_student extends javax.swing.JPanel {
                 load_student_information_form();
                 buttons_enable(_bt_add_student.getText());
                 _bt_add_student.setText("Cancel");
+                
+                
             } else {
                 int option = JOptionPane.showConfirmDialog(this, "All Data You Didn't Save is Lost", "Are You Sure?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (option == JOptionPane.YES_OPTION) {
