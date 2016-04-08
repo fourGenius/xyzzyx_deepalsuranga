@@ -30,9 +30,10 @@ import javax.swing.border.Border;
 public class Inventory_home extends javax.swing.JFrame {
 
     private boolean cond = true;
-    Border border=BorderFactory.createLineBorder(new Color(255,255,255), 1);
+    Border border = BorderFactory.createLineBorder(new Color(255, 255, 255), 1);
+
     public Inventory_home() {
-         initComponents();
+        initComponents();
         Toolkit tool = Toolkit.getDefaultToolkit();
         Dimension dim = new Dimension(tool.getScreenSize());
         setSize(dim);
@@ -41,15 +42,19 @@ public class Inventory_home extends javax.swing.JFrame {
         Dis.setVisible(false);
         addp.setVisible(false);
         Payments.setVisible(false);
+        removeSelectedItem.setVisible(false);
 
-      
+        customer.setVisible(false);
+        suplier.setVisible(false);
+        grn.setVisible(false);
+        invoice.setVisible(false);
+        stock.setVisible(false);
 
- 
     }
 
     Inventory_home(String type, String name) {
         this();
-       
+
         if (type.equals("User")) {
 
             cond = false;
@@ -75,6 +80,11 @@ public class Inventory_home extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         stock = new javax.swing.JButton();
         base = new javax.swing.JPanel();
+        lb_customer = new javax.swing.JLabel();
+        lb_stock = new javax.swing.JLabel();
+        lb_invoice = new javax.swing.JLabel();
+        lb_grn = new javax.swing.JLabel();
+        lb_suplier = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Dis = new javax.swing.JLabel();
         addp = new javax.swing.JLabel();
@@ -89,7 +99,7 @@ public class Inventory_home extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(2, 119, 189));
         jPanel1.setPreferredSize(new java.awt.Dimension(1366, 80));
 
-        time.setFont(new java.awt.Font("DS-Digital", 3, 30)); // NOI18N
+        time.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         time.setForeground(new java.awt.Color(204, 204, 204));
 
         home.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -136,7 +146,7 @@ public class Inventory_home extends javax.swing.JFrame {
         suplier.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         suplier.setForeground(new java.awt.Color(255, 255, 255));
         suplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_150x50.png"))); // NOI18N
-        suplier.setText("Suplier");
+        suplier.setText("Supplier");
         suplier.setBorderPainted(false);
         suplier.setContentAreaFilled(false);
         suplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -234,9 +244,9 @@ public class Inventory_home extends javax.swing.JFrame {
                 .addComponent(invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(140, 140, 140)
-                .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGap(72, 72, 72)
+                .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -245,40 +255,144 @@ public class Inventory_home extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(suplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(grn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(invoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)
+                        .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(customer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(suplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(grn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(invoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        base.setBackground(new java.awt.Color(2, 119, 189));
         base.setMaximumSize(new java.awt.Dimension(1366, 650));
         base.setMinimumSize(new java.awt.Dimension(1366, 650));
+
+        lb_customer.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_customer.setForeground(new java.awt.Color(255, 255, 255));
+        lb_customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_customer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/inventory/Untitled-1 copy.png"))); // NOI18N
+        lb_customer.setText("Customer");
+        lb_customer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        lb_customer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_customer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_customer.setPreferredSize(new java.awt.Dimension(100, 80));
+        lb_customer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_customer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_customerMouseClicked(evt);
+            }
+        });
+
+        lb_stock.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_stock.setForeground(new java.awt.Color(255, 255, 255));
+        lb_stock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_stock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/inventory/img_277324 copy.png"))); // NOI18N
+        lb_stock.setText("Stock");
+        lb_stock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        lb_stock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_stock.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_stock.setPreferredSize(new java.awt.Dimension(100, 80));
+        lb_stock.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_stock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_stockMouseClicked(evt);
+            }
+        });
+
+        lb_invoice.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_invoice.setForeground(new java.awt.Color(255, 255, 255));
+        lb_invoice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_invoice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/inventory/untitled copy.png"))); // NOI18N
+        lb_invoice.setText("Invoice");
+        lb_invoice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        lb_invoice.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_invoice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_invoice.setPreferredSize(new java.awt.Dimension(100, 80));
+        lb_invoice.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_invoice.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_invoiceMouseClicked(evt);
+            }
+        });
+
+        lb_grn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_grn.setForeground(new java.awt.Color(255, 255, 255));
+        lb_grn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_grn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/inventory/list copy.png"))); // NOI18N
+        lb_grn.setText("GRN");
+        lb_grn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        lb_grn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_grn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_grn.setPreferredSize(new java.awt.Dimension(100, 80));
+        lb_grn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_grn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_grnMouseClicked(evt);
+            }
+        });
+
+        lb_suplier.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lb_suplier.setForeground(new java.awt.Color(255, 255, 255));
+        lb_suplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_suplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/inventory/supplier copy.png"))); // NOI18N
+        lb_suplier.setText("Supplier");
+        lb_suplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        lb_suplier.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_suplier.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_suplier.setPreferredSize(new java.awt.Dimension(100, 80));
+        lb_suplier.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lb_suplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_suplierMouseClicked(evt);
+            }
+        });
+        lb_suplier.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lb_suplierKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout baseLayout = new javax.swing.GroupLayout(base);
         base.setLayout(baseLayout);
         baseLayout.setHorizontalGroup(
             baseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
+            .addGroup(baseLayout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(lb_customer, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lb_suplier, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lb_grn, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lb_invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lb_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
         baseLayout.setVerticalGroup(
             baseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(baseLayout.createSequentialGroup()
+                .addGap(259, 259, 259)
+                .addGroup(baseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lb_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_suplier, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_customer, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_grn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_invoice, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
 
-        getContentPane().add(base, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1366, 650));
+        getContentPane().add(base, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1366, 650));
 
         jPanel2.setBackground(new java.awt.Color(2, 119, 189));
 
@@ -330,12 +444,11 @@ public class Inventory_home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void customerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerActionPerformed
-         customer.setSelected(true);
+        customer.setSelected(true);
         suplier.setSelected(false);
         invoice.setSelected(false);
         grn.setSelected(false);
-      
-        
+
         Dis.setVisible(false);
         addp.setVisible(false);
         removeSelectedItem.setVisible(false);
@@ -356,12 +469,11 @@ public class Inventory_home extends javax.swing.JFrame {
     }//GEN-LAST:event_customerActionPerformed
 
     private void suplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suplierActionPerformed
-       customer.setSelected(false);
+        customer.setSelected(false);
         suplier.setSelected(true);
         invoice.setSelected(false);
         grn.setSelected(false);
-        
-        
+
         Dis.setVisible(false);
         addp.setVisible(false);
         removeSelectedItem.setVisible(false);
@@ -389,7 +501,7 @@ public class Inventory_home extends javax.swing.JFrame {
         suplier.setSelected(false);
         invoice.setSelected(true);
         grn.setSelected(false);
-      
+
         Dis.setVisible(true);
         addp.setVisible(true);
         removeSelectedItem.setVisible(true);
@@ -402,7 +514,7 @@ public class Inventory_home extends javax.swing.JFrame {
 
         base.setLayout(layout);
 
-     invoice in=new invoice();
+        invoice in = new invoice();
 
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(in, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
@@ -413,13 +525,12 @@ public class Inventory_home extends javax.swing.JFrame {
     }//GEN-LAST:event_invoiceActionPerformed
 
     private void grnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grnActionPerformed
-         customer.setSelected(false);
+        customer.setSelected(false);
         suplier.setSelected(false);
         invoice.setSelected(false);
         grn.setSelected(true);
-      
-        
-        Dis.setVisible(true);
+
+        Dis.setVisible(false);
         addp.setVisible(true);
         removeSelectedItem.setVisible(true);
         Payments.setVisible(true);
@@ -442,7 +553,7 @@ public class Inventory_home extends javax.swing.JFrame {
         this.dispose();
         new Jf_UserFront().setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
-Jf_user_login jf_user_login = new Jf_user_login();
+    Jf_user_login jf_user_login = new Jf_user_login();
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
         if (jf_user_login == null) {
@@ -456,16 +567,102 @@ Jf_user_login jf_user_login = new Jf_user_login();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void homeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseEntered
-       home.setBorder(border);
+        home.setBorder(border);
     }//GEN-LAST:event_homeMouseEntered
 
     private void stockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockActionPerformed
-        
-                customer.setSelected(false);
+
+        customer.setSelected(false);
         suplier.setSelected(false);
         invoice.setSelected(true);
         grn.setSelected(false);
-      
+
+        Dis.setVisible(false);
+        addp.setVisible(false);
+        removeSelectedItem.setVisible(false);
+        Payments.setVisible(false);
+
+        base.removeAll();
+
+        base.removeAll();
+        GroupLayout layout = new GroupLayout(base);
+
+        base.setLayout(layout);
+
+        stock st = new stock();
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(st, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(st, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        st.id.grabFocus();
+        System.gc();
+
+    }//GEN-LAST:event_stockActionPerformed
+
+    private void lb_customerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_customerMouseClicked
+
+        Dis.setVisible(false);
+        addp.setVisible(false);
+        removeSelectedItem.setVisible(false);
+        Payments.setVisible(false);
+
+        base.removeAll();
+        GroupLayout layout = new GroupLayout(base);
+        base.setLayout(layout);
+
+        customer cu = new customer();
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(cu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(cu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        cu.id.grabFocus();
+        System.gc();
+
+        customer.setVisible(true);
+        suplier.setVisible(true);
+        grn.setVisible(true);
+        invoice.setVisible(true);
+        stock.setVisible(true);
+
+    }//GEN-LAST:event_lb_customerMouseClicked
+
+    private void lb_suplierKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lb_suplierKeyTyped
+
+
+    }//GEN-LAST:event_lb_suplierKeyTyped
+
+    private void lb_grnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_grnMouseClicked
+
+        Dis.setVisible(false);
+        addp.setVisible(true);
+        removeSelectedItem.setVisible(true);
+        Payments.setVisible(true);
+
+        base.removeAll();
+        GroupLayout layout = new GroupLayout(base);
+        base.setLayout(layout);
+
+        grn gr = new grn();
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(gr, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(gr, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        gr.supliername.grabFocus();
+        System.gc();
+
+        customer.setVisible(true);
+        suplier.setVisible(true);
+        grn.setVisible(true);
+        invoice.setVisible(true);
+        stock.setVisible(true);
+
+    }//GEN-LAST:event_lb_grnMouseClicked
+
+    private void lb_invoiceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_invoiceMouseClicked
+
         Dis.setVisible(true);
         addp.setVisible(true);
         removeSelectedItem.setVisible(true);
@@ -478,7 +675,38 @@ Jf_user_login jf_user_login = new Jf_user_login();
 
         base.setLayout(layout);
 
-        stock st=new stock();
+        invoice in = new invoice();
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(in, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(in, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        in.customername.grabFocus();
+        System.gc();
+
+        customer.setVisible(true);
+        suplier.setVisible(true);
+        grn.setVisible(true);
+        invoice.setVisible(true);
+        stock.setVisible(true);
+
+    }//GEN-LAST:event_lb_invoiceMouseClicked
+
+    private void lb_stockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_stockMouseClicked
+
+        Dis.setVisible(false);
+        addp.setVisible(false);
+        removeSelectedItem.setVisible(false);
+        Payments.setVisible(false);
+
+        base.removeAll();
+
+        base.removeAll();
+        GroupLayout layout = new GroupLayout(base);
+
+        base.setLayout(layout);
+
+        stock st = new stock();
 
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(st, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
@@ -486,8 +714,46 @@ Jf_user_login jf_user_login = new Jf_user_login();
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(st, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         st.id.grabFocus();
         System.gc();
+
+        customer.setVisible(true);
+        suplier.setVisible(true);
+        grn.setVisible(true);
+        invoice.setVisible(true);
+        stock.setVisible(true);
+
+    }//GEN-LAST:event_lb_stockMouseClicked
+
+    private void lb_suplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_suplierMouseClicked
+
         
-    }//GEN-LAST:event_stockActionPerformed
+        Dis.setVisible(false);
+        addp.setVisible(false);
+        removeSelectedItem.setVisible(false);
+        Payments.setVisible(false);
+
+        base.removeAll();
+
+        base.removeAll();
+        GroupLayout layout = new GroupLayout(base);
+
+        base.setLayout(layout);
+
+        Suplier su = new Suplier();
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(su, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(su, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        su.id.grabFocus();
+        System.gc();
+
+        customer.setVisible(true);
+        suplier.setVisible(true);
+        grn.setVisible(true);
+        invoice.setVisible(true);
+        stock.setVisible(true);
+        
+    }//GEN-LAST:event_lb_suplierMouseClicked
 
     /**
      * @param args the command line arguments
@@ -543,6 +809,11 @@ Jf_user_login jf_user_login = new Jf_user_login();
     private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lb_customer;
+    private javax.swing.JLabel lb_grn;
+    private javax.swing.JLabel lb_invoice;
+    private javax.swing.JLabel lb_stock;
+    private javax.swing.JLabel lb_suplier;
     private javax.swing.JLabel removeSelectedItem;
     private javax.swing.JButton stock;
     private javax.swing.JButton suplier;

@@ -58,7 +58,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     public String sur_name, first_name, last_name;
     public String student_id;
     public String batch;
-    public int year;
+    public String year;
     public Jp_registration_student_informations() {
         initComponents();
         set_data_to_Combo_box();
@@ -1576,15 +1576,23 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         stu_info_contact uc = new stu_info_contact(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_mobileNumber.getText(), _lb_registration_student_preview_homeNumber.getText(), _lb_registration_student_preview_eMail.getText());
         stu_info_personal upi = new stu_info_personal(_lb_registration_student_preview_studentID.getText(), newpath, _lb_registration_student_preview_branch.getText(), _lb_registration_student_preview_nic.getText(), _lb_registration_student_preview_dateOfBirth.getText(), _lb_registration_student_preview_gender.getText(), _lb_registration_student_preview_course.getText());
         stu_info_name un = new stu_info_name(_lb_registration_student_preview_studentID.getText(), _tf_registration_student_personalInformations_studentDetails_surName.getText(), _tf_registration_student_personalInformations_studentDetails_firstName.getText(), _tf_registration_student_personalInformations_studentDetails_lastName.getText());
-        stu_info_batch bat=new stu_info_batch(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_batch.getText(), _lb_registration_student_preview_year.getText(), _lb_registration_student_preview_course.getText());
+
+//        stu_info_batch bat=new stu_info_batch(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_batch.getText(), _lb_registration_student_preview_year.getText(), _lb_registration_student_preview_course.getText());
         print_report(_lb_registration_student_preview_studentID.getText());
     
-        //add library member
+
+        stu_info_batch bat=new stu_info_batch(_lb_registration_student_preview_studentID.getText(), batch, year, _lb_registration_student_preview_course.getText());
+       
+         //add library member
+
         String addres= _lb_registration_student_preview_lane1.getText()+","+ _lb_registration_student_preview_city.getText()+","+ _lb_registration_student_preview_country.getText();
         try {
             MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("INSERT INTO lib_member (MID,fName,lName,telephone,address,status) VALUES('"+_lb_registration_student_preview_studentID.getText()+"','"+_tf_registration_student_personalInformations_studentDetails_firstName.getText()+"','"+_tf_registration_student_personalInformations_studentDetails_surName.getText()+"','"+ _lb_registration_student_preview_mobileNumber.getText()+"','"+addres+"','Deactive')");
         } catch (Exception e) {
+            e.printStackTrace();
         }
+        
+         print_report(_lb_registration_student_preview_studentID.getText(),path);
     }
 
     private void check_empty_fields() {
@@ -1847,6 +1855,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         }
     }
 
+
     private void print_report(String id) {
 //        try {
 //           
@@ -1864,6 +1873,44 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
 //            JasperPrintManager.printReport(jp1, true);
 //        } catch (Exception e) {
 //            e.printStackTrace();
-//        }
+        }
+
+    private void print_report(String id,String photo) {
+         try {
+           
+            String is = "src/reports/student_reg.jrxml";
+
+            JasperReport jr = JasperCompileManager.compileReport(is);
+            Map<String, Object> m = new HashMap<String, Object>();
+           
+            m.put("sid", id);
+            m.put("photo", photo);
+          
+           
+            JasperPrint jp1 = JasperFillManager.fillReport(jr, m, MC_JavaDataBaseConnection.myConnection());
+                       
+            JasperViewer.viewReport(jp1, false);
+            JasperPrintManager.printReport(jp1, true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void select_batch_and_year() {
+        
+        if (_cb_registration_student_batch.getSelectedItem().toString().equals("Batch1")) {
+            batch="1";
+        } else {
+            batch="2";
+        }
+          Date d = _dc_registration_student_personalInformations_studentDetails_dateOfBirth.getDate();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+                String date = sdf.format(d);
+                year=date;
+        
+        
+        
+
     }
 }

@@ -12,9 +12,13 @@ import java.sql.Statement;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultCellEditor;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -28,7 +32,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
      */
     String user_id;
     String id;
-
+    private Object[] value = {"Deactive", "Active"};
     public Jp_admin_user() {
         initComponents();
         set_email_Comb();
@@ -40,6 +44,13 @@ public class Jp_admin_user extends javax.swing.JPanel {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception ex) {
         }
+        
+         DefaultComboBoxModel comboModel = new DefaultComboBoxModel(value);
+        JComboBox jcombo = new JComboBox();
+        jcombo.setModel(comboModel);
+        TableColumn col = tbl_admin_Administrators_deactive.getColumnModel().getColumn(3);
+        col.setCellEditor(new DefaultCellEditor(jcombo));
+        
     }
 
     /**
@@ -180,7 +191,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Email", "NIC No"
+                "ID", "Name", "Email", "Status"
             }
         ));
         jScrollPane6.setViewportView(tbl_admin_Administrators_deactive);
@@ -405,7 +416,9 @@ public class Jp_admin_user extends javax.swing.JPanel {
     }//GEN-LAST:event_updateActionPerformed
 
     private void tf_fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_fnameActionPerformed
-        // TODO add your handling code here:
+
+        tf_lname.grabFocus();
+        
     }//GEN-LAST:event_tf_fnameActionPerformed
 
     private void tf_lnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_lnameActionPerformed
@@ -417,7 +430,9 @@ public class Jp_admin_user extends javax.swing.JPanel {
     }//GEN-LAST:event_tf_nicActionPerformed
 
     private void pf_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pf_passwordActionPerformed
-        // TODO add your handling code here:
+
+        pf_confrmPassword.grabFocus();
+        
     }//GEN-LAST:event_pf_passwordActionPerformed
 
     private void pf_confrmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pf_confrmPasswordActionPerformed
@@ -462,7 +477,7 @@ public class Jp_admin_user extends javax.swing.JPanel {
             generate_user_id();
             Connection cc = MC_JavaDataBaseConnection.myConnection();
             SS = cc.createStatement();
-            SS.executeUpdate("insert into (user_id,user_email,user_password,user_status,user_name,user_nic) values('" + id + "','" + user_email.getSelectedItem().toString() + "','" + pf_password.getText() + "','1','" + fullname + "','" + tf_nic.getText() + "'");
+            SS.executeUpdate("insert into (user_id,user_email,user_password,user_status,user_name,user_nic) values('" + id + "','" + user_email.getSelectedItem().toString() + "','" + pf_password.getText() + "','0','" + fullname + "','" + tf_nic.getText() + "'");
 
             load_allData();
         } catch (Exception e) {
@@ -573,12 +588,22 @@ public class Jp_admin_user extends javax.swing.JPanel {
             tableModel_user_deactive.setRowCount(0);
             String sql1 = "select * from user where user_status='0'";
             ResultSet rs1 = statement.executeQuery(sql1);
+           String state="Deactive";
+            
             while (rs1.next()) {
                 Vector v = new Vector();
+                if (!(rs1.getString("user_status").equals("0"))) {
+                state="Active";
+            }
+                else{
+                
+                    state="Deactive";
+                
+                }
                 v.add(rs1.getString("user_id"));
                 v.add(rs1.getString("user_name"));
                 v.add(rs1.getString("user_email"));
-                v.add(rs1.getString("user_nic"));
+                v.add(rs1.getString(state));
                 tableModel_user_active.addRow(v);
             }
             rs.close();
@@ -593,33 +618,32 @@ public class Jp_admin_user extends javax.swing.JPanel {
             String id_type = "ID";
             String st = "US";
 
-            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT COUNT(user_id) AS x FROM user");
-
-            int idcount = rs.getInt("x");
-            int id_no = ++idcount;
-
-            String a = Integer.toString(id_no);
-            int length = a.length();
-            System.out.println(length);
-
-            String idn = Integer.toString(id_no);
-            String zeros;
-            if (length == 1) {
-                zeros = "00000";
-            } else if (length == 2) {
-                zeros = "0000";
-            } else if (length == 3) {
-                zeros = "000";
-            } else if (length == 4) {
-                zeros = "00";
-            } else if (length == 5) {
-                zeros = "0";
-            } else {
-                zeros = "";
+            try (ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT COUNT(iduser) FROM user")) {
+                
+                int idcount = rs.getInt("x");
+                int id_no = ++idcount;
+                
+                String a = Integer.toString(id_no);
+                int length = a.length();
+                System.out.println(length);
+                
+                String idn = Integer.toString(id_no);
+                String zeros;
+                if (length == 1) {
+                    zeros = "00000";
+                } else if (length == 2) {
+                    zeros = "0000";
+                } else if (length == 3) {
+                    zeros = "000";
+                } else if (length == 4) {
+                    zeros = "00";
+                } else if (length == 5) {
+                    zeros = "0";
+                } else {
+                    zeros = "";
+                }
+                id = id_type + "-" + st + "-" + zeros + idn;
             }
-            id = id_type + "-" + st + "-" + zeros + idn;
-
-            rs.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

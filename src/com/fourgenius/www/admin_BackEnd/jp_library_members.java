@@ -48,7 +48,7 @@ public class jp_library_members extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(2, 119, 189));
+        setBackground(new java.awt.Color(51, 0, 102));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Membership Payments", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setOpaque(false);
@@ -83,7 +83,7 @@ public class jp_library_members extends javax.swing.JPanel {
 
         bt_member_payment_view.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         bt_member_payment_view.setForeground(new java.awt.Color(255, 255, 255));
-        bt_member_payment_view.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
+        bt_member_payment_view.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_perpul_100x50.png"))); // NOI18N
         bt_member_payment_view.setText("View");
         bt_member_payment_view.setContentAreaFilled(false);
         bt_member_payment_view.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -158,7 +158,7 @@ public class jp_library_members extends javax.swing.JPanel {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_100x50.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_perpul_100x50.png"))); // NOI18N
         jButton1.setText("Add");
         jButton1.setContentAreaFilled(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

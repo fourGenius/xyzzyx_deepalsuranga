@@ -33,8 +33,14 @@ public class invoice extends javax.swing.JPanel {
     public invoice() {
         initComponents();
         initComponents();
-        loadInvoiceId();
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+               loadInvoiceId();
         loadTimeAndDate();
+            }
+        }).start();
         customerNameSearch.setVisible(false);
         SinvoiceId.setVisible(false);
         sp_description_search.setVisible(false);
@@ -106,7 +112,7 @@ public class invoice extends javax.swing.JPanel {
                 balActionPerformed(evt);
             }
         });
-        add(bal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 570, 300, 40));
+        add(bal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 300, 40));
 
         Dis.setMaximumSize(new java.awt.Dimension(210, 20));
         Dis.setMinimumSize(new java.awt.Dimension(210, 20));
@@ -121,7 +127,7 @@ public class invoice extends javax.swing.JPanel {
                 DisKeyTyped(evt);
             }
         });
-        add(Dis, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 300, 40));
+        add(Dis, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, 300, 40));
 
         pay.setMaximumSize(new java.awt.Dimension(210, 20));
         pay.setMinimumSize(new java.awt.Dimension(210, 20));
@@ -136,12 +142,12 @@ public class invoice extends javax.swing.JPanel {
                 payKeyTyped(evt);
             }
         });
-        add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 540, 300, 40));
+        add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 300, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(java.awt.Color.white);
         jLabel1.setText("Customer's Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(2, 119, 189));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Find Invoice", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -196,7 +202,7 @@ public class invoice extends javax.swing.JPanel {
                 clearActionPerformed(evt);
             }
         });
-        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 100, 50));
+        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 100, 50));
 
         find.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         find.setForeground(java.awt.Color.white);
@@ -213,56 +219,61 @@ public class invoice extends javax.swing.JPanel {
                 findActionPerformed(evt);
             }
         });
-        jPanel3.add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 100, 50));
+        jPanel3.add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 100, 50));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 440, 430, 200));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 460, 430, 180));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(java.awt.Color.white);
         jLabel10.setText("Sub Total");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, -1, 20));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, 20));
 
         customerId.setEditable(false);
         customerId.setMaximumSize(new java.awt.Dimension(150, 20));
         customerId.setMinimumSize(new java.awt.Dimension(150, 20));
         customerId.setPreferredSize(new java.awt.Dimension(100, 40));
-        add(customerId, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 150, -1));
+        customerId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customerIdActionPerformed(evt);
+            }
+        });
+        add(customerId, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 150, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setForeground(java.awt.Color.white);
         jLabel11.setText("Net Amount");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, -1, 20));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("Invoice ID");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(java.awt.Color.white);
         jLabel12.setText("Balance");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 570, -1, 20));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 590, -1, 20));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setForeground(java.awt.Color.white);
         jLabel13.setText("Discount");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, -1, -1));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(java.awt.Color.white);
         jLabel3.setText("Invoice Date");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 50, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 70, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(java.awt.Color.white);
         jLabel14.setText("Payment");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, -1, -1));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 540, -1, -1));
 
         lb_date_view.setEditable(false);
         lb_date_view.setMaximumSize(new java.awt.Dimension(260, 20));
         lb_date_view.setMinimumSize(new java.awt.Dimension(260, 20));
         lb_date_view.setPreferredSize(new java.awt.Dimension(100, 40));
-        add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 43, 260, -1));
+        add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 70, 260, -1));
 
         customername.setMaximumSize(new java.awt.Dimension(170, 20));
         customername.setMinimumSize(new java.awt.Dimension(170, 20));
@@ -285,7 +296,7 @@ public class invoice extends javax.swing.JPanel {
                 customernameKeyTyped(evt);
             }
         });
-        add(customername, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 270, -1));
+        add(customername, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 270, -1));
 
         CustomerNameSearch.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         CustomerNameSearch.setAlignmentY(2.0F);
@@ -304,36 +315,36 @@ public class invoice extends javax.swing.JPanel {
         });
         customerNameSearch.setViewportView(CustomerNameSearch);
 
-        add(customerNameSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 270, 80));
+        add(customerNameSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 270, 80));
 
         id.setEditable(false);
         id.setMaximumSize(new java.awt.Dimension(170, 20));
         id.setMinimumSize(new java.awt.Dimension(170, 20));
         id.setPreferredSize(new java.awt.Dimension(100, 40));
-        add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 86, 270, -1));
+        add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 270, -1));
 
         net.setEditable(false);
         net.setMaximumSize(new java.awt.Dimension(308, 20));
         net.setMinimumSize(new java.awt.Dimension(308, 20));
         net.setPreferredSize(new java.awt.Dimension(300, 40));
-        add(net, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 524, 300, 40));
+        add(net, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, 300, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(java.awt.Color.white);
         jLabel4.setText("Invoice Time");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 90, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 110, -1, -1));
 
         sub.setEditable(false);
         sub.setMaximumSize(new java.awt.Dimension(308, 20));
         sub.setMinimumSize(new java.awt.Dimension(308, 20));
         sub.setPreferredSize(new java.awt.Dimension(300, 40));
-        add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 300, 40));
+        add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 300, 40));
 
         lb_time_date.setEditable(false);
         lb_time_date.setMaximumSize(new java.awt.Dimension(260, 20));
         lb_time_date.setMinimumSize(new java.awt.Dimension(260, 20));
         lb_time_date.setPreferredSize(new java.awt.Dimension(100, 40));
-        add(lb_time_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 90, 259, -1));
+        add(lb_time_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 110, 259, -1));
 
         jPanel1.setBackground(new java.awt.Color(2, 119, 189));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Item Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -456,7 +467,7 @@ public class invoice extends javax.swing.JPanel {
         jLabel15.setText("Description ");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 1320, 290));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 1320, 290));
 
         jPanel2.setBackground(new java.awt.Color(13, 71, 161));
 
@@ -484,7 +495,11 @@ public class invoice extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void balActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balActionPerformed
-        try {
+       new Thread(new Runnable() {
+
+           @Override
+           public void run() {
+               try {
             DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
             MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_invoice (id,date,total,time,discount,nettot,customername,customerid,bal,payment) values('" + id.getText() + "','" + lb_date_view.getText() + "','" + sub.getText() + "','" + lb_time_date.getText() + "','" + Dis.getText() + "','" + net.getText() + "','" + customername.getText() + "','" + customerId.getText() + "','" + bal.getText() + "','" + pay.getText() + "')");
             String invoiceId = id.getText();
@@ -510,6 +525,8 @@ public class invoice extends javax.swing.JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
+           }
+       }).start();
         clearAll();
     }//GEN-LAST:event_balActionPerformed
 
@@ -647,7 +664,11 @@ public class invoice extends javax.swing.JPanel {
     }//GEN-LAST:event_clearActionPerformed
 
     private void findActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findActionPerformed
-        try {
+       new Thread(new Runnable() {
+
+           @Override
+           public void run() {
+                try {
 
             ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select i.id,i.date,i.total,i.time,i.discount,i.nettot,i.customername,i.customerid,i.bal,i.payment,"
                     + "ir.itemid,ir.item,ir.itemprice,ir.subtot,ir.invoiceid from inv_invoice i inner join inv_invoicereg ir on i.id=ir.invoiceid where i.id='" + sInvoiceIdSearch.getText() + "'");
@@ -679,6 +700,8 @@ public class invoice extends javax.swing.JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
+           }
+       }).start();
     }//GEN-LAST:event_findActionPerformed
 
     private void customernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_customernameFocusLost
@@ -904,6 +927,10 @@ public class invoice extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_li_description_searchMouseClicked
+
+    private void customerIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_customerIdActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

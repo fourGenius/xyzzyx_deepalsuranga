@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-03-24T14:24:40 -->
+<!-- 2016-04-08T09:53:03 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="student_reg" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a7bdee31-6b19-4229-b142-08e2683c137f">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="sid" class="java.lang.String"/>
+	<parameter name="photo" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT a.stu_info_personal_nic,a.stu_info_personal_dob,a.stu_info_personal_course,b.stu_info_name_first_name,b.stu_info_name_last_name,
 b.stu_info_name_sirName,c.stu_info_telephone_mobile,c.stu_info_telephone_land,c.stu_info_contact_email,d.stu_info_address_lane1,d.stu_info_address_city,d.stu_info_address_cuntry
@@ -67,6 +71,12 @@ where a.stu_user_info_id=$P{sid}]]>
 			<rectangle>
 				<reportElement x="422" y="10" width="124" height="164" uuid="8e7e1d57-406a-4855-83d7-9776b889394a"/>
 			</rectangle>
+			<image>
+				<reportElement x="425" y="14" width="118" height="160" uuid="48223644-7e93-458a-b325-986966b1a33f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{photo}]]></imageExpression>
+			</image>
 		</band>
 	</pageHeader>
 	<columnHeader>

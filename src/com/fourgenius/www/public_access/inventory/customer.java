@@ -22,8 +22,10 @@ public class customer extends javax.swing.JPanel {
      */
     public customer() {
         initComponents();
-        loadCombo();
-        loadId();
+        new Thread(() -> {
+            loadCombo();
+            loadId();
+        }).start();
     }
 
     /**
@@ -76,9 +78,10 @@ public class customer extends javax.swing.JPanel {
         Fax = new javax.swing.JTextField();
         update = new javax.swing.JButton();
         Delete = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(2, 119, 189));
-        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Customer Informations", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         setMaximumSize(new java.awt.Dimension(1349, 638));
         setMinimumSize(new java.awt.Dimension(1349, 638));
 
@@ -461,6 +464,28 @@ public class customer extends javax.swing.JPanel {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(13, 71, 161));
+
+        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText(" Customer Informations");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
+                .addComponent(jLabel1))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -480,7 +505,7 @@ public class customer extends javax.swing.JPanel {
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
+                            .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
                             .addComponent(fname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(nic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -501,11 +526,13 @@ public class customer extends javax.swing.JPanel {
                         .addGap(147, 147, 147)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -578,8 +605,8 @@ public class customer extends javax.swing.JPanel {
                 evt.consume();
             }
         }
-        
-         if (100<=fname.getText().length()) {
+
+        if (100 <= fname.getText().length()) {
             evt.consume();
         }
     }//GEN-LAST:event_nicKeyTyped
@@ -602,7 +629,7 @@ public class customer extends javax.swing.JPanel {
 
             int confo = JOptionPane.showConfirmDialog(this, "Are you sure????");
             if (confo == JOptionPane.YES_OPTION) {
-                 MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_customer set state='Diactive'");
+                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_customer set state='Diactive'");
                 loadCombo();
                 clear();
 
@@ -615,7 +642,7 @@ public class customer extends javax.swing.JPanel {
 
     private void sfnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sfnameActionPerformed
         try {
-            ResultSet rs =  MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from inv_customer where fname='" + sfname.getSelectedItem() + "'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from inv_customer where fname='" + sfname.getSelectedItem() + "'");
             if (rs.next()) {
                 slname.setText(rs.getString("lname"));
                 sid.setText(rs.getString("id"));
@@ -691,12 +718,12 @@ public class customer extends javax.swing.JPanel {
     }//GEN-LAST:event_tpActionPerformed
 
     private void FaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FaxActionPerformed
-        
+
     }//GEN-LAST:event_FaxActionPerformed
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
         try {
-            ResultSet rs =  MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select fname from inv_customer where fname like '" + search.getText() + "%' and state='Active'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select fname from inv_customer where fname like '" + search.getText() + "%' and state='Active'");
             sfname.removeAllItems();
             while (rs.next()) {
                 sfname.addItem(rs.getString("fname"));
@@ -727,22 +754,22 @@ public class customer extends javax.swing.JPanel {
     }//GEN-LAST:event_nicKeyReleased
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-       String emailreg = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        String emailreg = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         boolean b = email.getText().matches(emailreg);
         if (b == false) {
             System.out.println("Your E-mail Address is Not Valid");
-           JOptionPane.showMessageDialog(this, "Your E-mail Address is Not Valid", "Error", JOptionPane.ERROR_MESSAGE);
-           email.setBackground(Color.red);
-           email.grabFocus();
-           email.setText(null);
+            JOptionPane.showMessageDialog(this, "Your E-mail Address is Not Valid", "Error", JOptionPane.ERROR_MESSAGE);
+            email.setBackground(Color.red);
+            email.grabFocus();
+            email.setText(null);
         } else {
-           tp.grabFocus();
+            tp.grabFocus();
         }
     }//GEN-LAST:event_emailActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
-         id.setText(sid.getText());
+
+        id.setText(sid.getText());
         fname.setText(sfname.getSelectedItem().toString());
         lname.setText(slname.getText());
         nic.setText(snic.getText());
@@ -750,7 +777,7 @@ public class customer extends javax.swing.JPanel {
         email.setText(semail.getText());
         Fax.setText(sfax.getText());
         try {
-            ResultSet rs =  MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select addressl1,addressl2,addressl3 from inv_customer where fname='" + sfname.getSelectedItem() + "'");
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select addressl1,addressl2,addressl3 from inv_customer where fname='" + sfname.getSelectedItem() + "'");
             if (rs.next()) {
                 address1.setText(rs.getString("addressl1"));
                 address2.setText(rs.getString("addressl2"));
@@ -759,61 +786,61 @@ public class customer extends javax.swing.JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void fnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fnameKeyTyped
-        
-        if (100<=fname.getText().length()) {
+
+        if (100 <= fname.getText().length()) {
             evt.consume();
-               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
         }
-        
+
     }//GEN-LAST:event_fnameKeyTyped
 
     private void lnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lnameKeyTyped
-        
-         if (100<=lname.getText().length()) {
+
+        if (100 <= lname.getText().length()) {
             evt.consume();
-               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
         }
-        
+
     }//GEN-LAST:event_lnameKeyTyped
 
     private void address1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address1KeyTyped
-     
-         if (100<=address1.getText().length()) {
+
+        if (100 <= address1.getText().length()) {
             evt.consume();
-               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
         }
-        
+
     }//GEN-LAST:event_address1KeyTyped
 
     private void address2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address2KeyTyped
-       
-         if (100<=address2.getText().length()) {
+
+        if (100 <= address2.getText().length()) {
             evt.consume();
-               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
         }
-        
+
     }//GEN-LAST:event_address2KeyTyped
 
     private void address3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_address3KeyTyped
-        
-         if (100<=address3.getText().length()) {
+
+        if (100 <= address3.getText().length()) {
             evt.consume();
-               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
         }
-        
+
     }//GEN-LAST:event_address3KeyTyped
 
     private void emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailKeyTyped
-        
-           if (100<=email.getText().length()) {
+
+        if (100 <= email.getText().length()) {
             evt.consume();
-               JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
+            JOptionPane.showMessageDialog(this, "You Exceed The Character Limit");
         }
-        
+
     }//GEN-LAST:event_emailKeyTyped
 
 
@@ -828,6 +855,7 @@ public class customer extends javax.swing.JPanel {
     private javax.swing.JTextField fname;
     public javax.swing.JTextField id;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -845,6 +873,7 @@ public class customer extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField lname;
     private javax.swing.JTextField nic;
@@ -883,7 +912,7 @@ public class customer extends javax.swing.JPanel {
                 int i = Integer.parseInt(rs.getString("x"));
                 ++i;
                 id.setText("CUS00" + i);
-                ResultSet rs1 =MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from inv_customer where id='" + id.getText() + "'");
+                ResultSet rs1 = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from inv_customer where id='" + id.getText() + "'");
                 if (rs1.next()) {
                     ++i;
                     id.setText("CUS00" + i);

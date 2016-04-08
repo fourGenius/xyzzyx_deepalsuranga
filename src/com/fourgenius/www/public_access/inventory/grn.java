@@ -38,8 +38,14 @@ public class grn extends javax.swing.JPanel {
         suplierNameSearch.setVisible(false);
         SGrnId.setVisible(false);
 
-        loadGrnId();
-        loadDateAndTime();
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                loadGrnId();
+                loadDateAndTime();
+            }
+        }).start();
 
     }
 
@@ -53,7 +59,6 @@ public class grn extends javax.swing.JPanel {
     private void initComponents() {
 
         bal = new javax.swing.JTextField();
-        Dis = new javax.swing.JTextField();
         pay = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -67,7 +72,6 @@ public class grn extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         lb_date_view = new javax.swing.JTextField();
@@ -111,22 +115,7 @@ public class grn extends javax.swing.JPanel {
                 balActionPerformed(evt);
             }
         });
-        add(bal, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 553, 308, -1));
-
-        Dis.setMaximumSize(new java.awt.Dimension(210, 20));
-        Dis.setMinimumSize(new java.awt.Dimension(210, 20));
-        Dis.setPreferredSize(new java.awt.Dimension(200, 30));
-        Dis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DisActionPerformed(evt);
-            }
-        });
-        Dis.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                DisKeyTyped(evt);
-            }
-        });
-        add(Dis, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 210, -1));
+        add(bal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 570, 308, -1));
 
         pay.setMaximumSize(new java.awt.Dimension(210, 20));
         pay.setMinimumSize(new java.awt.Dimension(210, 20));
@@ -141,12 +130,12 @@ public class grn extends javax.swing.JPanel {
                 payKeyTyped(evt);
             }
         });
-        add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, 210, -1));
+        add(pay, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, 210, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Supplier's Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(2, 119, 189));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "FIND GRN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -202,7 +191,7 @@ public class grn extends javax.swing.JPanel {
                 clearActionPerformed(evt);
             }
         });
-        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
+        jPanel3.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
 
         find.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         find.setForeground(new java.awt.Color(255, 255, 255));
@@ -220,48 +209,43 @@ public class grn extends javax.swing.JPanel {
                 findActionPerformed(evt);
             }
         });
-        jPanel3.add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
+        jPanel3.add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 430, 400, 160));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 450, 400, 160));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Sub Total");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 465, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Net Amount");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 507, -1, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("GRN ID");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Balance");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 549, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Discount");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 510, -1, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("GRN Date");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 40, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 60, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Payment");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, -1, -1));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, -1, -1));
 
         lb_date_view.setEditable(false);
         lb_date_view.setPreferredSize(new java.awt.Dimension(100, 30));
-        add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 40, 260, -1));
+        add(lb_date_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 60, 260, -1));
 
         supliername.setMaximumSize(new java.awt.Dimension(170, 20));
         supliername.setMinimumSize(new java.awt.Dimension(170, 20));
@@ -284,7 +268,7 @@ public class grn extends javax.swing.JPanel {
                 supliernameKeyTyped(evt);
             }
         });
-        add(supliername, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 330, -1));
+        add(supliername, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 330, -1));
 
         SuplierNameSearch.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         SuplierNameSearch.setAlignmentY(2.0F);
@@ -304,33 +288,38 @@ public class grn extends javax.swing.JPanel {
         });
         suplierNameSearch.setViewportView(SuplierNameSearch);
 
-        add(suplierNameSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 330, 70));
+        add(suplierNameSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 330, 70));
 
         id.setMaximumSize(new java.awt.Dimension(170, 20));
         id.setMinimumSize(new java.awt.Dimension(170, 20));
         id.setPreferredSize(new java.awt.Dimension(200, 30));
-        add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 330, -1));
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+        add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 330, -1));
 
         net.setEditable(false);
         net.setMaximumSize(new java.awt.Dimension(308, 20));
         net.setMinimumSize(new java.awt.Dimension(308, 20));
         net.setPreferredSize(new java.awt.Dimension(200, 30));
-        add(net, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 511, 308, -1));
+        add(net, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 308, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("GRN Time");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 90, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 110, -1, -1));
 
         sub.setEditable(false);
         sub.setMaximumSize(new java.awt.Dimension(308, 20));
         sub.setMinimumSize(new java.awt.Dimension(308, 20));
         sub.setPreferredSize(new java.awt.Dimension(200, 30));
-        add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 469, 308, -1));
+        add(sub, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 308, -1));
 
         lb_time_date.setEditable(false);
         lb_time_date.setPreferredSize(new java.awt.Dimension(100, 30));
-        add(lb_time_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 80, 259, -1));
+        add(lb_time_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 100, 259, -1));
 
         jPanel1.setBackground(new java.awt.Color(2, 119, 189));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Item Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -465,17 +454,17 @@ public class grn extends javax.swing.JPanel {
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(itemNo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ItemName, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, Short.MAX_VALUE))
+                            .addComponent(itemNo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(63, 63, 63)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5)))
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ItemName, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
-                                .addGap(201, 201, 201)))
+                                .addGap(175, 175, 175)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -513,16 +502,15 @@ public class grn extends javax.swing.JPanel {
                     .addComponent(qty, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                .addGap(18, 18, 18))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 113, -1, 320));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1320, 320));
 
         suplierId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         suplierId.setForeground(new java.awt.Color(255, 255, 255));
-        suplierId.setText("suplier_Id");
-        add(suplierId, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 120, 20));
+        add(suplierId, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 120, 30));
 
         jPanel2.setBackground(new java.awt.Color(13, 71, 161));
 
@@ -714,38 +702,8 @@ public class grn extends javax.swing.JPanel {
         if (evt.getKeyCode() == evt.VK_F4) {
             pay.grabFocus();
         }
-        if (evt.getKeyCode() == evt.VK_F5) {
-            Dis.grabFocus();
-        }
-    }//GEN-LAST:event_itemNoKeyReleased
 
-    private void DisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisActionPerformed
-        try {
-            double d1 = Double.parseDouble(sub.getText());
-            double d2;
-            if (!Dis.getText().isEmpty()) {
-                d2 = Double.parseDouble(Dis.getText());
-            } else {
-                d2 = 0;
-                Dis.setText("" + 0);
-            }
-            double d = d1 - (d1 * d2 / 100);
-            net.setText("" + d);
-            pay.grabFocus();
-            if (Dis.getText().equals("100")) {
-                JOptionPane.showMessageDialog(this, "You can't give this discount..", "Error", JOptionPane.ERROR_MESSAGE);
-                Dis.setText(null);
-            }
-        } catch (Exception e) {
-//             JOptionPane.showMessageDialog(this, "Add items...");
-//            if (supliername.getText().isEmpty()) {
-//                supliername.grabFocus();
-//            }
-//            else{
-//            itemNo.grabFocus();
-//            }
-        }
-    }//GEN-LAST:event_DisActionPerformed
+    }//GEN-LAST:event_itemNoKeyReleased
 
     private void payActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payActionPerformed
         try {
@@ -771,41 +729,47 @@ public class grn extends javax.swing.JPanel {
     }//GEN-LAST:event_payActionPerformed
 
     private void balActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balActionPerformed
-         try {
-            DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
-            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_grn(id,date,total,time,discount,nettot,supliername,suplierid,bal,payment) values('" + id.getText() + "','" + lb_date_view.getText() + "','" + sub.getText() + "','" + lb_time_date.getText() + "','" + Dis.getText() + "','" + net.getText() + "','" + supliername.getText() + "','" + suplierId.getText() + "','" + bal.getText() + "','" + pay.getText() + "')");
-            Date d=new Date();
-            SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
-            String grnId = id.getText();
-            String date=sdf.format(d);
-            for (int i = 0; i < dtm.getRowCount(); i++) {
+        new Thread(new Runnable() {
 
-                ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from inv_stock where itemid='" + dtm.getValueAt(i, 0) + "'");
-                if (rs.next()) {
+            @Override
+            public void run() {
+                try {
+                    DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+                    MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_grn(id,date,total,time,nettot,supliername,suplierid,bal,payment) values('" + id.getText() + "','" + lb_date_view.getText() + "','" + sub.getText() + "','" + lb_time_date.getText() + "','" + net.getText() + "','" + supliername.getText() + "','" + suplierId.getText() + "','" + bal.getText() + "','" + pay.getText() + "')");
+                    Date d = new Date();
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                    String grnId = id.getText();
+                    String date = sdf.format(d);
+                    for (int i = 0; i < dtm.getRowCount(); i++) {
 
-                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set qty=qty+'" + dtm.getValueAt(i, 3) + "',itemprice='"+dtm.getValueAt(i, 2)+"',date='"+date+"' where itemid='" + dtm.getValueAt(i, 0) + "'");
-                    
-                } else {
-                System.out.println("else");
-                     MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_stock(qty,itemprice) values('" + dtm.getValueAt(i, 3) + "','" + dtm.getValueAt(i, 2) + "')");
+                        ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from inv_stock where itemid='" + dtm.getValueAt(i, 0) + "'");
+                        if (rs.next()) {
 
+                            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("update inv_stock set qty=qty+'" + dtm.getValueAt(i, 3) + "',itemprice='" + dtm.getValueAt(i, 2) + "',date='" + date + "' where itemid='" + dtm.getValueAt(i, 0) + "'");
+
+                        } else {
+                            System.out.println("else");
+                            MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_stock(qty,itemprice) values('" + dtm.getValueAt(i, 3) + "','" + dtm.getValueAt(i, 2) + "')");
+
+                        }
+                        rs.close();
+                        MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_grnreg (itemid,item,itemprice,qty,subtot,grnid) values('" + dtm.getValueAt(i, 0) + "','" + dtm.getValueAt(i, 1) + "','" + dtm.getValueAt(i, 2) + "','" + dtm.getValueAt(i, 3) + "','" + dtm.getValueAt(i, 4) + "','" + grnId + "')");
+
+                    }
+                    String path = "src//reports//grn.jrxml";
+                    JasperReport compileReport = JasperCompileManager.compileReport(path);
+                    Map<String, Object> m = new HashMap<String, Object>();
+
+                    m.put("id", id.getText());
+
+                    JasperPrint jp = JasperFillManager.fillReport(compileReport, m, MC_JavaDataBaseConnection.myConnection());
+                    JasperViewer.viewReport(jp, false);
+                    // JasperPrintManager.printReport(jp, true);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                rs.close();
-                MC_JavaDataBaseConnection.myConnection().createStatement().executeUpdate("insert into inv_grnreg (itemid,item,itemprice,qty,subtot,grnid) values('" + dtm.getValueAt(i, 0) + "','" + dtm.getValueAt(i, 1) + "','" + dtm.getValueAt(i, 2) + "','" + dtm.getValueAt(i, 3) + "','" + dtm.getValueAt(i, 4) + "','" + grnId + "')");
-
             }
-            String path = "src//reports//grn.jrxml";
-            JasperReport compileReport = JasperCompileManager.compileReport(path);
-            Map<String, Object> m = new HashMap<String, Object>();
-
-            m.put("id", id.getText());
-
-            JasperPrint jp = JasperFillManager.fillReport(compileReport, m, MC_JavaDataBaseConnection.myConnection());
-            JasperViewer.viewReport(jp, false);
-            // JasperPrintManager.printReport(jp, true);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        }).start();
         clearAll();
     }//GEN-LAST:event_balActionPerformed
 
@@ -894,7 +858,7 @@ public class grn extends javax.swing.JPanel {
         sub.setText(null);
         net.setText(null);
         bal.setText(null);
-        Dis.setText(null);
+
         pay.setText(null);
         DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
         dtm.setRowCount(0);
@@ -903,39 +867,45 @@ public class grn extends javax.swing.JPanel {
     }//GEN-LAST:event_clearActionPerformed
 
     private void findActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findActionPerformed
-        try {
+        new Thread(new Runnable() {
 
-            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select g.id,g.date,g.total,g.time,g.discount,g.username,g.nettot,g.supliername,g.suplierid,g.bal,g.payment,"
-                    + "gr.itemid,gr.item,gr.itemprice,gr.qty,gr.subtot,gr.grnid from inv_grn g inner join inv_grnreg gr on g.id=gr.grnid where g.id='" + sGgrnIdSearch.getText() + "'");
-            while (rs.next()) {
+            @Override
+            public void run() {
+                try {
 
-                supliername.setText(rs.getString("g.supliername"));
-                suplierId.setText(rs.getString("g.suplierid"));
-                lb_date_view.setText(rs.getString("g.date"));
-                lb_time_date.setText(rs.getString("g.time"));
-                id.setText(rs.getString("g.id"));
-                sub.setText(rs.getString("g.total"));
-                net.setText(rs.getString("g.nettot"));
-                bal.setText(rs.getString("g.bal"));
-                Dis.setText(rs.getString("g.discount"));
-                pay.setText(rs.getString("g.payment"));
+                    ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select g.id,g.date,g.total,g.time,g.discount,g.nettot,g.supliername,g.suplierid,g.bal,g.payment,"
+                            + "gr.itemid,gr.item,gr.itemprice,gr.qty,gr.subtot,gr.grnid from inv_grn g inner join inv_grnreg gr on g.id=gr.grnid where g.id='" + sGgrnIdSearch.getText() + "'");
+                    while (rs.next()) {
 
-                DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
-                Vector v = new Vector();
+                        supliername.setText(rs.getString("g.supliername"));
+                        suplierId.setText(rs.getString("g.suplierid"));
+                        lb_date_view.setText(rs.getString("g.date"));
+                        lb_time_date.setText(rs.getString("g.time"));
+                        id.setText(rs.getString("g.id"));
+                        sub.setText(rs.getString("g.total"));
+                        net.setText(rs.getString("g.nettot"));
+                        bal.setText(rs.getString("g.bal"));
 
-                v.add(rs.getString("gr.itemid"));
-                v.add(rs.getString("gr.item"));
-                v.add(rs.getString("gr.itemprice"));
-                v.add(rs.getString("gr.qty"));
-                v.add(rs.getString("gr.subtot"));
-                dtm.addRow(v);
+                        pay.setText(rs.getString("g.payment"));
 
+                        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+                        Vector v = new Vector();
+
+                        v.add(rs.getString("gr.itemid"));
+                        v.add(rs.getString("gr.item"));
+                        v.add(rs.getString("gr.itemprice"));
+                        v.add(rs.getString("gr.qty"));
+                        v.add(rs.getString("gr.subtot"));
+                        dtm.addRow(v);
+
+                    }
+                    rs.close();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-            rs.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        }).start();
     }//GEN-LAST:event_findActionPerformed
 
     private void qtyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_qtyKeyTyped
@@ -968,17 +938,12 @@ public class grn extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_payKeyTyped
 
-    private void DisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DisKeyTyped
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
         // TODO add your handling code here:
-        char c = evt.getKeyChar();
-        if (!(c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == '0')) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_DisKeyTyped
+    }//GEN-LAST:event_idActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Dis;
     private javax.swing.JTextField ItemName;
     private javax.swing.JScrollPane SGrnId;
     private javax.swing.JList SuplierNameSearch;
@@ -991,7 +956,6 @@ public class grn extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel18;
@@ -1124,7 +1088,7 @@ public class grn extends javax.swing.JPanel {
         sub.setText(null);
         net.setText(null);
         bal.setText(null);
-        Dis.setText(null);
+
         pay.setText(null);
         DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
         dtm.setRowCount(0);

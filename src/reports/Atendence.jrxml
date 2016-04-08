@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-04-04T22:49:08 -->
+<!-- 2016-04-08T09:39:19 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Atendence" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6ed3114-5924-41c1-a92d-d39fd283aed9">
 	<property name="ireport.zoom" value="1.331000000000001"/>
 	<property name="ireport.x" value="0"/>
@@ -81,12 +81,9 @@ where course=$P{course}]]>
 	<parameter name="batch" class="java.lang.String"/>
 	<parameter name="year" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[SELECT student_id,student_nic, student_name,status FROM atendence where course=$P{course} and batch= $P{batch}  and `year`= $P{year} ]]>
+		<![CDATA[SELECT student_id, student_name,status FROM atendence where course=$P{course} and batch= $P{batch}  and `year`= $P{year}]]>
 	</queryString>
 	<field name="student_id" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="student_nic" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="student_name" class="java.lang.String">
@@ -126,14 +123,7 @@ where course=$P{course}]]>
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="102" y="2" width="138" height="20" uuid="1ec5d650-7adc-4ac5-8041-77c5912d102e"/>
-				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
-				</textElement>
-				<text><![CDATA[NIC]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="240" y="2" width="197" height="20" uuid="79eba333-ec88-444e-b058-75e4f1ec597e"/>
+				<reportElement x="102" y="2" width="335" height="20" uuid="79eba333-ec88-444e-b058-75e4f1ec597e"/>
 				<textElement textAlignment="Center">
 					<font size="14" isBold="true"/>
 				</textElement>
@@ -159,9 +149,6 @@ where course=$P{course}]]>
 				<reportElement x="102" y="0" width="1" height="23" uuid="4d75f59e-19e8-49f4-97ec-7594e056fea9"/>
 			</line>
 			<line>
-				<reportElement x="240" y="0" width="1" height="23" uuid="f79b0293-61ed-4455-b4ca-a235aae6e187"/>
-			</line>
-			<line>
 				<reportElement x="437" y="0" width="1" height="23" uuid="8169ae33-3694-4a7e-8c34-2d5a0391d9f9"/>
 			</line>
 			<line>
@@ -179,14 +166,7 @@ where course=$P{course}]]>
 				<textFieldExpression><![CDATA[$F{student_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="103" y="0" width="137" height="20" uuid="08ee7e9d-2037-4adf-967e-5ce0bfe9a7a5"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{student_nic}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="241" y="0" width="196" height="20" uuid="2977aa54-0f1f-4e33-ade6-df61d591b27a"/>
+				<reportElement x="102" y="0" width="335" height="20" uuid="2977aa54-0f1f-4e33-ade6-df61d591b27a"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
@@ -207,9 +187,6 @@ where course=$P{course}]]>
 			</line>
 			<line>
 				<reportElement x="102" y="-1" width="1" height="21" uuid="671bb72b-5b05-4f58-b06b-0cf4fce42940"/>
-			</line>
-			<line>
-				<reportElement x="240" y="-1" width="1" height="21" uuid="1e656a1d-052b-44de-82a1-41f1034537d4"/>
 			</line>
 			<line>
 				<reportElement x="437" y="-1" width="1" height="21" uuid="a9b1dbc3-7c6c-487c-a7df-39f005fea29e"/>
