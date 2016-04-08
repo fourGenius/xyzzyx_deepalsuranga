@@ -477,14 +477,16 @@ public class Jp_admin_user extends javax.swing.JPanel {
             generate_user_id();
             Connection cc = MC_JavaDataBaseConnection.myConnection();
             SS = cc.createStatement();
-            SS.executeUpdate("insert into (user_id,user_email,user_password,user_status,user_name,user_nic) values('" + id + "','" + user_email.getSelectedItem().toString() + "','" + pf_password.getText() + "','0','" + fullname + "','" + tf_nic.getText() + "'");
+            SS.executeUpdate("insert into user(user_id,user_email,user_password,user_status,user_name,user_nic) values('" + id + "','" + user_email.getSelectedItem().toString() + "','" + pf_password.getText() + "','1','" + fullname + "','" + tf_nic.getText() + "')");
 
             load_allData();
         } catch (Exception e) {
+            e.printStackTrace();
             try {
                 SS.close();
             } catch (SQLException ex) {
                 Logger.getLogger(Jp_admin_user.class.getName()).log(Level.SEVERE, null, ex);
+                
             }
         }
 
@@ -620,8 +622,9 @@ public class Jp_admin_user extends javax.swing.JPanel {
 
             try (ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT COUNT(iduser) FROM user")) {
                 
-                int idcount = rs.getInt("x");
-                int id_no = ++idcount;
+//                int idcount = rs.getInt("x");
+                int idcount = 3;
+                int id_no = 1+idcount;
                 
                 String a = Integer.toString(id_no);
                 int length = a.length();

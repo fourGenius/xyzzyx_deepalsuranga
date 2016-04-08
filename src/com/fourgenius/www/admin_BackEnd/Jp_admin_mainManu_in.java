@@ -331,74 +331,78 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
 
     private void lb_student_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_student_informationMouseClicked
 
-        try {
-            
-            md_setvisible_true(bt_admin_bE_home);
-            md_setvisible_true(bt_admin_bE_students);
-            md_setvisible_true(bt_admin_bE_users);
-            md_setvisible_true(bt_admin_bE_employees);
-//            md_setvisible_true(bt_admin_bE_exams);
-            md_setvisible_true(bt_admin_bE_payments);
-//            md_setvisible_true(bt_admin_bE_practicals);
-            md_setvisible_true(bt_admin_bE_administrator);
-
-            //jLabel4.setBorder(borderC);
-            Jp_admin_student studentPanelM = new Jp_admin_student();
-            if (studentPanelM == null) {
-                
-                admin_mainPanel.removeAll();
-                revalidate();
-                studentPanelM = new Jp_admin_student();
-                studentPanelM.setVisible(true);
-                admin_mainPanel.add(studentPanelM);
-                revalidate();
-            } else {
-                admin_mainPanel.removeAll();
-                revalidate();
-                studentPanelM.setVisible(true);
-                admin_mainPanel.add(studentPanelM);
-                revalidate();
-            }
-        } catch (Exception e) {
-            
-        }
+//        try {
+//            
+//            md_setvisible_true(bt_admin_bE_home);
+//            md_setvisible_true(bt_admin_bE_students);
+//            md_setvisible_true(bt_admin_bE_users);
+//            md_setvisible_true(bt_admin_bE_employees);
+////            md_setvisible_true(bt_admin_bE_exams);
+//            md_setvisible_true(bt_admin_bE_payments);
+////            md_setvisible_true(bt_admin_bE_practicals);
+//            md_setvisible_true(bt_admin_bE_administrator);
+//
+//            //jLabel4.setBorder(borderC);
+//            Jp_admin_student studentPanelM = new Jp_admin_student();
+//            if (studentPanelM == null) {
+//                
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                studentPanelM = new Jp_admin_student();
+//                studentPanelM.setVisible(true);
+//                admin_mainPanel.add(studentPanelM);
+//                revalidate();
+//            } else {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                studentPanelM.setVisible(true);
+//                admin_mainPanel.add(studentPanelM);
+//                revalidate();
+//            }
+//        } catch (Exception e) {
+//            
+//        }
+        
+        jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
 
 
     }//GEN-LAST:event_lb_student_informationMouseClicked
 
     private void lb_payments_infromationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_payments_infromationMouseClicked
-        try {
-            md_setvisible_true(bt_admin_bE_home);
-            md_setvisible_true(bt_admin_bE_students);
-            md_setvisible_true(bt_admin_bE_users);
-            md_setvisible_true(bt_admin_bE_employees);
-//            md_setvisible_true(bt_admin_bE_exams);
-            md_setvisible_true(bt_admin_bE_payments);
-//            md_setvisible_true(bt_admin_bE_practicals);
-            md_setvisible_true(bt_admin_bE_administrator);
-
-            //jLabel4.setBorder(borderC);
-            Jp_admin_payment M = new Jp_admin_payment();
-            if (M == null) {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M = new Jp_admin_payment();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            } else {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            }
-            lb_payments_infromation.setBorder(borderC);
-        } catch (Exception e) {
-        }
+//        try {
+//            md_setvisible_true(bt_admin_bE_home);
+//            md_setvisible_true(bt_admin_bE_students);
+//            md_setvisible_true(bt_admin_bE_users);
+//            md_setvisible_true(bt_admin_bE_employees);
+////            md_setvisible_true(bt_admin_bE_exams);
+//            md_setvisible_true(bt_admin_bE_payments);
+////            md_setvisible_true(bt_admin_bE_practicals);
+//            md_setvisible_true(bt_admin_bE_administrator);
+//
+//            //jLabel4.setBorder(borderC);
+//            Jp_admin_payment M = new Jp_admin_payment();
+//            if (M == null) {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M = new Jp_admin_payment();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            } else {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            }
+//            lb_payments_infromation.setBorder(borderC);
+//        } catch (Exception e) {
+//        }
         //jLabel9.setBorder(borderE);
 
-
+jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
     }//GEN-LAST:event_lb_payments_infromationMouseClicked
 
     private void lb_payments_infromationMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_payments_infromationMouseEntered
@@ -452,6 +456,7 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
 
     private void lb_practical_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_practical_informationMouseClicked
 
+      jf_pro_version pro = new jf_pro_version();
         pro.setVisible(true);
 
         try {
@@ -496,38 +501,39 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
 
     private void lb_lecture_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_lecture_informationMouseClicked
 
-        //pro.setVisible(true);
-
-        try {
-            md_setvisible_true(bt_admin_bE_home);
-            md_setvisible_true(bt_admin_bE_students);
-            md_setvisible_true(bt_admin_bE_users);
-            md_setvisible_true(bt_admin_bE_employees);
-            //md_setvisible_true(bt_admin_bE_exams);
-            md_setvisible_true(bt_admin_bE_payments);
-            //md_setvisible_true(bt_admin_bE_practicals);
-            md_setvisible_true(bt_admin_bE_administrator);
-
-            //jLabel4.setBorder(borderC);
-            Jp_admin_employee_ac M = new Jp_admin_employee_ac();
-            if (M == null) {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M = new Jp_admin_employee_ac();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            } else {
-                admin_mainPanel.removeAll();
-                revalidate();
-                M.setVisible(true);
-                admin_mainPanel.add(M);
-                revalidate();
-            }
-            //jLabel5.setBorder(borderE);
-            lb_lecture_information.setBorder(borderC);
-        } catch (Exception e) {
-        }
+        jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
+//
+//        try {
+//            md_setvisible_true(bt_admin_bE_home);
+//            md_setvisible_true(bt_admin_bE_students);
+//            md_setvisible_true(bt_admin_bE_users);
+//            md_setvisible_true(bt_admin_bE_employees);
+//            //md_setvisible_true(bt_admin_bE_exams);
+//            md_setvisible_true(bt_admin_bE_payments);
+//            //md_setvisible_true(bt_admin_bE_practicals);
+//            md_setvisible_true(bt_admin_bE_administrator);
+//
+//            //jLabel4.setBorder(borderC);
+//            Jp_admin_employee_ac M = new Jp_admin_employee_ac();
+//            if (M == null) {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M = new Jp_admin_employee_ac();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            } else {
+//                admin_mainPanel.removeAll();
+//                revalidate();
+//                M.setVisible(true);
+//                admin_mainPanel.add(M);
+//                revalidate();
+//            }
+//            //jLabel5.setBorder(borderE);
+//            lb_lecture_information.setBorder(borderC);
+//        } catch (Exception e) {
+//        }
     }//GEN-LAST:event_lb_lecture_informationMouseClicked
 
     private void lb_lecture_informationMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_lecture_informationMouseEntered
@@ -587,9 +593,9 @@ public class Jp_admin_mainManu_in extends javax.swing.JPanel {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_lb_user_informationMouseEntered
-    jf_pro_version pro = new jf_pro_version();
+ 
     private void lb_employee_informationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_employee_informationMouseClicked
-
+   jf_pro_version pro = new jf_pro_version();
         pro.setVisible(true);
 
 //        try {

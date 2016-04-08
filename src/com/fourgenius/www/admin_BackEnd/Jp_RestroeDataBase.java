@@ -7,8 +7,12 @@ package com.fourgenius.www.admin_BackEnd;
 
 import com.fourgenius.www.private_access.admin.login.Jf_admin_login;
 import com.fourgenius.www.private_access.admin.login._jp_admin_login_email;
+import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -30,9 +34,9 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<String>();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        rpath = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
         jProgressBar1 = new javax.swing.JProgressBar();
         jLabel2 = new javax.swing.JLabel();
@@ -51,10 +55,10 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/admin_BackEnd/exit-9_1.png"))); // NOI18N
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(jList1);
 
@@ -73,7 +77,7 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rpath, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton1)
                 .addContainerGap())
@@ -83,7 +87,7 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextField1)
+                    .addComponent(rpath)
                     .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -96,13 +100,13 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane2.setViewportView(jTable1);
@@ -196,40 +200,45 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
 
-        Thread t = new Thread() {
+               JFileChooser selectfile = new JFileChooser();
+        selectfile.setAcceptAllFileFilterUsed(false);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("sql Files Only","sql");
+        selectfile.addChoosableFileFilter(filter);
+        selectfile.showOpenDialog(null);
+        File selectedPfile = selectfile.getSelectedFile();
+       rpath.setText(selectedPfile.getAbsolutePath());
+        
+               String path = rpath.getText();
+        System.out.println(path);
+        try {
 
-            public void run() {
-                int i = 0;
-                while (i <= 50) {
-                    jProgressBar1.setValue(i);
-                    try {
-                        sleep(90);
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
-                    Thread t2 = new Thread() {
+            int processComplete;// this variable for verify the process
+            String x = "salon_test";
+            String u = "root";
+            String p = "WelComeDB1129";
 
-                        public void run() {
-                            int i = 50;
-                            while (i <= 100) {
-                                jProgressBar1.setValue(i);
-                                try {
-                                    sleep(90);
-                                } catch (InterruptedException ex) {
-                                    ex.printStackTrace();
-                                }
-                                i++;
-                            }
-                        }
-                    };
-                    t2.start();
-                    i++;
+            String[] executeCmd = new String[]{"C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin\\mysql.exe", x, "-u" + u, "-p" + p, "-e", " source " + path};
+//sava the command in a array
+            Process runtimeProcess = Runtime.getRuntime().exec(executeCmd);// execute the command
+
+            processComplete = runtimeProcess.waitFor();// get the result to variable
+
+            if (processComplete == 1) {// if return value equal to 1 then failed the process
+
+                JOptionPane.showMessageDialog(null, "Restore Failed");
+            } else if (processComplete == 0) {
+                {// if return value equal to 0 then failed the process
+
+                    JOptionPane.showMessageDialog(null, "Restore Completed");
+                    rpath.setText(null);
                 }
             }
-        };
-        t.start();
 
+        } catch (Exception ex) {
 
+            JOptionPane.showMessageDialog(null, ex);
+
+        }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -269,7 +278,7 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTextField rpath;
     // End of variables declaration//GEN-END:variables
 }
