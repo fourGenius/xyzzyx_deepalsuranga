@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.apache.log4j.RollingFileAppender;
 import public_access.MC_JavaDataBaseConnection;
@@ -60,13 +61,14 @@ public class Jf_user_login extends javax.swing.JFrame {
         _pf_user_login_password.setEchoChar((char) 0);
 
           try {
-            String filePath = "D:/myFirstLog_Login.Log";
+            String filePath = "D:/Academy_Manager_Login.Log";
             PatternLayout layout = new PatternLayout("%-3p %d %m %n");
             RollingFileAppender appender = new RollingFileAppender(layout, filePath);
-            appender.setName("myFirstLog_Login");
+            appender.setName("Academy Manager Login");
             appender.setMaxFileSize("5MB");
             appender.activateOptions();
             org.apache.log4j.Logger.getRootLogger().addAppender(appender);
+             
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -893,7 +895,8 @@ public class Jf_user_login extends javax.swing.JFrame {
                     Admin_SendMailSSL asmssl = new Admin_SendMailSSL();
                     asmssl.sendingSSL("User", "Login Status:System Entered!\n\n" + "Username:" + _tf_user_loging_userName.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
                 }).start();
-               
+                Logger log  = Logger.getLogger("myFirstLog");
+        log.info(_tf_user_loging_userName.getText().trim()+" user login");
                 this.dispose();
                 System.gc();
 

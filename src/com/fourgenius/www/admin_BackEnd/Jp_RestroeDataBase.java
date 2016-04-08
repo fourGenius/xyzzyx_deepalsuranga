@@ -23,6 +23,7 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
     /**
      * Creates new form Jp_RestroeDataBase
      */
+     String path ;
     public Jp_RestroeDataBase() {
         initComponents();
 
@@ -61,6 +62,12 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
             public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(jList1);
+
+        rpath.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rpathMouseClicked(evt);
+            }
+        });
 
         jToggleButton1.setText("Restroe Data To Database");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -200,16 +207,7 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
 
-               JFileChooser selectfile = new JFileChooser();
-        selectfile.setAcceptAllFileFilterUsed(false);
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("sql Files Only","sql");
-        selectfile.addChoosableFileFilter(filter);
-        selectfile.showOpenDialog(null);
-        File selectedPfile = selectfile.getSelectedFile();
-       rpath.setText(selectedPfile.getAbsolutePath());
         
-               String path = rpath.getText();
-        System.out.println(path);
         try {
 
             int processComplete;// this variable for verify the process
@@ -263,6 +261,19 @@ public class Jp_RestroeDataBase extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void rpathMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rpathMouseClicked
+       JFileChooser selectfile = new JFileChooser();
+        selectfile.setAcceptAllFileFilterUsed(false);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("sql Files Only","sql");
+        selectfile.addChoosableFileFilter(filter);
+        selectfile.showOpenDialog(null);
+        File selectedPfile = selectfile.getSelectedFile();
+       rpath.setText(selectedPfile.getAbsolutePath());
+        
+                path = rpath.getText();
+        System.out.println(path);
+    }//GEN-LAST:event_rpathMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

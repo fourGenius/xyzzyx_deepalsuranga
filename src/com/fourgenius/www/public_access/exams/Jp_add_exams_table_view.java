@@ -51,6 +51,7 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         _bt_update_exam.setEnabled(false);
         _bt_add_marks.setEnabled(false);
         _bt_view_marks.setEnabled(false);
+        _bt_finish_exams.setEnabled(false);
         add_active_table_data();
         add_past_exam_data();
 
@@ -292,6 +293,7 @@ public class Jp_add_exams_table_view extends javax.swing.JPanel {
         _bt_update_exam.setEnabled(true);
         _bt_add_marks.setEnabled(true);
         _bt_view_marks.setEnabled(true);
+        _bt_finish_exams.setEnabled(true);
     }//GEN-LAST:event__tb_add_exams_view_active_exam_tableMouseClicked
 
     private void _tb_add_exams_view_past_exam_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_exams_view_past_exam_tableMouseClicked

@@ -153,6 +153,9 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="rpath">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rpathMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton1">
           <Properties>
