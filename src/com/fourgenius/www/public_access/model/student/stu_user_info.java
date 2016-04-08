@@ -20,13 +20,14 @@ import public_access.MC_JavaDataBaseConnection;
  */
 public class stu_user_info {
 
-    private String idstu_user, stu_user_info_id, stu_user_info_email, stu_user_info_status;
+    private String idstu_user, stu_user_info_id, stu_user_info_email, stu_user_info_password, stu_user_info_status;
 
 //////////////////////////////////////////Insert//////////////////////////////////////////////
-    public stu_user_info(String stu_user_info_id, String stu_user_info_email, String stu_user_info_status) {
+    public stu_user_info(String stu_user_info_id, String stu_user_info_email, String stu_user_info_password, String stu_user_info_status) {
         
         this.stu_user_info_id = stu_user_info_id;
         this.stu_user_info_email = stu_user_info_email;
+        this.stu_user_info_password = stu_user_info_password;
         this.stu_user_info_status = stu_user_info_status;
 
         try {
@@ -34,9 +35,9 @@ public class stu_user_info {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from stu_user_info where stu_user_info_id='"+stu_user_info_id+"'");
             if (rs.next()) {
-                statement.executeUpdate("UPDATE stu_user_info SET stu_user_info_email='"+stu_user_info_email+"' WHERE stu_user_info_id='"+stu_user_info_id+"'");
+                statement.executeUpdate("UPDATE stu_user_info SET stu_user_info_email='"+stu_user_info_email+"', stu_user_info_password='"+stu_user_info_password+"' WHERE stu_user_info_id='"+stu_user_info_id+"'");
             } else {
-                statement.executeUpdate("insert into stu_user_info(stu_user_info_id,stu_user_info_email,stu_user_info_status) values ('"+stu_user_info_id+"','"+stu_user_info_email+"','"+stu_user_info_status+"')");
+                statement.executeUpdate("insert into stu_user_info(stu_user_info_id,stu_user_info_email,stu_user_info_password,stu_user_info_status) values ('"+stu_user_info_id+"','"+stu_user_info_email+"','"+stu_user_info_password+"','"+stu_user_info_status+"')");
             }
             rs.close();
         } catch (SQLException ex) {
