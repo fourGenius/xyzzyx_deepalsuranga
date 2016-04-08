@@ -45,6 +45,10 @@ public class stu_practical_info {
         }
     }
 
+    public stu_practical_info(String stu_practical_info_id) {
+        this.stu_practical_info_id = stu_practical_info_id;
+    }
+
     public stu_practical_info() {
     }
 
@@ -76,5 +80,19 @@ public class stu_practical_info {
     public void setStu_practical_info_name(String stu_practical_info_name) {
         this.stu_practical_info_name = stu_practical_info_name;
     }
+    
+    public String getStu_practical_info_type() {
+        return stu_practical_info_id;
+    }
 
+    public void setStu_practical_info_type(String stu_practical_info_id) {
+        try {
+            Connection c=MC_JavaDataBaseConnection.myConnection();
+            Statement s=c.createStatement();
+            s.executeUpdate("UPDATE stu_practical_info SET stu_practical_info_type='0' WHERE stu_practical_info_id='"+stu_practical_info_id+"'");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        this.stu_practical_info_id = stu_practical_info_id;
+    }
 }

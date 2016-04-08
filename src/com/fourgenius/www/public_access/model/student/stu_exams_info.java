@@ -45,6 +45,10 @@ public class stu_exams_info {
         }
     }
 
+    public stu_exams_info(String stu_exams_info_id) {
+        this.stu_exams_info_id = stu_exams_info_id;
+    }
+    
     public stu_exams_info() {
     }
 
@@ -77,4 +81,14 @@ public class stu_exams_info {
         this.stu_exams_info_name = stu_exams_info_name;
     }
 
+    public void setStu_exams_info_type(String stu_exams_info_id) {
+        try {
+            Connection c=MC_JavaDataBaseConnection.myConnection();
+            Statement s=c.createStatement();
+            s.executeUpdate("UPDATE stu_exams_info SET stu_exams_info_type='0' WHERE stu_exams_info_id='"+stu_exams_info_id+"'");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        this.stu_exams_info_id = stu_exams_info_id;
+    }
 }

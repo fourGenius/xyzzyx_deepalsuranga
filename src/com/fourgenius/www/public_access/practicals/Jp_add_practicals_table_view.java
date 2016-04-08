@@ -11,6 +11,7 @@ import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_A
 import static com.fourgenius.www.public_access.exams.Jp_add_exams._bt_add_exam_ExamsDetails;
 import com.fourgenius.www.public_access.registration.lecture.*;
 import com.fourgenius.www.public_access.model.academic_employee.employee_academic_user_info_name;
+import com.fourgenius.www.public_access.model.student.stu_practical_info;
 import static com.fourgenius.www.public_access.practicals.Jf_practicals._bt_UserMain_home;
 import static com.fourgenius.www.public_access.practicals.Jp_add_practicals.Jp_add_practical_main_panel;
 import static com.fourgenius.www.public_access.practicals.Jp_add_practicals._bt_add_practical_AddPractical;
@@ -22,6 +23,8 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Vector;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -43,6 +46,8 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
 //    TableRowSorter<DefaultTableModel> sorter;
     Border border = BorderFactory.createLineBorder(Color.white, 1);
 
+    public Date getd;
+
     /**
      * Creates new form Jp_registration_lecture_table_view
      */
@@ -51,6 +56,7 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
         _bt_update_practical.setEnabled(false);
         _bt_add_marks.setEnabled(false);
         _bt_view_marks.setEnabled(false);
+        _bt_finish_practical.setEnabled(false);
         add_active_table_data();
         add_past_exam_data();
     }
@@ -73,6 +79,7 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
         _bt_view_marks = new javax.swing.JButton();
         _bt_add_marks = new javax.swing.JButton();
         _bt_update_practical = new javax.swing.JButton();
+        _bt_finish_practical = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(66, 66, 66));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -169,7 +176,7 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
                 _bt_view_marksActionPerformed(evt);
             }
         });
-        add(_bt_view_marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 560, 200, -1));
+        add(_bt_view_marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 560, 200, -1));
 
         _bt_add_marks.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_add_marks.setForeground(new java.awt.Color(255, 255, 255));
@@ -201,7 +208,7 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
                 _bt_add_marksActionPerformed(evt);
             }
         });
-        add(_bt_add_marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, 200, -1));
+        add(_bt_add_marks, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 560, 200, -1));
 
         _bt_update_practical.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         _bt_update_practical.setForeground(new java.awt.Color(255, 255, 255));
@@ -230,17 +237,51 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
                 _bt_update_practicalActionPerformed(evt);
             }
         });
-        add(_bt_update_practical, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 200, -1));
+        add(_bt_update_practical, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 560, 200, -1));
+
+        _bt_finish_practical.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        _bt_finish_practical.setForeground(new java.awt.Color(255, 255, 255));
+        _bt_finish_practical.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/public_access/user/login/images_butons/buton_blue_200x50.png"))); // NOI18N
+        _bt_finish_practical.setText("Finish Practical");
+        _bt_finish_practical.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        _bt_finish_practical.setFocusPainted(false);
+        _bt_finish_practical.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        _bt_finish_practical.setPreferredSize(new java.awt.Dimension(200, 50));
+        _bt_finish_practical.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _bt_finish_practicalMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                _bt_finish_practicalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                _bt_finish_practicalMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                _bt_finish_practicalMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                _bt_finish_practicalMouseReleased(evt);
+            }
+        });
+        _bt_finish_practical.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _bt_finish_practicalActionPerformed(evt);
+            }
+        });
+        add(_bt_finish_practical, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void _tb_add_practicals_view_active_practicals_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_practicals_view_active_practicals_tableMouseClicked
         _bt_update_practical.setEnabled(true);
         _bt_add_marks.setEnabled(true);
         _bt_view_marks.setEnabled(true);
+        _bt_finish_practical.setEnabled(true);
     }//GEN-LAST:event__tb_add_practicals_view_active_practicals_tableMouseClicked
 
     private void _tb_add_practicals_view_past_practicals_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tb_add_practicals_view_past_practicals_tableMouseClicked
-        // TODO add your handling code here:
+        _bt_add_marks.setEnabled(true);
+        _bt_view_marks.setEnabled(true);
     }//GEN-LAST:event__tb_add_practicals_view_past_practicals_tableMouseClicked
 
     private void _tp_practical_previewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tp_practical_previewMouseClicked
@@ -248,10 +289,14 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
         if (index == 1) {
             _bt_update_practical.setEnabled(false);
             _bt_add_marks.setEnabled(false);
+            _bt_finish_practical.setEnabled(false);
+            _bt_view_marks.setEnabled(false);
             _tb_add_practicals_view_active_practicals_table.setSelectionMode(0);
         } else {
             _bt_update_practical.setEnabled(false);
             _bt_add_marks.setEnabled(false);
+            _bt_finish_practical.setEnabled(false);
+            _bt_view_marks.setEnabled(false);
             _tb_add_practicals_view_past_practicals_table.setSelectionMode(0);
         }
     }//GEN-LAST:event__tp_practical_previewMouseClicked
@@ -278,33 +323,65 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
 
     private void _bt_view_marksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_view_marksActionPerformed
         try {
-            DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_active_practicals_table.getModel();
-            int row = _tb_add_practicals_view_active_practicals_table.getSelectedRow();
-            String batch = dtm.getValueAt(row, 2).toString();
-            String course = dtm.getValueAt(row, 3).toString();
-            String branch = dtm.getValueAt(row, 5).toString();
-            String id = dtm.getValueAt(row, 0).toString();
-            String name = dtm.getValueAt(row, 1).toString();
-            String date = dtm.getValueAt(row, 4).toString();
+            int index = _tp_practical_preview.getSelectedIndex();
+            if (index == 0) {
+                DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_active_practicals_table.getModel();
+                int row = _tb_add_practicals_view_active_practicals_table.getSelectedRow();
+                String batch = dtm.getValueAt(row, 2).toString();
+                String course = dtm.getValueAt(row, 3).toString();
+                String branch = dtm.getValueAt(row, 5).toString();
+                String id = dtm.getValueAt(row, 0).toString();
+                String name = dtm.getValueAt(row, 1).toString();
+                String date = dtm.getValueAt(row, 4).toString();
 
-            Jp_view_practical_result view_marks = new Jp_view_practical_result(batch, course, branch, id, name, date);
-            if (view_marks == null) {
-                Jp_add_practical_main_panel.removeAll();
-                revalidate();
-                view_marks = new Jp_view_practical_result(batch, course, branch, id, name, date);
-                view_marks.setVisible(true);
-                Jp_add_practical_main_panel.add(view_marks);
-                revalidate();
+                Jp_view_practical_result view_marks = new Jp_view_practical_result(batch, course, branch, id, name, date);
+                if (view_marks == null) {
+                    Jp_add_practical_main_panel.removeAll();
+                    revalidate();
+                    view_marks = new Jp_view_practical_result(batch, course, branch, id, name, date);
+                    view_marks.setVisible(true);
+                    Jp_add_practical_main_panel.add(view_marks);
+                    revalidate();
+                } else {
+                    Jp_add_practical_main_panel.removeAll();
+                    revalidate();
+                    view_marks.setVisible(true);
+                    Jp_add_practical_main_panel.add(view_marks);
+                    revalidate();
+                }
+                _bt_add_practical_AddPractical.setText("Cancel");
+                _bt_UserMain_home.setEnabled(false);
+                _bt_add_practical_practicalDetails.setEnabled(false);
             } else {
-                Jp_add_practical_main_panel.removeAll();
-                revalidate();
-                view_marks.setVisible(true);
-                Jp_add_practical_main_panel.add(view_marks);
-                revalidate();
+                DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_past_practicals_table.getModel();
+                int row = _tb_add_practicals_view_past_practicals_table.getSelectedRow();
+                String batch = dtm.getValueAt(row, 2).toString();
+                String course = dtm.getValueAt(row, 3).toString();
+                String branch = dtm.getValueAt(row, 5).toString();
+                String id = dtm.getValueAt(row, 0).toString();
+                String name = dtm.getValueAt(row, 1).toString();
+                String date = dtm.getValueAt(row, 4).toString();
+
+                Jp_view_practical_result view_marks = new Jp_view_practical_result(batch, course, branch, id, name, date);
+                if (view_marks == null) {
+                    Jp_add_practical_main_panel.removeAll();
+                    revalidate();
+                    view_marks = new Jp_view_practical_result(batch, course, branch, id, name, date);
+                    view_marks.setVisible(true);
+                    Jp_add_practical_main_panel.add(view_marks);
+                    revalidate();
+                } else {
+                    Jp_add_practical_main_panel.removeAll();
+                    revalidate();
+                    view_marks.setVisible(true);
+                    Jp_add_practical_main_panel.add(view_marks);
+                    revalidate();
+                }
+                _bt_add_practical_AddPractical.setText("Cancel");
+                _bt_UserMain_home.setEnabled(false);
+                _bt_add_practical_practicalDetails.setEnabled(false);
             }
-            _bt_add_practical_AddPractical.setText("Cancel");
-            _bt_UserMain_home.setEnabled(false);
-            _bt_add_practical_practicalDetails.setEnabled(false);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -332,32 +409,63 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
 
     private void _bt_add_marksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_add_marksActionPerformed
         try {
-            DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_active_practicals_table.getModel();
-            int row = _tb_add_practicals_view_active_practicals_table.getSelectedRow();
-            String batch = dtm.getValueAt(row, 2).toString();
-            String course = dtm.getValueAt(row, 3).toString();
-            String branch = dtm.getValueAt(row, 5).toString();
-            String id = dtm.getValueAt(row, 0).toString();
-            String name = dtm.getValueAt(row, 1).toString();
+            int index = _tp_practical_preview.getSelectedIndex();
+            if (index == 0) {
+                DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_active_practicals_table.getModel();
+                int row = _tb_add_practicals_view_active_practicals_table.getSelectedRow();
+                String batch = dtm.getValueAt(row, 2).toString();
+                String course = dtm.getValueAt(row, 3).toString();
+                String branch = dtm.getValueAt(row, 5).toString();
+                String id = dtm.getValueAt(row, 0).toString();
+                String name = dtm.getValueAt(row, 1).toString();
 
-            Jp_add_practical_student_marks add_marks = new Jp_add_practical_student_marks(batch, course, branch, id, name);
-            if (add_marks == null) {
-                Jp_add_practical_main_panel.removeAll();
-                revalidate();
-                add_marks = new Jp_add_practical_student_marks(batch, course, branch, id, name);
-                add_marks.setVisible(true);
-                Jp_add_practical_main_panel.add(add_marks);
-                revalidate();
+                Jp_add_practical_student_marks add_marks = new Jp_add_practical_student_marks(batch, course, branch, id, name);
+                if (add_marks == null) {
+                    Jp_add_practical_main_panel.removeAll();
+                    revalidate();
+                    add_marks = new Jp_add_practical_student_marks(batch, course, branch, id, name);
+                    add_marks.setVisible(true);
+                    Jp_add_practical_main_panel.add(add_marks);
+                    revalidate();
+                } else {
+                    Jp_add_practical_main_panel.removeAll();
+                    revalidate();
+                    add_marks.setVisible(true);
+                    Jp_add_practical_main_panel.add(add_marks);
+                    revalidate();
+                }
+                _bt_add_practical_AddPractical.setText("Cancel");
+                _bt_UserMain_home.setEnabled(false);
+                _bt_add_practical_practicalDetails.setEnabled(false);
             } else {
-                Jp_add_practical_main_panel.removeAll();
-                revalidate();
-                add_marks.setVisible(true);
-                Jp_add_practical_main_panel.add(add_marks);
-                revalidate();
+                DefaultTableModel dtm = (DefaultTableModel) _tb_add_practicals_view_past_practicals_table.getModel();
+                int row = _tb_add_practicals_view_past_practicals_table.getSelectedRow();
+                String batch = dtm.getValueAt(row, 2).toString();
+                String course = dtm.getValueAt(row, 3).toString();
+                String branch = dtm.getValueAt(row, 5).toString();
+                String id = dtm.getValueAt(row, 0).toString();
+                String name = dtm.getValueAt(row, 1).toString();
+
+                Jp_add_practical_student_marks add_marks = new Jp_add_practical_student_marks(batch, course, branch, id, name);
+                if (add_marks == null) {
+                    Jp_add_practical_main_panel.removeAll();
+                    revalidate();
+                    add_marks = new Jp_add_practical_student_marks(batch, course, branch, id, name);
+                    add_marks.setVisible(true);
+                    Jp_add_practical_main_panel.add(add_marks);
+                    revalidate();
+                } else {
+                    Jp_add_practical_main_panel.removeAll();
+                    revalidate();
+                    add_marks.setVisible(true);
+                    Jp_add_practical_main_panel.add(add_marks);
+                    revalidate();
+                }
+                _bt_add_practical_AddPractical.setText("Cancel");
+                _bt_UserMain_home.setEnabled(false);
+                _bt_add_practical_practicalDetails.setEnabled(false);
             }
-            _bt_add_practical_AddPractical.setText("Cancel");
-            _bt_UserMain_home.setEnabled(false);
-            _bt_add_practical_practicalDetails.setEnabled(false);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -384,9 +492,69 @@ public class Jp_add_practicals_table_view extends javax.swing.JPanel {
         _bt_UserMain_home.setEnabled(false);
     }//GEN-LAST:event__bt_update_practicalActionPerformed
 
+    private void _bt_finish_practicalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_finish_practicalMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event__bt_finish_practicalMouseClicked
+
+    private void _bt_finish_practicalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_finish_practicalMouseEntered
+        _bt_finish_practical.setBorder(border);
+    }//GEN-LAST:event__bt_finish_practicalMouseEntered
+
+    private void _bt_finish_practicalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_finish_practicalMouseExited
+        _bt_finish_practical.setBorder(null);
+    }//GEN-LAST:event__bt_finish_practicalMouseExited
+
+    private void _bt_finish_practicalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_finish_practicalMousePressed
+        _bt_finish_practical.setBorder(border);
+    }//GEN-LAST:event__bt_finish_practicalMousePressed
+
+    private void _bt_finish_practicalMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_finish_practicalMouseReleased
+        _bt_finish_practical.setBorder(null);
+    }//GEN-LAST:event__bt_finish_practicalMouseReleased
+
+    private void _bt_finish_practicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_finish_practicalActionPerformed
+        try {
+            DefaultTableModel activedtm = (DefaultTableModel) _tb_add_practicals_view_active_practicals_table.getModel();
+            DefaultTableModel pastdtm = (DefaultTableModel) _tb_add_practicals_view_past_practicals_table.getModel();
+            int raw = _tb_add_practicals_view_active_practicals_table.getSelectedRow();
+            String id = activedtm.getValueAt(raw, 0).toString();
+
+            Connection c = MC_JavaDataBaseConnection.myConnection();
+            Statement s = c.createStatement();
+            ResultSet rs = s.executeQuery("SELECT stu_practical_info_date FROM stu_practical_info WHERE stu_practical_info_id='" + id + "'");
+            if (rs.next()) {
+                getd = rs.getDate("stu_practical_info_date");
+            }
+
+            Date d = Calendar.getInstance().getTime();
+
+            if (getd.after(d)) {
+                JOptionPane.showMessageDialog(this, "This Practical is not Complete");
+            } else {
+                int option = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (option == JOptionPane.YES_OPTION) {
+                    stu_practical_info set_type = new stu_practical_info(id);
+                    set_type.setStu_practical_info_type(id);
+                    activedtm.setRowCount(0);
+                    pastdtm.setRowCount(0);
+                    add_active_table_data();
+                    add_past_exam_data();
+                    _bt_update_practical.setEnabled(false);
+                    _bt_add_marks.setEnabled(false);
+                    _bt_finish_practical.setEnabled(false);
+                    _bt_view_marks.setEnabled(false);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event__bt_finish_practicalActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton _bt_add_marks;
+    private javax.swing.JButton _bt_finish_practical;
     private javax.swing.JButton _bt_update_practical;
     private javax.swing.JButton _bt_view_marks;
     private javax.swing.JTable _tb_add_practicals_view_active_practicals_table;
