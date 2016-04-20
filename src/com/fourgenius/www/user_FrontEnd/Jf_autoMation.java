@@ -5,17 +5,70 @@
  */
 package com.fourgenius.www.user_FrontEnd;
 
+import com.github.sarxos.webcam.Webcam;
+import java.awt.Dimension;
+import java.awt.event.KeyEvent;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import jssc.SerialPort;
+import jssc.SerialPortEvent;
+import jssc.SerialPortEventListener;
+import jssc.SerialPortException;
+import jssc.SerialPortList;
+
 /**
  *
  * @author deepalsuranga
  */
-public class Jf_autoMation extends javax.swing.JFrame {
+public class Jf_autoMation extends javax.swing.JFrame implements SerialPortEventListener{
+
+    static SerialPort p;
 
     /**
      * Creates new form Jf_autoMation
      */
     public Jf_autoMation() {
         initComponents();
+
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                comdisable();
+                cameras.setVisible(false);
+                searchPorts();
+            }
+        }).start();
+        getCam();
+    }
+    private final Enumeration port = null;
+
+    public void searchPorts() {
+
+        String[] portNames = SerialPortList.getPortNames();
+        for (String portName : portNames) {
+
+            ports_set.addItem(portName);
+
+        }
+    }
+    HashMap<String, Webcam> wset;
+
+    public void getCam() {
+
+        List<Webcam> c = Webcam.getWebcams();
+        wset = new HashMap<>();
+
+        for (Webcam webcam : c) {
+            cameras.addItem(webcam.getName());
+            wset.put(webcam.getName(), webcam);
+        }
     }
 
     /**
@@ -30,7 +83,7 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        Jcombo = new javax.swing.JComboBox();
+        ports_set = new javax.swing.JComboBox();
         connect = new javax.swing.JButton();
         disconnect = new javax.swing.JButton();
         jL = new javax.swing.JLabel();
@@ -77,7 +130,7 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jL_1 = new javax.swing.JLabel();
         jB_sec2_lcs_sd = new javax.swing.JButton();
         jL_2 = new javax.swing.JLabel();
-        jB_sec2_lcs_sd1 = new javax.swing.JButton();
+        jB_sec3_lcs_sd = new javax.swing.JButton();
         jL_27 = new javax.swing.JLabel();
         jL_28 = new javax.swing.JLabel();
         jL_29 = new javax.swing.JLabel();
@@ -85,18 +138,18 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jL_31 = new javax.swing.JLabel();
         jL_32 = new javax.swing.JLabel();
         jL_33 = new javax.swing.JLabel();
-        jB_sec2_led6_on1 = new javax.swing.JButton();
-        jB_sec2_led6_off1 = new javax.swing.JButton();
-        jB_sec2_led5_off1 = new javax.swing.JButton();
-        jB_sec2_led5_on1 = new javax.swing.JButton();
-        jB_sec2_led4_off1 = new javax.swing.JButton();
-        jB_sec2_led4_on1 = new javax.swing.JButton();
-        jB_sec2_led3_off1 = new javax.swing.JButton();
-        jB_sec2_led3_on1 = new javax.swing.JButton();
-        jB_sec2_led2_off1 = new javax.swing.JButton();
-        jB_sec2_led2_on1 = new javax.swing.JButton();
-        jB_sec2_led1_off1 = new javax.swing.JButton();
-        jB_sec2_led1_on1 = new javax.swing.JButton();
+        jB_sec3_led6_on = new javax.swing.JButton();
+        jB_sec3_led6_off = new javax.swing.JButton();
+        jB_sec3_led5_off = new javax.swing.JButton();
+        jB_sec3_led5_on = new javax.swing.JButton();
+        jB_sec3_led4_off = new javax.swing.JButton();
+        jB_sec3_led4_on = new javax.swing.JButton();
+        jB_sec3_led3_off = new javax.swing.JButton();
+        jB_sec3_led3_on = new javax.swing.JButton();
+        jB_sec3_led2_off = new javax.swing.JButton();
+        jB_sec3_led2_on = new javax.swing.JButton();
+        jB_sec3_led1_off = new javax.swing.JButton();
+        jB_sec3_led1_on = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jL_19 = new javax.swing.JLabel();
         jL_21 = new javax.swing.JLabel();
@@ -130,13 +183,12 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jB_sec2_fcs_sd = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         previwe = new javax.swing.JLabel();
-        previwe2 = new javax.swing.JLabel();
         btt_camset = new javax.swing.JButton();
         cameras = new javax.swing.JComboBox();
-        previwe3 = new javax.swing.JLabel();
+        previwe2 = new javax.swing.JLabel();
         previwe4 = new javax.swing.JLabel();
         previwe5 = new javax.swing.JLabel();
-        previwe6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -145,14 +197,16 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel3.setBackground(new java.awt.Color(2, 85, 207));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Communication Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Communication Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        Jcombo.addActionListener(new java.awt.event.ActionListener() {
+        ports_set.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ports_set.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JcomboActionPerformed(evt);
+                ports_setActionPerformed(evt);
             }
         });
 
+        connect.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         connect.setText("Connect");
         connect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +214,7 @@ public class Jf_autoMation extends javax.swing.JFrame {
             }
         });
 
+        disconnect.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         disconnect.setText("Disconnect");
         disconnect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,6 +225,7 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jL.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jL.setText("Com Port :");
 
+        Sys_sd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Sys_sd.setText("Shut Down");
         Sys_sd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +233,7 @@ public class Jf_autoMation extends javax.swing.JFrame {
             }
         });
 
+        status.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         status.setText("port is offline");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -186,79 +243,197 @@ public class Jf_autoMation extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ports_set, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Jcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(connect, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(connect, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(disconnect, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Sys_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(disconnect, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(Sys_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
+
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Sys_sd, disconnect});
+
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jL)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(Sys_sd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Jcombo, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(disconnect, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(connect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Sys_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(disconnect))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(connect)
+                        .addComponent(ports_set, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(status, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(21, 21, 21))
         );
 
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Sys_sd, connect, disconnect, ports_set});
+
         jPanel5.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Light Control System", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Light Control System", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jB_sec1_led1_on.setText("ON");
+        jB_sec1_led1_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led1_onActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led1_off.setText("OFF");
+        jB_sec1_led1_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led1_offActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led2_off.setText("OFF");
+        jB_sec1_led2_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led2_offActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led2_on.setText("ON");
+        jB_sec1_led2_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led2_onActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led3_on.setText("ON");
+        jB_sec1_led3_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led3_onActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led3_off.setText("OFF");
+        jB_sec1_led3_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led3_offActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led6_on.setText("ON");
+        jB_sec1_led6_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led6_onActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led6_off.setText("OFF");
+        jB_sec1_led6_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led6_offActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led5_on.setText("ON");
+        jB_sec1_led5_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led5_onActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led4_on.setText("ON");
+        jB_sec1_led4_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led4_onActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led4_off.setText("OFF");
+        jB_sec1_led4_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led4_offActionPerformed(evt);
+            }
+        });
 
         jB_sec1_led5_off.setText("OFF");
+        jB_sec1_led5_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_led5_offActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led1_on.setText("ON");
+        jB_sec2_led1_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led1_onActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led1_off.setText("OFF");
+        jB_sec2_led1_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led1_offActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led2_off.setText("OFF");
+        jB_sec2_led2_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led2_offActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led2_on.setText("ON");
+        jB_sec2_led2_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led2_onActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led3_on.setText("ON");
+        jB_sec2_led3_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led3_onActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led3_off.setText("OFF");
+        jB_sec2_led3_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led3_offActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led4_off.setText("OFF");
+        jB_sec2_led4_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led4_offActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led4_on.setText("ON");
+        jB_sec2_led4_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led4_onActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led5_on.setText("ON");
+        jB_sec2_led5_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led5_onActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led5_off.setText("OFF");
+        jB_sec2_led5_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_led5_offActionPerformed(evt);
+            }
+        });
 
         jB_sec2_led6_off.setText("OFF");
 
@@ -288,17 +463,32 @@ public class Jf_autoMation extends javax.swing.JFrame {
 
         jL_9.setText("LED #1");
 
-        jB_sec1_lcs_sd.setText("LCS Shutdown");
+        jB_sec1_lcs_sd.setText("LCS SEC1 Turn-ON");
+        jB_sec1_lcs_sd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec1_lcs_sdActionPerformed(evt);
+            }
+        });
 
         jL_1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jL_1.setText("Section 01 :");
 
-        jB_sec2_lcs_sd.setText("LCS Shutdown");
+        jB_sec2_lcs_sd.setText("LCS SEC2 Turn-ON");
+        jB_sec2_lcs_sd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec2_lcs_sdActionPerformed(evt);
+            }
+        });
 
         jL_2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jL_2.setText("Section 02 :");
 
-        jB_sec2_lcs_sd1.setText("LCS Shutdown");
+        jB_sec3_lcs_sd.setText("LCS SEC3 Turn-ON");
+        jB_sec3_lcs_sd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec3_lcs_sdActionPerformed(evt);
+            }
+        });
 
         jL_27.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jL_27.setText("Section 03 :");
@@ -315,275 +505,323 @@ public class Jf_autoMation extends javax.swing.JFrame {
 
         jL_33.setText("LED #6");
 
-        jB_sec2_led6_on1.setText("ON");
+        jB_sec3_led6_on.setText("ON");
 
-        jB_sec2_led6_off1.setText("OFF");
+        jB_sec3_led6_off.setText("OFF");
 
-        jB_sec2_led5_off1.setText("OFF");
+        jB_sec3_led5_off.setText("OFF");
 
-        jB_sec2_led5_on1.setText("ON");
+        jB_sec3_led5_on.setText("ON");
 
-        jB_sec2_led4_off1.setText("OFF");
+        jB_sec3_led4_off.setText("OFF");
+        jB_sec3_led4_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec3_led4_offActionPerformed(evt);
+            }
+        });
 
-        jB_sec2_led4_on1.setText("ON");
+        jB_sec3_led4_on.setText("ON");
+        jB_sec3_led4_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec3_led4_onActionPerformed(evt);
+            }
+        });
 
-        jB_sec2_led3_off1.setText("OFF");
+        jB_sec3_led3_off.setText("OFF");
+        jB_sec3_led3_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec3_led3_offActionPerformed(evt);
+            }
+        });
 
-        jB_sec2_led3_on1.setText("ON");
+        jB_sec3_led3_on.setText("ON");
+        jB_sec3_led3_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec3_led3_onActionPerformed(evt);
+            }
+        });
 
-        jB_sec2_led2_off1.setText("OFF");
+        jB_sec3_led2_off.setText("OFF");
+        jB_sec3_led2_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec3_led2_offActionPerformed(evt);
+            }
+        });
 
-        jB_sec2_led2_on1.setText("ON");
+        jB_sec3_led2_on.setText("ON");
+        jB_sec3_led2_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec3_led2_onActionPerformed(evt);
+            }
+        });
 
-        jB_sec2_led1_off1.setText("OFF");
+        jB_sec3_led1_off.setText("OFF");
+        jB_sec3_led1_off.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec3_led1_offActionPerformed(evt);
+            }
+        });
 
-        jB_sec2_led1_on1.setText("ON");
+        jB_sec3_led1_on.setText("ON");
+        jB_sec3_led1_on.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_sec3_led1_onActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jL_1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jL_1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jL_3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(29, 29, 29)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jL_4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jL_5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec1_led1_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec1_led1_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec1_led2_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec1_led2_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec1_led3_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec1_led3_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec1_led4_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec1_led4_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec1_led5_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec1_led5_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec1_led6_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec1_led6_off))))
-                    .addComponent(jB_sec1_lcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(jL_2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jL_10, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_12, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_11, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_14, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_13, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led1_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led1_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led2_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led2_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led3_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led3_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led4_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led4_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led5_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led5_off))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led6_on)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led6_off))))
-                    .addComponent(jB_sec2_lcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jL_6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec1_led3_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec1_led3_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec1_led4_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec1_led4_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec1_led5_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec1_led5_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec1_led6_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec1_led6_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec1_led1_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec1_led1_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec1_led2_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec1_led2_off)))
+                    .addComponent(jB_sec1_lcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jL_27)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jL_2)
+                    .addComponent(jL_10, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_12, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_11, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_14, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_13, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jL_29, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_28, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_31, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_30, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_33, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_32, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec2_led1_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec2_led1_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec2_led2_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec2_led2_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec2_led3_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec2_led3_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec2_led4_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec2_led4_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec2_led5_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec2_led5_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec2_led6_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec2_led6_off)))
+                    .addComponent(jB_sec2_lcs_sd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jL_27)
+                    .addComponent(jL_29, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_28, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_31, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_30, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_33, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_32, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addComponent(jB_sec3_led6_on)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jB_sec3_led6_off))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led1_on1)
+                                .addComponent(jB_sec3_led1_on)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led1_off1))
+                                .addComponent(jB_sec3_led1_off))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led2_on1)
+                                .addComponent(jB_sec3_led2_on)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led2_off1))
+                                .addComponent(jB_sec3_led2_off))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led3_on1)
+                                .addComponent(jB_sec3_led3_on)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led3_off1))
+                                .addComponent(jB_sec3_led3_off))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led4_on1)
+                                .addComponent(jB_sec3_led4_on)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led4_off1))
+                                .addComponent(jB_sec3_led4_off))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led5_on1)
+                                .addComponent(jB_sec3_led5_on)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led5_off1))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_led6_on1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jB_sec2_led6_off1))))
-                    .addComponent(jB_sec2_lcs_sd1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                                .addComponent(jB_sec3_led5_off))))
+                    .addComponent(jB_sec3_lcs_sd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jB_sec1_led1_off, jB_sec1_led1_on, jB_sec1_led2_off, jB_sec1_led2_on, jB_sec1_led3_off, jB_sec1_led3_on, jB_sec1_led4_off, jB_sec1_led4_on, jB_sec1_led5_off, jB_sec1_led5_on, jB_sec1_led6_off, jB_sec1_led6_on});
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jB_sec2_led1_off, jB_sec2_led1_on, jB_sec2_led2_off, jB_sec2_led2_on, jB_sec2_led3_off, jB_sec2_led3_on, jB_sec2_led4_off, jB_sec2_led4_on, jB_sec2_led5_off, jB_sec2_led5_on, jB_sec2_led6_off, jB_sec2_led6_on});
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jB_sec3_led1_off, jB_sec3_led1_on, jB_sec3_led2_off, jB_sec3_led2_on, jB_sec3_led3_off, jB_sec3_led3_on, jB_sec3_led4_off, jB_sec3_led4_on, jB_sec3_led5_off, jB_sec3_led5_on, jB_sec3_led6_off, jB_sec3_led6_on});
+
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jB_sec2_lcs_sd, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jL_1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jB_sec1_lcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jL_2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jB_sec3_lcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jL_27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jL_3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jB_sec1_lcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec2_led1_on)
+                            .addComponent(jB_sec2_led1_off)
+                            .addComponent(jL_9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jB_sec1_led1_on)
-                                            .addComponent(jB_sec1_led1_off))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jB_sec1_led2_on)
-                                            .addComponent(jB_sec1_led2_off))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jB_sec1_led3_on)
-                                            .addComponent(jB_sec1_led3_off))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jB_sec1_led4_on)
-                                            .addComponent(jB_sec1_led4_off)
-                                            .addComponent(jL_6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jB_sec1_led5_on)
-                                            .addComponent(jB_sec1_led5_off)))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jL_3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jL_4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jL_5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jB_sec1_led6_on)
-                                    .addComponent(jB_sec1_led6_off)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel5Layout.createSequentialGroup()
-                                    .addGap(31, 31, 31)
-                                    .addComponent(jL_8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jL_7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jL_1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jL_2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jB_sec2_lcs_sd1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jB_sec2_led1_on1)
-                                    .addComponent(jB_sec2_led1_off1)
-                                    .addComponent(jL_28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jB_sec2_led2_on1)
-                                    .addComponent(jB_sec2_led2_off1)
-                                    .addComponent(jL_29, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jB_sec2_led3_on1)
-                                    .addComponent(jB_sec2_led3_off1)
-                                    .addComponent(jL_30, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jB_sec2_led4_on1)
-                                    .addComponent(jB_sec2_led4_off1)
-                                    .addComponent(jL_31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jB_sec2_led5_on1)
-                                    .addComponent(jB_sec2_led5_off1)
-                                    .addComponent(jL_32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jB_sec2_led6_on1)
-                                    .addComponent(jB_sec2_led6_off1)
-                                    .addComponent(jL_33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jL_27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jB_sec2_lcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jB_sec2_led1_on)
-                                .addComponent(jB_sec2_led1_off)
-                                .addComponent(jL_9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jB_sec2_led2_on)
-                                .addComponent(jB_sec2_led2_off)
-                                .addComponent(jL_10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jB_sec2_led3_on)
-                                .addComponent(jB_sec2_led3_off)
-                                .addComponent(jL_11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jB_sec2_led4_on)
-                                .addComponent(jB_sec2_led4_off)
-                                .addComponent(jL_12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jB_sec2_led5_on)
-                                .addComponent(jB_sec2_led5_off)
-                                .addComponent(jL_13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jB_sec2_led6_on)
-                                .addComponent(jB_sec2_led6_off)
-                                .addComponent(jL_14, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec2_led2_on)
+                            .addComponent(jB_sec2_led2_off)
+                            .addComponent(jL_10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec2_led3_on)
+                            .addComponent(jB_sec2_led3_off)
+                            .addComponent(jL_11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec2_led4_on)
+                            .addComponent(jB_sec2_led4_off)
+                            .addComponent(jL_12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec2_led5_on)
+                            .addComponent(jB_sec2_led5_off)
+                            .addComponent(jL_13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec2_led6_on)
+                            .addComponent(jB_sec2_led6_off)
+                            .addComponent(jL_14, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jL_28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jL_30, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jL_31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec1_led1_on)
+                            .addComponent(jB_sec1_led1_off))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec1_led2_on)
+                            .addComponent(jB_sec1_led2_off)
+                            .addComponent(jL_4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec1_led3_on)
+                            .addComponent(jB_sec1_led3_off)
+                            .addComponent(jL_5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec1_led4_on)
+                            .addComponent(jB_sec1_led4_off)
+                            .addComponent(jL_6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec1_led5_on)
+                            .addComponent(jB_sec1_led5_off)
+                            .addComponent(jL_7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec1_led6_on)
+                            .addComponent(jB_sec1_led6_off)
+                            .addComponent(jL_8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec3_led1_on)
+                            .addComponent(jB_sec3_led1_off))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec3_led2_on)
+                            .addComponent(jB_sec3_led2_off)
+                            .addComponent(jL_29, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec3_led3_on)
+                            .addComponent(jB_sec3_led3_off))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec3_led4_on)
+                            .addComponent(jB_sec3_led4_off))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec3_led5_on)
+                            .addComponent(jB_sec3_led5_off)
+                            .addComponent(jL_32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec3_led6_on)
+                            .addComponent(jB_sec3_led6_off)
+                            .addComponent(jL_33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jB_sec1_lcs_sd, jB_sec2_lcs_sd, jB_sec3_lcs_sd});
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jB_sec1_led1_off, jB_sec1_led1_on, jB_sec1_led2_off, jB_sec1_led2_on, jB_sec1_led3_off, jB_sec1_led3_on, jB_sec1_led4_off, jB_sec1_led4_on, jB_sec1_led5_off, jB_sec1_led5_on, jB_sec1_led6_off, jB_sec1_led6_on});
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jB_sec2_led1_off, jB_sec2_led1_on, jB_sec2_led2_off, jB_sec2_led2_on, jB_sec2_led3_off, jB_sec2_led3_on, jB_sec2_led4_off, jB_sec2_led4_on, jB_sec2_led5_off, jB_sec2_led5_on, jB_sec2_led6_off, jB_sec2_led6_on});
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jB_sec3_led1_off, jB_sec3_led1_on, jB_sec3_led2_off, jB_sec3_led2_on, jB_sec3_led3_off, jB_sec3_led3_on, jB_sec3_led4_off, jB_sec3_led4_on, jB_sec3_led5_off, jB_sec3_led5_on, jB_sec3_led6_off, jB_sec3_led6_on});
+
         jPanel4.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fan Control System", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fan Control System", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jL_19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jL_19.setForeground(new java.awt.Color(255, 255, 255));
@@ -606,6 +844,7 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jSlider_sec1_fan1.setPaintLabels(true);
         jSlider_sec1_fan1.setPaintTicks(true);
         jSlider_sec1_fan1.setValue(0);
+        jSlider_sec1_fan1.setOpaque(false);
         jSlider_sec1_fan1.setValueIsAdjusting(true);
 
         jSlider_sec1_fan2.setMajorTickSpacing(1);
@@ -613,18 +852,21 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jSlider_sec1_fan2.setPaintLabels(true);
         jSlider_sec1_fan2.setPaintTicks(true);
         jSlider_sec1_fan2.setValue(0);
+        jSlider_sec1_fan2.setOpaque(false);
 
         jSlider_sec1_fan4.setMajorTickSpacing(1);
         jSlider_sec1_fan4.setMaximum(5);
         jSlider_sec1_fan4.setPaintLabels(true);
         jSlider_sec1_fan4.setPaintTicks(true);
         jSlider_sec1_fan4.setValue(0);
+        jSlider_sec1_fan4.setOpaque(false);
 
         jSlider_sec1_fan3.setMajorTickSpacing(1);
         jSlider_sec1_fan3.setMaximum(5);
         jSlider_sec1_fan3.setPaintLabels(true);
         jSlider_sec1_fan3.setPaintTicks(true);
         jSlider_sec1_fan3.setValue(0);
+        jSlider_sec1_fan3.setOpaque(false);
 
         jB_sec1_fan1_on_off.setText("ON/OFF");
 
@@ -648,6 +890,7 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jSlider_sec2_fan1.setPaintLabels(true);
         jSlider_sec2_fan1.setPaintTicks(true);
         jSlider_sec2_fan1.setValue(0);
+        jSlider_sec2_fan1.setOpaque(false);
 
         jL_18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jL_18.setText("Speed Controllers");
@@ -657,18 +900,21 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jSlider_sec2_fan2.setPaintLabels(true);
         jSlider_sec2_fan2.setPaintTicks(true);
         jSlider_sec2_fan2.setValue(0);
+        jSlider_sec2_fan2.setOpaque(false);
 
         jSlider_sec2_fan3.setMajorTickSpacing(1);
         jSlider_sec2_fan3.setMaximum(5);
         jSlider_sec2_fan3.setPaintLabels(true);
         jSlider_sec2_fan3.setPaintTicks(true);
         jSlider_sec2_fan3.setValue(0);
+        jSlider_sec2_fan3.setOpaque(false);
 
         jSlider_sec2_fan4.setMajorTickSpacing(1);
         jSlider_sec2_fan4.setMaximum(5);
         jSlider_sec2_fan4.setPaintLabels(true);
         jSlider_sec2_fan4.setPaintTicks(true);
         jSlider_sec2_fan4.setValue(0);
+        jSlider_sec2_fan4.setOpaque(false);
 
         jB_sec2_fan4_on_off.setText("ON/OFF");
 
@@ -708,7 +954,6 @@ public class Jf_autoMation extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
                                 .addComponent(jL_15)
                                 .addGap(18, 18, 18)
                                 .addComponent(jB_sec1_fcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -742,18 +987,21 @@ public class Jf_autoMation extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jSlider_sec1_fan2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(186, 186, 186)
+                        .addGap(189, 189, 189)
                         .addComponent(jL_17, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                             .addComponent(jL_16)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jB_sec2_fcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(jL_18, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(59, 59, 59))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jB_sec2_fcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addGap(44, 44, 44)
+                                    .addComponent(jL_18, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(6, 6, 6))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jL_26, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -784,15 +1032,9 @@ public class Jf_autoMation extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jL_15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jB_sec1_fcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(8, 8, 8)
-                        .addComponent(jL_17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSlider_sec1_fan1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -810,12 +1052,17 @@ public class Jf_autoMation extends javax.swing.JFrame {
                             .addComponent(jB_sec1_fan3_on_off)
                             .addComponent(jSlider_sec1_fan3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jB_sec2_fcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jL_16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jB_sec2_fcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(8, 8, 8)
-                        .addComponent(jL_18)
+                            .addComponent(jB_sec1_fcs_sd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jL_18)
+                            .addComponent(jL_17))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSlider_sec2_fan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -850,44 +1097,47 @@ public class Jf_autoMation extends javax.swing.JFrame {
         );
 
         jPanel7.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Camera Viwes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Camera Viwes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         previwe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         previwe.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         previwe.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel7.add(previwe, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 260, 200));
+        jPanel7.add(previwe, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 300, 250));
 
-        previwe2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        previwe2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel7.add(previwe2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 250, 200));
-
+        btt_camset.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btt_camset.setText("Trun On CCTV");
         btt_camset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btt_camsetActionPerformed(evt);
             }
         });
-        jPanel7.add(btt_camset, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 121, 31));
+        jPanel7.add(btt_camset, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 160, 60));
 
         cameras.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jPanel7.add(cameras, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 10, 10));
 
-        previwe3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        previwe3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel7.add(previwe3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 250, 200));
+        previwe2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        previwe2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel7.add(previwe2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 280, 250));
 
         previwe4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         previwe4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel7.add(previwe4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 260, 200));
+        jPanel7.add(previwe4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 300, 250));
 
         previwe5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         previwe5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel7.add(previwe5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 250, 200));
+        jPanel7.add(previwe5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 280, 250));
 
-        previwe6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        previwe6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel7.add(previwe6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 260, 200));
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
+        jPanel7.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 370, 40));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -901,23 +1151,23 @@ public class Jf_autoMation extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -935,7 +1185,7 @@ public class Jf_autoMation extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
+            .addGap(0, 1388, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -944,7 +1194,7 @@ public class Jf_autoMation extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 769, Short.MAX_VALUE)
+            .addGap(0, 767, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -955,50 +1205,619 @@ public class Jf_autoMation extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JcomboActionPerformed
+    private void ports_setActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ports_setActionPerformed
 
-    }//GEN-LAST:event_JcomboActionPerformed
+    }//GEN-LAST:event_ports_setActionPerformed
+    @Override
+    public void serialEvent(SerialPortEvent spe) {
+        try {
+            System.out.println(spe.getPortName() + "SSSSSSS");
+            String ss;
 
+            ss = portthree.p.readString();
+            System.out.println("ASASASASAS: " + ss);
+        } catch (SerialPortException ex) {
+        }
+
+    }
     private void connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectActionPerformed
 
+        comenable();
+        previwe.setVisible(true);
+        previwe2.setVisible(true);
+        p = new SerialPort(ports_set.getSelectedItem().toString());
+        try {
+            p.openPort();
+            portthree.inisialize(p);
+            status.setText("port is online");
+            JOptionPane.showMessageDialog(null, "Port opened");
+        } catch (SerialPortException ex) {
+            JOptionPane.showMessageDialog(null, "Port is offline", "port", JOptionPane.ERROR_MESSAGE);
+        }
+        try {
+            p.addEventListener(this);
+            System.out.println("connection success");
+        } catch (SerialPortException ex) {
+        }
     }//GEN-LAST:event_connectActionPerformed
 
     private void disconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disconnectActionPerformed
-
+        comdisable();
+        portthree.disconnect();
+        status.setText("port is offline");
+        JOptionPane.showMessageDialog(null, "port is closed");
+        previwe.setVisible(false);
+        previwe2.setVisible(false);
+        previwe4.setVisible(false);
+        previwe5.setVisible(false);
     }//GEN-LAST:event_disconnectActionPerformed
 
     private void Sys_sdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sys_sdActionPerformed
-
+        if (disconnect.isEnabled()) {
+            try {
+                JOptionPane.showMessageDialog(this, "Please disconnect before shut down the system");
+            } catch (Exception e) {
+//                System.out.println(e);
+            }
+        } else {
+            int i = JOptionPane.showConfirmDialog(this, "Are you want to shut down this system...?", "Shuting Down System", NORMAL);
+            if (i == 0) {
+  
+                int j = JOptionPane.showConfirmDialog(this, "Are you sure...?", "Confirm", NORMAL);
+                if (j == 0) {
+                    System.exit(0);
+                }
+            }
+        }
     }//GEN-LAST:event_Sys_sdActionPerformed
-
+    Webcam get, get2, get3, get4;
     private void btt_camsetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btt_camsetActionPerformed
+        try {
+            
+        
+        ComboBoxModel cbm = cameras.getModel();
+        int size = cbm.getSize();
+        for (int i = 0; i < size; i++) {
+            Object ss = cbm.getElementAt(i);
+            System.out.println("cam " + i + " " + ss);
+
+            get = wset.get(cbm.getElementAt(0));
+            get2 = wset.get(cbm.getElementAt(1));
+            get3 = wset.get(cbm.getElementAt(2));
+            get4 = wset.get(cbm.getElementAt(3));
+        }
+
+        System.out.println("gggggg" + cameras.getSelectedItem().toString());
+        get.setViewSize(new Dimension(320, 240));
+        get.open();
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                while (true) {
+                    previwe.setIcon(new ImageIcon(get.getImage()));
+                }
+            }
+        }).start();
+        get2.setViewSize(new Dimension(320, 240));
+        get2.open();
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                while (true) {
+                    previwe2.setIcon(new ImageIcon(get2.getImage()));
+                }
+            }
+        }).start();
+        get3.setViewSize(new Dimension(320, 240));
+        get3.open();
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                while (true) {
+                    previwe4.setIcon(new ImageIcon(get3.getImage()));
+                }
+            }
+        }).start();    
+                
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
 
     }//GEN-LAST:event_btt_camsetActionPerformed
+
+    private void jB_sec2_led1_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led1_onActionPerformed
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("N");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jB_sec2_led1_onActionPerformed
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        try {
+            String ss = portthree.p.readString();
+            jTextField1.setText(ss);
+        } catch (SerialPortException ex) {
+            System.out.println(ex);
+        }
+        switch (evt.getKeyCode()) {
+            case KeyEvent.VK_UP:
+                try {
+                    SerialPort s = portthree.p;
+                    boolean s1 = s.writeString("M");
+                    boolean s2 = s.writeString("N");
+                    boolean s3 = s.writeString("B");
+                    boolean s4 = s.writeString("V");
+                    boolean s5 = s.writeString("C");
+                    boolean s6 = s.writeString("X");
+                    boolean s7 = s.writeString("Z");
+                    boolean s8 = s.writeString("L");
+                    System.out.println("uppppppp");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            case KeyEvent.VK_DOWN:
+                try {
+                    SerialPort s = portthree.p;
+                    boolean s1 = s.writeString("m");
+                    boolean s2 = s.writeString("n");
+                    boolean s3 = s.writeString("b");
+                    boolean s4 = s.writeString("v");
+                    boolean s5 = s.writeString("c");
+                    boolean s6 = s.writeString("x");
+                    boolean s7 = s.writeString("z");
+                    boolean s8 = s.writeString("l");
+                } catch (Exception e) {
+                }
+                break;
+            case KeyEvent.VK_LEFT:
+                try {
+                    SerialPort s = portthree.p;
+                    boolean ss = s.writeString("h");
+                } catch (Exception e) {
+                }
+                break;
+            case KeyEvent.VK_RIGHT:
+                try {
+                    SerialPort s = portthree.p;
+                    boolean ss = s.writeString("f");
+                } catch (Exception e) {
+                }
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void jB_sec1_lcs_sdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_lcs_sdActionPerformed
+
+        if (jB_sec1_lcs_sd.getText() == "LCS SEC1 Turn-ON") {
+
+            try {
+                SerialPort s = portthree.p;
+                boolean s1 = s.writeString("M");
+                
+//                boolean s2 = s.writeString("N");
+//                boolean s3 = s.writeString("B");
+//                boolean s4 = s.writeString("V");
+//                boolean s5 = s.writeString("C");
+                boolean s6 = s.writeString("K");
+                boolean s7 = s.writeString("Z");
+                System.out.println("shutdown");
+                jB_sec1_lcs_sd.setText("LCS SEC1 Shutdown");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            try {
+                SerialPort s = portthree.p;
+                boolean s1 = s.writeString("m");
+//                boolean s2 = s.writeString("n");
+//                boolean s3 = s.writeString("b");
+                boolean s4 = s.writeString("k");
+//                boolean s5 = s.writeString("c");
+//                boolean s6 = s.writeString("x");
+                boolean s7 = s.writeString("z");
+                System.out.println("shutdown");
+                jB_sec1_lcs_sd.setText("LCS SEC1 Turn-ON");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }//GEN-LAST:event_jB_sec1_lcs_sdActionPerformed
+
+    private void jB_sec1_led1_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led1_onActionPerformed
+
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("M");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jB_sec1_led1_onActionPerformed
+
+    private void jB_sec1_led1_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led1_offActionPerformed
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("m");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jB_sec1_led1_offActionPerformed
+
+    private void jB_sec1_led2_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led2_onActionPerformed
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("K");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec1_led2_onActionPerformed
+
+    private void jB_sec1_led2_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led2_offActionPerformed
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("k");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jB_sec1_led2_offActionPerformed
+
+    private void jB_sec1_led3_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led3_onActionPerformed
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("Z");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec1_led3_onActionPerformed
+
+    private void jB_sec1_led3_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led3_offActionPerformed
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("z");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec1_led3_offActionPerformed
+
+    private void jB_sec1_led4_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led4_onActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+////            boolean s1 = s.writeString("V");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec1_led4_onActionPerformed
+
+    private void jB_sec1_led4_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led4_offActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("v");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec1_led4_offActionPerformed
+
+    private void jB_sec1_led5_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led5_onActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("C");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec1_led5_onActionPerformed
+
+    private void jB_sec1_led5_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led5_offActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("c");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec1_led5_offActionPerformed
+
+    private void jB_sec1_led6_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led6_onActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("x");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec1_led6_onActionPerformed
+
+    private void jB_sec1_led6_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec1_led6_offActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("X");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec1_led6_offActionPerformed
+
+    private void jB_sec2_led1_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led1_offActionPerformed
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("n");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec2_led1_offActionPerformed
+
+    private void jB_sec2_led2_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led2_onActionPerformed
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("H");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec2_led2_onActionPerformed
+
+    private void jB_sec2_led2_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led2_offActionPerformed
+        try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("h");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec2_led2_offActionPerformed
+
+    private void jB_sec2_led3_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led3_onActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("K");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec2_led3_onActionPerformed
+
+    private void jB_sec2_led3_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led3_offActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("k");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec2_led3_offActionPerformed
+
+    private void jB_sec2_led4_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led4_onActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("J");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec2_led4_onActionPerformed
+
+    private void jB_sec2_led4_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led4_offActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("j");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec2_led4_offActionPerformed
+
+    private void jB_sec2_led5_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led5_onActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("H");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec2_led5_onActionPerformed
+
+    private void jB_sec2_led5_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_led5_offActionPerformed
+//        try {
+//            SerialPort s = portthree.p;
+//            boolean s1 = s.writeString("h");// TODO add your handling code here:
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+//        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec2_led5_offActionPerformed
+
+    private void jB_sec2_lcs_sdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec2_lcs_sdActionPerformed
+        if (jB_sec2_lcs_sd.getText() == "LCS SEC2 Turn-ON") {
+
+            try {
+                SerialPort s = portthree.p;
+//                boolean s8 = s.writeString("L");
+                boolean s9 = s.writeString("N");
+//                boolean s10 = s.writeString("J");
+                boolean s11 = s.writeString("H");
+                System.out.println("shutdown");
+                jB_sec2_lcs_sd.setText("LCS SEC2 Shutdown");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            try {
+                SerialPort s = portthree.p;
+//                boolean s8 = s.writeString("l");
+                boolean s9 = s.writeString("n");
+//                boolean s10 = s.writeString("j");
+                boolean s11 = s.writeString("h");
+                System.out.println("shutdown");
+                jB_sec2_lcs_sd.setText("LCS SEC2 Turn-ON");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }//GEN-LAST:event_jB_sec2_lcs_sdActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_UP) {
+            try {
+                SerialPort s = portthree.p;
+                boolean ss = s.writeString("w");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (evt.getKeyCode() == KeyEvent.VK_DOWN) {
+            try {
+                SerialPort s = portthree.p;
+                boolean ss = s.writeString("s");
+            } catch (Exception e) {
+            }
+        } else if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
+            try {
+                SerialPort s = portthree.p;
+                boolean ss = s.writeString("a");
+            } catch (Exception e) {
+            }
+        } else if (evt.getKeyCode() == KeyEvent.VK_RIGHT) {
+            try {
+                SerialPort s = portthree.p;
+                boolean ss = s.writeString("d");
+            } catch (Exception e) {
+            }
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jB_sec3_lcs_sdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec3_lcs_sdActionPerformed
+
+        
+         if (jB_sec3_lcs_sd.getText() == "LCS SEC3 Turn-ON") {
+
+            try {
+                SerialPort s = portthree.p;
+                boolean s8 = s.writeString("L");
+                boolean s9 = s.writeString("V");
+                boolean s10 = s.writeString("x");
+                boolean s11 = s.writeString("J");
+                System.out.println("shutdown");
+                jB_sec3_lcs_sd.setText("LCS SEC3 Shutdown");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            try {
+                SerialPort s = portthree.p;
+                boolean s8 = s.writeString("l");
+                boolean s9 = s.writeString("j");
+                boolean s10 = s.writeString("v");
+                boolean s11 = s.writeString("X");
+                System.out.println("shutdown");
+                jB_sec3_lcs_sd.setText("LCS SEC3 Turn-ON");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        
+    }//GEN-LAST:event_jB_sec3_lcs_sdActionPerformed
+
+    private void jB_sec3_led1_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec3_led1_onActionPerformed
+
+          try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("L");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_jB_sec3_led1_onActionPerformed
+
+    private void jB_sec3_led1_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec3_led1_offActionPerformed
+  try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("l");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec3_led1_offActionPerformed
+
+    private void jB_sec3_led2_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec3_led2_onActionPerformed
+  try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("x");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec3_led2_onActionPerformed
+
+    private void jB_sec3_led2_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec3_led2_offActionPerformed
+  try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("X");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec3_led2_offActionPerformed
+
+    private void jB_sec3_led3_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec3_led3_onActionPerformed
+  try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("V");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec3_led3_onActionPerformed
+
+    private void jB_sec3_led3_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec3_led3_offActionPerformed
+  try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("v");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec3_led3_offActionPerformed
+
+    private void jB_sec3_led4_onActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec3_led4_onActionPerformed
+  try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("J");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec3_led4_onActionPerformed
+
+    private void jB_sec3_led4_offActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_sec3_led4_offActionPerformed
+  try {
+            SerialPort s = portthree.p;
+            boolean s1 = s.writeString("j");// TODO add your handling code here:
+        } catch (SerialPortException ex) {
+            Logger.getLogger(Jf_autoMation.class.getName()).log(Level.SEVERE, null, ex);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jB_sec3_led4_offActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Jf_autoMation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_autoMation.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Jf_autoMation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_autoMation.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Jf_autoMation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_autoMation.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Jf_autoMation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jf_autoMation.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -1010,8 +1829,199 @@ public class Jf_autoMation extends javax.swing.JFrame {
         });
     }
 
+    void comdisable() {
+        disconnect.setEnabled(false);
+        connect.setEnabled(true);
+        cameras.setEnabled(false);
+        previwe.setEnabled(false);
+        jB_sec3_lcs_sd.setEnabled(false);
+        jB_sec3_led1_on.setEnabled(false);
+        jB_sec3_led2_on.setEnabled(false);
+        jB_sec3_led3_on.setEnabled(false);
+        jB_sec3_led4_on.setEnabled(false);
+        jB_sec3_led5_on.setEnabled(false);
+        jB_sec3_led6_on.setEnabled(false);
+        btt_camset.setEnabled(false);
+        jPanel4.setEnabled(false);
+        jPanel5.setEnabled(false);
+        jPanel7.setEnabled(false);
+        previwe4.setVisible(false);
+        previwe5.setVisible(false);
+        jB_sec1_lcs_sd.setEnabled(false);
+        jB_sec2_lcs_sd.setEnabled(false);
+        jB_sec1_fcs_sd.setEnabled(false);
+        jB_sec2_fcs_sd.setEnabled(false);
+        jB_sec1_led1_on.setEnabled(false);
+        jB_sec1_led2_on.setEnabled(false);
+        jB_sec1_led3_on.setEnabled(false);
+        jB_sec1_led4_on.setEnabled(false);
+        jB_sec1_led5_on.setEnabled(false);
+        jB_sec1_led6_on.setEnabled(false);
+        jB_sec2_led1_on.setEnabled(false);
+        jB_sec2_led2_on.setEnabled(false);
+        jB_sec2_led3_on.setEnabled(false);
+        jB_sec2_led4_on.setEnabled(false);
+        jB_sec2_led5_on.setEnabled(false);
+        jB_sec2_led6_on.setEnabled(false);
+        jB_sec1_led1_off.setEnabled(false);
+        jB_sec1_led2_off.setEnabled(false);
+        jB_sec1_led3_off.setEnabled(false);
+        jB_sec1_led4_off.setEnabled(false);
+        jB_sec1_led5_off.setEnabled(false);
+        jB_sec1_led6_off.setEnabled(false);
+        jB_sec2_led1_off.setEnabled(false);
+        jB_sec2_led2_off.setEnabled(false);
+        jB_sec2_led3_off.setEnabled(false);
+        jB_sec2_led4_off.setEnabled(false);
+        jB_sec2_led5_off.setEnabled(false);
+        jB_sec2_led6_off.setEnabled(false);
+        jB_sec1_fan1_on_off.setEnabled(false);
+        jB_sec1_fan2_on_off.setEnabled(false);
+        jB_sec1_fan3_on_off.setEnabled(false);
+        jB_sec1_fan4_on_off.setEnabled(false);
+        jB_sec2_fan1_on_off.setEnabled(false);
+        jB_sec2_fan2_on_off.setEnabled(false);
+        jB_sec2_fan3_on_off.setEnabled(false);
+        jB_sec2_fan4_on_off.setEnabled(false);
+        jL_1.setEnabled(false);
+        jL_2.setEnabled(false);
+        jL_3.setEnabled(false);
+        jL_4.setEnabled(false);
+        jL_5.setEnabled(false);
+        jL_6.setEnabled(false);
+        jL_7.setEnabled(false);
+        jL_8.setEnabled(false);
+        jL_9.setEnabled(false);
+        jL_10.setEnabled(false);
+        jL_11.setEnabled(false);
+        jL_12.setEnabled(false);
+        jL_13.setEnabled(false);
+        jL_14.setEnabled(false);
+        jL_15.setEnabled(false);
+        jL_16.setEnabled(false);
+        jL_17.setEnabled(false);
+        jL_18.setEnabled(false);
+        jL_19.setEnabled(false);
+        jL_20.setEnabled(false);
+        jL_21.setEnabled(false);
+        jL_22.setEnabled(false);
+        jL_23.setEnabled(false);
+        jL_24.setEnabled(false);
+        jL_25.setEnabled(false);
+        jL_26.setEnabled(false);
+        jSlider_sec1_fan1.setEnabled(false);
+        jSlider_sec1_fan2.setEnabled(false);
+        jSlider_sec1_fan3.setEnabled(false);
+        jSlider_sec1_fan4.setEnabled(false);
+        jSlider_sec2_fan1.setEnabled(false);
+        jSlider_sec2_fan2.setEnabled(false);
+        jSlider_sec2_fan3.setEnabled(false);
+        jSlider_sec2_fan4.setEnabled(false);
+        jB_sec3_led1_off.setEnabled(false);
+        jB_sec3_led4_off.setEnabled(false);
+        jB_sec3_led5_off.setEnabled(false);
+        jB_sec3_led6_off.setEnabled(false);
+        jB_sec3_led3_off.setEnabled(false);
+        jB_sec3_led2_off.setEnabled(false);
+    }
+
+    void comenable() {
+        connect.setEnabled(false);
+        disconnect.setEnabled(true);
+        cameras.setEnabled(true);
+        previwe.setEnabled(true);
+        btt_camset.setEnabled(true);
+        jPanel4.setEnabled(true);
+        previwe4.setVisible(true);
+        previwe5.setVisible(true);
+        jB_sec3_lcs_sd.setEnabled(true);
+        jB_sec3_led1_on.setEnabled(true);
+        jB_sec3_led2_on.setEnabled(true);
+        jB_sec3_led3_on.setEnabled(true);
+        jB_sec3_led4_on.setEnabled(true);
+        jB_sec3_led5_on.setEnabled(true);
+        jB_sec3_led6_on.setEnabled(true);
+        jB_sec3_led1_off.setEnabled(true);
+        jB_sec3_led2_off.setEnabled(true);
+        jB_sec3_led3_off.setEnabled(true);
+        jB_sec3_led4_off.setEnabled(true);
+        jB_sec3_led5_off.setEnabled(true);
+        jB_sec3_led6_off.setEnabled(true);
+        jPanel5.setEnabled(true);
+        jPanel7.setEnabled(true);
+        jB_sec1_lcs_sd.setEnabled(true);
+        jB_sec2_lcs_sd.setEnabled(true);
+        jB_sec1_fcs_sd.setEnabled(true);
+        jB_sec2_fcs_sd.setEnabled(true);
+        jB_sec1_led1_on.setEnabled(true);
+        jB_sec1_led2_on.setEnabled(true);
+        jB_sec1_led3_on.setEnabled(true);
+        jB_sec1_led4_on.setEnabled(true);
+        jB_sec1_led5_on.setEnabled(true);
+        jB_sec1_led6_on.setEnabled(true);
+        jB_sec2_led1_on.setEnabled(true);
+        jB_sec2_led2_on.setEnabled(true);
+        jB_sec2_led3_on.setEnabled(true);
+        jB_sec2_led4_on.setEnabled(true);
+        jB_sec2_led5_on.setEnabled(true);
+        jB_sec2_led6_on.setEnabled(true);
+        jB_sec1_led1_off.setEnabled(true);
+        jB_sec1_led2_off.setEnabled(true);
+        jB_sec1_led3_off.setEnabled(true);
+        jB_sec1_led4_off.setEnabled(true);
+        jB_sec1_led5_off.setEnabled(true);
+        jB_sec1_led6_off.setEnabled(true);
+        jB_sec2_led1_off.setEnabled(true);
+        jB_sec2_led2_off.setEnabled(true);
+        jB_sec2_led3_off.setEnabled(true);
+        jB_sec2_led4_off.setEnabled(true);
+        jB_sec2_led5_off.setEnabled(true);
+        jB_sec2_led6_off.setEnabled(true);
+        jB_sec1_fan1_on_off.setEnabled(true);
+        jB_sec1_fan2_on_off.setEnabled(true);
+        jB_sec1_fan3_on_off.setEnabled(true);
+        jB_sec1_fan4_on_off.setEnabled(true);
+        jB_sec2_fan1_on_off.setEnabled(true);
+        jB_sec2_fan2_on_off.setEnabled(true);
+        jB_sec2_fan3_on_off.setEnabled(true);
+        jB_sec2_fan4_on_off.setEnabled(true);
+        jL_1.setEnabled(true);
+        jL_2.setEnabled(true);
+        jL_3.setEnabled(true);
+        jL_4.setEnabled(true);
+        jL_5.setEnabled(true);
+        jL_6.setEnabled(true);
+        jL_7.setEnabled(true);
+        jL_8.setEnabled(true);
+        jL_9.setEnabled(true);
+        jL_10.setEnabled(true);
+        jL_11.setEnabled(true);
+        jL_12.setEnabled(true);
+        jL_13.setEnabled(true);
+        jL_14.setEnabled(true);
+        jL_15.setEnabled(true);
+        jL_16.setEnabled(true);
+        jL_17.setEnabled(true);
+        jL_18.setEnabled(true);
+        jL_19.setEnabled(true);
+        jL_20.setEnabled(true);
+        jL_21.setEnabled(true);
+        jL_22.setEnabled(true);
+        jL_23.setEnabled(true);
+        jL_24.setEnabled(true);
+        jL_25.setEnabled(true);
+        jL_26.setEnabled(true);
+        jSlider_sec1_fan1.setEnabled(true);
+        jSlider_sec1_fan2.setEnabled(true);
+        jSlider_sec1_fan3.setEnabled(true);
+        jSlider_sec1_fan4.setEnabled(true);
+        jSlider_sec2_fan1.setEnabled(true);
+        jSlider_sec2_fan2.setEnabled(true);
+        jSlider_sec2_fan3.setEnabled(true);
+        jSlider_sec2_fan4.setEnabled(true);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox Jcombo;
     private javax.swing.JButton Sys_sd;
     private javax.swing.JButton btt_camset;
     private javax.swing.JComboBox cameras;
@@ -1041,31 +2051,31 @@ public class Jf_autoMation extends javax.swing.JFrame {
     private javax.swing.JButton jB_sec2_fan4_on_off;
     private javax.swing.JButton jB_sec2_fcs_sd;
     private javax.swing.JButton jB_sec2_lcs_sd;
-    private javax.swing.JButton jB_sec2_lcs_sd1;
     private javax.swing.JButton jB_sec2_led1_off;
-    private javax.swing.JButton jB_sec2_led1_off1;
     private javax.swing.JButton jB_sec2_led1_on;
-    private javax.swing.JButton jB_sec2_led1_on1;
     private javax.swing.JButton jB_sec2_led2_off;
-    private javax.swing.JButton jB_sec2_led2_off1;
     private javax.swing.JButton jB_sec2_led2_on;
-    private javax.swing.JButton jB_sec2_led2_on1;
     private javax.swing.JButton jB_sec2_led3_off;
-    private javax.swing.JButton jB_sec2_led3_off1;
     private javax.swing.JButton jB_sec2_led3_on;
-    private javax.swing.JButton jB_sec2_led3_on1;
     private javax.swing.JButton jB_sec2_led4_off;
-    private javax.swing.JButton jB_sec2_led4_off1;
     private javax.swing.JButton jB_sec2_led4_on;
-    private javax.swing.JButton jB_sec2_led4_on1;
     private javax.swing.JButton jB_sec2_led5_off;
-    private javax.swing.JButton jB_sec2_led5_off1;
     private javax.swing.JButton jB_sec2_led5_on;
-    private javax.swing.JButton jB_sec2_led5_on1;
     private javax.swing.JButton jB_sec2_led6_off;
-    private javax.swing.JButton jB_sec2_led6_off1;
     private javax.swing.JButton jB_sec2_led6_on;
-    private javax.swing.JButton jB_sec2_led6_on1;
+    private javax.swing.JButton jB_sec3_lcs_sd;
+    private javax.swing.JButton jB_sec3_led1_off;
+    private javax.swing.JButton jB_sec3_led1_on;
+    private javax.swing.JButton jB_sec3_led2_off;
+    private javax.swing.JButton jB_sec3_led2_on;
+    private javax.swing.JButton jB_sec3_led3_off;
+    private javax.swing.JButton jB_sec3_led3_on;
+    private javax.swing.JButton jB_sec3_led4_off;
+    private javax.swing.JButton jB_sec3_led4_on;
+    private javax.swing.JButton jB_sec3_led5_off;
+    private javax.swing.JButton jB_sec3_led5_on;
+    private javax.swing.JButton jB_sec3_led6_off;
+    private javax.swing.JButton jB_sec3_led6_on;
     private javax.swing.JLabel jL;
     private javax.swing.JLabel jL_1;
     private javax.swing.JLabel jL_10;
@@ -1114,12 +2124,12 @@ public class Jf_autoMation extends javax.swing.JFrame {
     private javax.swing.JSlider jSlider_sec2_fan2;
     private javax.swing.JSlider jSlider_sec2_fan3;
     private javax.swing.JSlider jSlider_sec2_fan4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JComboBox ports_set;
     private javax.swing.JLabel previwe;
     private javax.swing.JLabel previwe2;
-    private javax.swing.JLabel previwe3;
     private javax.swing.JLabel previwe4;
     private javax.swing.JLabel previwe5;
-    private javax.swing.JLabel previwe6;
     private javax.swing.JLabel status;
     // End of variables declaration//GEN-END:variables
 }
