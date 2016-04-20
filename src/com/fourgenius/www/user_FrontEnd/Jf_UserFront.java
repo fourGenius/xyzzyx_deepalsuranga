@@ -5,6 +5,7 @@
  */
 package com.fourgenius.www.user_FrontEnd;
 
+import com.fourgenius.www.admin_BackEnd.jf_pro_version;
 import com.fourgenius.www.public_access.exams.Jf_Exams;
 import com.fourgenius.www.public_access.practicals.Jf_practicals;
 import com.fourgenius.www.public_access.registration.student.Jp_registration_student;
@@ -465,8 +466,10 @@ Jf_user_login jf_user_login = new Jf_user_login();
 
     private void bt_viewReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_viewReportActionPerformed
         
-        new jp_reports_main_view().setVisible(true);
-        this.dispose();
+//        new jp_reports_main_view().setVisible(true);
+//        this.dispose();
+           jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
         
     }//GEN-LAST:event_bt_viewReportActionPerformed
 
@@ -495,8 +498,10 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_viewReportMouseExited
 
     private void bt_inventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inventoryActionPerformed
-        new Inventory_home().setVisible(true);
-        this.dispose();
+//        new Inventory_home().setVisible(true);
+//        this.dispose();
+           jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
     }//GEN-LAST:event_bt_inventoryActionPerformed
 
     private void bt_registrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_registrationActionPerformed
@@ -518,8 +523,10 @@ bt_inventory.setBorder(borderE);
 
     private void bt_homeAutomationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_homeAutomationActionPerformed
     
-        new Jf_autoMation().setVisible(true);
-        this.dispose();
+//        new Jf_autoMation().setVisible(true);
+//        this.dispose();
+           jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
         
     }//GEN-LAST:event_bt_homeAutomationActionPerformed
 
@@ -537,6 +544,8 @@ bt_inventory.setBorder(borderE);
 
     private void bt_onlineExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_onlineExamActionPerformed
         // TODO add your handling code here:
+           jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
     }//GEN-LAST:event_bt_onlineExamActionPerformed
 
     private void bt_examMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_examMouseEntered
@@ -552,8 +561,10 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_examMouseExited
 
     private void bt_examActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_examActionPerformed
-        new Jf_Exams().setVisible(true);
-        this.dispose();
+//        new Jf_Exams().setVisible(true);
+//        this.dispose();
+           jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
     }//GEN-LAST:event_bt_examActionPerformed
 
     private void bt_practicalsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_practicalsMouseEntered
@@ -569,8 +580,10 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_practicalsMouseExited
 
     private void bt_practicalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_practicalsActionPerformed
-        new Jf_practicals().setVisible(true);
-        this.dispose();
+//        new Jf_practicals().setVisible(true);
+//        this.dispose();
+           jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
     }//GEN-LAST:event_bt_practicalsActionPerformed
 
     private void bt_librayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_librayMouseEntered
@@ -587,8 +600,11 @@ bt_inventory.setBorder(borderE);
 
     private void bt_librayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_librayActionPerformed
 
-       new jf_library_main_view().setVisible(true);
-       this.dispose();
+//       new jf_library_main_view().setVisible(true);
+//       this.dispose();
+        
+           jf_pro_version pro = new jf_pro_version();
+        pro.setVisible(true);
         
     }//GEN-LAST:event_bt_librayActionPerformed
 

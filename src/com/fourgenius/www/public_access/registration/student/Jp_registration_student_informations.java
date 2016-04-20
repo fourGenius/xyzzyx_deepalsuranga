@@ -1592,7 +1592,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         stu_info_name un = new stu_info_name(_lb_registration_student_preview_studentID.getText(), _tf_registration_student_personalInformations_studentDetails_surName.getText(), _tf_registration_student_personalInformations_studentDetails_firstName.getText(), _tf_registration_student_personalInformations_studentDetails_lastName.getText());
 
 //        stu_info_batch bat=new stu_info_batch(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_batch.getText(), _lb_registration_student_preview_year.getText(), _lb_registration_student_preview_course.getText());
-        print_report(_lb_registration_student_preview_studentID.getText());
+        print_report(_lb_registration_student_preview_studentID.getText(), _tf_registration_student_personalInformation_browsePhoto_browseFile.getText());
     
 
         stu_info_batch bat=new stu_info_batch(_lb_registration_student_preview_studentID.getText(), batch, year, _lb_registration_student_preview_course.getText());
@@ -1928,24 +1928,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     }
 
 
-    private void print_report(String id) {
-//        try {
-//           
-//            String is = "src/reports/student_reg.jrxml";
-//
-//            JasperReport jr = JasperCompileManager.compileReport(is);
-//            Map<String, Object> m = new HashMap<String, Object>();
-//           
-//            m.put("sid", id);
-//          
-//           
-//            JasperPrint jp1 = JasperFillManager.fillReport(jr, m, MC_JavaDataBaseConnection.myConnection());
-//                       
-//            JasperViewer.viewReport(jp1, true);
-//            JasperPrintManager.printReport(jp1, true);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-        }
+  
 
     private void print_report(String id,String photo) {
          try {
