@@ -10,12 +10,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Vector;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.table.DefaultTableModel;
 import public_access.MC_JavaDataBaseConnection;
 
-/**
- *
+/*
  * @author deepalsuranga
  */
 public class Jp_admin_student extends javax.swing.JPanel {

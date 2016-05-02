@@ -24,12 +24,15 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -803,6 +806,9 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         _bt_registration_student_preview_register_student.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         _bt_registration_student_preview_register_student.setPreferredSize(new java.awt.Dimension(100, 50));
         _bt_registration_student_preview_register_student.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _bt_registration_student_preview_register_studentMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 _bt_registration_student_preview_register_studentMouseEntered(evt);
             }
@@ -1244,15 +1250,24 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private void _bt_registration_student_preview_register_studentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_preview_register_studentMouseReleased
         _bt_registration_student_preview_register_student.setBorder(border);
     }//GEN-LAST:event__bt_registration_student_preview_register_studentMouseReleased
-
+int i=1;
     private void _bt_registration_student_preview_register_studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_registration_student_preview_register_studentActionPerformed
 
-        try {
+        
+        String stuId=_lb_registration_student_preview_studentID.getText();
+         if (i==1) {
+            try {
             if (_bt_registration_student_preview_register_student.getText().equals("Register Student")) {
                 int i = JOptionPane.showConfirmDialog(this, "Are You Sure?", "Confirm?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (i == JOptionPane.YES_OPTION) {
-                    add_to_database();
-                    load_table_preview();
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            add_to_database();
+                            load_table_preview(); 
+                        }
+                    }).start();
+                    
                     _bt_add_student.setText("Add Student");
                     _bt_student_details.setEnabled(true);
                 }
@@ -1269,6 +1284,18 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
            
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        }else{
+            JOptionPane.showMessageDialog(this, "Please Wait!");
+            try {
+                ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("select * from stu_info_personal where stu_user_info_id='"+stuId+"'");
+                if (rs.next()) {
+                    i=0;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Jp_registration_student_informations.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
     }//GEN-LAST:event__bt_registration_student_preview_register_studentActionPerformed
 
@@ -1388,6 +1415,12 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
     private void _tf_registration_student_personalInformations_contact_Details_countryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tf_registration_student_personalInformations_contact_Details_countryMouseClicked
         _tf_registration_student_personalInformations_contact_Details_country.selectAll();
     }//GEN-LAST:event__tf_registration_student_personalInformations_contact_Details_countryMouseClicked
+
+    private void _bt_registration_student_preview_register_studentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__bt_registration_student_preview_register_studentMouseClicked
+
+        i=1;
+        
+    }//GEN-LAST:event__bt_registration_student_preview_register_studentMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Capture_photo;
@@ -1592,7 +1625,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
         stu_info_name un = new stu_info_name(_lb_registration_student_preview_studentID.getText(), _tf_registration_student_personalInformations_studentDetails_surName.getText(), _tf_registration_student_personalInformations_studentDetails_firstName.getText(), _tf_registration_student_personalInformations_studentDetails_lastName.getText());
 
 //        stu_info_batch bat=new stu_info_batch(_lb_registration_student_preview_studentID.getText(), _lb_registration_student_preview_batch.getText(), _lb_registration_student_preview_year.getText(), _lb_registration_student_preview_course.getText());
-        print_report(_lb_registration_student_preview_studentID.getText(), _tf_registration_student_personalInformation_browsePhoto_browseFile.getText());
+//        print_report(_lb_registration_student_preview_studentID.getText(), _tf_registration_student_personalInformation_browsePhoto_browseFile.getText());
     
 
         stu_info_batch bat=new stu_info_batch(_lb_registration_student_preview_studentID.getText(), batch, year, _lb_registration_student_preview_course.getText());
@@ -1606,7 +1639,7 @@ public class Jp_registration_student_informations extends javax.swing.JPanel {
             e.printStackTrace();
         }
         
-         print_report(_lb_registration_student_preview_studentID.getText(),path);
+        // print_report(_lb_registration_student_preview_studentID.getText(),path);
          
          //////////////////////////////
           String toMail = _lb_registration_student_preview_eMail.getText().toLowerCase().trim();

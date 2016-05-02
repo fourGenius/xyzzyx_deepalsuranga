@@ -5,9 +5,7 @@
  */
 package com.fourgenius.www.public_access.library;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,7 +15,6 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import public_access.MC_JavaDataBaseConnection;
-import static sun.net.www.MimeTable.loadTable;
 
 /**
  *

@@ -5,7 +5,6 @@
  */
 package com.fourgenius.www.public_access.user.login;
 
-import com.fourgenius.www.admin_BackEnd.Jf_admin_backend;
 import com.fourgenius.www.private_access.admin.login.Jf_admin_login;
 import java.awt.Color;
 import javax.swing.BorderFactory;
@@ -13,21 +12,16 @@ import javax.swing.border.Border;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
 import com.fourgenius.www.private_access.admin.method.Md_move_text;
 import com.fourgenius.www.user_FrontEnd.Jf_UserFront;
-import com.fourgenius.www.user_FrontEnd.Jf_UserRegistration;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
-import org.apache.log4j.RollingFileAppender;
 import public_access.MC_JavaDataBaseConnection;
 
 /**
@@ -60,18 +54,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         setLableValuesNullAndAdd._md_setPasswordFieldvalues(_pf_user_login_password, "Password");
         _pf_user_login_password.setEchoChar((char) 0);
 
-          try {
-            String filePath = "D:/Academy_Manager_Login.Log";
-            PatternLayout layout = new PatternLayout("%-3p %d %m %n");
-            RollingFileAppender appender = new RollingFileAppender(layout, filePath);
-            appender.setName("Academy Manager Login");
-            appender.setMaxFileSize("5MB");
-            appender.activateOptions();
-            org.apache.log4j.Logger.getRootLogger().addAppender(appender);
-             
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+         
         
     }
 

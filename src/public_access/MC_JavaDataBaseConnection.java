@@ -33,7 +33,7 @@ public class MC_JavaDataBaseConnection {
 
         try {
 
-            input = new FileInputStream("src\\FourGenius\\db_pro.properties");
+            input = new FileInputStream("C:\\FourGenius\\db_pro.properties");
 
             // load a properties file
             prop.load(input);

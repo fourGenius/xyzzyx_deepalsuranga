@@ -79,7 +79,6 @@ public class Jf_UserFront extends javax.swing.JFrame {
         lb_welcome_note = new javax.swing.JLabel();
         bt_logout = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -352,8 +351,6 @@ public class Jf_UserFront extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 204));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/logoA.png"))); // NOI18N
-
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/fourgenius/www/user_FrontEnd/images/Sunsilk-Logo mini.png"))); // NOI18N
 
@@ -365,9 +362,7 @@ public class Jf_UserFront extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 952, Short.MAX_VALUE)
+                .addContainerGap(1183, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -377,7 +372,6 @@ public class Jf_UserFront extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 4, Short.MAX_VALUE))
@@ -466,10 +460,10 @@ Jf_user_login jf_user_login = new Jf_user_login();
 
     private void bt_viewReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_viewReportActionPerformed
         
-//        new jp_reports_main_view().setVisible(true);
-//        this.dispose();
-           jf_pro_version pro = new jf_pro_version();
-        pro.setVisible(true);
+        new jp_reports_main_view().setVisible(true);
+        this.dispose();
+//           jf_pro_version pro = new jf_pro_version();
+//        pro.setVisible(true);
         
     }//GEN-LAST:event_bt_viewReportActionPerformed
 
@@ -498,10 +492,10 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_viewReportMouseExited
 
     private void bt_inventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inventoryActionPerformed
-//        new Inventory_home().setVisible(true);
-//        this.dispose();
-           jf_pro_version pro = new jf_pro_version();
-        pro.setVisible(true);
+        new Inventory_home().setVisible(true);
+        this.dispose();
+//           jf_pro_version pro = new jf_pro_version();
+//        pro.setVisible(true);
     }//GEN-LAST:event_bt_inventoryActionPerformed
 
     private void bt_registrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_registrationActionPerformed
@@ -523,10 +517,10 @@ bt_inventory.setBorder(borderE);
 
     private void bt_homeAutomationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_homeAutomationActionPerformed
     
-//        new Jf_autoMation().setVisible(true);
-//        this.dispose();
-           jf_pro_version pro = new jf_pro_version();
-        pro.setVisible(true);
+        new Jf_autoMation().setVisible(true);
+        this.dispose();
+//           jf_pro_version pro = new jf_pro_version();
+//        pro.setVisible(true);
         
     }//GEN-LAST:event_bt_homeAutomationActionPerformed
 
@@ -561,10 +555,10 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_examMouseExited
 
     private void bt_examActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_examActionPerformed
-//        new Jf_Exams().setVisible(true);
-//        this.dispose();
-           jf_pro_version pro = new jf_pro_version();
-        pro.setVisible(true);
+        new Jf_Exams().setVisible(true);
+        this.dispose();
+//           jf_pro_version pro = new jf_pro_version();
+//        pro.setVisible(true);
     }//GEN-LAST:event_bt_examActionPerformed
 
     private void bt_practicalsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_practicalsMouseEntered
@@ -580,10 +574,10 @@ bt_inventory.setBorder(borderE);
     }//GEN-LAST:event_bt_practicalsMouseExited
 
     private void bt_practicalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_practicalsActionPerformed
-//        new Jf_practicals().setVisible(true);
-//        this.dispose();
-           jf_pro_version pro = new jf_pro_version();
-        pro.setVisible(true);
+        new Jf_practicals().setVisible(true);
+        this.dispose();
+//           jf_pro_version pro = new jf_pro_version();
+//        pro.setVisible(true);
     }//GEN-LAST:event_bt_practicalsActionPerformed
 
     private void bt_librayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_librayMouseEntered
@@ -600,12 +594,12 @@ bt_inventory.setBorder(borderE);
 
     private void bt_librayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_librayActionPerformed
 
-//       new jf_library_main_view().setVisible(true);
-//       this.dispose();
+       new jf_library_main_view().setVisible(true);
+       this.dispose();
         
-           jf_pro_version pro = new jf_pro_version();
-        pro.setVisible(true);
-        
+//           jf_pro_version pro = new jf_pro_version();
+//        pro.setVisible(true);
+//        
     }//GEN-LAST:event_bt_librayActionPerformed
 
     /**
@@ -679,7 +673,6 @@ bt_inventory.setBorder(borderE);
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
