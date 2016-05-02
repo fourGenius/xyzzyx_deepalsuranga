@@ -6,11 +6,13 @@
 package com.fourgenius.www.user_FrontEnd;
 
 import com.fourgenius.www.admin_BackEnd.jf_pro_version;
+import com.fourgenius.www.public_access.library.jp_payments;
 import com.fourgenius.www.public_access.registration.employee.Jp_registration_employee;
 import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture;
 import com.fourgenius.www.public_access.registration.student.Jp_registration_student;
+import com.fourgenius.www.public_access.registration.student.Jp_student_payment1;
 import com.fourgenius.www.public_access.registration.user.Jp_registration_user;
-import com.fourgenius.www.public_access.registration.student.Jp_student_payment;
+
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -421,31 +423,31 @@ public class Jf_UserRegistration extends javax.swing.JFrame {
 
     
     private void _bt_UserMain_paymentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__bt_UserMain_paymentsActionPerformed
-        jf_pro_version pro = new jf_pro_version();
-        pro.setVisible(true);
-//        Jp_student_payment payment = new Jp_student_payment();
-//        
-//        _bt_UserMain_StudentRegistration.setEnabled(true);
-//        _bt_UserMain_EmployeeRegistration.setEnabled(true);
-//        _bt_UserMain_LectureRegistration.setEnabled(true);
-//        _bt_UserMain_payments.setEnabled(false);
-//
-//        if (payment == null) {
-//            payment = new Jp_student_payment();
-//            Jp_userMain_main_panel.removeAll();
-//            Jp_userMain_main_panel.repaint();
-//            Jp_userMain_main_panel.revalidate();
-//            Jp_userMain_main_panel.add(payment);
-//            Jp_userMain_main_panel.repaint();
-//            Jp_userMain_main_panel.revalidate();
-//        } else {
-//            Jp_userMain_main_panel.removeAll();
-//            Jp_userMain_main_panel.repaint();
-//            Jp_userMain_main_panel.revalidate();
-//            Jp_userMain_main_panel.add(payment);
-//            Jp_userMain_main_panel.repaint();
-//            Jp_userMain_main_panel.revalidate();
-//        }
+//        jf_pro_version pro = new jf_pro_version();
+//        pro.setVisible(true);
+         Jp_student_payment1  student_payment=new Jp_student_payment1(); 
+        
+        _bt_UserMain_StudentRegistration.setEnabled(true);
+        _bt_UserMain_EmployeeRegistration.setEnabled(true);
+        _bt_UserMain_LectureRegistration.setEnabled(true);
+        _bt_UserMain_payments.setEnabled(false);
+
+        if (student_payment == null) {
+            student_payment = new Jp_student_payment1();
+            Jp_userMain_main_panel.removeAll();
+            Jp_userMain_main_panel.repaint();
+            Jp_userMain_main_panel.revalidate();
+            Jp_userMain_main_panel.add(student_payment);
+            Jp_userMain_main_panel.repaint();
+            Jp_userMain_main_panel.revalidate();
+        } else {
+            Jp_userMain_main_panel.removeAll();
+            Jp_userMain_main_panel.repaint();
+            Jp_userMain_main_panel.revalidate();
+            Jp_userMain_main_panel.add(student_payment);
+            Jp_userMain_main_panel.repaint();
+            Jp_userMain_main_panel.revalidate();
+        }
 
     }//GEN-LAST:event__bt_UserMain_paymentsActionPerformed
 
@@ -633,9 +635,10 @@ public class Jf_UserRegistration extends javax.swing.JFrame {
 
     public void payment() {
 
-        Jp_student_payment student_payment = new Jp_student_payment();
+      Jp_student_payment1  student_payment=new Jp_student_payment1(); 
+        
         if (student_payment == null) {
-            student_payment = new Jp_student_payment();
+            student_payment = new Jp_student_payment1();
             Jp_userMain_main_panel.removeAll();
             Jp_userMain_main_panel.repaint();
             Jp_userMain_main_panel.revalidate();

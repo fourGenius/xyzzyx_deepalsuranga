@@ -11,7 +11,6 @@ import com.fourgenius.www.public_access.registration.employee.Jp_registration_em
 import com.fourgenius.www.public_access.registration.lecture.Jp_registration_lecture;
 import com.fourgenius.www.public_access.registration.student.Jp_registration_student;
 import com.fourgenius.www.public_access.registration.user.Jp_registration_user;
-import com.fourgenius.www.public_access.registration.student.Jp_student_payment;
 import com.fourgenius.www.public_access.user.login.Jf_user_login;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
