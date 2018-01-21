@@ -10,12 +10,14 @@ import com.fourgenius.www.private_access.admin.method.Md_move_text;
 import com.fourgenius.www.qrGenerator.Md_QrCodeGenarater;
 import com.javav.fsc.zone.PasswordValidator;
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -551,7 +553,7 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
             @Override
             public void run() {
 
-                load_image(_lb_admi_login_email.getText().trim());
+                //load_image(_lb_admi_login_email.getText().trim());
 
             }
         }).start();
@@ -612,13 +614,13 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
 
                 if (pv.validate(admin_password)) {
                     ResultSet resultSet;
-                    resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin_info WHERE admin_password='" + admin_password + "'");
+                    resultSet = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_password='" + admin_password + "'");
                     if (resultSet.next()) {
 
                         //////// email send/////////////////////////////////////////
-                        Admin_SendMailSSL sslsend = new Admin_SendMailSSL();
-                        //admin Alert
-                        sslsend.sendingSSL("Administrator", "Login Status:System Entered!\n\n" + "Username:" + _lb_admi_login_email.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
+//                        Admin_SendMailSSL sslsend = new Admin_SendMailSSL();
+//                        //admin Alert
+//                        sslsend.sendingSSL("Administrator", "Login Status:System Entered!\n\n" + "Username:" + _lb_admi_login_email.getText() + "\n\n" + "Time:" + lb_time_date.getText() + "\n\n" + "Date:" + lb_date_view.getText() + "\n\n\n \t Thank you for using FourGenius System.");
 
                         ////////////////////////////////////////////////////////////
                         Jf_admin_backend jf_admin_backend = new Jf_admin_backend();
@@ -684,7 +686,7 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://166.62.27.145:3306/salon_test", "deepalsuranga", "WelComeDB1129");
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from admin_info where admin_email='" + email + "'".trim());
+            ResultSet rs = st.executeQuery("select * from admin where admin_email='" + email + "'".trim());
             if (rs.next()) {
                 byte[] img = rs.getBytes("admin_image");
 
@@ -697,7 +699,7 @@ public final class _jp_admin_login_password extends javax.swing.JPanel {
             } else {
                 JOptionPane.showMessageDialog(null, "User Image Not Found!");
             }
-        } catch (Exception ex) {
+        } catch (HeadlessException | SQLException ex) {
             ex.printStackTrace();
         }
 

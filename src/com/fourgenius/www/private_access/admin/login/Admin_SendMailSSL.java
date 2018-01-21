@@ -67,8 +67,7 @@ public class Admin_SendMailSSL {
 
         ////////////////////////////////////////////////////////////////////
 
-        String to =to_mail; 
-                //"acedamy_manager@outlook.com";//change accordingly
+        String to ="acedamy_manager@outlook.com";//change accordingly
 
         //Get the session object
         Properties props = new Properties();
@@ -100,7 +99,7 @@ public class Admin_SendMailSSL {
             System.out.println("message sent successfully");
 
         } catch (MessagingException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
     }

@@ -444,7 +444,7 @@ public class _jp_admin_login_email extends javax.swing.JPanel {
                     ////////////////////////Database base to///////////////////////
                     try {
                         ResultSet rs;
-                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin_info WHERE admin_email='" + email + "'");
+                        rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT * FROM admin WHERE admin_email='" + email + "'");
                         if (rs.next()) {
                             System.out.println("query is OK!");
                             //start-load panel
