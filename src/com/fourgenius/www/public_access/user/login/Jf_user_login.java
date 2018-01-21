@@ -498,6 +498,7 @@ public class Jf_user_login extends javax.swing.JFrame {
         getContentPane().add(Middle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1380, 770));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void _lb_user_login_closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__lb_user_login_closeMouseClicked
