@@ -30,7 +30,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="add_update_delete_Panel" alignment="0" pref="630" max="32767" attributes="0"/>
+          <Component id="add_update_delete_Panel" alignment="0" pref="689" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -59,12 +59,12 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jPanel6" alignment="0" min="-2" pref="620" max="-2" attributes="0"/>
-                      <Component id="_pl_registration_user_personalInformations" alignment="0" min="-2" pref="620" max="-2" attributes="0"/>
+                      <Component id="_pl_registration_user_personalInformations" min="-2" pref="660" max="-2" attributes="0"/>
+                      <Component id="jPanel6" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -161,58 +161,81 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="_lb_registration_user_personalInformations_studentName_sirName1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="_rb_registration_student_information_form_male" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                          <Component id="_rb_registration_student_information_form_female" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="_rb_registration_student_information_form_colombo" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                          <Component id="_rb_registration_student_information_form_kandy" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="_lb_registration_user_personalInformations_studentName_sirName2" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="_lb_registration_user_personalInformations_studentName_sirName" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="_tf_registration_student_personalInformations_studentDetails_surName" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="_lb_registration_user_personalInformations_studentName_firstName" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="_tf_registration_student_personalInformations_studentDetails_firstName" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="_lb_registration_user_personalInformations_studentName_lastName" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="_tf_registration_student_personalInformations_studentDetails_lastName" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="_lb_registration_user_personalInformations_idInformations_nicNumber" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="_lb_registration_user_personalInformations_idInformations_dateOfBirth" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="_tf_registration_student_personalInformations_studentDetails_nicNumber" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="_dc_registration_student_personalInformations_studentDetails_dateOfBirth" alignment="1" pref="333" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="_cb_registration_student_personalInformations_studentDetails_course" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_user_personalInformations_studentName_sirName1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="_cb_registration_student_batch" max="32767" attributes="0"/>
-                                              <Component id="_lb_registration_user_personalInformations_batch" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="_lb_registration_user_personalInformations_year" max="32767" attributes="0"/>
-                                              <Component id="_yc_student_registration_year" pref="159" max="32767" attributes="0"/>
+                                              <Component id="_lb_registration_user_personalInformations_studentName_sirName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="_tf_registration_student_personalInformations_studentDetails_surName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="_lb_registration_user_personalInformations_studentName_firstName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="_tf_registration_student_personalInformations_studentDetails_firstName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="_lb_registration_user_personalInformations_studentName_lastName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="_tf_registration_student_personalInformations_studentDetails_lastName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="_lb_registration_user_personalInformations_idInformations_dateOfBirth" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="_dc_registration_student_personalInformations_studentDetails_dateOfBirth" alignment="1" pref="333" max="32767" attributes="0"/>
                                           </Group>
+                                      </Group>
+                                      <Component id="_cb_registration_student_personalInformations_studentDetails_course_level" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="_rb_registration_student_information_form_male" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                                  <Component id="_rb_registration_student_information_form_female" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="_rb_registration_student_information_form_colombo" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                                  <Component id="_rb_registration_student_information_form_kandy" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                                  <Component id="_rb_registration_student_information_form_kandy1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="_cb_registration_student_batch" max="32767" attributes="0"/>
+                                      <Component id="_lb_registration_user_personalInformations_batch" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="_lb_registration_user_personalInformations_year" max="32767" attributes="0"/>
+                                      <Component id="_yc_student_registration_year" pref="64" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Component id="_lb_registration_user_personalInformations_year2" min="-2" pref="50" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="_lb_registration_user_personalInformations_year1" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          <Component id="_cb_registration_student_batch1" min="-2" pref="50" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          <Component id="_cb_registration_student_batch2" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <Component id="_cb_registration_student_personalInformations_studentDetails_course" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -222,14 +245,22 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="_lb_registration_user_personalInformations_batch" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="_lb_registration_user_personalInformations_year" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="_lb_registration_user_personalInformations_year2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="_lb_registration_user_personalInformations_year1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="_cb_registration_student_batch" pref="35" max="32767" attributes="0"/>
                               <Component id="_yc_student_registration_year" max="32767" attributes="0"/>
+                              <Component id="_cb_registration_student_batch1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_cb_registration_student_batch2" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_studentName_sirName1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="_cb_registration_student_personalInformations_studentDetails_course_level" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="_lb_registration_user_personalInformations_studentName_sirName2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_cb_registration_student_personalInformations_studentDetails_course" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -244,10 +275,6 @@
                           <Component id="_lb_registration_user_personalInformations_studentName_lastName" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_tf_registration_student_personalInformations_studentDetails_lastName" min="-2" pref="35" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_lb_registration_user_personalInformations_idInformations_nicNumber" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_studentDetails_nicNumber" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_idInformations_dateOfBirth" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -265,6 +292,7 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="_rb_registration_student_information_form_colombo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="_rb_registration_student_information_form_kandy" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="_rb_registration_student_information_form_kandy1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -352,32 +380,6 @@
                     <Property name="text" type="java.lang.String" value="First Name"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_idInformations_nicNumber">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="NIC Number"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_studentDetails_nicNumber">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="14" style="0"/>
-                    </Property>
-                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[6, 23]"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_studentDetails_nicNumberMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_studentDetails_nicNumberActionPerformed"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_studentDetails_nicNumberKeyTyped"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_idInformations_dateOfBirth">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -413,10 +415,10 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Course"/>
+                    <Property name="text" type="java.lang.String" value="Course Level"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="_cb_registration_student_personalInformations_studentDetails_course">
+                <Component class="javax.swing.JComboBox" name="_cb_registration_student_personalInformations_studentDetails_course_level">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -425,6 +427,9 @@
                       <StringArray count="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="_cb_registration_student_personalInformations_studentDetails_course_levelItemStateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
                   <Properties>
@@ -553,6 +558,92 @@
                   </Properties>
                 </Component>
                 <Component class="com.toedter.calendar.JYearChooser" name="_yc_student_registration_year">
+                </Component>
+                <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_year1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Weekday/Weekend"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="_cb_registration_student_batch1">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="5">
+                        <StringItem index="0" value="A"/>
+                        <StringItem index="1" value="B"/>
+                        <StringItem index="2" value="C"/>
+                        <StringItem index="3" value="D"/>
+                        <StringItem index="4" value="E"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_year2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Group"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="_cb_registration_student_batch2">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="2">
+                        <StringItem index="0" value="WD"/>
+                        <StringItem index="1" value="WE"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="_rb_registration_student_information_form_kandy1">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="stu_info_branch"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Negombo"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="focusPainted" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_rb_registration_student_information_form_kandy1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="_cb_registration_student_personalInformations_studentDetails_course">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_studentName_sirName2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Course"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
