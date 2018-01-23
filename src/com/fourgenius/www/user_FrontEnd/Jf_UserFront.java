@@ -444,6 +444,7 @@ public class Jf_UserFront extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 Jf_user_login jf_user_login = new Jf_user_login();
     private void bt_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_logoutActionPerformed

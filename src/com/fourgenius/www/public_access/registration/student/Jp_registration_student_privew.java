@@ -10,13 +10,17 @@ import static com.fourgenius.www.public_access.registration.student.Jp_registrat
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student._bt_add_student;
 import static com.fourgenius.www.public_access.registration.student.Jp_registration_student._bt_student_details;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Image;
 import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -37,6 +41,7 @@ import public_access.MC_JavaDataBaseConnection;
 public class Jp_registration_student_privew extends javax.swing.JPanel {
 
     Border border = BorderFactory.createLineBorder(Color.white, 1);
+
     /*
      * Creates new form Jp_registration_lecture_privew
      */
@@ -89,6 +94,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
         _lb_email = new javax.swing.JLabel();
         _lb_picture = new javax.swing.JLabel();
         _bt_registraion_student_buttons_update_student = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(117, 117, 117));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -240,6 +246,13 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("Folder");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -250,7 +263,9 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(_bt_registraion_student_buttons_update_student, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(_bt_registraion_student_buttons_update_student, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -293,7 +308,8 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(_lb_picture, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(_bt_registraion_student_buttons_update_student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_bt_registraion_student_buttons_update_student, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -310,7 +326,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(_lb_gender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(_lb_dob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -362,6 +378,30 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
         update_selected_student();
     }//GEN-LAST:event__bt_registraion_student_buttons_update_studentActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        try {
+
+            String fullname = _lb_id.getText();
+            File file = new File("C:\\FourGenius\\STUDENT_FOLDERS\\" + fullname);
+            file.mkdirs();
+            Desktop desktop = Desktop.getDesktop();
+            desktop.open(file);
+
+            //            Process p = new ProcessBuilder("explorer.exe", "/select,C:\\FourGenius\\" + fullname).start();
+            //Runtime.getRuntime().exec("explorer C:\\FourGenius\\"+fullname);
+        } catch (IOException e) {
+            try {
+                File f = new File("C:\\FourGenius\\STUDENT_FOLDERS\\" + _lb_id.getText());
+
+                f.mkdirs();
+                Process p = new ProcessBuilder("explorer.exe", "/select,C:\\FourGenius\\STUDENT_FOLDERS\\" + _lb_id.getText()).start();
+            } catch (IOException ex) {
+                Logger.getLogger(Jp_registration_student_informations.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton _bt_registraion_student_buttons_update_student;
@@ -378,6 +418,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
     private javax.swing.JLabel _lb_name;
     private javax.swing.JLabel _lb_nic;
     private javax.swing.JLabel _lb_picture;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -418,7 +459,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
                 }
             }
             rs_personal.close();
-            
+
             ResultSet rs_contact = s.executeQuery("select * from stu_info_contact where stu_user_info_id='" + id + "'");
             if (rs_contact.next()) {
                 _lb_mobile.setText(rs_contact.getString("stu_info_telephone_mobile"));
@@ -426,7 +467,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
                 _lb_email.setText(rs_contact.getString("stu_info_contact_email"));
             }
             rs_contact.close();
-            
+
             ResultSet rs_address = s.executeQuery("select * from stu_info_address where stu_user_info_id='" + id + "'");
             if (rs_address.next()) {
                 _lb_address_line.setText(rs_address.getString("stu_info_address_lane1"));
@@ -441,7 +482,7 @@ public class Jp_registration_student_privew extends javax.swing.JPanel {
 
     private void update_selected_student() {
         try {
-            String stu_id=_lb_id.getText();
+            String stu_id = _lb_id.getText();
             Jp_registration_student_informations register_student = new Jp_registration_student_informations(stu_id);
             if (register_student == null) {
                 Jp_registraion_stu_main_panel.removeAll();

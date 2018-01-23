@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 21, 2018 10:14:34 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hb_models.EmployeeAcademicUserInfoAlResult" table="employee_academic_user_info_al_result" catalog="safenets_ramani" optimistic-lock="version">
+        <id name="idemployeeAcademicUserInfoAlResult" type="java.lang.Integer">
+            <column name="idemployee_academic_user_info_al_result" />
+            <generator class="identity" />
+        </id>
+        <property name="employeeAcademicUserId" type="string">
+            <column name="employee_academic_user_id" length="50" not-null="true" />
+        </property>
+        <property name="employeeAcademicUserInfoAlResultSubject" type="string">
+            <column name="employee_academic_user_info_al_result_subject" length="50" not-null="true" />
+        </property>
+        <property name="employeeAcademicUserInfoAlResultResult" type="string">
+            <column name="employee_academic_user_info_al_result_result" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

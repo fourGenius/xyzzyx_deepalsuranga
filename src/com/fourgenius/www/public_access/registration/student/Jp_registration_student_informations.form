@@ -178,11 +178,11 @@
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="_lb_registration_user_personalInformations_studentName_sirName" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="_tf_registration_student_personalInformations_studentDetails_surName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="tf_sername" alignment="0" max="32767" attributes="0"/>
                                               <Component id="_lb_registration_user_personalInformations_studentName_firstName" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="_tf_registration_student_personalInformations_studentDetails_firstName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="tf_firstName" alignment="0" max="32767" attributes="0"/>
                                               <Component id="_lb_registration_user_personalInformations_studentName_lastName" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="_tf_registration_student_personalInformations_studentDetails_lastName" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="tf_lastname" alignment="0" max="32767" attributes="0"/>
                                               <Component id="_lb_registration_user_personalInformations_idInformations_dateOfBirth" alignment="0" max="32767" attributes="0"/>
                                               <Component id="_dc_registration_student_personalInformations_studentDetails_dateOfBirth" alignment="1" pref="333" max="32767" attributes="0"/>
                                           </Group>
@@ -200,7 +200,7 @@
                                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                                   <Component id="_rb_registration_student_information_form_kandy" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                                  <Component id="_rb_registration_student_information_form_kandy1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="_rb_registration_student_information_form_negombo" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -228,9 +228,9 @@
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Component id="_cb_registration_student_batch1" min="-2" pref="50" max="-2" attributes="0"/>
+                                          <Component id="_cb_registration_student_group" min="-2" pref="50" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Component id="_cb_registration_student_batch2" max="32767" attributes="0"/>
+                                          <Component id="_cb_registration_student_weekOrEnd" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -252,8 +252,8 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="_cb_registration_student_batch" pref="35" max="32767" attributes="0"/>
                               <Component id="_yc_student_registration_year" max="32767" attributes="0"/>
-                              <Component id="_cb_registration_student_batch1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="_cb_registration_student_batch2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_cb_registration_student_group" alignment="0" max="32767" attributes="0"/>
+                              <Component id="_cb_registration_student_weekOrEnd" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_studentName_sirName1" min="-2" max="-2" attributes="0"/>
@@ -266,15 +266,15 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_studentName_sirName" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_studentDetails_surName" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="tf_sername" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_studentName_firstName" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_studentDetails_firstName" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="tf_firstName" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_studentName_lastName" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_studentDetails_lastName" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="tf_lastname" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_idInformations_dateOfBirth" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -292,14 +292,14 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="_rb_registration_student_information_form_colombo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="_rb_registration_student_information_form_kandy" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="_rb_registration_student_information_form_kandy1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="_rb_registration_student_information_form_negombo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_studentDetails_surName">
+                <Component class="javax.swing.JTextField" name="tf_sername">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -309,9 +309,9 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_studentDetails_surNameMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_studentDetails_surNameActionPerformed"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_studentDetails_surNameKeyTyped"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_sernameMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_sernameActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_sernameKeyTyped"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -328,7 +328,7 @@
                     <Property name="text" type="java.lang.String" value="Surname"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_studentDetails_firstName">
+                <Component class="javax.swing.JTextField" name="tf_firstName">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -338,9 +338,9 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_studentDetails_firstNameMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_studentDetails_firstNameActionPerformed"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_studentDetails_firstNameKeyTyped"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_firstNameMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_firstNameActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_firstNameKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_studentName_lastName">
@@ -354,7 +354,7 @@
                     <Property name="text" type="java.lang.String" value="Last Name"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_studentDetails_lastName">
+                <Component class="javax.swing.JTextField" name="tf_lastname">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -364,9 +364,9 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_studentDetails_lastNameMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_studentDetails_lastNameActionPerformed"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_studentDetails_lastNameKeyTyped"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_lastnameMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_lastnameActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_lastnameKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_studentName_firstName">
@@ -393,6 +393,7 @@
                 </Component>
                 <Component class="com.toedter.calendar.JDateChooser" name="_dc_registration_student_personalInformations_studentDetails_dateOfBirth">
                   <Properties>
+                    <Property name="dateFormatString" type="java.lang.String" value="dd,MM,yyyy"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
@@ -529,8 +530,8 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="2">
-                        <StringItem index="0" value="01"/>
-                        <StringItem index="1" value="02"/>
+                        <StringItem index="0" value="B1"/>
+                        <StringItem index="1" value="B2"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -570,7 +571,7 @@
                     <Property name="text" type="java.lang.String" value="Weekday/Weekend"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="_cb_registration_student_batch1">
+                <Component class="javax.swing.JComboBox" name="_cb_registration_student_group">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="5">
@@ -594,7 +595,7 @@
                     <Property name="text" type="java.lang.String" value="Group"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="_cb_registration_student_batch2">
+                <Component class="javax.swing.JComboBox" name="_cb_registration_student_weekOrEnd">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="2">
@@ -604,7 +605,7 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="_rb_registration_student_information_form_kandy1">
+                <Component class="javax.swing.JRadioButton" name="_rb_registration_student_information_form_negombo">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="stu_info_branch"/>
@@ -621,7 +622,7 @@
                     <Property name="focusPainted" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_rb_registration_student_information_form_kandy1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_rb_registration_student_information_form_negomboActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="_cb_registration_student_personalInformations_studentDetails_course">
@@ -633,6 +634,9 @@
                       <StringArray count="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="_cb_registration_student_personalInformations_studentDetails_courseItemStateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_studentName_sirName2">
                   <Properties>
@@ -673,27 +677,26 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="_tf_registration_student_personalInformations_contactDetails_lane1" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_user_personalInformations_contactDetails_mobileNumber" alignment="0" pref="333" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_student_personalInformations_contactDetails_mobileNumber" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_user_personalInformations_contactDetails_landNumber" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_student_personalInformations_contactDetails_homeNumber" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_user_personalInformations_contactDetails_eMail" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_student_personalInformations_contactDetails_eMail" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_user_personalInformations_address_2ndLine" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_user_personalInformations_address_city" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_student_personalInformations_contactDetails_city" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_tf_registration_student_personalInformations_contact_Details_country" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="_lb_registration_user_personalInformations_address_1stLine" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="_tf_registration_student_personalInformation_browsePhoto_browseFile" alignment="1" min="-2" pref="333" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="tf_lineone" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="_lb_registration_user_personalInformations_contactDetails_mobileNumber" alignment="0" pref="333" max="32767" attributes="0"/>
+                                          <Component id="tf_mobile" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="_lb_registration_user_personalInformations_contactDetails_landNumber" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tf_homenumber" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="_lb_registration_user_personalInformations_contactDetails_eMail" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tf_email" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="_lb_registration_user_personalInformations_address_2ndLine" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="_lb_registration_user_personalInformations_address_city" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tf_city" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tf_country" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="_lb_registration_user_personalInformations_address_1stLine" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="_tf_registration_student_personalInformation_browsePhoto_browseFile" alignment="1" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
-                                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -706,29 +709,29 @@
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_contactDetails_mobileNumber" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_contactDetails_mobileNumber" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="tf_mobile" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_contactDetails_landNumber" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_contactDetails_homeNumber" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="tf_homenumber" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_contactDetails_eMail" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_contactDetails_eMail" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="tf_email" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_address_1stLine" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_contactDetails_lane1" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="tf_lineone" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_address_2ndLine" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_contactDetails_city" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="tf_city" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="_lb_registration_user_personalInformations_address_city" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="_tf_registration_student_personalInformations_contact_Details_country" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="tf_country" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace pref="10" max="32767" attributes="0"/>
                           <Component id="_tf_registration_student_personalInformation_browsePhoto_browseFile" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
@@ -736,7 +739,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_contactDetails_mobileNumber">
+                <Component class="javax.swing.JTextField" name="tf_mobile">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -746,9 +749,9 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_contactDetails_mobileNumberMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_contactDetails_mobileNumberActionPerformed"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contactDetails_mobileNumberKeyTyped"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_mobileMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_mobileActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_mobileKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_contactDetails_mobileNumber">
@@ -762,7 +765,7 @@
                     <Property name="text" type="java.lang.String" value="Mobile Number"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_contactDetails_homeNumber">
+                <Component class="javax.swing.JTextField" name="tf_homenumber">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -772,9 +775,9 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_contactDetails_homeNumberMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_contactDetails_homeNumberActionPerformed"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contactDetails_homeNumberKeyTyped"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_homenumberMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_homenumberActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_homenumberKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_contactDetails_eMail">
@@ -788,7 +791,7 @@
                     <Property name="text" type="java.lang.String" value="E-mail"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_contactDetails_eMail">
+                <Component class="javax.swing.JTextField" name="tf_email">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -798,8 +801,8 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_contactDetails_eMailMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_contactDetails_eMailActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_emailMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_emailActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_contactDetails_landNumber">
@@ -824,7 +827,7 @@
                     <Property name="text" type="java.lang.String" value="1st Line"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_contactDetails_lane1">
+                <Component class="javax.swing.JTextField" name="tf_lineone">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -834,8 +837,8 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_contactDetails_lane1MouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_contactDetails_lane1ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_lineoneMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_lineoneActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_address_2ndLine">
@@ -849,7 +852,7 @@
                     <Property name="text" type="java.lang.String" value="City"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_contactDetails_city">
+                <Component class="javax.swing.JTextField" name="tf_city">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -859,10 +862,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_contactDetails_cityMouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="_tf_registration_student_personalInformations_contactDetails_cityActionPerformed"/>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contactDetails_cityKeyReleased"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contactDetails_cityKeyTyped"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_cityMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_cityActionPerformed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_cityKeyReleased"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_cityKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="_lb_registration_user_personalInformations_address_city">
@@ -876,7 +879,7 @@
                     <Property name="text" type="java.lang.String" value="Country"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="_tf_registration_student_personalInformations_contact_Details_country">
+                <Component class="javax.swing.JTextField" name="tf_country">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -886,9 +889,9 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="_tf_registration_student_personalInformations_contact_Details_countryMouseClicked"/>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contact_Details_countryKeyReleased"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="_tf_registration_student_personalInformations_contact_Details_countryKeyTyped"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tf_countryMouseClicked"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_countryKeyReleased"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tf_countryKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
@@ -1012,12 +1015,17 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="_lb_registration_student_preview_image" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel1" min="-2" pref="101" max="-2" attributes="0"/>
                                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                                       <Component id="_lb_registration_student_preview_studentID" min="-2" pref="373" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="_lb_registration_student_preview_image" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1116,7 +1124,13 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="_lb_registration_student_preview_image" min="-2" pref="178" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="_lb_registration_student_preview_image" min="-2" pref="178" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1538,6 +1552,14 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Hello!"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Folder"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

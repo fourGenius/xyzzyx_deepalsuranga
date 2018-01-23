@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 21, 2018 10:14:34 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hb_models.Admin" table="admin" catalog="safenets_ramani" optimistic-lock="version">
+        <id name="idadmin" type="java.lang.Integer">
+            <column name="idadmin" />
+            <generator class="identity" />
+        </id>
+        <property name="adminEmail" type="string">
+            <column name="admin_email" length="100" />
+        </property>
+        <property name="adminPassword" type="string">
+            <column name="admin_password" length="100" />
+        </property>
+        <property name="adminStatus" type="java.lang.Integer">
+            <column name="admin_status" />
+        </property>
+        <property name="adminId" type="string">
+            <column name="admin_id" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

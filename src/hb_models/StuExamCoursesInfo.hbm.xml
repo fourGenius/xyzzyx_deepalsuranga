@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 21, 2018 10:14:34 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hb_models.StuExamCoursesInfo" table="stu_exam_courses_info" catalog="safenets_ramani" optimistic-lock="version">
+        <id name="idstuExamCoursesInfo" type="java.lang.Integer">
+            <column name="idstu_exam_courses_info" />
+            <generator class="identity" />
+        </id>
+        <property name="stuExamCoursesInfoId" type="string">
+            <column name="stu_exam_courses_info_id" length="50" />
+        </property>
+        <property name="stuExamCoursesInfoName" type="string">
+            <column name="stu_exam_courses_info_name" />
+        </property>
+        <property name="stuExamCoursesInfoCode" type="string">
+            <column name="stu_exam_courses_info_code" length="50" />
+        </property>
+        <property name="stuExamCoursesInfoLavel" type="string">
+            <column name="stu_exam_courses_info_lavel" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

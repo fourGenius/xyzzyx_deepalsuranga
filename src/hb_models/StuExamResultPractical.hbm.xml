@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 21, 2018 10:14:34 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hb_models.StuExamResultPractical" table="stu_exam_result_practical" catalog="safenets_ramani" optimistic-lock="version">
+        <id name="idstuExamResultPractical" type="java.lang.Integer">
+            <column name="idstu_exam_result_practical" />
+            <generator class="identity" />
+        </id>
+        <property name="stuExamResultPracticalId" type="string">
+            <column name="stu_exam_result_practical_id" length="50" />
+        </property>
+        <property name="stuUserInfoId" type="string">
+            <column name="stu_user_info_id" length="50" />
+        </property>
+        <property name="stuExamResultPracticalName" type="string">
+            <column name="stu_exam_result_practical_name" />
+        </property>
+        <property name="stuExamResultPracticalMark" type="java.lang.Double">
+            <column name="stu_exam_result_practical_mark" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

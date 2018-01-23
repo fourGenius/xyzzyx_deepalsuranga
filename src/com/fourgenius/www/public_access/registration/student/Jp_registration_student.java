@@ -5,7 +5,6 @@
  */
 package com.fourgenius.www.public_access.registration.student;
 
-import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations._tf_registration_student_personalInformations_studentDetails_surName;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,6 +20,7 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
+import static com.fourgenius.www.public_access.registration.student.Jp_registration_student_informations.tf_sername;
 
 /**
  *
@@ -319,7 +319,7 @@ public class Jp_registration_student extends javax.swing.JPanel {
                 Jp_registraion_stu_main_panel.repaint();
                 Jp_registraion_stu_main_panel.revalidate();
             }
-            _tf_registration_student_personalInformations_studentDetails_surName.grabFocus();
+            tf_sername.grabFocus();
         } catch (Exception e) {
             e.printStackTrace();
         }

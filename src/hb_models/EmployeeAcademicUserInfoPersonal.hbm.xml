@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 21, 2018 10:14:34 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hb_models.EmployeeAcademicUserInfoPersonal" table="employee_academic_user_info_personal" catalog="safenets_ramani" optimistic-lock="version">
+        <id name="idemployeeAcademicUserInfoPersonal" type="java.lang.Integer">
+            <column name="idemployee_academic_user_info_personal" />
+            <generator class="identity" />
+        </id>
+        <property name="employeeAcademicUserId" type="string">
+            <column name="employee_academic_user_id" length="50" />
+        </property>
+        <property name="employeeAcademicUserInfoPersonalProfileImage" type="string">
+            <column name="employee_academic_user_info_personal_profile_image" />
+        </property>
+        <property name="employeeAcademicUserInfoPersonalDob" type="date">
+            <column name="employee_academic_user_info_personal_dob" length="10" />
+        </property>
+        <property name="employeeAcademicUserInfoPersonalGender" type="string">
+            <column name="employee_academic_user_info_personal_gender" length="10" />
+        </property>
+        <property name="employeeAcademicUserInfoPersonalNic" type="string">
+            <column name="employee_academic_user_info_personal_nic" length="10" />
+        </property>
+        <property name="employeeAcademicUserInfoPersonalBranch" type="string">
+            <column name="employee_academic_user_info_personal_branch" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

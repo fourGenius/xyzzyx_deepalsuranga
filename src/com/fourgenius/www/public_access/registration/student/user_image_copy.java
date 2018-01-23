@@ -25,21 +25,21 @@ public class user_image_copy {
 //    }
 
     public void copyImage(String fullname) {
-        String user_dir = System.getProperty("user.home");
+        fullname=fullname.replace("/", "-");
         try {
-//            File file=new File("C:\\FSC\\Images");
-//            if (file==null) {
-//                file.mkdirs();
-//            }else{
-//            
-//            }
-//            
-//            
-
-            FileInputStream from = new FileInputStream(user_dir+"\\Documents\\FourGenius\\xyzzyx_deepalsuranga\\"+fullname+".jpg");
-            FileOutputStream to = new FileOutputStream(user_dir+"\\FourGenius\\Images\\"+fullname+".jpg");
-            System.out.println("File Upload path : " + user_dir+"\\FourGenius\\Images\\"+fullname+".jpg");
-            Jp_registration_student_informations pic = new Jp_registration_student_informations(user_dir + "\\FourGenius\\Images\\" + fullname + ".jpg");
+            File file = null;
+            File file_stu = null;
+            if (file==null) {
+                file=new File("C:\\FourGenius\\Student_Images\\");
+                file_stu=new File("C:\\FourGenius\\STUDENT_FOLDERS\\"+fullname);
+                file.mkdirs();
+                file_stu.mkdirs();
+            }
+            
+            
+            FileInputStream from = new FileInputStream("C:\\FourGenius\\" + fullname + ".jpg");
+            FileOutputStream to = new FileOutputStream("C:\\FourGenius\\Student_Images\\" + fullname + ".jpg");
+            Jp_registration_student_informations pic = new Jp_registration_student_informations("C:\\FourGenius\\Student_Images\\" + fullname + ".jpg");
             byte[] buffer = new byte[4096];
             int byteRead;
             while ((byteRead = from.read(buffer)) != -1) {
